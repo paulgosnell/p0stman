@@ -24,6 +24,9 @@ import {
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
+import { div } from 'framer-motion/client';
+import { div } from 'framer-motion/client';
+import { div } from 'framer-motion/client';
 
 const highlights = [
   {
