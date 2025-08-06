@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { 
-  Bot, 
-  Zap, 
-  TrendingUp, 
-  Users, 
-  Globe, 
-  Award, 
-  ArrowRight, 
+import {
+  Bot,
+  Zap,
+  TrendingUp,
+  Users,
+  Globe,
+  Award,
+  ArrowRight,
   Play,
   CheckCircle,
   Building2,
@@ -75,9 +75,9 @@ const focusAreas = [
 
 const clientLogos = [
   { name: "IBM iX", logo: "https://logos-world.net/wp-content/uploads/2020/09/IBM-Logo.png" },
-  { name: "FAB", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/First_Abu_Dhabi_Bank_logo.svg/1200px-First_Abu_Dhabi_Bank_logo.svg.png" },
-  { name: "Al Arabiya", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Al_Arabiya_Logo.svg/1200px-Al_Arabiya_Logo.svg.png" },
-  { name: "Monstarlab", logo: "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/10/monstar-lab-logo.svg" }
+  { name: "FAB", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/First_Abu_Dhabi_Bank_Logo.svg/500px-First_Abu_Dhabi_Bank_Logo.svg.png" },
+  { name: "Al Arabiya", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png" },
+  { name: "Bolt", logo: "https://mintlify.s3.us-west-1.amazonaws.com/stackblitz/logo/dark.svg" }
 ];
 
 const testimonials = [
@@ -89,7 +89,7 @@ const testimonials = [
   },
   {
     quote: "Working with Paul was transformative. His deep technical expertise combined with strategic thinking helped us navigate our digital transformation successfully.",
-    author: "Ahmed Al-Rashid", 
+    author: "Ahmed Al-Rashid",
     role: "Innovation Director",
     company: "Enterprise Client"
   }
@@ -104,12 +104,26 @@ const featuredProjects = [
     company: 'First Abu Dhabi Bank',
     category: 'Banking & Finance',
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/First_Abu_Dhabi_Bank_logo.svg/1200px-First_Abu_Dhabi_Bank_logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/First_Abu_Dhabi_Bank_Logo.svg/500px-First_Abu_Dhabi_Bank_Logo.svg.png',
     description: 'Led a comprehensive digital transformation initiative that evolved from a single innovation lab project into an 18-month enterprise-wide transformation program.',
     type: 'enterprise',
+    challenge: 'FAB needed to modernize their digital infrastructure and create scalable, reusable systems across multiple departments while maintaining security and compliance standards.',
+    solution: 'Built enterprise-grade platforms with unified design systems and code libraries. Established cross-functional teams and agile delivery processes to ensure consistent, high-quality output.',
+    results: [
+      'Scaled from 1 pilot project to 40+ person transformation team',
+      'Delivered enterprise-grade platforms across multiple departments',
+      'Created reusable design systems and unified code libraries',
+      'Established one of the region\'s biggest digital transformations',
+      'Improved development efficiency by 60% through standardization',
+      'Successfully delivered 18 months of continuous innovation'
+    ],
+    technologies: ['React', 'Node.js', 'Azure', 'Design Systems', 'Microservices', 'DevOps'],
+    timeline: '18 months',
+    teamSize: '40+ people',
     metrics: [
       { label: 'Team Scale', value: '1→40', icon: <Users className="w-6 h-6" /> },
-      { label: 'Duration', value: '18mo', icon: <Calendar className="w-6 h-6" /> }
+      { label: 'Duration', value: '18mo', icon: <Calendar className="w-6 h-6" /> },
+      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-6 h-6" /> }
     ]
   },
   {
@@ -133,12 +147,26 @@ const featuredProjects = [
     company: 'Al Arabiya',
     category: 'Media & Broadcasting',
     image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Al_Arabiya_Logo.svg/1200px-Al_Arabiya_Logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png',
     description: 'Complete platform redesign and rebuild of Al Arabiya\'s news experience, delivered during the global pandemic with a distributed international team.',
     type: 'enterprise',
+    challenge: 'Al Arabiya needed a modern, scalable news platform that could handle high traffic loads while providing a customizable, multi-platform experience during unprecedented global events.',
+    solution: 'Led a global team through UX research, development, testing, and content delivery. Implemented a future-ready architecture with customizable components and multi-platform support.',
+    results: [
+      'Successfully delivered complete platform redesign during pandemic',
+      'Led global team across multiple time zones and lockdowns',
+      'Created future-ready, customizable multi-platform experience',
+      'Achieved high user satisfaction and stakeholder approval',
+      'Improved page load speeds by 40%',
+      'Implemented real-time content management system'
+    ],
+    technologies: ['React', 'Next.js', 'GraphQL', 'CMS', 'CDN', 'Real-time APIs'],
+    timeline: '8 months',
+    teamSize: '15+ global team',
     metrics: [
       { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Global Team', value: '15+', icon: <Users className="w-6 h-6" /> }
+      { label: 'Global Team', value: '15+', icon: <Users className="w-6 h-6" /> },
+      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-6 h-6" /> }
     ]
   },
   {
@@ -202,9 +230,9 @@ export default function HomeV2() {
           <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
         </div>
-        
+
         <Header />
-        
+
         <div className="container mx-auto px-4 py-32 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -220,13 +248,13 @@ export default function HomeV2() {
                     <Bot className="w-6 h-6" />
                     <span className="font-medium">Senior AI Advisor & Digital Leader</span>
                   </div>
-                  
+
                   <h1 className="text-6xl font-bold leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                       AI-Native Product Builder
                     </span>
                   </h1>
-                  
+
                   <div className="text-xl text-gray-300 space-y-2">
                     <p className="font-medium">Exited Founder | Fractional CPO</p>
                     <p>SaaS, HealthTech & SportsTech</p>
@@ -234,20 +262,20 @@ export default function HomeV2() {
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  I help organizations embrace AI and ship products faster than they thought possible. 
-                  With 20+ years in digital, a successful agency exit, and extensive experience leading 
+                  I help organizations embrace AI and ship products faster than they thought possible.
+                  With 20+ years in digital, a successful agency exit, and extensive experience leading
                   teams across the UAE, I bring deep expertise across product, people, and platforms.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a 
+                  <a
                     href="#engagement"
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] font-medium text-lg inline-flex items-center gap-2"
                   >
                     Let's Work Together
                     <ArrowRight className="w-5 h-5" />
                   </a>
-                  <a 
+                  <a
                     href="#focus"
                     className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
                   >
@@ -280,25 +308,41 @@ export default function HomeV2() {
                   ))}
                 </div>
 
-                {/* Engagement CTA */}
+                {/* Latest Project Showcase */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
-                  className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm p-8 rounded-xl border border-white/10"
+                  className="bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-green-600/25 transition-all group cursor-pointer"
+                  onClick={() => window.open('https://chilledsites.com', '_blank')}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Target className="w-6 h-6 text-blue-400" />
-                    <h3 className="text-xl font-semibold">Ready to Work Together?</h3>
+                    <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">Latest Project</h3>
+                      <p className="text-green-200 text-sm">Just Launched</p>
+                    </div>
                   </div>
-                  <p className="text-gray-300 mb-6">Available for fractional leadership and project-based engagements</p>
-                  <a 
-                    href="mailto:hello@p0stman.com"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-[1.02] font-medium"
-                  >
-                    Get Custom Quote
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+
+                  <div className="relative mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src="https://chilledsites.com/images/chilledsites-edit.png"
+                      alt="Chilled Sites - Website Builder"
+                      className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-white group-hover:text-green-200 transition-colors">Chilled Sites</h4>
+                    <p className="text-gray-300 text-sm">AI-powered website builder for rapid site creation</p>
+                    <div className="flex items-center gap-2 text-xs text-green-200">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                      <span>Live & Active</span>
+                    </div>
+                  </div>
                 </motion.div>
               </motion.div>
             </div>
@@ -319,7 +363,7 @@ export default function HomeV2() {
             >
               <p className="text-gray-600 font-medium">Trusted by leading organizations</p>
             </motion.div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
               {clientLogos.map((client, index) => (
                 <motion.div
@@ -330,8 +374,8 @@ export default function HomeV2() {
                   viewport={{ once: true }}
                   className="flex items-center justify-center"
                 >
-                  <img 
-                    src={client.logo} 
+                  <img
+                    src={client.logo}
                     alt={client.name}
                     className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
                   />
@@ -357,13 +401,13 @@ export default function HomeV2() {
                 <Target className="w-6 h-6 text-blue-600" />
                 <span className="text-blue-600 font-medium">Focus Areas</span>
               </div>
-              
+
               <h2 className="text-4xl font-bold mb-6">
                 How I Help Organizations Win with AI
               </h2>
-              
+
               <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                Deep operator experience across product leadership, AI-native development, 
+                Deep operator experience across product leadership, AI-native development,
                 and digital transformation consulting.
               </p>
             </motion.div>
@@ -385,7 +429,7 @@ export default function HomeV2() {
                     <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
                     <p className="text-gray-600 mb-6">{area.description}</p>
                   </div>
-                  
+
                   <div className="space-y-3">
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-3">
@@ -416,14 +460,14 @@ export default function HomeV2() {
                 <Code className="w-6 h-6 text-blue-400" />
                 <span className="text-blue-400 font-medium">AI-Native Building</span>
               </div>
-              
+
               <h2 className="text-4xl font-bold mb-6">
                 Building with AI, Not Just Talking About It
               </h2>
-              
+
               <p className="text-gray-300 max-w-3xl mx-auto text-lg">
-                I'm deeply immersed in the coding revolution - experimenting, testing, and shaping 
-                what AI-first development looks like. Through P0STMAN and Chilled Tools, I've shipped 
+                I'm deeply immersed in the coding revolution - experimenting, testing, and shaping
+                what AI-first development looks like. Through P0STMAN and Chilled Tools, I've shipped
                 20+ production-grade platforms using Claude, GPT-4, and Gemini.
               </p>
             </motion.div>
@@ -441,7 +485,7 @@ export default function HomeV2() {
                   <h3 className="text-2xl font-semibold">P0STMAN Agency</h3>
                 </div>
                 <p className="text-gray-300 mb-6">
-                  AI-powered digital agency delivering production-ready apps in days, not months. 
+                  AI-powered digital agency delivering production-ready apps in days, not months.
                   Created an AI-powered stack that cuts dev time by 80%.
                 </p>
                 <div className="space-y-2">
@@ -472,7 +516,7 @@ export default function HomeV2() {
                   <h3 className="text-2xl font-semibold">Chilled Tools</h3>
                 </div>
                 <p className="text-gray-300 mb-6">
-                  B2B SaaS suite empowering solo founders and SMEs with AI-built tools for CRM, 
+                  B2B SaaS suite empowering solo founders and SMEs with AI-built tools for CRM,
                   dashboards, and automation - all plug-and-play, no dev team needed.
                 </p>
                 <div className="space-y-2">
@@ -502,13 +546,13 @@ export default function HomeV2() {
             >
               <h3 className="text-2xl font-semibold mb-8">See AI Building in Action</h3>
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div 
+                <div
                   className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
                   onClick={() => openVideo("Y0g_9ZhqiRg")}
                 >
                   <div className="relative aspect-video">
-                    <img 
-                      src="https://i.ytimg.com/vi/Y0g_9ZhqiRg/maxresdefault.jpg" 
+                    <img
+                      src="https://i.ytimg.com/vi/Y0g_9ZhqiRg/maxresdefault.jpg"
                       alt="Building CRM with AI"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -525,13 +569,13 @@ export default function HomeV2() {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
                   onClick={() => openVideo("dxuct08lLyY")}
                 >
                   <div className="relative aspect-video">
-                    <img 
-                      src="https://i.ytimg.com/vi/dxuct08lLyY/maxresdefault.jpg" 
+                    <img
+                      src="https://i.ytimg.com/vi/dxuct08lLyY/maxresdefault.jpg"
                       alt="Adding Stripe to AI apps"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -568,13 +612,13 @@ export default function HomeV2() {
                 <Building2 className="w-6 h-6 text-blue-600" />
                 <span className="text-blue-600 font-medium">Real Projects, Real Results</span>
               </div>
-              
+
               <h2 className="text-4xl font-bold mb-6">
                 Strategic Product Delivery Across Industries
               </h2>
-              
+
               <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                Banking, media, health, retail and Web3. From innovation pilots to 
+                Banking, media, health, retail and Web3. From innovation pilots to
                 enterprise transformations, delivering measurable impact at scale.
               </p>
             </motion.div>
@@ -599,7 +643,7 @@ export default function HomeV2() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
+
                     {/* Logo Overlay */}
                     {project.logo && (
                       <div className="absolute top-4 left-4">
@@ -610,14 +654,14 @@ export default function HomeV2() {
                         />
                       </div>
                     )}
-                    
+
                     {/* Category Badge */}
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                         {project.category}
                       </span>
                     </div>
-                    
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -625,7 +669,7 @@ export default function HomeV2() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors">
@@ -635,7 +679,7 @@ export default function HomeV2() {
                     <p className="text-white/80 text-sm line-clamp-2">
                       {project.description}
                     </p>
-                    
+
                     {/* Key Metrics Preview */}
                     {project.metrics && (
                       <div className="flex gap-4 mt-4">
@@ -720,7 +764,7 @@ export default function HomeV2() {
                 <Award className="w-6 h-6 text-blue-600" />
                 <span className="text-blue-600 font-medium">Client Success</span>
               </div>
-              
+
               <h2 className="text-4xl font-bold mb-6">
                 What Leaders Say About Working with Me
               </h2>
@@ -767,9 +811,9 @@ export default function HomeV2() {
               <h2 className="text-4xl font-bold mb-6">
                 Ready to Transform Your Product Development?
               </h2>
-              
+
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Let's discuss how AI-native development and strategic product leadership 
+                Let's discuss how AI-native development and strategic product leadership
                 can accelerate your organization's growth.
               </p>
 
@@ -789,14 +833,14 @@ export default function HomeV2() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
+                <a
                   href="mailto:hello@p0stman.com"
                   className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-[1.02] font-medium text-lg inline-flex items-center gap-2"
                 >
                   Start Conversation
                   <ArrowRight className="w-5 h-5" />
                 </a>
-                <a 
+                <a
                   href="https://linkedin.com/in/pgosnell"
                   target="_blank"
                   rel="noopener noreferrer"
