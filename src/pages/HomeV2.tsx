@@ -227,7 +227,7 @@ export default function HomeV2() {
   };
 
   return (
-    <div className="min-h-screen bg-white w-full overflow-x-hidden relative"
+    <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
       {/* Hero Section */}
       <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <div className="absolute inset-0">
