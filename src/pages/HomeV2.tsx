@@ -135,7 +135,7 @@ const featuredProjects = [
     company: 'AI-Powered CRM Platform',
     category: 'SaaS & AI',
     image: 'https://mediacdn.carrd.co/assets/images/image06.png',
-    logo: 'https://chilledcrm.com/favicon.svg',
+    logo: 'https://chilledsites.com/images/logo.svg',
     description: 'Next-generation CRM system built with AI at its core, delivering unprecedented efficiency and insights. Built in 4 weeks using AI-powered development.',
     type: 'ai-built',
     caseStudyUrl: '/case-study/chilled-crm',
