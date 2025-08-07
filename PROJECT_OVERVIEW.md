@@ -124,3 +124,43 @@ The platform is designed to scale with additional services, case studies, and AI
 *Last Updated: January 2025*
 *Project Type: AI-Powered Product Studio Portfolio*
 *Tech Stack: React, TypeScript, Tailwind CSS, Supabase, Netlify*
+##
+ Deployment Instructions
+
+### Environment Variables Setup
+
+For local development, copy `.env.example` to `.env` and fill in your actual values:
+
+```bash
+cp .env.example .env
+```
+
+### Netlify Deployment
+
+1. **Environment Variables**: Set these in your Netlify dashboard under Site Settings > Environment Variables:
+   - `VITE_SUPABASE_URL`: Your Supabase project URL
+   - `VITE_SUPABASE_ANON_KEY`: Your Supabase anonymous key
+   - `NODE_VERSION`: 20
+
+2. **Build Settings**: The `netlify.toml` file is already configured with:
+   - Build command: `npm ci && npm run build`
+   - Publish directory: `dist`
+   - Redirects for SPA routing
+
+3. **Secrets Scanning**: Environment variables are properly configured to avoid Netlify's secrets scanning detection.
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```

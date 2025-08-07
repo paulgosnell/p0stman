@@ -24,9 +24,7 @@ import {
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
-import { div } from 'framer-motion/client';
-import { div } from 'framer-motion/client';
-import { div } from 'framer-motion/client';
+import ProjectConfigurator from '../components/ProjectConfigurator';
 
 const highlights = [
   {
@@ -215,6 +213,7 @@ export default function HomeV2() {
   const [currentVideoId, setCurrentVideoId] = useState("");
   const [showCaseStudyModal, setShowCaseStudyModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null);
+  const [showProjectConfigurator, setShowProjectConfigurator] = useState(false);
 
   const openVideo = (videoId: string) => {
     setCurrentVideoId(videoId);
@@ -272,13 +271,16 @@ export default function HomeV2() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#engagement"
-                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] font-medium text-lg inline-flex items-center gap-2"
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setShowProjectConfigurator(true)}
+                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
                   >
-                    Let's Work Together
+                    <Zap className="w-5 h-5" />
+                    Build Your Project
                     <ArrowRight className="w-5 h-5" />
-                  </a>
+                  </motion.button>
                   <a
                     href="#focus"
                     className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
@@ -837,13 +839,16 @@ export default function HomeV2() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:hello@p0stman.com"
-                  className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-[1.02] font-medium text-lg inline-flex items-center gap-2"
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setShowProjectConfigurator(true)}
+                  className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-medium text-lg inline-flex items-center gap-2"
                 >
-                  Start Conversation
+                  <Target className="w-5 h-5" />
+                  Start Project Configurator
                   <ArrowRight className="w-5 h-5" />
-                </a>
+                </motion.button>
                 <a
                   href="https://linkedin.com/in/pgosnell"
                   target="_blank"
@@ -874,6 +879,10 @@ export default function HomeV2() {
         onClose={() => setShowCaseStudyModal(false)}
         project={selectedProject}
       />
+
+      {showProjectConfigurator && (
+        <ProjectConfigurator onClose={() => setShowProjectConfigurator(false)} />
+      )}
     </div>
   );
 }
