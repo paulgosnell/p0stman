@@ -317,7 +317,7 @@ export default function HomeV2() {
                         <p className="text-blue-200 text-sm">With AI-Powered Development</p>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-green-400" />
@@ -364,7 +364,7 @@ export default function HomeV2() {
                         <p className="text-green-200 text-sm">Enterprise & Startups</p>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-4 text-center">
                       <div>
                         <div className="text-2xl font-bold text-white">IBM iX</div>
@@ -386,42 +386,7 @@ export default function HomeV2() {
                   </div>
                 </motion.div>
 
-                {/* Latest Project Showcase */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  className="bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-green-600/25 transition-all group cursor-pointer"
-                  onClick={() => window.open('https://chilledsites.com', '_blank')}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">Latest Project</h3>
-                      <p className="text-green-200 text-sm">Just Launched</p>
-                    </div>
-                  </div>
 
-                  <div className="relative mb-4 rounded-lg overflow-hidden">
-                    <img
-                      src="https://chilledsites.com/images/chilledsites-edit.png"
-                      alt="Chilled Sites - Website Builder"
-                      className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <h4 className="font-bold text-white group-hover:text-green-200 transition-colors">Chilled Sites</h4>
-                    <p className="text-gray-300 text-sm">AI-powered website builder for rapid site creation</p>
-                    <div className="flex items-center gap-2 text-xs text-green-200">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                      <span>Live & Active</span>
-                    </div>
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </div>
