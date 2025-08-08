@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import FlyoutNavigation from './FlyoutNavigation';
 
 export default function Header() {
   return (
@@ -10,6 +11,8 @@ export default function Header() {
           <Link to="/">
             <Logo useGradient showStrapline />
           </Link>
+          
+          <FlyoutNavigation />
         </div>
       </div>
     </header>

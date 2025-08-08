@@ -30,6 +30,8 @@ import ContactPage from './pages/ContactPage';
 import GuideAdmin from './pages/admin/GuideAdmin';
 import FractionalCPO from './pages/FractionalCPO';
 import AIPlatformDev from './pages/AIPlatformDev';
+import ProductStrategy from './pages/ProductStrategy';
+import DigitalTransformation from './pages/DigitalTransformation';
 import TokenManagement from './pages/admin/TokenManagement';
 import MessagesAdmin from './pages/admin/MessagesAdmin';
 import InvoicingAdmin from './pages/admin/InvoicingAdmin';
@@ -65,6 +67,8 @@ export default function App() {
         <Route path="/website" element={<Website />} />
         <Route path="/fractional-cpo" element={<FractionalCPO />} />
         <Route path="/ai-platform-development" element={<AIPlatformDev />} />
+        <Route path="/product-strategy" element={<ProductStrategy />} />
+        <Route path="/digital-transformation" element={<DigitalTransformation />} />
         <Route path="/guide" element={<Guide />} />
         <Route path="/guide/content" element={<GuideContent />} />
         <Route path="/guide/content/:id" element={<ChapterContent />} />

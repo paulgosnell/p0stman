@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Mail, 
   Linkedin, 
@@ -19,6 +20,7 @@ import {
   Calendar,
   MessageSquare
 } from 'lucide-react';
+import SpaceEasterEgg from './SpaceEasterEgg';
 
 // Floating particle component
 const FloatingParticle = ({ delay = 0 }) => {
@@ -133,6 +135,8 @@ const FloatingIcon = ({ icon: Icon, delay = 0, x = 0, y = 0 }) => {
 export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenProjectConfigurator?: () => void }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showSpaceEasterEgg, setShowSpaceEasterEgg] = useState(false);
+  const [easterEggClicks, setEasterEggClicks] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -173,8 +177,8 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
   const services = [
     { label: 'AI Platform Development', icon: Bot, href: '/ai-platform-development' },
     { label: 'Fractional CPO', icon: Rocket, href: '/fractional-cpo' },
-    { label: 'Product Strategy', icon: Brain, href: '/process' },
-    { label: 'Digital Transformation', icon: Globe, href: '/case-studies' }
+    { label: 'Product Strategy', icon: Brain, href: '/product-strategy' },
+    { label: 'Digital Transformation', icon: Globe, href: '/digital-transformation' }
   ];
 
   return (
@@ -309,15 +313,16 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
               </h4>
               <div className="space-y-3">
                 {services.map((service, index) => (
-                  <motion.a
+                  <motion.div
                     key={service.label}
-                    href={service.href}
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
                   >
-                    <service.icon className="w-4 h-4 text-blue-400" />
-                    <span>{service.label}</span>
-                  </motion.a>
+                    <Link to={service.href} className="flex items-center gap-3 hover:text-white transition-colors">
+                      <service.icon className="w-4 h-4 text-blue-400" />
+                      <span>{service.label}</span>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -374,9 +379,31 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
             </div>
 
             <div className="text-center sm:text-right">
-              <p className="text-gray-400 text-sm">
+              <motion.p 
+                className="text-gray-400 text-sm cursor-pointer hover:text-blue-400 transition-colors"
+                onClick={() => {
+                  const newClicks = easterEggClicks + 1;
+                  setEasterEggClicks(newClicks);
+                  if (newClicks >= 5) {
+                    setShowSpaceEasterEgg(true);
+                    setEasterEggClicks(0);
+                  }
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={easterEggClicks > 0 ? { 
+                  color: ['#9CA3AF', '#3B82F6', '#9CA3AF'],
+                  scale: [1, 1.05, 1]
+                } : {}}
+                transition={{ duration: 0.3 }}
+              >
                 © 2025 P0STMAN. Built with AI, designed for the future.
-              </p>
+                {easterEggClicks > 0 && easterEggClicks < 5 && (
+                  <span className="ml-2 text-blue-400">
+                    {'✨'.repeat(easterEggClicks)}
+                  </span>
+                )}
+              </motion.p>
               <p className="text-gray-500 text-xs mt-1">
                 Chilled Ventures L.L.C-FZ • Dubai, UAE
               </p>
@@ -403,6 +430,55 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
           </motion.button>
         )}
       </AnimatePresence>
+
+      {/* Easter Egg Trigger Button */}
+      <motion.button
+        onClick={() => setShowSpaceEasterEgg(true)}
+        className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all z-30 group"
+        whileHover={{ 
+          scale: 1.1,
+          rotate: 360,
+          boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)"
+        }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 2, duration: 0.8 }}
+      >
+        <motion.div
+          animate={{ 
+            rotate: 360,
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Sparkles className="w-6 h-6 text-white group-hover:text-yellow-300 transition-colors" />
+        </motion.div>
+        
+        {/* Pulsing ring */}
+        <motion.div
+          className="absolute inset-0 border-2 border-purple-400 rounded-full"
+          animate={{ 
+            scale: [1, 1.5, 1],
+            opacity: [0.8, 0, 0.8]
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeOut"
+          }}
+        />
+      </motion.button>
+
+      {/* Space Easter Egg */}
+      <SpaceEasterEgg 
+        isOpen={showSpaceEasterEgg} 
+        onClose={() => setShowSpaceEasterEgg(false)} 
+      />
     </footer>
   );
 }
