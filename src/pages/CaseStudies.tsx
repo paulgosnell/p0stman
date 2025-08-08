@@ -32,7 +32,7 @@ const allProjects = [
     category: 'Banking & Finance',
     type: 'Enterprise',
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/First_Abu_Dhabi_Bank_logo.svg/1200px-First_Abu_Dhabi_Bank_logo.svg.png',
+    logo: 'https://logos-world.net/wp-content/uploads/2020/11/First-Abu-Dhabi-Bank-FAB-Logo.png',
     description: 'Led a comprehensive digital transformation initiative that evolved from a single innovation lab project into an 18-month enterprise-wide transformation program.',
     challenge: 'FAB needed to modernize their digital infrastructure and create scalable, reusable systems across multiple departments while maintaining security and compliance standards.',
     solution: 'Built enterprise-grade platforms with unified design systems and code libraries. Established cross-functional teams and agile delivery processes to ensure consistent, high-quality output.',
@@ -60,7 +60,7 @@ const allProjects = [
     category: 'Media & Broadcasting',
     type: 'Enterprise',
     image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Al_Arabiya_Logo.svg/1200px-Al_Arabiya_Logo.svg.png',
+    logo: 'https://logos-world.net/wp-content/uploads/2020/11/Al-Arabiya-Logo.png',
     description: 'Complete platform redesign and rebuild of Al Arabiya\'s news experience, delivered during the global pandemic with a distributed international team.',
     challenge: 'Al Arabiya needed a modern, scalable news platform that could handle high traffic loads while providing a customizable, multi-platform experience during unprecedented global events.',
     solution: 'Led a global team through UX research, development, testing, and content delivery. Implemented a future-ready architecture with customizable components and multi-platform support.',
@@ -149,7 +149,7 @@ const allProjects = [
     category: 'Music & AI',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://cdn-icons-png.flaticon.com/512/3844/3844727.png',
+    logo: 'https://img.icons8.com/color/96/musical-notes.png',
     description: 'Revolutionary music collaboration platform that connects artists worldwide with AI-powered matching and real-time collaboration tools.',
     caseStudyUrl: '/case-study/harmony',
     metrics: [
@@ -164,7 +164,7 @@ const allProjects = [
     category: 'HealthTech',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://cdn-icons-png.flaticon.com/512/2382/2382533.png',
+    logo: 'https://img.icons8.com/color/96/health-book.png',
     description: 'Comprehensive healthcare booking and management system with AI-powered scheduling optimization and patient management.',
     caseStudyUrl: '/case-study/clinic-book',
     metrics: [
@@ -179,7 +179,7 @@ const allProjects = [
     category: 'HealthTech & AI',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://cdn-icons-png.flaticon.com/512/2040/2040946.png',
+    logo: 'https://img.icons8.com/color/96/lotus.png',
     description: 'AI-powered wellness and meditation platform with personalized mindfulness programs and mental health tracking.',
     caseStudyUrl: '/case-study/serenity',
     metrics: [
@@ -194,7 +194,7 @@ const allProjects = [
     category: 'HealthTech & Social',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://cdn-icons-png.flaticon.com/512/2936/2936719.png',
+    logo: 'https://img.icons8.com/color/96/dumbbell.png',
     description: 'Social fitness platform connecting fitness enthusiasts worldwide with AI-powered workout recommendations and community features.',
     caseStudyUrl: '/case-study/fitlink',
     metrics: [
@@ -209,7 +209,7 @@ const allProjects = [
     category: 'Business Tools',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=80',
-    logo: 'https://cdn-icons-png.flaticon.com/512/2936/2936652.png',
+    logo: 'https://img.icons8.com/color/96/scissors.png',
     description: 'Complete salon and barber shop management system with AI-powered scheduling, customer management, and business analytics.',
     caseStudyUrl: '/case-study/barber-booking',
     metrics: [
@@ -224,7 +224,7 @@ const allProjects = [
     category: 'E-commerce & AI',
     type: 'AI-Built',
     image: 'https://mediacdn.carrd.co/assets/images/image01.png',
-    logo: 'https://cdn-icons-png.flaticon.com/512/3050/3050158.png',
+    logo: 'https://img.icons8.com/color/96/gift.png',
     description: 'Revolutionizing personalized gifting with AI-driven design and seamless booking experiences.',
     caseStudyUrl: '/case-study/experience-a-gift',
     metrics: [
@@ -398,6 +398,9 @@ export default function CaseStudies() {
                             src={project.logo}
                             alt={`${project.company} logo`}
                             className="h-6 w-auto filter drop-shadow-lg opacity-90"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
                           />
                         </div>
                       )}
