@@ -805,69 +805,7 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* Engagement CTA */}
-      <section id="engagement" className="py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6">
-                Ready to Transform Your Product Development?
-              </h2>
 
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Let's discuss how AI-native development and strategic product leadership
-                can accelerate your organization's growth.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                  <h3 className="font-semibold mb-2">Fractional Leadership</h3>
-                  <p className="text-blue-100 text-sm">Strategic product direction and team leadership</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                  <h3 className="font-semibold mb-2">AI Platform Delivery</h3>
-                  <p className="text-blue-100 text-sm">End-to-end development of AI-powered solutions</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                  <h3 className="font-semibold mb-2">Transformation Consulting</h3>
-                  <p className="text-blue-100 text-sm">Strategic guidance for AI adoption and digital transformation</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setShowProjectConfigurator(true)}
-                  className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-medium text-lg inline-flex items-center gap-2"
-                >
-                  <Target className="w-5 h-5" />
-                  Start Project Configurator
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
-                <a
-                  href="https://linkedin.com/in/pgosnell"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
-                >
-                  View LinkedIn
-                </a>
-              </div>
-
-              <div className="mt-8 text-blue-100">
-                <p className="text-sm">Available for fractional or project-based engagements</p>
-                <p className="font-semibold">Custom quotes based on scope and requirements</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       <VideoModal
         isOpen={showVideoModal}
@@ -881,7 +819,7 @@ export default function HomeV2() {
         project={selectedProject}
       />
 
-      <AnimatedFooter />
+      <AnimatedFooter onOpenProjectConfigurator={() => setShowProjectConfigurator(true)} />
 
       {showProjectConfigurator && (
         <ProjectConfigurator onClose={() => setShowProjectConfigurator(false)} />

@@ -130,7 +130,7 @@ const FloatingIcon = ({ icon: Icon, delay = 0, x = 0, y = 0 }) => {
   );
 };
 
-export default function AnimatedFooter() {
+export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenProjectConfigurator?: () => void }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -271,24 +271,28 @@ export default function AnimatedFooter() {
                   </div>
                 </motion.a>
 
-                <motion.a
-                  href="https://calendly.com/your-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-green-400/50 transition-all group"
+                  onClick={() => {
+                    if (onOpenProjectConfigurator) {
+                      onOpenProjectConfigurator();
+                    } else {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
-                      <Calendar className="w-5 h-5 text-green-400" />
+                      <Sparkles className="w-5 h-5 text-green-400" />
                     </div>
                     <div>
-                      <p className="font-medium text-white">Book Call</p>
-                      <p className="text-sm text-gray-400">Strategy Session</p>
+                      <p className="font-medium text-white">Start Project</p>
+                      <p className="text-sm text-gray-400">Build with AI</p>
                     </div>
                   </div>
-                </motion.a>
+                </motion.button>
               </div>
             </motion.div>
 
@@ -378,30 +382,7 @@ export default function AnimatedFooter() {
             </div>
           </motion.div>
 
-          {/* Floating CTA */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="absolute -top-16 left-1/2 transform -translate-x-1/2"
-          >
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">Ready to Build Something Amazing?</h3>
-                <p className="text-blue-100 mb-4">Let's turn your vision into reality with AI-powered development</p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                >
-                  <Sparkles className="w-5 h-5" />
-                  Start Your Project
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </div>
 
