@@ -20,7 +20,8 @@ import {
   DollarSign,
   ExternalLink,
   Calendar,
-  Smartphone
+  Smartphone,
+  Sparkles
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
