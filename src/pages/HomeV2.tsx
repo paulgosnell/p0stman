@@ -25,6 +25,7 @@ import {
 import VideoModal from '../components/modals/VideoModal';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
 import ProjectConfigurator from '../components/ProjectConfigurator';
+import AnimatedFooter from '../components/AnimatedFooter';
 
 const highlights = [
   {
@@ -879,6 +880,8 @@ export default function HomeV2() {
         onClose={() => setShowCaseStudyModal(false)}
         project={selectedProject}
       />
+
+      <AnimatedFooter />
 
       {showProjectConfigurator && (
         <ProjectConfigurator onClose={() => setShowProjectConfigurator(false)} />
