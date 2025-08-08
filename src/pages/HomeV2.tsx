@@ -291,29 +291,99 @@ export default function HomeV2() {
                 </div>
               </motion.div>
 
-              {/* Right Column - Metrics & Highlights */}
+              {/* Right Column - Value Showcase */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="space-y-8"
+                className="space-y-6"
               >
-                <div className="grid grid-cols-2 gap-6">
-                  {highlights.map((highlight, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
-                      className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/15 transition-all"
+                {/* Main Value Proposition Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 p-8"
+                >
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-10" />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <Rocket className="w-7 h-7 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">Ship 10x Faster</h3>
+                        <p className="text-blue-200 text-sm">With AI-Powered Development</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <span className="text-white">MVP in 1-4 weeks, not months</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <span className="text-white">70% cost reduction vs traditional</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-400" />
+                        <span className="text-white">Enterprise-grade quality & security</span>
+                      </div>
+                    </div>
+
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setShowProjectConfigurator(true)}
+                      className="mt-6 w-full bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-all font-semibold flex items-center justify-center gap-2"
                     >
-                      <div className="text-blue-400 mb-3">{highlight.icon}</div>
-                      <div className="text-3xl font-bold mb-1">{highlight.metric}</div>
-                      <div className="text-lg font-semibold mb-1">{highlight.label}</div>
-                      <div className="text-sm text-gray-400">{highlight.description}</div>
-                    </motion.div>
-                  ))}
-                </div>
+                      <Sparkles className="w-5 h-5" />
+                      Start Your Project
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.button>
+                  </div>
+                </motion.div>
+
+                {/* Client Showcase */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm border border-white/20 p-6"
+                >
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-10" />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                        <Building2 className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white">Trusted by Leaders</h4>
+                        <p className="text-green-200 text-sm">Enterprise & Startups</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div className="text-2xl font-bold text-white">IBM iX</div>
+                        <div className="text-xs text-gray-300">Enterprise Client</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-white">FAB</div>
+                        <div className="text-xs text-gray-300">Banking Transformation</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-white">Al Arabiya</div>
+                        <div className="text-xs text-gray-300">Media Platform</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-white">30+ Countries</div>
+                        <div className="text-xs text-gray-300">Global Reach</div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
 
                 {/* Latest Project Showcase */}
                 <motion.div
@@ -386,6 +456,46 @@ export default function HomeV2() {
                     alt={client.name}
                     className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
                   />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-6">Proven Track Record</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Two decades of digital leadership delivering measurable results across industries
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {highlights.map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
+                >
+                  <div className="text-blue-600 mb-4 flex justify-center">{highlight.icon}</div>
+                  <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    {highlight.metric}
+                  </div>
+                  <div className="text-xl font-semibold mb-2 text-gray-800">{highlight.label}</div>
+                  <div className="text-gray-600">{highlight.description}</div>
                 </motion.div>
               ))}
             </div>
