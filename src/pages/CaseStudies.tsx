@@ -149,6 +149,7 @@ const allProjects = [
     category: 'Music & AI',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=2000&q=80',
+    logo: 'https://cdn-icons-png.flaticon.com/512/3844/3844727.png',
     description: 'Revolutionary music collaboration platform that connects artists worldwide with AI-powered matching and real-time collaboration tools.',
     caseStudyUrl: '/case-study/harmony',
     metrics: [
@@ -163,6 +164,7 @@ const allProjects = [
     category: 'HealthTech',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=2000&q=80',
+    logo: 'https://cdn-icons-png.flaticon.com/512/2382/2382533.png',
     description: 'Comprehensive healthcare booking and management system with AI-powered scheduling optimization and patient management.',
     caseStudyUrl: '/case-study/clinic-book',
     metrics: [
@@ -177,6 +179,7 @@ const allProjects = [
     category: 'HealthTech & AI',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80',
+    logo: 'https://cdn-icons-png.flaticon.com/512/2040/2040946.png',
     description: 'AI-powered wellness and meditation platform with personalized mindfulness programs and mental health tracking.',
     caseStudyUrl: '/case-study/serenity',
     metrics: [
@@ -191,6 +194,7 @@ const allProjects = [
     category: 'HealthTech & Social',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2000&q=80',
+    logo: 'https://cdn-icons-png.flaticon.com/512/2936/2936719.png',
     description: 'Social fitness platform connecting fitness enthusiasts worldwide with AI-powered workout recommendations and community features.',
     caseStudyUrl: '/case-study/fitlink',
     metrics: [
@@ -205,6 +209,7 @@ const allProjects = [
     category: 'Business Tools',
     type: 'AI-Built',
     image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=80',
+    logo: 'https://cdn-icons-png.flaticon.com/512/2936/2936652.png',
     description: 'Complete salon and barber shop management system with AI-powered scheduling, customer management, and business analytics.',
     caseStudyUrl: '/case-study/barber-booking',
     metrics: [
@@ -219,6 +224,7 @@ const allProjects = [
     category: 'E-commerce & AI',
     type: 'AI-Built',
     image: 'https://mediacdn.carrd.co/assets/images/image01.png',
+    logo: 'https://cdn-icons-png.flaticon.com/512/3050/3050158.png',
     description: 'Revolutionizing personalized gifting with AI-driven design and seamless booking experiences.',
     caseStudyUrl: '/case-study/experience-a-gift',
     metrics: [
