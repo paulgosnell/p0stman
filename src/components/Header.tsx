@@ -8,7 +8,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="h-24 flex items-center justify-between">
           <Link to="/">
-            <Logo className="text-2xl" useGradient />
+            <Logo useGradient showStrapline />
           </Link>
         </div>
       </div>

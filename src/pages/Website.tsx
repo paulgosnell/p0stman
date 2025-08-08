@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
 import WebsiteModal from '../components/modals/WebsiteModal';
+import AnimatedFooter from '../components/AnimatedFooter';
 
 // Website portfolio examples
 const portfolioExamples = [
@@ -635,6 +636,8 @@ export default function Website() {
             </div>
           </div>
         </section>
+
+        <AnimatedFooter />
 
         <WebsiteModal 
           isOpen={showWebsiteModal}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import RTLWrapper from './components/RTLWrapper';
 import ScrollToTop from './components/ScrollToTop';
-import Footer from './components/Footer';
+
 import Home from './pages/Home';
 import HomeV2 from './pages/HomeV2';
 import Process from './pages/Process';
@@ -28,6 +28,8 @@ import Admin from './pages/Admin';
 import AdminLogin from './pages/AdminLogin';
 import ContactPage from './pages/ContactPage';
 import GuideAdmin from './pages/admin/GuideAdmin';
+import FractionalCPO from './pages/FractionalCPO';
+import AIPlatformDev from './pages/AIPlatformDev';
 import TokenManagement from './pages/admin/TokenManagement';
 import MessagesAdmin from './pages/admin/MessagesAdmin';
 import InvoicingAdmin from './pages/admin/InvoicingAdmin';
@@ -61,6 +63,8 @@ export default function App() {
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/projects" element={<CaseStudies />} />
         <Route path="/website" element={<Website />} />
+        <Route path="/fractional-cpo" element={<FractionalCPO />} />
+        <Route path="/ai-platform-development" element={<AIPlatformDev />} />
         <Route path="/guide" element={<Guide />} />
         <Route path="/guide/content" element={<GuideContent />} />
         <Route path="/guide/content/:id" element={<ChapterContent />} />
@@ -102,7 +106,6 @@ export default function App() {
         <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </div>
     </RTLWrapper>
   );

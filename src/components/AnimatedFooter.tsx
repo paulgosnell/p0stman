@@ -171,10 +171,10 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
   ];
 
   const services = [
-    { label: 'AI Platform Development', icon: Bot },
-    { label: 'Fractional CPO', icon: Rocket },
-    { label: 'Product Strategy', icon: Brain },
-    { label: 'Digital Transformation', icon: Globe }
+    { label: 'AI Platform Development', icon: Bot, href: '/ai-platform-development' },
+    { label: 'Fractional CPO', icon: Rocket, href: '/fractional-cpo' },
+    { label: 'Product Strategy', icon: Brain, href: '/process' },
+    { label: 'Digital Transformation', icon: Globe, href: '/case-studies' }
   ];
 
   return (
@@ -309,14 +309,15 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
               </h4>
               <div className="space-y-3">
                 {services.map((service, index) => (
-                  <motion.div
+                  <motion.a
                     key={service.label}
+                    href={service.href}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors cursor-pointer"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
                   >
                     <service.icon className="w-4 h-4 text-blue-400" />
                     <span>{service.label}</span>
-                  </motion.div>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>

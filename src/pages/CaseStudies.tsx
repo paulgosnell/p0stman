@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
+import AnimatedFooter from '../components/AnimatedFooter';
 
 // All projects data
 const allProjects = [
@@ -476,6 +477,8 @@ export default function CaseStudies() {
             </div>
           </div>
         </section>
+
+        <AnimatedFooter />
 
         <CaseStudyModal
           isOpen={showCaseStudyModal}

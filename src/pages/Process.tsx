@@ -24,6 +24,7 @@ import {
   HeadphonesIcon
 } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
+import AnimatedFooter from '../components/AnimatedFooter';
 
 const processSteps = [
   {
@@ -484,6 +485,8 @@ export default function Process() {
             </div>
           </div>
         </section>
+
+        <AnimatedFooter />
       </div>
     </HelmetProvider>
   );
