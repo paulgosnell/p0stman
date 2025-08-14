@@ -6,10 +6,12 @@ import { Lightbulb, Code, Rocket, Bot, ExternalLink, Shield, Database, Cloud, Do
 interface SolutionProps {
   title: string;
   description: string;
-  image: string;
-  technologies: string[];
-  features: string[];
-  aiIntegrations: string[];
+  approach?: string[];
+  outcome?: string;
+  image?: string;
+  technologies?: string[];
+  features?: string[];
+  aiIntegrations?: string[];
   liveUrl?: string;
   mobileOptimized?: boolean;
   theme?: 'light' | 'dark';
@@ -18,6 +20,8 @@ interface SolutionProps {
 export default function Solution({
   title,
   description,
+  approach,
+  outcome,
   image,
   technologies,
   features,
@@ -116,12 +120,45 @@ export default function Solution({
               <p className="text-xl text-gray-600 leading-relaxed">
                 {description}
               </p>
+
+              {/* Approach */}
+              {approach && approach.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Our Approach</h3>
+                  <ul className="space-y-3">
+                    {approach.map((step, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-start space-x-3"
+                      >
+                        <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
+                          <span className="text-blue-600 text-sm font-semibold">{index + 1}</span>
+                        </div>
+                        <span className="text-gray-700">{step}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Outcome */}
+              {outcome && (
+                <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Outcome</h3>
+                  <p className="text-gray-700">{outcome}</p>
+                </div>
+              )}
               
               {/* Tech Stack Badges */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">Built With</h3>
-                <div className="flex flex-wrap gap-3">
-                  {technologies.map((tech, index) => (
+              {technologies && technologies.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Built With</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {technologies.map((tech, index) => (
                     <motion.div 
                       key={`tech-${index}`}
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -133,9 +170,10 @@ export default function Solution({
                       {getTechIcon(tech)}
                       {tech}
                     </motion.div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
               
               {/* CTA Button */}
               {liveUrl && (
@@ -203,7 +241,7 @@ export default function Solution({
                 <h3 className="text-xl font-bold text-gray-900">Tech Stack</h3>
               </div>
               <div className="space-y-3">
-                {technologies.slice(0, 6).map((tech, index) => (
+                {technologies && technologies.slice(0, 6).map((tech, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -236,7 +274,7 @@ export default function Solution({
                 <h3 className="text-xl font-bold text-gray-900">Key Features</h3>
               </div>
               <div className="space-y-3">
-                {features.map((feature, index) => (
+                {features && features.map((feature, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -267,7 +305,7 @@ export default function Solution({
                 <h3 className="text-xl font-bold text-gray-900">AI Features</h3>
               </div>
               <div className="space-y-3">
-                {aiIntegrations.map((integration, index) => (
+                {aiIntegrations && aiIntegrations.map((integration, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}

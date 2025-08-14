@@ -16,7 +16,8 @@ import {
   DollarSign,
   Target,
   Filter,
-  Code
+  Code,
+  Award
 } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
@@ -31,9 +32,9 @@ const allProjects = [
     company: 'First Abu Dhabi Bank',
     category: 'Banking & Finance',
     type: 'Enterprise',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
     logo: 'https://logos-world.net/wp-content/uploads/2020/11/First-Abu-Dhabi-Bank-FAB-Logo.png',
-    description: 'Led a comprehensive digital transformation initiative that evolved from a single innovation lab project into an 18-month enterprise-wide transformation program.',
+    description: 'Started with Innovation Lab project that impressed multiple departments, leading to 18-month transformation with 40-50 experts across various departments.',
     challenge: 'FAB needed to modernize their digital infrastructure and create scalable, reusable systems across multiple departments while maintaining security and compliance standards.',
     solution: 'Built enterprise-grade platforms with unified design systems and code libraries. Established cross-functional teams and agile delivery processes to ensure consistent, high-quality output.',
     results: [
@@ -51,7 +52,8 @@ const allProjects = [
     ],
     technologies: ['React', 'Node.js', 'Azure', 'Design Systems', 'Microservices', 'DevOps'],
     timeline: '18 months',
-    teamSize: '40+ people'
+    teamSize: '40+ people',
+    caseStudyUrl: '/case-study/fab-bank'
   },
   {
     id: 'al-arabiya',
@@ -59,9 +61,9 @@ const allProjects = [
     company: 'Al Arabiya',
     category: 'Media & Broadcasting',
     type: 'Enterprise',
-    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png',
     logo: 'https://logos-world.net/wp-content/uploads/2020/11/Al-Arabiya-Logo.png',
-    description: 'Complete platform redesign and rebuild of Al Arabiya\'s news experience, delivered during the global pandemic with a distributed international team.',
+    description: 'Led international team of 20 to modernize leading news brand during COVID-19. Created personalized, customizable news experience from ground up.',
     challenge: 'Al Arabiya needed a modern, scalable news platform that could handle high traffic loads while providing a customizable, multi-platform experience during unprecedented global events.',
     solution: 'Led a global team through UX research, development, testing, and content delivery. Implemented a future-ready architecture with customizable components and multi-platform support.',
     results: [
@@ -78,6 +80,7 @@ const allProjects = [
       { label: 'Platforms', value: 'Multi', icon: <Globe className="w-6 h-6" /> }
     ],
     technologies: ['React', 'Next.js', 'GraphQL', 'CMS', 'CDN', 'Real-time APIs'],
+    caseStudyUrl: '/case-study/al-arabiya',
     timeline: '8 months',
     teamSize: '15+ global team'
   },
@@ -87,7 +90,7 @@ const allProjects = [
     company: 'Etihad Airways',
     category: 'Travel & Aviation',
     type: 'Enterprise',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png',
     logo: 'https://logos-world.net/wp-content/uploads/2020/11/Etihad-Airways-Logo.png',
     description: 'Complete overhaul of Etihad Airways\' booking system, replacing legacy flows with a user-centered journey that delivered immediate, measurable results.',
     challenge: 'The existing booking flow was outdated, complex, and didn\'t match how customers actually wanted to book flights, resulting in high abandonment rates.',
@@ -107,7 +110,117 @@ const allProjects = [
     ],
     technologies: ['React', 'Node.js', 'Payment APIs', 'A/B Testing', 'Analytics', 'Mobile-First'],
     timeline: '4 months',
-    teamSize: '8 people'
+    teamSize: '8 people',
+    caseStudyUrl: '/case-study/etihad-airways'
+  },
+  {
+    id: 'doh-health',
+    title: 'My Health Coach (DoH)',
+    company: 'Department of Health Abu Dhabi',
+    category: 'Government & Healthcare',
+    type: 'Enterprise',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Government_of_Abu_Dhabi_Logo.svg/500px-Government_of_Abu_Dhabi_Logo.svg.png',
+    description: 'Partnered with IBM to build standout health & fitness app for Abu Dhabi residents. Personalized wellness app integrating with Google Fit and Fitbit.',
+    challenge: 'Build a standout health app for government that exceeds market standards while partnering with IBM.',
+    solution: 'Suggested ambitious, innovative features to leapfrog existing market offerings with senior development team leadership.',
+    results: [
+      'Successfully launched standout health app for government',
+      'Provided valuable wellness resource for Abu Dhabi residents',
+      'Exceeded market standards in app development',
+      'Integrated with major fitness platforms',
+      'Delivered ambitious, innovative features'
+    ],
+    metrics: [
+      { label: 'Partnership', value: 'IBM', icon: <Building2 className="w-6 h-6" /> },
+      { label: 'Client', value: 'Government', icon: <Award className="w-6 h-6" /> },
+      { label: 'Standards', value: 'Exceeded', icon: <TrendingUp className="w-6 h-6" /> }
+    ],
+    technologies: ['Mobile Development', 'Health APIs', 'Google Fit', 'Fitbit', 'Government Compliance'],
+    timeline: '6 months',
+    teamSize: '12 people',
+    caseStudyUrl: '/case-study/doh-health'
+  },
+  {
+    id: 'arabian-malls',
+    title: 'Arabian Malls',
+    company: 'Premium Brand Experience',
+    category: 'Retail & Real Estate',
+    type: 'Enterprise',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png',
+    logo: 'https://img.icons8.com/color/96/shopping-mall.png',
+    description: 'Redesigned website with custom CMS, enhancing premium brand feel and receiving high praise for aesthetic excellence.',
+    challenge: 'Enhance user experience and content management while maintaining high-end, premium brand feel across devices.',
+    solution: 'Created modern palette inspired by brand, experimented with high-end design styles, and developed custom CMS.',
+    results: [
+      'Significantly improved client and visitor experience',
+      'Received high praise for aesthetic appeal and usability',
+      'Enhanced premium brand feel across all devices',
+      'Improved content discovery and management capabilities'
+    ],
+    metrics: [
+      { label: 'Experience', value: 'Enhanced', icon: <TrendingUp className="w-6 h-6" /> },
+      { label: 'CMS', value: 'Custom', icon: <Building2 className="w-6 h-6" /> },
+      { label: 'Praise', value: 'High', icon: <Award className="w-6 h-6" /> }
+    ],
+    technologies: ['Custom CMS', 'Premium Design', 'Responsive Web', 'Content Management'],
+    timeline: '4 months',
+    teamSize: '8 people',
+    caseStudyUrl: '/case-study/arabian-malls'
+  },
+  {
+    id: 'bfit-web3',
+    title: 'BFIT Web3',
+    company: 'Blockchain Fitness Platform',
+    category: 'Web3 & Fitness',
+    type: 'Enterprise',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
+    logo: 'https://img.icons8.com/color/96/blockchain-technology.png',
+    description: 'Transitioned Fitlink to Web 3.0 blockchain platform with native token, cryptocurrency rewards, and live beta testing.',
+    challenge: 'Transition existing fitness app to Web 3.0 world, including backend, API, and mobile apps for blockchain functionality.',
+    solution: 'Assembled specialized Web 3.0 team, created native token, designed tokenomics model, and launched beta platform.',
+    results: [
+      'Successfully created native token and tokenomics model',
+      'Redesigned platform for Web 3.0 blockchain functionality',
+      'Launched beta platform recording health data to blockchain',
+      'Enabled users to earn cryptocurrency through fitness'
+    ],
+    metrics: [
+      { label: 'Token', value: 'Created', icon: <Award className="w-6 h-6" /> },
+      { label: 'Beta', value: 'Live', icon: <TrendingUp className="w-6 h-6" /> },
+      { label: 'Crypto', value: 'Rewards', icon: <Zap className="w-6 h-6" /> }
+    ],
+    technologies: ['Blockchain', 'Web 3.0', 'Native Token', 'Cryptocurrency', 'Mobile Apps'],
+    timeline: '10 months',
+    teamSize: '15 people',
+    caseStudyUrl: '/case-study/bfit-web3'
+  },
+  {
+    id: 'genieology',
+    title: 'Genieology',
+    company: 'Creative Agency Transformation',
+    category: 'Digital Agency & Design',
+    type: 'Enterprise',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png',
+    logo: 'https://img.icons8.com/color/96/creative.png',
+    description: 'Responsive website with API-powered CMS achieving instant success and increased sales conversions for creative agency.',
+    challenge: 'Redesign outdated website to reflect agency growth and enhance content management capabilities.',
+    solution: 'Conducted extensive research, created mood boards, designed multiple iterations, and built responsive site with API-powered CMS.',
+    results: [
+      'Instant success with client and visitors',
+      'Contributed to increased sales conversions',
+      'Successfully reflected agency growth and capabilities',
+      'Enhanced content management capabilities'
+    ],
+    metrics: [
+      { label: 'Success', value: 'Instant', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Conversions', value: 'Increased', icon: <TrendingUp className="w-6 h-6" /> },
+      { label: 'CMS', value: 'API-powered', icon: <Building2 className="w-6 h-6" /> }
+    ],
+    technologies: ['Responsive Design', 'API CMS', 'Conversion Optimization', 'Performance'],
+    timeline: '3 months',
+    teamSize: '6 people',
+    caseStudyUrl: '/case-study/genieology'
   },
   // AI-Built Projects (link to existing case studies)
   {
@@ -116,7 +229,7 @@ const allProjects = [
     company: 'AI-Powered CRM Platform',
     category: 'SaaS & AI',
     type: 'AI-Built',
-    image: 'https://mediacdn.carrd.co/assets/images/image06.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledcrm1.png',
     logo: 'https://chilledsites.com/images/logo.svg',
     description: 'Next-generation CRM system built with AI at its core, delivering unprecedented efficiency and insights. Built in 4 weeks using AI-powered development.',
     caseStudyUrl: '/case-study/chilled-crm',
@@ -132,7 +245,7 @@ const allProjects = [
     company: 'AI-Powered Running Coach',
     category: 'HealthTech & AI',
     type: 'AI-Built',
-    image: 'https://mediacdn.carrd.co/assets/images/image13.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/rhythm1.png',
     logo: 'https://ai-running-app.netlify.app/favicon.svg',
     description: 'Find your perfect running rhythm with AI-powered coaching and adaptive music. Revolutionary fitness app built in just 1 week using AI development.',
     caseStudyUrl: '/case-study/rhythm',
@@ -148,7 +261,7 @@ const allProjects = [
     company: 'Music Collaboration Platform',
     category: 'Music & AI',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
     logo: 'https://img.icons8.com/color/96/musical-notes.png',
     description: 'Revolutionary music collaboration platform that connects artists worldwide with AI-powered matching and real-time collaboration tools.',
     caseStudyUrl: '/case-study/harmony',
@@ -163,7 +276,7 @@ const allProjects = [
     company: 'Healthcare Booking System',
     category: 'HealthTech',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/clinicbook1.png',
     logo: 'https://img.icons8.com/color/96/health-book.png',
     description: 'Comprehensive healthcare booking and management system with AI-powered scheduling optimization and patient management.',
     caseStudyUrl: '/case-study/clinic-book',
@@ -178,7 +291,7 @@ const allProjects = [
     company: 'Wellness & Meditation App',
     category: 'HealthTech & AI',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/serenity1.png',
     logo: 'https://img.icons8.com/color/96/lotus.png',
     description: 'AI-powered wellness and meditation platform with personalized mindfulness programs and mental health tracking.',
     caseStudyUrl: '/case-study/serenity',
@@ -193,7 +306,7 @@ const allProjects = [
     company: 'Social Fitness Platform',
     category: 'HealthTech & Social',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fitlink1.png',
     logo: 'https://img.icons8.com/color/96/dumbbell.png',
     description: 'Social fitness platform connecting fitness enthusiasts worldwide with AI-powered workout recommendations and community features.',
     caseStudyUrl: '/case-study/fitlink',
@@ -208,7 +321,7 @@ const allProjects = [
     company: 'Salon Management Platform',
     category: 'Business Tools',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/barber1.png',
     logo: 'https://img.icons8.com/color/96/scissors.png',
     description: 'Complete salon and barber shop management system with AI-powered scheduling, customer management, and business analytics.',
     caseStudyUrl: '/case-study/barber-booking',
@@ -223,7 +336,7 @@ const allProjects = [
     company: 'AI-Powered Gifting Platform',
     category: 'E-commerce & AI',
     type: 'AI-Built',
-    image: 'https://mediacdn.carrd.co/assets/images/image01.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift.png',
     logo: 'https://img.icons8.com/color/96/gift.png',
     description: 'Revolutionizing personalized gifting with AI-driven design and seamless booking experiences.',
     caseStudyUrl: '/case-study/experience-a-gift',

@@ -4,10 +4,18 @@ import SubHeader from '../SubHeader';
 
 interface CaseHeroProps {
   title: string;
+  subtitle?: string;
   description: string;
+  image?: string;
   backgroundImage?: string;
   backgroundVideo?: string;
   logo?: string;
+  industry?: string;
+  timeline?: string;
+  teamSize?: string;
+  technologies?: string[];
+  features?: string[];
+  results?: string[];
   theme?: 'light' | 'dark';
   overlayColor?: string;
   stats?: Array<{ label: string; value: string }>;
@@ -15,10 +23,18 @@ interface CaseHeroProps {
 
 export default function CaseHero({
   title,
+  subtitle,
   description,
+  image,
   backgroundImage,
   backgroundVideo,
   logo,
+  industry,
+  timeline,
+  teamSize,
+  technologies,
+  features,
+  results,
   theme = 'light',
   overlayColor = 'from-black/80 to-black/60',
   stats
@@ -39,9 +55,9 @@ export default function CaseHero({
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
-        ) : backgroundImage ? (
+        ) : (backgroundImage || image) ? (
           <img
-            src={backgroundImage}
+            src={backgroundImage || image}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover object-center transform scale-105"
           />
@@ -85,6 +101,19 @@ export default function CaseHero({
 
           {/* Enhanced Title Section */}
           <div className="text-center mb-20">
+            {subtitle && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mb-4"
+              >
+                <span className="inline-block px-4 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full text-blue-200 text-sm font-medium border border-blue-400/30">
+                  {subtitle}
+                </span>
+              </motion.div>
+            )}
+            
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -104,6 +133,32 @@ export default function CaseHero({
             >
               {description}
             </motion.p>
+
+            {/* Project Details */}
+            {(industry || timeline || teamSize) && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-wrap justify-center gap-4 mt-8"
+              >
+                {industry && (
+                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm border border-white/20">
+                    {industry}
+                  </span>
+                )}
+                {timeline && (
+                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm border border-white/20">
+                    {timeline}
+                  </span>
+                )}
+                {teamSize && (
+                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm border border-white/20">
+                    {teamSize}
+                  </span>
+                )}
+              </motion.div>
+            )}
           </div>
 
           {/* Enhanced Stats Grid */}

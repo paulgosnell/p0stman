@@ -5,15 +5,21 @@ import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 interface BenefitsProps {
   title: string;
   description: string;
-  image: string;
+  items: Array<{
+    title: string;
+    description: string;
+    metric: string;
+  }>;
+  image?: string;
   secondaryImage?: string;
-  points: string[];
+  points?: string[];
   theme?: 'light' | 'dark';
 }
 
 export default function Benefits({
   title,
   description,
+  items,
   image,
   secondaryImage,
   points,
@@ -71,7 +77,37 @@ export default function Benefits({
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Benefits Grid */}
             <div className="grid md:grid-cols-2 gap-4">
-              {points.map((point, index) => (
+              {items ? items.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
+                  {/* Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Card */}
+                  <div className="relative bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-green-100/50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    {/* Icon */}
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
+                      <TrendingUp className="w-6 h-6 text-white" />
+                    </div>
+                    
+                    {/* Content */}
+                    <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
+                    <p className="text-gray-700 leading-relaxed text-sm mb-3">
+                      {item.description}
+                    </p>
+                    <div className="text-lg font-bold text-green-600">{item.metric}</div>
+                    
+                    {/* Bottom Accent */}
+                    <div className="absolute bottom-0 left-6 right-6 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  </div>
+                </motion.div>
+              )) : points && points.map((point, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20, scale: 0.9 }}

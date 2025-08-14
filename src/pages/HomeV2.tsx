@@ -24,7 +24,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
-import CaseStudyModal from '../components/modals/CaseStudyModal';
+
 import ProjectConfigurator from '../components/ProjectConfigurator';
 import AnimatedFooter from '../components/AnimatedFooter';
 
@@ -106,10 +106,11 @@ const featuredProjects = [
     title: 'Enterprise Digital Transformation',
     company: 'First Abu Dhabi Bank',
     category: 'Banking & Finance',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/First_Abu_Dhabi_Bank_Logo.svg/500px-First_Abu_Dhabi_Bank_Logo.svg.png',
-    description: 'Led a comprehensive digital transformation initiative that evolved from a single innovation lab project into an 18-month enterprise-wide transformation program.',
+    description: 'Started with Innovation Lab project that impressed multiple departments, leading to 18-month transformation with 40-50 experts across various departments.',
     type: 'enterprise',
+    caseStudyUrl: '/case-study/fab-bank',
     challenge: 'FAB needed to modernize their digital infrastructure and create scalable, reusable systems across multiple departments while maintaining security and compliance standards.',
     solution: 'Built enterprise-grade platforms with unified design systems and code libraries. Established cross-functional teams and agile delivery processes to ensure consistent, high-quality output.',
     results: [
@@ -130,18 +131,18 @@ const featuredProjects = [
     ]
   },
   {
-    id: 'chilled-crm',
-    title: 'Chilled CRM',
-    company: 'AI-Powered CRM Platform',
-    category: 'SaaS & AI',
-    image: 'https://mediacdn.carrd.co/assets/images/image06.png',
-    logo: 'https://chilledsites.com/images/logo.svg',
-    description: 'Next-generation CRM system built with AI at its core, delivering unprecedented efficiency and insights. Built in 4 weeks using AI-powered development.',
-    type: 'ai-built',
-    caseStudyUrl: '/case-study/chilled-crm',
+    id: 'doh-health',
+    title: 'My Health Coach',
+    company: 'Department of Health Abu Dhabi',
+    category: 'Government & Healthcare',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png',
+    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/doh-logo.png',
+    description: 'Partnered with IBM to build standout health & fitness app for Abu Dhabi residents. Personalized wellness app integrating with Google Fit and Fitbit.',
+    type: 'enterprise',
+    caseStudyUrl: '/case-study/doh-health',
     metrics: [
-      { label: 'Build Time', value: '4 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Cost Saving', value: '70%', icon: <TrendingUp className="w-6 h-6" /> }
+      { label: 'Partnership', value: 'IBM', icon: <Building2 className="w-6 h-6" /> },
+      { label: 'Client', value: 'Government', icon: <Award className="w-6 h-6" /> }
     ]
   },
   {
@@ -149,10 +150,11 @@ const featuredProjects = [
     title: 'News Platform Redesign',
     company: 'Al Arabiya',
     category: 'Media & Broadcasting',
-    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png',
-    description: 'Complete platform redesign and rebuild of Al Arabiya\'s news experience, delivered during the global pandemic with a distributed international team.',
+    description: 'Led international team of 20 to modernize leading news brand during COVID-19. Created personalized, customizable news experience from ground up.',
     type: 'enterprise',
+    caseStudyUrl: '/case-study/al-arabiya',
     challenge: 'Al Arabiya needed a modern, scalable news platform that could handle high traffic loads while providing a customizable, multi-platform experience during unprecedented global events.',
     solution: 'Led a global team through UX research, development, testing, and content delivery. Implemented a future-ready architecture with customizable components and multi-platform support.',
     results: [
@@ -173,18 +175,18 @@ const featuredProjects = [
     ]
   },
   {
-    id: 'rhythm',
-    title: 'Rhythm',
-    company: 'AI-Powered Running Coach',
-    category: 'HealthTech & AI',
-    image: 'https://mediacdn.carrd.co/assets/images/image13.png',
-    logo: 'https://ai-running-app.netlify.app/favicon.svg',
-    description: 'Find your perfect running rhythm with AI-powered coaching and adaptive music. Revolutionary fitness app built in just 1 week using AI development.',
-    type: 'ai-built',
-    caseStudyUrl: '/case-study/rhythm',
+    id: 'genieology',
+    title: 'Genieology',
+    company: 'Creative Agency',
+    category: 'Digital Agency & Design',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png',
+    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp',
+    description: 'Responsive website with API-powered CMS for creative agency transformation. Instant success with client and visitors, contributing to increased sales conversions.',
+    type: 'enterprise',
+    caseStudyUrl: '/case-study/genieology',
     metrics: [
-      { label: 'Build Time', value: '1 week', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Performance', value: '+45%', icon: <TrendingUp className="w-6 h-6" /> }
+      { label: 'Conversions', value: 'Increased', icon: <TrendingUp className="w-6 h-6" /> },
+      { label: 'Success', value: 'Instant', icon: <Zap className="w-6 h-6" /> }
     ]
   }
 ];
@@ -192,20 +194,37 @@ const featuredProjects = [
 // Additional showcase projects for the smaller cards
 const additionalProjects = [
   {
+    id: 'etihad-airways',
+    title: 'Etihad Airways',
+    company: 'Booking System Innovation',
+    category: 'Airlines & Travel',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png',
+    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad-logo.png',
+    caseStudyUrl: '/case-study/etihad-airways'
+  },
+  {
+    id: 'arabian-malls',
+    title: 'Arabian Malls',
+    company: 'Premium Brand Experience',
+    category: 'Retail & Real Estate',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png',
+    caseStudyUrl: '/case-study/arabian-malls'
+  },
+  {
+    id: 'bfit-web3',
+    title: 'BFIT Web3',
+    company: 'Blockchain Fitness Platform',
+    category: 'Web3 & Fitness',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
+    caseStudyUrl: '/case-study/bfit-web3'
+  },
+  {
     id: 'harmony',
     title: 'Harmony',
     company: 'Music Collaboration Platform',
     category: 'Music & AI',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
     caseStudyUrl: '/case-study/harmony'
-  },
-  {
-    id: 'clinic-book',
-    title: 'ClinicBook',
-    company: 'Healthcare Booking System',
-    category: 'HealthTech',
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1000&q=80',
-    caseStudyUrl: '/case-study/clinic-book'
   }
 ];
 
@@ -213,8 +232,7 @@ const additionalProjects = [
 export default function HomeV2() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [currentVideoId, setCurrentVideoId] = useState("");
-  const [showCaseStudyModal, setShowCaseStudyModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null);
+
   const [showProjectConfigurator, setShowProjectConfigurator] = useState(false);
 
   const openVideo = (videoId: string) => {
@@ -222,10 +240,7 @@ export default function HomeV2() {
     setShowVideoModal(true);
   };
 
-  const openCaseStudy = (project: typeof projectsData[0]) => {
-    setSelectedProject(project);
-    setShowCaseStudyModal(true);
-  };
+
 
   return (
     <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
@@ -715,8 +730,8 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer"
-                  onClick={() => project.caseStudyUrl ? window.location.href = project.caseStudyUrl : openCaseStudy(project)}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer bg-white"
+                  onClick={() => window.location.href = project.caseStudyUrl}
                 >
                   {/* Project Image */}
                   <div className="relative h-64 overflow-hidden">
@@ -725,55 +740,61 @@ export default function HomeV2() {
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                    {/* Logo Overlay */}
-                    {project.logo && (
-                      <div className="absolute top-4 left-4">
-                        <img
-                          src={project.logo}
-                          alt={`${project.company} logo`}
-                          className="h-8 w-auto filter drop-shadow-lg opacity-90"
-                        />
-                      </div>
-                    )}
-
+                    
                     {/* Category Badge */}
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-lg">
                         {project.category}
                       </span>
                     </div>
 
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <ExternalLink className="w-8 h-8 text-white" />
+                    {/* Hover Description Overlay */}
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6">
+                      <div className="text-center text-white">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
+                          <ExternalLink className="w-8 h-8 text-white" />
+                        </div>
+                        <p className="text-white text-sm leading-relaxed">
+                          {project.description}
+                        </p>
+                        {/* Key Metrics on Hover */}
+                        {project.metrics && (
+                          <div className="flex justify-center gap-6 mt-4">
+                            {project.metrics.slice(0, 2).map((metric, i) => (
+                              <div key={i} className="text-center">
+                                <div className="text-lg font-bold text-white">{metric.value}</div>
+                                <div className="text-xs text-white/70">{metric.label}</div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
 
-                  {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-white/90 font-medium mb-2">{project.company}</p>
-                    <p className="text-white/80 text-sm line-clamp-2">
-                      {project.description}
-                    </p>
-
-                    {/* Key Metrics Preview */}
-                    {project.metrics && (
-                      <div className="flex gap-4 mt-4">
-                        {project.metrics.slice(0, 2).map((metric, i) => (
-                          <div key={i} className="text-center">
-                            <div className="text-lg font-bold text-white">{metric.value}</div>
-                            <div className="text-xs text-white/70">{metric.label}</div>
-                          </div>
-                        ))}
+                  {/* Bottom Content - Clean Layout */}
+                  <div className="p-6">
+                    {/* Logo and Company */}
+                    <div className="flex items-center gap-3 mb-3">
+                      {project.logo && (
+                        <img
+                          src={project.logo}
+                          alt={`${project.company} logo`}
+                          className="h-8 w-auto"
+                        />
+                      )}
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm font-medium">{project.company}</p>
                       </div>
-                    )}
+                    </div>
+                    
+                    {/* Industry Category */}
+                    <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">
+                      {project.category}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -788,24 +809,35 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
                   viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer"
+                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer bg-white"
                   onClick={() => window.location.href = project.caseStudyUrl}
                 >
-                  <div className="relative h-32">
+                  <div className="relative h-40">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute top-4 right-4">
-                      <span className="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                    <div className="absolute top-3 right-3">
+                      <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-sm">
                         {project.category}
                       </span>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h4 className="font-bold text-white mb-1">{project.title}</h4>
-                      <p className="text-white/90 text-sm">{project.company}</p>
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <ExternalLink className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Bottom Content */}
+                  <div className="p-4">
+                    <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h4>
+                    <p className="text-gray-600 text-sm font-medium">{project.company}</p>
+                    <div className="text-xs text-gray-500 uppercase tracking-wide font-medium mt-1">
+                      {project.category}
                     </div>
                   </div>
                 </motion.div>
@@ -889,11 +921,7 @@ export default function HomeV2() {
         videoId={currentVideoId}
       />
 
-      <CaseStudyModal
-        isOpen={showCaseStudyModal}
-        onClose={() => setShowCaseStudyModal(false)}
-        project={selectedProject}
-      />
+
 
       <AnimatedFooter onOpenProjectConfigurator={() => setShowProjectConfigurator(true)} />
 
