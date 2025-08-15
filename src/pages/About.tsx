@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, BriefcaseIcon, MapPin, User, Award, Zap, Code, Brain, Rocket, CheckCircle } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
+import AnimatedFooter from '../components/AnimatedFooter';
 
 const highlights = [
   {
@@ -244,6 +245,8 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        <AnimatedFooter />
       </div>
     </HelmetProvider>
   );

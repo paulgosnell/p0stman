@@ -8,6 +8,7 @@ import ContactForm from '../components/contact/ContactForm';
 import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import ServicesGrid from '../components/ServicesGrid';
+import AnimatedFooter from '../components/AnimatedFooter';
 
 export default function ContactPage() {
   const [ref, inView] = useInView({
@@ -108,6 +109,8 @@ export default function ContactPage() {
 
         <ContactFAQ />
         <ServicesGrid />
+        
+        <AnimatedFooter />
       </div>
     </HelmetProvider>
   );
