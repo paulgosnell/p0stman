@@ -74,7 +74,7 @@ export default function Benefits({
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className={`${image ? 'grid lg:grid-cols-2 gap-16 items-start' : 'max-w-6xl mx-auto'}`}>
             {/* Left Column - Benefits Grid */}
             <div className="grid md:grid-cols-2 gap-4">
               {items ? items.map((item, index) => (
@@ -139,13 +139,14 @@ export default function Benefits({
             </div>
 
             {/* Right Column - Image Showcase */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            {image && (
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
               {images.length > 1 ? (
                 <div className="relative">
                   <AnimatePresence mode="wait">
@@ -161,11 +162,12 @@ export default function Benefits({
                       <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-3xl blur-2xl transform rotate-3" />
                       
                       {/* Image Container */}
-                      <div className="relative bg-white p-4 rounded-3xl shadow-2xl">
+                      <div className="relative bg-white p-6 rounded-3xl shadow-2xl">
                         <img
                           src={images[currentImageIndex]}
                           alt={`Result ${currentImageIndex + 1}`}
                           className="w-full rounded-2xl shadow-lg"
+                          style={{ minHeight: '400px', objectFit: 'cover' }}
                         />
                       </div>
                     </motion.div>
@@ -210,16 +212,18 @@ export default function Benefits({
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-3xl blur-2xl transform rotate-3" />
                   
                   {/* Image Container */}
-                  <div className="relative bg-white p-4 rounded-3xl shadow-2xl">
+                  <div className="relative bg-white p-6 rounded-3xl shadow-2xl">
                     <img
                       src={image}
                       alt="Results"
                       className="w-full rounded-2xl shadow-lg transform transition-all duration-700 hover:scale-105"
+                      style={{ minHeight: '400px', objectFit: 'cover' }}
                     />
                   </div>
                 </div>
               )}
-            </motion.div>
+              </motion.div>
+            )}
           </div>
 
           {/* Bottom Summary */}

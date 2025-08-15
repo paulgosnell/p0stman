@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Bot, 
-  Zap, 
-  Rocket, 
-  Brain, 
-  Code, 
-  Users, 
-  Globe, 
+import {
+  ChevronLeft,
+  ChevronRight,
+  Bot,
+  Zap,
+  Rocket,
+  Brain,
+  Code,
+  Users,
+  Globe,
   Award,
   ExternalLink,
   Mail,
@@ -262,7 +262,7 @@ const Hello: React.FC = () => {
                   }}
                 />
               ))}
-              
+
               <div className="flex items-center justify-center space-x-4 mb-6 relative z-10">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -284,9 +284,9 @@ const Hello: React.FC = () => {
                 </motion.div>
               </div>
               <div className="text-center relative z-10">
-                <motion.div 
+                <motion.div
                   className="text-2xl font-bold mb-2"
-                  animate={{ 
+                  animate={{
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
@@ -359,14 +359,14 @@ const Hello: React.FC = () => {
                   />
                 ))}
               </div>
-              
+
               <div className="flex items-center justify-center mb-6 relative z-10">
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: [0, 360],
                     scale: [1, 1.1, 1]
                   }}
-                  transition={{ 
+                  transition={{
                     rotate: { duration: 4, repeat: Infinity, ease: "linear" },
                     scale: { duration: 2, repeat: Infinity }
                   }}
@@ -374,14 +374,14 @@ const Hello: React.FC = () => {
                   <Brain className="w-16 h-16" />
                 </motion.div>
               </div>
-              
+
               <div className="grid grid-cols-3 gap-4 text-center relative z-10">
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-3xl font-bold"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
@@ -395,7 +395,7 @@ const Hello: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-3xl font-bold"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
@@ -409,7 +409,7 @@ const Hello: React.FC = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-3xl font-bold"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, delay: 1.5 }}
@@ -470,73 +470,73 @@ const Hello: React.FC = () => {
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                   {[
-                    { 
-                      name: 'Claude Sonnet', 
-                      type: 'AI Model', 
+                    {
+                      name: 'Claude Sonnet',
+                      type: 'AI Model',
                       color: 'from-orange-500 to-red-500',
                       logo: '🧠'
                     },
-                    { 
-                      name: 'GPT-4o', 
-                      type: 'AI Model', 
+                    {
+                      name: 'GPT-4o',
+                      type: 'AI Model',
                       color: 'from-green-500 to-teal-500',
                       logo: '⚡'
                     },
-                    { 
-                      name: 'Gemini 2.0', 
-                      type: 'AI Model', 
+                    {
+                      name: 'Gemini 2.0',
+                      type: 'AI Model',
                       color: 'from-blue-500 to-indigo-500',
                       logo: '💎'
                     },
-                    { 
-                      name: 'Cursor', 
-                      type: 'AI IDE', 
+                    {
+                      name: 'Cursor',
+                      type: 'AI IDE',
                       color: 'from-purple-500 to-pink-500',
                       logo: '🎯'
                     },
-                    { 
-                      name: 'Kiro', 
-                      type: 'AI Assistant', 
+                    {
+                      name: 'Kiro',
+                      type: 'AI Assistant',
                       color: 'from-cyan-500 to-blue-500',
                       logo: '🤖'
                     },
-                    { 
-                      name: 'Bolt.new', 
-                      type: 'AI Builder', 
+                    {
+                      name: 'Bolt.new',
+                      type: 'AI Builder',
                       color: 'from-yellow-500 to-orange-500',
                       logo: '⚡'
                     },
-                    { 
-                      name: 'Claude Artifacts', 
-                      type: 'AI Code', 
+                    {
+                      name: 'Claude Artifacts',
+                      type: 'AI Code',
                       color: 'from-indigo-500 to-purple-500',
                       logo: '🔧'
                     },
-                    { 
-                      name: 'V0 by Vercel', 
-                      type: 'AI UI', 
+                    {
+                      name: 'V0 by Vercel',
+                      type: 'AI UI',
                       color: 'from-gray-600 to-gray-800',
                       logo: '🎨'
                     }
                   ].map((tool, index) => (
                     <motion.div
                       key={index}
-                      initial={{ 
-                        y: 50, 
+                      initial={{
+                        y: 50,
                         opacity: 0,
                         rotateX: -90
                       }}
-                      animate={{ 
-                        y: 0, 
+                      animate={{
+                        y: 0,
                         opacity: 1,
                         rotateX: 0
                       }}
-                      transition={{ 
+                      transition={{
                         delay: 0.5 + index * 0.1,
                         duration: 0.6,
                         type: "spring"
                       }}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.05,
                         rotateY: 10,
                         transition: { duration: 0.2 }
@@ -552,15 +552,15 @@ const Hello: React.FC = () => {
                         }}
                         transition={{ duration: 0.6 }}
                       />
-                      
-                      <motion.div 
+
+                      <motion.div
                         className="text-2xl mb-2"
-                        animate={{ 
+                        animate={{
                           rotate: [0, 10, -10, 0],
                           scale: [1, 1.1, 1]
                         }}
-                        transition={{ 
-                          duration: 2 + index * 0.2, 
+                        transition={{
+                          duration: 2 + index * 0.2,
                           repeat: Infinity,
                           delay: index * 0.3
                         }}
@@ -607,22 +607,22 @@ const Hello: React.FC = () => {
             ].map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ 
-                  y: 50, 
+                initial={{
+                  y: 50,
                   opacity: 0,
                   rotateX: -90
                 }}
-                animate={{ 
-                  y: 0, 
+                animate={{
+                  y: 0,
                   opacity: 1,
                   rotateX: 0
                 }}
-                transition={{ 
+                transition={{
                   delay: index * 0.15,
                   duration: 0.6,
                   type: "spring"
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   rotateY: 5,
                   transition: { duration: 0.2 }
@@ -645,9 +645,9 @@ const Hello: React.FC = () => {
                     backgroundSize: "20px 20px"
                   }}
                 />
-                
+
                 <div className="flex items-center space-x-3 mb-2 relative z-10">
-                  <motion.div 
+                  <motion.div
                     className="bg-white bg-opacity-20 p-2 rounded-lg"
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -727,13 +727,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png"
                 alt="ChilledCRM Dashboard"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -759,7 +759,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Management</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Healthcare Innovation</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -784,13 +784,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png"
                 alt="Rhythm AI Running Coach"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -816,7 +816,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Automation</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">AI Innovation</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -841,13 +841,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png"
                 alt="Fitlink Wellness Platform"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -873,7 +873,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Transform</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Enterprise Success</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -898,13 +898,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png"
                 alt="Harmony Music Platform"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -913,28 +913,28 @@ const Hello: React.FC = () => {
               className="space-y-4"
             >
               <div className="grid grid-cols-2 gap-4">
-                <motion.div 
+                <motion.div
                   className="bg-pink-500 rounded-xl p-4 text-white text-center"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                 >
                   <div className="text-2xl font-bold">2</div>
                   <div className="text-sm opacity-90">Weeks Build</div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="bg-purple-500 rounded-xl p-4 text-white text-center"
                   whileHover={{ scale: 1.05, rotate: -2 }}
                 >
                   <div className="text-2xl font-bold">Global</div>
                   <div className="text-sm opacity-90">Artists</div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="bg-indigo-500 rounded-xl p-4 text-white text-center"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                 >
                   <div className="text-2xl font-bold">Real</div>
                   <div className="text-sm opacity-90">Time Collab</div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="bg-blue-500 rounded-xl p-4 text-white text-center"
                   whileHover={{ scale: 1.05, rotate: -2 }}
                 >
@@ -942,7 +942,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Matching</div>
                 </motion.div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Music Revolution</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -967,13 +967,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png"
                 alt="Serenity Wellness Platform"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -982,9 +982,9 @@ const Hello: React.FC = () => {
               className="space-y-4"
             >
               <div className="grid grid-cols-2 gap-4">
-                <motion.div 
+                <motion.div
                   className="bg-indigo-500 rounded-xl p-4 text-white text-center"
-                  animate={{ 
+                  animate={{
                     boxShadow: [
                       "0 0 0 0 rgba(99, 102, 241, 0.4)",
                       "0 0 0 10px rgba(99, 102, 241, 0)",
@@ -1008,7 +1008,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Airline</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Booking Innovation</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -1033,13 +1033,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png"
                 alt="ClinicBook Healthcare Platform"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -1065,7 +1065,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Live</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Web3 Innovation</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -1090,13 +1090,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png"
                 alt="Arabian Center Digital Mall"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -1122,7 +1122,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Journey</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Mall Innovation</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -1147,13 +1147,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png"
                 alt="Al Arabiya News Platform"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -1179,7 +1179,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Partnership</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">News Innovation</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -1204,13 +1204,13 @@ const Hello: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative flex items-center justify-center"
             >
-              <img 
-                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift.png" 
+              <img
+                src="https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift.png"
                 alt="Experience A Gift Platform"
                 className="w-full h-auto"
               />
             </motion.div>
-            
+
             {/* Stats & Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -1236,7 +1236,7 @@ const Hello: React.FC = () => {
                   <div className="text-sm opacity-90">Platform</div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-xl p-4 shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">Gifting Revolution</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -1266,22 +1266,22 @@ const Hello: React.FC = () => {
             ].map((project, index) => (
               <motion.div
                 key={index}
-                initial={{ 
-                  scale: 0, 
+                initial={{
+                  scale: 0,
                   opacity: 0,
                   rotateY: -180
                 }}
-                animate={{ 
-                  scale: 1, 
+                animate={{
+                  scale: 1,
                   opacity: 1,
                   rotateY: 0
                 }}
-                transition={{ 
+                transition={{
                   delay: index * 0.1,
                   duration: 0.6,
                   type: "spring"
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.1,
                   rotateY: 10,
                   z: 50
@@ -1294,8 +1294,8 @@ const Hello: React.FC = () => {
                   whileHover={{ opacity: 0.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                
-                <motion.div 
+
+                <motion.div
                   className="flex justify-center mb-2"
                   animate={{ rotate: [0, 360] }}
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -1331,7 +1331,7 @@ const Hello: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Info */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -1349,7 +1349,7 @@ const Hello: React.FC = () => {
                     <div>• AI development pioneer</div>
                   </div>
                 </div>
-                
+
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-4 text-white">
                   <h4 className="font-semibold mb-2">Global Reach</h4>
                   <div className="text-sm space-y-1">
@@ -1389,7 +1389,7 @@ const Hello: React.FC = () => {
                 }}
               />
             ))}
-            
+
             <motion.div
               initial={{ y: 50, opacity: 0, scale: 0.8 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -1411,21 +1411,21 @@ const Hello: React.FC = () => {
                   backgroundSize: "200% 200%"
                 }}
               />
-              
+
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
                   rotateY: [0, 360]
                 }}
-                transition={{ 
+                transition={{
                   y: { duration: 2, repeat: Infinity },
                   rotateY: { duration: 4, repeat: Infinity }
                 }}
               >
                 <Rocket className="w-16 h-16 mx-auto mb-4" />
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="text-3xl font-bold mb-4"
                 animate={{
                   scale: [1, 1.05, 1],
@@ -1439,13 +1439,13 @@ const Hello: React.FC = () => {
               >
                 Ready to Launch?
               </motion.div>
-              
+
               <div className="space-y-4 relative z-10">
                 <motion.a
                   href="https://p0stman.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
                     boxShadow: "0 10px 30px rgba(255,255,255,0.3)"
                   }}
@@ -1460,10 +1460,10 @@ const Hello: React.FC = () => {
                     <ExternalLink className="w-5 h-5" />
                   </motion.div>
                 </motion.a>
-                
+
                 <motion.a
                   href="mailto:paul@p0stman.com"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.1,
                     backgroundColor: "rgba(255,255,255,0.2)"
                   }}
@@ -1508,16 +1508,16 @@ const Hello: React.FC = () => {
               <motion.div
                 key={i}
                 className={`absolute bg-white rounded-full ${i % 3 === 0 ? 'w-2 h-2' : 'w-1 h-1'}`}
-                initial={{ 
+                initial={{
                   opacity: 0,
                   scale: 0
                 }}
-                animate={{ 
+                animate={{
                   opacity: [0, 1, 0.5, 1, 0],
                   scale: [0, 1, 0.8, 1.2, 0],
                   rotate: 360
                 }}
-                transition={{ 
+                transition={{
                   duration: Math.random() * 8 + 4,
                   delay: i * 0.1,
                   repeat: Infinity,
@@ -1535,17 +1535,17 @@ const Hello: React.FC = () => {
               <motion.div
                 key={i}
                 className="absolute w-1 h-1 bg-white rounded-full"
-                initial={{ 
-                  x: -100, 
+                initial={{
+                  x: -100,
                   y: Math.random() * 200 + 50,
                   opacity: 0
                 }}
-                animate={{ 
+                animate={{
                   x: 600,
                   y: Math.random() * 200 + 150,
                   opacity: [0, 1, 1, 0]
                 }}
-                transition={{ 
+                transition={{
                   duration: 2,
                   delay: i * 3,
                   repeat: Infinity,
@@ -1562,7 +1562,7 @@ const Hello: React.FC = () => {
               className="absolute w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full shadow-2xl"
               style={{ left: '15%', top: '25%' }}
               animate={{ rotate: 360 }}
-              transition={{ 
+              transition={{
                 duration: 15,
                 repeat: Infinity,
                 ease: "linear"
@@ -1575,7 +1575,7 @@ const Hello: React.FC = () => {
               className="absolute w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-full shadow-2xl"
               style={{ left: '75%', top: '15%' }}
               animate={{ rotate: 360 }}
-              transition={{ 
+              transition={{
                 duration: 25,
                 repeat: Infinity,
                 ease: "linear"
@@ -1588,7 +1588,7 @@ const Hello: React.FC = () => {
               className="absolute w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-2xl"
               style={{ left: '60%', top: '70%' }}
               animate={{ rotate: 360 }}
-              transition={{ 
+              transition={{
                 duration: 40,
                 repeat: Infinity,
                 ease: "linear"
@@ -1601,11 +1601,11 @@ const Hello: React.FC = () => {
             <motion.div
               className="absolute w-48 h-48 rounded-full opacity-20 blur-xl bg-gradient-to-br from-pink-500 to-purple-500"
               style={{ left: '20%', top: '40%' }}
-              animate={{ 
+              animate={{
                 scale: [1, 1.2, 0.8, 1],
                 opacity: [0.2, 0.4, 0.1, 0.2]
               }}
-              transition={{ 
+              transition={{
                 duration: 8,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -1615,11 +1615,11 @@ const Hello: React.FC = () => {
             <motion.div
               className="absolute w-32 h-32 rounded-full opacity-20 blur-xl bg-gradient-to-br from-blue-500 to-cyan-500"
               style={{ left: '70%', top: '20%' }}
-              animate={{ 
+              animate={{
                 scale: [1, 1.3, 0.7, 1],
                 opacity: [0.2, 0.3, 0.1, 0.2]
               }}
-              transition={{ 
+              transition={{
                 duration: 6,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -1630,11 +1630,11 @@ const Hello: React.FC = () => {
             <motion.div
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               initial={{ scale: 0, rotate: -180 }}
-              animate={{ 
+              animate={{
                 scale: [0, 1.2, 1],
                 rotate: [0, 360, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 2,
                 ease: "easeOut"
               }}
@@ -1643,7 +1643,7 @@ const Hello: React.FC = () => {
                 <div className="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
                   <Rocket className="w-16 h-16 text-white" />
                 </div>
-                
+
                 {/* Orbiting Icons */}
                 {[Sparkles, Zap, Globe, Bot].map((Icon, i) => (
                   <motion.div
@@ -1678,7 +1678,7 @@ const Hello: React.FC = () => {
                 key={i}
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white/20 rounded-full"
                 initial={{ scale: 0, opacity: 1 }}
-                animate={{ 
+                animate={{
                   scale: [0, 3, 4],
                   opacity: [1, 0.5, 0]
                 }}
@@ -1698,24 +1698,24 @@ const Hello: React.FC = () => {
             {/* Floating Messages */}
             {[
               "🚀 Built with AI",
-              "✨ Infinite Possibilities", 
+              "✨ Infinite Possibilities",
               "🌟 Future of Development",
               "🛸 P0STMAN Universe"
             ].map((message, i) => (
               <motion.div
                 key={i}
                 className="absolute bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 text-white text-sm"
-                style={{ 
-                  left: `${20 + i * 20}%`, 
-                  top: `${30 + (i % 2) * 40}%` 
+                style={{
+                  left: `${20 + i * 20}%`,
+                  top: `${30 + (i % 2) * 40}%`
                 }}
                 initial={{ opacity: 0, scale: 0, y: 20 }}
-                animate={{ 
+                animate={{
                   opacity: [0, 1, 1, 0],
                   scale: [0, 1, 1, 0],
                   y: [20, 0, 0, -20]
                 }}
-                transition={{ 
+                transition={{
                   duration: 6,
                   delay: 2 + i * 1.5,
                   repeat: Infinity,
@@ -1833,7 +1833,7 @@ const Hello: React.FC = () => {
                       {slides[currentSlide].content}
                     </p>
                   </motion.div>
-                  
+
                   {/* Visual Content */}
                   <div className="flex justify-center">
                     <div className="w-full">
@@ -1916,9 +1916,8 @@ const Hello: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
+                }`}
             />
           ))}
         </div>

@@ -156,24 +156,33 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-blue-700 hover:to-purple-700 transition-all"
-              onClick={() => window.open('https://calendly.com/your-link', '_blank')}
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-blue-700 hover:to-blue-800 transition-all"
+              onClick={() => window.open('https://t.me/g00zzy', '_blank')}
             >
-              <Calendar className="w-5 h-5" />
-              Book Strategy Call
+              <MessageSquare className="w-5 h-5" />
+              Telegram
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="flex-1 bg-white/10 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-white/20 transition-all border border-white/20"
-              onClick={() => window.open('mailto:hello@p0stman.com?subject=Project Inquiry&body=Hi Paul, I used your project configurator and would like to discuss my project.', '_blank')}
+              className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-green-700 hover:to-green-800 transition-all"
+              onClick={() => window.open('https://wa.me/971568471173', '_blank')}
             >
               <MessageSquare className="w-5 h-5" />
-              Send Details
+              WhatsApp
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-white/10 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-white/20 transition-all border border-white/20"
+              onClick={() => window.open('mailto:paul@p0stman.com?subject=Project Inquiry&body=Hi Paul, I used your project configurator and would like to discuss my project.', '_blank')}
+            >
+              <MessageSquare className="w-5 h-5" />
+              Email
             </motion.button>
           </div>
         </motion.div>

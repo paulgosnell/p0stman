@@ -35,7 +35,7 @@ const results = [
 
 const challenge = {
   title: "Premium Brand Digital Elevation",
-  description: "Arabian Malls needed to redesign their website to enhance user experience, facilitate content discovery, and enable content management while maintaining high-end, premium feel:",
+  description: "Arabian Center (Al-Futtaim Group) needed to redesign their website to enhance user experience, facilitate content discovery, and enable content management while maintaining high-end, premium feel:",
   points: [
     'Enhance user experience across all touchpoints',
     'Facilitate improved content discovery',
@@ -50,7 +50,7 @@ const solution = {
   title: "Premium Design and Custom CMS Innovation",
   description: "Created a modern palette inspired by the brand, experimented with various high-end design styles, and wireframed the entire website to ensure seamless user journeys.",
   approach: [
-    'Created modern palette inspired by Arabian Malls brand',
+    'Created modern palette inspired by Arabian Center brand',
     'Experimented with various high-end design styles',
     'Wireframed entire website for seamless user journeys',
     'Developed responsive website with custom CMS',
@@ -92,25 +92,25 @@ export default function ArabianMalls() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Arabian Malls Premium Website | High-end Brand Design Case Study</title>
-          <meta name="description" content="Redesigned Arabian Malls website with custom CMS, enhancing premium brand feel and receiving high praise for design excellence." />
-          <meta name="keywords" content="premium brand design, Arabian Malls, custom CMS, luxury website, high-end design, retail branding" />
-          <meta property="og:title" content="Arabian Malls - Premium Brand Digital Experience" />
+          <title>Arabian Center Premium Website | Al-Futtaim Group High-end Brand Design Case Study</title>
+          <meta name="description" content="Redesigned Arabian Center website with custom CMS, enhancing premium brand feel and receiving high praise for design excellence." />
+          <meta name="keywords" content="premium brand design, Arabian Center, Al-Futtaim Group, custom CMS, luxury website, high-end design, retail branding" />
+          <meta property="og:title" content="Arabian Center - Al-Futtaim Group Premium Brand Digital Experience" />
           <meta property="og:description" content="Custom CMS and premium design delivering enhanced user experience for luxury retail brand." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Arabian Malls Premium Website Case Study" />
+          <meta name="twitter:title" content="Arabian Center Premium Website Case Study" />
           <meta name="twitter:description" content="High-end brand design with custom CMS for premium retail experience." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png" />
-          <link rel="canonical" href="https://p0stman.com/case-study/arabian-malls" />
+          <link rel="canonical" href="https://p0stman.com/case-study/arabian-center" />
         </Helmet>
       <CaseHero
-        title="Arabian Malls"
-        subtitle="Premium Brand Experience"
+        title="Arabian Center"
+        subtitle="Al-Futtaim Group Premium Experience"
         description="Redesigned website with custom CMS, enhancing premium brand feel and receiving high praise for aesthetic excellence"
         image="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png"
-        logo="https://img.icons8.com/color/96/shopping-mall.png"
+        logo="https://api.chilledsites.com/storage/v1/object/public/p0stman/al-futtaim-logo.png"
         industry="Retail & Real Estate"
         timeline="4 months"
         teamSize="8 designers & developers"

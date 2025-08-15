@@ -33,30 +33,33 @@ import AnimatedFooter from '../components/AnimatedFooter';
 const portfolioExamples = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    category: "Online Store",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80",
-    description: "Modern e-commerce site with AI-powered recommendations",
-    features: ["Payment Integration", "Inventory Management", "AI Recommendations"],
-    tech: ["React", "Stripe", "AI APIs"]
+    title: "Arabian Center",
+    category: "Retail & Real Estate",
+    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png",
+    description: "Premium brand website with custom CMS for Al-Futtaim Group",
+    features: ["Custom CMS", "Premium Design", "Content Management"],
+    tech: ["React", "Custom CMS", "Responsive Design"],
+    caseStudyUrl: "/case-study/arabian-center"
   },
   {
     id: 2,
-    title: "SaaS Dashboard",
-    category: "Business Platform",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
-    description: "Professional SaaS platform with analytics and user management",
-    features: ["User Authentication", "Analytics Dashboard", "API Integration"],
-    tech: ["React", "Supabase", "Charts"]
+    title: "Genieology",
+    category: "Creative Agency",
+    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png",
+    description: "Creative agency website transformation with instant success",
+    features: ["API-powered CMS", "Enhanced Animations", "Conversion Optimization"],
+    tech: ["React", "API CMS", "Animation System"],
+    caseStudyUrl: "/case-study/genieology"
   },
   {
     id: 3,
-    title: "Healthcare Portal",
-    category: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1000&q=80",
-    description: "Patient management system with appointment booking",
-    features: ["Appointment Booking", "Patient Records", "Telemedicine"],
-    tech: ["React", "HIPAA Compliant", "Real-time"]
+    title: "My Health Coach",
+    category: "Government & Healthcare",
+    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png",
+    description: "Government health app for Abu Dhabi residents with IBM partnership",
+    features: ["Health Tracking", "Government Compliance", "Multi-platform"],
+    tech: ["Mobile App", "Health APIs", "Government Standards"],
+    caseStudyUrl: "/case-study/doh-health"
   }
 ];
 
@@ -332,7 +335,8 @@ export default function Website() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2"
+                    className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer"
+                    onClick={() => window.location.href = project.caseStudyUrl}
                   >
                     <div className="relative h-48 overflow-hidden">
                       <img

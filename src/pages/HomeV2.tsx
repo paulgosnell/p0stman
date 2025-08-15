@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -80,7 +80,9 @@ const clientLogos = [
   { name: "IBM iX", logo: "https://logos-world.net/wp-content/uploads/2020/09/IBM-Logo.png" },
   { name: "FAB", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/First_Abu_Dhabi_Bank_Logo.svg/500px-First_Abu_Dhabi_Bank_Logo.svg.png" },
   { name: "Al Arabiya", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png" },
-  { name: "Bolt", logo: "https://mintlify.s3.us-west-1.amazonaws.com/stackblitz/logo/dark.svg" }
+  { name: "DoH Abu Dhabi", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/doh-logo.png" },
+  { name: "Etihad Airways", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad-logo.png" },
+  { name: "Genieology", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp" }
 ];
 
 const testimonials = [
@@ -203,12 +205,13 @@ const additionalProjects = [
     caseStudyUrl: '/case-study/etihad-airways'
   },
   {
-    id: 'arabian-malls',
-    title: 'Arabian Malls',
-    company: 'Premium Brand Experience',
+    id: 'arabian-center',
+    title: 'Arabian Center',
+    company: 'Al-Futtaim Group',
     category: 'Retail & Real Estate',
     image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png',
-    caseStudyUrl: '/case-study/arabian-malls'
+    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/al-futtaim-logo.png',
+    caseStudyUrl: '/case-study/arabian-center'
   },
   {
     id: 'bfit-web3',
@@ -232,13 +235,21 @@ const additionalProjects = [
 export default function HomeV2() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [currentVideoId, setCurrentVideoId] = useState("");
-
   const [showProjectConfigurator, setShowProjectConfigurator] = useState(false);
+  const [currentCaseStudy, setCurrentCaseStudy] = useState(0);
 
   const openVideo = (videoId: string) => {
     setCurrentVideoId(videoId);
     setShowVideoModal(true);
   };
+
+  // Auto-rotate case studies
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCaseStudy((prev) => (prev + 1) % featuredProjects.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
 
 
@@ -314,91 +325,80 @@ export default function HomeV2() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="space-y-6"
               >
-                {/* Main Value Proposition Card */}
+                {/* Case Study Mini Carousel */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 p-8"
+                  className="space-y-4"
                 >
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-10" />
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                        <Rocket className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">Ship 10x Faster</h3>
-                        <p className="text-blue-200 text-sm">With AI-Powered Development</p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                        <span className="text-white">MVP in 1-4 weeks, not months</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                        <span className="text-white">70% cost reduction vs traditional</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                        <span className="text-white">Enterprise-grade quality & security</span>
-                      </div>
-                    </div>
-
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => setShowProjectConfigurator(true)}
-                      className="mt-6 w-full bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-all font-semibold flex items-center justify-center gap-2"
-                    >
-                      <Sparkles className="w-5 h-5" />
-                      Start Your Project
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-white mb-2">Recent Success Stories</h3>
+                    <p className="text-gray-300 text-sm">Real projects, real results</p>
                   </div>
-                </motion.div>
 
-                {/* Client Showcase */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm border border-white/20 p-6"
-                >
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-10" />
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
-                        <Building2 className="w-6 h-6 text-white" />
+                  {/* Current Case Study Card */}
+                  <motion.div
+                    key={currentCaseStudy}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group"
+                    onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
+                  >
+                    <div className="absolute inset-0">
+                      <img
+                        src={featuredProjects[currentCaseStudy].image}
+                        alt={featuredProjects[currentCaseStudy].title}
+                        className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+                    
+                    <div className="relative z-10 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        {featuredProjects[currentCaseStudy].logo && (
+                          <img
+                            src={featuredProjects[currentCaseStudy].logo}
+                            alt={`${featuredProjects[currentCaseStudy].company} logo`}
+                            className="h-8 w-auto"
+                          />
+                        )}
+                        <div>
+                          <h4 className="text-lg font-bold text-white">{featuredProjects[currentCaseStudy].title}</h4>
+                          <p className="text-blue-200 text-sm">{featuredProjects[currentCaseStudy].company}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-white">Trusted by Leaders</h4>
-                        <p className="text-green-200 text-sm">Enterprise & Startups</p>
+
+                      <p className="text-white/90 text-sm mb-4 line-clamp-2">
+                        {featuredProjects[currentCaseStudy].description}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/80 text-xs">
+                          {featuredProjects[currentCaseStudy].category}
+                        </span>
+                        <ExternalLink className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" />
                       </div>
                     </div>
+                  </motion.div>
 
-                    <div className="grid grid-cols-2 gap-4 text-center">
-                      <div>
-                        <div className="text-2xl font-bold text-white">IBM iX</div>
-                        <div className="text-xs text-gray-300">Enterprise Client</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">FAB</div>
-                        <div className="text-xs text-gray-300">Banking Transformation</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">Al Arabiya</div>
-                        <div className="text-xs text-gray-300">Media Platform</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">30+ Countries</div>
-                        <div className="text-xs text-gray-300">Global Reach</div>
-                      </div>
-                    </div>
+                  {/* Navigation Dots */}
+                  <div className="flex justify-center gap-2 mt-4">
+                    {featuredProjects.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentCaseStudy(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          index === currentCaseStudy 
+                            ? 'bg-white scale-125' 
+                            : 'bg-white/40 hover:bg-white/60'
+                        }`}
+                      />
+                    ))}
                   </div>
+
+
                 </motion.div>
 
 
@@ -422,7 +422,7 @@ export default function HomeV2() {
               <p className="text-gray-600 font-medium">Trusted by leading organizations</p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
               {clientLogos.map((client, index) => (
                 <motion.div
                   key={index}

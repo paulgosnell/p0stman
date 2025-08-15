@@ -18,6 +18,7 @@ import Invoice from './pages/Invoice';
 import ChristmasCard from './pages/ChristmasCard';
 import GenericProposal from './pages/proposals/GenericProposal';
 import ClientProposal from './pages/proposals/ClientProposal';
+import Proposals from './pages/Proposals';
 import About from './pages/About';
 import Support from './pages/Support';
 import Affiliate from './pages/Affiliate';
@@ -80,6 +81,7 @@ export default function App() {
         <Route path="/guide" element={<Guide />} />
         <Route path="/guide/content" element={<GuideContent />} />
         <Route path="/guide/content/:id" element={<ChapterContent />} />
+        <Route path="/proposals" element={<Proposals />} />
         <Route path="/proposals/documents/work-order-proposal" element={<WorkOrderProposal />} />
         <Route path="/contracts/:id" element={<Contract />} />
         <Route path="/invoice/:id" element={<Invoice />} />
