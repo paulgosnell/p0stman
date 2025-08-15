@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import SubHeader from '../components/SubHeader';
 import AnimatedFooter from '../components/AnimatedFooter';
 import { 
   FileText, 
@@ -71,7 +71,7 @@ export default function Proposals() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <SubHeader />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
