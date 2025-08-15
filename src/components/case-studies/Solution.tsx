@@ -227,103 +227,116 @@ export default function Solution({
             )}
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Tech Stack */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-blue-100/50"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
-                  <Code className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Tech Stack</h3>
-              </div>
-              <div className="space-y-3">
-                {technologies && technologies.slice(0, 6).map((tech, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <div className="text-blue-600">
-                      {getTechIcon(tech)}
+          {/* Features Grid - Only show if there's data */}
+          {(technologies && technologies.length > 0) || (features && features.length > 0) || (aiIntegrations && aiIntegrations.length > 0) ? (
+            <div className={`grid gap-8 ${
+              [technologies && technologies.length > 0, features && features.length > 0, aiIntegrations && aiIntegrations.length > 0]
+                .filter(Boolean).length === 1 ? 'md:grid-cols-1 max-w-md mx-auto' :
+              [technologies && technologies.length > 0, features && features.length > 0, aiIntegrations && aiIntegrations.length > 0]
+                .filter(Boolean).length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'
+            }`}>
+              {/* Tech Stack */}
+              {technologies && technologies.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-blue-100/50"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
+                      <Code className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-gray-700 font-medium">{tech}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                    <h3 className="text-xl font-bold text-gray-900">Tech Stack</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {technologies.slice(0, 6).map((tech, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      >
+                        <div className="text-blue-600">
+                          {getTechIcon(tech)}
+                        </div>
+                        <span className="text-gray-700 font-medium">{tech}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
-            {/* Key Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-indigo-100/50"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
-                  <Rocket className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Key Features</h3>
-              </div>
-              <div className="space-y-3">
-                {features && features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              {/* Key Features */}
+              {features && features.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-indigo-100/50"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
+                      <Rocket className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Key Features</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {features.map((feature, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        viewport={{ once: true }}
+                        className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      >
+                        <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
-            {/* AI Integrations */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-purple-100/50"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">AI Features</h3>
-              </div>
-              <div className="space-y-3">
-                {aiIntegrations && aiIntegrations.map((integration, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <Bot className="w-4 h-4 text-purple-500 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{integration}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+              {/* AI Integrations */}
+              {aiIntegrations && aiIntegrations.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-purple-100/50"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                      <Bot className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">AI Features</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {aiIntegrations.map((integration, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        viewport={{ once: true }}
+                        className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      >
+                        <Bot className="w-4 h-4 text-purple-500 mt-1 flex-shrink-0" />
+                        <span className="text-gray-700">{integration}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
