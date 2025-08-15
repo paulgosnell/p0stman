@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SubHeader from '../SubHeader';
 
 interface CaseHeroProps {
@@ -19,6 +21,14 @@ interface CaseHeroProps {
   theme?: 'light' | 'dark';
   overlayColor?: string;
   stats?: Array<{ label: string; value: string }>;
+  prevCase?: {
+    title: string;
+    path: string;
+  };
+  nextCase?: {
+    title: string;
+    path: string;
+  };
 }
 
 export default function CaseHero({
@@ -37,7 +47,9 @@ export default function CaseHero({
   results,
   theme = 'light',
   overlayColor = 'from-black/80 to-black/60',
-  stats
+  stats,
+  prevCase,
+  nextCase
 }: CaseHeroProps) {
   return (
     <section className="relative min-h-[100vh] flex items-center overflow-hidden">
@@ -72,6 +84,37 @@ export default function CaseHero({
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
+
+      {/* Navigation Arrows */}
+      {(prevCase || nextCase) && (
+        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 z-20 pointer-events-none">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center">
+              {prevCase ? (
+                <Link
+                  to={prevCase.path}
+                  className="pointer-events-auto w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all group"
+                >
+                  <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+                </Link>
+              ) : (
+                <div className="w-12 h-12" />
+              )}
+              
+              {nextCase ? (
+                <Link
+                  to={nextCase.path}
+                  className="pointer-events-auto w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all group"
+                >
+                  <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              ) : (
+                <div className="w-12 h-12" />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-[90rem] mx-auto w-full">

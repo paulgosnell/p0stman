@@ -117,6 +117,10 @@ export default function FABBank() {
         technologies={technologies}
         features={features}
         results={results}
+        nextCase={{
+          title: "Al Arabiya",
+          path: "/case-study/al-arabiya"
+        }}
       />
       <Challenge 
         title={challenge.title}

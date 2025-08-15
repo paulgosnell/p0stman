@@ -117,6 +117,14 @@ export default function EtihadAirways() {
         technologies={technologies}
         features={features}
         results={results}
+        prevCase={{
+          title: "Al Arabiya",
+          path: "/case-study/al-arabiya"
+        }}
+        nextCase={{
+          title: "DoH Health",
+          path: "/case-study/doh-health"
+        }}
       />
       <Challenge 
         title={challenge.title}

@@ -22,9 +22,7 @@ import {
   Calendar,
   Smartphone,
   Sparkles,
-  Clock,
-  ChevronLeft,
-  ChevronRight
+  Clock
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 
@@ -247,15 +245,6 @@ export default function HomeV2() {
     setShowVideoModal(true);
   };
 
-  // Navigation functions
-  const nextCaseStudy = () => {
-    setCurrentCaseStudy((prev) => (prev + 1) % featuredProjects.length);
-  };
-
-  const prevCaseStudy = () => {
-    setCurrentCaseStudy((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
-  };
-
   // Auto-rotate case studies
   useEffect(() => {
     const interval = setInterval(() => {
@@ -349,32 +338,15 @@ export default function HomeV2() {
                     <p className="text-gray-300">Real projects, real results</p>
                   </div>
 
-                  {/* Case Study Card with Navigation */}
-                  <div className="relative">
-                    {/* Navigation Chevrons */}
-                    <button
-                      onClick={prevCaseStudy}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    
-                    <button
-                      onClick={nextCaseStudy}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-
-                    {/* Current Case Study Card - Made Much Bigger */}
-                    <motion.div
-                      key={currentCaseStudy}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group min-h-[360px] md:min-h-[480px]"
-                      onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
-                    >
+                  {/* Current Case Study Card - Made Much Bigger */}
+                  <motion.div
+                    key={currentCaseStudy}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group min-h-[360px] md:min-h-[480px]"
+                    onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
+                  >
                     <div className="absolute inset-0">
                       <img
                         src={featuredProjects[currentCaseStudy].image}
@@ -431,7 +403,6 @@ export default function HomeV2() {
                       </div>
                     </div>
                   </motion.div>
-                  </div>
 
                   {/* Navigation Dots */}
                   <div className="flex justify-center gap-3 mt-6">

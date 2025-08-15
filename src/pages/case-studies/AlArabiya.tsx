@@ -117,6 +117,14 @@ export default function AlArabiya() {
         technologies={technologies}
         features={features}
         results={results}
+        prevCase={{
+          title: "FAB Bank",
+          path: "/case-study/fab-bank"
+        }}
+        nextCase={{
+          title: "Etihad Airways",
+          path: "/case-study/etihad-airways"
+        }}
       />
       <Challenge 
         title={challenge.title}
