@@ -21,7 +21,8 @@ import {
   ExternalLink,
   Calendar,
   Smartphone,
-  Sparkles
+  Sparkles,
+  Clock
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 
@@ -177,18 +178,18 @@ const featuredProjects = [
     ]
   },
   {
-    id: 'genieology',
-    title: 'Genieology',
-    company: 'Creative Agency',
-    category: 'Digital Agency & Design',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png',
-    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp',
-    description: 'Responsive website with API-powered CMS for creative agency transformation. Instant success with client and visitors, contributing to increased sales conversions.',
-    type: 'enterprise',
-    caseStudyUrl: '/case-study/genieology',
+    id: 'harmony',
+    title: 'Harmony',
+    company: 'AI Music Platform',
+    category: 'Music & AI',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
+    logo: 'https://img.icons8.com/color/96/music.png',
+    description: 'AI-powered music collaboration platform built in 4 weeks. Complete music creation suite with intelligent composition tools and real-time collaboration features.',
+    type: 'ai-native',
+    caseStudyUrl: '/case-study/harmony',
     metrics: [
-      { label: 'Conversions', value: 'Increased', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Success', value: 'Instant', icon: <Zap className="w-6 h-6" /> }
+      { label: 'Build Time', value: '4 weeks', icon: <Clock className="w-6 h-6" /> },
+      { label: 'AI Features', value: '12+', icon: <Bot className="w-6 h-6" /> }
     ]
   }
 ];
@@ -277,25 +278,24 @@ export default function HomeV2() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-6 h-6" />
-                    <span className="font-medium">One-Man Agency • AI-Powered Team</span>
+                    <span className="font-medium">Your AI Delivery Partner — On Demand</span>
                   </div>
 
-                  <h1 className="text-6xl font-bold leading-tight">
+                  <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      AI-Native Product Builder
+                      Plug-in expertise for your next big project
                     </span>
                   </h1>
-
-                  <div className="text-xl text-gray-300 space-y-2">
-                    <p className="font-medium">Small Army of AI Agents</p>
-                    <p>SaaS, HealthTech & SportsTech</p>
-                  </div>
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  Get the power of a full agency with the speed and focus of working directly with me. 
-                  My AI-powered approach means you get enterprise-quality delivery at startup speed - 
-                  better results, less time, lower cost than traditional agencies.
+                  I work with agencies and corporates to deliver AI-powered products that match your standards, 
+                  hit your deadlines, and impress your clients.
+                </p>
+
+                <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
+                  Whether you need a specialist to join your team or a full build from the ground up, 
+                  I combine AI acceleration with proven delivery expertise to get it done — right, first time.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -306,7 +306,7 @@ export default function HomeV2() {
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
                   >
                     <Zap className="w-5 h-5" />
-                    Build Your Project
+                    Partner With Me
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                   <a
@@ -391,7 +391,7 @@ export default function HomeV2() {
                       </div>
 
                       {/* Bottom Section */}
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between mt-4">
                         <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium">
                           {featuredProjects[currentCaseStudy].category}
                         </span>
