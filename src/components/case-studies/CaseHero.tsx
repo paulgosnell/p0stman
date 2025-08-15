@@ -81,7 +81,7 @@ export default function CaseHero({
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-6xl mx-auto"
         >
-          {/* Logo with Enhanced Styling */}
+          {/* Logo - Clean White Style */}
           {logo && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -89,13 +89,11 @@ export default function CaseHero({
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <div className="inline-block p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <img
-                  src={logo}
-                  alt={`${title} Logo`}
-                  className="h-16 md:h-20 mx-auto filter drop-shadow-lg"
-                />
-              </div>
+              <img
+                src={logo}
+                alt={`${title} Logo`}
+                className="h-16 md:h-20 mx-auto filter brightness-0 invert drop-shadow-lg"
+              />
             </motion.div>
           )}
 
