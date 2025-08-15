@@ -82,7 +82,7 @@ const clientLogos = [
   { name: "Al Arabiya", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png" },
   { name: "DoH Abu Dhabi", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/doh-logo.png" },
   { name: "Etihad Airways", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad-logo.png" },
-  { name: "Genieology", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp" }
+  { name: "Al-Futtaim Group", logo: "https://api.chilledsites.com/storage/v1/object/public/p0stman/al-futtaim-logo.png" }
 ];
 
 const testimonials = [
@@ -277,7 +277,7 @@ export default function HomeV2() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-6 h-6" />
-                    <span className="font-medium">Senior AI Advisor & Digital Leader</span>
+                    <span className="font-medium">One-Man Agency • AI-Powered Team</span>
                   </div>
 
                   <h1 className="text-6xl font-bold leading-tight">
@@ -287,15 +287,15 @@ export default function HomeV2() {
                   </h1>
 
                   <div className="text-xl text-gray-300 space-y-2">
-                    <p className="font-medium">Exited Founder | Fractional CPO</p>
+                    <p className="font-medium">Small Army of AI Agents</p>
                     <p>SaaS, HealthTech & SportsTech</p>
                   </div>
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  I help organizations embrace AI and ship products faster than they thought possible.
-                  With 20+ years in digital, a successful agency exit, and extensive experience leading
-                  teams across the UAE, I bring deep expertise across product, people, and platforms.
+                  Get the power of a full agency with the speed and focus of working directly with me. 
+                  My AI-powered approach means you get enterprise-quality delivery at startup speed - 
+                  better results, less time, lower cost than traditional agencies.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -332,64 +332,85 @@ export default function HomeV2() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="space-y-4"
                 >
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-white mb-2">Recent Success Stories</h3>
-                    <p className="text-gray-300 text-sm">Real projects, real results</p>
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-3">Success Stories</h3>
+                    <p className="text-gray-300">Real projects, real results</p>
                   </div>
 
-                  {/* Current Case Study Card */}
+                  {/* Current Case Study Card - Made Much Bigger */}
                   <motion.div
                     key={currentCaseStudy}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group"
+                    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group"
+                    style={{ minHeight: '400px' }}
                     onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
                   >
                     <div className="absolute inset-0">
                       <img
                         src={featuredProjects[currentCaseStudy].image}
                         alt={featuredProjects[currentCaseStudy].title}
-                        className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity"
+                        className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     </div>
                     
-                    <div className="relative z-10 p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        {featuredProjects[currentCaseStudy].logo && (
-                          <img
-                            src={featuredProjects[currentCaseStudy].logo}
-                            alt={`${featuredProjects[currentCaseStudy].company} logo`}
-                            className="h-8 w-auto"
-                          />
-                        )}
-                        <div>
-                          <h4 className="text-lg font-bold text-white">{featuredProjects[currentCaseStudy].title}</h4>
-                          <p className="text-blue-200 text-sm">{featuredProjects[currentCaseStudy].company}</p>
+                    <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                      <div className="space-y-6">
+                        {/* Top Section */}
+                        <div className="flex items-center gap-4">
+                          {featuredProjects[currentCaseStudy].logo && (
+                            <img
+                              src={featuredProjects[currentCaseStudy].logo}
+                              alt={`${featuredProjects[currentCaseStudy].company} logo`}
+                              className="h-12 w-auto"
+                            />
+                          )}
+                          <div>
+                            <h4 className="text-2xl font-bold text-white">{featuredProjects[currentCaseStudy].title}</h4>
+                            <p className="text-blue-200 text-lg">{featuredProjects[currentCaseStudy].company}</p>
+                          </div>
                         </div>
+
+                        {/* Description */}
+                        <p className="text-white/90 text-base leading-relaxed">
+                          {featuredProjects[currentCaseStudy].description}
+                        </p>
+
+                        {/* Metrics if available */}
+                        {featuredProjects[currentCaseStudy].metrics && (
+                          <div className="grid grid-cols-2 gap-4">
+                            {featuredProjects[currentCaseStudy].metrics.slice(0, 2).map((metric, i) => (
+                              <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                                <div className="text-xl font-bold text-white">{metric.value}</div>
+                                <div className="text-xs text-white/70">{metric.label}</div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
-                      <p className="text-white/90 text-sm mb-4 line-clamp-2">
-                        {featuredProjects[currentCaseStudy].description}
-                      </p>
-
+                      {/* Bottom Section */}
                       <div className="flex items-center justify-between">
-                        <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/80 text-xs">
+                        <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium">
                           {featuredProjects[currentCaseStudy].category}
                         </span>
-                        <ExternalLink className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" />
+                        <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
+                          <span className="text-sm">View Case Study</span>
+                          <ExternalLink className="w-5 h-5" />
+                        </div>
                       </div>
                     </div>
                   </motion.div>
 
                   {/* Navigation Dots */}
-                  <div className="flex justify-center gap-2 mt-4">
+                  <div className="flex justify-center gap-3 mt-6">
                     {featuredProjects.map((_, index) => (
                       <button
                         key={index}
                         onClick={() => setCurrentCaseStudy(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${
+                        className={`w-3 h-3 rounded-full transition-all ${
                           index === currentCaseStudy 
                             ? 'bg-white scale-125' 
                             : 'bg-white/40 hover:bg-white/60'

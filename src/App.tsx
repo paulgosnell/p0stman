@@ -117,6 +117,7 @@ export default function App() {
         <Route path="/case-study/doh-health" element={<DoHHealth />} />
         <Route path="/case-study/bfit-web3" element={<BFITWeb3 />} />
         <Route path="/case-study/arabian-malls" element={<ArabianMalls />} />
+        <Route path="/case-study/arabian-center" element={<ArabianMalls />} />
         <Route path="/case-study/genieology" element={<Genieology />} />
         <Route path="/thanks" element={<Thanks />} />
         <Route path="/links" element={<Links />} />
