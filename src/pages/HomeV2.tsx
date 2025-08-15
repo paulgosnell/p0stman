@@ -223,12 +223,13 @@ const additionalProjects = [
     caseStudyUrl: '/case-study/bfit-web3'
   },
   {
-    id: 'harmony',
-    title: 'Harmony',
-    company: 'Music Collaboration Platform',
-    category: 'Music & AI',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
-    caseStudyUrl: '/case-study/harmony'
+    id: 'genieology',
+    title: 'Genieology',
+    company: 'Creative Agency',
+    category: 'Digital Agency & Design',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png',
+    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp',
+    caseStudyUrl: '/case-study/genieology'
   }
 ];
 
