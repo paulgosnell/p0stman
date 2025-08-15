@@ -61,6 +61,7 @@ import NotFound from './pages/NotFound';
 import SocialShare from './components/SocialShare';
 import SocialPreview from './components/SocialPreview';
 import Hello from './pages/Hello';
+import Services from './pages/Services';
 
 export default function App() {
   return (
@@ -73,6 +74,7 @@ export default function App() {
         <Route path="/process" element={<Process />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/projects" element={<CaseStudies />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/website" element={<Website />} />
         <Route path="/fractional-cpo" element={<FractionalCPO />} />
         <Route path="/ai-platform-development" element={<AIPlatformDev />} />

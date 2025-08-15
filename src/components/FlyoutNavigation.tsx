@@ -82,6 +82,13 @@ const navigationItems = [
     category: "Portfolio",
     items: [
       { 
+        label: 'All Services', 
+        href: '/services', 
+        icon: Target, 
+        description: 'Complete service portfolio',
+        color: 'from-blue-500 to-indigo-500'
+      },
+      { 
         label: 'Case Studies', 
         href: '/case-studies', 
         icon: Building2, 
@@ -94,13 +101,6 @@ const navigationItems = [
         icon: Target, 
         description: 'How I work with clients',
         color: 'from-teal-500 to-blue-500'
-      },
-      { 
-        label: 'Website Service', 
-        href: '/website', 
-        icon: Code, 
-        description: 'Custom website development',
-        color: 'from-yellow-500 to-orange-500'
       }
     ]
   }

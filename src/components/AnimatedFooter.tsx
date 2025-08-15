@@ -168,10 +168,12 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
   ];
 
   const quickLinks = [
+    { label: 'Services', href: '/services' },
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Process', href: '/process' },
-    { label: 'Website Service', href: '/website' },
-    { label: 'Proposals', href: '/proposals' }
+    { label: 'Proposals', href: '/proposals' },
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' }
   ];
 
   const services = [
