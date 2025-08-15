@@ -264,9 +264,9 @@ export default function HomeV2() {
 
         <Header />
 
-        <div className="container mx-auto px-4 py-32 relative z-10">
+        <div className="container mx-auto px-4 pt-24 md:pt-40 pb-16 md:pb-20 relative z-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               {/* Left Column - Hero Content */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -343,8 +343,7 @@ export default function HomeV2() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group"
-                    style={{ minHeight: '400px' }}
+                    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group min-h-[360px] md:min-h-[480px]"
                     onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
                   >
                     <div className="absolute inset-0">
@@ -356,20 +355,20 @@ export default function HomeV2() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     </div>
                     
-                    <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                    <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                       <div className="space-y-6">
                         {/* Top Section */}
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-3 md:gap-4">
                           {featuredProjects[currentCaseStudy].logo && (
                             <img
                               src={featuredProjects[currentCaseStudy].logo}
                               alt={`${featuredProjects[currentCaseStudy].company} logo`}
-                              className="h-12 w-auto"
+                              className="h-10 md:h-12 w-auto filter brightness-0 invert"
                             />
                           )}
                           <div>
-                            <h4 className="text-2xl font-bold text-white">{featuredProjects[currentCaseStudy].title}</h4>
-                            <p className="text-blue-200 text-lg">{featuredProjects[currentCaseStudy].company}</p>
+                            <h4 className="text-xl md:text-2xl font-bold text-white">{featuredProjects[currentCaseStudy].title}</h4>
+                            <p className="text-blue-200 text-base md:text-lg">{featuredProjects[currentCaseStudy].company}</p>
                           </div>
                         </div>
 
@@ -380,10 +379,10 @@ export default function HomeV2() {
 
                         {/* Metrics if available */}
                         {featuredProjects[currentCaseStudy].metrics && (
-                          <div className="grid grid-cols-2 gap-4">
+                          <div className="grid grid-cols-2 gap-3 md:gap-4">
                             {featuredProjects[currentCaseStudy].metrics.slice(0, 2).map((metric, i) => (
-                              <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                                <div className="text-xl font-bold text-white">{metric.value}</div>
+                              <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-2 md:p-3">
+                                <div className="text-lg md:text-xl font-bold text-white">{metric.value}</div>
                                 <div className="text-xs text-white/70">{metric.label}</div>
                               </div>
                             ))}
