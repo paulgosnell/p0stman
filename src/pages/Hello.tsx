@@ -1321,9 +1321,12 @@ const Hello: React.FC = () => {
             >
               <div className="relative">
                 <div className="w-64 h-64 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full p-2">
-                  <div className="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-                    {/* Placeholder for Paul's photo */}
-                    <Users className="w-24 h-24" />
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    <img
+                      src="https://api.chilledsites.com/storage/v1/object/public/p0stman/paul.jpg"
+                      alt="Paul Gosnell"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-yellow-400 rounded-full p-3">
@@ -1480,7 +1483,7 @@ const Hello: React.FC = () => {
 
       case 'space-universe':
         return (
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-black overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-black overflow-hidden">
             {/* Animated Grid */}
             <div className="absolute inset-0">
               <svg className="w-full h-full">
@@ -1513,13 +1516,13 @@ const Hello: React.FC = () => {
                   scale: 0
                 }}
                 animate={{
-                  opacity: [0, 1, 0.5, 1, 0],
-                  scale: [0, 1, 0.8, 1.2, 0],
+                  opacity: [0, 1, 0.8, 1, 0],
+                  scale: [0, 1, 1, 1, 0],
                   rotate: 360
                 }}
                 transition={{
-                  duration: Math.random() * 8 + 4,
-                  delay: i * 0.1,
+                  duration: Math.random() * 6 + 6,
+                  delay: i * 0.05,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -1602,11 +1605,11 @@ const Hello: React.FC = () => {
               className="absolute w-48 h-48 rounded-full opacity-20 blur-xl bg-gradient-to-br from-pink-500 to-purple-500"
               style={{ left: '20%', top: '40%' }}
               animate={{
-                scale: [1, 1.2, 0.8, 1],
-                opacity: [0.2, 0.4, 0.1, 0.2]
+                scale: [1, 1.1, 1],
+                opacity: [0.2, 0.3, 0.2]
               }}
               transition={{
-                duration: 8,
+                duration: 12,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -1616,11 +1619,11 @@ const Hello: React.FC = () => {
               className="absolute w-32 h-32 rounded-full opacity-20 blur-xl bg-gradient-to-br from-blue-500 to-cyan-500"
               style={{ left: '70%', top: '20%' }}
               animate={{
-                scale: [1, 1.3, 0.7, 1],
-                opacity: [0.2, 0.3, 0.1, 0.2]
+                scale: [1, 1.1, 1],
+                opacity: [0.2, 0.25, 0.2]
               }}
               transition={{
-                duration: 6,
+                duration: 10,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
