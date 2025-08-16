@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SubHeader from '../SubHeader';
 
@@ -53,6 +53,22 @@ export default function CaseHero({
   prevCase,
   nextCase
 }: CaseHeroProps) {
+  const navigate = useNavigate();
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft' && prevCase) {
+        navigate(prevCase.path);
+      } else if (event.key === 'ArrowRight' && nextCase) {
+        navigate(nextCase.path);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [navigate, prevCase, nextCase]);
+
   return (
     <section className="relative min-h-[100vh] flex items-center overflow-hidden">
       <SubHeader />
