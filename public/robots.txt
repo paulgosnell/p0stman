@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://p0stman.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /admin-login
+Disallow: /contract
+Disallow: /invoice
+Disallow: /retainer
+Disallow: /thanks
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /case-studies
+Allow: /projects
+Allow: /contact
+Allow: /case-study/
+
+# Crawl delay (optional)
+Crawl-delay: 1

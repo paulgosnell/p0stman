@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
+  <url>
+    <loc>https://p0stman.com/</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/about</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/services</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-studies</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/projects</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/contact</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service Pages -->
+  <url>
+    <loc>https://p0stman.com/ai-platform-development</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/fractional-cpo</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/product-strategy</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/digital-transformation</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/ai-agents</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/website</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/mobile-app</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/retainer</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/support</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/training</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Case Study Pages -->
+  <url>
+    <loc>https://p0stman.com/case-study/fab-bank</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/al-arabiya</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/etihad-airways</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/doh-health</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/bfit-web3</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/arabian-malls</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/genieology</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/chilled-crm</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/harmony</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/serenity</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/fitlink</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/clinic-book</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/barber-booking</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/rhythm</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/case-study/experience-a-gift</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Additional Pages -->
+  <url>
+    <loc>https://p0stman.com/process</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/guide</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://p0stman.com/proposals</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>
