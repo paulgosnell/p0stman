@@ -111,6 +111,7 @@ export default function BFITWeb3() {
         description="Blockchain-powered fitness app with native token, cryptocurrency rewards, and health data recorded to blockchain"
         image="https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png"
         logo="https://img.icons8.com/color/96/blockchain-technology.png"
+        logoInvert={false}
         industry="Web3 & Fitness"
         timeline="10 months"
         teamSize="15 Web3 specialists"

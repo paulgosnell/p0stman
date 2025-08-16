@@ -95,6 +95,7 @@ export default function SerenityCase() {
         backgroundVideo="https://cdn.pixabay.com/video/2018/10/02/18534-293472901_large.mp4"
         overlayColor="from-teal-900/60 to-blue-900/40"
         logo="https://mediacdn.carrd.co/assets/images/image20.svg?v=4617e869"
+        logoInvert={false}
         stats={[
           { label: 'Team Size', value: '1' },
           { label: 'Build Tool', value: 'Bolt' },

@@ -12,6 +12,7 @@ interface CaseHeroProps {
   backgroundImage?: string;
   backgroundVideo?: string;
   logo?: string;
+  logoInvert?: boolean;
   industry?: string;
   timeline?: string;
   teamSize?: string;
@@ -39,6 +40,7 @@ export default function CaseHero({
   backgroundImage,
   backgroundVideo,
   logo,
+  logoInvert = true,
   industry,
   timeline,
   teamSize,
@@ -135,7 +137,7 @@ export default function CaseHero({
               <img
                 src={logo}
                 alt={`${title} Logo`}
-                className="h-16 md:h-20 mx-auto filter brightness-0 invert drop-shadow-lg"
+                className={`h-16 md:h-20 mx-auto drop-shadow-lg ${logoInvert ? 'filter brightness-0 invert' : ''}`}
               />
             </motion.div>
           )}

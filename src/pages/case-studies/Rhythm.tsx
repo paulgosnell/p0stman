@@ -92,6 +92,7 @@ export default function Rhythm() {
         description="Find your perfect running rhythm with AI-powered coaching and adaptive music."
         backgroundVideo="https://cdn.pixabay.com/video/2023/11/19/189734-886596182_large.mp4"
         logo="https://ai-running-app.netlify.app/favicon.svg"
+        logoInvert={false}
         overlayColor="from-blue-900/60 to-indigo-900/40"
         stats={[
           { label: 'Build Time', value: '1 week' },

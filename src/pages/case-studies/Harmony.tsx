@@ -96,6 +96,7 @@ export default function HarmonyCase() {
         theme="dark"
         overlayColor="from-purple-900/80 to-blue-900/60"
         logo="https://mediacdn.carrd.co/assets/images/image21.svg"
+        logoInvert={false}
         stats={[
           { label: 'Team Size', value: '1' },
           { label: 'Build Tool', value: 'Bolt' },
