@@ -101,6 +101,14 @@ export default function SerenityCase() {
           { label: 'Build Time', value: '2 weeks' },
           { label: 'Cost', value: '$20k' }
         ]}
+        prevCase={{
+          title: "Harmony",
+          path: "/case-study/harmony"
+        }}
+        nextCase={{
+          title: "Fitlink",
+          path: "/case-study/fitlink"
+        }}
       />
       <Challenge {...challenge} />
       <Solution

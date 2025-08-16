@@ -98,6 +98,14 @@ export default function ExperienceGift() {
           { label: 'Build Tool', value: 'Bolt' },
           { label: 'Cost', value: '$10k' }
         ]}
+        prevCase={{
+          title: "Rhythm",
+          path: "/case-study/rhythm"
+        }}
+        nextCase={{
+          title: "FAB Bank",
+          path: "/case-study/fab-bank"
+        }}
       />
       <Challenge {...challenge} />
       <Solution

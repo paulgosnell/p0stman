@@ -117,6 +117,14 @@ export default function ArabianMalls() {
         technologies={technologies}
         features={features}
         results={results}
+        prevCase={{
+          title: "BFIT Web3",
+          path: "/case-study/bfit-web3"
+        }}
+        nextCase={{
+          title: "Genieology",
+          path: "/case-study/genieology"
+        }}
       />
       <Challenge 
         title={challenge.title}

@@ -102,6 +102,14 @@ export default function HarmonyCase() {
           { label: 'Build Time', value: '4 weeks' },
           { label: 'Cost', value: '$40k' }
         ]}
+        prevCase={{
+          title: "Chilled CRM",
+          path: "/case-study/chilled-crm"
+        }}
+        nextCase={{
+          title: "Serenity",
+          path: "/case-study/serenity"
+        }}
       />
       <Challenge {...challenge} theme="dark" />
       <Solution

@@ -117,6 +117,14 @@ export default function Genieology() {
         technologies={technologies}
         features={features}
         results={results}
+        prevCase={{
+          title: "Arabian Malls",
+          path: "/case-study/arabian-malls"
+        }}
+        nextCase={{
+          title: "Chilled CRM",
+          path: "/case-study/chilled-crm"
+        }}
       />
       <Challenge 
         title={challenge.title}

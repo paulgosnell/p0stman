@@ -104,6 +104,14 @@ export default function BarberBookingSystemCase() {
             { label: 'Build Tool', value: 'Bolt' },
             { label: 'Cost Savings', value: '$25k' }
           ]}
+          prevCase={{
+            title: "Clinic Book",
+            path: "/case-study/clinic-book"
+          }}
+          nextCase={{
+            title: "Rhythm",
+            path: "/case-study/rhythm"
+          }}
         />
         
         <Challenge {...challenge} />

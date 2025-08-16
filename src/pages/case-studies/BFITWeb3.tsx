@@ -117,6 +117,14 @@ export default function BFITWeb3() {
         technologies={technologies}
         features={features}
         results={results}
+        prevCase={{
+          title: "DoH Health",
+          path: "/case-study/doh-health"
+        }}
+        nextCase={{
+          title: "Arabian Malls",
+          path: "/case-study/arabian-malls"
+        }}
       />
       <Challenge 
         title={challenge.title}

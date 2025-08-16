@@ -117,6 +117,14 @@ export default function DoHHealth() {
         technologies={technologies}
         features={features}
         results={results}
+        prevCase={{
+          title: "Etihad Airways",
+          path: "/case-study/etihad-airways"
+        }}
+        nextCase={{
+          title: "BFIT Web3",
+          path: "/case-study/bfit-web3"
+        }}
       />
       <Challenge 
         title={challenge.title}

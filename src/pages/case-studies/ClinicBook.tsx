@@ -104,6 +104,14 @@ export default function ClinicBookCase() {
             { label: 'Build Tool', value: 'Bolt' },
             { label: 'Cost Savings', value: '$20k' }
           ]}
+          prevCase={{
+            title: "Fitlink",
+            path: "/case-study/fitlink"
+          }}
+          nextCase={{
+            title: "Barber Booking System",
+            path: "/case-study/barber-booking"
+          }}
         />
         
         <Challenge {...challenge} />

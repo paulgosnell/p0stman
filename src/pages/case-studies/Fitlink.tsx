@@ -98,6 +98,14 @@ export default function FitlinkCase() {
           { label: 'Team Engagement', value: '54%' },
           { label: 'Active Teams', value: '50+' }
         ]}
+        prevCase={{
+          title: "Serenity",
+          path: "/case-study/serenity"
+        }}
+        nextCase={{
+          title: "Clinic Book",
+          path: "/case-study/clinic-book"
+        }}
       />
       <Challenge {...challenge} />
       <Solution

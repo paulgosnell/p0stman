@@ -97,6 +97,14 @@ export default function ChilledCRMCase() {
           { label: 'Build Time', value: '4 weeks' },
           { label: 'Cost', value: '$40k' }
         ]}
+        prevCase={{
+          title: "Genieology",
+          path: "/case-study/genieology"
+        }}
+        nextCase={{
+          title: "Harmony",
+          path: "/case-study/harmony"
+        }}
       />
       <Challenge {...challenge} />
       <Solution

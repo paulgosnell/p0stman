@@ -99,6 +99,14 @@ export default function Rhythm() {
           { label: 'Build Tool', value: 'Bolt' },
           { label: 'Cost', value: '$10k' }
         ]}
+        prevCase={{
+          title: "Barber Booking System",
+          path: "/case-study/barber-booking"
+        }}
+        nextCase={{
+          title: "Experience A Gift",
+          path: "/case-study/experience-a-gift"
+        }}
       />
       <Challenge {...challenge} />
       <Solution
