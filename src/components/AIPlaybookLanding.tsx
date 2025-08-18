@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowDownTrayIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import AIAnimatedBackground from './AIAnimatedBackground';
+import AIPlaybookSEO from './AIPlaybookSEO';
 
 const AIPlaybookLanding: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -43,7 +44,9 @@ const AIPlaybookLanding: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <>
+      <AIPlaybookSEO page="landing" />
+      <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <AIAnimatedBackground />
@@ -183,6 +186,7 @@ const AIPlaybookLanding: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

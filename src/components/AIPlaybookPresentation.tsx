@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDownIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline';
 import AIAnimatedBackground from './AIAnimatedBackground';
+import AIPlaybookSEO from './AIPlaybookSEO';
 
 const AIPlaybookPresentation: React.FC = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -21,7 +22,9 @@ const AIPlaybookPresentation: React.FC = () => {
   ];
 
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <>
+      <AIPlaybookSEO page="presentation" />
+      <div className="bg-black text-white overflow-hidden">
       {/* Cover Section */}
       <section className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
         <AIAnimatedBackground />
@@ -218,6 +221,7 @@ const AIPlaybookPresentation: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
