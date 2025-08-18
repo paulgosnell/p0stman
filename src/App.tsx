@@ -62,6 +62,7 @@ import SocialShare from './components/SocialShare';
 import SocialPreview from './components/SocialPreview';
 import Hello from './pages/Hello';
 import Services from './pages/Services';
+import AIPlaybook from './pages/AIPlaybook';
 
 export default function App() {
   return (
@@ -127,6 +128,7 @@ export default function App() {
         <Route path="/affiliate" element={<Affiliate />} />
         <Route path="/training" element={<Training />} />
         <Route path="/hello" element={<Hello />} />
+        <Route path="/ai-playbook" element={<AIPlaybook />} />
         <Route path="/social-share" element={<SocialShare />} />
         <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
         <Route path="*" element={<NotFound />} />
