@@ -81,7 +81,7 @@ export default function CaseHero({
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-contain object-center transform scale-95 p-8"
+            className="absolute inset-0 w-full h-full object-cover object-center transform scale-105"
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
@@ -89,7 +89,7 @@ export default function CaseHero({
           <img
             src={backgroundImage || image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-contain object-center transform scale-95 p-8"
+            className="absolute inset-0 w-full h-full object-cover object-center transform scale-105"
           />
         ) : null}
         
