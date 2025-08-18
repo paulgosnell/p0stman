@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 interface AIPlaybookSEOProps {
   page?: 'landing' | 'presentation';
@@ -25,7 +25,8 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
   const currentSEO = seoData[page];
 
   return (
-    <Helmet>
+    <HelmetProvider>
+      <Helmet>
       {/* Primary Meta Tags */}
       <title>{currentSEO.title}</title>
       <meta name="title" content={currentSEO.title} />
@@ -116,7 +117,8 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       
       {/* Canonical URL */}
       <link rel="canonical" href={currentUrl} />
-    </Helmet>
+      </Helmet>
+    </HelmetProvider>
   );
 };
 
