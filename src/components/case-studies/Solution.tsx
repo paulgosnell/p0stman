@@ -220,7 +220,7 @@ export default function Solution({
                     src={image}
                     alt={title}
                     className="w-full rounded-2xl shadow-lg transform transition-all duration-700 hover:scale-105"
-                    style={{ minHeight: '400px', objectFit: 'cover' }}
+                    style={{ minHeight: '400px', objectFit: 'contain', padding: '20px' }}
                   />
                 </div>
               </motion.div>
