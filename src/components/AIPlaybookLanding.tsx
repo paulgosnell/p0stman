@@ -5,11 +5,41 @@ import AIAnimatedBackground from './AIAnimatedBackground';
 const AIPlaybookLanding: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    setIsSubmitted(true);
+    setIsLoading(true);
+    
+    try {
+      // Save to Supabase
+      const { createClient } = await import('@supabase/supabase-js');
+      const supabase = createClient(
+        import.meta.env.VITE_SUPABASE_URL!,
+        import.meta.env.VITE_SUPABASE_ANON_KEY!
+      );
+      
+      const { error } = await supabase
+        .from('ai_playbook_leads')
+        .insert([{ 
+          email, 
+          source: 'AI Playbook Download'
+        }]);
+
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
+      
+      console.log('Email captured successfully:', email);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error capturing email:', error);
+      // Still show success to user for better UX, but log error for debugging
+      setIsSubmitted(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -84,9 +114,10 @@ const AIPlaybookLanding: React.FC = () => {
                     
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 animate-pulse-glow"
+                      disabled={isLoading}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 animate-pulse-glow"
                     >
-                      Download Playbook
+                      {isLoading ? 'Processing...' : 'Download Playbook'}
                     </button>
                   </form>
 
