@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AIPlaybookPresentationComplete from '../components/AIPlaybookPresentationComplete';
 import AIPlaybookLandingComplete from '../components/AIPlaybookLandingComplete';
-import AIFullReport from '../components/AIFullReport';
 
 const AIPlaybook: React.FC = () => {
   const [currentView, setCurrentView] = useState<'landing' | 'presentation' | 'full-report'>('landing');
@@ -36,16 +35,7 @@ const AIPlaybook: React.FC = () => {
               >
                 Presentation
               </button>
-              <button
-                onClick={() => setCurrentView('full-report')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  currentView === 'full-report' 
-                    ? 'bg-blue-600 text-white shadow-lg' 
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                }`}
-              >
-                Full Report
-              </button>
+              
             </div>
           </div>
         </div>
