@@ -4,6 +4,7 @@ import RTLWrapper from './components/RTLWrapper';
 import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
+import PrivacyPage from './pages/privacy';
 import HomeV2 from './pages/HomeV2';
 import Process from './pages/Process';
 import CaseStudies from './pages/CaseStudies';
@@ -69,7 +70,7 @@ export default function App() {
     <RTLWrapper>
     <div className="min-h-screen bg-white">
       <ScrollToTop />
-      <Routes>
+  <Routes>
         <Route path="/" element={<HomeV2 />} />
         <Route path="/v1" element={<Home />} />
         <Route path="/process" element={<Process />} />
@@ -128,9 +129,10 @@ export default function App() {
         <Route path="/affiliate" element={<Affiliate />} />
         <Route path="/training" element={<Training />} />
         <Route path="/hello" element={<Hello />} />
-        <Route path="/ai-playbook" element={<AIPlaybook />} />
-        <Route path="/social-share" element={<SocialShare />} />
-        <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
+  <Route path="/ai-playbook" element={<AIPlaybook />} />
+  <Route path="/privacy" element={<PrivacyPage />} />
+  <Route path="/social-share" element={<SocialShare />} />
+  <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
