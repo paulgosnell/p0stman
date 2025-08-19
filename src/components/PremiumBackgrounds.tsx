@@ -62,18 +62,9 @@ export const ParallaxBackground: React.FC<{
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-          transform: `translateY(${scrollY * speed}px)`,
-          filter: 'brightness(0.3) contrast(1.3)',
-          scale: '1.1'
-        }}
-      />
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-blue-900/40 to-black/70" />
       <div className="relative z-10">
-        {children}
+      {children}
       </div>
     </div>
   );

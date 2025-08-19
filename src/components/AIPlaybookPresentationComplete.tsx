@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDownIcon, ArrowTrendingUpIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import AIAnimatedBackground from './AIAnimatedBackground';
 import AIPlaybookSEO from './AIPlaybookSEO';
-import { SpaceBackground, DesertBackground, CityscapeBackground, TechBackground } from './PremiumBackgrounds';
+import { SpaceBackground } from './PremiumBackgrounds';
 
 const AIPlaybookPresentationComplete: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,9 +26,6 @@ const AIPlaybookPresentationComplete: React.FC = () => {
     setCurrentSlide(index);
   };
 
-  const scrollToDownload = () => {
-    window.open('/ai-playbook', '_blank');
-  };
 
   return (
     <>
@@ -77,41 +74,33 @@ const AIPlaybookPresentationComplete: React.FC = () => {
             <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
               <AIAnimatedBackground />
               <div className="relative z-10 text-center px-8 max-w-6xl">
-              <h1 className={`text-7xl md:text-9xl font-thin tracking-tight mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                AI in the
-                <span className="block font-light text-gray-300">Middle East</span>
-                <span className="block text-5xl md:text-7xl text-blue-400 font-extralight">2025</span>
-              </h1>
-              <p className={`text-2xl md:text-3xl font-light text-gray-400 mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                The Playbook for People & Business
-              </p>
-              <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <button 
-                  onClick={scrollToDownload}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105 mr-6"
-                >
-                  Download Full Report
-                </button>
+                <h1 className={`text-7xl md:text-9xl font-thin tracking-tight mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  AI in the
+                  <span className="block font-light text-gray-300">Middle East</span>
+                  <span className="block text-5xl md:text-7xl text-blue-400 font-extralight">2025</span>
+                </h1>
+                <p className={`text-2xl md:text-3xl font-light text-gray-400 mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  The trillion-dollar playbook for people & business
+                </p>
+                {/* CTA removed */}
               </div>
-            </div>
             </section>
           </SpaceBackground>
         )}
 
-        {/* Slide 2 - Executive Abstract */}
+        {/* Slide 2 - Executive Teaser */}
         {currentSlide === 1 && (
-          <TechBackground>
-            <section className="min-h-screen flex items-center relative overflow-hidden">
-              <AIAnimatedBackground />
+          <section className="min-h-screen flex items-center relative overflow-hidden">
+            <AIAnimatedBackground />
             <div className="container mx-auto px-8 py-20 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-6xl font-thin mb-12 text-white">Executive Abstract</h2>
+                  <h2 className="text-6xl font-thin mb-12 text-white">The AI gold rush has begun.</h2>
                   <div className="space-y-8">
-                    <StatBlock number="$320B" label="Economic Impact by 2030" />
-                    <StatBlock number="$7.2B" label="AI Investment by 2026" />
-                    <StatBlock number="18,000" label="Blackwell GPUs in HUMAIN" />
-                    <StatBlock number="854MW" label="Compute Infrastructure Growth" />
+                    <StatBlock number="$320B" label="prize by 2030" />
+                    <StatBlock number="$7.2B" label="AI investment surge" />
+                    <StatBlock number="18,000" label="Blackwell GPUs lit up" />
+                    <StatBlock number="854MW" label="Compute growth (UAE & KSA)" />
                   </div>
                 </div>
                 <div className="relative">
@@ -126,114 +115,104 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                 </div>
               </div>
             </div>
-            </section>
-          </TechBackground>
+          </section>
         )}
 
-        {/* Slide 3 - By the Numbers */}
+        {/* Slide 3 - Shock Numbers */}
         {currentSlide === 2 && (
-          <DesertBackground>
-            <section className="min-h-screen relative overflow-hidden">
-              <AIAnimatedBackground />
+          <section className="min-h-screen relative overflow-hidden">
+            <AIAnimatedBackground />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
             <div className="relative z-10 container mx-auto px-8 py-20">
-              <h2 className="text-7xl font-thin text-center mb-20">By the Numbers</h2>
-              
+              <h2 className="text-7xl font-thin text-center mb-20">Growth like the world has never seen.</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                 <BigNumberCard 
                   number="$320B"
-                  subtitle="Regional AI Impact"
+                  subtitle="Economic upside"
                   trend="+2,400%"
                 />
                 <BigNumberCard 
                   number="$7.2B"
-                  subtitle="Investment Forecast"
+                  subtitle="Investment trajectory"
                   trend="+340%"
                 />
               </div>
-
               <div className="mt-20 text-center">
                 <div className="inline-flex items-center space-x-4 bg-gray-900/50 px-8 py-4 rounded-full border border-gray-800">
                   <ArrowTrendingUpIcon className="w-6 h-6 text-green-400" />
-                  <span className="text-xl font-light">Exponential Growth Trajectory</span>
+                  <span className="text-xl font-light">This is exponential. Are you ready to ride it?</span>
                 </div>
               </div>
             </div>
-            </section>
-          </DesertBackground>
+          </section>
         )}
 
-        {/* Slide 4 - Infrastructure Build-Out */}
+        {/* Slide 4 - Infrastructure Arms Race */}
         {currentSlide === 3 && (
-          <CityscapeBackground>
-            <section className="min-h-screen flex items-center">
+          <section className="min-h-screen flex items-center">
             <div className="container mx-auto px-8 py-20">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                 <div className="lg:col-span-2">
-                  <h2 className="text-6xl font-thin mb-12">Infrastructure Build-Out</h2>
-                  
+                  <h2 className="text-6xl font-thin mb-12">Compute is the new oil.</h2>
                   <div className="space-y-8 mb-12">
                     <div>
                       <h3 className="text-2xl font-light text-blue-300 mb-4">UAE Compute Growth</h3>
                       <ComputeMetric before="345MW" after="854MW" growth="+147%" />
                     </div>
-                    
                     <div>
                       <h3 className="text-2xl font-light text-purple-300 mb-4">Saudi Compute Growth</h3>
                       <ComputeMetric before="429MW" after="841MW" growth="+96%" />
                     </div>
                   </div>
                 </div>
-                
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
                   <div className="relative bg-gray-900/80 p-8 rounded-3xl border border-gray-700">
-                    <h3 className="text-2xl font-light mb-4 text-purple-300">HUMAIN Initiative</h3>
+                    <h3 className="text-2xl font-light mb-4 text-purple-300">HUMAIN: Saudi's GPU spring</h3>
                     <div className="text-center mb-6">
                       <div className="text-5xl font-thin text-blue-400 mb-2">18,000</div>
                       <div className="text-lg text-gray-300">Blackwell GPUs</div>
                     </div>
                     <p className="text-gray-400 leading-relaxed">
-                      Launched by PIF (2025). Positioning Saudi Arabia as a global AI compute hub.
+                      PIF lit 18,000 Blackwell GPUs (2025). A new global AI compute benchmark.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            </section>
-          </CityscapeBackground>
+          </section>
         )}
 
         {/* Slide 5 - Visionary Leadership */}
         {currentSlide === 4 && (
           <section className="min-h-screen bg-black relative">
             <div className="container mx-auto px-8 py-20">
-              <h2 className="text-6xl font-thin text-center mb-20">Visionary Leadership</h2>
-              
-              <div className="max-w-4xl mx-auto space-y-16">
-                <QuoteCard 
-                  quote="For emerging economies, AI is a game‑changer. It enables better services without the constraints of conventional development."
-                  author="H.E. Omar Sultan Al Olama"
-                  title="UAE AI Minister"
-                />
-                
-                <QuoteCard 
-                  quote="We should expect a lot more AI ministers around the world in the coming years."
-                  author="H.E. Omar Sultan Al Olama"
-                  title="Atlantic Council, 2024"
-                />
+              <h2 className="text-6xl font-thin text-center mb-20">Visionaries are setting the pace.</h2>
+              <div className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 gap-8">
+                  <QuoteCard 
+                    quote="For emerging economies, AI is a game‑changer. It enables better services without the constraints of conventional development."
+                    author="H.E. Omar Sultan Al Olama"
+                    title="UAE AI Minister"
+                  />
+                  <QuoteCard 
+                    quote="We should expect a lot more AI ministers around the world in the coming years."
+                    author="H.E. Omar Sultan Al Olama"
+                    title="Atlantic Council, 2024"
+                  />
+                </div>
               </div>
             </div>
           </section>
         )}
 
-        {/* Slide 6 - Energy Infrastructure */}
+        {/* Slide 6 - Energy Revolution */}
         {currentSlide === 5 && (
           <section className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center">
             <div className="container mx-auto px-8 py-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-6xl font-thin mb-12">Energy Infrastructure</h2>
+                  <h2 className="text-6xl font-thin mb-12">Powering the AI era.</h2>
                   <h3 className="text-3xl font-light text-orange-300 mb-8">Power for AI</h3>
                   
                   <div className="space-y-6">
@@ -258,33 +237,28 @@ const AIPlaybookPresentationComplete: React.FC = () => {
           </section>
         )}
 
-        {/* Slide 7 - 12-Month Action Plan */}
+        {/* Slide 7 - Teaser */}
         {currentSlide === 6 && (
           <section className="min-h-screen bg-gradient-to-br from-blue-900/10 via-black to-purple-900/10 flex items-center">
             <div className="container mx-auto px-8 py-20">
-              <h2 className="text-6xl font-thin text-center mb-20">12-Month Action Plan</h2>
+              <h2 className="text-6xl font-thin text-center mb-20">The 12‑Month Action Plan</h2>
               
               <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                  <ActionItem quarter="Q1" title="Infrastructure Assessment" />
-                  <ActionItem quarter="Q2" title="Talent Acquisition" />
-                  <ActionItem quarter="Q3" title="Partnership Development" />
-                  <ActionItem quarter="Q4" title="Implementation & Scale" />
+                  <ActionItem quarter="Inside" title="The Q1–Q4 moves you can’t miss" />
+                  <ActionItem quarter="Scale" title="How to align Gov, Enterprise, Startup" />
+                  <ActionItem quarter="Trust" title="Governance that unlocks growth" />
+                  <ActionItem quarter="ROI" title="The KPIs leaders track" />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                  <ActionItem quarter="2025" title="Market Leadership" />
-                  <ActionItem quarter="2026" title="Regional Expansion" />
+                <div className="text-center mt-6">
+                  <div className="inline-flex items-center space-x-3 bg-gray-900/50 px-6 py-3 rounded-full border border-gray-800">
+                    <ArrowTrendingUpIcon className="w-5 h-5 text-blue-400" />
+                    <span className="text-lg font-light text-gray-300">Don’t just watch it happen. Get the full playbook.</span>
+                  </div>
                 </div>
                 
-                <div className="text-center">
-                  <button 
-                    onClick={scrollToDownload}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105"
-                  >
-                    Download the Full Playbook
-                  </button>
-                </div>
+                {/* CTA removed */}
               </div>
             </div>
           </section>
@@ -292,22 +266,29 @@ const AIPlaybookPresentationComplete: React.FC = () => {
 
         {/* Slide 8 - Closing/FOMO CTA */}
         {currentSlide === 7 && (
-          <section className="min-h-screen bg-gradient-to-br from-red-900/20 via-black to-orange-900/20 flex items-center">
-            <div className="container mx-auto px-8 py-20 text-center">
+          <section className="min-h-screen bg-gradient-to-br from-red-900/20 via-black to-orange-900/20 flex items-center relative overflow-hidden">
+            {/* Background Video */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+              src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <div className="container mx-auto px-8 py-20 text-center relative z-10">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-6xl md:text-7xl font-thin mb-8">Don't Be Left Behind.</h2>
-                <p className="text-2xl md:text-3xl font-light text-gray-300 leading-relaxed mb-8">
+                <h2 className="text-6xl md:text-7xl font-thin mb-8">Don’t Be Left Behind.</h2>
+                <p className="text-2xl md:text-3xl font-light text-gray-300 leading-relaxed mb-2">
                   AI is reshaping economies at exponential speed.
                 </p>
-                <p className="text-xl md:text-2xl font-light text-gray-400 leading-relaxed mb-16">
-                  This report shows where the Middle East stands—and what you must do to stay ahead.
+                <p className="text-2xl md:text-3xl font-light text-gray-300 leading-relaxed mb-2">
+                  The Middle East has taken the lead.
                 </p>
-                <button 
-                  onClick={scrollToDownload}
-                  className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 px-16 py-6 rounded-full text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse"
-                >
-                  Get the Free Report Now
-                </button>
+                <p className="text-xl md:text-2xl font-light text-gray-400 leading-relaxed mb-16">
+                  The only question: where will you stand?
+                </p>
+                {/* CTA removed */}
               </div>
             </div>
           </section>
@@ -356,7 +337,6 @@ const QuoteCard: React.FC<{ quote: string; author: string; title: string }> = ({
   <div className="relative">
     <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10 rounded-3xl"></div>
     <div className="relative bg-gray-900/30 p-12 rounded-3xl border border-gray-800">
-      <div className="text-6xl text-blue-400/20 mb-4">"</div>
       <blockquote className="text-3xl font-light leading-relaxed text-gray-200 mb-8">
         {quote}
       </blockquote>

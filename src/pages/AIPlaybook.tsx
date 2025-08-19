@@ -12,7 +12,7 @@ const AIPlaybook: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <h1 className="text-xl font-light text-white">AI Middle East 2025</h1>
+              <h1 className="text-xl font-light text-white">AI Middle East <span className="text-blue-400">2025</span></h1>
             </div>
             <div className="flex items-center space-x-4">
               <button
@@ -23,7 +23,7 @@ const AIPlaybook: React.FC = () => {
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
                 }`}
               >
-                Landing Page
+                Home
               </button>
               <button
                 onClick={() => setCurrentView('presentation')}
@@ -33,9 +33,8 @@ const AIPlaybook: React.FC = () => {
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
                 }`}
               >
-                Presentation
+                Deck
               </button>
-              
             </div>
           </div>
         </div>
@@ -45,7 +44,6 @@ const AIPlaybook: React.FC = () => {
       <main className="pt-16">
         {currentView === 'landing' && <AIPlaybookLandingComplete />}
         {currentView === 'presentation' && <AIPlaybookPresentationComplete />}
-        {currentView === 'full-report' && <AIFullReport />}
       </main>
     </div>
   );
