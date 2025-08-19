@@ -279,10 +279,10 @@ export default function HomeV2() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-6 h-6" />
-                    <span className="font-medium">Your AI Delivery Partner — On Demand</span>
+                    <span className="font-light">Your AI Delivery Partner — On Demand</span>
                   </div>
 
-                  <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                  <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                       Plug-in expertise for your next big project
                     </span>
@@ -334,7 +334,7 @@ export default function HomeV2() {
                   className="space-y-4"
                 >
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-3">Success Stories</h3>
+                    <h3 className="text-2xl font-light text-white mb-3">Success Stories</h3>
                     <p className="text-gray-300">Real projects, real results</p>
                   </div>
 
@@ -476,7 +476,7 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6">Proven Track Record</h2>
+              <h2 className="text-4xl font-thin mb-6">Proven Track Record</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Two decades of digital leadership delivering measurable results across industries
               </p>
@@ -493,10 +493,10 @@ export default function HomeV2() {
                   className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
                 >
                   <div className="text-blue-600 mb-4 flex justify-center">{highlight.icon}</div>
-                  <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <div className="text-4xl font-thin mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {highlight.metric}
                   </div>
-                  <div className="text-xl font-semibold mb-2 text-gray-800">{highlight.label}</div>
+                  <div className="text-xl font-light mb-2 text-gray-800">{highlight.label}</div>
                   <div className="text-gray-600">{highlight.description}</div>
                 </motion.div>
               ))}
@@ -518,10 +518,10 @@ export default function HomeV2() {
             >
               <div className="flex items-center justify-center gap-2 mb-6">
                 <Target className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-medium">Focus Areas</span>
+                <span className="text-blue-600 font-light">Focus Areas</span>
               </div>
 
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-thin mb-6">
                 How I Help Organizations Win with AI
               </h2>
 
@@ -545,7 +545,7 @@ export default function HomeV2() {
                     <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
                       {area.icon}
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
+                    <h3 className="text-xl font-light mb-3">{area.title}</h3>
                     <p className="text-gray-600 mb-6">{area.description}</p>
                   </div>
 
@@ -577,10 +577,10 @@ export default function HomeV2() {
             >
               <div className="flex items-center justify-center gap-2 mb-6">
                 <Code className="w-6 h-6 text-blue-400" />
-                <span className="text-blue-400 font-medium">AI-Native Building</span>
+                <span className="text-blue-400 font-light">AI-Native Building</span>
               </div>
 
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-thin mb-6">
                 Building with AI, Not Just Talking About It
               </h2>
 
@@ -601,7 +601,7 @@ export default function HomeV2() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Bot className="w-8 h-8 text-blue-400" />
-                  <h3 className="text-2xl font-semibold">P0STMAN Agency</h3>
+                  <h3 className="text-2xl font-light">P0STMAN Agency</h3>
                 </div>
                 <p className="text-gray-300 mb-6">
                   AI-powered digital agency delivering production-ready apps in days, not months.
@@ -632,7 +632,7 @@ export default function HomeV2() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Zap className="w-8 h-8 text-purple-400" />
-                  <h3 className="text-2xl font-semibold">Chilled Tools</h3>
+                  <h3 className="text-2xl font-light">Chilled Tools</h3>
                 </div>
                 <p className="text-gray-300 mb-6">
                   B2B SaaS suite empowering solo founders and SMEs with AI-built tools for CRM,
@@ -663,7 +663,7 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h3 className="text-2xl font-semibold mb-8">See AI Building in Action</h3>
+              <h3 className="text-2xl font-light mb-8">See AI Building in Action</h3>
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div
                   className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
