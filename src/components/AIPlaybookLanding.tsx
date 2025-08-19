@@ -54,7 +54,7 @@ const AIPlaybookLanding: React.FC = () => {
                   The must-read report for business leaders, policymakers, and innovators navigating the AI revolution in the region.
                 </p>
                 <button className="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-xl text-lg font-bold shadow-lg animate-pulse-glow mb-6">
-                  📥 Get the Free Report
+                  Get the Free Report
                 </button>
                 <div className="border-t border-gray-800 my-8"></div>
                 <div className="space-y-4">
@@ -87,7 +87,7 @@ const AIPlaybookLanding: React.FC = () => {
                       <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company" className="w-full px-6 py-4 bg-black/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 mb-2" required />
                       <input type="text" name="role" value={form.role} onChange={handleChange} placeholder="Role" className="w-full px-6 py-4 bg-black/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 mb-2" required />
                       <button type="submit" disabled={isLoading} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg animate-pulse-glow">
-                        {isLoading ? 'Processing...' : '📥 Send Me the Report'}
+                        {isLoading ? 'Processing...' : 'Send Me the Report'}
                       </button>
                     </form>
                     <div className="mt-6 text-center text-sm text-gray-500">No spam. Unsubscribe anytime. Your data is secure.</div>

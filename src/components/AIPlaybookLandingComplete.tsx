@@ -77,7 +77,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-6 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow"
               >
-                📥 Get the Free Report
+                Get the Free Report
               </button>
             </div>
           </div>
@@ -126,7 +126,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                   onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
                   className="bg-gradient-to-r from-green-600 to-blue-600 px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
                 >
-                  👉 Claim Your Copy Now
+                  Claim Your Copy Now
                 </button>
               </div>
             </div>
@@ -161,7 +161,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 hover:scale-105"
               >
-                📊 Download the Full 40-page Report
+                Download the Full 40-page Report
               </button>
             </div>
           </div>
@@ -220,7 +220,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                     <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-800">
                       <div className="text-center mb-8">
                         <ArrowDownTrayIcon className="w-12 h-12 mx-auto text-blue-400 mb-4" />
-                        <h3 className="text-2xl font-light mb-2">🚀 Get Instant Access</h3>
+                        <h3 className="text-2xl font-light mb-2">Get Instant Access</h3>
                       </div>
 
                       <form onSubmit={handleSubmit} className="space-y-6">
@@ -268,7 +268,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                           disabled={isLoading}
                           className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:scale-105"
                         >
-                          {isLoading ? 'Processing...' : '📥 Send Me the Report'}
+                          {isLoading ? 'Processing...' : 'Send Me the Report'}
                         </button>
                       </form>
 
@@ -307,7 +307,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 px-12 py-6 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
-                🔥 Download Free Report Now
+                Download Free Report Now
               </button>
             </div>
           </div>

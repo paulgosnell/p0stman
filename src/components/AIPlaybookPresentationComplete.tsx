@@ -90,7 +90,7 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                   onClick={scrollToDownload}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105 mr-6"
                 >
-                  👉 Download Full Report
+                  Download Full Report
                 </button>
               </div>
             </div>
@@ -155,7 +155,7 @@ const AIPlaybookPresentationComplete: React.FC = () => {
               <div className="mt-20 text-center">
                 <div className="inline-flex items-center space-x-4 bg-gray-900/50 px-8 py-4 rounded-full border border-gray-800">
                   <ArrowTrendingUpIcon className="w-6 h-6 text-green-400" />
-                  <span className="text-xl font-light">📈 Exponential Growth Trajectory</span>
+                  <span className="text-xl font-light">Exponential Growth Trajectory</span>
                 </div>
               </div>
             </div>
@@ -188,7 +188,7 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
                   <div className="relative bg-gray-900/80 p-8 rounded-3xl border border-gray-700">
-                    <h3 className="text-2xl font-light mb-4 text-purple-300">👉 HUMAIN Initiative</h3>
+                    <h3 className="text-2xl font-light mb-4 text-purple-300">HUMAIN Initiative</h3>
                     <div className="text-center mb-6">
                       <div className="text-5xl font-thin text-blue-400 mb-2">18,000</div>
                       <div className="text-lg text-gray-300">Blackwell GPUs</div>
@@ -282,7 +282,7 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                     onClick={scrollToDownload}
                     className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105"
                   >
-                    👉 Download the Full Playbook
+                    Download the Full Playbook
                   </button>
                 </div>
               </div>
@@ -306,7 +306,7 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                   onClick={scrollToDownload}
                   className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 px-16 py-6 rounded-full text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse"
                 >
-                  🚀 Get the Free Report Now
+                  Get the Free Report Now
                 </button>
               </div>
             </div>
