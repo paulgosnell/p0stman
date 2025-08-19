@@ -2,6 +2,9 @@
 CREATE TABLE ai_playbook_leads (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email VARCHAR(255) NOT NULL,
+  name VARCHAR(255),
+  company VARCHAR(255),
+  role VARCHAR(255),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   source VARCHAR(100) DEFAULT 'AI Playbook Download',
   downloaded BOOLEAN DEFAULT FALSE,

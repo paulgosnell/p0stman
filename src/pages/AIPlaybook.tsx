@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AIPlaybookPresentation from '../components/AIPlaybookPresentation';
-import AIPlaybookLanding from '../components/AIPlaybookLanding';
+import AIPlaybookLandingComplete from '../components/AIPlaybookLandingComplete';
 import AIFullReport from '../components/AIFullReport';
 
 const AIPlaybook: React.FC = () => {
@@ -53,7 +53,7 @@ const AIPlaybook: React.FC = () => {
 
       {/* Content */}
       <main className="pt-16">
-        {currentView === 'landing' && <AIPlaybookLanding />}
+        {currentView === 'landing' && <AIPlaybookLandingComplete />}
         {currentView === 'presentation' && <AIPlaybookPresentation />}
         {currentView === 'full-report' && <AIFullReport />}
       </main>
