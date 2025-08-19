@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowDownTrayIcon, CheckCircleIcon, DocumentTextIcon, ChartBarIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import AIAnimatedBackground from './AIAnimatedBackground';
 import AIPlaybookSEO from './AIPlaybookSEO';
+import { SpaceBackground, DesertBackground, CityscapeBackground } from './PremiumBackgrounds';
 
 const AIPlaybookLandingComplete: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -53,10 +54,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
       <div className="min-h-screen bg-black text-white">
         
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          <AIAnimatedBackground />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-purple-900/20"></div>
-          <div className="absolute inset-0 bg-[url('/ai-infrastructure-bg.jpg')] bg-cover bg-center opacity-10"></div>
+        <SpaceBackground>
+          <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <AIAnimatedBackground />
           
           <div className="relative z-10 container mx-auto px-8 py-20">
             <div className="text-center max-w-5xl mx-auto">
@@ -81,7 +81,8 @@ const AIPlaybookLandingComplete: React.FC = () => {
               </button>
             </div>
           </div>
-        </section>
+          </section>
+        </SpaceBackground>
 
         {/* Credibility Section */}
         <section className="py-20 bg-gradient-to-b from-black to-gray-900">
@@ -188,7 +189,8 @@ const AIPlaybookLandingComplete: React.FC = () => {
         </section>
 
         {/* Download Form Section */}
-        <section id="download-form" className="py-20 bg-gradient-to-br from-blue-900/10 via-black to-purple-900/10">
+        <CityscapeBackground>
+          <section id="download-form" className="py-20">
           <div className="container mx-auto px-8">
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -289,10 +291,12 @@ const AIPlaybookLandingComplete: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </CityscapeBackground>
 
         {/* FOMO Closing Section */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <DesertBackground>
+          <section className="py-20">
           <div className="container mx-auto px-8 text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-5xl md:text-6xl font-thin mb-8">Don't Be Left Behind.</h2>
@@ -307,7 +311,8 @@ const AIPlaybookLandingComplete: React.FC = () => {
               </button>
             </div>
           </div>
-        </section>
+          </section>
+        </DesertBackground>
       </div>
     </>
   );

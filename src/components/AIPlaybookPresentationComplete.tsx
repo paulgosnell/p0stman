@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDownIcon, ArrowTrendingUpIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import AIAnimatedBackground from './AIAnimatedBackground';
 import AIPlaybookSEO from './AIPlaybookSEO';
+import { SpaceBackground, DesertBackground, CityscapeBackground, TechBackground } from './PremiumBackgrounds';
 
 const AIPlaybookPresentationComplete: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -72,10 +73,10 @@ const AIPlaybookPresentationComplete: React.FC = () => {
 
         {/* Slide 1 - Hero/Cover */}
         {currentSlide === 0 && (
-          <section className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
-            <AIAnimatedBackground />
-            <div className="absolute inset-0 bg-[url('/ai-infrastructure-bg.jpg')] bg-cover bg-center opacity-20"></div>
-            <div className="relative z-10 text-center px-8 max-w-6xl">
+          <SpaceBackground>
+            <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
+              <AIAnimatedBackground />
+              <div className="relative z-10 text-center px-8 max-w-6xl">
               <h1 className={`text-7xl md:text-9xl font-thin tracking-tight mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 AI in the
                 <span className="block font-light text-gray-300">Middle East</span>
@@ -93,13 +94,15 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                 </button>
               </div>
             </div>
-          </section>
+            </section>
+          </SpaceBackground>
         )}
 
         {/* Slide 2 - Executive Abstract */}
         {currentSlide === 1 && (
-          <section className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center relative overflow-hidden">
-            <AIAnimatedBackground />
+          <TechBackground>
+            <section className="min-h-screen flex items-center relative overflow-hidden">
+              <AIAnimatedBackground />
             <div className="container mx-auto px-8 py-20 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -123,13 +126,15 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+          </TechBackground>
         )}
 
         {/* Slide 3 - By the Numbers */}
         {currentSlide === 2 && (
-          <section className="min-h-screen bg-black relative overflow-hidden">
-            <AIAnimatedBackground />
+          <DesertBackground>
+            <section className="min-h-screen relative overflow-hidden">
+              <AIAnimatedBackground />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
             <div className="relative z-10 container mx-auto px-8 py-20">
               <h2 className="text-7xl font-thin text-center mb-20">By the Numbers</h2>
@@ -154,12 +159,14 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+          </DesertBackground>
         )}
 
         {/* Slide 4 - Infrastructure Build-Out */}
         {currentSlide === 3 && (
-          <section className="min-h-screen bg-gradient-to-br from-gray-900 to-black flex items-center">
+          <CityscapeBackground>
+            <section className="min-h-screen flex items-center">
             <div className="container mx-auto px-8 py-20">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                 <div className="lg:col-span-2">
@@ -193,7 +200,8 @@ const AIPlaybookPresentationComplete: React.FC = () => {
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+          </CityscapeBackground>
         )}
 
         {/* Slide 5 - Visionary Leadership */}
