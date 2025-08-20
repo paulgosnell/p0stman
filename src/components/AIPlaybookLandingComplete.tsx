@@ -83,7 +83,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 <span className="block text-5xl md:text-7xl text-blue-400 font-extralight">2025</span>
               </h1>
               <p className={`text-2xl md:text-3xl font-light text-gray-400 mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                The trillion‑dollar playbook for people & business
+                The GenAI playbook for Marketing, Product, HR & Engineering
               </p>
 
               <button 
@@ -115,11 +115,11 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 <div>
                   <ul className="space-y-6">
                     {[
-                      '$320B prize by 2030 — where value will actually accrue',
-                      '$7.2B+ AI investment surge — who’s building what, and where',
-                      'Exclusive insights from regional leaders (incl. UAE AI Minister)',
-                      'Real use cases across healthcare, finance, energy, smart cities',
-                      'A 12‑month action playbook for boards, startups, and governments'
+                      'Built for enterprise teams: Marketing, Product, HR & Engineering',
+                      'Real GenAI use cases that ship: agents, RAG, code‑gen, analytics',
+                      'Playbooks & templates you can run in weeks, not quarters',
+                      'Arabic‑first & sovereign‑friendly patterns (data, governance, risk)',
+                      '$320B regional AI impact by 2030 — why GenAI is the lever'
                     ].map((item, index) => (
                       <li key={index} className="flex items-start space-x-4">
                         <CheckCircleIcon className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
@@ -160,18 +160,18 @@ const AIPlaybookLandingComplete: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
               <ContentCard 
                 icon={<ChartBarIcon className="w-12 h-12 text-blue-400" />}
-                title="By the Numbers"
-                description="The shock stats and where the money flows next"
+                title="Marketing & Product"
+                description="Personalisation at scale, creative automation, rapid product discovery"
               />
               <ContentCard 
                 icon={<DocumentTextIcon className="w-12 h-12 text-purple-400" />}
-                title="Industry Deep Dives"
-                description="Sector playbooks: what’s real now and what’s next"
+                title="People Ops & HR"
+                description="Recruiting copilots, onboarding agents, L&D content in Arabic/English"
               />
               <ContentCard 
                 icon={<ClipboardDocumentCheckIcon className="w-12 h-12 text-green-400" />}
-                title="The Playbook"
-                description="The Q1–Q4 moves leaders make to win"
+                title="Engineering & Code"
+                description="Code‑gen, test‑gen, RAG patterns, evals & governance that pass audit"
               />
             </div>
 
@@ -201,10 +201,10 @@ const AIPlaybookLandingComplete: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-thin text-center mb-16">Who Is This For?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
-                { title: 'Executives', description: 'Stay ahead of disruption' },
-                { title: 'Policy Leaders', description: 'Shape national strategies' },
-                { title: 'Entrepreneurs', description: 'Spot new opportunities' },
-                { title: 'Investors', description: 'Identify where capital flows next' }
+                { title: 'CMOs & Growth Leaders', description: 'Ship personalisation that performs' },
+                { title: 'CPOs & Product Leaders', description: 'Shorten discovery → delivery' },
+                { title: 'CHROs & People Ops', description: 'Automate hiring, onboarding, L&D' },
+                { title: 'CTOs & Engineering Leaders', description: 'Accelerate code with governance' }
               ].map((persona, index) => (
                 <div key={index} className="text-center p-6 bg-gradient-to-br from-gray-800/50 to-black/50 rounded-2xl border border-gray-700">
                   <h3 className="text-xl font-light text-white mb-3">{persona.title}</h3>
@@ -315,9 +315,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
           <div className="container mx-auto px-8 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-5xl md:text-6xl font-thin mb-8">Don’t Be Left Behind.</h2>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-2">AI is reshaping economies at exponential speed.</p>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-2">The Middle East has taken the lead.</p>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-10">The only question: where will you stand?</p>
+              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-2">GenAI is rewriting how the Middle East builds, markets, and operates.</p>
+              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-2">Leaders are shipping real agents, copilots, and code in weeks.</p>
+              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-10">The only question: will your team lead or follow?</p>
               <button 
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
@@ -349,7 +349,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                   </li>
                   <li className="flex items-center space-x-3">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-purple-500" />
-                    <span className="text-gray-300">Playbooks for healthcare, finance, energy, smart cities</span>
+                    <span className="text-gray-300">Playbooks for marketing, product, HR & engineering</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -399,7 +399,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                     <div className="relative z-10 text-center px-6">
                       <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">Studio Snapshot</p>
                       <h3 className="text-2xl md:text-3xl font-light text-white mb-3">Applied AI that ships</h3>
-                      <p className="text-gray-400">Prototypes to production, copilot UX, data pipelines, evals & observability — delivered end‑to‑end.</p>
+                      <p className="text-gray-400">Agents & copilots, RAG & data pipelines, code‑gen & test‑gen, evals & observability — delivered end‑to‑end.</p>
                     </div>
                   </div>
 
