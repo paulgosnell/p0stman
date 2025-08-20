@@ -1,3 +1,19 @@
+// Content Card Component
+const ContentCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => {
+  return (
+    <div className="group">
+      <div className="bg-gradient-to-br from-gray-900/80 to-black/80 p-8 rounded-2xl border border-gray-800 group-hover:border-blue-500/50 transition-all duration-300 group-hover:transform group-hover:scale-105 h-full text-center">
+        <div className="flex justify-center mb-6">
+          <div className="p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
+            {icon}
+          </div>
+        </div>
+        <h3 className="text-xl font-light mb-4 text-white">{title}</h3>
+        <p className="text-gray-400 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+};
 import React, { useState } from 'react';
 import { ArrowDownTrayIcon, CheckCircleIcon, DocumentTextIcon, ChartBarIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import AIAnimatedBackground from './AIAnimatedBackground';
@@ -82,7 +98,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
           </section>
 
         {/* Credibility Section */}
-        <section className="py-40 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+  <section className="min-h-screen bg-gradient-to-b from-black to-gray-900 relative overflow-hidden flex items-center">
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
@@ -137,7 +153,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
         </section>
 
         {/* Content Preview */}
-        <section className="py-40 bg-black">
+  <section className="min-h-screen bg-black flex items-center">
           <div className="container mx-auto px-8">
             <h2 className="text-4xl md:text-5xl font-thin text-center mb-16">What’s inside (sneak peek)</h2>
             
@@ -171,7 +187,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
         </section>
 
         {/* Target Personas */}
-        <section className="py-60 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+  <section className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative overflow-hidden flex items-center">
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
@@ -208,7 +224,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
         </section>
 
           {/* Download Form Section */}
-          <section id="download-form" className="py-20">
+          <section id="download-form" className="min-h-screen flex items-center">
           <div className="container mx-auto px-8">
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -286,7 +302,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
           </section>
 
         {/* FOMO Closing Section */}
-        <section className="py-60 relative overflow-hidden">
+  <section className="min-h-screen relative overflow-hidden flex items-center">
           {/* Video Background */}
           <video
             className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
@@ -311,18 +327,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
             </div>
           </div>
         </section>
+
       {/* About P0STMAN Section */}
-      <section className="relative overflow-hidden">
-        {/* Top divider to visually reset from previous row */}
-        <svg aria-hidden="true" viewBox="0 0 1440 100" className="w-full h-[80px] text-black fill-current rotate-180">
-          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,100 L0,100 Z"></path>
-        </svg>
-
-        <div className="relative bg-[#07090d]">
-          {/* Ambient gradient accents */}
-          <div className="pointer-events-none absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -right-24 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-blue-600/10 blur-3xl" />
-
+        <section className="min-h-screen relative overflow-hidden flex items-center"> 
           <div className="container mx-auto px-6 md:px-10 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left: Copy + badges + CTAs */}
@@ -375,10 +382,21 @@ const AIPlaybookLandingComplete: React.FC = () => {
 
               {/* Right: Tilted product card with glow ring */}
               <div className="relative">
-                <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-tr from-blue-600/40 via-purple-600/30 to-cyan-500/30 blur-2xl" />
-                <div className="relative bg-black/60 border border-white/10 rounded-[28px] p-6 md:p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                  <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
-                    <div className="text-center px-6">
+                {/* Glow ring */}
+                <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-tr from-blue-600/40 via-purple-600/30 to-cyan-500/30 blur-2xl z-0" />
+                {/* Background video - higher opacity and z-10 */}
+                <div className="relative bg-black/50 border border-white/10 rounded-[28px] p-6 md:p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500 z-20">
+                  <div className="aspect-[4/3] rounded-2xl relative flex items-center justify-center overflow-hidden">
+                    {/* Video sits behind all card content */}
+                    <video
+                      className="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-60 z-0 pointer-events-none"
+                      src="https://videos.pexels.com/video-files/4410402/4410402-hd_1920_1080_30fps.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                    <div className="relative z-10 text-center px-6">
                       <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">Studio Snapshot</p>
                       <h3 className="text-2xl md:text-3xl font-light text-white mb-3">Applied AI that ships</h3>
                       <p className="text-gray-400">Prototypes to production, copilot UX, data pipelines, evals & observability — delivered end‑to‑end.</p>
@@ -392,26 +410,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      </div>
-    </>
+        </section>
+    </div>
+  </>
   );
 };
-
-// Content Card Component
-const ContentCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
-  <div className="group">
-    <div className="bg-gradient-to-br from-gray-900/80 to-black/80 p-8 rounded-2xl border border-gray-800 group-hover:border-blue-500/50 transition-all duration-300 group-hover:transform group-hover:scale-105 h-full text-center">
-      <div className="flex justify-center mb-6">
-        <div className="p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
-          {icon}
-        </div>
-      </div>
-      <h3 className="text-xl font-light mb-4 text-white">{title}</h3>
-      <p className="text-gray-400 leading-relaxed">{description}</p>
-    </div>
-  </div>
-);
-
 export default AIPlaybookLandingComplete;
