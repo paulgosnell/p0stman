@@ -24,6 +24,11 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
 
   const currentSEO = seoData[page];
 
+  // Use a unique image for presentation page
+  const ogImage = page === 'presentation'
+    ? `${baseUrl}/ai-middle-east-2025-og.png`
+    : `${baseUrl}/ai-middle-east-2025-og.png`;
+
   return (
     <HelmetProvider>
       <Helmet>
@@ -42,7 +47,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={currentSEO.title} />
       <meta property="og:description" content={currentSEO.description} />
-      <meta property="og:image" content={`${baseUrl}/ai-middle-east-2025-og.jpg`} />
+      <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="AI in the Middle East 2025 - The Playbook for People & Business" />
@@ -54,7 +59,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       <meta property="twitter:url" content={currentUrl} />
       <meta property="twitter:title" content={currentSEO.title} />
       <meta property="twitter:description" content={currentSEO.description} />
-      <meta property="twitter:image" content={`${baseUrl}/ai-middle-east-2025-og.jpg`} />
+      <meta property="twitter:image" content={ogImage} />
       <meta property="twitter:image:alt" content="AI in the Middle East 2025 - The Playbook for People & Business" />
       <meta name="twitter:creator" content="@p0stman" />
       <meta name="twitter:site" content="@p0stman" />
@@ -75,7 +80,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
           "name": "AI in the Middle East 2025: The Playbook for People & Business",
           "description": currentSEO.description,
           "url": currentUrl,
-          "image": `${baseUrl}/ai-middle-east-2025-og.jpg`,
+          "image": ogImage,
           "author": {
             "@type": "Organization",
             "name": "P0STMAN"
@@ -113,7 +118,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       </script>
 
       {/* Preload critical resources */}
-      <link rel="preload" href="/ai-middle-east-2025-og.jpg" as="image" />
+      <link rel="preload" href={ogImage} as="image" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={currentUrl} />
