@@ -290,12 +290,12 @@ export default function HomeV2() {
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  I work with agencies and corporates to deliver AI-powered products that match your standards, 
+                  I work with agencies and corporates to deliver AI-powered products that match your standards,
                   hit your deadlines, and impress your clients.
                 </p>
 
                 <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-                  Whether you need a specialist to join your team or a full build from the ground up, 
+                  Whether you need a specialist to join your team or a full build from the ground up,
                   I combine AI acceleration with proven delivery expertise to get it done — right, first time.
                 </p>
 
@@ -355,7 +355,7 @@ export default function HomeV2() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     </div>
-                    
+
                     <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
                       <div className="space-y-6">
                         {/* Top Section */}
@@ -410,11 +410,10 @@ export default function HomeV2() {
                       <button
                         key={index}
                         onClick={() => setCurrentCaseStudy(index)}
-                        className={`w-3 h-3 rounded-full transition-all ${
-                          index === currentCaseStudy 
-                            ? 'bg-white scale-125' 
-                            : 'bg-white/40 hover:bg-white/60'
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-all ${index === currentCaseStudy
+                          ? 'bg-white scale-125'
+                          : 'bg-white/40 hover:bg-white/60'
+                          }`}
                       />
                     ))}
                   </div>
@@ -440,7 +439,7 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <p className="text-gray-600 font-medium">Trusted by leading organizations</p>
+              <p className="text-gray-700 font-medium">Trusted by leading organizations</p>
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
@@ -476,8 +475,8 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-thin mb-6">Proven Track Record</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-4xl font-thin mb-6 text-gray-900" style={{ color: '#111827' }}>Proven Track Record</h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Two decades of digital leadership delivering measurable results across industries
               </p>
             </motion.div>
@@ -497,7 +496,7 @@ export default function HomeV2() {
                     {highlight.metric}
                   </div>
                   <div className="text-xl font-light mb-2 text-gray-800">{highlight.label}</div>
-                  <div className="text-gray-600">{highlight.description}</div>
+                  <div className="text-gray-700">{highlight.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -505,8 +504,8 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* Focus Areas */}
-      <section id="focus" className="py-24 bg-white">
+      {/* Focus Areas - Updated for better contrast */}
+      <section id="focus" className="py-24 bg-white" style={{ color: '#111827' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -521,11 +520,11 @@ export default function HomeV2() {
                 <span className="text-blue-600 font-light">Focus Areas</span>
               </div>
 
-              <h2 className="text-4xl font-thin mb-6">
+              <h2 className="text-4xl font-thin mb-6 text-black">
                 How I Help Organizations Win with AI
               </h2>
 
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              <p className="text-black max-w-2xl mx-auto text-lg font-semibold">
                 Deep operator experience across product leadership, AI-native development,
                 and digital transformation consulting.
               </p>
@@ -545,15 +544,15 @@ export default function HomeV2() {
                     <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
                       {area.icon}
                     </div>
-                    <h3 className="text-xl font-light mb-3">{area.title}</h3>
-                    <p className="text-gray-600 mb-6">{area.description}</p>
+                    <h3 className="text-xl font-semibold mb-3 text-black">{area.title}</h3>
+                    <p className="text-black mb-6 font-semibold">{area.description}</p>
                   </div>
 
                   <div className="space-y-3">
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-black font-semibold">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -732,11 +731,11 @@ export default function HomeV2() {
                 <span className="text-blue-600 font-medium">Real Projects, Real Results</span>
               </div>
 
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-bold mb-6 text-gray-900" style={{ color: '#111827' }}>
                 Strategic Product Delivery Across Industries
               </h2>
 
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              <p className="text-gray-700 max-w-2xl mx-auto text-lg">
                 Banking, media, health, retail and Web3. From innovation pilots to
                 enterprise transformations, delivering measurable impact at scale.
               </p>
@@ -761,7 +760,7 @@ export default function HomeV2() {
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    
+
                     {/* Category Badge */}
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-lg">
@@ -808,12 +807,12 @@ export default function HomeV2() {
                         <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600 text-sm font-medium">{project.company}</p>
+                        <p className="text-gray-700 text-sm font-medium">{project.company}</p>
                       </div>
                     </div>
-                    
+
                     {/* Industry Category */}
-                    <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">
+                    <div className="text-xs text-gray-600 uppercase tracking-wide font-medium">
                       {project.category}
                     </div>
                   </div>
@@ -844,7 +843,7 @@ export default function HomeV2() {
                         {project.category}
                       </span>
                     </div>
-                    
+
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -852,12 +851,12 @@ export default function HomeV2() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Bottom Content */}
                   <div className="p-4">
                     <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h4>
-                    <p className="text-gray-600 text-sm font-medium">{project.company}</p>
-                    <div className="text-xs text-gray-500 uppercase tracking-wide font-medium mt-1">
+                    <p className="text-gray-700 text-sm font-medium">{project.company}</p>
+                    <div className="text-xs text-gray-600 uppercase tracking-wide font-medium mt-1">
                       {project.category}
                     </div>
                   </div>
@@ -923,8 +922,8 @@ export default function HomeV2() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                      <div className="text-gray-600">{testimonial.role}</div>
-                      <div className="text-sm text-gray-500">{testimonial.company}</div>
+                      <div className="text-gray-700">{testimonial.role}</div>
+                      <div className="text-sm text-gray-600">{testimonial.company}</div>
                     </div>
                   </div>
                 </motion.div>

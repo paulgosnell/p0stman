@@ -5,7 +5,6 @@ import { useInView } from 'react-intersection-observer';
 import { Bot, CheckCircle, ArrowRight, MessageSquare, Mail, Clock, Zap } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
 import Contact from '../components/Contact';
-import ServicesGrid from '../components/ServicesGrid';
 
 const benefits = [
   "Dedicated private communication channel",
@@ -103,7 +102,7 @@ export default function Retainer() {
 
                     <div className="flex items-center gap-6 mt-8">
                       <div>
-                        <div className="text-3xl font-bold mb-1">$5,000</div>
+                        <div className="text-3xl font-bold mb-1">$12,000</div>
                         <div className="text-gray-400">per month</div>
                       </div>
                       <a
@@ -222,13 +221,12 @@ export default function Retainer() {
               </div>
               <div className="mt-12 text-gray-600">
                 <p className="mb-4">All for a fraction of the cost of hiring a full-time team.</p>
-                <p className="text-sm">Average cost of a tech team: $40,000+/month<br />Your investment: $5,000/month</p>
+                <p className="text-sm">Average cost of a tech team: $40,000+/month<br />Your investment: $12,000/month</p>
               </div>
             </div>
           </div>
         </section>
 
-        <ServicesGrid currentService="retainer" />
         
         <div id="contact">
           <Contact />

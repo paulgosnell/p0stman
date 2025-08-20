@@ -64,6 +64,7 @@ import SocialPreview from './components/SocialPreview';
 import Hello from './pages/Hello';
 import Services from './pages/Services';
 import AIPlaybook from './pages/AIPlaybook';
+import OnePageApp from './pages/OnePageApp';
 
 export default function App() {
   return (
@@ -130,6 +131,7 @@ export default function App() {
         <Route path="/training" element={<Training />} />
         <Route path="/hello" element={<Hello />} />
   <Route path="/ai-playbook" element={<AIPlaybook />} />
+  <Route path="/one-pager" element={<OnePageApp />} />
   <Route path="/privacy" element={<PrivacyPage />} />
   <Route path="/social-share" element={<SocialShare />} />
   <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />

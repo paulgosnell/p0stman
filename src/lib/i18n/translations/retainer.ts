@@ -17,7 +17,7 @@ export const retainerTranslations = {
     'retainer.process.build': '3. ابدأ البناء',
     
     // Pricing
-    'retainer.pricing.monthly': '5,000 دولار/شهرياً',
+  'retainer.pricing.monthly': '12,000 دولار/شهرياً',
     'retainer.pricing.comparison': 'تكلفة فريق تقني كامل: 40,000+ دولار/شهرياً'
   },
   en: {
@@ -38,7 +38,7 @@ export const retainerTranslations = {
     'retainer.process.build': '3. Start Building',
     
     // Pricing
-    'retainer.pricing.monthly': '$5,000/month',
+  'retainer.pricing.monthly': '$12,000/month',
     'retainer.pricing.comparison': 'Full tech team cost: $40,000+/month'
   }
 };
