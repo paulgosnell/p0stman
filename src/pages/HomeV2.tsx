@@ -22,7 +22,8 @@ import {
   Calendar,
   Smartphone,
   Sparkles,
-  Clock
+  Clock,
+  MessageSquare
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 
@@ -891,7 +892,7 @@ export default function HomeV2() {
                         )}
                       </div>
                     </div>
-                    
+
                     <div className="p-8 lg:p-12">
                       <div className="space-y-6">
                         <div>
@@ -958,7 +959,7 @@ export default function HomeV2() {
                       )}
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="space-y-4">
                       <div>
@@ -1019,7 +1020,7 @@ export default function HomeV2() {
                         )}
                       </div>
                     </div>
-                    
+
                     <div className="p-4">
                       <div className="space-y-3">
                         <div>
