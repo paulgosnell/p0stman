@@ -242,7 +242,7 @@ const additionalProjects = [
     title: 'Rhythm AI',
     company: 'Running Coach App',
     category: 'AI & Fitness',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/rhythm-dashboard.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/rhythm1.png',
     caseStudyUrl: '/case-study/rhythm'
   },
   {
@@ -250,7 +250,7 @@ const additionalProjects = [
     title: 'ChilledCRM',
     company: 'Business Management',
     category: 'SaaS & CRM',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledcrm-dashboard.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledcrm1.png',
     caseStudyUrl: '/case-study/chilledcrm'
   },
   {
@@ -258,7 +258,7 @@ const additionalProjects = [
     title: 'Experience A Gift',
     company: 'Gift Platform',
     category: 'E-commerce',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift-dashboard.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift1.png',
     caseStudyUrl: '/case-study/experienceagift'
   }
 ];
