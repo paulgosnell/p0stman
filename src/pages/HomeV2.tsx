@@ -861,9 +861,9 @@ export default function HomeV2() {
               </p>
             </motion.div>
 
-            {/* Major Project Highlights - Top 4 */}
+            {/* Major Project Highlights - Top 3 Large */}
             <div className="space-y-8 mb-16">
-              {featuredProjects.slice(0, 4).map((project, index) => (
+              {featuredProjects.slice(0, 3).map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -924,63 +924,163 @@ export default function HomeV2() {
               ))}
             </div>
 
-            {/* Additional Projects - Smaller Cards */}
-            {additionalProjects.length > 0 && (
-              <>
+            {/* Medium Tall Projects - 2 Cards */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              {featuredProjects.slice(3, 4).concat(additionalProjects.slice(0, 1)).map((project, index) => (
                 <motion.div
+                  key={project.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center mb-12"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
+                  onClick={() => window.location.href = project.caseStudyUrl}
                 >
-                  <h3 className="text-2xl font-light text-gray-900 mb-4">Additional Projects</h3>
-                  <p className="text-gray-600 font-light">More examples of strategic delivery and technical leadership</p>
-                </motion.div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                  {additionalProjects.map((project, index) => (
-                    <motion.div
-                      key={project.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer bg-white"
-                      onClick={() => window.location.href = project.caseStudyUrl}
-                    >
-                      <div className="relative h-40">
+                  <div className="relative h-64">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-lg">
+                        {project.category}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-6 left-6">
+                      {project.logo && (
                         <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          src={project.logo}
+                          alt={`${project.company} logo`}
+                          className="h-10 filter brightness-0 invert"
                         />
-                        <div className="absolute top-3 right-3">
-                          <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-sm">
-                            {project.category}
-                          </span>
-                        </div>
-
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <ExternalLink className="w-6 h-6 text-white" />
-                          </div>
-                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="text-xl font-light text-gray-900 mb-1">{project.title}</h3>
+                        <p className="text-blue-600 font-medium text-sm">{project.company}</p>
                       </div>
 
-                      {/* Bottom Content */}
-                      <div className="p-4">
-                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h4>
-                        <p className="text-gray-700 text-sm font-light">{project.company}</p>
-                        <div className="text-xs text-gray-600 uppercase tracking-wide font-light mt-1">
+                      <p className="text-gray-700 font-light text-sm leading-relaxed">{project.description}</p>
+
+                      {project.metrics && (
+                        <div className="grid grid-cols-2 gap-3">
+                          {project.metrics.slice(0, 2).map((metric, i) => (
+                            <div key={i} className="text-center bg-gray-50 rounded-lg p-3">
+                              <div className="text-lg font-thin text-blue-600 mb-1">{metric.value}</div>
+                              <div className="text-xs text-gray-500">{metric.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      <div className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                        <span className="font-medium text-sm">View Case Study</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Medium Short Projects - 2 Cards */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              {additionalProjects.slice(1, 3).map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+                  onClick={() => window.location.href = project.caseStudyUrl}
+                >
+                  <div className="grid md:grid-cols-2 gap-0">
+                    <div className="relative h-32 md:h-auto">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+                      <div className="absolute bottom-3 left-3">
+                        {project.logo && (
+                          <img
+                            src={project.logo}
+                            alt={`${project.company} logo`}
+                            className="h-6 filter brightness-0 invert"
+                          />
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div className="p-4">
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="text-lg font-light text-gray-900 mb-1">{project.title}</h4>
+                          <p className="text-blue-600 font-medium text-sm">{project.company}</p>
+                        </div>
+                        <div className="text-xs text-gray-600 uppercase tracking-wide font-light">
                           {project.category}
                         </div>
+                        <div className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                          <span className="font-medium text-sm">View Project</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </div>
                       </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Small Projects - 4 Cards */}
+            {additionalProjects.length > 3 && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                {additionalProjects.slice(3).map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer bg-white"
+                    onClick={() => window.location.href = project.caseStudyUrl}
+                  >
+                    <div className="relative h-32">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute top-2 right-2">
+                        <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-light rounded-full shadow-sm">
+                          {project.category}
+                        </span>
+                      </div>
+
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <ExternalLink className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Content */}
+                    <div className="p-3">
+                      <h5 className="font-medium text-gray-900 text-sm mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h5>
+                      <p className="text-gray-600 text-xs font-light">{project.company}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             )}
 
             {/* CTA */}
