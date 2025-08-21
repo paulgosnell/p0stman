@@ -504,8 +504,128 @@ export default function HomeV2() {
         </div>
       </section>
 
+      {/* Problems We Solve Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-thin mb-6">Problems We Solve</h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+                When organizations need to move fast, scale efficiently, and deliver exceptional results
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 shadow-lg border border-red-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-red-100 rounded-2xl">
+                    <Clock className="w-8 h-8 text-red-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Time-to-Market Pressure</h3>
+                    <p className="text-red-600 font-medium mb-3">AI-accelerated development delivers 80% faster</p>
+                    <p className="text-gray-700 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-green-100 rounded-2xl">
+                    <DollarSign className="w-8 h-8 text-green-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Budget & Resource Constraints</h3>
+                    <p className="text-green-600 font-medium mb-3">Fractional expertise at 50-70% less cost</p>
+                    <p className="text-gray-700 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-blue-100 rounded-2xl">
+                    <Target className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Complex Technical Challenges</h3>
+                    <p className="text-blue-600 font-medium mb-3">Proven track record scaling 1→40 teams</p>
+                    <p className="text-gray-700 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-purple-100 rounded-2xl">
+                    <Rocket className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Digital Transformation Needs</h3>
+                    <p className="text-purple-600 font-medium mb-3">End-to-end transformation expertise</p>
+                    <p className="text-gray-700 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <p className="text-gray-600 mb-6 font-light">
+                Ready to solve your biggest challenges?
+              </p>
+              <motion.a
+                href="mailto:paul@p0stman.com?subject=Project Discussion"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
+              >
+                <MessageSquare className="w-5 h-5" />
+                Let's Discuss Your Project
+                <ArrowRight className="w-5 h-5" />
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Focus Areas - Updated for better contrast */}
-      <section id="focus" className="py-24 bg-white" style={{ color: '#111827' }}>
+      <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -731,89 +851,73 @@ export default function HomeV2() {
                 <span className="text-blue-600 font-medium">Real Projects, Real Results</span>
               </div>
 
-              <h2 className="text-4xl font-bold mb-6 text-gray-900" style={{ color: '#111827' }}>
+              <h2 className="text-4xl font-thin mb-6 text-gray-900" style={{ color: '#111827' }}>
                 Strategic Product Delivery Across Industries
               </h2>
 
-              <p className="text-gray-700 max-w-2xl mx-auto text-lg">
+              <p className="text-gray-700 max-w-2xl mx-auto text-lg font-light">
                 Banking, media, health, retail and Web3. From innovation pilots to
                 enterprise transformations, delivering measurable impact at scale.
               </p>
             </motion.div>
 
-            {/* Main Projects Grid - Image-Led */}
-            <div className="grid lg:grid-cols-2 gap-8">
-              {featuredProjects.map((project, index) => (
+            {/* Major Project Highlights - Top 4 */}
+            <div className="space-y-8 mb-16">
+              {featuredProjects.slice(0, 4).map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer bg-white"
+                  className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
                   onClick={() => window.location.href = project.caseStudyUrl}
                 >
-                  {/* Project Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-
-                    {/* Category Badge */}
-                    <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-lg">
-                        {project.category}
-                      </span>
+                  <div className="grid lg:grid-cols-2 gap-0">
+                    <div className="relative h-64 lg:h-auto">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+                      <div className="absolute bottom-6 left-6">
+                        {project.logo && (
+                          <img
+                            src={project.logo}
+                            alt={`${project.company} logo`}
+                            className="h-12 filter brightness-0 invert"
+                          />
+                        )}
+                      </div>
                     </div>
-
-                    {/* Hover Description Overlay */}
-                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-6">
-                      <div className="text-center text-white">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
-                          <ExternalLink className="w-8 h-8 text-white" />
+                    
+                    <div className="p-8 lg:p-12">
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-light text-gray-900 mb-2">{project.title}</h3>
+                          <p className="text-blue-600 font-medium mb-1">{project.company}</p>
+                          <p className="text-gray-600 font-light">{project.category}</p>
                         </div>
-                        <p className="text-white text-sm leading-relaxed">
-                          {project.description}
-                        </p>
-                        {/* Key Metrics on Hover */}
+
+                        <p className="text-gray-700 font-light leading-relaxed">{project.description}</p>
+
                         {project.metrics && (
-                          <div className="flex justify-center gap-6 mt-4">
-                            {project.metrics.slice(0, 2).map((metric, i) => (
+                          <div className="grid grid-cols-3 gap-4">
+                            {project.metrics.map((metric, i) => (
                               <div key={i} className="text-center">
-                                <div className="text-lg font-bold text-white">{metric.value}</div>
-                                <div className="text-xs text-white/70">{metric.label}</div>
+                                <div className="text-2xl font-thin text-blue-600 mb-1">{metric.value}</div>
+                                <div className="text-xs text-gray-500">{metric.label}</div>
                               </div>
                             ))}
                           </div>
                         )}
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Bottom Content - Clean Layout */}
-                  <div className="p-6">
-                    {/* Logo and Company */}
-                    <div className="flex items-center gap-3 mb-3">
-                      {project.logo && (
-                        <img
-                          src={project.logo}
-                          alt={`${project.company} logo`}
-                          className="h-8 w-auto"
-                        />
-                      )}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-700 text-sm font-medium">{project.company}</p>
+                        <div className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
+                          <span className="font-medium">View Case Study</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </div>
                       </div>
-                    </div>
-
-                    {/* Industry Category */}
-                    <div className="text-xs text-gray-600 uppercase tracking-wide font-medium">
-                      {project.category}
                     </div>
                   </div>
                 </motion.div>
@@ -821,48 +925,63 @@ export default function HomeV2() {
             </div>
 
             {/* Additional Projects - Smaller Cards */}
-            <div className="grid md:grid-cols-2 gap-6 mt-12">
-              {additionalProjects.map((project, index) => (
+            {additionalProjects.length > 0 && (
+              <>
                 <motion.div
-                  key={project.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
+                  transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer bg-white"
-                  onClick={() => window.location.href = project.caseStudyUrl}
+                  className="text-center mb-12"
                 >
-                  <div className="relative h-40">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute top-3 right-3">
-                      <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-sm">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <ExternalLink className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bottom Content */}
-                  <div className="p-4">
-                    <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h4>
-                    <p className="text-gray-700 text-sm font-medium">{project.company}</p>
-                    <div className="text-xs text-gray-600 uppercase tracking-wide font-medium mt-1">
-                      {project.category}
-                    </div>
-                  </div>
+                  <h3 className="text-2xl font-light text-gray-900 mb-4">Additional Projects</h3>
+                  <p className="text-gray-600 font-light">More examples of strategic delivery and technical leadership</p>
                 </motion.div>
-              ))}
-            </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                  {additionalProjects.map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer bg-white"
+                      onClick={() => window.location.href = project.caseStudyUrl}
+                    >
+                      <div className="relative h-40">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute top-3 right-3">
+                          <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-sm">
+                            {project.category}
+                          </span>
+                        </div>
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <ExternalLink className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom Content */}
+                      <div className="p-4">
+                        <h4 className="font-medium text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h4>
+                        <p className="text-gray-700 text-sm font-light">{project.company}</p>
+                        <div className="text-xs text-gray-600 uppercase tracking-wide font-light mt-1">
+                          {project.category}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </>
+            )}
 
             {/* CTA */}
             <motion.div
@@ -870,10 +989,10 @@ export default function HomeV2() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center"
             >
               <Link
-                to="/projects"
+                to="/case-studies"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] font-medium text-lg"
               >
                 View All Projects

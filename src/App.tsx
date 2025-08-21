@@ -65,6 +65,7 @@ import Hello from './pages/Hello';
 import Services from './pages/Services';
 import AIPlaybook from './pages/AIPlaybook';
 import OnePageApp from './pages/OnePageApp';
+import Portfolio from './pages/Portfolio';
 
 export default function App() {
   return (
@@ -98,6 +99,7 @@ export default function App() {
         <Route path="/mobile-app" element={<MobileApp />} />
         <Route path="/retainer" element={<Retainer />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/guide" element={<GuideAdmin />} />
