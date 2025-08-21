@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import {
@@ -17,7 +16,7 @@ import {
   Zap,
   MessageSquare
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import Header from '../components/Header';
 import AnimatedFooter from '../components/AnimatedFooter';
 
 const benefits = [
@@ -129,84 +128,159 @@ export default function FractionalCPO() {
           <meta name="keywords" content="fractional CPO, chief product officer, product strategy, product leadership, startup advisor" />
         </Helmet>
 
-        <SubHeader />
+        <Header />
 
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
-          <div className="container mx-auto px-4">
+        <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+            {/* Animated Background Elements */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+          </div>
+
+          <div className="container mx-auto px-4 pt-24 md:pt-40 pb-16 md:pb-20 relative z-10">
             <div className="max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                {/* Left Column - Hero Content */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
+                  className="space-y-8"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <Brain className="w-8 h-8 text-blue-600" />
-                    <span className="text-blue-600 font-semibold">Fractional CPO Services</span>
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                      <Brain className="w-8 h-8 text-blue-400" />
+                      <span className="text-blue-400 font-medium text-lg">Fractional CPO Services</span>
+                    </div>
+
+                    <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                      <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                        Strategic Product Leadership
+                      </span>
+                      <br />
+                      <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                        Without the Full-Time Cost
+                      </span>
+                    </h1>
+
+                    <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+                      Get experienced C-level product leadership to drive strategy, build teams,
+                      and accelerate growth. Perfect for startups and scale-ups ready to take
+                      their product to the next level.
+                    </p>
                   </div>
 
-                  <h1 className="text-5xl font-bold mb-6 leading-tight">
-                    Strategic Product Leadership
-                    <span className="block text-blue-600">Without the Full-Time Cost</span>
-                  </h1>
-
-                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Get experienced C-level product leadership to drive strategy, build teams,
-                    and accelerate growth. Perfect for startups and scale-ups ready to take
-                    their product to the next level.
-                  </p>
+                  {/* Key Benefits */}
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                      <div className="text-2xl font-bold text-white mb-1">50-70%</div>
+                      <div className="text-sm text-gray-300">Cost Savings</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                      <div className="text-2xl font-bold text-white mb-1">Day 1</div>
+                      <div className="text-sm text-gray-300">Impact</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                      <div className="text-2xl font-bold text-white mb-1">20+ yrs</div>
+                      <div className="text-sm text-gray-300">Experience</div>
+                    </div>
+                  </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     <motion.a
-                      href="mailto:hello@p0stman.com?subject=Fractional CPO Inquiry"
+                      href="mailto:hello@p0stman.com?subject=Fractional CPO Consultation Request"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
+                      className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
                     >
                       <MessageSquare className="w-5 h-5" />
-                      Discuss Your Needs
+                      Schedule Discovery Call
                       <ArrowRight className="w-5 h-5" />
                     </motion.a>
                     <motion.a
                       href="#pricing"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-all font-semibold text-lg"
+                      className="px-8 py-4 border border-gray-600 text-white rounded-xl hover:bg-white/10 transition-all font-semibold text-lg"
                     >
-                      View Pricing
+                      View Investment Options
                     </motion.a>
                   </div>
                 </motion.div>
 
+                {/* Right Column - Value Proposition */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <h3 className="text-2xl font-bold mb-6">Why Fractional?</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <DollarSign className="w-6 h-6 text-green-600 mt-1" />
-                        <div>
-                          <h4 className="font-semibold">Cost Effective</h4>
-                          <p className="text-gray-600 text-sm">Get C-level expertise at 30-50% of full-time cost</p>
+                  <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/30 to-purple-600/30 rounded-3xl blur-xl animate-pulse" />
+
+                  <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                    <div className="space-y-6">
+                      <div className="text-center mb-8">
+                        <h3 className="text-2xl font-bold text-white mb-3">Why Choose Fractional?</h3>
+                        <p className="text-gray-300">Get enterprise-level product leadership without the enterprise cost</p>
+                      </div>
+
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 bg-green-600/20 rounded-xl">
+                            <DollarSign className="w-6 h-6 text-green-400" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-white mb-2">Cost Effective</h4>
+                            <p className="text-gray-300 text-sm">Get C-level expertise at 50-70% less than full-time hire</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 bg-blue-600/20 rounded-xl">
+                            <Clock className="w-6 h-6 text-blue-400" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-white mb-2">Immediate Impact</h4>
+                            <p className="text-gray-300 text-sm">Start making strategic decisions from day one</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 bg-purple-600/20 rounded-xl">
+                            <Award className="w-6 h-6 text-purple-400" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-white mb-2">Proven Experience</h4>
+                            <p className="text-gray-300 text-sm">20+ years across enterprise and startup environments</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 bg-orange-600/20 rounded-xl">
+                            <Target className="w-6 h-6 text-orange-400" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-white mb-2">Flexible Engagement</h4>
+                            <p className="text-gray-300 text-sm">Tailored to your needs, timeline, and budget</p>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Clock className="w-6 h-6 text-blue-600 mt-1" />
-                        <div>
-                          <h4 className="font-semibold">Immediate Impact</h4>
-                          <p className="text-gray-600 text-sm">Start making strategic decisions from day one</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <Award className="w-6 h-6 text-purple-600 mt-1" />
-                        <div>
-                          <h4 className="font-semibold">Proven Experience</h4>
-                          <p className="text-gray-600 text-sm">20+ years across enterprise and startup environments</p>
+
+                      <div className="pt-6 border-t border-gray-700">
+                        <div className="text-center">
+                          <p className="text-sm text-gray-400 mb-3">Trusted by enterprise clients including:</p>
+                          <div className="flex justify-center items-center gap-4 opacity-60">
+                            <span className="text-xs text-gray-500">FAB</span>
+                            <span className="text-xs text-gray-500">•</span>
+                            <span className="text-xs text-gray-500">IBM</span>
+                            <span className="text-xs text-gray-500">•</span>
+                            <span className="text-xs text-gray-500">Al Arabiya</span>
+                            <span className="text-xs text-gray-500">•</span>
+                            <span className="text-xs text-gray-500">Abu Dhabi Gov</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -278,7 +352,8 @@ export default function FractionalCPO() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer group"
+                  onClick={() => window.location.href = '/case-study/fab-bank'}
                 >
                   <div className="relative h-48 bg-gradient-to-br from-blue-600 to-blue-800">
                     <img
@@ -324,7 +399,8 @@ export default function FractionalCPO() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer group"
+                  onClick={() => window.location.href = '/case-study/doh-health'}
                 >
                   <div className="relative h-48 bg-gradient-to-br from-green-600 to-green-800">
                     <img
@@ -370,7 +446,8 @@ export default function FractionalCPO() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer group"
+                  onClick={() => window.location.href = '/case-study/al-arabiya'}
                 >
                   <div className="relative h-48 bg-gradient-to-br from-red-600 to-red-800">
                     <img
@@ -472,7 +549,181 @@ export default function FractionalCPO() {
           </div>
         </section>
 
-        {/* Pricing Section */}
+        {/* Process Section */}
+        <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-4xl font-bold mb-6">My Fractional CPO Process</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  A proven methodology that combines strategic thinking with hands-on execution to drive product success
+                </p>
+              </motion.div>
+
+              <div className="grid lg:grid-cols-3 gap-8">
+                {/* Discovery & Strategy */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl text-white shadow-lg">
+                      <Target className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">Discovery & Strategy</h3>
+                      <p className="text-gray-600 font-medium">Week 1-2</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    Deep dive into your business, market, and product challenges to develop a comprehensive strategic foundation.
+                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Business & market analysis</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Product audit & assessment</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Team & process evaluation</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Strategic roadmap creation</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Execution & Leadership */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl text-white shadow-lg">
+                      <Users className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">Execution & Leadership</h3>
+                      <p className="text-gray-600 font-medium">Ongoing</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    Hands-on product leadership, team building, and strategic execution to drive measurable results.
+                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Team leadership & mentoring</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Product development oversight</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Stakeholder management</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Performance optimization</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Growth & Optimization */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl text-white shadow-lg">
+                      <TrendingUp className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">Growth & Optimization</h3>
+                      <p className="text-gray-600 font-medium">Month 3+</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    Continuous optimization, scaling strategies, and sustainable growth initiatives for long-term success.
+                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Growth strategy execution</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Team scaling & hiring</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Process optimization</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">Knowledge transfer</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="text-center mt-12"
+              >
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why This Process Works</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600 mb-2">80%</div>
+                      <div className="text-sm text-gray-600">Faster Decision Making</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600 mb-2">3x</div>
+                      <div className="text-sm text-gray-600">Team Productivity Increase</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-green-600 mb-2">60%</div>
+                      <div className="text-sm text-gray-600">Reduction in Time-to-Market</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Investment & Engagement Section */}
         <section id="pricing" className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
@@ -483,69 +734,187 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Flexible Engagement Models</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Choose the level of involvement that matches your needs and budget
+                <h2 className="text-4xl font-bold mb-6">Investment & Engagement Options</h2>
+                <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+                  Every engagement is tailored to your specific needs, timeline, and objectives.
+                  These are guide investments to help you understand the scope - let's discuss your unique situation.
                 </p>
               </motion.div>
 
-              <div className="grid lg:grid-cols-3 gap-8">
-                {pricingTiers.map((tier, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className={`relative p-8 rounded-2xl border-2 ${tier.popular
-                        ? 'border-blue-500 bg-blue-50'
-                        : 'border-gray-200 bg-white'
-                      }`}
-                  >
-                    {tier.popular && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                          Most Popular
-                        </span>
-                      </div>
-                    )}
-
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                      <div className="mb-4">
-                        <span className="text-4xl font-bold">{tier.price}</span>
-                        <span className="text-gray-600">{tier.period}</span>
-                      </div>
-                      <p className="text-gray-600">{tier.description}</p>
+              <div className="grid lg:grid-cols-2 gap-12 mb-16">
+                {/* Monthly Retainer */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-100"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-3 bg-blue-600 rounded-2xl">
+                      <Clock className="w-8 h-8 text-white" />
                     </div>
-
-                    <div className="space-y-3 mb-8">
-                      {tier.features.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">Monthly Retainer</h3>
+                      <p className="text-blue-600 font-semibold">Ongoing Strategic Partnership</p>
                     </div>
+                  </div>
 
-                    <div className="text-center">
-                      <p className="text-sm text-gray-500 mb-4">{tier.commitment}</p>
-                      <motion.a
-                        href="mailto:hello@p0stman.com?subject=Fractional CPO Inquiry"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`w-full px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center gap-2 ${tier.popular
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                          }`}
-                      >
-                        Get Started
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.a>
+                  <div className="mb-6">
+                    <div className="text-4xl font-bold text-gray-900 mb-2">
+                      $8,000 - $15,000
+                      <span className="text-lg font-normal text-gray-600">/month</span>
                     </div>
-                  </motion.div>
-                ))}
+                    <p className="text-gray-600">
+                      Continuous product leadership and strategic guidance tailored to your growth stage and needs.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">4-6 days per month dedicated time</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Strategic planning & roadmap development</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Team leadership & mentoring</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Stakeholder management & reporting</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Unlimited strategic consultation</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/60 rounded-xl p-4 text-sm text-gray-600">
+                    <strong>Best for:</strong> Scale-ups and established companies needing ongoing product leadership and strategic direction.
+                  </div>
+                </motion.div>
+
+                {/* Project Sprints */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-100"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-3 bg-purple-600 rounded-2xl">
+                      <Rocket className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">Strategic Sprints</h3>
+                      <p className="text-purple-600 font-semibold">Focused Project Engagements</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <div className="text-4xl font-bold text-gray-900 mb-2">
+                      $15,000 - $35,000
+                      <span className="text-lg font-normal text-gray-600">/project</span>
+                    </div>
+                    <p className="text-gray-600">
+                      Intensive 2-8 week engagements focused on specific strategic initiatives or transformations.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Product strategy & roadmap creation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Go-to-market strategy development</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Team structure & process optimization</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Product-market fit validation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">Comprehensive deliverables & handoff</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/60 rounded-xl p-4 text-sm text-gray-600">
+                    <strong>Best for:</strong> Startups and companies needing focused strategic work on specific initiatives or transformations.
+                  </div>
+                </motion.div>
               </div>
+
+              {/* Consultation Approach */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-12 text-center"
+              >
+                <div className="max-w-4xl mx-auto">
+                  <div className="flex items-center justify-center gap-3 mb-6">
+                    <MessageSquare className="w-8 h-8 text-gray-600" />
+                    <h3 className="text-3xl font-bold text-gray-900">Tailored to Your Needs</h3>
+                  </div>
+
+                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Every organization is unique. These investment ranges provide a starting point, but the real value
+                    comes from understanding your specific challenges, goals, and constraints. Let's have a conversation
+                    about what success looks like for you.
+                  </p>
+
+                  <div className="grid md:grid-cols-3 gap-6 mb-8">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                        <Target className="w-8 h-8 text-blue-600" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Discovery Call</h4>
+                      <p className="text-sm text-gray-600">Free 30-minute consultation to understand your needs</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                        <Brain className="w-8 h-8 text-purple-600" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Custom Proposal</h4>
+                      <p className="text-sm text-gray-600">Tailored engagement plan with clear scope and outcomes</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                        <CheckCircle className="w-8 h-8 text-green-600" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Flexible Terms</h4>
+                      <p className="text-sm text-gray-600">Engagement structure that works for your timeline and budget</p>
+                    </div>
+                  </div>
+
+                  <motion.a
+                    href="mailto:hello@p0stman.com?subject=Fractional CPO Consultation Request"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all font-semibold text-lg inline-flex items-center gap-3"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    Schedule Your Discovery Call
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.a>
+
+                  <p className="text-sm text-gray-500 mt-4">
+                    ✨ No commitment required • Completely confidential • 20+ years of experience
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
