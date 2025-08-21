@@ -1,12 +1,12 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { 
-  Brain, 
-  Target, 
-  Users, 
-  TrendingUp, 
-  CheckCircle, 
+import {
+  Brain,
+  Target,
+  Users,
+  TrendingUp,
+  CheckCircle,
   ArrowRight,
   Rocket,
   Globe,
@@ -145,15 +145,15 @@ export default function FractionalCPO() {
                     <Brain className="w-8 h-8 text-blue-600" />
                     <span className="text-blue-600 font-semibold">Fractional CPO Services</span>
                   </div>
-                  
+
                   <h1 className="text-5xl font-bold mb-6 leading-tight">
                     Strategic Product Leadership
                     <span className="block text-blue-600">Without the Full-Time Cost</span>
                   </h1>
-                  
+
                   <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Get experienced C-level product leadership to drive strategy, build teams, 
-                    and accelerate growth. Perfect for startups and scale-ups ready to take 
+                    Get experienced C-level product leadership to drive strategy, build teams,
+                    and accelerate growth. Perfect for startups and scale-ups ready to take
                     their product to the next level.
                   </p>
 
@@ -254,8 +254,190 @@ export default function FractionalCPO() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Case Studies Section */}
         <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-4xl font-bold mb-6">Enterprise Success Stories</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Real results from fractional product leadership across banking, government, and media sectors
+                </p>
+              </motion.div>
+
+              <div className="grid lg:grid-cols-3 gap-8">
+                {/* FAB Case Study */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                >
+                  <div className="relative h-48 bg-gradient-to-br from-blue-600 to-blue-800">
+                    <img
+                      src="https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png"
+                      alt="First Abu Dhabi Bank transformation"
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/First_Abu_Dhabi_Bank_Logo.svg/500px-First_Abu_Dhabi_Bank_Logo.svg.png"
+                        alt="FAB Logo"
+                        className="h-16 filter brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">Enterprise Digital Transformation</h3>
+                    <p className="text-blue-600 font-semibold mb-3">First Abu Dhabi Bank</p>
+                    <p className="text-gray-600 mb-4">
+                      Led 18-month transformation scaling from 1 pilot project to 40+ person team across multiple departments.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-blue-600">1→40</div>
+                        <div className="text-xs text-gray-500">Team Scale</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-blue-600">60%</div>
+                        <div className="text-xs text-gray-500">Efficiency Gain</div>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Banking</span>
+                      <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Enterprise</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">18 months</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Abu Dhabi DoH Case Study */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                >
+                  <div className="relative h-48 bg-gradient-to-br from-green-600 to-green-800">
+                    <img
+                      src="https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png"
+                      alt="Abu Dhabi Department of Health app"
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img
+                        src="https://api.chilledsites.com/storage/v1/object/public/p0stman/doh-logo.png"
+                        alt="DoH Logo"
+                        className="h-16 filter brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">My Health Coach</h3>
+                    <p className="text-green-600 font-semibold mb-3">Department of Health Abu Dhabi</p>
+                    <p className="text-gray-600 mb-4">
+                      Partnered with IBM to build personalized wellness app for Abu Dhabi residents with fitness tracking integration.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">IBM</div>
+                        <div className="text-xs text-gray-500">Partnership</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">Gov</div>
+                        <div className="text-xs text-gray-500">Client Type</div>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Healthcare</span>
+                      <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Government</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Mobile App</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Al Arabiya Case Study */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                >
+                  <div className="relative h-48 bg-gradient-to-br from-red-600 to-red-800">
+                    <img
+                      src="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png"
+                      alt="Al Arabiya news platform"
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png"
+                        alt="Al Arabiya Logo"
+                        className="h-16 filter brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">News Platform Redesign</h3>
+                    <p className="text-red-600 font-semibold mb-3">Al Arabiya</p>
+                    <p className="text-gray-600 mb-4">
+                      Led global team of 20+ to modernize leading news platform during COVID-19 with multi-platform experience.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600">20+</div>
+                        <div className="text-xs text-gray-500">Global Team</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-600">40%</div>
+                        <div className="text-xs text-gray-500">Speed Boost</div>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Media</span>
+                      <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Global Team</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">8 months</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="text-center mt-12"
+              >
+                <p className="text-gray-600 mb-6">
+                  Ready to achieve similar results for your organization?
+                </p>
+                <motion.a
+                  href="mailto:hello@p0stman.com?subject=Fractional CPO Case Study Discussion"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  Discuss Your Project
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -315,11 +497,10 @@ export default function FractionalCPO() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`relative p-8 rounded-2xl border-2 ${
-                      tier.popular 
-                        ? 'border-blue-500 bg-blue-50' 
+                    className={`relative p-8 rounded-2xl border-2 ${tier.popular
+                        ? 'border-blue-500 bg-blue-50'
                         : 'border-gray-200 bg-white'
-                    }`}
+                      }`}
                   >
                     {tier.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -328,7 +509,7 @@ export default function FractionalCPO() {
                         </span>
                       </div>
                     )}
-                    
+
                     <div className="text-center mb-8">
                       <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                       <div className="mb-4">
@@ -353,11 +534,10 @@ export default function FractionalCPO() {
                         href="mailto:hello@p0stman.com?subject=Fractional CPO Inquiry"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className={`w-full px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center gap-2 ${
-                          tier.popular
+                        className={`w-full px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center gap-2 ${tier.popular
                             ? 'bg-blue-600 text-white hover:bg-blue-700'
                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
+                          }`}
                       >
                         Get Started
                         <ArrowRight className="w-4 h-4" />
