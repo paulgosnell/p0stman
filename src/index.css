@@ -312,7 +312,8 @@ html {
   }
 
   body {
-    @apply antialiased text-gray-300 bg-black;
+    @apply antialiased bg-black;
+    color: inherit; /* Let components control their own text color */
     overflow-x: hidden;
     width: 100%;
     position: relative;
@@ -452,15 +453,95 @@ nav button:focus {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black;
 }
 
-/* Focus Areas Dark Text Override */
-#focus {
+/* Global Text Color Fixes for Light Backgrounds */
+.bg-white,
+.bg-gray-50,
+.bg-blue-50,
+.bg-purple-50,
+section[class*="bg-white"],
+section[class*="bg-gray-50"],
+section[class*="bg-blue-50"],
+section[class*="bg-purple-50"] {
   color: #111827 !important;
 }
 
-#focus p,
-#focus span,
-#focus div {
+.bg-white p,
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white h5,
+.bg-white h6,
+.bg-white span,
+.bg-white div,
+.bg-gray-50 p,
+.bg-gray-50 h1,
+.bg-gray-50 h2,
+.bg-gray-50 h3,
+.bg-gray-50 h4,
+.bg-gray-50 h5,
+.bg-gray-50 h6,
+.bg-gray-50 span,
+.bg-gray-50 div,
+.bg-blue-50 p,
+.bg-blue-50 h1,
+.bg-blue-50 h2,
+.bg-blue-50 h3,
+.bg-blue-50 h4,
+.bg-blue-50 h5,
+.bg-blue-50 h6,
+.bg-blue-50 span,
+.bg-blue-50 div,
+.bg-purple-50 p,
+.bg-purple-50 h1,
+.bg-purple-50 h2,
+.bg-purple-50 h3,
+.bg-purple-50 h4,
+.bg-purple-50 h5,
+.bg-purple-50 h6,
+.bg-purple-50 span,
+.bg-purple-50 div {
   color: #111827 !important;
+}
+
+/* Ensure dark backgrounds keep light text */
+.bg-black,
+.bg-gray-900,
+.bg-gray-800,
+section[class*="bg-black"],
+section[class*="bg-gray-900"],
+section[class*="bg-gray-800"] {
+  color: #f3f4f6 !important;
+}
+
+.bg-black p,
+.bg-black h1,
+.bg-black h2,
+.bg-black h3,
+.bg-black h4,
+.bg-black h5,
+.bg-black h6,
+.bg-black span,
+.bg-black div,
+.bg-gray-900 p,
+.bg-gray-900 h1,
+.bg-gray-900 h2,
+.bg-gray-900 h3,
+.bg-gray-900 h4,
+.bg-gray-900 h5,
+.bg-gray-900 h6,
+.bg-gray-900 span,
+.bg-gray-900 div,
+.bg-gray-800 p,
+.bg-gray-800 h1,
+.bg-gray-800 h2,
+.bg-gray-800 h3,
+.bg-gray-800 h4,
+.bg-gray-800 h5,
+.bg-gray-800 h6,
+.bg-gray-800 span,
+.bg-gray-800 div {
+  color: #f3f4f6 !important;
 }
 
 /* Premium Reduced Motion Support */
