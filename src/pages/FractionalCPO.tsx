@@ -156,7 +156,7 @@ export default function FractionalCPO() {
                       <span className="text-blue-400 font-medium text-lg">Fractional CPO Services</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                    <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                       <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                         Strategic Product Leadership
                       </span>
@@ -194,19 +194,19 @@ export default function FractionalCPO() {
                       href="mailto:hello@p0stman.com?subject=Fractional CPO Consultation Request"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
+                      className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
                     >
                       <MessageSquare className="w-5 h-5" />
-                      Schedule Discovery Call
+                      Book Discovery Call
                       <ArrowRight className="w-5 h-5" />
                     </motion.a>
                     <motion.a
                       href="#pricing"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-600 text-white rounded-xl hover:bg-white/10 transition-all font-semibold text-lg"
+                      className="px-8 py-4 border border-gray-600 text-white rounded-xl hover:bg-white/10 transition-all font-medium text-lg"
                     >
-                      View Investment Options
+                      View Pricing
                     </motion.a>
                   </div>
                 </motion.div>
@@ -223,7 +223,7 @@ export default function FractionalCPO() {
                   <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700/50">
                     <div className="space-y-6">
                       <div className="text-center mb-8">
-                        <h3 className="text-2xl font-bold text-white mb-3">Why Choose Fractional?</h3>
+                        <h3 className="text-2xl font-light text-white mb-3">Why Choose Fractional?</h3>
                         <p className="text-gray-300">Get enterprise-level product leadership without the enterprise cost</p>
                       </div>
 
@@ -233,7 +233,7 @@ export default function FractionalCPO() {
                             <DollarSign className="w-6 h-6 text-green-400" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-white mb-2">Cost Effective</h4>
+                            <h4 className="font-medium text-white mb-2">Cost Effective</h4>
                             <p className="text-gray-300 text-sm">Get C-level expertise at 50-70% less than full-time hire</p>
                           </div>
                         </div>
@@ -243,7 +243,7 @@ export default function FractionalCPO() {
                             <Clock className="w-6 h-6 text-blue-400" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-white mb-2">Immediate Impact</h4>
+                            <h4 className="font-medium text-white mb-2">Immediate Impact</h4>
                             <p className="text-gray-300 text-sm">Start making strategic decisions from day one</p>
                           </div>
                         </div>
@@ -253,7 +253,7 @@ export default function FractionalCPO() {
                             <Award className="w-6 h-6 text-purple-400" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-white mb-2">Proven Experience</h4>
+                            <h4 className="font-medium text-white mb-2">Proven Experience</h4>
                             <p className="text-gray-300 text-sm">20+ years across enterprise and startup environments</p>
                           </div>
                         </div>
@@ -263,7 +263,7 @@ export default function FractionalCPO() {
                             <Target className="w-6 h-6 text-orange-400" />
                           </div>
                           <div>
-                            <h4 className="font-semibold text-white mb-2">Flexible Engagement</h4>
+                            <h4 className="font-medium text-white mb-2">Flexible Engagement</h4>
                             <p className="text-gray-300 text-sm">Tailored to your needs, timeline, and budget</p>
                           </div>
                         </div>
@@ -302,7 +302,7 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">How I Drive Product Success</h2>
+                <h2 className="text-4xl font-thin mb-6">How I Drive Product Success</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Combining strategic vision with hands-on execution to accelerate your product growth
                 </p>
@@ -319,7 +319,7 @@ export default function FractionalCPO() {
                     className="text-center p-6 rounded-xl hover:shadow-lg transition-all"
                   >
                     <div className="mb-4 flex justify-center">{benefit.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                    <h3 className="text-xl font-light mb-3">{benefit.title}</h3>
                     <p className="text-gray-600">{benefit.description}</p>
                   </motion.div>
                 ))}
@@ -339,8 +339,8 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Enterprise Success Stories</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 className="text-4xl font-thin mb-6">Enterprise Success Stories</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
                   Real results from fractional product leadership across banking, government, and media sectors
                 </p>
               </motion.div>
@@ -370,18 +370,18 @@ export default function FractionalCPO() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">Enterprise Digital Transformation</h3>
-                    <p className="text-blue-600 font-semibold mb-3">First Abu Dhabi Bank</p>
+                    <h3 className="text-xl font-light mb-2">Enterprise Digital Transformation</h3>
+                    <p className="text-blue-600 font-medium mb-3">First Abu Dhabi Bank</p>
                     <p className="text-gray-600 mb-4">
                       Led 18-month transformation scaling from 1 pilot project to 40+ person team across multiple departments.
                     </p>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-blue-600">1→40</div>
+                        <div className="text-2xl font-light text-blue-600">1→40</div>
                         <div className="text-xs text-gray-500">Team Scale</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-blue-600">60%</div>
+                        <div className="text-2xl font-light text-blue-600">60%</div>
                         <div className="text-xs text-gray-500">Efficiency Gain</div>
                       </div>
                     </div>
@@ -417,18 +417,18 @@ export default function FractionalCPO() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">My Health Coach</h3>
-                    <p className="text-green-600 font-semibold mb-3">Department of Health Abu Dhabi</p>
+                    <h3 className="text-xl font-light mb-2">My Health Coach</h3>
+                    <p className="text-green-600 font-medium mb-3">Department of Health Abu Dhabi</p>
                     <p className="text-gray-600 mb-4">
                       Partnered with IBM to build personalized wellness app for Abu Dhabi residents with fitness tracking integration.
                     </p>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600">IBM</div>
+                        <div className="text-2xl font-light text-green-600">IBM</div>
                         <div className="text-xs text-gray-500">Partnership</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600">Gov</div>
+                        <div className="text-2xl font-light text-green-600">Gov</div>
                         <div className="text-xs text-gray-500">Client Type</div>
                       </div>
                     </div>
@@ -464,18 +464,18 @@ export default function FractionalCPO() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">News Platform Redesign</h3>
-                    <p className="text-red-600 font-semibold mb-3">Al Arabiya</p>
+                    <h3 className="text-xl font-light mb-2">News Platform Redesign</h3>
+                    <p className="text-red-600 font-medium mb-3">Al Arabiya</p>
                     <p className="text-gray-600 mb-4">
                       Led global team of 20+ to modernize leading news platform during COVID-19 with multi-platform experience.
                     </p>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-red-600">20+</div>
+                        <div className="text-2xl font-light text-red-600">20+</div>
                         <div className="text-xs text-gray-500">Global Team</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-red-600">40%</div>
+                        <div className="text-2xl font-light text-red-600">40%</div>
                         <div className="text-xs text-gray-500">Speed Boost</div>
                       </div>
                     </div>
@@ -524,7 +524,7 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">What's Included</h2>
+                <h2 className="text-4xl font-thin mb-6">What's Included</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Comprehensive product leadership across all aspects of your business
                 </p>
@@ -541,7 +541,7 @@ export default function FractionalCPO() {
                     className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm"
                   >
                     <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                    <span className="font-medium">{service}</span>
+                    <span className="font-light">{service}</span>
                   </motion.div>
                 ))}
               </div>
@@ -560,7 +560,7 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">My Fractional CPO Process</h2>
+                <h2 className="text-4xl font-thin mb-6">My Fractional CPO Process</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   A proven methodology that combines strategic thinking with hands-on execution to drive product success
                 </p>
@@ -580,7 +580,7 @@ export default function FractionalCPO() {
                       <Target className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Discovery & Strategy</h3>
+                      <h3 className="text-2xl font-light text-gray-900">Discovery & Strategy</h3>
                       <p className="text-gray-600 font-medium">Week 1-2</p>
                     </div>
                   </div>
@@ -622,7 +622,7 @@ export default function FractionalCPO() {
                       <Users className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Execution & Leadership</h3>
+                      <h3 className="text-2xl font-light text-gray-900">Execution & Leadership</h3>
                       <p className="text-gray-600 font-medium">Ongoing</p>
                     </div>
                   </div>
@@ -664,7 +664,7 @@ export default function FractionalCPO() {
                       <TrendingUp className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Growth & Optimization</h3>
+                      <h3 className="text-2xl font-light text-gray-900">Growth & Optimization</h3>
                       <p className="text-gray-600 font-medium">Month 3+</p>
                     </div>
                   </div>
@@ -702,18 +702,18 @@ export default function FractionalCPO() {
                 className="text-center mt-12"
               >
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why This Process Works</h3>
+                  <h3 className="text-2xl font-light text-gray-900 mb-4">Why This Process Works</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600 mb-2">80%</div>
+                      <div className="text-3xl font-thin text-blue-600 mb-2">80%</div>
                       <div className="text-sm text-gray-600">Faster Decision Making</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">3x</div>
+                      <div className="text-3xl font-thin text-purple-600 mb-2">3x</div>
                       <div className="text-sm text-gray-600">Team Productivity Increase</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-green-600 mb-2">60%</div>
+                      <div className="text-3xl font-thin text-green-600 mb-2">60%</div>
                       <div className="text-sm text-gray-600">Reduction in Time-to-Market</div>
                     </div>
                   </div>
@@ -734,7 +734,7 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Investment & Engagement Options</h2>
+                <h2 className="text-4xl font-thin mb-6">Investment & Engagement Options</h2>
                 <p className="text-xl text-gray-600 max-w-4xl mx-auto">
                   Every engagement is tailored to your specific needs, timeline, and objectives.
                   These are guide investments to help you understand the scope - let's discuss your unique situation.
@@ -755,15 +755,15 @@ export default function FractionalCPO() {
                       <Clock className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Monthly Retainer</h3>
-                      <p className="text-blue-600 font-semibold">Ongoing Strategic Partnership</p>
+                      <h3 className="text-2xl font-light text-gray-900">Monthly Retainer</h3>
+                      <p className="text-blue-600 font-medium">Ongoing Strategic Partnership</p>
                     </div>
                   </div>
 
                   <div className="mb-6">
                     <div className="text-4xl font-bold text-gray-900 mb-2">
                       $8,000 - $15,000
-                      <span className="text-lg font-normal text-gray-600">/month</span>
+                      <span className="text-lg font-light text-gray-600">/month</span>
                     </div>
                     <p className="text-gray-600">
                       Continuous product leadership and strategic guidance tailored to your growth stage and needs.
@@ -811,15 +811,15 @@ export default function FractionalCPO() {
                       <Rocket className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Strategic Sprints</h3>
-                      <p className="text-purple-600 font-semibold">Focused Project Engagements</p>
+                      <h3 className="text-2xl font-light text-gray-900">Strategic Sprints</h3>
+                      <p className="text-purple-600 font-medium">Focused Project Engagements</p>
                     </div>
                   </div>
 
                   <div className="mb-6">
                     <div className="text-4xl font-bold text-gray-900 mb-2">
                       $15,000 - $35,000
-                      <span className="text-lg font-normal text-gray-600">/project</span>
+                      <span className="text-lg font-light text-gray-600">/project</span>
                     </div>
                     <p className="text-gray-600">
                       Intensive 2-8 week engagements focused on specific strategic initiatives or transformations.
@@ -866,7 +866,7 @@ export default function FractionalCPO() {
                 <div className="max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 mb-6">
                     <MessageSquare className="w-8 h-8 text-gray-600" />
-                    <h3 className="text-3xl font-bold text-gray-900">Tailored to Your Needs</h3>
+                    <h3 className="text-3xl font-light text-gray-900">Tailored to Your Needs</h3>
                   </div>
 
                   <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -880,21 +880,21 @@ export default function FractionalCPO() {
                       <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
                         <Target className="w-8 h-8 text-blue-600" />
                       </div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Discovery Call</h4>
+                      <h4 className="font-medium text-gray-900 mb-2">Discovery Call</h4>
                       <p className="text-sm text-gray-600">Free 30-minute consultation to understand your needs</p>
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
                         <Brain className="w-8 h-8 text-purple-600" />
                       </div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Custom Proposal</h4>
+                      <h4 className="font-medium text-gray-900 mb-2">Custom Proposal</h4>
                       <p className="text-sm text-gray-600">Tailored engagement plan with clear scope and outcomes</p>
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
                         <CheckCircle className="w-8 h-8 text-green-600" />
                       </div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Flexible Terms</h4>
+                      <h4 className="font-medium text-gray-900 mb-2">Flexible Terms</h4>
                       <p className="text-sm text-gray-600">Engagement structure that works for your timeline and budget</p>
                     </div>
                   </div>
@@ -903,10 +903,10 @@ export default function FractionalCPO() {
                     href="mailto:hello@p0stman.com?subject=Fractional CPO Consultation Request"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all font-semibold text-lg inline-flex items-center gap-3"
+                    className="px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all font-medium text-lg inline-flex items-center gap-3"
                   >
                     <MessageSquare className="w-5 h-5" />
-                    Schedule Your Discovery Call
+                    Book Discovery Call
                     <ArrowRight className="w-5 h-5" />
                   </motion.a>
 
@@ -930,7 +930,7 @@ export default function FractionalCPO() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Client Success Stories</h2>
+                <h2 className="text-4xl font-thin mb-6">Client Success Stories</h2>
               </motion.div>
 
               <div className="grid md:grid-cols-2 gap-8">
@@ -945,7 +945,7 @@ export default function FractionalCPO() {
                   >
                     <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
                     <div>
-                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="font-medium">{testimonial.author}</p>
                       <p className="text-gray-600">{testimonial.role}, {testimonial.company}</p>
                     </div>
                   </motion.div>
