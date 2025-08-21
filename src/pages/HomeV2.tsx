@@ -204,7 +204,12 @@ const additionalProjects = [
     category: 'Airlines & Travel',
     image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png',
     logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad-logo.png',
-    caseStudyUrl: '/case-study/etihad-airways'
+    description: 'Enhanced booking system and customer experience platform for UAE national airline. Streamlined reservation process with improved user interface and backend optimization.',
+    caseStudyUrl: '/case-study/etihad-airways',
+    metrics: [
+      { label: 'Industry', value: 'Aviation', icon: <Globe className="w-6 h-6" /> },
+      { label: 'Focus', value: 'UX/UI', icon: <Target className="w-6 h-6" /> }
+    ]
   },
   {
     id: 'arabian-center',
@@ -231,6 +236,30 @@ const additionalProjects = [
     image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png',
     logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp',
     caseStudyUrl: '/case-study/genieology'
+  },
+  {
+    id: 'rhythm-ai',
+    title: 'Rhythm AI',
+    company: 'Running Coach App',
+    category: 'AI & Fitness',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/rhythm-dashboard.png',
+    caseStudyUrl: '/case-study/rhythm'
+  },
+  {
+    id: 'chilled-crm',
+    title: 'ChilledCRM',
+    company: 'Business Management',
+    category: 'SaaS & CRM',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledcrm-dashboard.png',
+    caseStudyUrl: '/case-study/chilledcrm'
+  },
+  {
+    id: 'experience-gift',
+    title: 'Experience A Gift',
+    company: 'Gift Platform',
+    category: 'E-commerce',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift-dashboard.png',
+    caseStudyUrl: '/case-study/experienceagift'
   }
 ];
 
