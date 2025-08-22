@@ -1083,11 +1083,11 @@ export default function HomeV2() {
                     className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer bg-white"
                     onClick={() => window.location.href = project.caseStudyUrl}
                   >
-                    <div className="relative h-32">
+                    <div className="relative h-32 p-2">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute top-2 right-2">
                         <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-light rounded-full shadow-sm">
