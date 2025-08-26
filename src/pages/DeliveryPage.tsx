@@ -101,7 +101,7 @@ const ChatSection: React.FC<{
         >
           <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-blue-500/30 shadow-xl">
             <img
-              src="/src/assets/images/paul.jpg"
+              src="https://api.chilledsites.com/storage/v1/object/public/p0stman/paul.jpg"
               alt="Paul Gosnell"
               className="w-full h-full object-cover"
             />
