@@ -276,8 +276,8 @@ const additionalProjects = [
     title: 'Experience A Gift',
     company: 'Gift Platform',
     category: 'E-commerce',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift1.png',
-    caseStudyUrl: '/case-study/experienceagift'
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift.png',
+    caseStudyUrl: '/case-study/experience-a-gift'
   }
 ];
 
