@@ -224,6 +224,36 @@ const allProjects = [
   },
   // AI-Built Projects (link to existing case studies)
   {
+    id: 'chilled-sites',
+    title: 'Chilled Sites — AI Website Builder',
+    company: 'Chilled Ventures',
+    category: 'AI / SaaS',
+    type: 'AI-Built',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    logo: 'https://chilledsites.com/images/logo.svg',
+    description: 'AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms.',
+    caseStudyUrl: '/case-study/chilled-sites',
+    challenge: 'Most small businesses and founders struggle with the time, cost, and creativity needed to launch a professional website. Traditional template builders feel generic, while agencies are expensive and slow.',
+    solution: 'We built Chilled Sites, an AI-first platform that generates unique websites from simple inputs (prompt, image, or email). Users can edit, publish, and grow their site with built-in hosting, SEO, and analytics.',
+    results: [
+      'Beta users launched live sites in under 10 minutes',
+      'Agencies adopted Chilled Sites to speed up client delivery',
+      'Delivered a full infrastructure layer (tokens, hosting, analytics, SEO) around the AI build',
+      '100+ beta users successfully launched websites',
+      'Cost savings of £5,000+ compared to traditional agency builds',
+      'Reduced website creation time from weeks to minutes'
+    ],
+    technologies: ['Supabase', 'Next.js', 'Tailwind', 'Mamopay', 'OpenAI', 'Claude', 'Claude Code'],
+    timeline: 'Ongoing Product',
+    teamSize: '1 Builder',
+    metrics: [
+      { label: 'Time to First Site', value: '< 10 min', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Cost Savings', value: '£5,000+', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Active Users', value: '1000+', icon: <Users className="w-6 h-6" /> },
+      { label: 'Websites Built', value: '2500+', icon: <Globe className="w-6 h-6" /> }
+    ]
+  },
+  {
     id: 'chilled-crm',
     title: 'Chilled CRM',
     company: 'AI-Powered CRM Platform',

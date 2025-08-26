@@ -45,6 +45,7 @@ import Links from './pages/Links';
 import Rhythm from './pages/case-studies/Rhythm';
 import ExperienceGift from './pages/case-studies/ExperienceGift';
 import ChilledCRM from './pages/case-studies/ChilledCRM';
+import ChilledSites from './pages/case-studies/ChilledSites';
 import Harmony from './pages/case-studies/Harmony';
 import Serenity from './pages/case-studies/Serenity';
 import Fitlink from './pages/case-studies/Fitlink';
@@ -114,6 +115,7 @@ export default function App() {
           <Route path="/case-study/rhythm" element={<Rhythm />} />
           <Route path="/case-study/experience-a-gift" element={<ExperienceGift />} />
           <Route path="/case-study/chilled-crm" element={<ChilledCRM />} />
+          <Route path="/case-study/chilled-sites" element={<ChilledSites />} />
           <Route path="/case-study/harmony" element={<Harmony />} />
           <Route path="/case-study/serenity" element={<Serenity />} />
           <Route path="/case-study/fitlink" element={<Fitlink />} />

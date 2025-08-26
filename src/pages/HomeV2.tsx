@@ -179,6 +179,23 @@ const featuredProjects = [
     ]
   },
   {
+    id: 'chilled-sites',
+    title: 'Chilled Sites — AI Website Builder',
+    company: 'Chilled Ventures',
+    category: 'AI / SaaS',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    logo: 'https://chilledsites.com/images/logo.svg',
+    description: 'AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms.',
+    type: 'ai-native',
+    caseStudyUrl: '/case-study/chilled-sites',
+    metrics: [
+      { label: 'Time to First Site', value: '< 10 min', icon: <Clock className="w-6 h-6" /> },
+      { label: 'Cost Savings', value: '£5,000+', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Active Users', value: '1000+', icon: <Users className="w-6 h-6" /> },
+      { label: 'Websites Built', value: '2500+', icon: <Globe className="w-6 h-6" /> }
+    ]
+  },
+  {
     id: 'harmony',
     title: 'Harmony',
     company: 'AI Music Platform',
