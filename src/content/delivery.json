@@ -1,0 +1,45 @@
+{
+  "defaultCalendly": "https://calendly.com/paulgosnell/jam",
+  "sections": {
+    "openingLines": [
+      "Dear [Agency Name],",
+      "This isn't a pitch deck.",
+      "This is a delivery."
+    ],
+    "whoIAm": [
+      "20 years across agencies & startups (founded and sold one).",
+      "I know pitch pressure and client reality.",
+      "I vibe-code with AI to deliver prototypes, products and activations—fast."
+    ],
+    "caseStudies": [
+      {
+        "title": "Jack Morton / Saudi Football Team Pitch",
+        "copy": "Dropped in. Built unique digital elements woven into the pitch. High-stakes, high-impact, delivered."
+      },
+      {
+        "title": "Belong Interactive (Dubai)",
+        "copy": "Repositioned and modernised the agency in 2 months."
+      },
+      {
+        "title": "Monstarlab (Dubai)",
+        "copy": "Product strategy, design and build. Hands-on, commercial, client-ready."
+      }
+    ],
+    "logos": {
+      "agencies": ["Jack Morton","Belong Interactive","Monstarlab","Genieology","Dehora","Grampy"],
+      "brands": ["HSBC","Visa","FAB","Al Arabiya","Al Futtaim","Coutts","Ferrari World","Saudi Football Team"],
+      "ventures": ["Bolt","Chilled","P0STMAN"]
+    },
+    "wins": [
+      "Founded Genieology → 30 staff → acquired.",
+      "Supported Bolt through hypergrowth ($100m+ raise).",
+      "Created Vibe Gaming sponsorship: world's largest hackathon & AI builders community.",
+      "Built P0STMAN & Chilled Sites (AI products)."
+    ],
+    "offer": [
+      "Your freelance secret weapon.",
+      "When you need something live, not slides.",
+      "Prototypes. Activations. Digital products. Delivered."
+    ]
+  }
+}
