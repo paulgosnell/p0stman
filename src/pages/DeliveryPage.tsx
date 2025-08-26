@@ -224,7 +224,7 @@ const DeliveryPage: React.FC = () => {
     <div>
       <Helmet>
         <title>Special Delivery for {agencyName} | P0STMAN</title>
-        <meta name="description" content={`A special delivery from The Postman for ${agencyName}. AI-powered prototypes, full‑stack builds, and digital transformations — delivered fast.`} />
+        <meta name="description" content={`A special delivery from The Postman for ${agencyName}. AI-powered prototypes, product builds, and growth experiments — delivered fast.`} />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
         <AnimatePresence mode="wait">
@@ -323,10 +323,10 @@ const DeliveryPage: React.FC = () => {
                 <ChatSection
                   messages={[
                     `${greeting} I'm Paul, founder of P0STMAN.`,
-                    `Deadlines. Budgets. Clients who want something real, not slides.`,
-                    `Sometimes I drop in mid‑pitch with a live prototype that wins the room.`,
-                    `Other times I stay on to lead the full build — from MVP to enterprise scale.`,
-                    `Either way: outcomes, not excuses. Ready to see what problems I solve?`
+                    `Tight deadlines. Limited budgets. Teams and stakeholders who want something real, not just slides.`,
+                    `Sometimes I drop in mid‑pitch with a live prototype that seals the deal.`,
+                    `Other times I stay on to lead the full build — from MVP to enterprise rollout.`,
+                    `Either way: fast outcomes, not excuses. Ready to see what I can deliver?`
                   ]}
                   isVisible={revealedSections.has(0)}
                   showQuickAction={true}
@@ -395,7 +395,7 @@ const DeliveryPage: React.FC = () => {
                           </div>
                         </div>
                         <div className="space-y-4 flex-1">
-                          <p className="text-red-300 font-bold text-lg">AI-accelerated development delivers 80% faster</p>
+                          <p className="text-red-300 font-bold text-lg">AI‑accelerated development typically compresses timelines dramatically (often 2–5×)</p>
                           <p className="text-gray-300 font-light leading-relaxed">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
                         </div>
 
@@ -474,7 +474,7 @@ const DeliveryPage: React.FC = () => {
                           </div>
                         </div>
                         <div className="space-y-4 flex-1">
-                          <p className="text-green-300 font-bold text-lg">Fractional expertise at 50-70% less cost</p>
+                          <p className="text-green-300 font-bold text-lg">Fractional senior support at a fraction of the cost of full-time</p>
                           <p className="text-gray-300 font-light leading-relaxed">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
                         </div>
 
@@ -548,14 +548,14 @@ const DeliveryPage: React.FC = () => {
                         </div>
                         <div className="space-y-4 flex-1">
                           <p className="text-blue-300 font-bold text-lg">Proven track record scaling 1→40 teams</p>
-                          <p className="text-gray-300 font-light leading-relaxed">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
+                          <p className="text-gray-300 font-light leading-relaxed">From startup MVPs to enterprise transformations, I've solved complex technical and organizational challenges across every scale and industry.</p>
                         </div>
 
                         {/* Complexity Meter */}
                         <div className="mt-6 space-y-2">
                           <div className="flex justify-between text-blue-300/80 text-sm">
                             <span>Complexity Level</span>
-                            <span>Enterprise Ready</span>
+                            <span>Production Ready</span>
                           </div>
                           <div className="w-full bg-blue-900/30 rounded-full h-2">
                             <motion.div
@@ -636,7 +636,7 @@ const DeliveryPage: React.FC = () => {
                         </div>
                         <div className="space-y-4 flex-1">
                           <p className="text-purple-300 font-bold text-lg">End-to-end transformation expertise</p>
-                          <p className="text-gray-300 font-light leading-relaxed">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
+                          <p className="text-gray-300 font-light leading-relaxed">Navigate the complexity of digital transformation with strategic guidance, technical execution, and rollout & adoption that deliver measurable results.</p>
                         </div>
 
                         {/* Launch Status */}
@@ -936,7 +936,8 @@ const DeliveryPage: React.FC = () => {
                 <ChatSection
                   messages={[
                     `Want to see it in action?`,
-                    `Here are enterprise transformations and AI‑built products — from pitch‑winning prototypes to full‑stack delivery.`
+                    `Here are launches and transformations across banking, media, government and startups — from pitch‑winning prototypes to full builds.`,
+                    `Whether you're leading a brand, an innovation team, or an agency pitch — I drop in where you need momentum.`
                   ]}
                   isVisible={revealedSections.has(2)}
                   delay={0.5}
@@ -1182,8 +1183,8 @@ const DeliveryPage: React.FC = () => {
                 {/* Enterprise Clients Introduction */}
                 <ChatSection
                   messages={[
-                    `Here are some Enterprise Clients I've worked with.`,
-                    `If your clients recognize these names, you'll recognize the value I bring to the table.`
+                    `Here are some clients I've delivered for.`,
+                    `If you recognise these names, you'll recognise the standards I work to.`
                   ]}
                   isVisible={revealedSections.has(3)}
                   delay={0.6}
