@@ -104,6 +104,24 @@ const testimonials = [
 
 // Featured projects data - mix of enterprise and AI-built projects
 const featuredProjects = [
+  // AI-Native Showcase Project - Lead with AI building AI
+  {
+    id: 'chilled-sites',
+    title: 'Chilled Sites — AI Website Builder',
+    company: 'Chilled Ventures',
+    category: 'AI / SaaS',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    logo: 'https://chilledsites.com/images/logo.svg',
+    description: 'AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms.',
+    type: 'ai-native',
+    caseStudyUrl: '/case-study/chilled-sites',
+    metrics: [
+      { label: 'Time to First Site', value: '< 10 min', icon: <Clock className="w-6 h-6" /> },
+      { label: 'Cost Savings', value: '£5,000+', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Active Users', value: '1000+', icon: <Users className="w-6 h-6" /> },
+      { label: 'Websites Built', value: '2500+', icon: <Globe className="w-6 h-6" /> }
+    ]
+  },
   // Enterprise Projects
   {
     id: 'fab',
@@ -176,23 +194,6 @@ const featuredProjects = [
       { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-6 h-6" /> },
       { label: 'Global Team', value: '15+', icon: <Users className="w-6 h-6" /> },
       { label: 'Platforms', value: 'Multi', icon: <Globe className="w-6 h-6" /> }
-    ]
-  },
-  {
-    id: 'chilled-sites',
-    title: 'Chilled Sites — AI Website Builder',
-    company: 'Chilled Ventures',
-    category: 'AI / SaaS',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
-    logo: 'https://chilledsites.com/images/logo.svg',
-    description: 'AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms.',
-    type: 'ai-native',
-    caseStudyUrl: '/case-study/chilled-sites',
-    metrics: [
-      { label: 'Time to First Site', value: '< 10 min', icon: <Clock className="w-6 h-6" /> },
-      { label: 'Cost Savings', value: '£5,000+', icon: <DollarSign className="w-6 h-6" /> },
-      { label: 'Active Users', value: '1000+', icon: <Users className="w-6 h-6" /> },
-      { label: 'Websites Built', value: '2500+', icon: <Globe className="w-6 h-6" /> }
     ]
   },
   {
