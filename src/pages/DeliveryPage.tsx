@@ -1857,7 +1857,7 @@ const DeliveryPage: React.FC = () => {
                 <ChatSection
                   messages={[
                     `Signed, sealed, delivered… let’s ship something your clients will love.`,
-                    `Paul Gosnell • The Postman • paul@p0stman.com`
+                    `Paul Gosnell • P0STMAN • paul@p0stman.com`
                   ]}
                   isVisible={revealedSections.has(6)}
                   delay={0.2}
