@@ -327,24 +327,23 @@ export default function HomeV2() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-6 h-6" />
-                    <span className="font-light">Your AI Delivery Partner — On Demand</span>
+                    <span className="font-light">Your AI & Product Partner — On Demand</span>
                   </div>
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      Plug-in expertise for your next big project
+                      From AI strategy to product delivery — P0STMAN has you covered.
                     </span>
                   </h1>
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  I work with agencies and corporates to deliver AI-powered products that match your standards,
-                  hit your deadlines, and impress your clients.
+                  P0STMAN partners with agencies and corporates to deliver websites, apps, and AI-powered products that impress clients, hit deadlines, and raise the bar.
                 </p>
 
                 <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-                  Whether you need a specialist to join your team or a full build from the ground up,
-                  I combine AI acceleration with proven delivery expertise to get it done — right, first time.
+                  From boardroom strategy to full builds, P0STMAN covers it all. 
+                  AI readiness, training, pitching with prototypes, or hands-on delivery — we combine expertise and acceleration to get it done right, first time.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -355,14 +354,14 @@ export default function HomeV2() {
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
                   >
                     <Zap className="w-5 h-5" />
-                    Partner With Me
+                    Partner with P0STMAN
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                   <a
                     href="#focus"
                     className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
                   >
-                    View Expertise
+                    View Our Work
                   </a>
                 </div>
               </motion.div>
