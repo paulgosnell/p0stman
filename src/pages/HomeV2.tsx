@@ -332,7 +332,7 @@ export default function HomeV2() {
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      From AI strategy to product delivery — P0STMAN has you covered.
+                      From AI strategy to product delivery.
                     </span>
                   </h1>
                 </div>
