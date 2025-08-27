@@ -311,9 +311,7 @@ export default function HomeV2() {
           <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
         </div>
-
         <Header />
-
         <div className="container mx-auto px-4 pt-24 md:pt-40 pb-16 md:pb-20 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -327,7 +325,7 @@ export default function HomeV2() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-6 h-6" />
-                    <span className="font-light">Your AI & Product Partner — On Demand</span>
+                    <span className="font-light">Your Product Partner</span>
                   </div>
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight">
@@ -343,7 +341,7 @@ export default function HomeV2() {
 
                 <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
                   From boardroom strategy to full builds, P0STMAN covers it all. 
-                  AI readiness, training, pitching with prototypes, or hands-on delivery — we combine expertise and acceleration to get it done right, first time.
+                  AI readiness, training, pitching with prototypes, or hands-on delivery — we combine our expertise and acceleration to get it done right, the first time.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -464,11 +462,7 @@ export default function HomeV2() {
                       />
                     ))}
                   </div>
-
-
                 </motion.div>
-
-
               </motion.div>
             </div>
           </div>
@@ -511,377 +505,6 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-thin mb-6 text-gray-900" style={{ color: '#111827' }}>Proven Track Record</h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Two decades of digital leadership delivering measurable results across industries
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
-                >
-                  <div className="text-blue-600 mb-4 flex justify-center">{highlight.icon}</div>
-                  <div className="text-4xl font-thin mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {highlight.metric}
-                  </div>
-                  <div className="text-xl font-light mb-2 text-gray-800">{highlight.label}</div>
-                  <div className="text-gray-700">{highlight.description}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Problems We Solve Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-thin mb-6">Problems We Solve</h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
-                When organizations need to move fast, scale efficiently, and deliver exceptional results
-              </p>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 shadow-lg border border-red-100 hover:shadow-xl transition-all"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-red-100 rounded-2xl">
-                    <Clock className="w-8 h-8 text-red-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Time-to-Market Pressure</h3>
-                    <p className="text-red-600 font-medium mb-3">AI-accelerated development delivers 80% faster</p>
-                    <p className="text-gray-700 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-green-100 rounded-2xl">
-                    <DollarSign className="w-8 h-8 text-green-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Budget & Resource Constraints</h3>
-                    <p className="text-green-600 font-medium mb-3">Fractional expertise at 50-70% less cost</p>
-                    <p className="text-gray-700 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-all"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-blue-100 rounded-2xl">
-                    <Target className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Complex Technical Challenges</h3>
-                    <p className="text-blue-600 font-medium mb-3">Proven track record scaling 1→40 teams</p>
-                    <p className="text-gray-700 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-purple-100 rounded-2xl">
-                    <Rocket className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Digital Transformation Needs</h3>
-                    <p className="text-purple-600 font-medium mb-3">End-to-end transformation expertise</p>
-                    <p className="text-gray-700 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mt-12"
-            >
-              <p className="text-gray-600 mb-6 font-light">
-                Ready to solve your biggest challenges?
-              </p>
-              <motion.a
-                href="mailto:paul@p0stman.com?subject=Project Discussion"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
-              >
-                <MessageSquare className="w-5 h-5" />
-                Let's Discuss Your Project
-                <ArrowRight className="w-5 h-5" />
-              </motion.a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Focus Areas - Updated for better contrast */}
-      <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Target className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-light">Focus Areas</span>
-              </div>
-
-              <h2 className="text-4xl font-thin mb-6 text-black">
-                How I Help Organizations Win with AI
-              </h2>
-
-              <p className="text-black max-w-2xl mx-auto text-lg font-semibold">
-                Deep operator experience across product leadership, AI-native development,
-                and digital transformation consulting.
-              </p>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-3 gap-8">
-              {focusAreas.map((area, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
-                >
-                  <div className="mb-6">
-                    <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
-                      {area.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-black">{area.title}</h3>
-                    <p className="text-black mb-6 font-semibold">{area.description}</p>
-                  </div>
-
-                  <div className="space-y-3">
-                    {area.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                        <span className="text-black font-semibold">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Building Showcase */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Code className="w-6 h-6 text-blue-400" />
-                <span className="text-blue-400 font-light">AI-Native Building</span>
-              </div>
-
-              <h2 className="text-4xl font-thin mb-6">
-                Building with AI, Not Just Talking About It
-              </h2>
-
-              <p className="text-gray-300 max-w-3xl mx-auto text-lg">
-                I'm deeply immersed in the coding revolution - experimenting, testing, and shaping
-                what AI-first development looks like. Through P0STMAN and Chilled Tools, I've shipped
-                20+ production-grade platforms using Claude, GPT-4, and Gemini.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Bot className="w-8 h-8 text-blue-400" />
-                  <h3 className="text-2xl font-light">P0STMAN Agency</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  AI-powered digital agency delivering production-ready apps in days, not months.
-                  Created an AI-powered stack that cuts dev time by 80%.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>20+ apps shipped in 5 days each</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>80% reduction in development time</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Full-stack AI integration</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Zap className="w-8 h-8 text-purple-400" />
-                  <h3 className="text-2xl font-light">Chilled Tools</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  B2B SaaS suite empowering solo founders and SMEs with AI-built tools for CRM,
-                  dashboards, and automation - all plug-and-play, no dev team needed.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Chilled CRM used across 4+ markets</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>High-utility SaaS in under 1 week</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>AI-assist features & automation</span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Video Showcase */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h3 className="text-2xl font-light mb-8">See AI Building in Action</h3>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div
-                  className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
-                  onClick={() => openVideo("Y0g_9ZhqiRg")}
-                >
-                  <div className="relative aspect-video">
-                    <img
-                      src="https://i.ytimg.com/vi/Y0g_9ZhqiRg/maxresdefault.jpg"
-                      alt="Building CRM with AI"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <Play className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
-                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
-                      How I built a CRM system in one week with AI
-                    </h4>
-                  </div>
-                </div>
-
-                <div
-                  className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
-                  onClick={() => openVideo("dxuct08lLyY")}
-                >
-                  <div className="relative aspect-video">
-                    <img
-                      src="https://i.ytimg.com/vi/dxuct08lLyY/maxresdefault.jpg"
-                      alt="Adding Stripe to AI apps"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <Play className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
-                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
-                      Adding Stripe payments to your AI-built app
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Showcase */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -893,10 +516,6 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Building2 className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-medium">Real Projects, Real Results</span>
-              </div>
 
               <h2 className="text-4xl font-thin mb-6 text-gray-900" style={{ color: '#111827' }}>
                 Strategic Product Delivery Across Industries
@@ -1150,6 +769,329 @@ export default function HomeV2() {
         </div>
       </section>
 
+      {/* Problems We Solve Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-thin mb-6">Problems We Solve</h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+                When organizations need to move fast, scale efficiently, and deliver exceptional results — P0STMAN is the partner that makes it happen.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 shadow-lg border border-red-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-red-100 rounded-2xl">
+                    <Clock className="w-8 h-8 text-red-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Time-to-Market Pressure</h3>
+                    <p className="text-red-600 font-medium mb-3">AI-accelerated development delivers 80% faster</p>
+                    <p className="text-gray-700 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-green-100 rounded-2xl">
+                    <DollarSign className="w-8 h-8 text-green-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Budget & Resource Constraints</h3>
+                    <p className="text-green-600 font-medium mb-3">Fractional expertise at 50-70% less cost</p>
+                    <p className="text-gray-700 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-blue-100 rounded-2xl">
+                    <Target className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Complex Technical Challenges</h3>
+                    <p className="text-blue-600 font-medium mb-3">Proven track record scaling 1→40 teams</p>
+                    <p className="text-gray-700 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-purple-100 rounded-2xl">
+                    <Rocket className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Digital Transformation Needs</h3>
+                    <p className="text-purple-600 font-medium mb-3">End-to-end transformation expertise</p>
+                    <p className="text-gray-700 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <p className="text-gray-600 mb-6 font-light">
+                Ready to solve your biggest challenges?
+              </p>
+              <motion.a
+                href="mailto:paul@p0stman.com?subject=Project Discussion"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
+              >
+                <MessageSquare className="w-5 h-5" />
+                Let's Discuss Your Project
+                <ArrowRight className="w-5 h-5" />
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Focus Areas - Updated for better contrast */}
+      <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+
+              <h2 className="text-4xl font-thin mb-6 text-black">
+                How We Help Organizations Win with AI
+              </h2>
+
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+                Deep operator experience across product leadership, AI-native development,
+                and digital transformation consulting — as a collective.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {focusAreas.map((area, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
+                >
+                  <div className="mb-6">
+                    <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-xl font-light mb-3 text-black">{area.title}</h3>
+                    <p className="text-black mb-6 font-light">{area.description}</p>
+                  </div>
+
+                  <div className="space-y-3">
+                    {area.features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                        <span className="text-black font-light">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Building Showcase */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+
+              <h2 className="text-4xl font-thin mb-6">
+                Building with AI, Not Just Talking About It
+              </h2>
+
+              <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+                We are deeply immersed in the coding revolution — experimenting, testing, and shaping
+                what AI-first development looks like. Through P0STMAN and Chilled Tools, we've shipped
+                20+ production-grade platforms using Claude, GPT-4, and Gemini.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Bot className="w-8 h-8 text-blue-400" />
+                  <h3 className="text-2xl font-light">P0STMAN Agency</h3>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  AI-powered digital agency delivering production-ready apps in days, not months.
+                  Created an AI-powered stack that cuts dev time by 80%.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span>20+ apps shipped in 5 days each</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span>80% reduction in development time</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span>Full-stack AI integration</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Zap className="w-8 h-8 text-purple-400" />
+                  <h3 className="text-2xl font-light">Chilled Tools</h3>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  B2B SaaS suite empowering solo founders and SMEs with AI-built tools for CRM,
+                  dashboards, and automation - all plug-and-play, no dev team needed.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span>Chilled CRM used across 4+ markets</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span>High-utility SaaS in under 1 week</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span>AI-assist features & automation</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Video Showcase */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h3 className="text-2xl font-light mb-8">See AI Building in Action</h3>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div
+                  className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                  onClick={() => openVideo("Y0g_9ZhqiRg")}
+                >
+                  <div className="relative aspect-video">
+                    <img
+                      src="https://i.ytimg.com/vi/Y0g_9ZhqiRg/maxresdefault.jpg"
+                      alt="Building CRM with AI"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <Play className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
+                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                      How we built a CRM system in one week with AI
+                    </h4>
+                  </div>
+                </div>
+
+                <div
+                  className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                  onClick={() => openVideo("dxuct08lLyY")}
+                >
+                  <div className="relative aspect-video">
+                    <img
+                      src="https://i.ytimg.com/vi/dxuct08lLyY/maxresdefault.jpg"
+                      alt="Adding Stripe to AI apps"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <Play className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
+                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                      Adding Stripe payments to your AI-built app
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -1161,13 +1103,9 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Award className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-medium">Client Success</span>
-              </div>
 
-              <h2 className="text-4xl font-bold mb-6">
-                What Leaders Say About Working with Me
+              <h2 className="text-4xl font-thin mb-6">
+                What Leaders Say About Working with Us
               </h2>
             </motion.div>
 
@@ -1199,15 +1137,11 @@ export default function HomeV2() {
         </div>
       </section>
 
-
-
       <VideoModal
         isOpen={showVideoModal}
         onClose={() => setShowVideoModal(false)}
         videoId={currentVideoId}
       />
-
-
 
       <AnimatedFooter onOpenProjectConfigurator={() => setShowProjectConfigurator(true)} />
 
