@@ -18,7 +18,9 @@ export interface Invoice {
   due_date: string;
   status: 'draft' | 'sent' | 'paid' | 'overdue';
   total_amount: number;
+  description?: string;
   client?: Client;
+    items?: InvoiceItem[];
 }
 
 export interface InvoiceItem {
@@ -33,7 +35,7 @@ export interface InvoiceItem {
 }
 
 // Client functions
-async function getClients(): Promise<Client[]> {
+export async function getClients(): Promise<Client[]> {
   const { data, error } = await supabase
     .from('clients')
     .select('*')
@@ -133,6 +135,7 @@ export async function updateInvoice(
     issue_date?: string;
     due_date?: string;
     status: Invoice['status'];
+    description?: string;
     items: Array<{
       description: string;
       amount: number;
@@ -147,7 +150,8 @@ export async function updateInvoice(
     .update({
       status: data.status,
       issue_date: data.issue_date,
-      due_date: data.due_date
+      due_date: data.due_date,
+      description: data.description
     })
     .eq('invoice_number', id);
 
@@ -211,11 +215,11 @@ async function updateInvoiceStatus(id: string, status: Invoice['status']): Promi
   if (error) throw error;
 }
 
-async function deleteInvoice(id: string): Promise<void> {
-  const { error } = await supabase
-    .from('invoices')
-    .delete()
-    .eq('invoice_number', id);
+  export async function deleteInvoice(id: string): Promise<void> {
+    const { error } = await supabase
+      .from('invoices')
+      .delete()
+      .eq('invoice_number', id);
 
-  if (error) throw error;
-}
+    if (error) throw error;
+  }

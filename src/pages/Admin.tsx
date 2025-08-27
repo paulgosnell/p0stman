@@ -5,6 +5,13 @@ import { supabase } from '../lib/supabase';
 
 const adminSections = [
   {
+    icon: <BookOpen className="w-6 h-6 text-indigo-600" />,
+    title: "Reports",
+    description: "View analytics and standard financial reports",
+    link: "/admin/reports",
+    color: "hover:bg-indigo-50 hover:border-indigo-200"
+  },
+  {
     icon: <BookOpen className="w-6 h-6 text-blue-600" />,
     title: "Guide Content",
     description: "Manage guide sections and content",
@@ -38,6 +45,13 @@ const adminSections = [
     description: "Manage client contracts",
     link: "/admin/contracts",
     color: "hover:bg-green-50 hover:border-green-200"
+  },
+  {
+    icon: <BookOpen className="w-6 h-6 text-orange-600" />,
+    title: "Clients",
+    description: "Add and manage clients for contracts and invoices",
+    link: "/admin/clients",
+    color: "hover:bg-orange-50 hover:border-orange-200"
   }
 ];
 
@@ -78,27 +92,27 @@ export default function Admin() {
           </div>
 
           <div className="grid gap-6">
-            {adminSections.map((section, index) => (
-              <Link
-                key={index}
-                to={section.link}
-                className={`block bg-white rounded-xl border border-gray-200 p-6 transition-all ${section.color}`}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-gray-50 rounded-xl">
-                    {section.icon}
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-semibold text-gray-900 mb-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {adminSections.map((section, index) => (
+                <Link
+                  key={index}
+                  to={section.link}
+                  className={`block bg-white rounded-xl border border-gray-200 p-6 transition-all shadow-sm ${section.color}`}
+                >
+                  <div className="flex flex-col items-center justify-center gap-3">
+                    <div className="p-3 bg-gray-50 rounded-xl mb-2">
+                      {section.icon}
+                    </div>
+                    <h2 className="text-base font-semibold text-gray-900 mb-1 text-center">
                       {section.title}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-center text-sm">
                       {section.description}
                     </p>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -5,12 +5,15 @@ import { getInvoice, updateInvoice, type Invoice, type InvoiceItem } from '../..
 import ClientForm from '../../components/ClientForm';
 
 interface InvoiceFormData {
+  issue_date: string;
+  due_date: string;
   client: {
     name: string;
     company_name: string;
     address: string;
     email: string;
   };
+  description: string;
   items: InvoiceItem[];
   status: Invoice['status'];
 }
@@ -30,6 +33,7 @@ export default function EditInvoice() {
       address: '',
       email: ''
     },
+    description: '',
     items: [],
     status: 'draft'
   });
@@ -54,6 +58,7 @@ export default function EditInvoice() {
           address: invoice.client?.address || '',
           email: invoice.client?.email || ''
         },
+        description: invoice.description || '',
         items: invoice.items,
         status: invoice.status
       });
@@ -70,7 +75,16 @@ export default function EditInvoice() {
       ...prev,
       items: [
         ...prev.items,
-        { description: '', amount: 0, order_position: prev.items.length }
+        {
+          id: '',
+          invoice_id: id || '',
+          description: '',
+          amount: 0,
+          order_position: prev.items.length,
+          status: 'pending',
+          created_at: '',
+          updated_at: ''
+        }
       ]
     }));
   };
@@ -115,6 +129,7 @@ export default function EditInvoice() {
         issue_date: formData.issue_date,
         due_date: formData.due_date,
         status: formData.status,
+        description: formData.description,
         items: formData.items
       });
       navigate('/admin/invoicing');
@@ -251,6 +266,18 @@ export default function EditInvoice() {
                   </select>
                 </div>
               </div>
+            </div>
+
+            {/* Invoice Description */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold mb-4">Description of Work</h2>
+              <textarea
+                value={formData.description}
+                onChange={e => setFormData(prev => ({ ...prev, description: e.target.value }))}
+                rows={4}
+                placeholder="Describe the work, project, or deliverables for this invoice..."
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-700 resize-vertical"
+              />
             </div>
 
             {/* Invoice Items */}

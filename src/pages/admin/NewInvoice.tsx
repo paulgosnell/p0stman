@@ -15,7 +15,7 @@ export default function NewInvoice() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
+
   // Client form state
   const [clientForm, setClientForm] = useState({
     name: '',
@@ -23,6 +23,9 @@ export default function NewInvoice() {
     address: '',
     email: ''
   });
+
+  // Invoice description field
+  const [description, setDescription] = useState('');
 
   // Invoice items state
   const [items, setItems] = useState<InvoiceItem[]>([
@@ -68,7 +71,8 @@ export default function NewInvoice() {
           issue_date: new Date().toISOString(),
           due_date: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days from now
           status: 'draft',
-          total_amount: totalAmount
+          total_amount: totalAmount,
+          description // Pass description to backend
         },
         items
       );
@@ -113,6 +117,18 @@ export default function NewInvoice() {
               <ClientForm
                 formData={clientForm}
                 onChange={setClientForm}
+              />
+            </div>
+
+            {/* Invoice Description */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold mb-4">Invoice Description</h2>
+              <textarea
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                placeholder="Describe the work or services provided..."
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[80px]"
+                required
               />
             </div>
 

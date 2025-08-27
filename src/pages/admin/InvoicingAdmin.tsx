@@ -1,17 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, Plus, Loader2, ArrowLeft, FileText, Mail, DollarSign, Edit } from 'lucide-react';
-import { getInvoices, type Invoice } from '../../lib/supabase/invoicing';
+// import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { getInvoices, deleteInvoice, type Invoice } from '../../lib/supabase/invoicing';
+import { Trash2 } from 'lucide-react';
 
 export default function InvoicingAdmin() {
-  const navigate = useNavigate();
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // const [revenueByMonth, setRevenueByMonth] = useState<{ month: string; revenue: number }[]>([]);
 
   useEffect(() => {
     loadInvoices();
   }, []);
+
+  useEffect(() => {
+    // Aggregate revenue by month after invoices are loaded
+    if (invoices.length > 0) {
+      const map: Record<string, number> = {};
+      invoices.forEach(inv => {
+        const date = new Date(inv.issue_date);
+        const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+        map[key] = (map[key] || 0) + Number(inv.total_amount);
+      });
+      const revenueArr = Object.entries(map).map(([month, revenue]) => ({ month, revenue }));
+      revenueArr.sort((a, b) => a.month.localeCompare(b.month));
+      // setRevenueByMonth(revenueArr);
+    } else {
+      // setRevenueByMonth([]);
+    }
+  }, [invoices]);
+  // ...existing code...
+  const handleDelete = async (invoiceNumber: string) => {
+    if (!window.confirm('Are you sure you want to delete this invoice? This action cannot be undone.')) return;
+    try {
+      setLoading(true);
+      await deleteInvoice(invoiceNumber);
+      await loadInvoices();
+    } catch (err) {
+      console.error('Error deleting invoice:', err);
+      setError(err instanceof Error ? err.message : 'Failed to delete invoice');
+    } finally {
+      setLoading(false);
+    }
+  };
+  const navigate = useNavigate();
 
   const loadInvoices = async () => {
     try {
@@ -52,7 +86,7 @@ export default function InvoicingAdmin() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
               <Bot className="w-8 h-8 text-blue-600" />
@@ -187,6 +221,13 @@ export default function InvoicingAdmin() {
                             className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
                           >
                             <DollarSign className="w-5 h-5" />
+                          </button>
+                          <button
+                            onClick={() => handleDelete(invoice.invoice_number)}
+                            className="p-2 text-gray-400 hover:text-red-600 transition-colors"
+                            title="Delete Invoice"
+                          >
+                            <Trash2 className="w-5 h-5" />
                           </button>
                         </div>
                       </td>

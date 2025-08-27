@@ -16,6 +16,7 @@ interface InvoiceData {
     number: string;
     date: string;
     dueDate: string;
+    description?: string;
     items: {
       description: string;
       amount: string;
@@ -70,6 +71,7 @@ export default function Invoice() {
             month: 'long',
             day: 'numeric'
           }),
+          description: invoice.description || '',
           items: (invoice.items || []).map(item => ({
             description: item.description,
             amount: `$${Number(item.amount).toLocaleString('en-US', { minimumFractionDigits: 2 })}`,
@@ -195,6 +197,14 @@ export default function Invoice() {
               </div>
             </div>
           </div>
+
+          {/* Invoice Description (above items) */}
+          {invoiceData.invoice.description && (
+            <div className="mb-8">
+              <h2 className="text-lg font-semibold mb-2">Description of Work</h2>
+              <p className="text-gray-700 whitespace-pre-line">{invoiceData.invoice.description}</p>
+            </div>
+          )}
 
           {/* Items */}
           <div className="mb-12">

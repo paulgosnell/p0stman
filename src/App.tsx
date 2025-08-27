@@ -4,6 +4,8 @@ import RTLWrapper from './components/RTLWrapper';
 import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
+import ReportsAdmin from './pages/admin/ReportsAdmin';
+import ClientsAdmin from './pages/admin/ClientsAdmin';
 import PrivacyPage from './pages/privacy';
 import HomeV2 from './pages/HomeV2';
 import Process from './pages/Process';
@@ -112,6 +114,8 @@ export default function App() {
           <Route path="/admin/invoicing" element={<InvoicingAdmin />} />
           <Route path="/admin/invoicing/new" element={<NewInvoice />} />
           <Route path="/admin/invoicing/edit/:id" element={<EditInvoice />} />
+          <Route path="/admin/clients" element={<ClientsAdmin />} />
+          <Route path="/admin/reports" element={<ReportsAdmin />} />
           <Route path="/case-study/rhythm" element={<Rhythm />} />
           <Route path="/case-study/experience-a-gift" element={<ExperienceGift />} />
           <Route path="/case-study/chilled-crm" element={<ChilledCRM />} />
