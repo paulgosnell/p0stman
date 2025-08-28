@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building Your First AI App | P0STMAN Content Hub</title>
+  <meta name="description" content="Step-by-step tutorial for building your first AI-powered application. From concept to deployment with practical examples and code.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="P0STMAN Agency Collective">
+  <link rel="canonical" href="https://p0stman.com/content-hub/videos/building-first-ai-app.html">
+  <meta property="og:title" content="Building Your First AI App | P0STMAN Content Hub">
+  <meta property="og:description" content="Step-by-step tutorial for building your first AI-powered application. From concept to deployment with practical examples and code.">
+  <meta property="og:image" content="https://p0stman.com/social-preview.png">
+  <meta property="og:url" content="https://p0stman.com/content-hub/videos/building-first-ai-app.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building Your First AI App | P0STMAN Content Hub">
+  <meta name="twitter:description" content="Step-by-step tutorial for building your first AI-powered application. From concept to deployment with practical examples and code.">
+  <meta name="twitter:image" content="https://p0stman.com/social-preview.png">
+  <link rel="stylesheet" href="/src/index.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building Your First AI App",
+    "author": {
+      "@type": "Organization",
+      "name": "P0STMAN Agency Collective"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "P0STMAN"
+    },
+    "datePublished": "2025-08-28",
+    "url": "https://p0stman.com/content-hub/videos/building-first-ai-app.html",
+    "description": "Step-by-step tutorial for building your first AI-powered application. From concept to deployment with practical examples and code."
+  }
+  </script>
+</head>
+<body class="bg-premium-gradient text-white">
+  <header class="container-premium-wide py-8 flex items-center justify-between">
+    <a href="/content-hub/" class="flex items-center gap-3">
+      <img src="/favicon.svg" alt="P0STMAN Logo" style="height:40px;">
+      <span class="text-premium-3xl font-bold text-gradient-purple">Videos</span>
+    </a>
+    <nav>
+      <a href="/content-hub/" class="btn-premium-secondary">Content Hub</a>
+      <a href="/" class="btn-premium-secondary">Home</a>
+    </nav>
+  </header>
+  <main class="container-premium-wide py-16">
+    <article>
+      <header class="text-center mb-16">
+        <h1 class="text-premium-5xl text-gradient-purple mb-4">Building Your First AI App</h1>
+        <p class="text-premium-xl text-gray-300 max-w-2xl mx-auto mb-8">Follow along as we build a complete AI-powered application from scratch. Perfect for developers new to AI integration.</p>
+        <p class="text-premium-lg text-gray-400">Published on August 28, 2025</p>
+      </header>
+      <section class="prose-premium max-w-4xl mx-auto mb-16">
+        <h2 class="text-premium-3xl text-gradient mb-4">Project Overview: AI-Powered Task Manager</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">We'll build a smart task management application that uses AI to prioritize tasks, generate subtasks, and provide intelligent suggestions. This project demonstrates practical AI integration while teaching fundamental concepts.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">What You'll Learn</h3>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li>How to integrate AI APIs into web applications</li>
+          <li>Best practices for AI-powered user experiences</li>
+          <li>Handling AI responses and error states</li>
+          <li>Building conversational AI interfaces</li>
+          <li>Deploying AI applications to production</li>
+          <li>Security considerations for AI applications</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Tech Stack</h3>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-premium-card p-6 rounded-premium border border-premium-border">
+            <h4 class="text-premium-xl text-gradient-purple mb-3">Frontend</h4>
+            <ul class="text-gray-300 list-disc list-inside">
+              <li>React 18 with TypeScript</li>
+              <li>Tailwind CSS for styling</li>
+              <li>React Hook Form for form handling</li>
+              <li>React Query for data fetching</li>
+            </ul>
+          </div>
+          <div class="bg-premium-card p-6 rounded-premium border border-premium-border">
+            <h4 class="text-premium-xl text-gradient-purple mb-3">Backend & AI</h4>
+            <ul class="text-gray-300 list-disc list-inside">
+              <li>Node.js with Express</li>
+              <li>OpenAI GPT-4 API</li>
+              <li>MongoDB for data storage</li>
+              <li>JWT for authentication</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Phase 1: Project Setup & Planning</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Before writing code, let's establish a solid foundation for our AI application.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 1: Define Your AI App Concept</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Choose an idea that solves a real problem with AI:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Task Management:</strong> AI prioritizes tasks and suggests optimal schedules</li>
+          <li><strong>Content Creation:</strong> AI generates blog posts, social media content, or marketing copy</li>
+          <li><strong>Code Assistant:</strong> AI helps with programming tasks and debugging</li>
+          <li><strong>Learning Platform:</strong> AI creates personalized learning paths</li>
+          <li><strong>Customer Support:</strong> AI handles routine inquiries and escalates complex issues</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 2: Set Up Your Development Environment</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Prepare your development environment:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Install Node.js:</strong> Download from nodejs.org (LTS version recommended)</li>
+          <li><strong>Set up a code editor:</strong> VS Code with extensions for React and TypeScript</li>
+          <li><strong>Install Git:</strong> For version control and collaboration</li>
+          <li><strong>Create project structure:</strong> Organize folders for frontend, backend, and shared code</li>
+          <li><strong>Set up environment variables:</strong> For API keys and configuration</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 3: Choose Your AI Service</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Select the right AI service for your needs:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>OpenAI GPT-4:</strong> Best for conversational AI and text generation</li>
+          <li><strong>Anthropic Claude:</strong> Excellent for analysis and reasoning tasks</li>
+          <li><strong>Google Gemini:</strong> Strong multimodal capabilities</li>
+          <li><strong>Hugging Face:</strong> Great for specialized models and fine-tuning</li>
+          <li><strong>Replicate:</strong> Easy deployment of open-source models</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Phase 2: Building the Backend API</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Let's start with the backend that will handle AI interactions and data management.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 4: Initialize the Node.js Project</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Create a new Node.js project:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Create project folder:</strong> <code class="bg-gray-800 px-2 py-1 rounded">mkdir ai-task-manager && cd ai-task-manager</code></li>
+          <li><strong>Initialize npm:</strong> <code class="bg-gray-800 px-2 py-1 rounded">npm init -y</code></li>
+          <li><strong>Install dependencies:</strong> Express, MongoDB driver, OpenAI SDK, JWT, bcrypt</li>
+          <li><strong>Create folder structure:</strong> routes, models, middleware, utils</li>
+          <li><strong>Set up environment:</strong> Create .env file for API keys and configuration</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 5: Implement AI Task Prioritization</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Create an endpoint that uses AI to prioritize tasks:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Define the AI prompt:</strong> Create a system prompt for task prioritization</li>
+          <li><strong>Handle user input:</strong> Accept task lists and user preferences</li>
+          <li><strong>Process AI response:</strong> Parse and validate AI-generated priorities</li>
+          <li><strong>Return structured data:</strong> Send prioritized tasks back to frontend</li>
+          <li><strong>Error handling:</strong> Manage API failures and rate limits gracefully</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 6: Add Task Generation Feature</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Implement AI-powered task breakdown:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Complex task input:</strong> Accept high-level goals or projects</li>
+          <li><strong>AI decomposition:</strong> Use AI to break down complex tasks into manageable steps</li>
+          <li><strong>Smart estimation:</strong> AI estimates time and difficulty for each subtask</li>
+          <li><strong>Dependency mapping:</strong> Identify task dependencies and optimal execution order</li>
+          <li><strong>Personalization:</strong> Adapt suggestions based on user's past performance</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Phase 3: Creating the Frontend Interface</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Now let's build a beautiful, responsive frontend that makes AI interactions feel natural and intuitive.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 7: Set Up React Application</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Create a modern React application:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Create React app:</strong> Use Vite for faster development</li>
+          <li><strong>Install UI libraries:</strong> Tailwind CSS, Headless UI, React Icons</li>
+          <li><strong>Set up routing:</strong> React Router for navigation</li>
+          <li><strong>Configure state management:</strong> Zustand or Redux Toolkit</li>
+          <li><strong>Add TypeScript:</strong> For better development experience and type safety</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 8: Build the Task Input Interface</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Create an intuitive task creation experience:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Smart input field:</strong> Auto-suggest task categories and priorities</li>
+          <li><strong>AI assistance:</strong> Button to generate subtasks from complex tasks</li>
+          <li><strong>Voice input:</strong> Allow users to dictate tasks using speech recognition</li>
+          <li><strong>Template system:</strong> Pre-built templates for common task types</li>
+          <li><strong>Validation:</strong> Real-time validation with helpful error messages</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 9: Implement AI Chat Interface</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Build a conversational interface for AI interactions:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Message bubbles:</strong> Clear distinction between user and AI messages</li>
+          <li><strong>Typing indicators:</strong> Show when AI is processing requests</li>
+          <li><strong>Rich formatting:</strong> Support for markdown, lists, and code blocks</li>
+          <li><strong>Context awareness:</strong> AI remembers conversation history</li>
+          <li><strong>Quick actions:</strong> Buttons for common AI commands</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 10: Add Task Visualization</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Create visual representations of tasks and priorities:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Kanban board:</strong> Drag-and-drop interface for task management</li>
+          <li><strong>Priority matrix:</strong> Eisenhower matrix for task prioritization</li>
+          <li><strong>Timeline view:</strong> Gantt chart showing task dependencies</li>
+          <li><strong>Progress tracking:</strong> Visual progress bars and completion indicators</li>
+          <li><strong>AI insights:</strong> Display AI-generated recommendations and insights</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Phase 4: AI Integration Best Practices</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Learn how to make your AI integration robust, user-friendly, and scalable.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 11: Handle AI Responses Effectively</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Process and display AI responses optimally:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Streaming responses:</strong> Show AI responses as they're generated</li>
+          <li><strong>Error boundaries:</strong> Graceful handling of API failures</li>
+          <li><strong>Response parsing:</strong> Extract structured data from AI text responses</li>
+          <li><strong>Confidence scoring:</strong> Show how confident the AI is in its responses</li>
+          <li><strong>Response caching:</strong> Cache frequent queries to reduce API costs</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 12: Implement Rate Limiting & Cost Control</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Manage AI API usage efficiently:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Request queuing:</strong> Manage concurrent AI requests</li>
+          <li><strong>Usage tracking:</strong> Monitor API costs and usage patterns</li>
+          <li><strong>Smart caching:</strong> Cache similar requests to reduce API calls</li>
+          <li><strong>Graceful degradation:</strong> Fallback to simpler AI models when needed</li>
+          <li><strong>User limits:</strong> Implement per-user rate limits and quotas</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 13: Add User Feedback Mechanisms</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Collect feedback to improve AI responses:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Response rating:</strong> Allow users to rate AI responses</li>
+          <li><strong>Feedback collection:</strong> Gather specific feedback on AI performance</li>
+          <li><strong>A/B testing:</strong> Test different AI prompts and models</li>
+          <li><strong>Usage analytics:</strong> Track which AI features are most valuable</li>
+          <li><strong>Continuous improvement:</strong> Use feedback to refine AI interactions</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Phase 5: Testing & Deployment</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Ensure your AI application is robust and ready for production use.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 14: Test Your AI Application</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Comprehensive testing ensures reliability:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Unit tests:</strong> Test individual functions and components</li>
+          <li><strong>Integration tests:</strong> Test AI API integrations</li>
+          <li><strong>E2E tests:</strong> Test complete user workflows</li>
+          <li><strong>AI response testing:</strong> Test various AI scenarios and edge cases</li>
+          <li><strong>Performance testing:</strong> Ensure AI responses are fast enough</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 15: Deploy to Production</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Launch your AI application successfully:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Choose hosting:</strong> Vercel, Netlify, or AWS for frontend; Railway, Render, or Heroku for backend</li>
+          <li><strong>Environment setup:</strong> Configure production environment variables</li>
+          <li><strong>Database setup:</strong> Set up production database (MongoDB Atlas, PlanetScale, etc.)</li>
+          <li><strong>Monitoring:</strong> Set up error tracking and performance monitoring</li>
+          <li><strong>Security:</strong> Implement HTTPS, API key security, and data protection</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Phase 6: Launch & Iterate</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Successfully launch your AI application and continuously improve it based on user feedback.</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 16: Prepare for Launch</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Final preparations before going live:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>User onboarding:</strong> Create tutorials and help documentation</li>
+          <li><strong>Marketing materials:</strong> Prepare screenshots, demo videos, and descriptions</li>
+          <li><strong>Pricing strategy:</strong> Determine monetization model and pricing tiers</li>
+          <li><strong>Legal compliance:</strong> Ensure GDPR, privacy policy, and terms of service</li>
+          <li><strong>Support system:</strong> Set up customer support and feedback channels</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Step 17: Monitor & Improve</h3>
+        <p class="text-premium-lg text-gray-300 mb-4">Continuously optimize your AI application:</p>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>User analytics:</strong> Track user behavior and feature usage</li>
+          <li><strong>AI performance:</strong> Monitor response quality and user satisfaction</li>
+          <li><strong>A/B testing:</strong> Test different AI models and prompts</li>
+          <li><strong>Feature requests:</strong> Gather and prioritize user feedback</li>
+          <li><strong>Performance optimization:</strong> Improve response times and reduce costs</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Common Challenges & Solutions</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Every AI app developer faces these challenges. Here's how to overcome them:</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Challenge 1: AI Response Quality</h3>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Craft better prompts:</strong> Use specific, detailed instructions</li>
+          <li><strong>Add context:</strong> Provide relevant background information</li>
+          <li><strong>Use examples:</strong> Show AI what good responses look like</li>
+          <li><strong>Iterate and test:</strong> A/B test different prompt variations</li>
+          <li><strong>Fine-tune models:</strong> Customize AI behavior for your specific use case</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Challenge 2: API Costs & Rate Limits</h3>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Implement caching:</strong> Cache frequent queries and responses</li>
+          <li><strong>Use smaller models:</strong> GPT-3.5-turbo for simple tasks</li>
+          <li><strong>Batch requests:</strong> Combine multiple small requests</li>
+          <li><strong>User quotas:</strong> Limit requests per user per day</li>
+          <li><strong>Cost monitoring:</strong> Track and optimize API usage</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Challenge 3: User Experience</h3>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Manage expectations:</strong> Set clear expectations for AI capabilities</li>
+          <li><strong>Handle errors gracefully:</strong> Provide helpful error messages</li>
+          <li><strong>Add loading states:</strong> Show progress during AI processing</li>
+          <li><strong>Offer alternatives:</strong> Provide manual options when AI fails</li>
+          <li><strong>Collect feedback:</strong> Learn from user interactions</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Next Steps & Resources</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Continue your AI development journey with these resources and next steps:</p>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Recommended Learning Path</h3>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>Advanced AI Integration:</strong> Learn about embeddings, fine-tuning, and custom models</li>
+          <li><strong>Scalability:</strong> Handle thousands of concurrent AI requests</li>
+          <li><strong>Security:</strong> Protect user data and prevent AI abuse</li>
+          <li><strong>Business Models:</strong> Monetize your AI application effectively</li>
+          <li><strong>Ethics:</strong> Develop responsible AI applications</li>
+        </ul>
+        
+        <h3 class="text-premium-2xl text-gradient-purple mb-3">Essential Tools & Resources</h3>
+        <ul class="text-premium-lg text-gray-300 mb-6 list-disc list-inside">
+          <li><strong>OpenAI API Documentation:</strong> Complete reference for GPT models</li>
+          <li><strong>Anthropic Claude:</strong> Alternative AI service with strong reasoning</li>
+          <li><strong>Hugging Face:</strong> Open-source models and datasets</li>
+          <li><strong>LangChain:</strong> Framework for building AI applications</li>
+          <li><strong>Vercel AI SDK:</strong> React hooks for AI integration</li>
+        </ul>
+        
+        <h2 class="text-premium-3xl text-gradient mb-4">Conclusion: Your AI Development Journey Begins</h2>
+        <p class="text-premium-lg text-gray-300 mb-6">Congratulations! You've now built your first AI-powered application. This task manager demonstrates the fundamental principles of AI integration that you can apply to any project.</p>
+        
+        <p class="text-premium-lg text-gray-300 mb-6">Remember that building AI applications is an iterative process. Start simple, gather feedback, and continuously improve. The AI landscape is evolving rapidly, so stay curious and keep learning.</p>
+        
+        <p class="text-premium-lg text-gray-300 mb-8">Your first AI app is just the beginning. The possibilities are endless, and with each project, you'll become more skilled at leveraging AI to solve real problems and create amazing user experiences.</p>
+        
+        <div class="bg-premium-card p-8 rounded-premium border border-premium-border">
+          <h3 class="text-premium-2xl text-gradient-purple mb-4">Ready to Build Your Next AI App?</h3>
+          <p class="text-premium-lg text-gray-300 mb-6">Take your AI development skills to the next level with our comprehensive training programs and expert guidance.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="../training/ai-tool-mastery-workshop.html" class="btn-premium-primary">AI Tool Mastery Workshop</a>
+            <a href="../guides/ai-prompt-engineering-guide.html" class="btn-premium-secondary">Prompt Engineering Guide</a>
+            <a href="../posts/future-ai-product-development.html" class="btn-premium-secondary">Future of AI Development</a>
+          </div>
+        </div>
+      </section>
+      <section class="text-center mt-16">
+        <p class="text-premium-lg text-gray-400">Watch the full tutorial series. <a href="mailto:hello@p0stman.com" class="text-gradient">Get access link</a></p>
+      </section>
+    </article>
+    <section class="text-center mt-16">
+      <nav class="inline-flex gap-4">
+        <a href="../guides/" class="btn-premium-secondary">Guides</a>
+        <a href="../posts/" class="btn-premium-secondary">Posts</a>
+        <a href="../training/" class="btn-premium-secondary">Training</a>
+        <a href="../tips/" class="btn-premium-secondary">Tips</a>
+        <a href="../marketing/" class="btn-premium-secondary">Marketing</a>
+      </nav>
+    </section>
+  </main>
+  <footer class="container-premium-wide py-8 text-center text-gray-400">
+    &copy; 2025 P0STMAN Agency Collective. All rights reserved.
+  </footer>
+</body>
+</html>
