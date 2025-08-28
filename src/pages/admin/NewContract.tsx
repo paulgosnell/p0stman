@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, ArrowLeft, Save, Loader2 } from 'lucide-react';
-import { createContract, createClient } from '../../lib/supabase/contracts';
-import ClientSelect from '../../components/ClientSelect';
+import { createContract } from '../../lib/supabase/contracts';
 import type { Client } from '../../lib/supabase/clients';
 
 export default function NewContract() {

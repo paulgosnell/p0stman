@@ -9,6 +9,14 @@ interface ClientFormProps {
     company_name: string;
     address: string;
     email: string;
+    status: 'prospecting' | 'pitching' | 'won' | 'live' | 'old' | 'lost';
+    value?: number;
+    linkedin_url?: string;
+    twitter_handle?: string;
+    phone?: string;
+    notes?: string;
+    last_contact?: string;
+    next_followup?: string;
   };
   onChange: (data: any) => void;
   disabled?: boolean;
@@ -58,7 +66,15 @@ export default function ClientForm({ formData, onChange, disabled = false, showS
           name: client.name,
           company_name: client.company_name,
           address: client.address,
-          email: client.email
+          email: client.email,
+          status: client.status || 'prospecting',
+          value: client.value || undefined,
+          linkedin_url: client.linkedin_url || undefined,
+          twitter_handle: client.twitter_handle || undefined,
+          phone: client.phone || undefined,
+          notes: client.notes || undefined,
+          last_contact: client.last_contact || undefined,
+          next_followup: client.next_followup || undefined
         });
       }
     } catch (error) {
@@ -112,7 +128,15 @@ export default function ClientForm({ formData, onChange, disabled = false, showS
                           name: client.name,
                           company_name: client.company_name,
                           address: client.address,
-                          email: client.email
+                          email: client.email,
+                          status: client.status || 'prospecting',
+                          value: client.value || undefined,
+                          linkedin_url: client.linkedin_url || undefined,
+                          twitter_handle: client.twitter_handle || undefined,
+                          phone: client.phone || undefined,
+                          notes: client.notes || undefined,
+                          last_contact: client.last_contact || undefined,
+                          next_followup: client.next_followup || undefined
                         });
                         setSearchQuery('');
                         setShowResults(false);
@@ -180,6 +204,114 @@ export default function ClientForm({ formData, onChange, disabled = false, showS
             disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
           } resize-none`}
           required
+          disabled={disabled}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Status
+        </label>
+        <select
+          value={formData.status}
+          onChange={(e) => onChange({ ...formData, status: e.target.value as any })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
+          disabled={disabled}
+        >
+          <option value="prospecting">Prospecting</option>
+          <option value="pitching">Pitching</option>
+          <option value="won">Won</option>
+          <option value="live">Live</option>
+          <option value="old">Old</option>
+          <option value="lost">Lost</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Value ($)
+        </label>
+        <input
+          type="number"
+          value={formData.value || ''}
+          onChange={(e) => onChange({ ...formData, value: e.target.value ? parseFloat(e.target.value) : undefined })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
+          placeholder="Estimated value"
+          disabled={disabled}
+        />
+      </div>
+      <div className="md:col-span-2">
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Phone
+        </label>
+        <input
+          type="tel"
+          value={formData.phone || ''}
+          onChange={(e) => onChange({ ...formData, phone: e.target.value })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
+          placeholder="Phone number"
+          disabled={disabled}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          LinkedIn URL
+        </label>
+        <input
+          type="url"
+          value={formData.linkedin_url || ''}
+          onChange={(e) => onChange({ ...formData, linkedin_url: e.target.value })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
+          placeholder="https://linkedin.com/in/username"
+          disabled={disabled}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Twitter Handle
+        </label>
+        <input
+          type="text"
+          value={formData.twitter_handle || ''}
+          onChange={(e) => onChange({ ...formData, twitter_handle: e.target.value })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
+          placeholder="@username"
+          disabled={disabled}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Last Contact
+        </label>
+        <input
+          type="datetime-local"
+          value={formData.last_contact ? new Date(formData.last_contact).toISOString().slice(0, 16) : ''}
+          onChange={(e) => onChange({ ...formData, last_contact: e.target.value })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
+          disabled={disabled}
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Next Follow-up
+        </label>
+        <input
+          type="datetime-local"
+          value={formData.next_followup ? new Date(formData.next_followup).toISOString().slice(0, 16) : ''}
+          onChange={(e) => onChange({ ...formData, next_followup: e.target.value })}
+          className={`w-full px-4 py-2 border border-gray-200 rounded-lg ${
+            disabled ? 'bg-gray-50' : 'focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          }`}
           disabled={disabled}
         />
       </div>

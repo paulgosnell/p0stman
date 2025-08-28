@@ -80,16 +80,7 @@ export async function getContract(id: string): Promise<Contract> {
   return data;
 }
 
-export async function createClient(client: Omit<Client, 'id'>): Promise<Client> {
-  const { data, error } = await supabase
-    .from('clients')
-    .insert([client])
-    .select()
-    .single();
-
-  if (error) throw error;
-  return data;
-}
+// Note: createClient function removed - use the one from clients.ts which has duplicate checking
 
 export async function createContract(contract: Omit<Contract, 'id' | 'created_at' | 'contract_number'>): Promise<Contract> {
   const { data, error } = await supabase

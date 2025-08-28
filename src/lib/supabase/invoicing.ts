@@ -7,6 +7,15 @@ export interface Client {
   company_name: string;
   address: string;
   email: string;
+  status: 'prospecting' | 'pitching' | 'won' | 'live' | 'old' | 'lost';
+  value?: number;
+  linkedin_url?: string;
+  twitter_handle?: string;
+  phone?: string;
+  notes?: string;
+  last_contact?: string;
+  next_followup?: string;
+  updated_at?: string;
 }
 
 export interface Invoice {
@@ -56,16 +65,7 @@ async function getClient(id: string): Promise<Client> {
   return data;
 }
 
-export async function createClient(client: Omit<Client, 'id' | 'created_at'>): Promise<Client> {
-  const { data, error } = await supabase
-    .from('clients')
-    .insert([client])
-    .select()
-    .single();
-
-  if (error) throw error;
-  return data;
-}
+// Note: createClient function removed - use the one from clients.ts which has duplicate checking
 
 // Invoice functions
 export async function getInvoices(): Promise<Invoice[]> {

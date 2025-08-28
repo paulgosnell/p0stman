@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Bot, BookOpen, Key, MessageSquare, FileText } from 'lucide-react';
+import { Bot, BookOpen, Key, MessageSquare, FileText, Users } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const adminSections = [
@@ -47,11 +47,18 @@ const adminSections = [
     color: "hover:bg-green-50 hover:border-green-200"
   },
   {
-    icon: <BookOpen className="w-6 h-6 text-orange-600" />,
+    icon: <Users className="w-6 h-6 text-orange-600" />,
     title: "Clients",
     description: "Add and manage clients for contracts and invoices",
     link: "/admin/clients",
     color: "hover:bg-orange-50 hover:border-orange-200"
+  },
+  {
+    icon: <Users className="w-6 h-6 text-green-600" />,
+    title: "CRM",
+    description: "Manage client outreach and relationships",
+    link: "/admin/crm",
+    color: "hover:bg-green-50 hover:border-green-200"
   }
 ];
 

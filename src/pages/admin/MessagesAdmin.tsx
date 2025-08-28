@@ -234,20 +234,38 @@ export default function MessagesAdmin() {
 
             {/* Reply Confirmation Modal */}
             {emailSent && (
-              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                <div className="bg-white p-6 rounded-xl max-w-md">
-                  <h3 className="text-lg font-semibold mb-4">Confirm Message Sent</h3>
-                  <p className="text-gray-600 mb-6">Did you send the email reply?</p>
-                  <div className="flex justify-end gap-4">
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-40">
+                <div className="bg-white rounded-xl shadow-xl border border-gray-200 w-full max-w-md">
+                  {/* Modal Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900">Confirm Message Sent</h3>
                     <button
                       onClick={() => setEmailSent(null)}
-                      className="px-4 py-2 text-gray-600 hover:text-gray-900"
+                      className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                      title="Close"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Modal Body */}
+                  <div className="p-6">
+                    <p className="text-gray-600">Did you send the email reply?</p>
+                  </div>
+
+                  {/* Modal Footer */}
+                  <div className="flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50">
+                    <button
+                      onClick={() => setEmailSent(null)}
+                      className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
                     >
                       No
                     </button>
                     <button
                       onClick={() => markAsReplied(emailSent, replyText)}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
                     >
                       Yes, Mark as Replied
                     </button>

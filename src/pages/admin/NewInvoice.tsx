@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, ArrowLeft, Plus, Trash2, Save, Loader2 } from 'lucide-react';
-import { createInvoice, createClient } from '../../lib/supabase/invoicing';
+import { createInvoice } from '../../lib/supabase/invoicing';
+import { createClient } from '../../lib/supabase/clients';
 import ClientForm from '../../components/ClientForm';
-import type { Client } from '../../lib/supabase/invoicing';
+import type { Client } from '../../lib/supabase/clients';
 
 interface InvoiceItem {
   description: string;
   amount: number;
   order_position: number;
+  status?: 'pending' | 'paid' | 'due';
 }
 
 export default function NewInvoice() {
@@ -21,7 +23,15 @@ export default function NewInvoice() {
     name: '',
     company_name: '',
     address: '',
-    email: ''
+    email: '',
+    status: 'prospecting' as 'prospecting' | 'pitching' | 'won' | 'live' | 'old' | 'lost',
+    value: undefined as number | undefined,
+    linkedin_url: undefined as string | undefined,
+    twitter_handle: undefined as string | undefined,
+    phone: undefined as string | undefined,
+    notes: undefined as string | undefined,
+    last_contact: undefined as string | undefined,
+    next_followup: undefined as string | undefined
   });
 
   // Invoice description field
@@ -29,13 +39,13 @@ export default function NewInvoice() {
 
   // Invoice items state
   const [items, setItems] = useState<InvoiceItem[]>([
-    { description: '', amount: 0, order_position: 0 }
+    { description: '', amount: 0, order_position: 0, status: 'due' }
   ]);
 
   const addItem = () => {
     setItems([
       ...items,
-      { description: '', amount: 0, order_position: items.length }
+      { description: '', amount: 0, order_position: items.length, status: 'due' }
     ]);
   };
 

@@ -6,6 +6,7 @@ import { getInvoices, deleteInvoice, type Invoice } from '../../lib/supabase/inv
 import { Trash2 } from 'lucide-react';
 
 export default function InvoicingAdmin() {
+  const navigate = useNavigate();
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,21 +32,6 @@ export default function InvoicingAdmin() {
       // setRevenueByMonth([]);
     }
   }, [invoices]);
-  // ...existing code...
-  const handleDelete = async (invoiceNumber: string) => {
-    if (!window.confirm('Are you sure you want to delete this invoice? This action cannot be undone.')) return;
-    try {
-      setLoading(true);
-      await deleteInvoice(invoiceNumber);
-      await loadInvoices();
-    } catch (err) {
-      console.error('Error deleting invoice:', err);
-      setError(err instanceof Error ? err.message : 'Failed to delete invoice');
-    } finally {
-      setLoading(false);
-    }
-  };
-  const navigate = useNavigate();
 
   const loadInvoices = async () => {
     try {
@@ -55,6 +41,20 @@ export default function InvoicingAdmin() {
     } catch (err) {
       console.error('Error loading invoices:', err);
       setError(err instanceof Error ? err.message : 'Failed to load invoices');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (invoiceNumber: string) => {
+    if (!window.confirm('Are you sure you want to delete this invoice? This action cannot be undone.')) return;
+    try {
+      setLoading(true);
+      await deleteInvoice(invoiceNumber);
+      await loadInvoices();
+    } catch (err) {
+      console.error('Error deleting invoice:', err);
+      setError(err instanceof Error ? err.message : 'Failed to delete invoice');
     } finally {
       setLoading(false);
     }
@@ -85,31 +85,31 @@ export default function InvoicingAdmin() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-3">
-              <Bot className="w-8 h-8 text-blue-600" />
-              <h1 className="text-2xl font-bold">Invoicing</h1>
-            </div>
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => navigate('/admin')}
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                Back to Admin
-              </button>
-              <button
-                onClick={() => navigate('/admin/invoicing/new')}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <Plus className="w-5 h-5" />
-                New Invoice
-              </button>
-            </div>
+      <div className="px-6 py-8">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <Bot className="w-8 h-8 text-blue-600" />
+            <h1 className="text-2xl font-bold">Invoicing</h1>
           </div>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate('/admin')}
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              Back to Admin
+            </button>
+            <button
+              onClick={() => navigate('/admin/invoicing/new')}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <Plus className="w-5 h-5" />
+              New Invoice
+            </button>
+          </div>
+        </div>
 
+        <>
           {error && (
             <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
               {error}
@@ -237,7 +237,7 @@ export default function InvoicingAdmin() {
               </table>
             </div>
           </div>
-        </div>
+        </>
       </div>
     </div>
   );

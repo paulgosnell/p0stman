@@ -7,6 +7,15 @@ export interface Client {
   company_name: string; 
   address: string;
   email: string;
+  status: 'prospecting' | 'pitching' | 'won' | 'live' | 'old' | 'lost';
+  value?: number;
+  linkedin_url?: string;
+  twitter_handle?: string;
+  phone?: string;
+  notes?: string;
+  last_contact?: string;
+  next_followup?: string;
+  updated_at?: string;
 }
 
 // Get all clients
@@ -33,7 +42,7 @@ async function getClient(id: string): Promise<Client> {
 }
 
 // Create a new client
-async function createClient(client: Omit<Client, 'id' | 'created_at'>): Promise<Client> {
+export async function createClient(client: Omit<Client, 'id' | 'created_at' | 'updated_at'>): Promise<Client> {
   // First check if client already exists with same email
   const { data: existing, error: searchError } = await supabase
     .from('clients')
@@ -47,18 +56,24 @@ async function createClient(client: Omit<Client, 'id' | 'created_at'>): Promise<
 
   if (existing) {
     // Update existing client with new details if they changed
-    if (
-      existing.name !== client.name ||
-      existing.company_name !== client.company_name ||
-      existing.address !== client.address
-    ) {
+    const updates: Partial<Client> = {};
+    if (existing.name !== client.name) updates.name = client.name;
+    if (existing.company_name !== client.company_name) updates.company_name = client.company_name;
+    if (existing.address !== client.address) updates.address = client.address;
+    if (existing.status !== client.status) updates.status = client.status;
+    if (existing.value !== client.value) updates.value = client.value;
+    if (existing.linkedin_url !== client.linkedin_url) updates.linkedin_url = client.linkedin_url;
+    if (existing.twitter_handle !== client.twitter_handle) updates.twitter_handle = client.twitter_handle;
+    if (existing.phone !== client.phone) updates.phone = client.phone;
+    if (existing.notes !== client.notes) updates.notes = client.notes;
+    if (existing.last_contact !== client.last_contact) updates.last_contact = client.last_contact;
+    if (existing.next_followup !== client.next_followup) updates.next_followup = client.next_followup;
+
+    if (Object.keys(updates).length > 0) {
+      updates.updated_at = new Date().toISOString();
       const { data: updated, error: updateError } = await supabase
         .from('clients')
-        .update({
-          name: client.name,
-          company_name: client.company_name,
-          address: client.address
-        })
+        .update(updates)
         .eq('id', existing.id)
         .select()
         .single();
@@ -72,7 +87,10 @@ async function createClient(client: Omit<Client, 'id' | 'created_at'>): Promise<
   // Create new client if doesn't exist
   const { data, error } = await supabase
     .from('clients')
-    .insert([client])
+    .insert([{
+      ...client,
+      updated_at: new Date().toISOString()
+    }])
     .select()
     .single();
 
@@ -81,10 +99,13 @@ async function createClient(client: Omit<Client, 'id' | 'created_at'>): Promise<
 }
 
 // Update a client
-async function updateClient(id: string, updates: Partial<Client>): Promise<Client> {
+export async function updateClient(id: string, updates: Partial<Client>): Promise<Client> {
   const { data, error } = await supabase
     .from('clients')
-    .update(updates)
+    .update({
+      ...updates,
+      updated_at: new Date().toISOString()
+    })
     .eq('id', id)
     .select()
     .single();
@@ -94,7 +115,7 @@ async function updateClient(id: string, updates: Partial<Client>): Promise<Clien
 }
 
 // Delete a client
-async function deleteClient(id: string): Promise<void> {
+export async function deleteClient(id: string): Promise<void> {
   const { error } = await supabase
     .from('clients')
     .delete()

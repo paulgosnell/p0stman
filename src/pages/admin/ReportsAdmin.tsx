@@ -67,26 +67,28 @@ export default function ReportsAdmin() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-3">
-              <Bot className="w-8 h-8 text-blue-600" />
-              <h1 className="text-2xl font-bold">Reports & Analytics</h1>
-            </div>
-            <button
-              onClick={() => navigate('/admin')}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              Back to Admin
-            </button>
+      <div className="px-6 py-8">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <Bot className="w-8 h-8 text-blue-600" />
+            <h1 className="text-2xl font-bold">Reports & Analytics</h1>
           </div>
-          {error && (
-            <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
-              {error}
-            </div>
-          )}
+          <button
+            onClick={() => navigate('/admin')}
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to Admin
+          </button>
+        </div>
+
+        {error && (
+          <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
+            {error}
+          </div>
+        )}
+
+        <>
           {/* Revenue Chart */}
           <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold mb-4">Revenue Over Months</h2>
@@ -100,6 +102,7 @@ export default function ReportsAdmin() {
               </LineChart>
             </ResponsiveContainer>
           </div>
+
           {/* Top Clients by Revenue */}
           <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold mb-4">Top Clients by Revenue</h2>
@@ -114,6 +117,7 @@ export default function ReportsAdmin() {
               </BarChart>
             </ResponsiveContainer>
           </div>
+
           {/* Outstanding Invoices */}
           <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold mb-4">Outstanding Invoices</h2>
@@ -126,6 +130,7 @@ export default function ReportsAdmin() {
               ))}
             </ul>
           </div>
+
           {/* Paid Invoices */}
           <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold mb-4">Paid Invoices</h2>
@@ -138,7 +143,7 @@ export default function ReportsAdmin() {
               ))}
             </ul>
           </div>
-        </div>
+        </>
       </div>
     </div>
   );
