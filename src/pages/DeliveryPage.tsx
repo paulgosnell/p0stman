@@ -323,10 +323,10 @@ const DeliveryPage: React.FC = () => {
                 <ChatSection
                   messages={[
                     `${greeting}, Paul here from P0STMAN.`,
-                    `I created P0STMAN to support agencies, teams and starts in delivery.`,
+                    `I created P0STMAN to support agencies, teams and start ups in product delivery.`,
                     `Tight deadlines. Limited budgets. Clients and stakeholders who want something real, fast.`,
                     `I can drop in mid-pitch with a live prototype that seals the deal.`,
-                    `Other times I stay on to lead the full build — from MVP to enterprise rollout.`,
+                    `Also can stay on to lead the full build — from MVP to enterprise rollout.`,
                     `Either way: you get quialty delivery, fast and affordably.`
                   ]}
                   isVisible={revealedSections.has(0)}
