@@ -322,11 +322,12 @@ const DeliveryPage: React.FC = () => {
                 {/* Combined Opening Introduction */}
                 <ChatSection
                   messages={[
-                    `${greeting} I'm Paul, founder of P0STMAN.`,
-                    `Tight deadlines. Limited budgets. Teams and stakeholders who want something real, not just slides.`,
-                    `Sometimes I drop in mid‑pitch with a live prototype that seals the deal.`,
+                    `${greeting}, Paul here from P0STMAN.`,
+                    `I created P0STMAN to support agencies, teams and starts in delivery.`,
+                    `Tight deadlines. Limited budgets. Clients and stakeholders who want something real, fast.`,
+                    `I can drop in mid-pitch with a live prototype that seals the deal.`,
                     `Other times I stay on to lead the full build — from MVP to enterprise rollout.`,
-                    `Either way: fast outcomes, not excuses. Ready to see what I can deliver?`
+                    `Either way: you get quialty delivery, fast and affordably.`
                   ]}
                   isVisible={revealedSections.has(0)}
                   showQuickAction={true}
@@ -395,8 +396,8 @@ const DeliveryPage: React.FC = () => {
                             </div>
                           </div>
                           <div className="space-y-4 flex-1">
-                            <p className="text-red-300 font-bold text-lg">AI‑accelerated development typically compresses timelines dramatically (often 2–5×)</p>
-                            <p className="text-gray-300 font-light leading-relaxed">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
+                            <p className="text-red-300 font-bold text-lg">AI-accelerated development will compress timelines dramatically (often 2-5x)</p>
+                            <p className="text-gray-300 font-light leading-relaxed">AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
                           </div>
 
                           {/* Speed Indicator */}
@@ -475,7 +476,7 @@ const DeliveryPage: React.FC = () => {
                           </div>
                           <div className="space-y-4 flex-1">
                             <p className="text-green-300 font-bold text-lg">Fractional senior support at a fraction of the cost of full-time</p>
-                            <p className="text-gray-300 font-light leading-relaxed">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
+                            <p className="text-gray-300 font-light leading-relaxed">Get C-level strategic thinking and senior technical execution without the full-time overhead.</p>
                           </div>
 
                           {/* Cost Savings Indicator */}
@@ -1858,7 +1859,7 @@ const DeliveryPage: React.FC = () => {
                 <ChatSection
                   messages={[
                     `Signed, sealed, delivered… let’s ship something your clients will love.`,
-                    `Paul Gosnell • P0STMAN • paul@p0stman.com`
+                    `Paul Gosnell • P0STMAN • hello@p0stman.com`
                   ]}
                   isVisible={revealedSections.has(6)}
                   delay={0.2}
