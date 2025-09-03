@@ -15,90 +15,86 @@ interface Service {
 
 export const services: Service[] = [
   {
-    icon: Bot,
-    title: "AI Agents",
-    description: "Custom autonomous AI agents for your business",
-    price: "From $5,000",
-    link: "/ai-agents",
-    bgColor: "bg-violet-600",
-    iconBg: "bg-violet-100",
-    features: [
-      "24/7 autonomous operation",
-      "Custom workflows",
-      "Integration with existing systems",
-      "Continuous learning"
-    ],
-    techStack: [
-      "OpenAI API", 
-      "Edge Functions", 
-      "Supabase", 
-      "Serverless Architecture",
-      "Real-time APIs"
-    ]
-  },
-  {
-    icon: Headphones,
-    title: "Retainer Service",
-    description: "Get on-demand expert guidance and support for all your tech needs. Private communication channel, no contracts, cancel anytime.",
-    price: "$5,000/mo",
-    link: "/retainer",
-    bgColor: "bg-teal-600",
-    iconBg: "bg-teal-100",
-    features: [
-      "Dedicated support channel",
-      "Priority response",
-      "Technical advisory",
-      "Strategy consulting"
-    ],
-    techStack: [
-      "AI Development", 
-      "System Architecture", 
-      "Technical Leadership",
-      "Product Strategy"
-    ]
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App",
-    description: "Native iOS & Android apps built with AI",
-    price: "$20,000",
-    link: "/mobile-app",
+    icon: Users,
+    title: "Fractional Product Leadership",
+    description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
+    price: "From $10,000/mo",
+    link: "/fractional-product-leadership",
     bgColor: "bg-blue-600",
     iconBg: "bg-blue-100",
     features: [
-      "4 weeks delivery",
-      "iOS & Android apps",
-      "App Store guidance",
-      "30 days support"
+      "Product Strategy",
+      "Team Leadership", 
+      "Stakeholder Management",
+      "Go-to-Market"
     ],
     techStack: [
-      "React Native", 
-      "Expo", 
-      "Supabase", 
-      "Edge Functions", 
-      "Push Notifications"
+      "Product Strategy", 
+      "Team Leadership", 
+      "Stakeholder Management",
+      "Go-to-Market Planning"
+    ]
+  },
+  {
+    icon: Bot,
+    title: "MVP Launches",
+    description: "Fast, focused builds that validate your idea and get you to market in weeks, not months.",
+    price: "From $15,000",
+    link: "/mvp-launches",
+    bgColor: "bg-purple-600",
+    iconBg: "bg-purple-100",
+    features: [
+      "Prototypes",
+      "Proof-of-Concepts", 
+      "Beta Launches",
+      "Market Validation"
+    ],
+    techStack: [
+      "React", 
+      "Node.js", 
+      "AI Integration", 
+      "Rapid Prototyping"
     ]
   },
   {
     icon: Globe,
-    title: "Website",
-    description: "Professional website built with AI",
-    price: "$10,000",
-    link: "/website",
-    bgColor: "bg-purple-600",
-    iconBg: "bg-purple-100",
+    title: "Websites & Apps",
+    description: "End-to-end design and delivery of digital products that scale.",
+    price: "From $10,000",
+    link: "/websites-apps",
+    bgColor: "bg-green-600",
+    iconBg: "bg-green-100",
     features: [
-      "2 weeks delivery",
-      "Professional design",
-      "SEO optimized",
-      "30 days support"
+      "Websites",
+      "Mobile Apps",
+      "Platforms", 
+      "SaaS"
     ],
     techStack: [
       "React", 
+      "React Native", 
       "Tailwind CSS", 
-      "Supabase", 
-      "Edge Functions", 
-      "SEO Optimization"
+      "Supabase"
+    ]
+  },
+  {
+    icon: Smartphone,
+    title: "Creative Prototypes",
+    description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
+    price: "From $5,000",
+    link: "/creative-prototypes",
+    bgColor: "bg-orange-600",
+    iconBg: "bg-orange-100",
+    features: [
+      "Campaign Mockups",
+      "Pitch Support",
+      "Innovation Labs",
+      "Interactive Demos"
+    ],
+    techStack: [
+      "Interactive Prototypes", 
+      "Demo Development", 
+      "Pitch Presentations"
     ]
   }
 ];

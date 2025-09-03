@@ -43,9 +43,9 @@ export const caseStudiesTranslations = {
     'caseStudies.barberBooking.description': 'نظام حجز وإدارة صالونات الحلاقة مع برنامج الولاء'
   },
   en: {
-    'caseStudies.title': 'Case Studies',
-    'caseStudies.subtitle': 'Success Stories',
-    'caseStudies.description': 'Discover how we\'ve helped businesses transform their ideas into reality using AI-powered development.',
+    'caseStudies.title': 'What We\'ve Built',
+    'caseStudies.subtitle': 'What We\'ve Built',
+    'caseStudies.description': 'From startups to enterprises, here are some of the digital products we\'ve delivered.',
     'caseStudies.viewCase': 'View Case Study',
     'caseStudies.viewLive': 'View Live Project',
     'caseStudies.mobileOptimized': 'Best viewed on mobile',
@@ -62,27 +62,27 @@ export const caseStudiesTranslations = {
     
     // Project Names & Descriptions
     'caseStudies.chilledCRM.title': 'Chilled CRM',
-    'caseStudies.chilledCRM.description': 'Complete CRM system built in 6 weeks using AI',
+    'caseStudies.chilledCRM.description': 'Complete CRM system built in 6 weeks.',
     
     'caseStudies.harmony.title': 'Harmony',
-    'caseStudies.harmony.description': 'AI-powered financial wellness platform',
+    'caseStudies.harmony.description': 'Next-gen financial wellness app built in 4 weeks.',
     
     'caseStudies.serenity.title': 'Serenity',
-    'caseStudies.serenity.description': 'Health & wellness platform with AI features',
+    'caseStudies.serenity.description': 'Mindfulness platform with AI-powered guidance.',
     
     'caseStudies.rhythm.title': 'Rhythm',
-    'caseStudies.rhythm.description': 'AI-powered running coach with adaptive music',
+    'caseStudies.rhythm.description': 'AI running coach with adaptive music system.',
     
     'caseStudies.experienceGift.title': 'Experience A Gift',
-    'caseStudies.experienceGift.description': 'AI-powered gifting platform',
+    'caseStudies.experienceGift.description': 'Personalized gifting platform with smart recommendations.',
     
     'caseStudies.fitlink.title': 'Fitlink',
-    'caseStudies.fitlink.description': 'Comprehensive health & fitness platform for individuals, teams, and corporations',
+    'caseStudies.fitlink.description': 'Corporate wellness platform serving 60k+ users.',
 
     'caseStudies.clinicBook.title': 'Clinic Book',
-    'caseStudies.clinicBook.description': 'Medical clinic management system with appointment booking and patient management',
+    'caseStudies.clinicBook.description': 'Medical practice management with smart scheduling.',
 
     'caseStudies.barberBooking.title': 'Barber Booking',
-    'caseStudies.barberBooking.description': 'Complete barber shop management system with online booking and loyalty features'
+    'caseStudies.barberBooking.description': 'Complete salon management with loyalty features.'
   }
 };

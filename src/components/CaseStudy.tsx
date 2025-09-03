@@ -239,7 +239,7 @@ export default function CaseStudy() {
   return (
     <section 
       ref={ref} 
-      className="min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-black text-white py-32" 
+      className="bg-gradient-to-b from-gray-900 to-black text-white py-24" 
       id="case-studies"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -248,7 +248,7 @@ export default function CaseStudy() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-2 mb-16">
             <Bot className="w-6 h-6 text-blue-400" />
-            <span className="text-blue-400 font-medium">{t('caseStudies.title')}</span>
+            <span className="text-blue-400 font-medium">Work</span>
           </div>
 
           <motion.div
@@ -258,7 +258,7 @@ export default function CaseStudy() {
             className="mb-16"
           >
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">{t('caseStudies.subtitle')}</h2>
-            <p className="text-gray-300 max-w-2xl text-lg leading-relaxed">
+            <p className="text-gray-300 max-w-2xl text-xl leading-relaxed">
               {t('caseStudies.description')}
             </p>
           </motion.div>
@@ -274,25 +274,25 @@ export default function CaseStudy() {
                 className="grid lg:grid-cols-2 gap-16 items-center"
               >
                 <div className="relative order-2 lg:order-1">
-                  <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/30 to-purple-600/30 rounded-3xl transform rotate-3 blur-md animate-pulse" />
-                  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 p-8 lg:p-12 shadow-2xl border border-gray-700/50">
-                    <div className={`relative ${currentCase.aspectRatio || 'aspect-video'} flex items-center justify-center`}>
+                  <div className="absolute -inset-6 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl transform rotate-2 blur-xl" />
+                  <div className="relative rounded-2xl overflow-hidden bg-white shadow-2xl border border-gray-200">
+                    <div className={`relative ${currentCase.aspectRatio || 'aspect-video'} flex items-center justify-center bg-gray-50`}>
                       {!isCurrentImageLoaded && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                           <div className="w-10 h-10 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
                         </div>
                       )}
                       <img
                         src={currentCase.image}
                         alt={t(currentCase.titleKey)}
-                        className="w-full h-full object-contain transition-transform duration-700 hover:scale-105 shadow-lg"
+                        className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                         <a 
                           href={currentCase.liveUrl} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-lg text-white font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
+                          className="px-6 py-3 bg-white text-gray-900 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg"
                         >
                           View Live Demo
                           <ExternalLink className="w-4 h-4" />
@@ -319,44 +319,9 @@ export default function CaseStudy() {
                       {currentCase.titleKey ? t(currentCase.titleKey) : currentCase.title}
                     </h2>
                     
-                    <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                    <p className="text-2xl text-gray-300 mb-8 leading-relaxed font-light">
                       {currentCase.descriptionKey ? t(currentCase.descriptionKey) : currentCase.description}
                     </p>
-
-                    {/* Tech Stack Badges */}
-                    {currentCase.techStack && (
-                      <div className="mb-6">
-                        <h3 className="text-sm uppercase text-gray-400 mb-3">Tech Stack</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {currentCase.techStack.map((tech, index) => (
-                            <div 
-                              key={`tech-${index}`} 
-                              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium ${getBadgeColor(tech)}`}
-                            >
-                              {getTechIcon(tech)}
-                              {tech}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 mb-8">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Star className="w-5 h-5 text-yellow-400" />
-                        <h3 className="font-medium text-gray-100">Challenge & Solution</h3>
-                      </div>
-                      <div className="space-y-4 text-gray-300">
-                        <div className="flex items-start gap-3">
-                          <span className="w-2 h-2 mt-2 bg-red-500 rounded-full" />
-                          <p>{currentCase.challenge}</p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <span className="w-2 h-2 mt-2 bg-green-500 rounded-full" />
-                          <p>{currentCase.solution}</p>
-                        </div>
-                      </div>
-                    </div>
 
                     <div className={`flex flex-wrap items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
                       <Link
@@ -381,37 +346,24 @@ export default function CaseStudy() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 mt-8">
-                    {currentCase.metrics.map((metric, index) => (
+                  <div className="flex flex-wrap gap-6 mt-8">
+                    {currentCase.metrics.slice(0, 3).map((metric, index) => (
                       <div
                         key={index}
-                        className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/20"
                       >
-                        <div className="text-blue-400 mb-3">{metric.icon}</div>
-                        <div className="text-2xl font-bold text-white">
-                          {metric.valueKey ? t(metric.valueKey, metric.valueParams) : metric.value}
+                        <div className="text-blue-400">{metric.icon}</div>
+                        <div>
+                          <div className="text-lg font-bold text-white">
+                            {metric.valueKey ? t(metric.valueKey, metric.valueParams) : metric.value}
+                          </div>
+                          <div className="text-xs text-gray-400">{metric.labelKey ? t(metric.labelKey) : metric.label}</div>
                         </div>
-                        <div className="text-sm text-gray-400">{metric.labelKey ? t(metric.labelKey) : metric.label}</div>
                       </div>
                     ))}
                   </div>
 
-                  {currentCase.features && (
-                    <div className="mt-8">
-                      <h3 className="text-xl font-semibold mb-4 text-white">Key Features</h3>
-                      <div className="grid grid-cols-2 gap-3">
-                        {currentCase.features.map((feature, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-2 bg-gray-800/50 p-3 rounded-lg border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300"
-                          >
-                            <span className="w-2 h-2 bg-blue-400 rounded-full" />
-                            <span className="text-gray-300">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+
                 </div>
               </motion.div>
             </AnimatePresence>

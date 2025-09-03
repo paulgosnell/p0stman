@@ -34,21 +34,21 @@ export default function ComparisonSection() {
   };
 
   return (
-    <section ref={ref} className="py-32 bg-white" id="comparison">
+    <section ref={ref} className="py-24 bg-white" id="comparison">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className={`flex items-center justify-center gap-2 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Zap className="w-6 h-6 text-blue-600" />
-              <span className="text-blue-600 font-medium">{t('comparison.title')}</span>
+              <span className="text-blue-600 font-medium">How We Work</span>
             </div>
             
             <h2 className="text-4xl font-bold mb-6">
-              {t('comparison.subtitle')}
+              How We Work
             </h2>
             
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('comparison.description')}
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Every organisation faces challenges. Here's how we help you overcome them.
             </p>
           </div>
 

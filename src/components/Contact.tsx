@@ -102,8 +102,12 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
             className="text-center"
           >
             <h2 className="text-4xl font-bold mb-6 text-white">
-              Let's discuss your project
+              Get in Touch
             </h2>
+            
+            <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
+              Let's build something great together.
+            </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button

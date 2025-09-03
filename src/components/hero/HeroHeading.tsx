@@ -15,7 +15,7 @@ export default function HeroHeading() {
         className="flex items-center gap-2 mb-4"
       >
         <Bot className="w-5 h-5 text-blue-400" />
-        <span className="text-blue-400 font-medium text-sm tracking-wide">AI-Powered Digital Agency</span>
+        <span className="text-blue-400 font-medium text-sm tracking-wide">Product Studio</span>
       </motion.div>
 
       <motion.div
@@ -34,10 +34,23 @@ export default function HeroHeading() {
         className="space-y-4"
       >
         <p className="text-base md:text-lg leading-relaxed text-gray-300">
-          Get your digital product built in weeks, not months,
-          using AI-powered development. Save up to 70% compared to traditional agencies while getting 
-          better results faster.
+          {t('home.hero.description')}
         </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <a 
+            href="#case-studies"
+            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] font-medium text-center"
+          >
+            {t('home.hero.cta')}
+          </a>
+          <a 
+            href="#comparison"
+            className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg hover:bg-white/20 transition-all transform hover:scale-[1.02] font-medium text-center"
+          >
+            {t('home.hero.watchDemo')}
+          </a>
+        </div>
 
         <div className="grid grid-cols-3 gap-2">
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-300 hover:border-white/20 hover:bg-white/15">

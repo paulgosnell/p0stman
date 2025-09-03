@@ -17,97 +17,73 @@ import {
   Zap,
   CheckCircle,
   Target,
-  Building2
+  Building2,
+  Sparkles
 } from 'lucide-react';
 
 const primaryServices = [
   {
-    title: 'AI Platform Development',
-    href: '/ai-platform-development',
-    icon: Bot,
-    description: 'Custom AI solutions & intelligent platforms built from the ground up',
-    features: ['Custom AI Models', 'API Integration', 'Scalable Architecture', 'Real-time Processing'],
+    title: 'Fractional Product Leadership',
+    href: '/fractional-product-leadership',
+    icon: Brain,
+    description: 'Hands-on product direction, leadership, and team support when you need extra firepower.',
+    features: ['Product Strategy', 'Team Leadership', 'Stakeholder Management', 'Go-to-Market'],
     color: 'from-blue-500 to-cyan-500',
     featured: true
   },
   {
-    title: 'Fractional CPO',
-    href: '/fractional-cpo',
+    title: 'MVP Launches',
+    href: '/mvp-launches',
     icon: Rocket,
-    description: 'Strategic product leadership and team guidance on-demand',
-    features: ['Product Strategy', 'Team Leadership', 'Roadmap Planning', 'Stakeholder Management'],
+    description: 'Fast, focused builds that validate your idea and get you to market in weeks, not months.',
+    features: ['Prototypes', 'Proof-of-Concepts', 'Beta Launches'],
     color: 'from-purple-500 to-pink-500',
     featured: true
   },
   {
-    title: 'Product Strategy',
-    href: '/product-strategy',
-    icon: Brain,
-    description: 'Vision & roadmap development for successful product launches',
-    features: ['Market Research', 'Competitive Analysis', 'Go-to-Market', 'Product-Market Fit'],
+    title: 'Websites & Apps',
+    href: '/websites-apps',
+    icon: Globe,
+    description: 'End-to-end design and delivery of digital products that scale.',
+    features: ['Websites', 'Mobile Apps', 'Platforms', 'SaaS'],
     color: 'from-green-500 to-emerald-500',
     featured: true
   },
   {
-    title: 'Digital Transformation',
-    href: '/digital-transformation',
-    icon: Globe,
-    description: 'Enterprise modernization and digital process optimization',
-    features: ['Process Automation', 'Legacy Modernization', 'Change Management', 'Technology Strategy'],
+    title: 'Creative Prototypes',
+    href: '/creative-prototypes',
+    icon: Zap,
+    description: 'Live, interactive demos that win pitches, unlock budget, and excite stakeholders.',
+    features: ['Campaign Mockups', 'Pitch Support', 'Innovation Labs'],
     color: 'from-orange-500 to-red-500',
-    featured: true
-  },
-  {
-    title: 'Website Development',
-    href: '/website',
-    icon: Code,
-    description: 'Custom website development with AI-powered features',
-    features: ['Responsive Design', 'AI Integration', 'Performance Optimization', 'SEO Ready'],
-    color: 'from-yellow-500 to-orange-500',
     featured: true
   }
 ];
 
 const additionalServices = [
   {
-    title: 'AI Agents',
-    href: '/ai-agents',
-    icon: Bot,
-    description: 'Intelligent automation agents for business processes',
-    features: ['Process Automation', 'Custom Workflows', 'Integration Ready', '24/7 Operation'],
+    title: 'Enterprise Delivery',
+    href: '/enterprise-delivery',
+    icon: Building2,
+    description: 'Reliable support for large-scale, complex projects with multiple stakeholders.',
+    features: ['Scalable Architecture', 'Integration', 'DevOps'],
     color: 'from-indigo-500 to-purple-500'
   },
   {
-    title: 'Mobile App Development',
-    href: '/mobile-app',
-    icon: Smartphone,
-    description: 'Native and cross-platform mobile applications',
-    features: ['iOS & Android', 'Cross-platform', 'App Store Ready', 'Push Notifications'],
+    title: 'Digital Transformation',
+    href: '/digital-transformation',
+    icon: Target,
+    description: 'Consulting and delivery to modernise systems and teams.',
+    features: ['AI Strategy', 'Process Optimisation', 'Roadmaps', 'Change Management'],
     color: 'from-teal-500 to-blue-500'
   },
   {
-    title: 'Retainer Services',
-    href: '/retainer',
-    icon: Users,
-    description: 'Ongoing development and maintenance partnerships',
-    features: ['Monthly Retainer', 'Priority Support', 'Continuous Updates', 'Dedicated Time'],
-    color: 'from-pink-500 to-rose-500'
-  },
-  {
-    title: 'Support & Maintenance',
-    href: '/support',
-    icon: HeadphonesIcon,
-    description: 'Ongoing support and maintenance for your projects',
-    features: ['24/7 Monitoring', 'Bug Fixes', 'Performance Optimization', 'Security Updates'],
+    title: 'AI-Powered Speed',
+    href: '/ai-powered-speed',
+    icon: Bot,
+    description: 'Smarter, faster delivery with AI tools woven into our process.',
+    features: ['Automation', 'Content Generation', 'AI Integrations'],
     color: 'from-cyan-500 to-blue-500'
-  },
-  {
-    title: 'Training & Workshops',
-    href: '/training',
-    icon: GraduationCap,
-    description: 'AI and product development training for teams',
-    features: ['Team Training', 'Workshops', 'Best Practices', 'Hands-on Learning'],
-    color: 'from-violet-500 to-purple-500'
   }
 ];
 
@@ -131,13 +107,12 @@ export default function Services() {
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                AI-Powered
+                Complete
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"> Services</span>
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                From strategic product leadership to hands-on development, 
-                I offer comprehensive services to accelerate your digital transformation.
+                From strategy to delivery, we cover the full spectrum of digital product development.
               </p>
 
               <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
@@ -174,7 +149,7 @@ export default function Services() {
                 Core Services
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Strategic and development services that form the foundation of successful digital products
+                Essential services for launching and scaling digital products successfully
               </p>
             </motion.div>
 
@@ -237,10 +212,10 @@ export default function Services() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-6 text-gray-900">
-                Specialized Services
+                Enterprise & Transformation
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Additional services to support your ongoing development and growth needs
+                Advanced services for large-scale projects and organizational transformation
               </p>
             </motion.div>
 

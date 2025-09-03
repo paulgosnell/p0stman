@@ -26,6 +26,7 @@ import {
   MessageSquare
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
+import WhyWeDoIt from '../components/WhyWeDoIt';
 
 import ProjectConfigurator from '../components/ProjectConfigurator';
 import AnimatedFooter from '../components/AnimatedFooter';
@@ -61,20 +62,38 @@ const focusAreas = [
   {
     icon: <Brain className="w-8 h-8 text-blue-600" />,
     title: "Fractional Product Leadership",
-    description: "Strategic product direction and AI transformation for scale-ups and enterprises",
+    description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
     features: ["Product Strategy", "Team Leadership", "Stakeholder Management", "Go-to-Market"]
   },
   {
     icon: <Rocket className="w-8 h-8 text-purple-600" />,
-    title: "AI-Native Platform Delivery",
-    description: "End-to-end delivery of production-grade AI-powered platforms and SaaS tools",
-    features: ["Full-Stack Development", "AI Integration", "Scalable Architecture", "DevOps"]
+    title: "MVP Launches",
+    description: "Fast, focused builds that validate your idea and get you to market in weeks, not months.",
+    features: ["Prototypes", "Proof-of-Concepts", "Beta Launches"]
   },
   {
-    icon: <Target className="w-8 h-8 text-green-600" />,
-    title: "Digital Transformation Consulting",
-    description: "Strategic consulting for organizations embracing AI and modern development practices",
-    features: ["AI Strategy", "Process Optimization", "Technology Roadmaps", "Change Management"]
+    icon: <Globe className="w-8 h-8 text-green-600" />,
+    title: "Websites & Apps",
+    description: "End-to-end design and delivery of digital products that scale.",
+    features: ["Websites", "Mobile Apps", "Platforms", "SaaS"]
+  },
+  {
+    icon: <Sparkles className="w-8 h-8 text-orange-600" />,
+    title: "Creative Prototypes",
+    description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
+    features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
+  },
+  {
+    icon: <Building2 className="w-8 h-8 text-indigo-600" />,
+    title: "Enterprise Delivery",
+    description: "Reliable support for large-scale, complex projects with multiple stakeholders.",
+    features: ["Scalable Architecture", "Integration", "DevOps"]
+  },
+  {
+    icon: <Target className="w-8 h-8 text-teal-600" />,
+    title: "Digital Transformation",
+    description: "Consulting and delivery to modernise systems and teams.",
+    features: ["AI Strategy", "Process Optimisation", "Roadmaps", "Change Management"]
   }
 ];
 
@@ -330,18 +349,13 @@ export default function HomeV2() {
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      From AI strategy to product delivery.
+                      From vision to product — delivered fast and brilliantly.
                     </span>
                   </h1>
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  P0STMAN partners with agencies and corporates to deliver websites, apps, and AI-powered products that impress clients, hit deadlines, and raise the bar.
-                </p>
-
-                <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-                  From boardroom strategy to full builds, P0STMAN covers it all. 
-                  AI readiness, training, pitching with prototypes, or hands-on delivery — we combine our expertise and acceleration to get it done right, the first time.
+                  We build and deliver websites, apps, and digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -352,14 +366,14 @@ export default function HomeV2() {
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
                   >
                     <Zap className="w-5 h-5" />
-                    Partner with P0STMAN
+                    See Our Work
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                   <a
                     href="#focus"
                     className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
                   >
-                    View Our Work
+                    How We Work
                   </a>
                 </div>
               </motion.div>
@@ -518,7 +532,7 @@ export default function HomeV2() {
             >
 
               <h2 className="text-4xl font-thin mb-6 text-gray-900" style={{ color: '#111827' }}>
-                Strategic Product Delivery Across Industries
+                What We've Built
               </h2>
 
               <p className="text-gray-700 max-w-2xl mx-auto text-lg font-light">
@@ -769,7 +783,62 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* Problems We Solve Section */}
+      {/* Focus Areas - Updated for better contrast */}
+      <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+
+              <h2 className="text-4xl font-thin mb-6 text-black">
+                Services
+              </h2>
+
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+                From strategy to delivery, we cover the full spectrum of digital product development.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {focusAreas.map((area, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
+                >
+                  <div className="mb-4">
+                    <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-lg font-medium mb-2 text-black">{area.title}</h3>
+                    <p className="text-gray-600 mb-4 font-light text-sm leading-relaxed">{area.description}</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    {area.features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0" />
+                        <span className="text-gray-700 font-light text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work Section - HIDDEN */}
+      {/* 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -780,9 +849,9 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-thin mb-6">Problems We Solve</h2>
+              <h2 className="text-4xl font-thin mb-6">How We Work</h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
-                When organizations need to move fast, scale efficiently, and deliver exceptional results — P0STMAN is the partner that makes it happen.
+                Every organisation faces challenges. Here's how we help you overcome them.
               </p>
             </motion.div>
 
@@ -799,8 +868,8 @@ export default function HomeV2() {
                     <Clock className="w-8 h-8 text-red-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Time-to-Market Pressure</h3>
-                    <p className="text-red-600 font-medium mb-3">AI-accelerated development delivers 80% faster</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Tight Deadlines</h3>
+                    <p className="text-red-600 font-medium mb-3">We move fast and deliver on time.</p>
                     <p className="text-gray-700 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
                   </div>
                 </div>
@@ -818,8 +887,8 @@ export default function HomeV2() {
                     <DollarSign className="w-8 h-8 text-green-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Budget & Resource Constraints</h3>
-                    <p className="text-green-600 font-medium mb-3">Fractional expertise at 50-70% less cost</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Limited Resources</h3>
+                    <p className="text-green-600 font-medium mb-3">We work within your budget constraints.</p>
                     <p className="text-gray-700 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
                   </div>
                 </div>
@@ -837,8 +906,8 @@ export default function HomeV2() {
                     <Target className="w-8 h-8 text-blue-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Complex Technical Challenges</h3>
-                    <p className="text-blue-600 font-medium mb-3">Proven track record scaling 1→40 teams</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Tricky Tech Problems</h3>
+                    <p className="text-blue-600 font-medium mb-3">We solve complex technical challenges.</p>
                     <p className="text-gray-700 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
                   </div>
                 </div>
@@ -856,8 +925,8 @@ export default function HomeV2() {
                     <Rocket className="w-8 h-8 text-purple-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Digital Transformation Needs</h3>
-                    <p className="text-purple-600 font-medium mb-3">End-to-end transformation expertise</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900">Big Change Projects</h3>
+                    <p className="text-purple-600 font-medium mb-3">We handle large-scale transformations.</p>
                     <p className="text-gray-700 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
                   </div>
                 </div>
@@ -888,61 +957,10 @@ export default function HomeV2() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* Focus Areas - Updated for better contrast */}
-      <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-
-              <h2 className="text-4xl font-thin mb-6 text-black">
-                How We Help Organizations Win with AI
-              </h2>
-
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
-                Deep operator experience across product leadership, AI-native development,
-                and digital transformation consulting — as a collective.
-              </p>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-3 gap-8">
-              {focusAreas.map((area, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
-                >
-                  <div className="mb-6">
-                    <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
-                      {area.icon}
-                    </div>
-                    <h3 className="text-xl font-light mb-3 text-black">{area.title}</h3>
-                    <p className="text-black mb-6 font-light">{area.description}</p>
-                  </div>
-
-                  <div className="space-y-3">
-                    {area.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                        <span className="text-black font-light">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Why We Do It Section - HIDDEN */}
+      {/* <WhyWeDoIt /> */}
 
       {/* AI Building Showcase */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
@@ -1105,7 +1123,7 @@ export default function HomeV2() {
             >
 
               <h2 className="text-4xl font-thin mb-6">
-                What Leaders Say About Working with Us
+                What Our Partners Say
               </h2>
             </motion.div>
 

@@ -94,8 +94,8 @@ export const homeTranslations = {
   },
   en: {
     // Hero Section
-    'hero.launch': 'Launch Your',
-    'hero.with': 'With',
+    'hero.launch': 'From vision to product —',
+    'hero.with': 'delivered fast and brilliantly.',
     'hero.products.website': 'Website',
     'hero.products.mobile app': 'Mobile App',
     'hero.products.mvp': 'MVP',
@@ -105,9 +105,9 @@ export const homeTranslations = {
     'hero.products.ai agent': 'AI Agent',
     'hero.products.dashboard': 'Dashboard',
     'home.hero.subtitle': 'AI-Powered Product Studio',
-    'home.hero.description': 'Build faster, better and more affordably with AI-powered experts who can outpace traditional agencies.',
-    'home.hero.cta': 'Start Your Project',
-    'home.hero.watchDemo': 'Watch Demo',
+    'home.hero.description': 'We build and deliver websites, apps, and digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count.',
+    'home.hero.cta': 'See Our Work',
+    'home.hero.watchDemo': 'How We Work',
     'home.hero.mission': 'P0STMAN is your co-founder, fractional CTO, delivery partner, dev shop and innovation lab all-in-one!',
 
     // Bolt Promotion
@@ -144,19 +144,19 @@ export const homeTranslations = {
     'comparison.description': 'Traditional agencies are expensive because you\'re paying for large teams, offices and overhead—not pure product build.',
     
     // Comparison Traditional
-    'comparison.traditional.cycles': '3-6 months development cycles',
-    'comparison.traditional.prices': 'Prices starting at $50,000+',
-    'comparison.traditional.teams': 'Large teams of 3-5+ developers',
-    'comparison.traditional.meetings': 'Endless meetings and slow progress',
+    'comparison.traditional.cycles': 'Tight Deadlines',
+    'comparison.traditional.prices': 'Limited Resources', 
+    'comparison.traditional.teams': 'Tricky Tech Problems',
+    'comparison.traditional.meetings': 'Big Change Projects',
     'comparison.traditional.deployment': 'Complex deployment processes',
     'comparison.traditional.availability': 'Limited availability and support',
     'comparison.traditional.costs': 'Hidden costs and scope creep',
     
     // Comparison Modern
-    'comparison.modern.delivery': 'Project delivered in 2-4 weeks',
-    'comparison.modern.prices': 'Prices starting at $10,000',
-    'comparison.modern.development': 'AI-powered development',
-    'comparison.modern.updates': 'Weekly updates, rapid iterations',
+    'comparison.modern.delivery': 'We move fast and deliver on time.',
+    'comparison.modern.prices': 'We work within your budget constraints.',
+    'comparison.modern.development': 'We solve complex technical challenges.',
+    'comparison.modern.updates': 'We handle large-scale transformations.',
     'comparison.modern.deployment': 'One-click cloud deployment',
     'comparison.modern.support': '24/7 support for 30 days',
     'comparison.modern.pricing': 'Transparent, all-inclusive pricing',
@@ -166,8 +166,8 @@ export const homeTranslations = {
     'comparison.cta.support': 'Get Expert Support',
     
     // Section Titles
-    'comparison.title': 'Build Smarter',
-    'comparison.subtitle': 'Why Pay More for Less?',
+    'comparison.title': 'How We Work',
+    'comparison.subtitle': 'Every organisation faces challenges. Here\'s how we help you overcome them.',
     'comparison.traditional.title': 'Traditional Way',
     'comparison.modern.title': 'AI-Powered Way',
 

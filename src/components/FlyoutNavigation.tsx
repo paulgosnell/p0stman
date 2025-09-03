@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
+import {
   Menu,
   X,
   Bot,
@@ -15,8 +15,8 @@ import {
   Users,
   ArrowRight,
   Sparkles,
-  Star,
-  Home
+  Home,
+  Mail
 } from 'lucide-react';
 
 // Floating particle for the nav
@@ -24,17 +24,17 @@ const NavParticle = ({ delay = 0 }) => {
   return (
     <motion.div
       className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
-      initial={{ 
-        x: Math.random() * 300, 
+      initial={{
+        x: Math.random() * 300,
         y: Math.random() * 400,
-        opacity: 0 
+        opacity: 0
       }}
-      animate={{ 
+      animate={{
         y: [null, -20, null],
         opacity: [0, 1, 0],
         scale: [0, 1, 0]
       }}
-      transition={{ 
+      transition={{
         duration: 3,
         delay: delay,
         repeat: Infinity,
@@ -46,63 +46,40 @@ const NavParticle = ({ delay = 0 }) => {
 
 const navigationItems = [
   {
-    category: "Services",
-    items: [
-      { 
-        label: 'AI Platform Development', 
-        href: '/ai-platform-development', 
-        icon: Bot, 
-        description: 'Custom AI solutions & platforms',
-        color: 'from-blue-500 to-cyan-500'
-      },
-      { 
-        label: 'Fractional CPO', 
-        href: '/fractional-cpo', 
-        icon: Rocket, 
-        description: 'Strategic product leadership',
-        color: 'from-purple-500 to-pink-500'
-      },
-      { 
-        label: 'Product Strategy', 
-        href: '/product-strategy', 
-        icon: Brain, 
-        description: 'Vision & roadmap development',
-        color: 'from-green-500 to-emerald-500'
-      },
-      { 
-        label: 'Digital Transformation', 
-        href: '/digital-transformation', 
-        icon: Globe, 
-        description: 'Enterprise modernization',
-        color: 'from-orange-500 to-red-500'
-      }
-    ]
+    label: 'What We\'ve Built',
+    href: '/case-studies',
+    icon: Building2,
+    color: 'from-indigo-500 to-purple-500'
   },
   {
-    category: "Portfolio",
-    items: [
-      { 
-        label: 'All Services', 
-        href: '/services', 
-        icon: Target, 
-        description: 'Complete service portfolio',
-        color: 'from-blue-500 to-indigo-500'
-      },
-      { 
-        label: 'Case Studies', 
-        href: '/case-studies', 
-        icon: Building2, 
-        description: 'Real projects & results',
-        color: 'from-indigo-500 to-purple-500'
-      },
-      { 
-        label: 'Process', 
-        href: '/process', 
-        icon: Target, 
-        description: 'How I work with clients',
-        color: 'from-teal-500 to-blue-500'
-      }
-    ]
+    label: 'Services',
+    href: '/services',
+    icon: Target,
+    color: 'from-blue-500 to-indigo-500'
+  },
+  {
+    label: 'How We Work',
+    href: '/process',
+    icon: Zap,
+    color: 'from-teal-500 to-blue-500'
+  },
+  {
+    label: 'Why We Do It',
+    href: '/about',
+    icon: Users,
+    color: 'from-green-500 to-emerald-500'
+  },
+  {
+    label: 'About',
+    href: '/about',
+    icon: Users,
+    color: 'from-purple-500 to-pink-500'
+  },
+  {
+    label: 'Get in Touch',
+    href: '/contact',
+    icon: Mail,
+    color: 'from-orange-500 to-red-500'
   }
 ];
 
@@ -151,7 +128,7 @@ export default function FlyoutNavigation() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="absolute top-12 right-0 w-96 bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-purple-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl z-50 overflow-hidden"
+              className="absolute top-12 right-0 w-80 bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-purple-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl z-50 overflow-hidden"
               onMouseLeave={() => setIsOpen(false)}
             >
               {/* Animated Background */}
@@ -164,11 +141,11 @@ export default function FlyoutNavigation() {
                 {/* Gradient Orbs */}
                 <motion.div
                   className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-xl"
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.2, 1],
                     rotate: 360
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 8,
                     repeat: Infinity,
                     ease: "linear"
@@ -176,11 +153,11 @@ export default function FlyoutNavigation() {
                 />
                 <motion.div
                   className="absolute -bottom-10 -left-10 w-24 h-24 bg-gradient-to-br from-green-500/20 to-cyan-500/20 rounded-full blur-xl"
-                  animate={{ 
+                  animate={{
                     scale: [1.2, 1, 1.2],
                     rotate: -360
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 6,
                     repeat: Infinity,
                     ease: "linear"
@@ -197,8 +174,8 @@ export default function FlyoutNavigation() {
                   transition={{ delay: 0.1 }}
                   className="mb-6"
                 >
-                  <Link 
-                    to="/" 
+                  <Link
+                    to="/"
                     className="flex items-center gap-3 group"
                     onClick={() => setIsOpen(false)}
                   >
@@ -209,87 +186,69 @@ export default function FlyoutNavigation() {
                       <h3 className="text-white font-bold group-hover:text-blue-300 transition-colors">
                         P0STMAN
                       </h3>
-                      <p className="text-gray-400 text-xs">AI-Native Product Studio</p>
+                      <p className="text-gray-400 text-xs">Product Studio</p>
                     </div>
                   </Link>
                 </motion.div>
 
-                {/* Navigation Categories */}
-                {navigationItems.map((category, categoryIndex) => (
-                  <motion.div
-                    key={category.category}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + categoryIndex * 0.1 }}
-                    className="mb-6 last:mb-0"
-                  >
-                    <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-3 flex items-center gap-2">
-                      <Star className="w-3 h-3" />
-                      {category.category}
-                    </h4>
-                    
-                    <div className="space-y-2">
-                      {category.items.map((item, itemIndex) => (
-                        <motion.div
-                          key={item.href}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.3 + categoryIndex * 0.1 + itemIndex * 0.05 }}
-                        >
-                          <Link
-                            to={item.href}
-                            onClick={() => setIsOpen(false)}
-                            onMouseEnter={() => setHoveredItem(item.href)}
-                            onMouseLeave={() => setHoveredItem(null)}
-                            className="group relative block p-3 rounded-xl hover:bg-white/10 transition-all duration-300"
+                {/* Navigation Links */}
+                <div className="space-y-2 mb-6">
+                  {navigationItems.map((item, index) => (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + index * 0.05 }}
+                    >
+                      <Link
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        onMouseEnter={() => setHoveredItem(item.href)}
+                        onMouseLeave={() => setHoveredItem(null)}
+                        className="group relative block p-3 rounded-xl hover:bg-white/10 transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-3">
+                          <motion.div
+                            className={`w-8 h-8 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center`}
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            transition={{ duration: 0.2 }}
                           >
-                            <div className="flex items-center gap-3">
+                            <item.icon className="w-4 h-4 text-white" />
+                          </motion.div>
+
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="text-white font-medium group-hover:text-blue-300 transition-colors">
+                                {item.label}
+                              </span>
                               <motion.div
-                                className={`w-10 h-10 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center`}
-                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                initial={{ opacity: 0, x: -5 }}
+                                animate={{
+                                  opacity: hoveredItem === item.href ? 1 : 0,
+                                  x: hoveredItem === item.href ? 0 : -5
+                                }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <item.icon className="w-5 h-5 text-white" />
+                                <ArrowRight className="w-4 h-4 text-blue-400" />
                               </motion.div>
-                              
-                              <div className="flex-1">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-white font-medium group-hover:text-blue-300 transition-colors">
-                                    {item.label}
-                                  </span>
-                                  <motion.div
-                                    initial={{ opacity: 0, x: -5 }}
-                                    animate={{ 
-                                      opacity: hoveredItem === item.href ? 1 : 0,
-                                      x: hoveredItem === item.href ? 0 : -5
-                                    }}
-                                    transition={{ duration: 0.2 }}
-                                  >
-                                    <ArrowRight className="w-4 h-4 text-blue-400" />
-                                  </motion.div>
-                                </div>
-                                <p className="text-gray-400 text-xs mt-1 group-hover:text-gray-300 transition-colors">
-                                  {item.description}
-                                </p>
-                              </div>
                             </div>
+                          </div>
+                        </div>
 
-                            {/* Hover Effect */}
-                            <motion.div
-                              className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl"
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              animate={{ 
-                                opacity: hoveredItem === item.href ? 1 : 0,
-                                scale: hoveredItem === item.href ? 1 : 0.8
-                              }}
-                              transition={{ duration: 0.2 }}
-                            />
-                          </Link>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
+                        {/* Hover Effect */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{
+                            opacity: hoveredItem === item.href ? 1 : 0,
+                            scale: hoveredItem === item.href ? 1 : 0.8
+                          }}
+                          transition={{ duration: 0.2 }}
+                        />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
 
                 {/* Footer CTA */}
                 <motion.div

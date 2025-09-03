@@ -36,10 +36,10 @@ export const footerTranslations = {
   en: {
     'footer.description': 'Transforming ideas into reality through AI-powered development. Building faster, better, and more affordable solutions than traditional agencies.',
     // Categories
-    'footer.categories.build': 'Build',
-    'footer.categories.portfolio': 'Portfolio',
-    'footer.categories.about': 'About',
-    'footer.categories.contact': 'Contact',
+    'footer.categories.build': 'Services',
+    'footer.categories.portfolio': 'Work',
+    'footer.categories.about': 'How We Work',
+    'footer.categories.contact': 'Why We Do It',
     
     // Build Links
     'footer.build.website': 'Custom Website',

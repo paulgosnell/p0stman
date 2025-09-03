@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Globe, Smartphone, Users, Zap, Database, Cloud, Shield, DollarSign } from 'lucide-react';
+import { Bot, Globe, Smartphone, Users, Zap, Database, Cloud, Shield, DollarSign, Rocket, Sparkles, Building2 } from 'lucide-react';
 import { useLanguage } from '../lib/i18n/LanguageContext';
 import { services } from '../data/services';
 
@@ -59,61 +59,63 @@ export default function ServicesSection() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-6">
               <Zap className="w-6 h-6 text-blue-600" />
-              <span className="text-blue-600 font-medium">Service Packages</span>
+              <span className="text-blue-600 font-medium">Services</span>
             </div>
             
             <h2 className="text-4xl font-bold mb-6">
-              Solutions Tailored to Your Needs
+              Services
             </h2>
             
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose from our range of expertly designed service packages, each leveraging the power of AI to deliver exceptional results.
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              From startups to global brands, we design and deliver digital products that move fast and make an impact.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {[
+              {
+                title: "Digital Products",
+                description: "Websites, apps, and platforms built to perform and scale.",
+                icon: <Globe className="w-6 h-6" />,
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                title: "MVP Launches",
+                description: "Fast, focused builds that validate your ideas in weeks, not months.",
+                icon: <Rocket className="w-6 h-6" />,
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                title: "Creative Prototypes",
+                description: "Live demos and proof-of-concepts that win pitches and secure buy-in.",
+                icon: <Sparkles className="w-6 h-6" />,
+                color: "from-green-500 to-emerald-500"
+              },
+              {
+                title: "Enterprise Delivery",
+                description: "Reliable support for large-scale projects with complex requirements.",
+                icon: <Building2 className="w-6 h-6" />,
+                color: "from-orange-500 to-red-500"
+              },
+              {
+                title: "AI-Powered Speed",
+                description: "Smart tools and methods that help us move faster where it counts.",
+                icon: <Bot className="w-6 h-6" />,
+                color: "from-indigo-500 to-purple-500"
+              }
+            ].map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`flex flex-col h-full bg-white rounded-xl border ${service.borderColor || 'border-gray-200'} shadow-sm hover:shadow-md transition-all`}
+                className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all hover:border-gray-300 group"
               >
-                <div className="p-6">
-                  <div className={`p-3 ${service.iconBg} rounded-xl inline-block mb-4`}>
-                    {React.isValidElement(service.icon) ? service.icon : <Bot />}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  
-                  {/* Tech Stack Badges */}
-                  {service.techStack && (
-                    <div className="flex flex-wrap gap-1.5 mt-4 mb-6">
-                      {service.techStack.map((tech, idx) => (
-                        <div 
-                          key={`${index}-tech-${idx}`} 
-                          className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${getBadgeColor(tech)}`}
-                        >
-                          {getTechIcon(tech)}
-                          {tech}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                <div className={`p-3 bg-gradient-to-r ${service.color} rounded-xl inline-block mb-4 text-white group-hover:scale-110 transition-transform`}>
+                  {service.icon}
                 </div>
-                
-                <div className="mt-auto p-6 pt-0">
-                  <div className="text-2xl font-bold mb-4">
-                    {service.price}
-                  </div>
-                  <Link
-                    to={service.link}
-                    className={`w-full inline-block px-6 py-3 text-center ${service.bgColor} ${service.hoverColor || 'hover:bg-blue-700'} text-white rounded-lg transition-colors`}
-                  >
-                    Learn More
-                  </Link>
-                </div>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </div>

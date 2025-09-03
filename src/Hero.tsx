@@ -61,14 +61,14 @@ export default function Hero() {
             
             <div className="relative z-10 p-12">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-white">Building the Future with Bolt AI</h2>
+                <h2 className="text-3xl font-bold text-white">Why We Do It</h2>
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Left Column - Ambassador Text */}
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 flex items-center">
                   <p className="text-gray-300 text-lg">
-                    As a leading Bolt power user and ambassador, I leverage the world's most advanced AI development platform to deliver exceptional results. 
+                    We believe bold ideas deserve to be built. P0STMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
                   </p>
                 </div>
                 
