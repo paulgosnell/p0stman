@@ -405,32 +405,33 @@ export default function HomeV2() {
                     onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
                   >
                     {/* Top Half - Image */}
-                    <div className="relative h-48 md:h-64 overflow-hidden">
+                    <div className="relative h-56 md:h-72 overflow-hidden">
                       <img
                         src={featuredProjects[currentCaseStudy].image}
                         alt={featuredProjects[currentCaseStudy].title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-
-                      {/* Logo overlay on image */}
-                      {featuredProjects[currentCaseStudy].logo && (
-                        <div className="absolute top-4 left-4">
-                          <img
-                            src={featuredProjects[currentCaseStudy].logo}
-                            alt={`${featuredProjects[currentCaseStudy].company} logo`}
-                            className="h-8 md:h-10 w-auto filter brightness-0 invert drop-shadow-lg"
-                          />
-                        </div>
-                      )}
                     </div>
 
                     {/* Bottom Half - Content */}
                     <div className="p-6 md:p-8 space-y-4">
                       {/* Header */}
-                      <div>
-                        <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{featuredProjects[currentCaseStudy].title}</h4>
-                        <p className="text-blue-200 text-base md:text-lg">{featuredProjects[currentCaseStudy].company}</p>
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1">
+                          <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{featuredProjects[currentCaseStudy].title}</h4>
+                          <p className="text-blue-200 text-base md:text-lg">{featuredProjects[currentCaseStudy].company}</p>
+                        </div>
+                        {/* Logo positioned next to title */}
+                        {featuredProjects[currentCaseStudy].logo && (
+                          <div className="flex-shrink-0">
+                            <img
+                              src={featuredProjects[currentCaseStudy].logo}
+                              alt={`${featuredProjects[currentCaseStudy].company} logo`}
+                              className="h-10 md:h-12 w-auto filter brightness-0 invert opacity-80"
+                            />
+                          </div>
+                        )}
                       </div>
 
                       {/* Description */}
