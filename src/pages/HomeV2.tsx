@@ -123,22 +123,21 @@ const testimonials = [
 
 // Featured projects data - mix of enterprise and AI-built projects
 const featuredProjects = [
-  // AI-Native Showcase Project - Lead with AI building AI
+  // Web3 & Blockchain Showcase Project
   {
-    id: 'chilled-sites',
-    title: 'Chilled Sites — AI Website Builder',
-    company: 'Chilled Ventures',
-    category: 'AI / SaaS',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
-    logo: 'https://chilledsites.com/images/logo.svg',
-    description: 'AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms.',
-    type: 'ai-native',
-    caseStudyUrl: '/case-study/chilled-sites',
+    id: 'bfit-web3',
+    title: 'BFIT Web3',
+    company: 'Blockchain Fitness Platform',
+    category: 'Web3 & Fitness',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
+    description: 'Revolutionary blockchain-powered fitness platform combining Web3 technology with health tracking. Innovative approach to fitness gamification and community building.',
+    type: 'web3',
+    caseStudyUrl: '/case-study/bfit-web3',
     metrics: [
-      { label: 'Time to First Site', value: '< 10 min', icon: <Clock className="w-6 h-6" /> },
-      { label: 'Cost Savings', value: '£5,000+', icon: <DollarSign className="w-6 h-6" /> },
-      { label: 'Active Users', value: '1000+', icon: <Users className="w-6 h-6" /> },
-      { label: 'Websites Built', value: '2500+', icon: <Globe className="w-6 h-6" /> }
+      { label: 'Technology', value: 'Web3', icon: <Bot className="w-6 h-6" /> },
+      { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-6 h-6" /> },
+      { label: 'Focus', value: 'Fitness', icon: <Target className="w-6 h-6" /> },
+      { label: 'Innovation', value: 'High', icon: <Zap className="w-6 h-6" /> }
     ]
   },
   // Enterprise Projects
@@ -216,18 +215,18 @@ const featuredProjects = [
     ]
   },
   {
-    id: 'harmony',
-    title: 'Harmony',
-    company: 'AI Music Platform',
-    category: 'Music & AI',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
-    logo: 'https://img.icons8.com/color/96/music.png',
-    description: 'AI-powered music collaboration platform built in 4 weeks. Complete music creation suite with intelligent composition tools and real-time collaboration features.',
-    type: 'ai-native',
-    caseStudyUrl: '/case-study/harmony',
+    id: 'arabian-center',
+    title: 'Arabian Center',
+    company: 'Al-Futtaim Group',
+    category: 'Retail & Real Estate',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png',
+    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/al-futtaim-logo.png',
+    description: 'Major retail and real estate digital transformation for one of the Middle East\'s largest conglomerates. Enhanced customer experience and operational efficiency across multiple touchpoints.',
+    type: 'enterprise',
+    caseStudyUrl: '/case-study/arabian-center',
     metrics: [
-      { label: 'Build Time', value: '4 weeks', icon: <Clock className="w-6 h-6" /> },
-      { label: 'AI Features', value: '12+', icon: <Bot className="w-6 h-6" /> }
+      { label: 'Company', value: 'Al-Futtaim', icon: <Building2 className="w-6 h-6" /> },
+      { label: 'Sector', value: 'Retail', icon: <Globe className="w-6 h-6" /> }
     ]
   }
 ];
@@ -249,21 +248,24 @@ const additionalProjects = [
     ]
   },
   {
-    id: 'arabian-center',
-    title: 'Arabian Center',
-    company: 'Al-Futtaim Group',
-    category: 'Retail & Real Estate',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabiancenter1.png',
-    logo: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/al-futtaim-logo.png',
-    caseStudyUrl: '/case-study/arabian-center'
+    id: 'chilled-sites',
+    title: 'Chilled Sites — AI Website Builder',
+    company: 'Chilled Ventures',
+    category: 'AI / SaaS',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    logo: 'https://chilledsites.com/images/logo.svg',
+    description: 'AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms.',
+    caseStudyUrl: '/case-study/chilled-sites'
   },
   {
-    id: 'bfit-web3',
-    title: 'BFIT Web3',
-    company: 'Blockchain Fitness Platform',
-    category: 'Web3 & Fitness',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
-    caseStudyUrl: '/case-study/bfit-web3'
+    id: 'harmony',
+    title: 'Harmony',
+    company: 'AI Music Platform',
+    category: 'Music & AI',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
+    logo: 'https://img.icons8.com/color/96/music.png',
+    description: 'AI-powered music collaboration platform built in 4 weeks. Complete music creation suite with intelligent composition tools and real-time collaboration features.',
+    caseStudyUrl: '/case-study/harmony'
   },
   {
     id: 'genieology',
