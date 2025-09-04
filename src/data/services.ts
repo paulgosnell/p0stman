@@ -1,4 +1,4 @@
-import { Bot, BookOpen, Globe, Users, Headphones, Smartphone, DollarSign, Database, Shield, Cloud } from 'lucide-react';
+import { Bot, BookOpen, Globe, Users, Headphones, Smartphone, DollarSign, Database, Shield, Cloud, Zap } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface Service {
@@ -19,7 +19,7 @@ export const services: Service[] = [
     title: "Fractional Product Leadership",
     description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
     price: "From $10,000/mo",
-    link: "/fractional-product-leadership",
+    link: "/fractional-cpo",
     bgColor: "bg-blue-600",
     iconBg: "bg-blue-100",
     features: [
@@ -40,7 +40,7 @@ export const services: Service[] = [
     title: "MVP Launches",
     description: "Fast, focused builds that validate your idea and get you to market in weeks, not months.",
     price: "From $15,000",
-    link: "/mvp-launches",
+    link: "/contact",
     bgColor: "bg-purple-600",
     iconBg: "bg-purple-100",
     features: [
@@ -58,31 +58,52 @@ export const services: Service[] = [
   },
   {
     icon: Globe,
-    title: "Websites & Apps",
-    description: "End-to-end design and delivery of digital products that scale.",
-    price: "From $10,000",
-    link: "/websites-apps",
+    title: "Websites",
+    description: "Modern, responsive websites that convert visitors into customers.",
+    price: "From $8,000",
+    link: "/website",
     bgColor: "bg-green-600",
     iconBg: "bg-green-100",
     features: [
-      "Websites",
-      "Mobile Apps",
-      "Platforms", 
-      "SaaS"
+      "Responsive Design",
+      "SEO Optimized",
+      "CMS Integration", 
+      "Performance Focused"
     ],
     techStack: [
       "React", 
-      "React Native", 
+      "Next.js", 
       "Tailwind CSS", 
       "Supabase"
     ]
   },
   {
     icon: Smartphone,
+    title: "Mobile Apps",
+    description: "Native-quality mobile apps built with modern cross-platform technology.",
+    price: "From $12,000",
+    link: "/mobile-app",
+    bgColor: "bg-indigo-600",
+    iconBg: "bg-indigo-100",
+    features: [
+      "iOS & Android",
+      "Native Performance",
+      "Push Notifications", 
+      "Offline Support"
+    ],
+    techStack: [
+      "React Native", 
+      "Expo", 
+      "TypeScript", 
+      "Firebase"
+    ]
+  },
+  {
+    icon: Zap,
     title: "Creative Prototypes",
     description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
     price: "From $5,000",
-    link: "/creative-prototypes",
+    link: "/contact",
     bgColor: "bg-orange-600",
     iconBg: "bg-orange-100",
     features: [

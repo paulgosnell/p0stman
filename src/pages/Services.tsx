@@ -24,7 +24,7 @@ import {
 const primaryServices = [
   {
     title: 'Fractional Product Leadership',
-    href: '/fractional-product-leadership',
+    href: '/fractional-cpo',
     icon: Brain,
     description: 'Hands-on product direction, leadership, and team support when you need extra firepower.',
     features: ['Product Strategy', 'Team Leadership', 'Stakeholder Management', 'Go-to-Market'],
@@ -33,7 +33,7 @@ const primaryServices = [
   },
   {
     title: 'MVP Launches',
-    href: '/mvp-launches',
+    href: '/contact',
     icon: Rocket,
     description: 'Fast, focused builds that validate your idea and get you to market in weeks, not months.',
     features: ['Prototypes', 'Proof-of-Concepts', 'Beta Launches'],
@@ -41,17 +41,26 @@ const primaryServices = [
     featured: true
   },
   {
-    title: 'Websites & Apps',
-    href: '/websites-apps',
+    title: 'Websites',
+    href: '/website',
     icon: Globe,
-    description: 'End-to-end design and delivery of digital products that scale.',
-    features: ['Websites', 'Mobile Apps', 'Platforms', 'SaaS'],
+    description: 'Modern, responsive websites that convert visitors into customers.',
+    features: ['Responsive Design', 'SEO Optimized', 'CMS Integration', 'Performance Focused'],
     color: 'from-green-500 to-emerald-500',
     featured: true
   },
   {
+    title: 'Mobile Apps',
+    href: '/mobile-app',
+    icon: Smartphone,
+    description: 'Native-quality mobile apps built with modern cross-platform technology.',
+    features: ['iOS & Android', 'Native Performance', 'Push Notifications', 'Offline Support'],
+    color: 'from-indigo-500 to-blue-500',
+    featured: true
+  },
+  {
     title: 'Creative Prototypes',
-    href: '/creative-prototypes',
+    href: '/contact',
     icon: Zap,
     description: 'Live, interactive demos that win pitches, unlock budget, and excite stakeholders.',
     features: ['Campaign Mockups', 'Pitch Support', 'Innovation Labs'],
@@ -63,7 +72,7 @@ const primaryServices = [
 const additionalServices = [
   {
     title: 'Enterprise Delivery',
-    href: '/enterprise-delivery',
+    href: '/contact',
     icon: Building2,
     description: 'Reliable support for large-scale, complex projects with multiple stakeholders.',
     features: ['Scalable Architecture', 'Integration', 'DevOps'],
@@ -79,7 +88,7 @@ const additionalServices = [
   },
   {
     title: 'AI-Powered Speed',
-    href: '/ai-powered-speed',
+    href: '/ai-agents',
     icon: Bot,
     description: 'Smarter, faster delivery with AI tools woven into our process.',
     features: ['Automation', 'Content Generation', 'AI Integrations'],
@@ -153,7 +162,7 @@ export default function Services() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {primaryServices.map((service, index) => (
                 <motion.div
                   key={service.title}

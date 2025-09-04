@@ -73,21 +73,21 @@ const focusAreas = [
   },
   {
     icon: <Globe className="w-8 h-8 text-green-600" />,
-    title: "Websites & Apps",
-    description: "End-to-end design and delivery of digital products that scale.",
-    features: ["Websites", "Mobile Apps", "Platforms", "SaaS"]
+    title: "Websites",
+    description: "Modern, responsive websites that convert visitors into customers.",
+    features: ["Responsive Design", "SEO Optimized", "CMS Integration", "Performance Focused"]
+  },
+  {
+    icon: <Smartphone className="w-8 h-8 text-indigo-600" />,
+    title: "Mobile Apps",
+    description: "Native-quality mobile apps built with modern cross-platform technology.",
+    features: ["iOS & Android", "Native Performance", "Push Notifications", "Offline Support"]
   },
   {
     icon: <Sparkles className="w-8 h-8 text-orange-600" />,
     title: "Creative Prototypes",
     description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
     features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
-  },
-  {
-    icon: <Building2 className="w-8 h-8 text-indigo-600" />,
-    title: "Enterprise Delivery",
-    description: "Reliable support for large-scale, complex projects with multiple stakeholders.",
-    features: ["Scalable Architecture", "Integration", "DevOps"]
   },
   {
     icon: <Target className="w-8 h-8 text-teal-600" />,
@@ -355,7 +355,7 @@ export default function HomeV2() {
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  We build and deliver websites, apps, and digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count.
+                  We build and deliver digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -392,66 +392,64 @@ export default function HomeV2() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="space-y-4"
                 >
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-light text-white mb-3">Success Stories</h3>
-                    <p className="text-gray-300">Real projects, real results</p>
-                  </div>
 
-                  {/* Current Case Study Card - Made Much Bigger */}
+                  {/* Current Case Study Card - Split Layout */}
                   <motion.div
                     key={currentCaseStudy}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group min-h-[360px] md:min-h-[480px]"
+                    className="overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group"
                     onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
                   >
-                    <div className="absolute inset-0">
+                    {/* Top Half - Image */}
+                    <div className="relative h-48 md:h-64 overflow-hidden">
                       <img
                         src={featuredProjects[currentCaseStudy].image}
                         alt={featuredProjects[currentCaseStudy].title}
-                        className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+
+                      {/* Logo overlay on image */}
+                      {featuredProjects[currentCaseStudy].logo && (
+                        <div className="absolute top-4 left-4">
+                          <img
+                            src={featuredProjects[currentCaseStudy].logo}
+                            alt={`${featuredProjects[currentCaseStudy].company} logo`}
+                            className="h-8 md:h-10 w-auto filter brightness-0 invert drop-shadow-lg"
+                          />
+                        </div>
+                      )}
                     </div>
 
-                    <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
-                      <div className="space-y-6">
-                        {/* Top Section */}
-                        <div className="flex items-center gap-3 md:gap-4">
-                          {featuredProjects[currentCaseStudy].logo && (
-                            <img
-                              src={featuredProjects[currentCaseStudy].logo}
-                              alt={`${featuredProjects[currentCaseStudy].company} logo`}
-                              className="h-10 md:h-12 w-auto filter brightness-0 invert"
-                            />
-                          )}
-                          <div>
-                            <h4 className="text-xl md:text-2xl font-bold text-white">{featuredProjects[currentCaseStudy].title}</h4>
-                            <p className="text-blue-200 text-base md:text-lg">{featuredProjects[currentCaseStudy].company}</p>
-                          </div>
-                        </div>
-
-                        {/* Description */}
-                        <p className="text-white/90 text-base leading-relaxed">
-                          {featuredProjects[currentCaseStudy].description}
-                        </p>
-
-                        {/* Metrics if available */}
-                        {featuredProjects[currentCaseStudy].metrics && (
-                          <div className="grid grid-cols-2 gap-3 md:gap-4">
-                            {featuredProjects[currentCaseStudy].metrics.slice(0, 2).map((metric, i) => (
-                              <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-2 md:p-3">
-                                <div className="text-lg md:text-xl font-bold text-white">{metric.value}</div>
-                                <div className="text-xs text-white/70">{metric.label}</div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                    {/* Bottom Half - Content */}
+                    <div className="p-6 md:p-8 space-y-4">
+                      {/* Header */}
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{featuredProjects[currentCaseStudy].title}</h4>
+                        <p className="text-blue-200 text-base md:text-lg">{featuredProjects[currentCaseStudy].company}</p>
                       </div>
 
+                      {/* Description */}
+                      <p className="text-white/90 text-base leading-relaxed">
+                        {featuredProjects[currentCaseStudy].description}
+                      </p>
+
+                      {/* Metrics if available */}
+                      {featuredProjects[currentCaseStudy].metrics && (
+                        <div className="grid grid-cols-2 gap-3 md:gap-4">
+                          {featuredProjects[currentCaseStudy].metrics.slice(0, 2).map((metric, i) => (
+                            <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-2 md:p-3">
+                              <div className="text-lg md:text-xl font-bold text-white">{metric.value}</div>
+                              <div className="text-xs text-white/70">{metric.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
                       {/* Bottom Section */}
-                      <div className="flex items-center justify-between mt-4">
+                      <div className="flex items-center justify-between pt-2">
                         <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium">
                           {featuredProjects[currentCaseStudy].category}
                         </span>
@@ -1058,50 +1056,67 @@ export default function HomeV2() {
               className="text-center"
             >
               <h3 className="text-2xl font-light mb-8">See AI Building in Action</h3>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div
-                  className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
-                  onClick={() => openVideo("Y0g_9ZhqiRg")}
-                >
-                  <div className="relative aspect-video">
-                    <img
-                      src="https://i.ytimg.com/vi/Y0g_9ZhqiRg/maxresdefault.jpg"
-                      alt="Building CRM with AI"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <Play className="w-8 h-8 text-white" />
+              <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {/* Bolt Experience Quote */}
+                <div className="lg:col-span-1 flex items-center">
+                  <div className="bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
+                    <div className="flex items-start gap-4">
+                      <div className="text-4xl text-blue-400 font-serif leading-none">"</div>
+                      <div>
+                        <blockquote className="text-gray-200 italic leading-relaxed">
+                          From power user, to joining and helping them secure $100M, I've been on both sides of the fence with Bolt. One of the fastest growing startups ever, it was a wild ride to experience hyper-growth. More learnings for me which I pass on to my clients.
+                        </blockquote>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
-                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
-                      How we built a CRM system in one week with AI
-                    </h4>
                   </div>
                 </div>
 
-                <div
-                  className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
-                  onClick={() => openVideo("dxuct08lLyY")}
-                >
-                  <div className="relative aspect-video">
-                    <img
-                      src="https://i.ytimg.com/vi/dxuct08lLyY/maxresdefault.jpg"
-                      alt="Adding Stripe to AI apps"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <Play className="w-8 h-8 text-white" />
+                {/* Video Thumbnails */}
+                <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+                  <div
+                    className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                    onClick={() => openVideo("Y0g_9ZhqiRg")}
+                  >
+                    <div className="relative aspect-video">
+                      <img
+                        src="https://i.ytimg.com/vi/Y0g_9ZhqiRg/maxresdefault.jpg"
+                        alt="Building CRM with AI"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <Play className="w-8 h-8 text-white" />
+                        </div>
                       </div>
                     </div>
+                    <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
+                      <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                        How we built a CRM system in one week with AI
+                      </h4>
+                    </div>
                   </div>
-                  <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
-                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
-                      Adding Stripe payments to your AI-built app
-                    </h4>
+
+                  <div
+                    className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                    onClick={() => openVideo("dxuct08lLyY")}
+                  >
+                    <div className="relative aspect-video">
+                      <img
+                        src="https://i.ytimg.com/vi/dxuct08lLyY/maxresdefault.jpg"
+                        alt="Adding Stripe to AI apps"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <Play className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
+                      <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                        Adding Stripe payments to your AI-built app
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>
