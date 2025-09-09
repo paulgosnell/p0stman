@@ -47,8 +47,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0);
             z-index: 2;
+            transition: background-color 2s ease;
+        }
+
+        .video-overlay.fade-to-black {
+            background: rgba(0, 0, 0, 1);
         }
 
         .nav-header {
@@ -530,10 +535,10 @@
 <body>
     <div class="hero">
         <video class="video-background" id="backgroundVideo" autoplay muted playsinline>
-            <source src="https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_1.mp4" type="video/mp4">
+            <source src="https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="video-overlay"></div>
+        <div class="video-overlay" id="videoOverlay"></div>
         
         <header class="nav-header">
             <a href="#" class="logo">Agent Henrik</a>
@@ -588,20 +593,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.getElementById('backgroundVideo');
-            const videoSources = [
-                'https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_1.mp4',
-                'https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_2.mp4'
-            ];
-            let currentVideoIndex = 0;
-
-            function switchVideo() {
-                currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-                video.src = videoSources[currentVideoIndex];
-                video.load();
-                video.play().catch(function(error) {
-                    console.log('Video play failed:', error);
-                });
-            }
+            const videoOverlay = document.getElementById('videoOverlay');
+            let hasPlayedSequence = false; // Track if animation sequence has played
 
             video.addEventListener('loadedmetadata', function() {
                 video.currentTime = 0;
@@ -611,15 +604,21 @@
                 video.play().catch(function(error) {
                     console.log('Video autoplay failed:', error);
                 });
-                
-                // Start animation sequence after video is ready
-                setTimeout(function() {
-                    startAnimationSequence();
-                }, 500);
             });
 
+            // When video ends, fade to black and start text sequence
             video.addEventListener('ended', function() {
-                switchVideo();
+                if (!hasPlayedSequence) {
+                    hasPlayedSequence = true;
+                    
+                    // Fade to black
+                    videoOverlay.classList.add('fade-to-black');
+                    
+                    // Start animation sequence after fade completes
+                    setTimeout(function() {
+                        startAnimationSequence();
+                    }, 2000); // Wait for fade transition to complete
+                }
             });
 
             function startAnimationSequence() {
@@ -630,19 +629,18 @@
                 const ctaButton = document.getElementById('ctaButton');
                 
                 // Show main content container first
+                content.classList.add('show');
+                
+                // Start thinking dots animation
                 setTimeout(function() {
-                    content.classList.add('show');
-                    // Start thinking dots animation
+                    thinkingDots.style.opacity = '1';
+                    
+                    // After thinking dots show for 2 seconds, start typewriter
                     setTimeout(function() {
-                        thinkingDots.style.opacity = '1';
-                        
-                        // After thinking dots show for 2 seconds, start typewriter
-                        setTimeout(function() {
-                            thinkingDots.style.display = 'none';
-                            startTypewriter();
-                        }, 2000);
-                    }, 500);
-                }, 1000);
+                        thinkingDots.style.display = 'none';
+                        startTypewriter();
+                    }, 2000);
+                }, 500);
 
                 function startTypewriter() {
                     const text = "Your Insider Journey Begins Here.";
@@ -672,15 +670,15 @@
                     }, 80);
                 }
 
-                // Show navigation after headline animation completes (roughly 6.5 seconds)
+                // Show navigation after headline animation completes (roughly 4.5 seconds)
                 setTimeout(function() {
                     document.querySelector('.nav-header').classList.add('show');
-                }, 6500);
+                }, 4500);
 
-                // Show AI concierge button after nav (roughly 7.5 seconds)
+                // Show AI concierge button after nav (roughly 5.5 seconds)
                 setTimeout(function() {
                     document.querySelector('.ai-concierge-btn').classList.add('show');
-                }, 7500);
+                }, 5500);
             }
 
             const ctaButton = document.querySelector('.cta-button');
