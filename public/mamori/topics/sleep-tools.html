@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Tools - Evidence-Based Reviews | Mamori</title>
+    
+    <!-- Design System Styles -->
+    <link rel="stylesheet" href="../css/mamori.css">
+    <link rel="stylesheet" href="../layout/grid.css">
+    <link rel="stylesheet" href="../components/buttons.css">
+    <link rel="stylesheet" href="../components/inputs.css">
+    <link rel="stylesheet" href="../components/cards.css">
+    <link rel="stylesheet" href="../components/navigation.css">
+    
+    <!-- MVP Specific Styles -->
+    <link rel="stylesheet" href="../css/mvp.css">
+    
+    <!-- Lucid Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+</head>
+
+<body>
+    
+    <!-- Header Include -->
+    <div data-include="header"></div>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html" class="breadcrumb-link">Home</a>
+                <i data-lucide="chevron-right" class="breadcrumb-separator"></i>
+                <a href="../categories.html" class="breadcrumb-link">Categories</a>
+                <i data-lucide="chevron-right" class="breadcrumb-separator"></i>
+                <span class="breadcrumb-current">Sleep Tools</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Topic Hero -->
+    <section class="topic-hero">
+        <div class="topic-hero-image">
+            <img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" 
+                 alt="Modern sleep tracking device and peaceful bedroom setup" class="topic-hero-img">
+            <div class="topic-hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="topic-hero-content">
+                <div class="topic-hero-badge">
+                    <div class="evidence-badge evidence-badge--b">B</div>
+                    <span>Good Evidence</span>
+                </div>
+                <h1 class="topic-hero-title">Sleep Tools</h1>
+                <p class="topic-hero-subtitle">
+                    Devices and aids designed to improve sleep quality, tracking, and duration. 
+                    From smart rings to sleep masks, evidence-based tools for better rest.
+                </p>
+                <div class="topic-hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">12</div>
+                        <div class="hero-stat-label">Products Reviewed</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">150+</div>
+                        <div class="hero-stat-label">Studies</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">4.1★</div>
+                        <div class="hero-stat-label">Avg User Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic Overview -->
+    <section class="topic-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2 class="overview-title">What are Sleep Tools?</h2>
+                    <p class="overview-text">
+                        Sleep tools encompass devices and aids designed to optimize sleep quality, duration, and tracking. 
+                        This includes wearable trackers, environmental controls, and comfort aids. While the field is evolving, 
+                        some tools show promising evidence for improving sleep outcomes.
+                    </p>
+                    <div class="overview-highlights">
+                        <div class="highlight-item">
+                            <i data-lucide="check-circle" class="highlight-icon"></i>
+                            <span>Track sleep patterns and quality metrics</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="check-circle" class="highlight-icon"></i>
+                            <span>Optimize sleep environment conditions</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="check-circle" class="highlight-icon"></i>
+                            <span>Provide actionable sleep improvement insights</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-sidebar">
+                    <div class="fit-guide-card">
+                        <h3 class="fit-guide-title">Who Should Consider Sleep Tools?</h3>
+                        <div class="fit-guide-items">
+                            <div class="fit-guide-item fit-guide-item--good">
+                                <i data-lucide="thumbs-up" class="fit-icon"></i>
+                                <div>
+                                    <strong>Sleep Issues</strong>
+                                    <p>Poor sleep quality or irregular patterns</p>
+                                </div>
+                            </div>
+                            <div class="fit-guide-item fit-guide-item--good">
+                                <i data-lucide="thumbs-up" class="fit-icon"></i>
+                                <div>
+                                    <strong>Health Optimizers</strong>
+                                    <p>Those tracking wellness metrics</p>
+                                </div>
+                            </div>
+                            <div class="fit-guide-item fit-guide-item--caution">
+                                <i data-lucide="alert-triangle" class="fit-icon"></i>
+                                <div>
+                                    <strong>Sleep Disorders</strong>
+                                    <p>Serious issues need medical evaluation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evidence Summary -->
+    <section class="evidence-summary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Evidence Summary</h2>
+                <p class="section-subtitle">Our A-D scoring system based on research quality and consistency</p>
+            </div>
+            
+            <div class="evidence-grid">
+                <div class="evidence-card evidence-card--grade-b">
+                    <div class="evidence-header">
+                        <div class="evidence-badge evidence-badge--b">B</div>
+                        <h3 class="evidence-title">Sleep Tracking</h3>
+                    </div>
+                    <p class="evidence-description">
+                        Good evidence that tracking sleep patterns can increase awareness and 
+                        lead to behavior changes that improve sleep quality.
+                    </p>
+                    <div class="evidence-studies">
+                        <i data-lucide="file-text" class="studies-icon"></i>
+                        <span>30+ studies</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-card evidence-card--grade-b">
+                    <div class="evidence-header">
+                        <div class="evidence-badge evidence-badge--b">B</div>
+                        <h3 class="evidence-title">Light Therapy</h3>
+                    </div>
+                    <p class="evidence-description">
+                        Solid research shows light-blocking and wake-up light devices 
+                        can help regulate circadian rhythms and improve sleep timing.
+                    </p>
+                    <div class="evidence-studies">
+                        <i data-lucide="file-text" class="studies-icon"></i>
+                        <span>50+ studies</span>
+                    </div>
+                </div>
+                
+                <div class="evidence-card evidence-card--grade-c">
+                    <div class="evidence-header">
+                        <div class="evidence-badge evidence-badge--c">C</div>
+                        <h3 class="evidence-title">Sleep Aids</h3>
+                    </div>
+                    <p class="evidence-description">
+                        Mixed evidence for weighted blankets, special pillows, and other comfort aids. 
+                        Individual responses vary significantly.
+                    </p>
+                    <div class="evidence-studies">
+                        <i data-lucide="file-text" class="studies-icon"></i>
+                        <span>20+ studies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Listings -->
+    <section class="product-listings">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Top Sleep Tools</h2>
+                <p class="section-subtitle">Ranked by evidence, accuracy, and user satisfaction—not by who pays us</p>
+                
+                <div class="listing-filters">
+                    <button class="filter-btn filter-btn--active" data-filter="all">All Tools</button>
+                    <button class="filter-btn" data-filter="trackers">Trackers</button>
+                    <button class="filter-btn" data-filter="environment">Environment</button>
+                    <button class="filter-btn" data-filter="comfort">Comfort</button>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card" data-category="trackers">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" 
+                             alt="Oura smart ring sleep tracker" class="product-img">
+                        <div class="product-badges">
+                            <div class="evidence-badge evidence-badge--b">B</div>
+                            <div class="cert-badge">FDA Approved</div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Oura Ring Gen 3</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span class="rating-value">(4.3)</span>
+                            </div>
+                        </div>
+                        <div class="product-form">
+                            <span class="form-badge">Wearable Tracker</span>
+                            <span class="serving-info">7-day battery • Waterproof</span>
+                        </div>
+                        <div class="product-highlights">
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Accurate sleep stage tracking</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Heart rate variability monitoring</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Comprehensive sleep insights</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-range">$299 - $399</div>
+                            <div class="merchant-links">
+                                <a href="#" class="merchant-btn">Oura</a>
+                                <a href="#" class="merchant-btn">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card" data-category="environment">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" 
+                             alt="Philips wake up light alarm clock" class="product-img">
+                        <div class="product-badges">
+                            <div class="evidence-badge evidence-badge--b">B</div>
+                            <div class="value-badge">Best Value</div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Philips SmartSleep Wake-up Light</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span class="rating-value">(4.1)</span>
+                            </div>
+                        </div>
+                        <div class="product-form">
+                            <span class="form-badge">Light Therapy</span>
+                            <span class="serving-info">Sunrise simulation • 10 settings</span>
+                        </div>
+                        <div class="product-highlights">
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Clinically proven wake-up light</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Natural sound options</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Sunset simulation for bedtime</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-range">$129 - $179</div>
+                            <div class="merchant-links">
+                                <a href="#" class="merchant-btn">Amazon</a>
+                                <a href="#" class="merchant-btn">Best Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card" data-category="comfort">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6069939/pexels-photo-6069939.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" 
+                             alt="Weighted blanket for sleep" class="product-img">
+                        <div class="product-badges">
+                            <div class="evidence-badge evidence-badge--c">C</div>
+                            <div class="cert-badge">Organic Cotton</div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Gravity Weighted Blanket</h3>
+                            <div class="product-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span class="rating-value">(4.0)</span>
+                            </div>
+                        </div>
+                        <div class="product-form">
+                            <span class="form-badge">Weighted</span>
+                            <span class="serving-info">15-25 lbs • Machine washable</span>
+                        </div>
+                        <div class="product-highlights">
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>May reduce anxiety</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i data-lucide="check" class="highlight-icon"></i>
+                                <span>Even weight distribution</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i data-lucide="minus" class="highlight-icon highlight-icon--neutral"></i>
+                                <span>Individual results vary</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price-range">$195 - $249</div>
+                            <div class="merchant-links">
+                                <a href="#" class="merchant-btn">Gravity</a>
+                                <a href="#" class="merchant-btn">Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Guidance -->
+    <section class="clinical-guidance">
+        <div class="container">
+            <div class="guidance-card guidance-card--caution">
+                <div class="guidance-header">
+                    <i data-lucide="alert-circle" class="guidance-icon"></i>
+                    <h3 class="guidance-title">When to Consult a Healthcare Provider</h3>
+                </div>
+                <div class="guidance-content">
+                    <ul class="guidance-list">
+                        <li>If you have chronic insomnia lasting more than 3 weeks</li>
+                        <li>Experience loud snoring or breathing interruptions during sleep</li>
+                        <li>Have excessive daytime sleepiness despite adequate sleep time</li>
+                        <li>Experience unusual behaviors during sleep (sleepwalking, night terrors)</li>
+                        <li>If sleep tools don't improve sleep quality after 4-6 weeks of use</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Outcomes -->
+    <section class="community-outcomes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Real User Outcomes</h2>
+                <p class="section-subtitle">Structured reports from verified users—what works, what doesn't</p>
+            </div>
+            
+            <div class="outcomes-grid">
+                <div class="outcome-card outcome-card--detailed">
+                    <div class="outcome-header">
+                        <div class="user-profile">
+                            <div class="user-avatar">M</div>
+                            <div class="user-info">
+                                <div class="user-meta">34yo, male, tech worker</div>
+                                <div class="usage-duration">Used for 3 months</div>
+                            </div>
+                        </div>
+                        <div class="outcome-rating outcome-rating--positive">
+                            <i data-lucide="thumbs-up"></i>
+                        </div>
+                    </div>
+                    <div class="outcome-content">
+                        <div class="product-used">
+                            <strong>Product:</strong> Oura Ring Gen 3
+                        </div>
+                        <div class="dosage-protocol">
+                            <strong>Protocol:</strong> Daily wear, sleep tracking enabled
+                        </div>
+                        <div class="outcome-results">
+                            <h4>Results:</h4>
+                            <div class="result-item result-item--positive">
+                                <i data-lucide="trending-up" class="result-icon"></i>
+                                <span>Improved sleep consistency by adjusting bedtime</span>
+                            </div>
+                            <div class="result-item result-item--positive">
+                                <i data-lucide="trending-up" class="result-icon"></i>
+                                <span>Identified caffeine impact on sleep quality</span>
+                            </div>
+                            <div class="result-item result-item--neutral">
+                                <i data-lucide="minus" class="result-icon"></i>
+                                <span>Battery life requires regular charging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outcome-card outcome-card--detailed">
+                    <div class="outcome-header">
+                        <div class="user-profile">
+                            <div class="user-avatar">F</div>
+                            <div class="user-info">
+                                <div class="user-meta">29yo, female, shift worker</div>
+                                <div class="usage-duration">Used for 2 months</div>
+                            </div>
+                        </div>
+                        <div class="outcome-rating outcome-rating--positive">
+                            <i data-lucide="thumbs-up"></i>
+                        </div>
+                    </div>
+                    <div class="outcome-content">
+                        <div class="product-used">
+                            <strong>Product:</strong> Philips SmartSleep Wake-up Light
+                        </div>
+                        <div class="dosage-protocol">
+                            <strong>Protocol:</strong> 30-minute sunrise simulation daily
+                        </div>
+                        <div class="outcome-results">
+                            <h4>Results:</h4>
+                            <div class="result-item result-item--positive">
+                                <i data-lucide="trending-up" class="result-icon"></i>
+                                <span>Easier waking during dark winter months</span>
+                            </div>
+                            <div class="result-item result-item--positive">
+                                <i data-lucide="trending-up" class="result-icon"></i>
+                                <span>Reduced morning grogginess</span>
+                            </div>
+                            <div class="result-item result-item--neutral">
+                                <i data-lucide="minus" class="result-icon"></i>
+                                <span>Light can disturb partner's sleep</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Include -->
+    <div data-include="footer"></div>
+
+    <!-- Scripts Include -->
+    <div data-include="scripts"></div>
+    
+    <!-- Simple Includes -->
+    <script src="../js/simple-includes.js"></script>
+    
+    <!-- Page-specific Scripts -->
+    <script>
+        // Topic hub specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Product filtering
+            const filterBtns = document.querySelectorAll('.listing-filters .filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('filter-btn--active'));
+                    // Add active class to clicked button
+                    btn.classList.add('filter-btn--active');
+                    
+                    const filter = btn.dataset.filter;
+                    
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            if (typeof gsap !== 'undefined') {
+                                gsap.fromTo(card, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3 });
+                            }
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // GSAP Animations
+            if (typeof gsap !== 'undefined') {
+                // Hero animations
+                gsap.fromTo('.topic-hero-content > *', {
+                    opacity: 0,
+                    y: 30
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: 'power2.out',
+                    delay: 0.5
+                });
+                
+                // Evidence cards animation
+                gsap.fromTo('.evidence-card', {
+                    opacity: 0,
+                    y: 40
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.evidence-grid',
+                        start: 'top 80%'
+                    }
+                });
+                
+                // Product cards animation
+                gsap.fromTo('.product-card', {
+                    opacity: 0,
+                    y: 40
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.products-grid',
+                        start: 'top 80%'
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

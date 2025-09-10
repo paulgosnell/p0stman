@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamori Design System - Revolutionary Digital Design Language</title>
+
+    <!-- Design System Styles -->
+    <link rel="stylesheet" href="css/mamori.css">
+    <link rel="stylesheet" href="layout/grid.css">
+    <link rel="stylesheet" href="components/buttons.css">
+    <link rel="stylesheet" href="components/inputs.css">
+    <link rel="stylesheet" href="components/cards.css">
+    <link rel="stylesheet" href="components/navigation.css">
+    <link rel="stylesheet" href="components/modals.css">
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Revolutionary Hero Section -->
+    <section class="hero-main">
+        <!-- Hero Background Panel -->
+        <div class="hero-background-panel">
+            <!-- Background Video -->
+            <video autoplay muted loop playsinline class="hero-bg-video">
+                <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
+                    type="video/mp4">
+                <!-- Fallback image -->
+                <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+                    alt="Nordic landscape">
+            </video>
+
+            <!-- Hero Overlay -->
+            <div class="hero-overlay"></div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="hero-badge">Design System</div>
+                <h1 class="hero-title">Mamori</h1>
+                <p class="hero-subtitle">The future of digital design language. Where Scandinavian minimalism meets
+                    Apple's revolutionary precision. Crafted for the next generation of premium interfaces.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn--primary btn--large">Explore Revolution</button>
+                    <button class="btn btn--fjord btn--large">Experience Design</button>
+                    <button class="btn btn--ghost btn--large">View Documentation</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Feature Panels -->
+        <div class="hero-feature-grid">
+            <!-- Design Philosophy Panel -->
+            <div class="hero-feature-panel">
+                <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Nordic fjord landscape" class="hero-feature-image">
+                <div class="hero-feature-overlay"></div>
+                <div class="hero-feature-content">
+                    <div class="hero-feature-tag">Design Philosophy</div>
+                    <h3 class="hero-feature-title">Nordic Inspiration</h3>
+                    <p class="hero-feature-text">Drawing from the serene beauty of Scandinavian landscapes</p>
+                </div>
+            </div>
+
+            <!-- Innovation Panel -->
+            <div class="hero-feature-panel">
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Designer working" class="hero-feature-image">
+                <div class="hero-feature-overlay hero-feature-overlay--green"></div>
+                <div class="hero-feature-content">
+                    <div class="hero-feature-tag">Innovation</div>
+                    <h3 class="hero-feature-title">Glass Morphism</h3>
+                    <p class="hero-feature-text">Revolutionary interface depth with advanced backdrop filters</p>
+                </div>
+            </div>
+
+            <!-- Precision Panel -->
+            <div class="hero-feature-panel">
+                <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Modern workspace" class="hero-feature-image">
+                <div class="hero-feature-overlay hero-feature-overlay--amber"></div>
+                <div class="hero-feature-content">
+                    <div class="hero-feature-tag">Precision</div>
+                    <h3 class="hero-feature-title">Apple Quality</h3>
+                    <p class="hero-feature-text">Pixel-perfect components with mathematical precision</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Color Palette</h2>
+        <p class="showcase-subtitle">Muted, calming colors inspired by Nordic landscapes</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Nordic Palette</h3>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-box color-box--aurora">
+                    </div>
+                    <div class="color-name">Aurora</div>
+                    <div class="color-value">#0EA5E9</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--fjord">
+                    </div>
+                    <div class="color-name">Fjord</div>
+                    <div class="color-value">#10B981</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--glacier">
+                    </div>
+                    <div class="color-name">Glacier</div>
+                    <div class="color-value">#64748B</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--birch">
+                    </div>
+                    <div class="color-name">Birch</div>
+                    <div class="color-value">#F59E0B</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Neutral Colors</h3>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-box color-box--white"></div>
+                    <div class="color-name">White</div>
+                    <div class="color-value">#FFFFFF</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--cloud"></div>
+                    <div class="color-name">Cloud</div>
+                    <div class="color-value">#F5F5F5</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--stone"></div>
+                    <div class="color-name">Stone</div>
+                    <div class="color-value">#E0E0E0</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--ash"></div>
+                    <div class="color-name">Ash</div>
+                    <div class="color-value">#999999</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box color-box--graphite"></div>
+                    <div class="color-name">Graphite</div>
+                    <div class="color-value">#333333</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Buttons</h2>
+        <p class="showcase-subtitle">Generous, rounded buttons with calm hover states</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Revolutionary Buttons</h3>
+            <div class="button-showcase">
+                <button class="btn btn--primary">Aurora Primary</button>
+                <button class="btn btn--secondary">Glacier Secondary</button>
+                <button class="btn btn--fjord">Fjord Action</button>
+                <button class="btn btn--ghost">Ethereal Ghost</button>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Button Sizes</h3>
+            <div class="cluster items-center">
+                <button class="btn btn--primary btn--small">Small</button>
+                <button class="btn btn--primary">Default</button>
+                <button class="btn btn--primary btn--large">Large</button>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Pill Buttons</h3>
+            <div class="cluster">
+                <button class="btn btn--primary btn--pill">Pill Primary</button>
+                <button class="btn btn--secondary btn--pill">Pill Secondary</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Elements -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Form Elements</h2>
+        <p class="showcase-subtitle">Clean, accessible inputs with generous padding</p>
+
+        <div class="two-column">
+            <div class="component-group">
+                <h3 class="component-title">Text Inputs</h3>
+                <div class="form">
+                    <div class="input-group">
+                        <label class="input-group__label">Full Name</label>
+                        <input type="text" class="input" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-group__label">Email Address</label>
+                        <input type="email" class="input" placeholder="you@example.com">
+                        <div class="input-group__hint">We'll never share your email</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-group__label">Search</label>
+                        <input type="text" class="input input--search" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-group">
+                <h3 class="component-title">Other Inputs</h3>
+                <div class="form">
+                    <div class="input-group">
+                        <label class="input-group__label">Country</label>
+                        <select class="input select">
+                            <option>Select a country</option>
+                            <option>United States</option>
+                            <option>Canada</option>
+                            <option>United Kingdom</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-group__label">Message</label>
+                        <textarea class="input textarea" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+
+                    <div class="cluster">
+                        <label class="cluster">
+                            <input type="checkbox" class="checkbox">
+                            <span>I agree to the terms</span>
+                        </label>
+                        <label class="cluster">
+                            <input type="radio" class="radio" name="newsletter">
+                            <span>Subscribe to newsletter</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Cards</h2>
+        <p class="showcase-subtitle">Elevated content containers with soft shadows</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card__header">
+                    <h3 class="card__title">Basic Card</h3>
+                    <p class="card__subtitle">Simple content container</p>
+                </div>
+                <div class="card__body">
+                    <p>This is a basic card with header, body, and footer sections. Perfect for displaying
+                        structured content with clear hierarchy.</p>
+                </div>
+                <div class="card__footer">
+                    <span class="card-meta">2 min read</span>
+                    <div class="card__actions">
+                        <button class="btn btn--ghost btn--small">Share</button>
+                        <button class="btn btn--primary btn--small">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card--feature">
+                <div class="card__header">
+                    <h3 class="card__title">Feature Card</h3>
+                    <p class="card__subtitle">Highlighted content</p>
+                </div>
+                <div class="card__body">
+                    <p>Feature cards have a subtle gradient background and colored top border to draw attention to
+                        important content.</p>
+                </div>
+            </div>
+
+            <div class="card card--sage">
+                <div class="card__header">
+                    <h3 class="card__title">Sage Card</h3>
+                    <p class="card__subtitle">Natural theme variant</p>
+                </div>
+                <div class="card__body">
+                    <p>Themed cards use our color palette to create visual variety while maintaining the calm
+                        aesthetic.</p>
+                </div>
+            </div>
+
+            <div class="card card--stat">
+                <h2 class="card__stat-value">2.4k</h2>
+                <p class="card__stat-label">Active Users</p>
+            </div>
+
+            <div class="card card--stat">
+                <h2 class="card__stat-value">98%</h2>
+                <p class="card__stat-label">Satisfaction</p>
+            </div>
+
+            <div class="card card--stat">
+                <h2 class="card__stat-value">24/7</h2>
+                <p class="card__stat-label">Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Components -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Navigation Systems</h2>
+        <p class="showcase-subtitle">Revolutionary navigation with glass morphism and fluid interactions</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Glass Morphism Navigation</h3>
+            <div class="glass-nav">
+                <a href="#" class="brand-logo">Mamori</a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link nav-link--active">Components</a>
+                    <a href="#" class="nav-link">Design</a>
+                    <a href="#" class="nav-link">Resources</a>
+                </div>
+                <div class="nav-links">
+                    <button class="btn btn--ghost">GitHub</button>
+                    <button class="btn btn--primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Tab Navigation</h3>
+            <div class="tab-nav">
+                <button class="tab-button tab-button--active">Overview</button>
+                <button class="tab-button">Analytics</button>
+                <button class="tab-button">Settings</button>
+                <button class="tab-button">Team</button>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Breadcrumb Navigation</h3>
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">→</span>
+                <a href="#" class="breadcrumb-link">Design System</a>
+                <span class="breadcrumb-separator">→</span>
+                <span class="breadcrumb-current">Components</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Panel Components -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Advanced Panel Systems</h2>
+        <p class="showcase-subtitle">Revolutionary content panels with glass morphism and immersive layouts</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Hero Information Panel</h3>
+            <div class="hero-info-panel">
+                <!-- Real Background Image -->
+                <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop"
+                    alt="Nordic fjord landscape at sunset" class="hero-info-panel__image">
+
+                <!-- Gradient Overlay -->
+                <div class="hero-info-panel__overlay"></div>
+
+                <!-- Content -->
+                <div class="hero-info-panel__content">
+                    <div class="hero-info-panel__tag">Design Philosophy</div>
+
+                    <p class="hero-info-panel__text">Revolutionary interface design is about creating digital
+                        experiences that feel alive. By
+                        understanding human perception and natural interaction patterns, we craft interfaces that
+                        don't just look beautiful—they feel intuitive, responsive, and emotionally resonant. Every
+                        pixel serves a purpose in creating seamless human-computer harmony.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Product Feature Panel</h3>
+            <div class="panel-feature">
+                <!-- Image Side -->
+                <div class="panel-feature__image">
+                    <!-- Real Product Image -->
+                    <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop"
+                        alt="Modern workspace with laptop and design tools">
+
+                    <!-- Gradient Overlay -->
+                    <div class="panel-feature__overlay"></div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="panel-feature__content">
+                    <div class="tag tag--green">Get
+                        Mamori Components Now</div>
+
+                    <h3 class="panel-title panel-title--medium">Revolutionary design system for the next
+                        generation of interfaces</h3>
+
+                    <p class="panel-text">At Mamori, we provide premium components and design tokens to help you
+                        create world-class
+                        interfaces with glass morphism, advanced animations, and accessibility-first design.</p>
+
+                    <button class="btn btn--fjord">Explore Components</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Article Preview Panel</h3>
+            <div class="panel-info">
+                <!-- Hero Image -->
+                <div class="panel-info__image">
+                    <!-- Real Forest Image -->
+                    <img src="https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop"
+                        alt="Sunlight streaming through forest trees">
+
+                    <!-- Gradient Overlay -->
+                    <div class="panel-info__overlay"></div>
+
+                    <!-- Overlay Content -->
+                    <div class="panel-info__content">
+                        <div class="tag">Mamori Insights</div>
+                        <h3 class="panel-title panel-title--white">The Future of Glass Morphism: Beyond Visual
+                            Effects</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="panel-info__body">
+                <div class="panel-subtitle">March 15, 2024</div>
+
+                <p class="panel-text">Glass morphism represents more than a visual trend—it's a fundamental shift
+                    toward interfaces
+                    that feel tangible and alive. By combining advanced backdrop filters with sophisticated
+                    depth systems, we create digital experiences that bridge the gap between physical and
+                    virtual interaction.</p>
+
+                <a href="#" class="read-more-link">
+                    Continue Reading →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Image Panels -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Lifestyle Image Panels</h2>
+        <p class="showcase-subtitle">Immersive content experiences with premium image treatments</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Landscape Hero Panel</h3>
+            <div class="panel-hero">
+                <!-- Real Nordic Landscape Image -->
+                <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+                    alt="Dramatic Nordic mountain landscape with aurora" class="panel-image">
+
+                <!-- Gradient Overlay -->
+                <div class="panel-overlay"></div>
+
+                <!-- Content Overlay -->
+                <div class="panel-content">
+                    <div class="hero-panel__tag">Nordic Inspiration</div>
+
+                    <h3 class="hero-panel__title">Designing with Nature's Wisdom</h3>
+
+                    <p class="hero-panel__text">From the serene fjords to the dancing aurora, Nordic landscapes teach us
+                        about balance,
+                        simplicity, and the profound beauty found in restraint.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Portrait Feature Panel</h3>
+            <div class="panel-feature">
+                <!-- Portrait Image Area -->
+                <div class="panel-feature__image">
+                    <!-- Real Portrait Image -->
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop"
+                        alt="Professional designer working on interface design">
+
+                    <!-- Gradient Overlay -->
+                    <div class="panel-feature__overlay"></div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="panel-feature__content">
+                    <div class="tag tag--blue">Design Leadership</div>
+
+                    <h3 class="panel-title">Human-Centered Design Philosophy</h3>
+
+                    <p class="panel-text">Great design starts with understanding people. Our approach combines deep user
+                        research with
+                        intuitive interface patterns to create experiences that feel natural and effortless.</p>
+
+                    <div class="button-group">
+                        <button class="btn btn--primary">Learn More</button>
+                        <button class="btn btn--ghost">Case Studies</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Content Panels -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Video Content Integration</h2>
+        <p class="showcase-subtitle">Immersive video experiences with advanced glass morphism treatments</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Hero Video Panel</h3>
+            <div class="hero-panel">
+                <!-- Background Video -->
+                <video autoplay muted loop playsinline class="hero-panel__image">
+                    <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
+                        type="video/mp4">
+                    <!-- Fallback image -->
+                    <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+                        alt="Nordic landscape">
+                </video>
+
+                <!-- Video Overlay -->
+                <div class="hero-panel__overlay"></div>
+
+                <!-- Content -->
+                <div class="hero-panel__content">
+                    <div class="hero-panel__tag">Video Experience</div>
+                    <h3 class="hero-panel__title">Immersive Video Integration</h3>
+                    <p class="hero-panel__text">Revolutionary video experiences with glass morphism treatments that
+                        create depth and engagement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Aspect Ratio Variations</h3>
+            <div class="aspect-ratio-grid">
+                <!-- Square Format -->
+                <div class="aspect-card">
+                    <div class="aspect-demo aspect-demo--square">
+                        <div class="aspect-demo__icon aspect-demo__icon--square">1:1</div>
+                    </div>
+                    <div class="aspect-card__content">
+                        <h4 class="aspect-card__title">Square Format</h4>
+                        <p class="aspect-card__description">Perfect for avatars, icons, and social media content</p>
+                    </div>
+                </div>
+
+                <!-- Landscape Format -->
+                <div class="aspect-card">
+                    <div class="aspect-demo aspect-demo--landscape">
+                        <div class="aspect-demo__icon aspect-demo__icon--landscape">16:9</div>
+                    </div>
+                    <div class="aspect-card__content">
+                        <h4 class="aspect-card__title">Landscape Format</h4>
+                        <p class="aspect-card__description">Ideal for hero images, banners, and video content</p>
+                    </div>
+                </div>
+
+                <!-- Portrait Format -->
+                <div class="aspect-card">
+                    <div class="aspect-demo aspect-demo--portrait">
+                        <div class="aspect-demo__icon aspect-demo__icon--portrait">3:4</div>
+                    </div>
+                    <div class="aspect-card__content">
+                        <h4 class="aspect-card__title">Portrait Format</h4>
+                        <p class="aspect-card__description">Great for mobile content and vertical layouts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Image Size Treatments</h3>
+            <div class="image-treatments">
+
+                <!-- Large Hero Image -->
+                <div>
+                    <h4 class="image-treatment__title">Large Hero (Full Width)</h4>
+                    <div class="large-hero-demo">
+                        <div class="large-hero-demo__content">
+                            Large Hero Image<br>
+                            <span class="large-hero-demo__subtitle">Perfect for landing pages and feature content</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Images Grid -->
+                <div>
+                    <h4 class="image-treatment__title">Medium Images (Grid Layout)</h4>
+                    <div class="medium-grid">
+                        <div class="medium-demo medium-demo--green">
+                            <div>Medium<br>Image</div>
+                        </div>
+                        <div class="medium-demo medium-demo--blue">
+                            <div>Medium<br>Image</div>
+                        </div>
+                        <div class="medium-demo medium-demo--amber">
+                            <div>Medium<br>Image</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Thumbnails -->
+                <div>
+                    <h4 class="image-treatment__title">Small Thumbnails</h4>
+                    <div class="thumbnail-grid">
+                        <div class="thumbnail thumbnail--80">80px</div>
+                        <div class="thumbnail thumbnail--60">60px</div>
+                        <div class="thumbnail thumbnail--40">40px</div>
+                        <div class="thumbnail thumbnail--32">32px</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Content Integration -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Video Content Integration</h2>
+        <p class="showcase-subtitle">Immersive video experiences with revolutionary glass morphism treatments</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Interactive Video Grid</h3>
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-card__placeholder">
+                        <!-- Video placeholder with play button -->
+                        <div class="video-card__bg video-card__bg--green">
+                            <div class="play-button play-button--green">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card__content">
+                        <h4 class="video-card__title">Design Process</h4>
+                        <p class="video-card__description">Watch how our design system comes to life through iterative
+                            prototyping and user testing</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <div class="video-card__placeholder">
+                        <div class="video-card__bg video-card__bg--blue">
+                            <div class="play-button play-button--blue">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card__content">
+                        <h4 class="video-card__title">Nordic Inspiration</h4>
+                        <p class="video-card__description">Drawing design principles from the natural beauty and
+                            minimalism of Scandinavian landscapes</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <div class="video-card__placeholder">
+                        <div class="video-card__bg video-card__bg--amber">
+                            <div class="play-button play-button--amber">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card__content">
+                        <h4 class="video-card__title">Team Collaboration</h4>
+                        <p class="video-card__description">How our design system enables seamless collaboration across
+                            design and development teams</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Typography</h2>
+        <p class="showcase-subtitle">Fluid typography scales with mathematical precision</p>
+
+        <div class="component-group">
+            <div class="typography-example">
+                <h1 class="display-1">Display 1</h1>
+                <p class="typography-meta">4.5rem, Light (300)</p>
+            </div>
+
+            <div class="typography-example">
+                <h1 class="heading-1">Heading 1</h1>
+                <p class="typography-meta">3rem, Semibold (600)</p>
+            </div>
+
+            <div class="typography-example">
+                <h2 class="text-h2">Heading 2</h2>
+                <p class="typography-meta">2.25rem, Semibold (600)</p>
+            </div>
+
+            <div class="typography-example">
+                <h3 class="text-h3">Heading 3</h3>
+                <p class="typography-meta">1.875rem, Semibold (600)</p>
+            </div>
+
+            <div class="typography-example">
+                <p class="text-body-large">Body Large - Perfect for introductory paragraphs and important content that
+                    needs more presence.</p>
+                <p class="typography-meta">1.125rem, Regular (400)</p>
+            </div>
+
+            <div class="typography-example">
+                <p class="text-body">Body Text - The standard text size for most content. Optimized for readability and
+                    comfortable reading experience.</p>
+                <p class="typography-meta">1rem, Regular (400)</p>
+            </div>
+
+            <div class="typography-example">
+                <p class="text-body-small">Body Small - Used for secondary information, captions, and supporting text.
+                </p>
+                <p class="typography-meta">0.875rem, Regular (400)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Illustrations & Icons -->
+    <section class="showcase-section">
+        <h2 class="showcase-title">Illustrations & Icons</h2>
+        <p class="showcase-subtitle">Visual elements that enhance storytelling and user guidance</p>
+
+        <div class="component-group">
+            <h3 class="component-title">Icon System</h3>
+            <div class="icon-showcase">
+                <div class="icon-group">
+                    <div class="icon-demo icon-demo--primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <circle cx="12" cy="12" r="9"></circle>
+                        </svg>
+                    </div>
+                    <span class="icon-label">Success</span>
+                </div>
+
+                <div class="icon-group">
+                    <div class="icon-demo icon-demo--fjord">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="icon-label">Favorite</span>
+                </div>
+
+                <div class="icon-group">
+                    <div class="icon-demo icon-demo--glacier">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="icon-label">Message</span>
+                </div>
+
+                <div class="icon-group">
+                    <div class="icon-demo icon-demo--birch">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="icon-label">Heart</span>
+                </div>
+
+                <div class="icon-group">
+                    <div class="icon-demo icon-demo--primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                        </svg>
+                    </div>
+                    <span class="icon-label">Close</span>
+                </div>
+
+                <div class="icon-group">
+                    <div class="icon-demo icon-demo--fjord">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14"></path>
+                            <path d="M5 12h14"></path>
+                        </svg>
+                    </div>
+                    <span class="icon-label">Add</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Icon Sizes</h3>
+            <div class="icon-sizes">
+                <div class="icon-size-demo">
+                    <div class="icon-demo icon-demo--small icon-demo--glacier">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                        </svg>
+                    </div>
+                    <span class="icon-size-label">Small (16px)</span>
+                </div>
+
+                <div class="icon-size-demo">
+                    <div class="icon-demo icon-demo--medium icon-demo--primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                        </svg>
+                    </div>
+                    <span class="icon-size-label">Medium (24px)</span>
+                </div>
+
+                <div class="icon-size-demo">
+                    <div class="icon-demo icon-demo--large icon-demo--fjord">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                        </svg>
+                    </div>
+                    <span class="icon-size-label">Large (32px)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Illustration Styles</h3>
+            <div class="illustration-showcase">
+                <div class="illustration-card">
+                    <div class="illustration-demo illustration-demo--abstract">
+                        <div class="abstract-shape abstract-shape--1"></div>
+                        <div class="abstract-shape abstract-shape--2"></div>
+                        <div class="abstract-shape abstract-shape--3"></div>
+                    </div>
+                    <div class="illustration-content">
+                        <h4 class="illustration-title">Abstract Shapes</h4>
+                        <p class="illustration-description">Geometric forms inspired by Nordic landscapes</p>
+                    </div>
+                </div>
+
+                <div class="illustration-card">
+                    <div class="illustration-demo illustration-demo--nature">
+                        <div class="nature-element nature-element--mountain"></div>
+                        <div class="nature-element nature-element--tree"></div>
+                        <div class="nature-element nature-element--sun"></div>
+                    </div>
+                    <div class="illustration-content">
+                        <h4 class="illustration-title">Nature Elements</h4>
+                        <p class="illustration-description">Simplified natural forms with clean lines</p>
+                    </div>
+                </div>
+
+                <div class="illustration-card">
+                    <div class="illustration-demo illustration-demo--tech">
+                        <div class="tech-element tech-element--grid"></div>
+                        <div class="tech-element tech-element--nodes"></div>
+                        <div class="tech-element tech-element--connections"></div>
+                    </div>
+                    <div class="illustration-content">
+                        <h4 class="illustration-title">Tech Patterns</h4>
+                        <p class="illustration-description">Digital connectivity and data visualization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-group">
+            <h3 class="component-title">Interactive Elements</h3>
+            <div class="interactive-showcase">
+                <div class="interactive-demo">
+                    <div class="floating-icon floating-icon--1">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                    </div>
+                    <div class="floating-icon floating-icon--2">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10,8 16,12 10,16 10,8"></polygon>
+                        </svg>
+                    </div>
+                    <div class="floating-icon floating-icon--3">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="interactive-center">
+                        <h4 class="interactive-title">Hover to Interact</h4>
+                        <p class="interactive-subtitle">Icons respond to user interaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-background">
+            <!-- Floating O-Mamori Elements -->
+            <div class="omamori omamori--1">
+                <div class="omamori-charm">守</div>
+            </div>
+            <div class="omamori omamori--2">
+                <div class="omamori-charm">護</div>
+            </div>
+            <div class="omamori omamori--3">
+                <div class="omamori-charm">安</div>
+            </div>
+            <div class="omamori omamori--4">
+                <div class="omamori-charm">福</div>
+            </div>
+            
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <div class="footer-blessing">
+                    <div class="cultural-fusion">
+                        <div class="japanese-symbol">お守り</div>
+                        <div class="scandinavian-symbols">
+                            <span class="nordic-rune">ᚦ</span>
+                            <span class="nordic-rune">ᚱ</span>
+                            <span class="nordic-rune">ᚢ</span>
+                        </div>
+                    </div>
+                    <h2 class="footer-title">Protected by Nordic Design</h2>
+                    <p class="footer-philosophy">
+                        From Denmark to Kyoto, from Swedish forests to Japanese temples—this design system carries 
+                        the protective spirit of o-mamori, blessed with Scandinavian lagom and the precision of Nordic craftsmanship.
+                    </p>
+                    <p class="footer-origin">
+                        <strong>Founded by Nordic souls</strong> who discovered that Japanese spiritual protection 
+                        and Scandinavian design philosophy share the same sacred principle: <em>less, but better</em>.
+                    </p>
+                </div>
+                
+                <div class="footer-grid">
+                    <div class="footer-column footer-column--volvo">
+                        <div class="column-icon">🛡️</div>
+                        <h4 class="footer-column-title">Volvo Precision</h4>
+                        <p class="footer-column-text">
+                            <span class="japanese-inline">守る</span> (mamoru) - Swedish engineering precision meets Japanese protection philosophy. 
+                            Every interaction designed for safety and reliability.
+                        </p>
+                        <small class="heritage-note">Göteborg → Copenhagen → London</small>
+                    </div>
+                    <div class="footer-column footer-column--apple">
+                        <div class="column-icon">🍎</div>
+                        <h4 class="footer-column-title">Apple Elegance</h4>
+                        <p class="footer-column-text">
+                            Obsessive attention to detail meets intuitive simplicity. Every pixel intentional, 
+                            every interaction delightful—design that feels like magic but works like clockwork.
+                        </p>
+                        <small class="heritage-note">Cupertino → Copenhagen → London</small>
+                    </div>
+                    <div class="footer-column footer-column--lagom">
+                        <div class="column-icon">⚖️</div>
+                        <h4 class="footer-column-title">Lagom Balance</h4>
+                        <p class="footer-column-text">
+                            Not too little, not too much—just right. Swedish lagom meets Japanese wabi-sabi 
+                            in perfectly balanced digital experiences.
+                        </p>
+                        <small class="heritage-note">Stockholm → Odense → Manchester</small>
+                    </div>
+                </div>
+                
+                <div class="founder-story">
+                    <div class="story-flags">
+                        <span class="flag-emoji">🇩🇰</span>
+                        <span class="cultural-bridge">×</span>
+                        <span class="flag-emoji">🇬🇧</span>
+                        <span class="cultural-bridge">×</span>
+                        <span class="flag-emoji">🇯🇵</span>
+                        <span class="cultural-bridge">×</span>
+                        <span class="flag-emoji">🇸🇪</span>
+                    </div>
+                    <p class="founder-philosophy">
+                        "We found our design compass in a Kyoto temple, holding an o-mamori blessed for travelers. 
+                        Like Volvo protects bodies and Apple elevates experiences, Mamori protects digital souls 
+                        with the quiet strength of Nordic minimalism."
+                    </p>
+                    <div class="founder-signature">
+                        <span class="founder-names">— The Danish-British Founders</span>
+                        <span class="company-heart">Mamori ❤️</span>
+                    </div>
+                </div>
+                
+                <div class="footer-blessing-final">
+                    <div class="blessing-line blessing-line--nordic"></div>
+                    <p class="blessing-text">
+                        May your designs bring <em>ro</em> (calm), <em>glæde</em> (joy), and protection 
+                        to all who encounter them
+                    </p>
+                    <div class="blessing-line blessing-line--nordic"></div>
+                </div>
+                
+                <div class="footer-signature">
+                    <p class="footer-credit">Mamori Design System</p>
+                    <p class="footer-year">2024 • Born in Nordic hearts, blessed in Kyoto temples, crafted with love across borders</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- GSAP Hero Transformation Script -->
+    <script>
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Revolutionary GSAP Hero Transformation Timeline
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroMain = document.querySelector('.hero-main');
+            const heroPanel = document.querySelector('.hero-background-panel');
+            const heroVideo = document.querySelector('.hero-bg-video');
+            const heroOverlay = document.querySelector('.hero-overlay');
+            const heroContent = document.querySelector('.hero-content');
+            const heroFeatureGrid = document.querySelector('.hero-feature-grid');
+
+            // Responsive values
+            const isMobile = window.innerWidth <= 768;
+            const isTablet = window.innerWidth <= 1024;
+
+            const finalWidth = isMobile ? 'calc(100vw - 1rem)' : isTablet ? 'calc(100vw - 2rem)' : 'calc(100vw - 4rem)';
+            const finalHeight = isMobile ? '45vh' : isTablet ? '50vh' : '60vh';
+            const finalTop = isMobile ? '0.5rem' : isTablet ? '1rem' : '2rem';
+            const finalLeft = isMobile ? '0.5rem' : isTablet ? '1rem' : '2rem';
+            const borderRadius = isMobile ? '16px' : '24px';
+
+            // Set up hero main with less height for tighter spacing
+            gsap.set(heroMain, {
+                height: '150vh' // Reduced from 200vh to 150vh
+            });
+
+            // Position feature grid initially below viewport
+            gsap.set(heroFeatureGrid, {
+                position: 'absolute',
+                top: '100vh',
+                left: '0',
+                right: '0',
+                zIndex: 5
+            });
+
+            // Main transformation timeline - video shrinks and centers
+            const mainTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroMain,
+                    start: 'top top',
+                    end: '50% top',
+                    scrub: 1.5,
+                    pin: true,
+                    anticipatePin: 1,
+                    pinSpacing: false, // This prevents the extra spacing/gap
+                    ease: 'power2.out',
+                    onUpdate: (self) => {
+                        // Add rounded corners as video shrinks
+                        const progress = self.progress;
+                        const currentRadius = progress * parseInt(borderRadius);
+                        gsap.set([heroVideo, heroOverlay], {
+                            borderRadius: `${currentRadius}px`
+                        });
+                    }
+                }
+            });
+
+            // Transform hero panel from full screen to centered
+            mainTl.to(heroPanel, {
+                width: finalWidth,
+                height: finalHeight,
+                top: finalTop,
+                left: finalLeft,
+                borderRadius: borderRadius,
+                position: 'absolute',
+                boxShadow: '0 32px 64px rgba(15, 23, 42, 0.2), 0 16px 32px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                zIndex: 10,
+                ease: 'power2.out'
+            }, 0)
+            
+            // Keep hero content centered and same size during transformation
+            .to(heroContent, {
+                // Content stays centered and doesn't scale much
+                transform: 'translate(-50%, -50%) scale(0.9)',
+                ease: 'power2.out'
+            }, 0)
+            
+            // Scale down buttons slightly
+            .to('.hero-buttons .btn', {
+                padding: '1rem 2rem',
+                fontSize: '0.9rem',
+                ease: 'power2.out'
+            }, 0);
+
+            // Keep panels close to hero but with enough clearance
+            const panelGap = isMobile ? '4rem' : '3rem';
+            const finalGap = isMobile ? '3rem' : '2rem';
+
+            // Start moving feature panels up as soon as hero starts shrinking
+            mainTl.to(heroFeatureGrid, {
+                // Move panels up simultaneously with hero transformation - stay close to hero
+                top: `calc(${finalHeight} + ${panelGap})`,
+                ease: 'power2.out'
+            }, 0); // Start at the same time as hero transformation
+
+            // Second timeline - when video reaches final size, everything scrolls together
+            const scrollTogetherTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroMain,
+                    start: '50% top',
+                    end: '100% top',
+                    scrub: 1,
+                    ease: 'power2.out'
+                }
+            });
+
+            // Set final position with minimal gap but no overlap
+            scrollTogetherTl.to(heroFeatureGrid, {
+                top: `calc(${finalHeight} + ${finalGap})`,
+                ease: 'power2.out'
+            }, 0);
+
+            // Normal scroll behavior after hero transformation
+            ScrollTrigger.create({
+                trigger: heroMain,
+                start: '100% top',
+                end: 'bottom bottom',
+                onEnter: () => {
+                    // Enable normal scrolling for rest of page
+                    gsap.set(heroPanel, { 
+                        position: 'absolute',
+                        top: finalTop,
+                        left: finalLeft
+                    });
+                },
+                onLeaveBack: () => {
+                    // Re-pin when scrolling back up
+                    gsap.set(heroPanel, { 
+                        position: 'fixed',
+                        top: finalTop,
+                        left: finalLeft
+                    });
+                }
+            });
+
+            // Smooth reveal animations for sections
+            gsap.utils.toArray('.showcase-section').forEach(section => {
+                gsap.fromTo(section,
+                    {
+                        opacity: 0,
+                        y: 40
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 80%',
+                            end: 'top 50%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+
+            // Magnetic button effects
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    gsap.to(button, {
+                        scale: 1.05,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    gsap.to(button, {
+                        scale: 1,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Color box hover effects
+            document.querySelectorAll('.color-box').forEach(box => {
+                box.addEventListener('mouseenter', () => {
+                    gsap.to(box, {
+                        y: -8,
+                        scale: 1.05,
+                        rotationY: 5,
+                        boxShadow: '0 32px 64px -12px rgba(15, 23, 42, 0.2), 0 12px 24px -12px rgba(15, 23, 42, 0.15)',
+                        duration: 0.4,
+                        ease: 'power2.out'
+                    });
+                });
+
+                box.addEventListener('mouseleave', () => {
+                    gsap.to(box, {
+                        y: 0,
+                        scale: 1,
+                        rotationY: 0,
+                        boxShadow: '0 8px 16px -4px rgba(15, 23, 42, 0.1), 0 4px 8px -4px rgba(15, 23, 42, 0.06)',
+                        duration: 0.4,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- Performance optimizations -->
+    <script>
+        // Preload critical resources
+        const preloadLinks = [
+            'https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@200;300;400;500;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600&display=swap'
+        ];
+
+        preloadLinks.forEach(href => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'style';
+            link.href = href;
+            document.head.appendChild(link);
+        });
+
+        // Optimize animations for performance
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            gsap.set('*', { animation: 'none' });
+        }
+    </script>
+</body>
+
+</html>
+<!-- Revolutionary Interactive Elements -->
+<script>
+    // Hero transformation on scroll
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroMain = document.querySelector('.hero-main');
+        const heroPanel = document.querySelector('.hero-background-panel');
+        const transformThreshold = window.innerHeight * 0.3; // Start transformation at 30% scroll
+
+        if (scrolled > transformThreshold) {
+            heroPanel.classList.add('transformed');
+            heroMain.classList.add('scrolled');
+        } else {
+            heroPanel.classList.remove('transformed');
+            heroMain.classList.remove('scrolled');
+        }
+
+        // Parallax scrolling effect for other elements
+        const parallax = document.querySelector('.hero::before');
+        if (parallax) {
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // Magnetic button effect (only for main action buttons, not navigation)
+    document.querySelectorAll('.btn:not([onmouseover])').forEach(button => {
+        // Skip buttons that have inline hover events
+        if (button.hasAttribute('onmouseover')) return;
+
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0px, 0px) scale(1)';
+        });
+    });
+
+    // Color box hover effects
+    document.querySelectorAll('.color-box').forEach(box => {
+        box.addEventListener('mouseenter', () => {
+            box.style.transform = 'translateY(-8px) scale(1.05) rotateY(5deg)';
+            box.style.boxShadow = '0 32px 64px -12px rgba(15, 23, 42, 0.2), 0 12px 24px -12px rgba(15, 23, 42, 0.15)';
+        });
+
+        box.addEventListener('mouseleave', () => {
+            box.style.transform = 'translateY(0px) scale(1) rotateY(0deg)';
+            box.style.boxShadow = '0 8px 16px -4px rgba(15, 23, 42, 0.1), 0 4px 8px -4px rgba(15, 23, 42, 0.06)';
+        });
+    });
+
+    // Smooth reveal animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0px)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all showcase sections
+    document.querySelectorAll('.showcase-section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(40px)';
+        section.style.transition = 'all 750ms cubic-bezier(0.23, 1, 0.32, 1)';
+        observer.observe(section);
+    });
+
+    // Breathing animation for hero background
+    const heroBackground = document.querySelector('.hero::before');
+    if (heroBackground) {
+        let breatheScale = 1;
+        let breatheDirection = 1;
+
+        setInterval(() => {
+            breatheScale += breatheDirection * 0.002;
+            if (breatheScale >= 1.05) breatheDirection = -1;
+            if (breatheScale <= 0.95) breatheDirection = 1;
+
+            heroBackground.style.transform = `scale(${breatheScale}) rotate(${Date.now() * 0.01}deg)`;
+        }, 50);
+    }
+</script>
+
+<!-- Performance optimizations -->
+<script>
+    // Preload critical resources
+    const preloadLinks = [
+        'https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@200;300;400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600&display=swap'
+    ];
+
+    preloadLinks.forEach(href => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'style';
+        link.href = href;
+        document.head.appendChild(link);
+    });
+
+    // Optimize animations for performance
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.style.setProperty('--animation-duration', '0ms');
+    }
+</script>

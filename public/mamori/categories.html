@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Categories - Mamori</title>
+    
+    <!-- Design System Styles -->
+    <link rel="stylesheet" href="css/mamori.css">
+    <link rel="stylesheet" href="layout/grid.css">
+    <link rel="stylesheet" href="components/buttons.css">
+    <link rel="stylesheet" href="components/inputs.css">
+    <link rel="stylesheet" href="components/cards.css">
+    <link rel="stylesheet" href="components/navigation.css">
+    
+    <!-- MVP Specific Styles -->
+    <link rel="stylesheet" href="css/mvp.css">
+    
+    <!-- Lucid Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+</head>
+
+<body>
+    
+    <!-- Header Include -->
+    <div data-include="header"></div>
+
+    <!-- Categories Hero -->
+    <section class="categories-hero">
+        <div class="container">
+            <div class="categories-hero-content">
+                <h1 class="categories-hero-title">Explore Health Categories</h1>
+                <p class="categories-hero-subtitle">
+                    Evidence-based insights across supplements, devices, and diagnostics. 
+                    Each category ranked by scientific rigor, not marketing spend.
+                </p>
+                
+                <div class="categories-filter">
+                    <button class="filter-btn filter-btn--active" data-filter="all">All Categories</button>
+                    <button class="filter-btn" data-filter="supplements">Supplements</button>
+                    <button class="filter-btn" data-filter="devices">Devices</button>
+                    <button class="filter-btn" data-filter="diagnostics">Diagnostics</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Categories -->
+    <section class="categories-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Available Now</h2>
+                <p class="section-subtitle">Click any category to explore evidence-backed products</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Creatine -->
+                <article class="category-card category-card--live" data-category="supplements" onclick="location.href='topics/creatine.html'">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Person doing strength training with weights" class="category-img">
+                        <div class="category-overlay"></div>
+                        <div class="evidence-badge evidence-badge--a">A</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Creatine</h3>
+                            <div class="category-type">Supplements</div>
+                        </div>
+                        <p class="category-description">
+                            Proven performance enhancement for strength training and muscle recovery. 
+                            Strong evidence base for athletic performance.
+                        </p>
+                        <div class="category-stats">
+                            <div class="category-stat">
+                                <i data-lucide="package"></i>
+                                <span>24 products</span>
+                            </div>
+                            <div class="category-stat">
+                                <i data-lucide="star"></i>
+                                <span>4.6 avg rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Magnesium -->
+                <article class="category-card category-card--live" data-category="supplements" onclick="location.href='topics/magnesium.html'">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Person sleeping peacefully in bed" class="category-img">
+                        <div class="category-overlay"></div>
+                        <div class="evidence-badge evidence-badge--b">B</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Magnesium</h3>
+                            <div class="category-type">Supplements</div>
+                        </div>
+                        <p class="category-description">
+                            Sleep support and muscle recovery with solid research backing. 
+                            Multiple forms available for different needs.
+                        </p>
+                        <div class="category-stats">
+                            <div class="category-stat">
+                                <i data-lucide="package"></i>
+                                <span>18 products</span>
+                            </div>
+                            <div class="category-stat">
+                                <i data-lucide="star"></i>
+                                <span>4.3 avg rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sleep Tools -->
+                <article class="category-card category-card--live" data-category="devices" onclick="location.href='topics/sleep-tools.html'">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Smart sleep tracking device on bedside table" class="category-img">
+                        <div class="category-overlay"></div>
+                        <div class="evidence-badge evidence-badge--b">B</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Sleep Tools</h3>
+                            <div class="category-type">Devices</div>
+                        </div>
+                        <p class="category-description">
+                            Devices and aids for better sleep quality and tracking. 
+                            From smart rings to sleep masks.
+                        </p>
+                        <div class="category-stats">
+                            <div class="category-stat">
+                                <i data-lucide="package"></i>
+                                <span>12 products</span>
+                            </div>
+                            <div class="category-stat">
+                                <i data-lucide="star"></i>
+                                <span>4.1 avg rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Menopause -->
+                <article class="category-card category-card--live" data-category="supplements" onclick="location.href='topics/menopause.html'">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Confident mature woman in natural setting" class="category-img">
+                        <div class="category-overlay"></div>
+                        <div class="evidence-badge evidence-badge--c">C</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Menopause</h3>
+                            <div class="category-type">Supplements</div>
+                        </div>
+                        <p class="category-description">
+                            Evidence-based support for menopause symptoms and wellness. 
+                            Hormone support and symptom management.
+                        </p>
+                        <div class="category-stats">
+                            <div class="category-stat">
+                                <i data-lucide="package"></i>
+                                <span>16 products</span>
+                            </div>
+                            <div class="category-stat">
+                                <i data-lucide="star"></i>
+                                <span>4.0 avg rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Categories -->
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Coming Soon</h2>
+                <p class="section-subtitle">Join the waitlist to be notified when these categories launch</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Omega-3 -->
+                <article class="category-card category-card--coming-soon" data-category="supplements">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Fresh fish and omega-3 sources" class="category-img">
+                        <div class="category-overlay category-overlay--disabled"></div>
+                        <div class="coming-soon-badge">Soon</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Omega-3</h3>
+                            <div class="category-type">Supplements</div>
+                        </div>
+                        <p class="category-description">
+                            Heart health and brain function support. 
+                            Comparing different sources and forms.
+                        </p>
+                        <button class="btn btn--ghost btn--small waitlist-btn">
+                            <i data-lucide="bell"></i>
+                            Join Waitlist
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blood Pressure Monitors -->
+                <article class="category-card category-card--coming-soon" data-category="devices">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Digital blood pressure monitor" class="category-img">
+                        <div class="category-overlay category-overlay--disabled"></div>
+                        <div class="coming-soon-badge">Soon</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Blood Pressure Monitors</h3>
+                            <div class="category-type">Devices</div>
+                        </div>
+                        <p class="category-description">
+                            Home monitoring devices for cardiovascular health. 
+                            Accuracy ratings and ease of use.
+                        </p>
+                        <button class="btn btn--ghost btn--small waitlist-btn">
+                            <i data-lucide="bell"></i>
+                            Join Waitlist
+                        </button>
+                    </div>
+                </article>
+
+                <!-- At-Home Tests -->
+                <article class="category-card category-card--coming-soon" data-category="diagnostics">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Home health testing kit" class="category-img">
+                        <div class="category-overlay category-overlay--disabled"></div>
+                        <div class="coming-soon-badge">Soon</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">At-Home Tests</h3>
+                            <div class="category-type">Diagnostics</div>
+                        </div>
+                        <p class="category-description">
+                            Basic diagnostic kits for home use. 
+                            Accuracy and clinical validity ratings.
+                        </p>
+                        <button class="btn btn--ghost btn--small waitlist-btn">
+                            <i data-lucide="bell"></i>
+                            Join Waitlist
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Vitamin D -->
+                <article class="category-card category-card--coming-soon" data-category="supplements">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                             alt="Person in sunlight, vitamin D natural source" class="category-img">
+                        <div class="category-overlay category-overlay--disabled"></div>
+                        <div class="coming-soon-badge">Soon</div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 class="category-title">Vitamin D</h3>
+                            <div class="category-type">Supplements</div>
+                        </div>
+                        <p class="category-description">
+                            Immune support and bone health. 
+                            D2 vs D3 forms and optimal dosing.
+                        </p>
+                        <button class="btn btn--ghost btn--small waitlist-btn">
+                            <i data-lucide="bell"></i>
+                            Join Waitlist
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2 class="newsletter-title">Stay Updated</h2>
+                    <p class="newsletter-subtitle">
+                        Get notified when new categories launch and when we update 
+                        evidence ratings based on latest research.
+                    </p>
+                </div>
+                <div class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button class="btn btn--primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Include -->
+    <div data-include="footer"></div>
+
+    <!-- Scripts Include -->
+    <div data-include="scripts"></div>
+    
+    <!-- Simple Includes -->
+    <script src="js/simple-includes.js"></script>
+    
+    <!-- Page-specific Scripts -->
+    <script>
+        // Category filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categoryCards = document.querySelectorAll('.category-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('filter-btn--active'));
+                    // Add active class to clicked button
+                    btn.classList.add('filter-btn--active');
+                    
+                    const filter = btn.dataset.filter;
+                    
+                    categoryCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            if (typeof gsap !== 'undefined') {
+                                gsap.fromTo(card, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3 });
+                            }
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Waitlist button functionality
+            const waitlistBtns = document.querySelectorAll('.waitlist-btn');
+            
+            waitlistBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i data-lucide="check"></i> Added to Waitlist';
+                    btn.disabled = true;
+                    btn.classList.add('btn--success');
+                    
+                    // Re-initialize icons after content change
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        btn.classList.remove('btn--success');
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    }, 2000);
+                });
+            });
+            
+            // GSAP Animations
+            if (typeof gsap !== 'undefined') {
+                // Hero animations
+                gsap.fromTo('.categories-hero-content > *', {
+                    opacity: 0,
+                    y: 30
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: 'power2.out',
+                    delay: 0.3
+                });
+                
+                // Category cards animation
+                gsap.fromTo('.category-card', {
+                    opacity: 0,
+                    y: 40
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.categories-grid',
+                        start: 'top 80%'
+                    }
+                });
+                
+                // Coming soon cards animation
+                gsap.fromTo('.coming-soon-section .category-card', {
+                    opacity: 0,
+                    scale: 0.9
+                }, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.coming-soon-section .categories-grid',
+                        start: 'top 80%'
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

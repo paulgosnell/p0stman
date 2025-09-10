@@ -223,3 +223,11 @@
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.15);
 }
+
+/* Success state button */
+.btn--success {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
