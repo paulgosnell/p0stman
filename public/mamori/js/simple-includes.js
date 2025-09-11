@@ -2,6 +2,24 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const includes = document.querySelectorAll('[data-include]');
     
+    // Determine base URL for links and includes
+    const computeMamoriBase = () => {
+        const path = window.location.pathname;
+        const split = path.split('/mamori/');
+        if (split.length < 2) {
+            return '/mamori/';
+        }
+        const after = split[1];
+        // Count directory segments after /mamori/
+        const dir = after.endsWith('/') ? after : after.substring(0, after.lastIndexOf('/') + 1);
+        const depth = dir.split('/').filter(Boolean).length;
+        const isHttp = window.location.protocol.startsWith('http');
+        // On http(s), absolute path works best. For file://, use relative backtracking.
+        if (isHttp) return '/mamori/';
+        return depth === 0 ? '' : '../'.repeat(depth);
+    };
+    const BASE_URL = computeMamoriBase();
+
     // Fallback content matching real includes
     const fallbacks = {
         header: `
@@ -122,14 +140,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     for (const element of includes) {
         const file = element.getAttribute('data-include');
         try {
-            const response = await fetch(`includes/${file}.html`);
+            // Always fetch includes from Mamori root so nested pages work
+            const response = await fetch(`${BASE_URL}includes/${file}.html`);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const html = await response.text();
+            let html = await response.text();
+            // Replace BASE_URL placeholders inside includes
+            html = html.replaceAll('{{BASE_URL}}', BASE_URL);
             element.innerHTML = html;
         } catch (error) {
             // Use fallback content for local development
             console.log(`Using fallback for: ${file}`);
-            element.innerHTML = fallbacks[file] || `<!-- ${file} not available -->`;
+            let html = fallbacks[file] || `<!-- ${file} not available -->`;
+            html = html.replaceAll('{{BASE_URL}}', BASE_URL);
+            element.innerHTML = html;
         }
     }
     
