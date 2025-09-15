@@ -71,6 +71,7 @@ import AIPlaybook from './pages/AIPlaybook';
 import OnePageApp from './pages/OnePageApp';
 import Portfolio from './pages/Portfolio';
 import DeliveryPage from './pages/DeliveryPage';
+import FounderLaunchPackage from './pages/FounderLaunchPackage';
 
 export default function App() {
   return (
@@ -143,6 +144,7 @@ export default function App() {
           <Route path="/hello" element={<Hello />} />
           <Route path="/ai-playbook" element={<AIPlaybook />} />
           <Route path="/one-pager" element={<OnePageApp />} />
+          <Route path="/founder-launch-package" element={<FounderLaunchPackage />} />
           <Route path="/delivery-for/:agencySlug" element={<DeliveryPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/social-share" element={<SocialShare />} />
