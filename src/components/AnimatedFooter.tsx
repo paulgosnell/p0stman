@@ -177,6 +177,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
   ];
 
   const services = [
+    { label: 'Founder Launch Package', icon: Zap, href: '/founder-launch-package' },
     { label: 'AI Platform Development', icon: Bot, href: '/ai-platform-development' },
     { label: 'Fractional CPO', icon: Rocket, href: '/fractional-cpo' },
     { label: 'Product Strategy', icon: Brain, href: '/product-strategy' },
