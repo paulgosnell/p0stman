@@ -25,6 +25,7 @@ import GenericProposal from './pages/proposals/GenericProposal';
 import ClientProposal from './pages/proposals/ClientProposal';
 import Proposals from './pages/Proposals';
 import About from './pages/About';
+import Why from './pages/Why';
 import Support from './pages/Support';
 import Affiliate from './pages/Affiliate';
 import AIAgents from './pages/AIAgents';
@@ -101,6 +102,7 @@ export default function App() {
           <Route path="/proposals/generic" element={<GenericProposal />} />
           <Route path="/christmas" element={<ChristmasCard />} />
           <Route path="/about" element={<About />} />
+          <Route path="/why" element={<Why />} />
           <Route path="/proposals/client/:id" element={<ClientProposal />} />
           <Route path="/ai-agents" element={<AIAgents />} />
           <Route path="/mobile-app" element={<MobileApp />} />
