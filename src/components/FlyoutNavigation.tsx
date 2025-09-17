@@ -65,7 +65,7 @@ const navigationItems = [
   },
   {
     label: 'Why We Do It',
-    href: '/about',
+    href: '/why',
     icon: Users,
     color: 'from-green-500 to-emerald-500'
   },
