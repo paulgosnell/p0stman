@@ -18,7 +18,11 @@ import {
   Brain,
   Globe,
   Calendar,
-  MessageSquare
+  MessageSquare,
+  Monitor,
+  Smartphone,
+  HeadphonesIcon,
+  RefreshCw
 } from 'lucide-react';
 import SpaceEasterEgg from './SpaceEasterEgg';
 
@@ -173,7 +177,8 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
     { label: 'Process', href: '/process' },
     { label: 'Proposals', href: '/proposals' },
     { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Contact', href: '/contact' },
+    { label: 'Privacy Policy', href: '/privacy' }
   ];
 
   const services = [
@@ -181,7 +186,12 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
     { label: 'AI Platform Development', icon: Bot, href: '/ai-platform-development' },
     { label: 'Fractional CPO', icon: Rocket, href: '/fractional-cpo' },
     { label: 'Product Strategy', icon: Brain, href: '/product-strategy' },
-    { label: 'Digital Transformation', icon: Globe, href: '/digital-transformation' }
+    { label: 'Digital Transformation', icon: Globe, href: '/digital-transformation' },
+    { label: 'Website Development', icon: Monitor, href: '/website' },
+    { label: 'AI Agents', icon: Bot, href: '/ai-agents' },
+    { label: 'Mobile App Development', icon: Smartphone, href: '/mobile-app' },
+    { label: 'Retainer Services', icon: RefreshCw, href: '/retainer' },
+    { label: 'Support Services', icon: HeadphonesIcon, href: '/support' }
   ];
 
   return (
