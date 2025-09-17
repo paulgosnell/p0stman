@@ -130,8 +130,8 @@ const locations = [
     title: 'Norwich, UK',
     description: 'When the desert gets too hot, you\'ll find me chilling in the Norfolk countryside. Where rolling green fields meet ancient market towns, and the pace slows down just enough to think clearly.',
     media: {
-      type: 'image',
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+      type: 'video',
+      src: 'https://videos.pexels.com/video-files/33559166/14268243_1920_1080_30fps.mp4'
     }
   }
 ];
