@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import RTLWrapper from './components/RTLWrapper';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -151,6 +152,7 @@ export default function App() {
           <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Analytics />
       </div>
     </RTLWrapper>
   );
