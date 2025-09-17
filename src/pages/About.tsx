@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -19,7 +19,9 @@ import {
   Users,
   Globe,
   Calendar,
-  Sparkles
+  Sparkles,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import SubHeader from '../components/SubHeader';
 import AnimatedFooter from '../components/AnimatedFooter';
@@ -115,7 +117,27 @@ const lessonsLearned = [
   }
 ];
 
+const locations = [
+  {
+    title: 'Dubai, UAE',
+    description: 'Living in one of the world\'s most innovative cities, where the future is being built every day. Perfect environment for pushing the boundaries of what\'s possible with AI and technology.',
+    media: {
+      type: 'video',
+      src: 'https://videos.pexels.com/video-files/4410402/4410402-hd_1920_1080_30fps.mp4'
+    }
+  },
+  {
+    title: 'Norwich, UK',
+    description: 'When the desert gets too hot, you\'ll find me chilling in the Norfolk countryside. Where rolling green fields meet ancient market towns, and the pace slows down just enough to think clearly.',
+    media: {
+      type: 'image',
+      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+    }
+  }
+];
+
 export default function About() {
+  const [currentLocation, setCurrentLocation] = useState(0);
   const [journeyRef, journeyInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -125,6 +147,22 @@ export default function About() {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  // Auto-rotate carousel every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentLocation((prev) => (prev + 1) % locations.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextLocation = () => {
+    setCurrentLocation((prev) => (prev + 1) % locations.length);
+  };
+
+  const prevLocation = () => {
+    setCurrentLocation((prev) => (prev - 1 + locations.length) % locations.length);
+  };
 
   return (
     <HelmetProvider>
@@ -416,31 +454,85 @@ export default function About() {
           </div>
         </section>
 
-        {/* Location Section */}
+        {/* Location Carousel Section */}
         <section className="py-24 bg-gray-100">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="relative overflow-hidden rounded-3xl shadow-xl">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full aspect-video object-cover"
-                >
-                  <source src="https://videos.pexels.com/video-files/4410402/4410402-hd_1920_1080_30fps.mp4" type="video/mp4" />
-                </video>
+                {/* Media Container */}
+                <div className="relative w-full aspect-video">
+                  {locations[currentLocation].media.type === 'video' ? (
+                    <video
+                      key={currentLocation}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src={locations[currentLocation].media.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img
+                      key={currentLocation}
+                      src={locations[currentLocation].media.src}
+                      alt={locations[currentLocation].title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+
+                {/* Overlay and Content */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevLocation}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all text-white"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextLocation}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all text-white"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+
+                {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-12">
-                  <div className="flex items-center gap-2 text-white mb-4">
-                    <MapPin className="w-6 h-6 text-white" style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }} />
-                    <span className="text-lg font-medium text-white" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Based in</span>
-                  </div>
-                  <h3 className="text-4xl font-bold text-white mb-4" style={{ color: '#ffffff !important', textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>Dubai, UAE</h3>
-                  <p className="text-white max-w-2xl font-light leading-relaxed" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                    Living in one of the world's most innovative cities, where the future is being built every day.
-                    Perfect environment for pushing the boundaries of what's possible with AI and technology.
-                  </p>
+                  <motion.div
+                    key={currentLocation}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="flex items-center gap-2 text-white mb-4">
+                      <MapPin className="w-6 h-6 text-white" style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }} />
+                      <span className="text-lg font-medium text-white" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                        {currentLocation === 0 ? 'Based in' : 'Escaping to'}
+                      </span>
+                    </div>
+                    <h3 className="text-4xl font-bold text-white mb-4" style={{ color: '#ffffff !important', textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
+                      {locations[currentLocation].title}
+                    </h3>
+                    <p className="text-white max-w-2xl font-light leading-relaxed" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                      {locations[currentLocation].description}
+                    </p>
+                  </motion.div>
+                </div>
+
+                {/* Dots Indicator */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                  {locations.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentLocation(index)}
+                      className={`w-3 h-3 rounded-full transition-all ${
+                        index === currentLocation ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
