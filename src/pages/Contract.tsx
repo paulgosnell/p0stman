@@ -68,8 +68,9 @@ export default function Contract() {
   }
   const templateValue = (contract.template || '').toString().trim().toUpperCase();
   const isUK = templateValue.includes('UK') || templateValue === 'GB' || templateValue === 'GBP';
-  const currencyCode = isUK ? 'GBP' : 'USD';
-  const locale = isUK ? 'en-GB' : 'en-US';
+  // Prefer explicit contract currency if set, otherwise fall back to template-derived currency
+  const currencyCode = (contract.currency as string) || (isUK ? 'GBP' : 'USD');
+  const locale = currencyCode === 'GBP' ? 'en-GB' : currencyCode === 'AED' ? 'en-AE' : 'en-US';
   const formattedTotal = new Intl.NumberFormat(locale, { style: 'currency', currency: currencyCode }).format(Number(contract.total_amount || 0));
   const governingLaw = isUK ? 'England and Wales' : 'the United Arab Emirates';
   const disputeJurisdiction = isUK ? 'the courts of England and Wales' : 'the courts of the United Arab Emirates';
@@ -170,7 +171,7 @@ export default function Contract() {
             {/* Milestones */}
             <div>
               <h2 className="text-lg md:text-xl font-semibold mb-4">3. Milestones and Payments</h2>
-              <p className="mb-4">The total project cost is {formattedTotal} {currencyCode}. Payments are tied to project milestones as outlined below:</p>
+              <p className="mb-4">The total project cost is {formattedTotal}. Payments are tied to project milestones as outlined below:</p>
               <div className="overflow-x-auto -mx-6 md:mx-0">
                 <table className="w-full">
                   <thead className="bg-gray-50">
@@ -187,7 +188,17 @@ export default function Contract() {
                         <td className="px-3 md:px-4 py-2 text-sm">{milestone.name}</td>
                         <td className="px-3 md:px-4 py-2 text-sm">{milestone.deliverable}</td>
                         <td className="px-3 md:px-4 py-2 text-sm">{milestone.percentage}</td>
-                        <td className="px-3 md:px-4 py-2 text-sm">{milestone.amount}</td>
+                        <td className="px-3 md:px-4 py-2 text-sm">{(() => {
+                          const amt = Number(String(milestone.amount || '').replace(/[^0-9.-]+/g, ''));
+                          if (!isNaN(amt)) {
+                            try {
+                              return new Intl.NumberFormat(locale, { style: 'currency', currency: currencyCode }).format(amt);
+                            } catch (e) {
+                              return milestone.amount || '';
+                            }
+                          }
+                          return milestone.amount || '';
+                        })()}</td>
                       </tr>
                     ))}
                   </tbody>
