@@ -40,6 +40,8 @@ export default function ContractsAdmin() {
       await updateContract(editingContract.contract_number, {
         status: editingContract.status,
         total_amount: editingContract.total_amount,
+        currency: editingContract.currency,
+        currency_symbol: editingContract.currency_symbol,
         provider_name: editingContract.provider_name,
         provider_company: editingContract.provider_company,
         provider_legal_entity: editingContract.provider_legal_entity,

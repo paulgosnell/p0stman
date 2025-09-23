@@ -47,7 +47,9 @@ export async function getContracts(): Promise<Contract[]> {
     .from('contracts')
     .select(`
       *,
-      client:clients(*)
+      client:clients(*),
+      currency,
+      currency_symbol
     `)
     .order('created_at', { ascending: false });
 
