@@ -38,7 +38,11 @@ export default function Contract() {
       setProviderSignature(data.provider_signature);
     } catch (err) {
       console.error('Error loading contract:', err);
-      setError(err instanceof Error ? err.message : 'Contract not found');
+      // If Supabase returns an auth/permission error, surface a clearer message
+      const message = (err as any)?.status === 401 || (err as any)?.status === 403 || /permission|policy|authenticated/i.test(String((err as any)?.message || ''))
+        ? 'You are not authorized to view this contract. Please sign in or check permissions.'
+        : (err instanceof Error ? err.message : 'Contract not found');
+      setError(message);
       setContract(null);
     } finally {
       setLoading(false);

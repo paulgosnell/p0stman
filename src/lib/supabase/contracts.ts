@@ -82,7 +82,7 @@ export async function getContract(id: string): Promise<Contract> {
 
   if (error) {
     console.error('Error fetching contract:', error);
-    throw new Error('Contract not found');
+    throw error;
   }
   
   if (!data) {
