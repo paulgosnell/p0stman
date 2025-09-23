@@ -368,6 +368,7 @@ export default function Contract() {
                   name={contract.client?.name || ''}
                   company={contract.client?.company_name || ''}
                   date={contract.issue_date || contract.created_at || ''}
+                  signature={contract.client_signature || null}
                   onSign={(sig) => { setClientSignature(sig); persistSignature('client', sig); }}
                 />
                 <SignatureSection
@@ -376,6 +377,7 @@ export default function Contract() {
                   company={contract.provider_company || 'P0STMAN (AI-Powered Product Studio)'}
                   title="Founder, P0STMAN"
                   date={contract.issue_date || contract.created_at || ''}
+                  signature={contract.provider_signature || null}
                   onSign={(sig) => { setProviderSignature(sig); persistSignature('provider', sig); }}
                 />
               </div>

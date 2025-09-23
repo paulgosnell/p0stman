@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Edit2, Save, RotateCcw, Edit3 } from 'lucide-react';
-import { loadSignature, saveSignature as saveSignatureToStorage } from '../../lib/signatureUtils';
 
 interface SignatureProps {
   role: 'client' | 'provider';
@@ -9,6 +8,7 @@ interface SignatureProps {
   company?: string;
   title?: string;
   date: string;
+  signature?: string | null;
   onSign?: (signature: string | null) => void;
 }
 
@@ -25,14 +25,10 @@ export default function SignatureSection({ role, name, company, title, date, onS
   const [isEditingCompany, setIsEditingCompany] = useState(false);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
 
-  // Load saved signature on mount
+  // Accept signature from parent (DB) and update when it changes
   useEffect(() => {
-    const savedSignature = loadSignature(role);
-    if (savedSignature) {
-      setSignature(savedSignature);
-      onSign?.(savedSignature);
-    }
-  }, [role, onSign]);
+    setSignature(signature || null);
+  }, [signature]);
 
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     setIsDrawing(true);
@@ -100,16 +96,13 @@ export default function SignatureSection({ role, name, company, title, date, onS
     const canvas = canvasRef.current;
     if (!canvas || !hasSignature) return;
     const signature = canvas.toDataURL();
-    
-    // Save to localStorage and update state
-    saveSignatureToStorage(role, signature);
     setSignature(signature);
     onSign?.(signature);
     setShowCanvas(false);
   };
 
   const clearSavedSignature = () => {
-    saveSignatureToStorage(role, null);
+    // Clear signature in component and notify parent to persist null to DB
     setSignature(null);
     setShowCanvas(false);
     setHasSignature(false);
