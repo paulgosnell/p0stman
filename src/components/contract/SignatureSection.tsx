@@ -9,7 +9,7 @@ interface SignatureProps {
   company?: string;
   title?: string;
   date: string;
-  onSign?: (signature: string) => void;
+  onSign?: (signature: string | null) => void;
 }
 
 export default function SignatureSection({ role, name, company, title, date, onSign }: SignatureProps) {

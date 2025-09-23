@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FileText, Save, FileImage, FileDown } from 'lucide-react';
 import Logo from '../components/Logo';
 import SignatureSection from '../components/contract/SignatureSection';
-import { getContract } from '../lib/supabase/contracts';
+import { getContract, updateContract } from '../lib/supabase/contracts';
 import { downloadAsImage, downloadAsPDF } from '../lib/downloadUtils';
 import type { Contract as ContractType } from '../lib/supabase/contracts';
 
@@ -83,6 +83,23 @@ export default function Contract() {
     setIsSaving(true);
     downloadAsPDF('contract-content', `p0stman-contract-${id}`);
     setTimeout(() => setIsSaving(false), 100); // Reset after brief delay to allow PDF generation
+  };
+
+  const persistSignature = async (role: 'client' | 'provider', signature: string | null) => {
+    if (!contract) return;
+    try {
+      const payload: any = {};
+      if (role === 'client') {
+        payload.client_signature = signature;
+        payload.client_signed_at = signature ? new Date().toISOString() : null;
+      } else {
+        payload.provider_signature = signature;
+        payload.provider_signed_at = signature ? new Date().toISOString() : null;
+      }
+      await updateContract(contract.contract_number, payload);
+    } catch (err) {
+      console.error('Error persisting signature:', err);
+    }
   };
 
   return (
@@ -351,7 +368,7 @@ export default function Contract() {
                   name={contract.client?.name || ''}
                   company={contract.client?.company_name || ''}
                   date={contract.issue_date || contract.created_at || ''}
-                  onSign={setClientSignature}
+                  onSign={(sig) => { setClientSignature(sig); persistSignature('client', sig); }}
                 />
                 <SignatureSection
                   role="provider"
@@ -359,7 +376,7 @@ export default function Contract() {
                   company={contract.provider_company || 'P0STMAN (AI-Powered Product Studio)'}
                   title="Founder, P0STMAN"
                   date={contract.issue_date || contract.created_at || ''}
-                  onSign={setProviderSignature}
+                  onSign={(sig) => { setProviderSignature(sig); persistSignature('provider', sig); }}
                 />
               </div>
               {(clientSignature || providerSignature) && !isSaving && (
