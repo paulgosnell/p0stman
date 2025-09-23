@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Download, FileText, Save, FileImage, FileDown } from 'lucide-react';
+import { FileText, Save, FileImage, FileDown } from 'lucide-react';
 import Logo from '../components/Logo';
 import SignatureSection from '../components/contract/SignatureSection';
 import { getContract } from '../lib/supabase/contracts';
@@ -66,6 +66,13 @@ export default function Contract() {
       </div>
     );
   }
+  const templateValue = (contract.template || '').toString().trim().toUpperCase();
+  const isUK = templateValue.includes('UK') || templateValue === 'GB' || templateValue === 'GBP';
+  const currencyCode = isUK ? 'GBP' : 'USD';
+  const locale = isUK ? 'en-GB' : 'en-US';
+  const formattedTotal = new Intl.NumberFormat(locale, { style: 'currency', currency: currencyCode }).format(Number(contract.total_amount || 0));
+  const governingLaw = isUK ? 'England and Wales' : 'the United Arab Emirates';
+  const disputeJurisdiction = isUK ? 'the courts of England and Wales' : 'the courts of the United Arab Emirates';
 
   const handleDownload = () => {
     downloadAsImage('contract-content', `p0stman-contract-${id}`);
@@ -112,28 +119,28 @@ export default function Contract() {
             <div className="text-center">
               <h1 className="text-2xl md:text-3xl font-bold mb-4">Contract Agreement</h1>
               <p className="text-gray-600">
-                This Agreement is made and entered into as of {contract.date}.
+                This Agreement is made and entered into as of {contract.issue_date || contract.created_at || ''}.
               </p>
             </div>
 
             {/* Parties */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h2 className="text-lg font-semibold mb-4">Client</h2>
                 <div className="space-y-2">
-                  <p><span className="font-medium">Company:</span> {contract.client.company}</p>
-                  <p><span className="font-medium">Name:</span> {contract.client.name}</p>
-                  <p><span className="font-medium">Address:</span> {contract.client.address}</p>
+                  <p><span className="font-medium">Company:</span> {contract.client?.company_name || ''}</p>
+                  <p><span className="font-medium">Name:</span> {contract.client?.name || ''}</p>
+                  <p><span className="font-medium">Address:</span> {contract.client?.address || ''}</p>
                 </div>
               </div>
               <div>
                 <h2 className="text-lg font-semibold mb-4">Service Provider</h2>
-                <div className="space-y-2">
-                  <p><span className="font-medium">Company:</span> P0STMAN (AI-Powered Product Studio)</p>
-                  <p><span className="font-medium">Legal Entity:</span> Chilled Ventures L.L.C</p>
-                  <p><span className="font-medium">Address:</span> Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates</p>
-                  <p><span className="font-medium">Contact:</span> [Insert Contact Name]</p>
-                </div>
+                  <div className="space-y-2">
+                    <p><span className="font-medium">Company:</span> {contract.provider_company || (isUK ? 'P0STMAN' : 'P0STMAN (AI-Powered Product Studio)')}</p>
+                    <p><span className="font-medium">Legal Entity:</span> {contract.provider_legal_entity || (isUK ? 'P0STMAN' : 'Chilled Ventures L.L.C')}</p>
+                    <p><span className="font-medium">Address:</span> {contract.provider_address || (isUK ? 'Tyby Farm, Wood Dalling, Norfolk' : 'Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates')}</p>
+                    <p><span className="font-medium">Contact:</span> {contract.provider_contact || 'Paul Gosnell'}</p>
+                  </div>
               </div>
             </div>
 
@@ -163,7 +170,7 @@ export default function Contract() {
             {/* Milestones */}
             <div>
               <h2 className="text-lg md:text-xl font-semibold mb-4">3. Milestones and Payments</h2>
-              <p className="mb-4">The total project cost is ${contract.total_amount.toLocaleString()} USD. Payments are tied to project milestones as outlined below:</p>
+              <p className="mb-4">The total project cost is {formattedTotal} {currencyCode}. Payments are tied to project milestones as outlined below:</p>
               <div className="overflow-x-auto -mx-6 md:mx-0">
                 <table className="w-full">
                   <thead className="bg-gray-50">
@@ -238,7 +245,7 @@ export default function Contract() {
               <div>
                 <h2 className="text-xl font-semibold mb-4">8. Governing Law</h2>
                 <p className="text-gray-600">
-                  This Agreement shall be governed by the laws of the United Arab Emirates, unless otherwise agreed in writing by both parties.
+                  This Agreement shall be governed by the laws of {governingLaw}, unless otherwise agreed in writing by both parties.
                 </p>
               </div>
 
@@ -287,7 +294,7 @@ export default function Contract() {
                 <p className="text-gray-600">
                   Any disputes arising under this Agreement will first be resolved through good faith negotiation between the parties.
                   If the dispute cannot be resolved, it will be submitted to mediation under the rules of [Insert Mediation Organization or Jurisdiction].
-                  If mediation fails, the dispute will be resolved in the courts of the United Arab Emirates.
+                  If mediation fails, the dispute will be resolved in {disputeJurisdiction}.
                 </p>
               </div>
 
@@ -330,17 +337,17 @@ export default function Contract() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <SignatureSection
                   role="client"
-                  name={contract.client.name}
-                  company={contract.client.company}
-                  date={contract.date}
+                  name={contract.client?.name || ''}
+                  company={contract.client?.company_name || ''}
+                  date={contract.issue_date || contract.created_at || ''}
                   onSign={setClientSignature}
                 />
                 <SignatureSection
                   role="provider"
-                  name="Paul Gosnell"
-                  company="P0STMAN (AI-Powered Product Studio)"
+                  name={contract.provider_contact || 'Paul Gosnell'}
+                  company={contract.provider_company || 'P0STMAN (AI-Powered Product Studio)'}
                   title="Founder, P0STMAN"
-                  date={contract.date}
+                  date={contract.issue_date || contract.created_at || ''}
                   onSign={setProviderSignature}
                 />
               </div>

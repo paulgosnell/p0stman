@@ -12,6 +12,9 @@ export interface Contract {
   provider_signature: string | null;
   provider_signed_at: string | null;
   total_amount: number;
+  // Currency fields
+  currency?: string;
+  currency_symbol?: string;
   invoice_id: string | null;
   project_name: string;
   project_scope: string;
@@ -29,14 +32,14 @@ export interface Contract {
     address: string;
     email: string;
   };
-}
-
-interface Client {
-  id: string;
-  name: string;
-  company_name: string;
-  address: string;
-  email: string;
+  // Optional per-contract provider overrides
+  provider_name?: string;
+  provider_company?: string;
+  provider_legal_entity?: string;
+  provider_address?: string;
+  provider_contact?: string;
+  // Template selection for contract defaults
+  template?: 'UK' | 'UAE';
 }
 
 export async function getContracts(): Promise<Contract[]> {
@@ -62,7 +65,15 @@ export async function getContract(id: string): Promise<Contract> {
       project_scope,
       project_out_of_scope,
       project_timeline_duration,
-      project_milestones
+      project_milestones,
+        provider_name,
+        provider_company,
+        provider_legal_entity,
+    provider_address,
+    provider_contact,
+    template,
+    currency,
+    currency_symbol
     `)
     .eq('contract_number', id)
     .single();
@@ -93,7 +104,7 @@ export async function createContract(contract: Omit<Contract, 'id' | 'created_at
   return data;
 }
 
-async function updateContract(id: string, data: Partial<Contract>): Promise<void> {
+export async function updateContract(id: string, data: Partial<Contract>): Promise<void> {
   const { error } = await supabase
     .from('contracts')
     .update(data)
@@ -102,7 +113,7 @@ async function updateContract(id: string, data: Partial<Contract>): Promise<void
   if (error) throw error;
 }
 
-async function deleteContract(id: string): Promise<void> {
+export async function deleteContract(id: string): Promise<void> {
   const { error } = await supabase
     .from('contracts')
     .delete()
