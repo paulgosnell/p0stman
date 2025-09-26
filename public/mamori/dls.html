@@ -22,7 +22,7 @@
 
 <body>
 
-    <!-- Revolutionary Hero Section -->
+    <!-- Section 1: Revolutionary Hero Section -->
     <section class="hero-main">
         <!-- Hero Background Panel -->
         <div class="hero-background-panel">
@@ -92,9 +92,9 @@
         </div>
     </section>
 
-    <!-- Color Palette -->
+    <!-- Section 2: Color Palette -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Color Palette</h2>
+        <h2 class="showcase-title">2. Color Palette</h2>
         <p class="showcase-subtitle">Muted, calming colors inspired by Nordic landscapes</p>
 
         <div class="component-group">
@@ -159,9 +159,9 @@
         </div>
     </section>
 
-    <!-- Buttons -->
+    <!-- Section 3: Buttons -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Buttons</h2>
+        <h2 class="showcase-title">3. Buttons</h2>
         <p class="showcase-subtitle">Generous, rounded buttons with calm hover states</p>
 
         <div class="component-group">
@@ -192,9 +192,9 @@
         </div>
     </section>
 
-    <!-- Form Elements -->
+    <!-- Section 4: Form Elements -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Form Elements</h2>
+        <h2 class="showcase-title">4. Form Elements</h2>
         <p class="showcase-subtitle">Clean, accessible inputs with generous padding</p>
 
         <div class="two-column">
@@ -252,9 +252,9 @@
         </div>
     </section>
 
-    <!-- Cards -->
+    <!-- Section 5: Cards -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Cards</h2>
+        <h2 class="showcase-title">5. Cards</h2>
         <p class="showcase-subtitle">Elevated content containers with soft shadows</p>
 
         <div class="card-grid">
@@ -315,9 +315,9 @@
         </div>
     </section>
 
-    <!-- Navigation Components -->
+    <!-- Section 6: Navigation Components -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Navigation Systems</h2>
+        <h2 class="showcase-title">6. Navigation Systems</h2>
         <p class="showcase-subtitle">Revolutionary navigation with glass morphism and fluid interactions</p>
 
         <div class="component-group">
@@ -358,9 +358,9 @@
         </div>
     </section>
 
-    <!-- Advanced Panel Components -->
+    <!-- Section 7: Advanced Panel Components -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Advanced Panel Systems</h2>
+        <h2 class="showcase-title">7. Advanced Panel Systems</h2>
         <p class="showcase-subtitle">Revolutionary content panels with glass morphism and immersive layouts</p>
 
         <div class="component-group">
@@ -454,9 +454,9 @@
         </div>
     </section>
 
-    <!-- Lifestyle Image Panels -->
+    <!-- Section 8: Lifestyle Image Panels -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Lifestyle Image Panels</h2>
+        <h2 class="showcase-title">8. Lifestyle Image Panels</h2>
         <p class="showcase-subtitle">Immersive content experiences with premium image treatments</p>
 
         <div class="component-group">
@@ -514,9 +514,9 @@
         </div>
     </section>
 
-    <!-- Video Content Panels -->
+    <!-- Section 9: Video Content Panels -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Video Content Integration</h2>
+        <h2 class="showcase-title">9. Video Content Integration</h2>
         <p class="showcase-subtitle">Immersive video experiences with advanced glass morphism treatments</p>
 
         <div class="component-group">
@@ -627,9 +627,9 @@
         </div>
     </section>
 
-    <!-- Video Content Integration -->
+    <!-- Section 10: Video Content Integration -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Video Content Integration</h2>
+        <h2 class="showcase-title">10. Video Content Integration</h2>
         <p class="showcase-subtitle">Immersive video experiences with revolutionary glass morphism treatments</p>
 
         <div class="component-group">
@@ -687,9 +687,9 @@
         </div>
     </section>
 
-    <!-- Typography -->
+    <!-- Section 11: Typography -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Typography</h2>
+        <h2 class="showcase-title">11. Typography</h2>
         <p class="showcase-subtitle">Fluid typography scales with mathematical precision</p>
 
         <div class="component-group">
@@ -733,9 +733,9 @@
         </div>
     </section>
 
-    <!-- Illustrations & Icons -->
+    <!-- Section 12: Illustrations & Icons -->
     <section class="showcase-section">
-        <h2 class="showcase-title">Illustrations & Icons</h2>
+        <h2 class="showcase-title">12. Illustrations & Icons</h2>
         <p class="showcase-subtitle">Visual elements that enhance storytelling and user guidance</p>
 
         <div class="component-group">
@@ -911,6 +911,7 @@
         </div>
     </section>
 
+    <!-- Section 13: Footer -->
     <footer class="footer">
         <div class="footer-background">
             <!-- Floating O-Mamori Elements -->
@@ -1343,20 +1344,6 @@
 
 <!-- Performance optimizations -->
 <script>
-    // Preload critical resources
-    const preloadLinks = [
-        'https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@200;300;400;500;600;700&display=swap',
-        'https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;600&display=swap'
-    ];
-
-    preloadLinks.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'style';
-        link.href = href;
-        document.head.appendChild(link);
-    });
-
     // Optimize animations for performance
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.style.setProperty('--animation-duration', '0ms');
