@@ -14,7 +14,8 @@
     hero: renderHeroSlide,
     content: renderContentSlide,
     stats: renderStatsSlide,
-    agenda: renderAgendaSlide
+    agenda: renderAgendaSlide,
+    pillars: renderPillarsSlide
   };
 
   fetch('slides.json')
@@ -192,6 +193,9 @@
     if (Array.isArray(slide.points) && slide.points.length) {
       const list = document.createElement('ul');
       list.className = 'deck-list';
+      if (slide.columns) {
+        list.dataset.columns = slide.columns;
+      }
       slide.points.forEach((point, pointIndex) => {
         const item = document.createElement('li');
         item.className = 'deck-editable';
@@ -221,6 +225,9 @@
       }
       canvas.appendChild(media);
     }
+
+    appendCaption(canvas, slide);
+    appendActions(canvas, slide);
 
     appendNotes(section, slide);
     return section;
@@ -252,26 +259,24 @@
 
     if (Array.isArray(slide.stats) && slide.stats.length) {
       const grid = document.createElement('div');
-      grid.className = 'deck-grid';
+      grid.className = 'deck-grid deck-grid--stats';
       grid.dataset.columns = slide.columns || Math.min(slide.stats.length, 3);
       slide.stats.forEach((stat, statIndex) => {
         const panel = document.createElement('div');
-        panel.className = 'deck-panel';
-        const value = document.createElement('h3');
-        value.className = 'deck-title deck-editable';
+        panel.className = 'deck-panel deck-panel--stat';
+        const value = document.createElement('div');
+        value.className = 'deck-stat-value deck-editable';
         value.dataset.field = `stats.${statIndex}.value`;
-        value.style.fontSize = 'clamp(2rem, 5vw, 3.5rem)';
         value.textContent = stat.value || '0%';
         const label = document.createElement('p');
-        label.className = 'deck-subtitle deck-editable';
+        label.className = 'deck-stat-label deck-editable';
         label.dataset.field = `stats.${statIndex}.label`;
-        label.style.fontSize = '1rem';
         label.textContent = stat.label || 'Add context';
         panel.appendChild(value);
         panel.appendChild(label);
         if (stat.caption) {
           const caption = document.createElement('p');
-          caption.className = 'text-body-small deck-editable';
+          caption.className = 'deck-stat-caption deck-editable';
           caption.dataset.field = `stats.${statIndex}.caption`;
           caption.textContent = stat.caption;
           panel.appendChild(caption);
@@ -280,6 +285,9 @@
       });
       canvas.appendChild(grid);
     }
+
+    appendCaption(canvas, slide);
+    appendActions(canvas, slide);
 
     appendNotes(section, slide);
     return section;
@@ -333,17 +341,17 @@
         const labelWrap = document.createElement('div');
         labelWrap.className = 'deck-agenda-label';
 
-    const heading = document.createElement('strong');
-    heading.className = 'deck-editable';
-    heading.dataset.field = `items.${itemIndex}.title`;
-    heading.textContent = item.title || `Slide ${itemIndex + 1}`;
-    labelWrap.appendChild(heading);
+        const heading = document.createElement('strong');
+        heading.className = 'deck-editable';
+        heading.dataset.field = `items.${itemIndex}.title`;
+        heading.textContent = item.title || `Slide ${itemIndex + 1}`;
+        labelWrap.appendChild(heading);
 
-    const caption = document.createElement('span');
-    caption.className = 'deck-editable';
-    caption.dataset.field = `items.${itemIndex}.description`;
-    caption.textContent = item.description || 'Click to add details';
-    labelWrap.appendChild(caption);
+        const caption = document.createElement('span');
+        caption.className = 'deck-editable';
+        caption.dataset.field = `items.${itemIndex}.description`;
+        caption.textContent = item.description || 'Click to add details';
+        labelWrap.appendChild(caption);
 
         agendaItem.appendChild(labelWrap);
         list.appendChild(agendaItem);
@@ -351,6 +359,105 @@
       canvas.appendChild(list);
     }
 
+    appendCaption(canvas, slide);
+    appendActions(canvas, slide);
+
+    appendNotes(section, slide);
+    return section;
+  }
+
+  function renderPillarsSlide(slide) {
+    const section = document.createElement('section');
+    section.className = 'deck-slide deck-slide--pillars';
+
+    const canvas = document.createElement('div');
+    canvas.className = 'deck-slide__canvas deck-slide__canvas--pillars';
+    section.appendChild(canvas);
+
+    if (slide.badge) {
+      const badge = document.createElement('span');
+      badge.className = 'deck-badge deck-editable';
+      badge.dataset.field = 'badge';
+      badge.textContent = slide.badge;
+      canvas.appendChild(badge);
+    }
+
+    if (slide.title) {
+      const title = document.createElement('h2');
+      title.className = 'deck-title deck-editable';
+      title.dataset.field = 'title';
+      title.textContent = slide.title;
+      canvas.appendChild(title);
+    }
+
+    if (slide.subtitle) {
+      const subtitle = document.createElement('p');
+      subtitle.className = 'deck-subtitle deck-editable';
+      subtitle.dataset.field = 'subtitle';
+      subtitle.textContent = slide.subtitle;
+      canvas.appendChild(subtitle);
+    }
+
+    if (Array.isArray(slide.items) && slide.items.length) {
+      const grid = document.createElement('div');
+      grid.className = 'deck-grid deck-grid--pillars';
+      grid.dataset.columns = slide.columns || Math.min(slide.items.length, 3);
+
+      slide.items.forEach((item, itemIndex) => {
+        const panel = document.createElement('div');
+        panel.className = 'deck-panel deck-panel--pillar';
+
+        if (item.label) {
+          const label = document.createElement('span');
+          label.className = 'deck-panel__label deck-editable';
+          label.dataset.field = `items.${itemIndex}.label`;
+          label.textContent = item.label;
+          panel.appendChild(label);
+        }
+
+        const heading = document.createElement('h3');
+        heading.className = 'deck-panel__title deck-editable';
+        heading.dataset.field = `items.${itemIndex}.title`;
+        heading.textContent = item.title || `Pillar ${itemIndex + 1}`;
+        panel.appendChild(heading);
+
+        if (item.description) {
+          const description = document.createElement('p');
+          description.className = 'deck-panel__description deck-editable';
+          description.dataset.field = `items.${itemIndex}.description`;
+          description.textContent = item.description;
+          panel.appendChild(description);
+        }
+
+        if (Array.isArray(item.highlights) && item.highlights.length) {
+          const list = document.createElement('ul');
+          list.className = 'deck-panel__list';
+          item.highlights.forEach((highlight, highlightIndex) => {
+            const listItem = document.createElement('li');
+            listItem.className = 'deck-editable';
+            listItem.dataset.field = `items.${itemIndex}.highlights.${highlightIndex}`;
+            listItem.textContent = highlight;
+            list.appendChild(listItem);
+          });
+          panel.appendChild(list);
+        }
+
+        if (item.metric) {
+          const metric = document.createElement('div');
+          metric.className = 'deck-panel__metric deck-editable';
+          metric.dataset.field = `items.${itemIndex}.metric`;
+          metric.textContent = item.metric;
+          panel.appendChild(metric);
+        }
+
+        grid.appendChild(panel);
+      });
+
+      canvas.appendChild(grid);
+    }
+
+    appendCaption(canvas, slide);
+    appendActions(canvas, slide);
     appendNotes(section, slide);
     return section;
   }
@@ -362,6 +469,45 @@
     notes.dataset.field = 'notes';
     notes.innerHTML = `<strong>Presenter notes</strong><br>${slide.notes}`;
     section.appendChild(notes);
+  }
+
+  function appendCaption(canvas, slide) {
+    if (!slide.caption) return;
+    const caption = document.createElement('p');
+    caption.className = 'deck-caption deck-editable';
+    caption.dataset.field = 'caption';
+    caption.textContent = slide.caption;
+    canvas.appendChild(caption);
+  }
+
+  function appendActions(canvas, slide) {
+    if (!Array.isArray(slide.actions) || !slide.actions.length) return;
+    const actions = document.createElement('div');
+    actions.className = 'deck-actions';
+
+    slide.actions.forEach((action, actionIndex) => {
+      const element = document.createElement(action && action.href ? 'a' : 'button');
+      element.className = `deck-action deck-action--${action && action.variant ? action.variant : 'primary'} deck-editable`;
+      element.dataset.field = `actions.${actionIndex}.label`;
+      element.textContent = action && action.label ? action.label : 'Action';
+
+      if (action && action.href) {
+        element.href = action.href;
+        element.setAttribute('role', 'button');
+        if (action.target) {
+          element.target = action.target;
+          if (action.target === '_blank') {
+            element.rel = 'noopener noreferrer';
+          }
+        }
+      } else {
+        element.type = 'button';
+      }
+
+      actions.appendChild(element);
+    });
+
+    canvas.appendChild(actions);
   }
 
   function setupNavigation() {

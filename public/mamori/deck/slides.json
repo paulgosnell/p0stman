@@ -1,62 +1,298 @@
 {
   "meta": {
     "title": "Mamori Narrative Deck",
-    "description": "A component-driven storytelling deck powered by the Mamori design system",
+    "description": "Generic Mamori-compliant presentation templates for rapid storytelling",
     "theme": "default"
   },
   "slides": [
     {
       "layout": "hero",
-      "badge": "Video Experience",
-      "title": "Immersive Video Integration",
-      "subtitle": "Revolutionary video experiences with glass morphism treatments that create depth and engagement.",
+      "badge": "Your Product Tagline",
+      "title": "State the promise in one vivid sentence",
+      "subtitle": "Use this cinematic hero to anchor the story with an emotional, human-centric statement about the future you deliver.",
       "background": {
-        "type": "video",
-        "src": "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
-        "poster": "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2100&q=80",
+        "alt": "Softly lit architectural shapes with glass reflections"
       },
-      "notes": "Component: Hero Video Panel"
+      "notes": "Open with your most aspirational message. Keep copy under 14 words. Swap the hero image or use video focusing on light, depth, and calm motion."
     },
     {
       "layout": "agenda",
       "badge": "Contents",
-      "title": "What we'll explore",
-      "subtitle": "A guided tour through the Mamori MVP story and design system highlights.",
+      "title": "Guide your audience through the story",
+      "subtitle": "Set expectations with moments that ladder up to your core argument.",
       "columns": 2,
       "items": [
         {
-          "title": "Immersive Video Integration",
-          "description": "Opening experience"
+          "title": "Context & Shift",
+          "description": "Where the market is moving now"
         },
         {
-          "title": "Design System Vision",
-          "description": "Principles that guide us"
+          "title": "Problem Signal",
+          "description": "Why the status quo fails"
         },
         {
-          "title": "MVP Sitemap Snapshot",
-          "description": "Pages in scope"
+          "title": "Mamori Vision",
+          "description": "How we design a calmer future"
         },
         {
-          "title": "Category Hubs",
-          "description": "Glass morphism product discovery"
+          "title": "Experience Layers",
+          "description": "Product moments that build trust"
         },
         {
-          "title": "Evidence Engine",
-          "description": "How we grade trust"
+          "title": "Proof & Traction",
+          "description": "Evidence the model works"
         },
         {
-          "title": "Community Outcomes",
-          "description": "Real people, real results"
-        },
-        {
-          "title": "Roadmap",
-          "description": "What's next for the MVP"
-        },
-        {
-          "title": "Call to Action",
-          "description": "How to partner with Mamori"
+          "title": "Roadmap & Ask",
+          "description": "What we need to accelerate"
         }
-      ]
+      ],
+      "caption": "Aim for balance between inspiration, proof, and next steps.",
+      "notes": "Keep agenda items short—2 to 3 words for titles. Use verbs that signal motion and momentum."
+    },
+    {
+      "layout": "content",
+      "badge": "Problem Space",
+      "title": "Define the tension keeping customers awake",
+      "subtitle": "Describe the friction using customer language and one sharp data point.",
+      "points": [
+        "Lead with the human cost—show how people feel stuck, not just the workflow they use.",
+        "Quantify the urgency with a single validated stat or qualitative quote.",
+        "Explain why legacy tools or habits fail on clarity, timing, or trust."
+      ],
+      "caption": "Three concise bullets keep focus tight and make it easy to retell.",
+      "notes": "Use this moment to build empathy before you pivot into your solution pillars."
+    },
+    {
+      "layout": "stats",
+      "theme": "aurora",
+      "title": "Opportunity snapshot",
+      "subtitle": "Anchor the upside with metrics that quantify momentum and intent.",
+      "columns": 3,
+      "stats": [
+        {
+          "value": "3.4×",
+          "label": "Category demand growth over the past 12 months",
+          "caption": "Source: industry benchmark"
+        },
+        {
+          "value": "72%",
+          "label": "Decision makers prioritising transparent AI experiences",
+          "caption": "Source: customer discovery"
+        },
+        {
+          "value": "$48M",
+          "label": "Near-term value unlocked by solving this friction",
+          "caption": "Source: financial model"
+        }
+      ],
+      "caption": "Each metric needs a source and a defined measurement window.",
+      "notes": "Swap in your validated data. If you only have two metrics, set \"columns\" to 2 for balance."
+    },
+    {
+      "layout": "pillars",
+      "badge": "Solution Pillars",
+      "title": "Show how the Mamori experience delivers clarity",
+      "subtitle": "Each pillar represents a distinct promise anchored in the design language.",
+      "columns": 3,
+      "items": [
+        {
+          "label": "Pillar 01",
+          "title": "Precision onboarding",
+          "description": "Adaptive welcome flows that feel hand-crafted and reduce cognitive load.",
+          "highlights": [
+            "Glass morphism surfaces create depth without sacrificing performance.",
+            "Flows adapt in real time using context, intent, and trust signals."
+          ]
+        },
+        {
+          "label": "Pillar 02",
+          "title": "Evidence engine",
+          "description": "Transparent scoring systems that explain outcomes in human language.",
+          "highlights": [
+            "Explainable indicators reveal why decisions were made.",
+            "Accessibility-first typography keeps insights readable everywhere."
+          ]
+        },
+        {
+          "label": "Pillar 03",
+          "title": "Continuous guidance",
+          "description": "Always-on nudges that feel calm, not noisy, across every device.",
+          "highlights": [
+            "Physics-based motion guides attention with respectful pacing.",
+            "32px pill buttons maintain generous touch targets."
+          ],
+          "metric": "NPS +18 in pilot cohorts"
+        }
+      ],
+      "caption": "Pillars should mirror your product architecture and stay timeless.",
+      "notes": "Limit to three or four pillars. Use highlights for proof points or key behaviours."
+    },
+    {
+      "layout": "content",
+      "theme": "fjord",
+      "badge": "Experience Moment",
+      "title": "Visualise the signature product flow",
+      "subtitle": "Pair a hero mock or video with copy that explains how the experience feels.",
+      "points": [
+        "Clarify the user goal in a single sentence.",
+        "Call out the design system elements that reinforce trust.",
+        "Note the measurable outcome or feedback loop."
+      ],
+      "columns": 2,
+      "media": {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=2100&q=80",
+        "alt": "Product interface showcasing layered glass panels"
+      },
+      "actions": [
+        {
+          "label": "Preview interactive prototype",
+          "href": "#",
+          "variant": "primary"
+        },
+        {
+          "label": "Download concept spec",
+          "href": "#",
+          "variant": "ghost"
+        }
+      ],
+      "caption": "Media should stay under 2MB and reinforce the calm, human tone.",
+      "notes": "Swap the image for a looped video to bring motion principles to life."
+    },
+    {
+      "layout": "stats",
+      "theme": "fjord",
+      "title": "Proof points",
+      "subtitle": "Highlight traction that signals product-market resonance.",
+      "columns": 3,
+      "stats": [
+        {
+          "value": "92%",
+          "label": "Pilot users who completed onboarding in under 4 minutes",
+          "caption": "Time-on-task analytics"
+        },
+        {
+          "value": "38%",
+          "label": "Reduction in support tickets after the Mamori redesign",
+          "caption": "Customer success data"
+        },
+        {
+          "value": "4.8★",
+          "label": "Average qualitative sentiment across partner interviews",
+          "caption": "Discovery sprints"
+        }
+      ],
+      "caption": "Mix quantitative and qualitative proof to feel human and rigorous.",
+      "notes": "Bring the most credible numbers you have today; call out the source directly."
+    },
+    {
+      "layout": "pillars",
+      "theme": "aurora",
+      "badge": "Roadmap",
+      "title": "Sequence the path to launch with calm confidence",
+      "subtitle": "Show what happens next and how you de-risk each phase.",
+      "columns": 3,
+      "items": [
+        {
+          "label": "Phase 01",
+          "title": "Foundations",
+          "description": "Finalize architecture, core flows, and trust framework.",
+          "highlights": [
+            "Ship V1 DLS tokens and accessibility review.",
+            "Validate technical guardrails with engineering."
+          ],
+          "metric": "0–3 months"
+        },
+        {
+          "label": "Phase 02",
+          "title": "Experiments",
+          "description": "Run live pilots with closed cohorts to pressure-test the model.",
+          "highlights": [
+            "Measure activation, comprehension, and repeat usage.",
+            "Iterate on micro-interactions with motion presets."
+          ],
+          "metric": "3–6 months"
+        },
+        {
+          "label": "Phase 03",
+          "title": "Scale & partner",
+          "description": "Expand to priority segments with co-marketing and co-creation.",
+          "highlights": [
+            "Localize content and voice for key regions.",
+            "Launch governance rituals to keep the system elegant."
+          ],
+          "metric": "6–12 months"
+        }
+      ],
+      "caption": "Give every phase a measurable outcome and a responsible owner.",
+      "notes": "Adjust timing bands to match your strategy. Replace highlights with deliverables if helpful."
+    },
+    {
+      "layout": "pillars",
+      "badge": "Team",
+      "title": "Introduce the humans crafting the experience",
+      "subtitle": "Spotlight cross-functional partners and why they are uniquely suited.",
+      "columns": 3,
+      "items": [
+        {
+          "label": "Product",
+          "title": "Alex Rivera — Product Lead",
+          "description": "15 years building trust-first AI tools across finance and health.",
+          "highlights": [
+            "Scaled two products from seed to Series C.",
+            "Deep expertise in inclusive research rituals."
+          ]
+        },
+        {
+          "label": "Design",
+          "title": "Morgan Lee — DLS Architect",
+          "description": "Former Apple design lead specialising in glass morphism systems.",
+          "highlights": [
+            "Creator of Mamori's perceptual color framework.",
+            "Drives accessibility and motion guidelines."
+          ]
+        },
+        {
+          "label": "Engineering",
+          "title": "Priya Patel — Platform Lead",
+          "description": "Built resilient real-time infrastructure for global platforms.",
+          "highlights": [
+            "Co-owns security and privacy posture.",
+            "Champions sustainable performance budgets."
+          ]
+        }
+      ],
+      "caption": "Use consistent bios—role, credibility, and why the mission matters to them.",
+      "notes": "Swap titles and highlights for your actual team; keep descriptions short and specific."
+    },
+    {
+      "layout": "content",
+      "theme": "midnight",
+      "badge": "Call to Action",
+      "title": "Invite partners to shape the next milestone",
+      "subtitle": "Be clear about the decision, the timeline, and how you support them.",
+      "points": [
+        "Summarise the single action you want in the next 7 days.",
+        "Reassure with the support ecosystem they can rely on.",
+        "Clarify what success looks like after the decision."
+      ],
+      "actions": [
+        {
+          "label": "Schedule strategy session",
+          "href": "#",
+          "variant": "primary"
+        },
+        {
+          "label": "Request detailed roadmap",
+          "href": "#",
+          "variant": "secondary"
+        }
+      ],
+      "caption": "Close with confident, human language—this is an invitation, not a push.",
+      "notes": "Offer exactly one primary call to action. Backup options should still feel proactive."
     }
   ]
 }
