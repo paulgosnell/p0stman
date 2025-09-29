@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Mamori Narrative Deck",
+    "description": "A component-driven storytelling deck powered by the Mamori design system",
+    "theme": "default"
+  },
+  "slides": [
+    {
+      "layout": "hero",
+      "badge": "Video Experience",
+      "title": "Immersive Video Integration",
+      "subtitle": "Revolutionary video experiences with glass morphism treatments that create depth and engagement.",
+      "background": {
+        "type": "video",
+        "src": "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
+        "poster": "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+      },
+      "notes": "Component: Hero Video Panel"
+    },
+    {
+      "layout": "agenda",
+      "badge": "Contents",
+      "title": "What we'll explore",
+      "subtitle": "A guided tour through the Mamori MVP story and design system highlights.",
+      "columns": 2,
+      "items": [
+        {
+          "title": "Immersive Video Integration",
+          "description": "Opening experience"
+        },
+        {
+          "title": "Design System Vision",
+          "description": "Principles that guide us"
+        },
+        {
+          "title": "MVP Sitemap Snapshot",
+          "description": "Pages in scope"
+        },
+        {
+          "title": "Category Hubs",
+          "description": "Glass morphism product discovery"
+        },
+        {
+          "title": "Evidence Engine",
+          "description": "How we grade trust"
+        },
+        {
+          "title": "Community Outcomes",
+          "description": "Real people, real results"
+        },
+        {
+          "title": "Roadmap",
+          "description": "What's next for the MVP"
+        },
+        {
+          "title": "Call to Action",
+          "description": "How to partner with Mamori"
+        }
+      ]
+    }
+  ]
+}

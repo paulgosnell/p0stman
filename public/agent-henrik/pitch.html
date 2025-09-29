@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Henrik — Insider Journeys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: #050505;
+            color: #f7f7f7;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(1.05) contrast(1.05);
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(5,5,5,0.1), rgba(5,5,5,0.85));
+            z-index: 2;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2.5rem 3.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            letter-spacing: 0.35rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.82);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+            max-width: 720px;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+
+        .headline {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            font-weight: 400;
+            letter-spacing: -0.025em;
+            line-height: 1.05;
+        }
+
+        .subtext {
+            font-size: clamp(1rem, 2.3vw, 1.3rem);
+            font-weight: 300;
+            letter-spacing: 0.12rem;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.7;
+        }
+
+        .cta {
+            align-self: center;
+            padding: 1rem 3rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.68);
+            background: transparent;
+            color: #fff;
+            font-size: 0.9rem;
+            letter-spacing: 0.4rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.35s ease, border 0.35s ease;
+        }
+
+        .cta:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 2rem 2.25rem;
+            }
+
+            nav ul {
+                gap: 1.75rem;
+            }
+        }
+
+        @media (max-width: 720px) {
+            html, body {
+                overflow: auto;
+            }
+
+            header {
+                padding: 1.75rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .subtext {
+                letter-spacing: 0.08rem;
+            }
+
+            .cta {
+                padding: 0.85rem 2.4rem;
+                letter-spacing: 0.28rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" aria-labelledby="agent-henrik-headline">
+        <video autoplay muted loop playsinline>
+            <source src="https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay" aria-hidden="true"></div>
+
+        <header>
+            <a class="logo" href="#">Agent Henrik</a>
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Journeys</a></li>
+                    <li><a href="#">Journal</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h1 class="headline" id="agent-henrik-headline">Your Insider Journey Begins Here.</h1>
+            <p class="subtext">Underground luxury journeys curated for tastemakers, insiders, and cultural explorers.</p>
+            <a class="cta" href="#">Start Explore →</a>
+        </div>
+    </section>
+</body>
+</html>
