@@ -31,15 +31,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                     
                     <div class="header-search">
                         <div class="ai-search-container">
-                            <div class="search-input-wrapper">
-                                <i data-lucide="search" class="search-icon"></i>
+                            <div class="search-input-wrapper" id="searchWrapper">
+                                <i data-lucide="sparkles" class="search-icon"></i>
+                                <div class="ai-orb" id="aiOrb">
+                                    <div class="orb-inner"></div>
+                                    <div class="orb-pulse"></div>
+                                    <div class="orb-pulse-2"></div>
+                                </div>
                                 <input 
                                     type="text" 
                                     class="ai-search-input" 
-                                    placeholder="Ask anything about health... creatine, menopause, sleep..."
+                                    id="aiSearchInput"
+                                    placeholder="Search..."
                                     autocomplete="off"
                                 >
-                                <div class="ai-badge">AI</div>
+                                <div class="ai-badge">
+                                    <span class="ai-badge-text">AI</span>
+                                </div>
                             </div>
                             <div class="search-suggestions" id="searchSuggestions"></div>
                         </div>
@@ -116,9 +124,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             </footer>
         `,
         scripts: `
-            <!-- Search Functionality -->
-            <script src="js/search.js"></script>
-            
             <script>
                 // Mobile menu functionality
                 document.querySelector('.mobile-menu-toggle')?.addEventListener('click', () => {
@@ -159,5 +164,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Re-initialize icons after content loads
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
+    }
+    
+    // Initialize search after includes are loaded (only if not already initialized)
+    if (typeof MamoriSearch !== 'undefined' && !window.mamoriSearchInstance) {
+        window.mamoriSearchInstance = new MamoriSearch();
     }
 });

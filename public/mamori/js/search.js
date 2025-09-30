@@ -108,6 +108,7 @@ class MamoriSearch {
     init() {
         this.setupSearchListeners();
         this.setupSuggestions();
+        this.setupFocusEffects();
     }
     
     setupSearchListeners() {
@@ -127,11 +128,60 @@ class MamoriSearch {
             
             // Hide suggestions when clicking outside
             document.addEventListener('click', (e) => {
-                if (!input.contains(e.target)) {
+                const wrapper = document.getElementById('searchWrapper');
+                if (wrapper && !wrapper.contains(e.target)) {
                     this.hideSuggestions();
+                    this.collapseSearch();
                 }
             });
         });
+    }
+    
+    setupFocusEffects() {
+        const searchInput = document.getElementById('aiSearchInput');
+        const searchWrapper = document.getElementById('searchWrapper');
+        
+        if (!searchInput || !searchWrapper) return;
+        
+        // Expand on focus
+        searchInput.addEventListener('focus', () => {
+            this.expandSearch();
+        });
+        
+        // Collapse on blur if empty
+        searchInput.addEventListener('blur', () => {
+            if (!searchInput.value.trim()) {
+                setTimeout(() => {
+                    this.collapseSearch();
+                }, 200);
+            }
+        });
+    }
+    
+    expandSearch() {
+        const searchWrapper = document.getElementById('searchWrapper');
+        const searchInput = document.getElementById('aiSearchInput');
+        
+        if (searchWrapper && searchInput) {
+            searchWrapper.classList.add('expanded');
+            searchInput.placeholder = 'Ask me anything... health questions, product recommendations, advice...';
+            
+            // Show default suggestions if input is empty
+            if (!searchInput.value.trim()) {
+                this.showAskMeAnythingSuggestions();
+            }
+        }
+    }
+    
+    collapseSearch() {
+        const searchWrapper = document.getElementById('searchWrapper');
+        const searchInput = document.getElementById('aiSearchInput');
+        
+        if (searchWrapper && searchInput) {
+            searchWrapper.classList.remove('expanded');
+            searchInput.placeholder = 'Search...';
+            this.hideSuggestions();
+        }
     }
     
     setupSuggestions() {
@@ -243,6 +293,56 @@ class MamoriSearch {
         this.displaySuggestions(suggestions);
     }
     
+    showAskMeAnythingSuggestions() {
+        const suggestions = [
+            { type: 'ai-prompt', icon: 'heart-pulse', text: 'What can help with sleep quality?', category: 'Health Question' },
+            { type: 'ai-prompt', icon: 'dumbbell', text: 'Best supplements for muscle recovery?', category: 'Product Advice' },
+            { type: 'ai-prompt', icon: 'brain', text: 'How does magnesium help with stress?', category: 'Health Question' },
+            { type: 'ai-prompt', icon: 'zap', text: 'Which creatine type should I choose?', category: 'Product Advice' },
+            { type: 'ai-prompt', icon: 'shield-check', text: 'How do you verify product claims?', category: 'Methodology' }
+        ];
+        
+        this.displayAISuggestions(suggestions);
+    }
+    
+    displayAISuggestions(suggestions) {
+        const suggestionsContainer = document.getElementById('searchSuggestions');
+        if (!suggestionsContainer) return;
+        
+        let html = '<div class="search-results ai-suggestions">';
+        html += '<div class="ai-suggestions-header">';
+        html += '<div class="ai-orb-small">';
+        html += '<div class="orb-inner-small"></div>';
+        html += '</div>';
+        html += '<span class="ai-suggestions-title">Ask me anything</span>';
+        html += '</div>';
+        
+        for (const item of suggestions) {
+            const searchInput = document.getElementById('aiSearchInput');
+            html += `
+                <div class="search-result search-result--ai" onclick="document.getElementById('aiSearchInput').value='${item.text.replace(/'/g, "\\'")}'; document.getElementById('aiSearchInput').dispatchEvent(new Event('input'));">
+                    <div class="result-icon">
+                        <i data-lucide="${item.icon}"></i>
+                    </div>
+                    <div class="result-content">
+                        <div class="result-text">${item.text}</div>
+                        <div class="result-category-small">${item.category}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        html += '</div>';
+        
+        suggestionsContainer.innerHTML = html;
+        suggestionsContainer.style.display = 'block';
+        
+        // Re-initialize icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+    
     showSuggestions(results, query) {
         if (results.length === 0) {
             const noResults = [{
@@ -351,10 +451,23 @@ class MamoriSearch {
     }
 }
 
-// Initialize search when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    new MamoriSearch();
-});
-
-// Make search available globally for debugging
+// Make search available globally
 window.MamoriSearch = MamoriSearch;
+
+// Auto-initialize if DOM is already loaded (for direct script includes)
+// Otherwise, let the includes system initialize it after header loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!window.mamoriSearchInstance) {
+            const searchInput = document.getElementById('aiSearchInput');
+            if (searchInput) {
+                window.mamoriSearchInstance = new MamoriSearch();
+            }
+        }
+    });
+} else {
+    // DOM already loaded, initialize if header exists
+    if (document.getElementById('aiSearchInput')) {
+        window.mamoriSearchInstance = new MamoriSearch();
+    }
+}
