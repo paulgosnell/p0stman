@@ -739,8 +739,9 @@
 
         .pillar-card {
             position: relative;
-            display: grid;
-            grid-template-rows: minmax(200px, 48%) minmax(0, 1fr);
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
             border-radius: 18px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.16);
@@ -752,8 +753,10 @@
         }
 
         .pillar-media {
-            position: relative;
+            position: absolute;
+            inset: 0;
             overflow: hidden;
+            z-index: 0;
         }
 
         .pillar-media img {
@@ -770,18 +773,19 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(5, 7, 9, 0.18) 12%, rgba(5, 7, 9, 0.68) 78%, rgba(5, 7, 9, 0.85) 100%);
-            mix-blend-mode: multiply;
+            background: linear-gradient(180deg, rgba(5, 7, 9, 0.25) 0%, rgba(5, 7, 9, 0.65) 45%, rgba(5, 7, 9, 0.92) 100%);
+            transition: opacity 0.6s ease;
         }
 
         .pillar-body {
             position: relative;
             z-index: 1;
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: 1.1rem;
-            align-content: start;
-            padding: 1.85rem;
-            background: linear-gradient(180deg, rgba(5, 7, 9, 0.94) 0%, var(--pillar-body-gradient, rgba(5, 7, 9, 0.86)) 100%);
+            padding: clamp(1.8rem, 4vw, 2.4rem);
+            flex: 1;
+            justify-content: flex-end;
         }
 
         .pillar-icon {
@@ -815,9 +819,43 @@
         }
 
         .pillar-card p {
-            color: rgba(255, 255, 255, 0.72);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.96rem;
-            line-height: 1.6;
+            line-height: 1.65;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-card .pillar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            letter-spacing: 0.32rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            margin-top: 0.5rem;
+            transition: gap 0.3s ease, color 0.3s ease;
+        }
+
+        .pillar-card .pillar-cta::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover .pillar-cta {
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .pillar-card:hover .pillar-cta::after {
+            transform: translateX(4px);
+        }
+
+        .pillar-card .pillar-cta:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.6);
+            outline-offset: 3px;
         }
 
         .pillar-card:hover {
@@ -829,6 +867,10 @@
         .pillar-card:hover .pillar-media img {
             transform: scale(1.08);
             filter: saturate(1.18) contrast(1.1);
+        }
+
+        .pillar-card:hover .pillar-media::after {
+            opacity: 0.85;
         }
 
         .pillar-card[data-pillar="nature"] {
@@ -1772,6 +1814,7 @@
                             <div class="pillar-copy">
                                 <h3>Hidden Nature &amp; Wellness</h3>
                                 <p>Private forested villas, aurora vigils, biohacking rituals, and restorative spa residencies.</p>
+                                <a href="#contact" class="pillar-cta">Explore Journey</a>
                             </div>
                         </div>
                     </article>
@@ -1796,6 +1839,7 @@
                             <div class="pillar-copy">
                                 <h3>Culinary &amp; Storytelling</h3>
                                 <p>Chef-led archipelago cruises, foraged feasts, and narrative dining inside hidden creative spaces.</p>
+                                <a href="#contact" class="pillar-cta">Explore Journey</a>
                             </div>
                         </div>
                     </article>
@@ -1808,6 +1852,7 @@
                             <div class="pillar-copy">
                                 <h3>Royal &amp; Heritage</h3>
                                 <p>After-hours palace access, private museum salons, and ancestral estate encounters.</p>
+                                <a href="#contact" class="pillar-cta">Explore Journey</a>
                             </div>
                         </div>
                     </article>
@@ -1820,6 +1865,7 @@
                             <div class="pillar-copy">
                                 <h3>Art &amp; Culture</h3>
                                 <p>Studio visits, emerging artist salons, and curated cultural festivals across the seasons.</p>
+                                <a href="#contact" class="pillar-cta">Explore Journey</a>
                             </div>
                         </div>
                     </article>
@@ -1832,6 +1878,7 @@
                             <div class="pillar-copy">
                                 <h3>Nightlife &amp; Celebrations</h3>
                                 <p>Secret clubs, bespoke gala production, and immersive celebrations engineered for insiders.</p>
+                                <a href="#contact" class="pillar-cta">Explore Journey</a>
                             </div>
                         </div>
                     </article>
@@ -1844,6 +1891,7 @@
                             <div class="pillar-copy">
                                 <h3>Legacy &amp; Meaningful Travel</h3>
                                 <p>Impact-driven encounters, philanthropic connections, and multi-generational storytelling.</p>
+                                <a href="#contact" class="pillar-cta">Explore Journey</a>
                             </div>
                         </div>
                     </article>
