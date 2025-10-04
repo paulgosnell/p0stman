@@ -376,15 +376,24 @@ export default function HomeV2() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setShowProjectConfigurator(true)}
-                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
+                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center justify-center gap-2"
                   >
                     <Zap className="w-5 h-5" />
                     See Our Work
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setShowVoiceAgent(true)}
+                    className="px-8 py-4 border border-blue-500/50 bg-blue-500/10 text-white rounded-lg hover:bg-blue-500/20 hover:border-blue-400 transition-all font-medium text-lg inline-flex items-center justify-center gap-2 backdrop-blur-sm"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    Talk to P0STMAN AI
+                  </motion.button>
                   <a
                     href="#focus"
-                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg inline-flex items-center justify-center"
                   >
                     How We Work
                   </a>

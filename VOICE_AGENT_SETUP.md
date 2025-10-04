@@ -57,6 +57,7 @@ A sleek, futuristic voice AI agent overlay has been added to the P0STMAN homepag
   - Added VoiceAgentOverlay import
   - Added state management for overlay visibility
   - Auto-trigger useEffect (2.5s delay)
+  - **NEW**: "Talk to P0STMAN AI" CTA button in hero section
   - Overlay component at bottom of return
 
 ## 🔧 Dependencies Installed
@@ -73,13 +74,15 @@ Already available:
 
 1. **User lands on homepage**
 2. **2.5 seconds later**: Voice agent overlay fades in with animated orb
-3. **User sees**: "Tap to talk to our AI dev team" message
-4. **User clicks orb**: Conversation starts, orb turns blue (listening)
-5. **AI speaks**: Orb turns orange with particle trails
-6. **User can**:
+3. **User sees**: "Tap to talk to P0STMAN" message
+4. **User clicks orb OR clicks "Talk to P0STMAN AI" button in hero**: Conversation starts
+5. **P0STMAN listens**: Orb turns blue with message "P0STMAN is listening..."
+6. **P0STMAN speaks**: Orb turns orange with particle trails, message "P0STMAN is speaking..."
+7. **User can**:
    - Click orb again to end conversation
    - Press ESC to close overlay
    - Click X button in top-right
+   - **Reopen anytime** with "Talk to P0STMAN AI" button in hero section
 
 ## 🎨 Animation States
 
@@ -87,19 +90,19 @@ Already available:
 - Blue pulsing orb
 - Gentle breathing animation
 - Slow rotating particles
-- Message: "Tap to talk to our AI dev team"
+- Message: "Tap to talk to P0STMAN"
 
 ### Listening State (User speaking)
 - Blue color maintained
 - Increased pulse intensity
 - Faster particle rotation
-- Message: "Listening..."
+- Message: "P0STMAN is listening..."
 
-### Speaking State (AI responding)
+### Speaking State (P0STMAN responding)
 - Orange glow
 - Strong pulse
 - Particle trails
-- Message: "AI is speaking..."
+- Message: "P0STMAN is speaking..."
 
 ### Error State
 - Red text
@@ -182,7 +185,8 @@ For ElevenLabs API issues:
 ✅ Orange (#FF6B35) accent when speaking
 ✅ Orb pulses/breathes when idle
 ✅ Orb animates when speaking/listening
-✅ "Tap to talk to our AI dev team" CTA
+✅ "Tap to talk to P0STMAN" CTA (branded messaging)
+✅ Hero section CTA button to reopen overlay
 ✅ Close button (X) in top-right
 ✅ Semi-transparent dark backdrop
 ✅ React component (works with Vite)

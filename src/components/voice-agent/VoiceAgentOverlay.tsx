@@ -112,11 +112,11 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
   // Get status text
   const getStatusText = () => {
     if (error) return error;
-    if (connectionStatus === 'connecting') return 'Connecting...';
-    if (isSpeaking) return 'AI is speaking...';
-    if (isListening) return 'Listening...';
-    if (isActive) return 'Tap to end conversation';
-    return 'Tap to talk to our AI dev team';
+    if (connectionStatus === 'connecting') return 'Connecting to P0STMAN...';
+    if (isSpeaking) return 'P0STMAN is speaking...';
+    if (isListening) return 'P0STMAN is listening...';
+    if (isActive) return 'Tap to end conversation with P0STMAN';
+    return 'Tap to talk to P0STMAN';
   };
 
   return (
