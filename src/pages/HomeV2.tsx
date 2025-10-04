@@ -30,6 +30,7 @@ import WhyWeDoIt from '../components/WhyWeDoIt';
 
 import ProjectConfigurator from '../components/ProjectConfigurator';
 import AnimatedFooter from '../components/AnimatedFooter';
+import VoiceAgentOverlay from '../components/voice-agent/VoiceAgentOverlay';
 
 const highlights = [
   {
@@ -308,6 +309,7 @@ export default function HomeV2() {
   const [currentVideoId, setCurrentVideoId] = useState("");
   const [showProjectConfigurator, setShowProjectConfigurator] = useState(false);
   const [currentCaseStudy, setCurrentCaseStudy] = useState(0);
+  const [showVoiceAgent, setShowVoiceAgent] = useState(false);
 
   const openVideo = (videoId: string) => {
     setCurrentVideoId(videoId);
@@ -320,6 +322,15 @@ export default function HomeV2() {
       setCurrentCaseStudy((prev) => (prev + 1) % featuredProjects.length);
     }, 5000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Trigger voice agent overlay after 2-3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVoiceAgent(true);
+    }, 2500); // 2.5 seconds
+
+    return () => clearTimeout(timer);
   }, []);
 
 
@@ -1184,6 +1195,13 @@ export default function HomeV2() {
       {showProjectConfigurator && (
         <ProjectConfigurator onClose={() => setShowProjectConfigurator(false)} />
       )}
+
+      <VoiceAgentOverlay
+        isOpen={showVoiceAgent}
+        onClose={() => setShowVoiceAgent(false)}
+        agentId={import.meta.env.VITE_ELEVENLABS_AGENT_ID || "agent_8701k6q7xc5af4f8dkjj8pqda592"}
+        apiKey={import.meta.env.VITE_ELEVENLABS_API_KEY || "sk_0fcb2e21a1821c4a6f4ee87747b9ff1e03ae72933ee74d20"}
+      />
     </div>
   );
 }
