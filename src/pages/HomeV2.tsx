@@ -30,7 +30,72 @@ import WhyWeDoIt from '../components/WhyWeDoIt';
 
 import ProjectConfigurator from '../components/ProjectConfigurator';
 import AnimatedFooter from '../components/AnimatedFooter';
-import VoiceAgentOverlay from '../components/voice-agent/VoiceAgentOverlay';
+import InlineVoiceAgent from '../components/voice-agent/InlineVoiceAgent';
+import ChatAgentDemo from '../components/agent-demos/ChatAgentDemo';
+import CodeAgentDemo from '../components/agent-demos/CodeAgentDemo';
+import ImageVideoAgentDemo from '../components/agent-demos/ImageVideoAgentDemo';
+
+// AI Tech Stack logos - using text for reliability
+const aiTechStack = [
+  { name: "ElevenLabs", category: "voice" },
+  { name: "Anthropic", category: "chat" },
+  { name: "OpenAI", category: "chat" },
+  { name: "LiveKit", category: "voice" },
+  { name: "Gemini", category: "vision" }
+];
+
+// Agent Types for showcase
+const agentTypes = [
+  {
+    title: "Voice Agent",
+    tech: [
+      { name: "ElevenLabs" },
+      { name: "LiveKit" }
+    ],
+    gradient: "from-blue-600 to-cyan-600",
+    metrics: [
+      { label: "247 calls/week" },
+      { label: "89% qualified" }
+    ]
+  },
+  {
+    title: "Chat Agent",
+    tech: [
+      { name: "Anthropic" },
+      { name: "OpenAI" }
+    ],
+    gradient: "from-purple-600 to-pink-600",
+    metrics: [
+      { label: "2.3s response" },
+      { label: "94% satisfaction" }
+    ]
+  },
+  {
+    title: "Code Agent",
+    tech: [
+      { name: "Claude" },
+      { name: "GPT-4" },
+      { name: "Gemini" }
+    ],
+    gradient: "from-green-600 to-teal-600",
+    metrics: [
+      { label: "Ships in minutes" },
+      { label: "20+ live sites" }
+    ]
+  },
+  {
+    title: "Image/Video Agent",
+    tech: [
+      { name: "Claude" },
+      { name: "Gemini" }
+    ],
+    gradient: "from-orange-600 to-red-600",
+    metrics: [
+      { label: "Visual analysis" },
+      { label: "Content generation" }
+    ]
+  }
+];
 
 const highlights = [
   {
@@ -61,40 +126,42 @@ const highlights = [
 
 const focusAreas = [
   {
-    icon: <Brain className="w-8 h-8 text-blue-600" />,
-    title: "Fractional Product Leadership",
-    description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
-    features: ["Product Strategy", "Team Leadership", "Stakeholder Management", "Go-to-Market"]
+    icon: <Bot className="w-10 h-10 text-blue-600" />,
+    title: "AI Agent Development",
+    description: "Voice agents for lead gen. Chat agents for support. Code agents that ship features.",
+    features: ["Voice Agents (ElevenLabs)", "Chat Agents (Claude/GPT)", "Code Agents (Gemini)", "Workflow Automation"],
+    pricing: "$5k pilots | $25k+ production",
+    featured: true
   },
   {
     icon: <Rocket className="w-8 h-8 text-purple-600" />,
-    title: "MVP Launches",
+    title: "MVP & Product Launches",
     description: "Fast, focused builds that validate your idea and get you to market in weeks, not months.",
-    features: ["Prototypes", "Proof-of-Concepts", "Beta Launches"]
+    features: ["Prototypes", "Proof-of-Concepts", "Beta Launches", "Market Validation"]
   },
   {
     icon: <Globe className="w-8 h-8 text-green-600" />,
-    title: "Websites",
-    description: "Modern, responsive websites that convert visitors into customers.",
-    features: ["Responsive Design", "SEO Optimized", "CMS Integration", "Performance Focused"]
+    title: "Websites & Mobile Apps",
+    description: "Modern, responsive digital products that convert visitors into customers.",
+    features: ["Responsive Websites", "iOS & Android Apps", "CMS Integration", "Performance Optimization"]
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-indigo-600" />,
-    title: "Mobile Apps",
-    description: "Native-quality mobile apps built with modern cross-platform technology.",
-    features: ["iOS & Android", "Native Performance", "Push Notifications", "Offline Support"]
-  },
-  {
-    icon: <Sparkles className="w-8 h-8 text-orange-600" />,
-    title: "Creative Prototypes",
-    description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
-    features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
+    icon: <Brain className="w-8 h-8 text-indigo-600" />,
+    title: "Fractional Product Leadership",
+    description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
+    features: ["Product Strategy", "Team Leadership", "Stakeholder Management", "Go-to-Market"]
   },
   {
     icon: <Target className="w-8 h-8 text-teal-600" />,
     title: "Digital Transformation",
     description: "Consulting and delivery to modernise systems and teams.",
     features: ["AI Strategy", "Process Optimisation", "Roadmaps", "Change Management"]
+  },
+  {
+    icon: <Sparkles className="w-8 h-8 text-orange-600" />,
+    title: "Creative Prototypes",
+    description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
+    features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
   }
 ];
 
@@ -308,30 +375,35 @@ export default function HomeV2() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [currentVideoId, setCurrentVideoId] = useState("");
   const [showProjectConfigurator, setShowProjectConfigurator] = useState(false);
-  const [currentCaseStudy, setCurrentCaseStudy] = useState(0);
-  const [showVoiceAgent, setShowVoiceAgent] = useState(false);
+  const [codeText, setCodeText] = useState("");
+  const [activeVoiceAgent, setActiveVoiceAgent] = useState(false);
+  const [activeChatDemo, setActiveChatDemo] = useState(false);
+  const [activeCodeDemo, setActiveCodeDemo] = useState(false);
+  const [activeImageDemo, setActiveImageDemo] = useState(false);
 
   const openVideo = (videoId: string) => {
     setCurrentVideoId(videoId);
     setShowVideoModal(true);
   };
 
-  // Auto-rotate case studies
+  // Code typing animation
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCaseStudy((prev) => (prev + 1) % featuredProjects.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    const text = "const Hero = () => {";
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= text.length) {
+        setCodeText(text.slice(0, index));
+        index++;
+      } else {
+        setTimeout(() => {
+          index = 0;
+          setCodeText("");
+        }, 2000);
+      }
+    }, 100);
+    return () => clearInterval(timer);
   }, []);
 
-  // Trigger voice agent overlay after 2-3 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowVoiceAgent(true);
-    }, 2500); // 2.5 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
 
 
 
@@ -356,148 +428,316 @@ export default function HomeV2() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-blue-400">
-                    <Bot className="w-6 h-6" />
-                    <span className="font-light">Your Product Partner</span>
+                    <Bot className="w-5 h-5" />
+                    <span className="font-light text-sm opacity-70">AI Agent Builder</span>
                   </div>
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      From vision to product — delivered fast and brilliantly.
+                      Building Agents That Work For You.
                     </span>
                   </h1>
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  We build and deliver digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count.
+                  Voice agents for lead gen. Chat agents for support. Code agents that ship features. Plus the websites, apps, and platforms that surround them.
                 </p>
+
+                {/* Value Props */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-gray-200">
+                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                    <span className="text-lg">20+ production AI systems shipped</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-200">
+                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                    <span className="text-lg">ElevenLabs, OpenAI, Anthropic, LiveKit integrations</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-200">
+                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                    <span className="text-lg">$5k pilots to $50k+ production systems</span>
+                  </div>
+                </div>
+
+                {/* Powered by AI Tech Stack */}
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-400 uppercase tracking-wider">Powered by</p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    {aiTechStack.map((tech, index) => (
+                      <div
+                        key={index}
+                        className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all"
+                      >
+                        <span className="text-sm text-white font-light">{tech.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => setShowProjectConfigurator(true)}
+                    onClick={() => {
+                      const voiceCard = document.getElementById('voice-agent-card');
+                      voiceCard?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      setTimeout(() => setActiveVoiceAgent(true), 500);
+                    }}
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center justify-center gap-2"
                   >
-                    <Zap className="w-5 h-5" />
-                    See Our Work
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setShowVoiceAgent(true)}
-                    className="px-8 py-4 border border-blue-500/50 bg-blue-500/10 text-white rounded-lg hover:bg-blue-500/20 hover:border-blue-400 transition-all font-medium text-lg inline-flex items-center justify-center gap-2 backdrop-blur-sm"
-                  >
                     <MessageSquare className="w-5 h-5" />
-                    Talk to P0STMAN AI
+                    Talk to Our AI Agent
+                    <ArrowRight className="w-5 h-5" />
                   </motion.button>
                   <a
                     href="#focus"
                     className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg inline-flex items-center justify-center"
                   >
-                    How We Work
+                    Explore All Services
                   </a>
                 </div>
               </motion.div>
 
-              {/* Right Column - Value Showcase */}
+              {/* Right Column - Agent Types Showcase */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="space-y-6"
+                className="space-y-4"
               >
-                {/* Case Study Mini Carousel */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="space-y-4"
-                >
-
-                  {/* Current Case Study Card - Split Layout */}
+                <div className="grid grid-cols-1 gap-4">
+                  {/* Voice Agent */}
                   <motion.div
-                    key={currentCaseStudy}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 cursor-pointer group"
-                    onClick={() => window.location.href = featuredProjects[currentCaseStudy].caseStudyUrl}
+                    id="voice-agent-card"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      boxShadow: [
+                        "0 10px 30px -10px rgba(59, 130, 246, 0.3)",
+                        "0 10px 40px -10px rgba(59, 130, 246, 0.5)",
+                        "0 10px 30px -10px rgba(59, 130, 246, 0.3)"
+                      ]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.5, delay: 0.3 },
+                      y: { duration: 0.5, delay: 0.3 },
+                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 cursor-pointer hover:shadow-xl transition-all"
                   >
-                    {/* Top Half - Image */}
-                    <div className="relative h-56 md:h-72 overflow-hidden">
-                      <img
-                        src={featuredProjects[currentCaseStudy].image}
-                        alt={featuredProjects[currentCaseStudy].title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    </div>
-
-                    {/* Bottom Half - Content */}
-                    <div className="p-6 md:p-8 space-y-4">
-                      {/* Header */}
-                      <div className="flex items-center gap-3">
-                        <div className="flex-1">
-                          <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{featuredProjects[currentCaseStudy].title}</h4>
-                          <p className="text-blue-200 text-base md:text-lg">{featuredProjects[currentCaseStudy].company}</p>
-                        </div>
-                        {/* Logo positioned next to title */}
-                        {featuredProjects[currentCaseStudy].logo && (
-                          <div className="flex-shrink-0">
-                            <img
-                              src={featuredProjects[currentCaseStudy].logo}
-                              alt={`${featuredProjects[currentCaseStudy].company} logo`}
-                              className="h-10 md:h-12 w-auto filter brightness-0 invert opacity-80"
+                    <div className="p-6" onClick={() => setActiveVoiceAgent(!activeVoiceAgent)}>
+                      <div className="flex items-start justify-between mb-4">
+                        <h4 className="text-lg font-light text-white">Voice Agent</h4>
+                        {/* Subtle waveform animation */}
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(4)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              animate={{
+                                scaleY: [1, 1.5, 1],
+                              }}
+                              transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: i * 0.2,
+                                ease: "easeInOut"
+                              }}
+                              className="w-0.5 h-3 bg-white/60 rounded-full"
                             />
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-white/90 text-base leading-relaxed">
-                        {featuredProjects[currentCaseStudy].description}
-                      </p>
-
-                      {/* Metrics if available */}
-                      {featuredProjects[currentCaseStudy].metrics && (
-                        <div className="grid grid-cols-2 gap-3 md:gap-4">
-                          {featuredProjects[currentCaseStudy].metrics.slice(0, 2).map((metric, i) => (
-                            <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-2 md:p-3">
-                              <div className="text-lg md:text-xl font-bold text-white">{metric.value}</div>
-                              <div className="text-xs text-white/70">{metric.label}</div>
-                            </div>
                           ))}
                         </div>
-                      )}
+                      </div>
 
-                      {/* Bottom Section */}
-                      <div className="flex items-center justify-between pt-2">
-                        <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium">
-                          {featuredProjects[currentCaseStudy].category}
-                        </span>
-                        <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
-                          <span className="text-sm">View Case Study</span>
-                          <ExternalLink className="w-5 h-5" />
-                        </div>
+                      <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                        <span>247 calls/week</span>
+                        <span className="text-white/40">•</span>
+                        <span>89% qualified</span>
+                      </div>
+
+                      <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                        {agentTypes[0].tech.map((tech, i) => (
+                          <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                            {tech.name}
+                          </div>
+                        ))}
                       </div>
                     </div>
+
+                    {/* Inline Voice Agent Component */}
+                    <InlineVoiceAgent
+                      isActive={activeVoiceAgent}
+                      onClose={() => setActiveVoiceAgent(false)}
+                      agentId={import.meta.env.VITE_ELEVENLABS_AGENT_ID || "agent_8701k6q7xc5af4f8dkjj8pqda592"}
+                    />
                   </motion.div>
 
-                  {/* Navigation Dots */}
-                  <div className="flex justify-center gap-3 mt-6">
-                    {featuredProjects.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentCaseStudy(index)}
-                        className={`w-3 h-3 rounded-full transition-all ${index === currentCaseStudy
-                          ? 'bg-white scale-125'
-                          : 'bg-white/40 hover:bg-white/60'
-                          }`}
-                      />
-                    ))}
-                  </div>
-                </motion.div>
+                  {/* Chat Agent */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      boxShadow: [
+                        "0 10px 30px -10px rgba(168, 85, 247, 0.3)",
+                        "0 10px 40px -10px rgba(168, 85, 247, 0.5)",
+                        "0 10px 30px -10px rgba(168, 85, 247, 0.3)"
+                      ]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.5, delay: 0.4 },
+                      y: { duration: 0.5, delay: 0.4 },
+                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }
+                    }}
+                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 cursor-pointer hover:shadow-xl transition-all"
+                  >
+                    <div className="p-6" onClick={() => setActiveChatDemo(!activeChatDemo)}>
+                    <div className="flex items-start justify-between mb-4">
+                      <h4 className="text-lg font-light text-white">Chat Agent</h4>
+                      {/* Subtle typing dots animation */}
+                      <div className="flex items-center gap-1">
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{
+                              opacity: [0.3, 1, 0.3],
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              delay: i * 0.3,
+                              ease: "easeInOut"
+                            }}
+                            className="w-1 h-1 bg-white/60 rounded-full"
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                      <span>2.3s response</span>
+                      <span className="text-white/40">•</span>
+                      <span>94% satisfaction</span>
+                    </div>
+
+                    <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                      {agentTypes[1].tech.map((tech, i) => (
+                        <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                          {tech.name}
+                        </div>
+                      ))}
+                    </div>
+                    </div>
+
+                    {activeChatDemo && <ChatAgentDemo />}
+                  </motion.div>
+
+                  {/* Code Agent */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      boxShadow: [
+                        "0 10px 30px -10px rgba(5, 150, 105, 0.3)",
+                        "0 10px 40px -10px rgba(5, 150, 105, 0.5)",
+                        "0 10px 30px -10px rgba(5, 150, 105, 0.3)"
+                      ]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.5, delay: 0.5 },
+                      y: { duration: 0.5, delay: 0.5 },
+                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }
+                    }}
+                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600 to-teal-600 cursor-pointer hover:shadow-xl transition-all"
+                  >
+                    <div className="p-6" onClick={() => setActiveCodeDemo(!activeCodeDemo)}>
+                    <div className="flex items-start justify-between mb-4">
+                      <h4 className="text-lg font-light text-white">Code Agent</h4>
+                      {/* Subtle code typing animation */}
+                      <div className="font-mono text-xs text-white/60">
+                        {codeText}<span className="animate-pulse">|</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                      <span>Ships in minutes</span>
+                      <span className="text-white/40">•</span>
+                      <span>20+ live sites</span>
+                    </div>
+
+                    <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                      {agentTypes[2].tech.map((tech, i) => (
+                        <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                          {tech.name}
+                        </div>
+                      ))}
+                    </div>
+                    </div>
+
+                    {activeCodeDemo && <CodeAgentDemo />}
+                  </motion.div>
+
+                  {/* Image/Video Agent */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      boxShadow: [
+                        "0 10px 30px -10px rgba(234, 88, 12, 0.3)",
+                        "0 10px 40px -10px rgba(234, 88, 12, 0.5)",
+                        "0 10px 30px -10px rgba(234, 88, 12, 0.3)"
+                      ]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.5, delay: 0.6 },
+                      y: { duration: 0.5, delay: 0.6 },
+                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                    }}
+                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600 to-red-600 cursor-pointer hover:shadow-xl transition-all"
+                  >
+                    <div className="p-6" onClick={() => setActiveImageDemo(!activeImageDemo)}>
+                    <div className="flex items-start justify-between mb-4">
+                      <h4 className="text-lg font-light text-white">Image/Video Agent</h4>
+                      {/* Subtle frame/image animation */}
+                      <div className="flex items-center gap-0.5">
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{
+                              opacity: [0.3, 1, 0.3],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              delay: i * 0.4,
+                              ease: "easeInOut"
+                            }}
+                            className="w-2 h-2 bg-white/60 rounded-sm"
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                      <span>Visual analysis</span>
+                      <span className="text-white/40">•</span>
+                      <span>Content generation</span>
+                    </div>
+
+                    <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                      {agentTypes[3].tech.map((tech, i) => (
+                        <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                          {tech.name}
+                        </div>
+                      ))}
+                    </div>
+                    </div>
+
+                    {activeImageDemo && <ImageVideoAgentDemo />}
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -804,7 +1044,7 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* Focus Areas - Updated for better contrast */}
+      {/* Services Section - Tiered Layout */}
       <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -821,12 +1061,143 @@ export default function HomeV2() {
               </h2>
 
               <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
-                From strategy to delivery, we cover the full spectrum of digital product development.
+                From AI agents to full-stack products, we cover the complete spectrum of modern digital development.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {focusAreas.map((area, index) => (
+            {/* TOP TIER - Featured Large Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <div className="bg-gradient-to-br from-teal-400/90 via-cyan-400/80 to-blue-400/90 p-8 md:p-12 rounded-2xl shadow-xl text-white hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl inline-block mb-6">
+                      {focusAreas[0].icon}
+                    </div>
+                    <h3 className="text-3xl font-light mb-4">{focusAreas[0].title}</h3>
+                    <p className="text-white/95 text-lg mb-6 leading-relaxed font-light">{focusAreas[0].description}</p>
+                    <div className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-lg">
+                      <p className="text-white font-light">{focusAreas[0].pricing}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    {focusAreas[0].features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        {/* Voice Agent - Waveform */}
+                        {i === 0 && (
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(4)].map((_, idx) => (
+                              <motion.div
+                                key={idx}
+                                animate={{
+                                  scaleY: [1, 1.5, 1],
+                                }}
+                                transition={{
+                                  duration: 2,
+                                  repeat: Infinity,
+                                  delay: idx * 0.2,
+                                  ease: "easeInOut"
+                                }}
+                                className="w-0.5 h-3 bg-white/80 rounded-full flex-shrink-0"
+                              />
+                            ))}
+                          </div>
+                        )}
+                        {/* Chat Agent - Typing Dots */}
+                        {i === 1 && (
+                          <div className="flex items-center gap-1">
+                            {[...Array(3)].map((_, idx) => (
+                              <motion.div
+                                key={idx}
+                                animate={{
+                                  opacity: [0.3, 1, 0.3],
+                                }}
+                                transition={{
+                                  duration: 1.5,
+                                  repeat: Infinity,
+                                  delay: idx * 0.3,
+                                  ease: "easeInOut"
+                                }}
+                                className="w-1 h-1 bg-white/80 rounded-full flex-shrink-0"
+                              />
+                            ))}
+                          </div>
+                        )}
+                        {/* Code Agent - Cursor */}
+                        {i === 2 && (
+                          <motion.div
+                            animate={{ opacity: [1, 0, 1] }}
+                            transition={{ duration: 0.8, repeat: Infinity }}
+                            className="w-0.5 h-4 bg-white/80 flex-shrink-0"
+                          />
+                        )}
+                        {/* Workflow/Image - Frame squares */}
+                        {i === 3 && (
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(3)].map((_, idx) => (
+                              <motion.div
+                                key={idx}
+                                animate={{
+                                  opacity: [0.3, 1, 0.3],
+                                }}
+                                transition={{
+                                  duration: 2,
+                                  repeat: Infinity,
+                                  delay: idx * 0.4,
+                                  ease: "easeInOut"
+                                }}
+                                className="w-2 h-2 bg-white/80 rounded-sm flex-shrink-0"
+                              />
+                            ))}
+                          </div>
+                        )}
+                        <span className="text-white font-light">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* MID TIER - 2 Medium Cards */}
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              {focusAreas.slice(1, 3).map((area, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1"
+                >
+                  <div className="mb-6">
+                    <div className="p-4 bg-gray-50 rounded-xl inline-block mb-4">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-3 text-black">{area.title}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed">{area.description}</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    {area.features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0" />
+                        <span className="text-gray-700 font-light">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* BOTTOM TIER - 3 Smaller Cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {focusAreas.slice(3).map((area, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -847,7 +1218,7 @@ export default function HomeV2() {
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0" />
-                        <span className="text-gray-700 font-light text-sm">{feature}</span>
+                        <span className="text-gray-700 font-light text-xs">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -1205,12 +1576,6 @@ export default function HomeV2() {
         <ProjectConfigurator onClose={() => setShowProjectConfigurator(false)} />
       )}
 
-      <VoiceAgentOverlay
-        isOpen={showVoiceAgent}
-        onClose={() => setShowVoiceAgent(false)}
-        agentId={import.meta.env.VITE_ELEVENLABS_AGENT_ID || "agent_8701k6q7xc5af4f8dkjj8pqda592"}
-        apiKey={import.meta.env.VITE_ELEVENLABS_API_KEY || "sk_0fcb2e21a1821c4a6f4ee87747b9ff1e03ae72933ee74d20"}
-      />
     </div>
   );
 }

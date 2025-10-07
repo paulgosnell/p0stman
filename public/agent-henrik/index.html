@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent Henrik — Insider Journeys</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Aventa';
+            src: url('Aventa-Variable.ttf') format('truetype');
+            font-weight: 100 900;
+        }
         :root {
             --accent: #d9c6a3;
             --accent-soft: rgba(217, 198, 163, 0.18);
@@ -25,7 +27,7 @@
             min-height: 100%;
             background: var(--bg-dark);
             color: var(--text-light);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Aventa', sans-serif;
             overflow-x: hidden;
         }
 
@@ -68,18 +70,23 @@
             right: 0;
             padding: 2.5rem 3.5rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             z-index: 3;
         }
 
         .logo {
-            font-family: 'Crimson Text', serif;
+            font-family: 'Aventa', sans-serif;
             font-size: 1.8rem;
             letter-spacing: 0.3rem;
             text-transform: uppercase;
             color: #fff;
             text-decoration: none;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
         }
 
         nav ul {
@@ -112,7 +119,7 @@
         }
 
         .headline {
-            font-family: 'Crimson Text', serif;
+            font-family: 'Aventa', sans-serif;
             font-size: clamp(3rem, 7vw, 6.5rem);
             font-weight: 400;
             letter-spacing: -0.025em;
@@ -125,6 +132,49 @@
             letter-spacing: 0.12rem;
             color: rgba(255, 255, 255, 0.78);
             line-height: 1.7;
+        }
+
+        .coming-soon {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .coming-soon-text {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .contact-info {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 300;
+            letter-spacing: 0.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 1.3s;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.7;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .cta {
@@ -679,204 +729,21 @@
 </head>
 <body>
     <section class="hero" aria-labelledby="agent-henrik-headline">
-        <video autoplay muted loop playsinline>
-            <source src="https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_3.mp4" type="video/mp4">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+            <source src="https://api.chilledsites.com/storage/v1/object/public/p0stman/agent-henrik_video_1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="overlay" aria-hidden="true"></div>
 
         <header class="hero-header">
-            <a class="logo" href="#">Agent Henrik</a>
-            <nav aria-label="Primary">
-                <ul>
-                    <li><a href="#">Explore</a></li>
-                    <li><a href="#">Journeys</a></li>
-                    <li><a href="#">Journal</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="#"><img src="AHT_White.png" alt="Agent Henrik" class="logo-img"></a>
         </header>
 
         <div class="content">
-            <h1 class="headline" id="agent-henrik-headline">Your Insider Journey Begins Here.</h1>
-            <p class="subtext">Underground luxury journeys curated for tastemakers, insiders, and cultural explorers.</p>
-            <a class="cta" href="#">Start Explore →</a>
+            <h1 class="headline coming-soon" id="agent-henrik-headline">COMING SOON</h1>
+            <p class="subtext coming-soon-text">We are shaping the future of exploring the world</p>
+            <p class="contact-info">Contact: <a href="tel:+46703872264">+46703872264</a></p>
         </div>
     </section>
-    <main>
-    <section class="section" aria-labelledby="journeys-heading" data-reveal="section">
-            <header class="section-header">
-                <p class="accent-tag">The Insider Lineup</p>
-                <h2 class="section-heading" id="journeys-heading">Journeys Tailored for After-Hours Connoisseurs.</h2>
-                <p class="section-description">From hidden supper clubs to midnight river cruises, Agent Henrik curates rare itineraries with cinematic flair. Choose a rally that whispers your name.</p>
-            </header>
-            <div class="journeys-grid" role="list">
-                <article class="journey-card" role="listitem" aria-labelledby="journey-midnight-soiree" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80');" data-reveal="card" data-reveal-delay="0">
-                    <div class="journey-card__content">
-                        <h3 class="journey-card__title" id="journey-midnight-soiree">Midnight Riviera Soirée</h3>
-                        <p class="journey-card__copy">Champagne sabrage at dusk, clandestine jazz in a candlelit grotto, and a sunrise yacht handover.</p>
-                        <a class="journey-card__link" href="#">View Journey →</a>
-                    </div>
-                </article>
-                <article class="journey-card" role="listitem" aria-labelledby="journey-neon-night" style="background-image: url('https://images.unsplash.com/photo-1526481280695-3c4699a1ff93?auto=format&fit=crop&w=1200&q=80&ixlib=rb-4.0.3');" data-reveal="card" data-reveal-delay="0.08">
-                    <div class="journey-card__content">
-                        <h3 class="journey-card__title" id="journey-neon-night">Neon Night Market Rally</h3>
-                        <p class="journey-card__copy">Sichuan speakeasies, avant-garde mixology, and rooftop vinyl sermons led by Henrik himself.</p>
-                        <a class="journey-card__link" href="#">View Journey →</a>
-                    </div>
-                </article>
-                <article class="journey-card" role="listitem" aria-labelledby="journey-arctic-luxe" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80');" data-reveal="card" data-reveal-delay="0.16">
-                    <div class="journey-card__content">
-                        <h3 class="journey-card__title" id="journey-arctic-luxe">Arctic Luxe Expedition</h3>
-                        <p class="journey-card__copy">Fire-lit snow lodges, aurora degustations, and a private glacier bar carved for your circle.</p>
-                        <a class="journey-card__link" href="#">View Journey →</a>
-                    </div>
-                </article>
-                <article class="journey-card" role="listitem" aria-labelledby="journey-desert" style="background-image: url('https://images.unsplash.com/photo-1529927066849-6b62b009dcc6?auto=format&fit=crop&w=1200&q=80&ixlib=rb-4.0.3');" data-reveal="card" data-reveal-delay="0.24">
-                    <div class="journey-card__content">
-                        <h3 class="journey-card__title" id="journey-desert">Desert Mirage Residency</h3>
-                        <p class="journey-card__copy">Perfumed courtyards, secret hammam rituals, and a dusk polo match beneath lantern constellations.</p>
-                        <a class="journey-card__link" href="#">View Journey →</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-    <section class="section" aria-labelledby="journal-heading" data-reveal="section" data-reveal-delay="0.1">
-            <header class="section-header">
-                <p class="accent-tag">Dispatches</p>
-                <h2 class="section-heading" id="journal-heading">Journal: Henrik’s Whispered Intel.</h2>
-                <p class="section-description">Rumors, recipes, and rogue itineraries—decoded by the AI that knows precisely when to raise an eyebrow.</p>
-            </header>
-            <div class="journal-grid" role="list">
-                <article class="journal-card" role="listitem" aria-labelledby="journal-card-1" data-reveal="card" data-reveal-delay="0">
-                    <small>AI Henrik Says</small>
-                    <h3 id="journal-card-1">Why Your Next Table Should Be Underground</h3>
-                    <p>A subterranean chef just leaked the password. Spoiler: it involves saffron smoke and a vinyl that spins backwards.</p>
-                    <time datetime="2025-08-16">16 Aug 2025</time>
-                </article>
-                <article class="journal-card" role="listitem" aria-labelledby="journal-card-2" data-reveal="card" data-reveal-delay="0.12">
-                    <small>From Agent Henrik</small>
-                    <h3 id="journal-card-2">Jet-Lag Hack: Moonlight Aperitivo</h3>
-                    <p>Henrik’s alchemy for arriving luminous: bergamot bitters, Himalayan salt, and a rooftop botanist on standby.</p>
-                    <time datetime="2025-07-28">28 Jul 2025</time>
-                </article>
-                <article class="journal-card" role="listitem" aria-labelledby="journal-card-3" data-reveal="card" data-reveal-delay="0.24">
-                    <small>AI Henrik Says</small>
-                    <h3 id="journal-card-3">Three Cities, One Sleepless Weekend</h3>
-                    <p>A whirlwind blueprint stitching Oslo fjords to Marrakech lanterns, ending with a vinyl baptism in Lisbon.</p>
-                    <time datetime="2025-06-12">12 Jun 2025</time>
-                </article>
-            </div>
-            <div class="journal-footer">
-                <a class="link-inline" href="#">Read All Posts →</a>
-            </div>
-        </section>
-
-    <section class="section press-section" aria-labelledby="press-heading" data-reveal="section" data-reveal-delay="0.15">
-            <header class="section-header press-intro">
-                <p class="accent-tag">As Seen In</p>
-                <h2 class="section-heading" id="press-heading">What the World Says About Henrik.</h2>
-                <p class="section-description">From cultural gatekeepers to late-night tastemakers, the globe has taken notice.</p>
-            </header>
-            <div class="press-logos" aria-label="Featured publications">
-                <span class="press-logo" role="img" aria-label="The New York Times" data-reveal="card" data-reveal-delay="0">NYT</span>
-                <span class="press-logo" role="img" aria-label="Vogue" data-reveal="card" data-reveal-delay="0.08">Vogue</span>
-                <span class="press-logo" role="img" aria-label="BBC" data-reveal="card" data-reveal-delay="0.16">BBC</span>
-                <span class="press-logo" role="img" aria-label="Monocle" data-reveal="card" data-reveal-delay="0.24">Monocle</span>
-            </div>
-            <div class="press-quotes">
-                <blockquote data-reveal="quote" data-reveal-delay="0.16">
-                    “Agent Henrik choreographs evenings that feel like whispered folklore.”
-                    <cite>Vogue Nightlife Desk</cite>
-                </blockquote>
-                <blockquote data-reveal="quote" data-reveal-delay="0.24">
-                    “The most discreet concierge in Europe now has an AI twin—double the mischief.”
-                    <cite>BBC Culture</cite>
-                </blockquote>
-            </div>
-        </section>
-
-    <section class="section contact-section" aria-labelledby="contact-heading" data-reveal="section" data-reveal-delay="0.2">
-            <header class="section-header">
-                <p class="accent-tag">Concierge</p>
-                <h2 class="section-heading" id="contact-heading">Plan Your Bespoke Journey with Agent Henrik.</h2>
-            </header>
-            <div class="contact-wrapper">
-                <div class="contact-intro" data-reveal="element" data-reveal-delay="0">
-                    <p>Start the conversation and Henrik will architect a decadent itinerary tailored to your inner circle. A private jet? A silent disco in a snow cave? He merely needs your whispers.</p>
-                    <div class="contact-actions">
-                        <a class="pill-button" href="#" role="button">Message Agent Henrik</a>
-                        <p class="section-description">Prefer a classic approach? Drop Henrik a note and he’ll respond with a conspiratorial grin.</p>
-                    </div>
-                </div>
-                <form aria-label="Contact Agent Henrik" data-reveal="element" data-reveal-delay="0.15">
-                    <div>
-                        <label for="contact-name">Name</label>
-                        <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <label for="contact-email">Email</label>
-                        <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@domain.com" required>
-                    </div>
-                    <div>
-                        <label for="contact-message">Message</label>
-                        <textarea id="contact-message" name="message" placeholder="Tell Henrik your wildest travel fantasy." required></textarea>
-                    </div>
-                    <button class="submit-button" type="submit">Send Whisper →</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    <script>
-        (function () {
-            const root = document.documentElement;
-            root.classList.add('js');
-            root.classList.remove('no-js');
-
-            const revealElements = document.querySelectorAll('[data-reveal]');
-            if (!revealElements.length) {
-                return;
-            }
-
-            const revealNow = (el) => {
-                if (el.dataset.revealDelay) {
-                    el.style.setProperty('--reveal-delay', el.dataset.revealDelay + 's');
-                }
-                el.classList.add('is-visible');
-            };
-
-            const prefersReducedMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
-
-            if (prefersReducedMotion.matches) {
-                revealElements.forEach(revealNow);
-                return;
-            }
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            revealNow(entry.target);
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    root: null,
-                    rootMargin: '0px 0px -10% 0px',
-                    threshold: 0.2
-                });
-
-                revealElements.forEach((el) => {
-                    if (!el.classList.contains('is-visible')) {
-                        observer.observe(el);
-                    }
-                });
-            } else {
-                revealElements.forEach(revealNow);
-            }
-        })();
-    </script>
 </body>
 </html>

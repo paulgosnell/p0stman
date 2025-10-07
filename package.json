@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@elevenlabs/client": "^0.7.1",
+    "@elevenlabs/react": "^0.7.1",
     "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.2.0",
