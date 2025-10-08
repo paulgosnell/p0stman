@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Conversation } from '@elevenlabs/client';
 import VoiceOrb from './VoiceOrb';
+import LanguageSelector from './LanguageSelector';
 
 interface VoiceAgentOverlayProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected');
   const [error, setError] = useState<string | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
 
   const conversationRef = useRef<Conversation | null>(null);
 
@@ -28,12 +30,17 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
       setConnectionStatus('connecting');
       setError(null);
 
-      // Initialize ElevenLabs conversation
+      // Initialize ElevenLabs conversation with language override
       const conversation = await Conversation.startSession({
         agentId,
         apiKey,
+        overrides: {
+          agent: {
+            language: selectedLanguage,
+          },
+        },
         onConnect: () => {
-          console.log('Connected to ElevenLabs');
+          console.log('Connected to ElevenLabs with language:', selectedLanguage);
           setConnectionStatus('connected');
           setIsActive(true);
         },
@@ -63,7 +70,7 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
       setError('Failed to start conversation. Please try again.');
       setConnectionStatus('disconnected');
     }
-  }, [agentId, apiKey, isActive]);
+  }, [agentId, apiKey, isActive, selectedLanguage]);
 
   // End conversation
   const endConversation = useCallback(async () => {
@@ -130,18 +137,30 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
           className="fixed inset-0 z-50 flex items-center justify-center"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}
         >
-          {/* Close button */}
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
+          {/* Top bar with language selector and close button */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ delay: 0.1 }}
-            onClick={onClose}
-            className="absolute top-6 right-6 md:top-8 md:right-8 text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
-            aria-label="Close"
+            className="absolute top-6 left-6 right-6 md:top-8 md:left-8 md:right-8 flex justify-between items-center"
           >
-            <X size={28} strokeWidth={2} />
-          </motion.button>
+            {/* Language selector - disabled during active conversation */}
+            <LanguageSelector
+              selectedLanguage={selectedLanguage}
+              onLanguageChange={setSelectedLanguage}
+              disabled={isActive || connectionStatus === 'connecting'}
+            />
+
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+              aria-label="Close"
+            >
+              <X size={28} strokeWidth={2} />
+            </button>
+          </motion.div>
 
           {/* Main content */}
           <motion.div
