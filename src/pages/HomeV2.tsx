@@ -191,23 +191,6 @@ const testimonials = [
 
 // Featured projects data - mix of enterprise and AI-built projects
 const featuredProjects = [
-  // Web3 & Blockchain Showcase Project
-  {
-    id: 'bfit-web3',
-    title: 'BFIT Web3',
-    company: 'Blockchain Fitness Platform',
-    category: 'Web3 & Fitness',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
-    description: 'Revolutionary blockchain-powered fitness platform combining Web3 technology with health tracking. Innovative approach to fitness gamification and community building.',
-    type: 'web3',
-    caseStudyUrl: '/case-study/bfit-web3',
-    metrics: [
-      { label: 'Technology', value: 'Web3', icon: <Bot className="w-6 h-6" /> },
-      { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-6 h-6" /> },
-      { label: 'Focus', value: 'Fitness', icon: <Target className="w-6 h-6" /> },
-      { label: 'Innovation', value: 'High', icon: <Zap className="w-6 h-6" /> }
-    ]
-  },
   // Enterprise Projects
   {
     id: 'fab',
@@ -253,6 +236,23 @@ const featuredProjects = [
       { label: 'Client', value: 'Government', icon: <Award className="w-6 h-6" /> }
     ]
   },
+    // Web3 & Blockchain Showcase Project
+    {
+      id: 'bfit-web3',
+      title: 'BFIT Web3',
+      company: 'Blockchain Fitness Platform',
+      category: 'Web3 & Fitness',
+      image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
+      description: 'Revolutionary blockchain-powered fitness platform combining Web3 technology with health tracking. Innovative approach to fitness gamification and community building.',
+      type: 'web3',
+      caseStudyUrl: '/case-study/bfit-web3',
+      metrics: [
+        { label: 'Technology', value: 'Web3', icon: <Bot className="w-6 h-6" /> },
+        { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-6 h-6" /> },
+        { label: 'Focus', value: 'Fitness', icon: <Target className="w-6 h-6" /> },
+        { label: 'Innovation', value: 'High', icon: <Zap className="w-6 h-6" /> }
+      ]
+    },
   {
     id: 'al-arabiya',
     title: 'News Platform Redesign',
@@ -404,9 +404,6 @@ export default function HomeV2() {
     return () => clearInterval(timer);
   }, []);
 
-
-
-
   return (
     <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
       {/* Hero Section */}
@@ -486,14 +483,14 @@ export default function HomeV2() {
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center justify-center gap-2"
                   >
                     <MessageSquare className="w-5 h-5" />
-                    Talk to Our AI Agent
+                    Talk to P0STMAN
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                   <a
                     href="#focus"
                     className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg inline-flex items-center justify-center"
                   >
-                    Explore All Services
+                    Explore Services
                   </a>
                 </div>
               </motion.div>
