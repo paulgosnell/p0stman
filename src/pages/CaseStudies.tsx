@@ -374,6 +374,137 @@ const allProjects = [
       { label: 'Build Time', value: '1 week', icon: <Zap className="w-6 h-6" /> },
       { label: 'Gift Selection', value: '+85%', icon: <TrendingUp className="w-6 h-6" /> }
     ]
+  },
+  // Gallery Projects (Screenshots only - no full case study)
+  {
+    id: 'nordik-basalt',
+    title: 'Nordik Basalt',
+    company: 'Travel & Tourism',
+    category: 'Travel',
+    type: 'AI-Built',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/images/screenshot_f9bc38ad-3351-42dc-a897-27e1be1b4177_1759009074553.png',
+    description: 'A beautiful travel website with a Nordic dark theme, showcasing stunning destinations and immersive experiences.',
+    metrics: [
+      { label: 'Build Time', value: '3 days', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Design Style', value: 'Nordic', icon: <Globe className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'rams-gehry',
+    title: 'Rams & Gehry Architecture',
+    company: 'Architecture Portfolio',
+    category: 'Architecture',
+    type: 'AI-Built',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/images/screenshot_71b6ef3b-18e1-45db-aa85-156664f1f8ad_1759009534586.png',
+    description: 'Minimalist Design, Expressive Form. A stunning architectural portfolio showcasing bold, innovative designs.',
+    metrics: [
+      { label: 'Style', value: 'Minimalist', icon: <Building2 className="w-6 h-6" /> },
+      { label: 'Build Time', value: '4 days', icon: <Zap className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'powerfit-gym',
+    title: 'PowerFit Gym',
+    company: 'Fitness Center',
+    category: 'Health & Fitness',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_e34da882-3d2e-44c2-89db-9e8cd527c31d_1753873072455.png',
+    description: 'Transform Your Body, Elevate Your Mind. Modern fitness center website with dynamic design and powerful branding.',
+    metrics: [
+      { label: 'Build Time', value: '3 days', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Category', value: 'Fitness', icon: <TrendingUp className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'audi-concept',
+    title: 'Audi',
+    company: 'Automobile Showcase',
+    category: 'Automobile',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_d31357b6-225e-4b68-8e57-03bee4b71b0d_1753133531463.png',
+    description: 'Progress Through Technology. Sleek automotive showcase highlighting innovation and premium design.',
+    metrics: [
+      { label: 'Build Time', value: '5 days', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Industry', value: 'Automotive', icon: <Target className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'earthwear',
+    title: 'EarthWear',
+    company: 'Sustainable Fashion',
+    category: 'E-commerce & Sustainability',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_031365e2-2db7-4e14-a6d7-28826f841901_1753135468257.png',
+    description: 'Sustainable Fashion for a Better World. Eco-conscious e-commerce platform promoting ethical clothing.',
+    metrics: [
+      { label: 'Focus', value: 'Sustainable', icon: <Globe className="w-6 h-6" /> },
+      { label: 'Build Time', value: '4 days', icon: <Zap className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'capture-moments',
+    title: 'Capture Moments',
+    company: 'Photography Portfolio',
+    category: 'Creative & Portfolio',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_ca6c14c8-b019-42eb-8b08-cc27d1b8a0ba_1754554966478.png',
+    description: 'Professional Photography Portfolio. Elegant showcase for capturing life\'s most beautiful moments.',
+    metrics: [
+      { label: 'Build Time', value: '3 days', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Type', value: 'Portfolio', icon: <Target className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'luxe-fashion',
+    title: 'LUXE Fashion Store',
+    company: 'Premium Fashion E-commerce',
+    category: 'E-commerce',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_9d315e0f-da19-4859-8a81-b1a1635b00ab_1753512706150.png',
+    description: 'Premium Clothing & Accessories. Luxury fashion e-commerce with sophisticated design and seamless shopping.',
+    metrics: [
+      { label: 'Category', value: 'Luxury', icon: <Target className="w-6 h-6" /> },
+      { label: 'Build Time', value: '5 days', icon: <Zap className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'modish',
+    title: 'Modish',
+    company: 'Premium Fashion Store',
+    category: 'E-commerce',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_0c31f40e-6101-45e2-b9b6-2822ae2f3c10_1753135578901.png',
+    description: 'Premium Fashion Store. Contemporary e-commerce platform featuring curated collections and modern aesthetics.',
+    metrics: [
+      { label: 'Style', value: 'Modern', icon: <TrendingUp className="w-6 h-6" /> },
+      { label: 'Build Time', value: '4 days', icon: <Zap className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'dubai-jet',
+    title: 'Dubai Jet Adventures',
+    company: 'Watersports Rentals',
+    category: 'Mobile App & Travel',
+    type: 'AI-Built',
+    image: 'https://nccnasarzekslweasfpw.supabase.co/storage/v1/object/public/images/screenshot_1b81782b-b344-4528-a3b3-143f744d5586_1753134657308.png',
+    description: 'Premium Jet Ski & Watersports Rentals. Mobile app for booking thrilling water adventures in Dubai.',
+    metrics: [
+      { label: 'Platform', value: 'Mobile', icon: <Smartphone className="w-6 h-6" /> },
+      { label: 'Build Time', value: '1 week', icon: <Zap className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'lissa-yoga',
+    title: 'Lissa Yoga',
+    company: 'Yoga & Wellness',
+    category: 'Health & Wellness',
+    type: 'AI-Built',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/images/screenshot_b571d1fd-87ad-4c8d-a045-42ec177ce8ca_1758919084753.png',
+    description: 'Traditional Ashtanga with Contemporary Wellbeing. Serene wellness platform blending ancient practices with modern design.',
+    metrics: [
+      { label: 'Style', value: 'Wellness', icon: <Target className="w-6 h-6" /> },
+      { label: 'Build Time', value: '3 days', icon: <Zap className="w-6 h-6" /> }
+    ]
   }
 ];
 
@@ -521,18 +652,6 @@ export default function CaseStudies() {
                         alt={project.title}
                         className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      
-                      {/* Type Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                          project.type === 'Enterprise' 
-                            ? 'bg-blue-600 text-white' 
-                            : 'bg-purple-600 text-white'
-                        }`}>
-                          {project.type}
-                        </span>
-                      </div>
 
                       {/* Logo */}
                       {project.logo && (
@@ -547,7 +666,7 @@ export default function CaseStudies() {
                           />
                         </div>
                       )}
-                      
+
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -558,10 +677,26 @@ export default function CaseStudies() {
                     
                     {/* Content */}
                     <div className="p-6">
+                      {/* Badges below image */}
+                      <div className="flex gap-2 mb-3">
+                        <span className={`px-2.5 py-1 text-xs font-semibold rounded ${
+                          project.type === 'Enterprise'
+                            ? 'bg-indigo-100 text-indigo-700'
+                            : 'bg-violet-100 text-violet-700'
+                        }`}>
+                          {project.type}
+                        </span>
+                        {project.caseStudyUrl && (
+                          <span className="px-2.5 py-1 text-xs font-semibold rounded bg-emerald-100 text-emerald-700">
+                            Full Case Study
+                          </span>
+                        )}
+                      </div>
+
                       <div className="mb-3">
                         <span className="text-sm text-blue-600 font-medium">{project.category}</span>
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {project.title}
                       </h3>
