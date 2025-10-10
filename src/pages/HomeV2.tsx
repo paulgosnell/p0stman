@@ -536,7 +536,7 @@ export default function HomeV2() {
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-[4]" />
 
-        <div className="relative z-10">
+        <div className="relative z-50">
           <Header />
         </div>
         <div className="container mx-auto px-4 pt-24 md:pt-40 pb-16 md:pb-20 relative z-10">
