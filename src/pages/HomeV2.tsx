@@ -407,12 +407,138 @@ export default function HomeV2() {
   return (
     <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
       {/* Hero Section */}
-      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+        {/* Space-themed Background - Similar to Case Studies */}
+        <div className="absolute inset-0 z-0">
+          <svg className="absolute inset-0 w-full h-full">
+            <defs>
+              {/* Grid Pattern */}
+              <pattern
+                id="hero-grid"
+                width="60"
+                height="60"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 60 0 L 0 0 0 60"
+                  fill="none"
+                  stroke="rgba(147, 51, 234, 0.3)"
+                  strokeWidth="1"
+                />
+              </pattern>
+              <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#6366F1" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#EC4899" stopOpacity="0.6" />
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hero-grid)" />
+          </svg>
         </div>
-        <Header />
+
+        {/* Floating Stars */}
+        <div className="absolute inset-0 z-[2]">
+          {Array.from({ length: 40 }).map((_, i) => {
+            // Calculate these once per star using index-based randomness
+            const randomLeft = ((i * 37) % 100);
+            const randomTop = ((i * 73) % 100);
+            const starSize = i % 3 === 0 ? 4 : i % 2 === 0 ? 3 : 2;
+            const duration = 2 + (i % 5); // 2-6 seconds based on index
+            const delay = (i * 0.3) % 10; // Stagger delays 0-10 seconds
+
+            return (
+              <motion.div
+                key={`star-${i}`}
+                className="absolute bg-white rounded-full pointer-events-none"
+                style={{
+                  width: `${starSize}px`,
+                  height: `${starSize}px`,
+                  left: `${randomLeft}%`,
+                  top: `${randomTop}%`,
+                  boxShadow: '0 0 8px rgba(255,255,255,0.8)'
+                }}
+                animate={{
+                  opacity: [0.7, 1, 0.7],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{
+                  duration: duration,
+                  delay: delay,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            );
+          })}
+        </div>
+
+        {/* Shooting Stars */}
+        <div className="absolute inset-0 z-[3]">
+          {Array.from({ length: 2 }).map((_, i) => {
+            const randomStartY = Math.random() * 300;
+            const randomEndY = Math.random() * 300 + 100;
+
+            return (
+              <motion.div
+                key={`shooting-${i}`}
+                className="absolute w-1 h-1 bg-white rounded-full pointer-events-none"
+                initial={{
+                  x: -100,
+                  y: randomStartY,
+                  opacity: 0
+                }}
+                animate={{
+                  x: '100vw',
+                  y: randomEndY,
+                  opacity: [0, 1, 1, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  delay: i * 4,
+                  repeat: Infinity,
+                  repeatDelay: 8,
+                  ease: "linear"
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-20 h-0.5 -translate-y-0.5" />
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Floating Orbs */}
+        <div className="absolute inset-0 z-[1]">
+          {[
+            { size: 'w-40 h-40', color: 'from-cyan-400/60 to-blue-500/60', x: '10%', y: '20%' },
+            { size: 'w-32 h-32', color: 'from-purple-400/70 to-pink-500/70', x: '85%', y: '15%' },
+            { size: 'w-48 h-48', color: 'from-indigo-400/60 to-purple-500/60', x: '70%', y: '70%' },
+            { size: 'w-36 h-36', color: 'from-blue-300/50 to-cyan-400/50', x: '50%', y: '40%' }
+          ].map((orb, i) => (
+            <motion.div
+              key={`orb-${i}`}
+              className={`absolute ${orb.size} bg-gradient-to-br ${orb.color} rounded-full blur-xl pointer-events-none`}
+              style={{ left: orb.x, top: orb.y }}
+              animate={{
+                scale: [1, 1.4, 0.8, 1],
+                opacity: [0.5, 0.8, 0.4, 0.5],
+                x: [0, 40, -30, 0],
+                y: [0, -30, 40, 0]
+              }}
+              transition={{
+                duration: 8 + i * 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-[4]" />
+
+        <div className="relative z-10">
+          <Header />
+        </div>
         <div className="container mx-auto px-4 pt-24 md:pt-40 pb-16 md:pb-20 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
