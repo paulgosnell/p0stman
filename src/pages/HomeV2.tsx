@@ -34,6 +34,7 @@ import InlineVoiceAgent from '../components/voice-agent/InlineVoiceAgent';
 import ChatAgentDemo from '../components/agent-demos/ChatAgentDemo';
 import CodeAgentDemo from '../components/agent-demos/CodeAgentDemo';
 import ImageVideoAgentDemo from '../components/agent-demos/ImageVideoAgentDemo';
+import RotatingWord from '../components/hero/RotatingWord';
 
 // AI Tech Stack logos - using text for reliability
 const aiTechStack = [
@@ -380,6 +381,21 @@ export default function HomeV2() {
   const [activeChatDemo, setActiveChatDemo] = useState(false);
   const [activeCodeDemo, setActiveCodeDemo] = useState(false);
   const [activeImageDemo, setActiveImageDemo] = useState(false);
+  const [expandedTweets, setExpandedTweets] = useState<{[key: number]: boolean}>({});
+
+  // Load Twitter widgets script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://platform.twitter.com/widgets.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const openVideo = (videoId: string) => {
     setCurrentVideoId(videoId);
@@ -547,17 +563,22 @@ export default function HomeV2() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-8"
+                className="space-y-8 overflow-visible"
               >
-                <div className="space-y-4">
+                <div className="space-y-4 overflow-visible">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-5 h-5" />
-                    <span className="font-light text-sm opacity-70">AI Agent Builder</span>
+                    <span className="font-light text-sm opacity-70">HELLO</span>
                   </div>
 
-                  <h1 className="text-5xl md:text-6xl font-thin leading-tight">
-                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-                      Building Agents That Work For You.
+                  <h1 className="text-5xl md:text-6xl font-thin leading-snug py-4" style={{ overflow: 'visible' }}>
+                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'inline-block' }}>
+                      Building{' '}
+                      <RotatingWord
+                        words={['Agents', 'Apps', 'Websites', 'Dashboards', 'Platforms']}
+                        className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-thin"
+                      />
+                      {' '}That Work For You.
                     </span>
                   </h1>
                 </div>
@@ -1570,7 +1591,7 @@ export default function HomeV2() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center mb-16"
             >
               <h3 className="text-2xl font-light mb-8">See AI Building in Action</h3>
               <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -1636,6 +1657,141 @@ export default function HomeV2() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+
+            {/* Social Proof Cards - Twitter Embeds with expand button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="mt-16"
+            >
+              <h3 className="text-2xl font-light mb-8 text-center">Recognition from Industry Leaders</h3>
+              <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {/* Bolt.new CEO */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-4 border border-blue-500/30 hover:border-blue-400/50 transition-all relative"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-blue-400">
+                      <path fill="currentColor" d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
+                    </svg>
+                    <span className="text-white/90 font-medium">Bolt.new CEO</span>
+                  </div>
+                  <div className={`${expandedTweets[0] ? '' : 'max-h-[300px]'} overflow-hidden transition-all duration-300`}>
+                    <blockquote className="twitter-tweet" data-theme="dark" data-conversation="none" data-cards="hidden">
+                      <p lang="en" dir="ltr">The Builders program is led on our side by <a href="https://twitter.com/paulgosnell?ref_src=twsrc%5Etfw">@paulgosnell</a>, one of the earliest adopters of Bolt &amp; leader in our community.<br/><br/>Paul has helped countless folks w/ their Bolt apps and has run web dev shops for 20+ years — basically the perfect person to make this a reality</p>
+                      &mdash; Eric Simons (@EricSimons) <a href="https://twitter.com/EricSimons40/status/1887552934692721135?ref_src=twsrc%5Etfw">February 6, 2025</a>
+                    </blockquote>
+                  </div>
+                  {!expandedTweets[0] && (
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                      <button
+                        onClick={() => setExpandedTweets({...expandedTweets, 0: true})}
+                        className="px-4 py-2 bg-blue-500/80 hover:bg-blue-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
+                      >
+                        <span>Expand Tweet</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+                  {expandedTweets[0] && (
+                    <button
+                      onClick={() => setExpandedTweets({...expandedTweets, 0: false})}
+                      className="mt-3 px-4 py-2 bg-blue-500/80 hover:bg-blue-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
+                    >
+                      Collapse
+                    </button>
+                  )}
+                </motion.div>
+
+                {/* Ben's Bites */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-xl p-4 border border-purple-500/30 hover:border-purple-400/50 transition-all relative"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-purple-400">
+                      <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span className="text-white/90 font-medium">Ben's Bites Workshop</span>
+                  </div>
+                  <div className={`${expandedTweets[1] ? '' : 'max-h-[300px]'} overflow-hidden transition-all duration-300`}>
+                    <blockquote className="twitter-tweet" data-theme="dark" data-conversation="none" data-cards="hidden">
+                      <p lang="en" dir="ltr">A subtle insight from today's <a href="https://twitter.com/bensbitesdaily?ref_src=twsrc%5Etfw">@bensbitesdaily</a> expert workshop: the best prompts aren&#39;t always the most technical and elaborate. <a href="https://twitter.com/paulgosnell?ref_src=twsrc%5Etfw">@paulgosnell</a> showed how everyday language + clear context can go a long way when building with AI in <a href="https://twitter.com/boltdotnew?ref_src=twsrc%5Etfw">@boltdotnew</a></p>
+                      &mdash; Amie DeLisa (@AmieDelisa) <a href="https://twitter.com/AmieDelisa/status/1889385200834302289?ref_src=twsrc%5Etfw">February 11, 2025</a>
+                    </blockquote>
+                  </div>
+                  {!expandedTweets[1] && (
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                      <button
+                        onClick={() => setExpandedTweets({...expandedTweets, 1: true})}
+                        className="px-4 py-2 bg-purple-500/80 hover:bg-purple-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
+                      >
+                        <span>Expand Tweet</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+                  {expandedTweets[1] && (
+                    <button
+                      onClick={() => setExpandedTweets({...expandedTweets, 1: false})}
+                      className="mt-3 px-4 py-2 bg-purple-500/80 hover:bg-purple-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
+                    >
+                      Collapse
+                    </button>
+                  )}
+                </motion.div>
+
+                {/* Replit Founder */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-green-600/20 to-teal-600/20 backdrop-blur-sm rounded-xl p-4 border border-green-500/30 hover:border-green-400/50 transition-all relative"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-green-400">
+                      <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span className="text-white/90 font-medium">Replit Founder</span>
+                  </div>
+                  <div className={`${expandedTweets[2] ? '' : 'max-h-[300px]'} overflow-hidden transition-all duration-300`}>
+                    <blockquote className="twitter-tweet" data-theme="dark" data-conversation="none" data-cards="hidden">
+                      <p lang="en" dir="ltr">This is brilliant! 🔥</p>
+                      &mdash; Amjad Masad (@amasad) <a href="https://twitter.com/amasad/status/1833195032280764617?ref_src=twsrc%5Etfw">September 9, 2024</a>
+                    </blockquote>
+                  </div>
+                  {!expandedTweets[2] && (
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                      <button
+                        onClick={() => setExpandedTweets({...expandedTweets, 2: true})}
+                        className="px-4 py-2 bg-green-500/80 hover:bg-green-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
+                      >
+                        <span>Expand Tweet</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+                  {expandedTweets[2] && (
+                    <button
+                      onClick={() => setExpandedTweets({...expandedTweets, 2: false})}
+                      className="mt-3 px-4 py-2 bg-green-500/80 hover:bg-green-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
+                    >
+                      Collapse
+                    </button>
+                  )}
+                </motion.div>
               </div>
             </motion.div>
           </div>
