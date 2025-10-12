@@ -163,4 +163,66 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- New Guides (Blog/SEO Content) -->
+  <url>
+    <loc>https://p0stman.com/guides/ai-agent-development-cost-timeline-guide-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/chatgpt-vs-custom-ai-agent-guide-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/ai-lead-generation-bot-build-vs-buy-guide-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/customer-support-automation-ai-voice-agents-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/ai-model-selection-guide-claude-gpt4-gemini-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/mvp-to-production-ai-agent-roadmap-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/ai-agency-vs-freelancer-vs-inhouse-cost-comparison-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://p0stman.com/guides/why-ai-consultants-dont-ship-what-to-do-instead-2025.html</loc>
+    <lastmod>2025-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

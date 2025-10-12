@@ -65,6 +65,12 @@ export const footerTranslations = {
     
     // Contact Links
     'footer.contact.contactUs': 'Contact Us',
-    'footer.contact.location': 'Location'
+    'footer.contact.location': 'Location',
+
+    // Resources
+    'footer.categories.resources': 'Resources',
+    'footer.resources.guides': 'Guides',
+    'footer.resources.blog': 'Blog',
+    'footer.resources.aiCostGuide': 'AI Development Costs'
   }
 };

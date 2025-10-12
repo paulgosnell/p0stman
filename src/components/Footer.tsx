@@ -46,6 +46,11 @@ const links = {
   'footer.categories.contact': [
     { labelKey: 'footer.contact.contactUs', href: '/contact' },
     { labelKey: 'footer.contact.location', href: '/contact' }
+  ],
+  'footer.categories.resources': [
+    { labelKey: 'footer.resources.aiCostGuide', href: '/guides/ai-agent-development-cost-timeline-guide-2025' },
+    { labelKey: 'footer.resources.guides', href: '/guides' },
+    { labelKey: 'footer.resources.blog', href: '/blog' }
   ]
 };
 
@@ -91,7 +96,7 @@ export default function Footer() {
             </div>
 
             {/* Links */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:w-2/3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:w-2/3">
               {Object.entries(links).map(([category, items]) => (
                 <div key={category}>
                   <h3 className="text-lg font-semibold text-white mb-4">{t(category)}</h3>
