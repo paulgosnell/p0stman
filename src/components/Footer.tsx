@@ -48,9 +48,10 @@ const links = {
     { labelKey: 'footer.contact.location', href: '/contact' }
   ],
   'footer.categories.resources': [
-    { labelKey: 'footer.resources.aiCostGuide', href: '/guides/ai-agent-development-cost-timeline-guide-2025' },
     { labelKey: 'footer.resources.guides', href: '/guides' },
-    { labelKey: 'footer.resources.blog', href: '/blog' }
+    { labelKey: 'footer.resources.aiCostGuide', href: '/guides/ai-agent-development-cost-timeline-guide-2025.html' },
+    { labelKey: 'footer.resources.voicePlatforms', href: '/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html' },
+    { labelKey: 'footer.resources.chatgptVsCustom', href: '/guides/chatgpt-vs-custom-ai-agent-guide-2025.html' }
   ]
 };
 

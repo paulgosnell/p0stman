@@ -31,7 +31,14 @@ export const footerTranslations = {
     
     // Contact Links
     'footer.contact.contactUs': 'اتصل بنا',
-    'footer.contact.location': 'الموقع'
+    'footer.contact.location': 'الموقع',
+
+    // Resources
+    'footer.categories.resources': 'الموارد',
+    'footer.resources.guides': 'الأدلة',
+    'footer.resources.aiCostGuide': 'تكاليف تطوير الذكاء الاصطناعي',
+    'footer.resources.voicePlatforms': 'منصات الصوت بالذكاء الاصطناعي',
+    'footer.resources.chatgptVsCustom': 'ChatGPT مقابل مخصص'
   },
   en: {
     'footer.description': 'Transforming ideas into reality through AI-powered development. Building faster, better, and more affordable solutions than traditional agencies.',
@@ -69,8 +76,9 @@ export const footerTranslations = {
 
     // Resources
     'footer.categories.resources': 'Resources',
-    'footer.resources.guides': 'Guides',
-    'footer.resources.blog': 'Blog',
-    'footer.resources.aiCostGuide': 'AI Development Costs'
+    'footer.resources.guides': 'All Guides',
+    'footer.resources.aiCostGuide': 'AI Development Costs',
+    'footer.resources.voicePlatforms': 'Voice AI Platforms',
+    'footer.resources.chatgptVsCustom': 'ChatGPT vs Custom'
   }
 };
