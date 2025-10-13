@@ -51,7 +51,11 @@ const links = {
     { labelKey: 'footer.resources.guides', href: '/guides' },
     { labelKey: 'footer.resources.aiCostGuide', href: '/guides/ai-agent-development-cost-timeline-guide-2025.html' },
     { labelKey: 'footer.resources.voicePlatforms', href: '/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html' },
-    { labelKey: 'footer.resources.chatgptVsCustom', href: '/guides/chatgpt-vs-custom-ai-agent-guide-2025.html' }
+    { labelKey: 'footer.resources.chatgptVsCustom', href: '/guides/chatgpt-vs-custom-ai-agent-guide-2025.html' },
+    { labelKey: 'footer.resources.aiSecurity', href: '/guides/ai-agent-security-data-privacy-guide-2025.html' },
+    { labelKey: 'footer.resources.howAIWorks', href: '/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html' },
+    { labelKey: 'footer.resources.hireAgency', href: '/guides/how-to-hire-ai-development-agency-2025.html' },
+    { labelKey: 'footer.resources.saasRoadmap', href: '/guides/building-saas-roadmap-2025.html' }
   ]
 };
 

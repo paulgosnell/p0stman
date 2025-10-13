@@ -266,6 +266,10 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                     <MapPin className="w-4 h-4 text-blue-400" />
                     <span className="text-sm text-gray-300">Dubai, UAE</span>
                   </div>
+                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10">
+                    <MapPin className="w-4 h-4 text-purple-400" />
+                    <span className="text-sm text-gray-300">Norwich, UK</span>
+                  </div>
                 </div>
               </div>
 

@@ -38,7 +38,11 @@ export const footerTranslations = {
     'footer.resources.guides': 'الأدلة',
     'footer.resources.aiCostGuide': 'تكاليف تطوير الذكاء الاصطناعي',
     'footer.resources.voicePlatforms': 'منصات الصوت بالذكاء الاصطناعي',
-    'footer.resources.chatgptVsCustom': 'ChatGPT مقابل مخصص'
+    'footer.resources.chatgptVsCustom': 'ChatGPT مقابل مخصص',
+    'footer.resources.aiSecurity': 'أمان وخصوصية الذكاء الاصطناعي',
+    'footer.resources.howAIWorks': 'كيف تعمل وكلاء الذكاء الاصطناعي',
+    'footer.resources.hireAgency': 'كيفية توظيف وكالة تطوير الذكاء الاصطناعي',
+    'footer.resources.saasRoadmap': 'خارطة طريق بناء SaaS'
   },
   en: {
     'footer.description': 'Transforming ideas into reality through AI-powered development. Building faster, better, and more affordable solutions than traditional agencies.',
@@ -79,6 +83,10 @@ export const footerTranslations = {
     'footer.resources.guides': 'All Guides',
     'footer.resources.aiCostGuide': 'AI Development Costs',
     'footer.resources.voicePlatforms': 'Voice AI Platforms',
-    'footer.resources.chatgptVsCustom': 'ChatGPT vs Custom'
+    'footer.resources.chatgptVsCustom': 'ChatGPT vs Custom',
+    'footer.resources.aiSecurity': 'AI Security & Privacy',
+    'footer.resources.howAIWorks': 'How AI Agents Work',
+    'footer.resources.hireAgency': 'How to Hire AI Agency',
+    'footer.resources.saasRoadmap': 'Building SaaS Roadmap'
   }
 };
