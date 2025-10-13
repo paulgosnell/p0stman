@@ -1,1 +1,6 @@
+# Redirect moved guides from content-hub to main guides section
+/content-hub/guides/ai-prompt-engineering-guide.html /guides/ai-prompt-engineering-guide-2025.html 301
+/content-hub/guides/ai-vibe-coding-guide.html /guides/ai-vibe-coding-guide-2025.html 301
+/content-hub/guides/building-saas-roadmap.html /guides/building-saas-roadmap-2025.html 301
+
 /* /index.html 200

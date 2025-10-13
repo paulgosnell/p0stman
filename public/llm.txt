@@ -15,9 +15,19 @@ priority:
   - https://p0stman.com/guides/chatgpt-vs-custom-ai-agent-guide-2025.html
   - https://p0stman.com/guides/customer-support-automation-ai-voice-agents-2025.html
   - https://p0stman.com/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html
-  - https://p0stman.com/content-hub/guides/ai-prompt-engineering-guide.html
-  - https://p0stman.com/content-hub/guides/ai-vibe-coding-guide.html
-  - https://p0stman.com/content-hub/guides/building-saas-roadmap.html
+  - https://p0stman.com/guides/ai-agents-real-estate-lead-generation-guide-2025.html
+  - https://p0stman.com/guides/multi-model-ai-systems-guide-2025.html
+  - https://p0stman.com/guides/ecommerce-ai-customer-service-roi-guide-2025.html
+  - https://p0stman.com/guides/ai-agent-vs-chatbot-comparison-guide-2025.html
+  - https://p0stman.com/guides/ai-agent-security-data-privacy-guide-2025.html
+  - https://p0stman.com/guides/how-to-hire-ai-development-agency-2025.html
+  - https://p0stman.com/guides/ai-saas-onboarding-reduce-churn-guide-2025.html
+  - https://p0stman.com/guides/ai-development-red-flags-avoid-bad-agencies-2025.html
+  - https://p0stman.com/guides/can-i-build-ai-agent-myself-diy-guide-2025.html
+  - https://p0stman.com/guides/ai-lead-qualification-b2b-sales-guide-2025.html
+  - https://p0stman.com/guides/ai-prompt-engineering-guide-2025.html
+  - https://p0stman.com/guides/ai-vibe-coding-guide-2025.html
+  - https://p0stman.com/guides/building-saas-roadmap-2025.html
 
 sitemap: https://p0stman.com/sitemap.xml
 
