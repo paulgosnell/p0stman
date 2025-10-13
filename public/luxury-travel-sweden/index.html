@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Henrik — Luxury Travel Sweden</title>
+    <title>Luxury Travel Sweden — Bespoke Swedish Experiences</title>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
     <style>
         :root {
@@ -126,6 +126,18 @@
             backdrop-filter: blur(4px);
         }
 
+        .media-panel:nth-child(1) {
+            transform: translateY(calc(var(--hero-scroll) * -35px));
+        }
+
+        .media-panel:nth-child(2) {
+            transform: translateY(calc(var(--hero-scroll) * -55px));
+        }
+
+        .media-panel:nth-child(3) {
+            transform: translateY(calc(var(--hero-scroll) * -42px));
+        }
+
         .media-panel::before {
             content: "";
             position: absolute;
@@ -147,12 +159,12 @@
             object-fit: cover;
             display: block;
             filter: saturate(1.1) contrast(1.05);
-            transform: scale(1.04);
-            transition: transform 1.5s ease, filter 1.5s ease;
+            transform: scale(1.06) translateY(calc(var(--hero-scroll) * 15px));
+            transition: filter 1.5s ease;
         }
 
         .hero[data-reveal="true"] .media-panel video {
-            transform: scale(1.01);
+            transform: scale(1.03) translateY(calc(var(--hero-scroll) * 15px));
         }
 
         .media-panel.paused::after {
@@ -273,6 +285,7 @@
             color: var(--color-text);
             transition: var(--transition);
             cursor: pointer;
+            text-decoration: none;
         }
 
         .hero-cta.primary {
@@ -486,26 +499,37 @@
 
             .hero {
                 padding: clamp(1.5rem, 6vw, 2.5rem);
+                padding-top: clamp(7rem, 15vw, 9rem);
                 gap: 2.4rem;
+                justify-content: center;
+                min-height: 100vh;
             }
 
             .hero-media {
-                position: relative;
-                inset: auto;
+                position: absolute;
+                inset: 0;
                 width: 100%;
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 0;
+                opacity: 0.4;
             }
 
             .media-panel {
                 transform: none;
-                min-height: 42vh;
+                min-height: 100vh;
+            }
+
+            .media-panel:nth-child(1),
+            .media-panel:nth-child(3) {
+                display: none;
             }
 
             .hero-content {
                 max-width: 100%;
-                padding: 1.75rem 1.8rem;
-                background: linear-gradient(135deg, rgba(7, 9, 11, 0.9), rgba(10, 12, 15, 0.78));
+                padding: 2rem 1.8rem;
+                background: linear-gradient(135deg, rgba(7, 9, 11, 0.95), rgba(10, 12, 15, 0.92));
+                position: relative;
+                z-index: 2;
             }
 
             .hero-actions {
@@ -828,34 +852,37 @@
         .pillar-card .pillar-cta {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             font-family: var(--font-sans);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 0.32rem;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             text-decoration: none;
             margin-top: 0.5rem;
-            transition: gap 0.3s ease, color 0.3s ease;
+            padding: 0.85rem 1.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .pillar-card .pillar-cta::after {
-            content: '→';
-            transition: transform 0.3s ease;
-        }
-
-        .pillar-card:hover .pillar-cta {
-            gap: 0.75rem;
+        .pillar-card .pillar-cta:hover {
+            border-color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
             color: rgba(255, 255, 255, 1);
-        }
-
-        .pillar-card:hover .pillar-cta::after {
-            transform: translateX(4px);
         }
 
         .pillar-card .pillar-cta:focus-visible {
             outline: 2px solid rgba(255, 255, 255, 0.6);
             outline-offset: 3px;
+        }
+
+        .pillar-card .pillar-cta:active {
+            transform: translateY(0);
         }
 
         .pillar-card:hover {
@@ -1700,6 +1727,8 @@
             <ul class="nav-menu">
                 <li><a href="#choose-path">Explore</a></li>
                 <li><a href="#journeys">Journeys</a></li>
+                <li><a href="#corporate">Corporate</a></li>
+                <li><a href="#concierge">LIV</a></li>
                 <li><a href="#stories">Journal</a></li>
                 <li><a href="#press">Press</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1728,15 +1757,15 @@
         </div>
         <div class="hero-inner">
             <div class="hero-content" id="heroContent">
-                <span class="hero-eyebrow">Insider Overture</span>
+                <span class="hero-eyebrow">Luxury Travel Sweden</span>
                 <h1 class="hero-title">
-                    <span class="line">Sweden, Composed For You.</span>
-                    <span class="line">Curated by Agent Henrik.</span>
+                    <span class="line">Sweden, Composed For You</span>
                 </h1>
-                <p class="hero-subtext">Cinematic itineraries weaving aurora vigils, design ateliers, royal salons, and archipelago celebrations into a private Swedish overture.</p>
+                <p class="hero-subtext">Curated by Insiders</p>
                 <div class="hero-actions">
-                    <a href="#choose-path" class="hero-cta primary">Enter the experience</a>
-                    <button type="button" class="hero-cta" data-open-liv>Consult with LIV</button>
+                    <a href="#journeys" class="hero-cta primary">Start Explore</a>
+                    <button type="button" class="hero-cta" data-open-liv>Design My Journey with LIV</button>
+                    <a href="#choose-path" class="hero-cta">Enter the Experience</a>
                 </div>
             </div>
 
@@ -1801,7 +1830,7 @@
             <div class="section-inner">
                 <div class="section-heading">
                     <span class="eyebrow">Journeys</span>
-                    <h2>Seven pillars to compose your narrative.</h2>
+                    <h2>Six pillars to compose your narrative.</h2>
                     <p>Blend pillars to author experiences as refined or untamed as you desire — from luminous winter retreats to Stockholm’s after-hours avant-garde.</p>
                 </div>
                 <div class="pillars-grid">
@@ -1812,9 +1841,9 @@
                         <div class="pillar-body">
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="leaf"></i></div>
                             <div class="pillar-copy">
-                                <h3>Hidden Nature &amp; Wellness</h3>
+                                <h3>Nature &amp; Wellness</h3>
                                 <p>Private forested villas, aurora vigils, biohacking rituals, and restorative spa residencies.</p>
-                                <a href="#contact" class="pillar-cta">Explore Journey</a>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
                     </article>
@@ -1826,7 +1855,8 @@
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="cpu"></i></div>
                             <div class="pillar-copy">
                                 <h3>Design &amp; Innovation</h3>
-                                <p>Studio immersions with Sweden’s design icons, innovation labs, and future-forward showrooms.</p>
+                                <p>Studio immersions with Sweden's design icons, innovation labs, and future-forward showrooms.</p>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
                     </article>
@@ -1837,35 +1867,22 @@
                         <div class="pillar-body">
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="utensils-crossed"></i></div>
                             <div class="pillar-copy">
-                                <h3>Culinary &amp; Storytelling</h3>
+                                <h3>Culinary Experiences</h3>
                                 <p>Chef-led archipelago cruises, foraged feasts, and narrative dining inside hidden creative spaces.</p>
-                                <a href="#contact" class="pillar-cta">Explore Journey</a>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
                     </article>
-                    <article class="pillar-card" data-pillar="heritage">
+                    <article class="pillar-card" data-pillar="royal-culture">
                         <div class="pillar-media" aria-hidden="true">
-                            <img src="https://images.pexels.com/photos/18499031/pexels-photo-18499031.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Historic Swedish palace interior" loading="lazy">
+                            <img src="https://images.pexels.com/photos/18499031/pexels-photo-18499031.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Historic Swedish palace interior with art gallery" loading="lazy">
                         </div>
                         <div class="pillar-body">
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="crown"></i></div>
                             <div class="pillar-copy">
-                                <h3>Royal &amp; Heritage</h3>
-                                <p>After-hours palace access, private museum salons, and ancestral estate encounters.</p>
-                                <a href="#contact" class="pillar-cta">Explore Journey</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="pillar-card" data-pillar="culture">
-                        <div class="pillar-media" aria-hidden="true">
-                            <img src="https://images.pexels.com/photos/3803377/pexels-photo-3803377.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Art lovers exploring a modern gallery" loading="lazy">
-                        </div>
-                        <div class="pillar-body">
-                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="sparkles"></i></div>
-                            <div class="pillar-copy">
-                                <h3>Art &amp; Culture</h3>
-                                <p>Studio visits, emerging artist salons, and curated cultural festivals across the seasons.</p>
-                                <a href="#contact" class="pillar-cta">Explore Journey</a>
+                                <h3>Royal, Art &amp; Culture</h3>
+                                <p>After-hours palace access, private museum salons, emerging artist studios, and curated cultural festivals across the seasons.</p>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
                     </article>
@@ -1876,9 +1893,9 @@
                         <div class="pillar-body">
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="party-popper"></i></div>
                             <div class="pillar-copy">
-                                <h3>Nightlife &amp; Celebrations</h3>
+                                <h3>Nightlife &amp; Celebration</h3>
                                 <p>Secret clubs, bespoke gala production, and immersive celebrations engineered for insiders.</p>
-                                <a href="#contact" class="pillar-cta">Explore Journey</a>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
                     </article>
@@ -1891,7 +1908,7 @@
                             <div class="pillar-copy">
                                 <h3>Legacy &amp; Meaningful Travel</h3>
                                 <p>Impact-driven encounters, philanthropic connections, and multi-generational storytelling.</p>
-                                <a href="#contact" class="pillar-cta">Explore Journey</a>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
                     </article>
@@ -2001,8 +2018,8 @@
             <div class="section-inner">
                 <div class="section-heading">
                     <span class="eyebrow">Press &amp; Media</span>
-                    <h2>As seen across the global editorial stage.</h2>
-                    <p>Our journeys have been profiled by the world’s leading travel, design, and business publications.</p>
+                    <h2>What Media Says About Us</h2>
+                    <p>Our journeys have been profiled by the world's leading travel, design, and business publications.</p>
                 </div>
                 <div class="press-strip" role="list">
                     <span role="listitem">Monocle</span>
@@ -2093,7 +2110,7 @@
 
     <footer>
         <div class="footer-inner">
-            <span>© 2025 Agent Henrik — Luxury Travel Sweden</span>
+            <span>© 2025 Luxury Travel Sweden</span>
             <span>Stockholm · Lapland · Göta Archipelago · Gothenburg</span>
         </div>
     </footer>
@@ -2103,8 +2120,8 @@
         <div class="chat-container">
             <button class="close-chat" id="closeChat">×</button>
             <div class="chat-header">
-                <h2 class="chat-title">Insider Concierge</h2>
-                <p class="chat-subtitle">Your personal journey curator</p>
+                <h2 class="chat-title">LIV</h2>
+                <p class="chat-subtitle">Your Luxury Itinerary Visionary</p>
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="chat-message ai">

@@ -24,7 +24,7 @@
 4. **Week 5**: Final QA—naming conventions, metadata, upload to CDN (Supabase / Cloudinary) with alt text.
 
 ## 3. Content Operations Guidelines
-- Naming convention: `agent-henrik_[collection]_[slug]_[variation].[ext]` (e.g., `agent-henrik_story-lapland_hero.webp`).
+- Naming convention: `lts_[collection]_[slug]_[variation].[ext]` (e.g., `lts_story-lapland_hero.webp`).
 - Store raw masters separately from web-optimized exports; version using semantic tags (`v1`, `v2` for graded passes).
 - Maintain alt text and caption library in CMS for accessibility + SEO reuse.
 
