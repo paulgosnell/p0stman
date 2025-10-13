@@ -22,7 +22,8 @@ import {
   Monitor,
   Smartphone,
   HeadphonesIcon,
-  RefreshCw
+  RefreshCw,
+  BookOpen
 } from 'lucide-react';
 import SpaceEasterEgg from './SpaceEasterEgg';
 
@@ -194,6 +195,19 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
     { label: 'Support Services', icon: HeadphonesIcon, href: '/support' }
   ];
 
+  const guides = [
+    { label: 'All Guides', href: '/guides' },
+    { label: 'AI Development Costs', href: '/guides/ai-agent-development-cost-timeline-guide-2025.html' },
+    { label: 'How AI Agents Work', href: '/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html' },
+    { label: 'ChatGPT vs Custom AI', href: '/guides/chatgpt-vs-custom-ai-agent-guide-2025.html' },
+    { label: 'Voice AI Platforms', href: '/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html' },
+    { label: 'AI Security & Privacy', href: '/guides/ai-agent-security-data-privacy-guide-2025.html' },
+    { label: 'How to Hire AI Agency', href: '/guides/how-to-hire-ai-development-agency-2025.html' },
+    { label: 'Building SaaS Roadmap', href: '/guides/building-saas-roadmap-2025.html' },
+    { label: 'AI Agent vs Chatbot', href: '/guides/ai-agent-vs-chatbot-comparison-guide-2025.html' },
+    { label: 'AI Model Selection', href: '/guides/ai-model-selection-guide-claude-gpt4-gemini-2025.html' }
+  ];
+
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
       {/* Animated Background */}
@@ -226,7 +240,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
       <div className="relative z-20 container mx-auto px-4 py-20">
         <div className="max-w-7xl mx-auto">
           {/* Main Footer Content */}
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16">
+          <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-12 mb-16">
             
             {/* Brand Section */}
             <motion.div
@@ -364,6 +378,31 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                     className="block text-gray-300 hover:text-white transition-colors"
                   >
                     {link.label}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Guides */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-green-400" />
+                Guides
+              </h4>
+              <div className="space-y-3">
+                {guides.map((guide, index) => (
+                  <motion.a
+                    key={guide.label}
+                    href={guide.href}
+                    whileHover={{ x: 5 }}
+                    className="block text-gray-300 hover:text-white transition-colors"
+                  >
+                    {guide.label}
                   </motion.a>
                 ))}
               </div>
