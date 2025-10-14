@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxury Travel Sweden — Bespoke Swedish Experiences</title>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Leaflet (Free OpenStreetMap) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <style>
+        @font-face {
+            font-family: 'Aventa';
+            src: url('Aventa-Variable.ttf') format('truetype');
+            font-weight: 100 900;
+        }
+
         :root {
             --color-bg: #050607;
             --color-card-bg: rgba(12, 14, 17, 0.85);
@@ -16,8 +27,8 @@
             --color-text-muted: rgba(243, 245, 246, 0.65);
             --color-border: rgba(255, 255, 255, 0.12);
             --color-border-strong: rgba(255, 255, 255, 0.28);
-            --font-serif: 'Crimson Text', serif;
-            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Aventa', sans-serif;
+            --font-sans: 'Aventa', sans-serif;
             --max-width: 1200px;
             --section-padding: clamp(4rem, 10vw, 7rem);
             --transition: all 0.4s ease;
@@ -54,14 +65,39 @@
             min-height: 100vh;
             padding: clamp(1.5rem, 4vw, 3.5rem);
             padding-top: clamp(6.75rem, 14vw, 9rem);
+            padding-bottom: clamp(3rem, 8vw, 5rem);
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            gap: clamp(2rem, 5vw, 3.5rem);
+            align-items: center;
+            justify-content: flex-start;
             overflow: hidden;
-            background: radial-gradient(circle at top, rgba(5, 6, 7, 0.96), rgba(2, 3, 4, 0.9));
+            background: #050607;
             isolation: isolate;
-            --hero-scroll: 0;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 2.5s ease-in-out;
+        }
+
+        .hero-bg-image.active {
+            opacity: 1;
         }
 
         .hero::before,
@@ -94,124 +130,52 @@
         }
 
         @keyframes auroraPulse {
-            0% { transform: rotate(0deg); opacity: 0.25; }
+            0% { opacity: 0.25; }
             30% { opacity: 0.55; }
-            55% { transform: rotate(12deg); opacity: 0.4; }
+            55% { opacity: 0.4; }
             80% { opacity: 0.6; }
-            100% { transform: rotate(0deg); opacity: 0.25; }
+            100% { opacity: 0.25; }
         }
 
-        .hero-media {
-            position: absolute;
-            inset: clamp(1.5rem, 5vw, 4rem);
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, 1fr);
-            gap: clamp(1rem, 3vw, 2.5rem);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .media-panel {
-            position: relative;
-            overflow: hidden;
-            border-radius: 22px;
-            background: rgba(12, 14, 17, 0.85);
-            background-image: var(--panel-poster);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transform: translateY(calc(var(--hero-scroll) * -22px));
-            transition: transform 0.8s ease, border-color 0.6s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .media-panel:nth-child(1) {
-            transform: translateY(calc(var(--hero-scroll) * -35px));
-        }
-
-        .media-panel:nth-child(2) {
-            transform: translateY(calc(var(--hero-scroll) * -55px));
-        }
-
-        .media-panel:nth-child(3) {
-            transform: translateY(calc(var(--hero-scroll) * -42px));
-        }
-
-        .media-panel::before {
-            content: "";
+        .hero-video {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(4, 5, 6, 0.15) 0%, rgba(4, 5, 6, 0.55) 100%);
-            opacity: 0.6;
-            mix-blend-mode: multiply;
-            pointer-events: none;
-            transition: opacity 0.9s ease;
-        }
-
-        .hero[data-reveal="true"] .media-panel::before {
-            opacity: 0.45;
-        }
-
-        .media-panel video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: saturate(1.1) contrast(1.05);
-            transform: scale(1.06) translateY(calc(var(--hero-scroll) * 15px));
-            transition: filter 1.5s ease;
+            filter: saturate(1.12) contrast(1.05);
+            transform: scale(1.05);
+            transition: transform 0.9s ease, opacity 0.6s ease;
+            opacity: 1;
+            z-index: 0;
         }
 
-        .hero[data-reveal="true"] .media-panel video {
-            transform: scale(1.03) translateY(calc(var(--hero-scroll) * 15px));
+        .hero[data-reveal="true"] .hero-video {
+            transform: scale(1.02);
         }
 
-        .media-panel.paused::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(4, 5, 6, 0.35);
+        .hero-video.is-paused {
+            opacity: 0;
         }
 
-        .hero.reduced-motion .media-panel {
-            transform: none;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero.reduced-motion .media-panel video {
+        .hero.reduced-motion .hero-video {
             display: none;
         }
 
-        .hero-inner {
+        .hero-content {
             position: relative;
             z-index: 2;
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
+            max-width: clamp(35rem, 75vw, 70rem);
             display: flex;
             flex-direction: column;
-            gap: clamp(2rem, 6vw, 3.5rem);
-            align-items: flex-start;
-        }
-
-        .hero-content {
-            max-width: clamp(23rem, 40vw, 42rem);
-            display: flex;
-            flex-direction: column;
-            gap: clamp(1.2rem, 3vw, 2.5rem);
+            gap: clamp(1.4rem, 4vw, 2rem);
             color: var(--color-text);
             text-align: left;
             opacity: 0;
             transform: translateY(45px);
             filter: blur(10px);
             transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
-            padding: clamp(1.8rem, 3vw, 2.4rem) clamp(1.8rem, 4vw, 3rem);
-            background: linear-gradient(135deg, rgba(7, 9, 11, 0.86), rgba(9, 13, 15, 0.72));
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 22px;
-            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
         }
 
         .hero-content.show {
@@ -220,17 +184,9 @@
             filter: blur(0);
         }
 
-        .hero-eyebrow {
-            font-family: var(--font-sans);
-            text-transform: uppercase;
-            letter-spacing: 0.42rem;
-            font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.75);
-        }
-
         .hero-title {
             font-family: var(--font-serif);
-            font-weight: 400;
+            font-weight: 100;
             font-size: clamp(2.5rem, 5.8vw, 5.1rem);
             line-height: 1.08;
             letter-spacing: -0.025em;
@@ -255,19 +211,14 @@
             transition-delay: 0.24s;
         }
 
-        .hero-subtext {
-            font-family: var(--font-sans);
-            font-size: clamp(0.98rem, 2vw, 1.18rem);
-            line-height: 1.75;
-            color: rgba(255, 255, 255, 0.82);
-            max-width: clamp(20rem, 45vw, 36rem);
-            text-shadow: 0 6px 24px rgba(3, 5, 6, 0.55);
-        }
-
         .hero-actions {
+            position: absolute;
+            bottom: clamp(2rem, 6vw, 4rem);
+            left: clamp(1.5rem, 5vw, 3.5rem);
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
+            z-index: 2;
         }
 
         .hero-cta {
@@ -309,21 +260,21 @@
 
         .hero-scroll-compass {
             position: absolute;
-            bottom: clamp(2rem, 5vw, 3rem);
-            left: clamp(2rem, 7vw, 4rem);
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
             display: flex;
             align-items: center;
             gap: 0.85rem;
             color: rgba(255, 255, 255, 0.7);
             opacity: 0;
-            transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
             z-index: 2;
         }
 
         .hero-scroll-compass.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
 
         .hero-scroll-compass .compass-ring {
@@ -370,17 +321,17 @@
             right: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: clamp(1.5rem, 4vw, 2.8rem) clamp(1.8rem, 5vw, 3.5rem);
             z-index: 1000000;
             opacity: 0;
             transform: translateY(-20px);
-            transition: opacity 0.7s ease, transform 0.7s ease, background 0.6s ease, border-color 0.6s ease, padding 0.45s ease;
-            background: linear-gradient(90deg, rgba(5, 7, 9, 0.88), rgba(5, 7, 9, 0.46));
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(14px);
-            box-shadow: 0 18px 42px rgba(2, 5, 7, 0.35);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            background: transparent;
+            border-bottom: none;
+            backdrop-filter: none;
+            box-shadow: none;
         }
 
         .nav-header.show {
@@ -389,81 +340,364 @@
         }
 
         .nav-header.pinned {
-            background: rgba(5, 7, 9, 0.92);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-            padding: clamp(1.1rem, 3vw, 2rem) clamp(1.6rem, 4vw, 3rem);
-            box-shadow: 0 12px 36px rgba(2, 5, 7, 0.45);
+            background: transparent;
+            border-bottom: none;
+            padding: clamp(1.5rem, 4vw, 2.8rem) clamp(1.8rem, 5vw, 3.5rem);
+            box-shadow: none;
         }
 
         .logo {
-            font-family: var(--font-serif);
-            font-size: 1.65rem;
-            font-weight: 600;
-            color: rgba(247, 248, 249, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            letter-spacing: 0.14rem;
-            text-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .logo img {
+            height: clamp(50px, 6vw, 70px);
+            width: auto;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+            transition: all 0.4s ease;
+        }
+
+        .nav-header.pinned .logo img {
+            height: clamp(40px, 5vw, 55px);
+        }
+
+        .logo:hover img {
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
+            transform: translateY(-2px);
         }
 
         .nav-menu {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.6s;
+            z-index: 1000001;
         }
 
-        .nav-menu a {
+        .nav-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(3rem, 8vw, 6rem);
+            position: relative;
+            overflow-y: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.5rem, 1.2vw, 0.8rem);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .nav-links > li {
+            width: 100%;
+            text-align: left;
+        }
+
+        .nav-link {
+            font-family: var(--font-sans);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+            padding: 0.6rem 0;
+            position: relative;
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 100%);
+            background-size: 0% 1px;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            color: rgba(255, 255, 255, 1);
+            background-size: 100% 1px;
+            transform: translateX(8px);
+            letter-spacing: 0.08em;
+        }
+
+        .nav-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Submenu styles */
+        .nav-links .has-submenu {
+            position: relative;
+        }
+
+        .nav-links .has-submenu > .nav-link::after {
+            content: '→';
+            margin-left: 1rem;
+            font-size: 0.7em;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-links .has-submenu.open > .nav-link::after {
+            transform: rotate(90deg);
+            opacity: 1;
+        }
+
+        .submenu {
+            list-style: none;
+            padding: 0.4rem 0 0 1.5rem;
+            margin: 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+        }
+
+        .has-submenu.open .submenu {
+            max-height: 600px;
+            opacity: 1;
+        }
+
+        .submenu li {
+            margin: 0.3rem 0;
+        }
+
+        .submenu a {
+            font-family: var(--font-sans);
+            font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            text-transform: capitalize;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.35rem 0;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .submenu a::before {
+            content: '—';
+            margin-right: 0.6rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .submenu a:hover,
+        .submenu a:focus-visible {
+            color: rgba(255, 255, 255, 0.95);
+            transform: translateX(6px);
+        }
+
+        .submenu a:hover::before {
+            opacity: 1;
+        }
+
+        /* Sidebar styles */
+        .nav-sidebar {
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .sidebar-section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 2rem;
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .sidebar-title {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .sidebar-link:hover {
+            color: rgba(255, 255, 255, 1);
+            transform: translateX(5px);
+        }
+
+        .link-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.8;
+            flex-shrink: 0;
+        }
+
+        .link-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .link-text {
+            font-family: var(--font-sans);
+            letter-spacing: 0.02em;
+        }
+
+        .sidebar-text {
             font-family: var(--font-sans);
             font-size: 0.95rem;
-            font-weight: 300;
-            color: rgba(243, 245, 246, 0.85);
-            text-decoration: none;
-            letter-spacing: 0.32rem;
-            text-transform: uppercase;
-            transition: opacity 0.3s ease, color 0.3s ease;
-            text-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0.5rem 0;
+            line-height: 1.6;
         }
 
-        .nav-menu a:hover {
-            opacity: 0.85;
-            color: rgba(255, 255, 255, 0.95);
+        .sidebar-tagline {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        body.nav-open .nav-header {
+            background: rgba(5, 7, 9, 0);
+            border-bottom-color: transparent;
+            box-shadow: none;
         }
 
         .mobile-menu-toggle {
-            display: none;
+            display: block;
             background: none;
             border: none;
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.75rem;
             cursor: pointer;
-            padding: 0.3rem;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: clamp(1.8rem, 5vw, 3.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000001;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
-        @media (max-width: 1100px) {
-            .hero-media {
-                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-                grid-template-areas:
-                    "left center"
-                    "right center";
-                align-items: stretch;
+        .mobile-menu-toggle:hover {
+            transform: translateY(-50%) scale(1.1);
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        .mobile-menu-toggle.is-open {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        body.nav-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                grid-template-columns: 1fr 280px;
             }
 
-            .media-panel:nth-child(1) { grid-area: left; }
-            .media-panel:nth-child(2) { grid-area: center; }
-            .media-panel:nth-child(3) { grid-area: right; }
+            .nav-sidebar {
+                padding: 2.5rem 1.5rem;
+            }
         }
 
         @media (max-width: 900px) {
             .nav-header {
                 padding: 1.75rem 2rem;
-                background: rgba(5, 7, 9, 0.9);
+                background: transparent;
             }
 
-            .nav-menu a {
-                letter-spacing: 0.22rem;
+            .nav-menu {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
             }
 
-            .hero-inner {
-                gap: 2.4rem;
+            .nav-main {
+                padding: 2rem 1.5rem;
+            }
+
+            .nav-sidebar {
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 2rem 1.5rem;
+                max-height: 250px;
+            }
+
+            .nav-sidebar-content {
+                gap: 1.5rem;
+            }
+
+            .sidebar-section {
+                padding-bottom: 1rem;
+            }
+
+            .sidebar-title {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .sidebar-tagline {
+                font-size: 0.95rem;
             }
         }
 
@@ -472,67 +706,29 @@
                 padding: 1.5rem 1.5rem;
             }
 
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                right: 1.5rem;
-                background: rgba(5, 6, 7, 0.94);
-                border: 1px solid var(--color-border);
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
-                display: none;
-                min-width: 220px;
+            .logo img {
+                height: clamp(45px, 8vw, 65px);
             }
 
-            .nav-menu.open {
-                display: flex;
-            }
-
-            .logo {
-                font-size: 1.4rem;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
+            .nav-header.pinned .logo img {
+                height: clamp(35px, 6vw, 50px);
             }
 
             .hero {
                 padding: clamp(1.5rem, 6vw, 2.5rem);
                 padding-top: clamp(7rem, 15vw, 9rem);
-                gap: 2.4rem;
-                justify-content: center;
+                padding-bottom: clamp(2.5rem, 12vw, 4.5rem);
+                justify-content: flex-start;
                 min-height: 100vh;
-            }
-
-            .hero-media {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                grid-template-columns: 1fr;
-                gap: 0;
-                opacity: 0.4;
-            }
-
-            .media-panel {
-                transform: none;
-                min-height: 100vh;
-            }
-
-            .media-panel:nth-child(1),
-            .media-panel:nth-child(3) {
-                display: none;
             }
 
             .hero-content {
                 max-width: 100%;
-                padding: 2rem 1.8rem;
-                background: linear-gradient(135deg, rgba(7, 9, 11, 0.95), rgba(10, 12, 15, 0.92));
-                position: relative;
-                z-index: 2;
             }
 
             .hero-actions {
+                position: static;
+                margin-top: 2rem;
                 flex-direction: column;
                 align-items: stretch;
             }
@@ -541,12 +737,12 @@
                 width: 100%;
             }
 
-
-
             .hero-scroll-compass {
                 position: relative;
                 bottom: auto;
-                left: 0;
+                right: auto;
+                margin-top: 2.5rem;
+                align-self: flex-start;
             }
         }
 
@@ -560,10 +756,6 @@
                 font-size: clamp(2.6rem, 10vw, 3.6rem);
             }
 
-            .hero-eyebrow {
-                letter-spacing: 0.28rem;
-            }
-
             .hero-scroll-compass .compass-label {
                 letter-spacing: 0.32rem;
             }
@@ -571,7 +763,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             .hero::after,
-            .media-panel,
+            .hero-video,
             .hero-title .line,
             .hero-scroll-compass .compass-arrow,
             .ai-concierge-btn {
@@ -755,6 +947,457 @@
             --card-image: url('https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
         }
 
+        /* Map Section Styles */
+        .map-section {
+            background: linear-gradient(180deg, rgba(5, 7, 9, 0.95) 0%, rgba(8, 10, 12, 0.98) 100%);
+        }
+
+        .map-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            align-items: center;
+        }
+
+        .seasonal-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .season-btn {
+            padding: 0.7rem 2rem;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .season-btn.active {
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+        }
+
+        .theme-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            max-width: 1000px;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.4rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.08rem;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .filter-btn.active {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.6);
+            color: #d4af37;
+        }
+
+        .map-wrapper {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .interactive-map-container {
+            height: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-overlay-card {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 380px;
+            max-height: calc(100% - 40px);
+            background: linear-gradient(180deg, rgba(15, 17, 20, 0.98) 0%, rgba(10, 12, 15, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            z-index: 1000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .map-card-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-card-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        .map-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .map-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .map-card-content {
+            padding: 1.5rem;
+            overflow-y: auto;
+            max-height: calc(100% - 200px);
+        }
+
+        .map-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+        }
+
+        .map-card-description {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0 0 1.5rem 0;
+        }
+
+        .map-card-themes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-card-theme-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #d4af37;
+            letter-spacing: 0.05em;
+        }
+
+        .map-card-seasons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-card-season-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+        }
+
+        .map-card-cta {
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            background: rgba(212, 175, 55, 0.9);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .map-card-cta:hover {
+            background: rgba(212, 175, 55, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .map-overlay-card {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+        }
+
+        /* Leaflet overrides for dark theme */
+        .leaflet-container {
+            background: #0a0c0e;
+            font-family: var(--font-sans);
+        }
+
+        .leaflet-control-attribution {
+            background: rgba(0, 0, 0, 0.5) !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+            font-size: 10px !important;
+        }
+
+        .leaflet-control-attribution a {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .leaflet-control-zoom {
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 8px !important;
+            overflow: hidden;
+        }
+
+        .leaflet-control-zoom a {
+            background: rgba(5, 7, 9, 0.9) !important;
+            color: rgba(255, 255, 255, 0.9) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .leaflet-control-zoom a:hover {
+            background: rgba(15, 17, 19, 0.95) !important;
+        }
+
+        /* Custom marker styling */
+        .custom-marker {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+
+        .custom-marker:hover {
+            transform: scale(1.2);
+            z-index: 1000;
+        }
+
+        .custom-marker::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #d4af37;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: marker-pulse 2s ease-in-out infinite;
+        }
+
+        .custom-marker::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+        }
+
+        @keyframes marker-pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scale(1.8);
+                opacity: 0.1;
+            }
+        }
+
+        .marker-hidden {
+            display: none !important;
+        }
+
+        .destination-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        .destination-cards-grid.show {
+            opacity: 1;
+            max-height: 2000px;
+        }
+
+        .destination-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(6px);
+            background: rgba(5, 7, 9, 0.32);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+            transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .destination-media {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .destination-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.6s ease;
+        }
+
+        .destination-card:hover .destination-media img {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+
+        .destination-body {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .destination-body h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .destination-body p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .destination-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .destination-tag {
+            padding: 0.4rem 0.9rem;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: rgba(212, 175, 55, 0.95);
+            letter-spacing: 0.05rem;
+            text-transform: uppercase;
+        }
+
+        .destination-season-tag {
+            background: rgba(100, 149, 237, 0.15);
+            border-color: rgba(100, 149, 237, 0.3);
+            color: rgba(100, 149, 237, 0.95);
+        }
+
+        .destination-cta {
+            width: 100%;
+            padding: 0.95rem 1.5rem;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            color: rgba(212, 175, 55, 0.95);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .destination-cta:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -847,6 +1490,27 @@
             font-size: 0.96rem;
             line-height: 1.65;
             margin-bottom: 0.5rem;
+        }
+
+        .pillar-card p.truncated {
+            position: relative;
+        }
+
+        .read-more-btn {
+            display: inline;
+            color: rgba(255, 255, 255, 0.95);
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 0.96rem;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-left: 0.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            color: rgba(255, 255, 255, 1);
         }
 
         .pillar-card .pillar-cta {
@@ -1290,22 +1954,391 @@
             letter-spacing: 0.1rem;
         }
 
+        /* Footer Styles */
         footer {
-            padding: 3rem 1.5rem;
+            position: relative;
+            padding: 0;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(4, 5, 6, 0.8);
+            background: #000;
+            overflow: hidden;
         }
 
-        footer .footer-inner {
+        .footer-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .footer-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .footer-bg-image.active {
+            opacity: 1;
+        }
+
+        .footer-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.85) 0%,
+                rgba(0, 0, 0, 0.9) 50%,
+                rgba(0, 0, 0, 0.95) 100%
+            );
+            z-index: 1;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent
+            );
+            z-index: 1;
+        }
+
+        footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at top center, rgba(20, 40, 80, 0.2), transparent 60%),
+                radial-gradient(ellipse at bottom center, rgba(0, 0, 0, 0.3), transparent);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .footer-hero {
+            position: relative;
+            padding: 6rem 1.5rem 4rem;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .footer-hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin: 0 0 1.5rem 0;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.9) 50%,
+                rgba(200, 220, 255, 0.8) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 42rem;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-destinations {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 2rem;
+        }
+
+        .footer-destinations span {
+            position: relative;
+        }
+
+        .footer-destinations span::after {
+            content: '·';
+            position: absolute;
+            right: -1.2rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-destinations span:last-child::after {
+            display: none;
+        }
+
+        .footer-content {
+            position: relative;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 3rem;
+            z-index: 2;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-column-title {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+        }
+
+        .footer-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            transform: translateX(3px);
+        }
+
+        .footer-link i {
+            width: 16px;
+            height: 16px;
+            opacity: 0.5;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-item {
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+        }
+
+        .footer-contact-item strong {
+            color: rgba(255, 255, 255, 0.85);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+        }
+
+        .footer-social-link i {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-newsletter {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-newsletter-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .footer-newsletter input {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            transition: all 0.3s ease;
+        }
+
+        .footer-newsletter input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-newsletter-btn {
+            padding: 0.85rem 1.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .footer-newsletter-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        .footer-bottom-inner {
             max-width: var(--max-width);
             margin: 0 auto;
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            color: rgba(255, 255, 255, 0.55);
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             font-size: 0.8rem;
-            letter-spacing: 0.25rem;
-            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.05rem;
+        }
+
+        .footer-copyright {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-link {
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .footer-hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 3rem 1.5rem;
+            }
+
+            .footer-destinations {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .footer-destinations span::after {
+                display: none;
+            }
+
+            .footer-newsletter-input {
+                flex-direction: column;
+            }
+
+            .footer-bottom-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .footer-legal-links {
+                justify-content: center;
+            }
         }
 
         .ai-concierge-wrapper {
@@ -1717,68 +2750,116 @@
             .send-button {
                 width: 100%;
             }
+
+            .theme-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .destination-cards-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header class="nav-header">
-        <a href="#top" class="logo">Luxury Travel Sweden</a>
+        <a href="#top" class="logo">
+            <img src="lts-logo.png" alt="Luxury Travel Sweden" />
+        </a>
         <nav>
-            <ul class="nav-menu">
-                <li><a href="#choose-path">Explore</a></li>
-                <li><a href="#journeys">Journeys</a></li>
-                <li><a href="#corporate">Corporate</a></li>
-                <li><a href="#concierge">LIV</a></li>
-                <li><a href="#stories">Journal</a></li>
-                <li><a href="#press">Press</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <div class="nav-menu" id="primaryNavigation">
+                <div class="nav-main">
+                    <ul class="nav-links">
+                        <li><a href="#map" class="nav-link">Explore</a></li>
+                        <li class="has-submenu">
+                            <a href="#journeys" class="nav-link">Journeys</a>
+                            <ul class="submenu">
+                                <li><a href="#journeys/nature-wellness">Nature & Wellness</a></li>
+                                <li><a href="#journeys/design-innovation">Design & Innovation</a></li>
+                                <li><a href="#journeys/culinary-storytelling">Culinary & Storytelling</a></li>
+                                <li><a href="#journeys/celebration-lifestyle">Celebration & Lifestyle</a></li>
+                                <li><a href="#journeys/royal-art-culture">Royal, Art & Culture</a></li>
+                                <li><a href="#journeys/legacy-meaningful">Legacy & Meaningful Travel</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#corporate" class="nav-link">Corporate & Incentives</a>
+                            <ul class="submenu">
+                                <li><a href="#corporate/signature-chapters">Signature Corporate Chapters</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#storytellers" class="nav-link">Storytellers</a></li>
+                        <li><a href="#concierge" class="nav-link" data-open-liv>LIV / Concierge</a></li>
+                        <li><a href="#stories" class="nav-link">Journal</a></li>
+                        <li><a href="#press" class="nav-link">What Media Says About Us</a></li>
+                        <li><a href="#about" class="nav-link">About Us</a></li>
+                        <li><a href="#booking-process" class="nav-link">Booking Process</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-sidebar">
+                    <div class="nav-sidebar-content">
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Connect</h3>
+                            <div class="sidebar-links">
+                                <a href="https://instagram.com/LuxuryTravelSweden" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                                    <i class="link-icon" data-lucide="instagram"></i>
+                                    <span class="link-text">Instagram</span>
+                                </a>
+                                <a href="https://facebook.com/luxurytravelsweden" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                                    <i class="link-icon" data-lucide="facebook"></i>
+                                    <span class="link-text">Facebook</span>
+                                </a>
+                                <a href="mailto:hello@luxurytravelsweden.com" class="sidebar-link">
+                                    <i class="link-icon" data-lucide="mail"></i>
+                                    <span class="link-text">Email Us</span>
+                                </a>
+                                <a href="tel:+46123456789" class="sidebar-link">
+                                    <i class="link-icon" data-lucide="phone"></i>
+                                    <span class="link-text">+46 123 456 789</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Opening Hours</h3>
+                            <p class="sidebar-text">Mon - Fri: 9:00 - 18:00 CET</p>
+                            <p class="sidebar-text">Weekend: By Appointment</p>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <p class="sidebar-tagline">Crafting extraordinary Swedish journeys since 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavigation">☰</button>
         </nav>
     </header>
 
     <div class="hero" id="top">
-        <div class="hero-media" aria-hidden="true">
-            <div class="media-panel" style="--panel-poster: url('https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');">
-                <video preload="metadata" muted playsinline loop autoplay poster="https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1">
-                    <source src="https://cdn.coverr.co/videos/coverr-the-northern-lights-in-iceland-8651/1080p.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="media-panel" style="--panel-poster: url('https://images.pexels.com/photos/3765335/pexels-photo-3765335.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1');">
-                <video id="heroPrimaryVideo" preload="auto" muted playsinline loop autoplay poster="https://images.pexels.com/photos/3765335/pexels-photo-3765335.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1">
-                    <source src="https://api.chilledsites.com/storage/v1/object/public/p0stman/Luxury_Travel_Sweden_1.mp4?v=20250928" type="video/mp4">
-                </video>
-            </div>
-            <div class="media-panel" style="--panel-poster: url('https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');">
-                <video preload="metadata" muted playsinline loop autoplay poster="https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1">
-                    <source src="https://cdn.coverr.co/videos/coverr-sailing-through-stockholm-5069/1080p.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <div class="hero-inner">
-            <div class="hero-content" id="heroContent">
-                <span class="hero-eyebrow">Luxury Travel Sweden</span>
-                <h1 class="hero-title">
-                    <span class="line">Sweden, Composed For You</span>
-                </h1>
-                <p class="hero-subtext">Curated by Insiders</p>
-                <div class="hero-actions">
-                    <a href="#journeys" class="hero-cta primary">Start Explore</a>
-                    <button type="button" class="hero-cta" data-open-liv>Design My Journey with LIV</button>
-                    <a href="#choose-path" class="hero-cta">Enter the Experience</a>
-                </div>
-            </div>
+        <!-- Hero Background Slideshow -->
+        <div class="hero-background" id="heroBackground"></div>
 
+        <div class="hero-content" id="heroContent">
+            <h1 class="hero-title">
+                <span class="line">Sweden, Composed For You</span>
+                <span class="line">Curated by Insiders</span>
+            </h1>
         </div>
 
-        <div class="hero-scroll-compass" aria-hidden="true">
-            <span class="compass-ring"></span>
-            <span class="compass-arrow">↓</span>
-            <span class="compass-label">Scroll</span>
+        <div class="hero-actions">
+            <a href="#map" class="hero-cta primary">Start Explore</a>
+            <button type="button" class="hero-cta" data-open-liv>Design My Journey with LIV</button>
+            <a href="#choose-path" class="hero-cta">Enter the Experience</a>
         </div>
 
         <div class="ai-concierge-wrapper">
-
             <button class="ai-concierge-btn" id="aiConciergeBtn" aria-label="Launch LIV concierge - AI travel curator" data-open-liv>
                 ✦
             </button>
@@ -1786,43 +2867,54 @@
     </div>
 
     <main class="site-main" id="choose-path">
-        <section class="section">
+        <section class="section map-section">
             <div class="section-inner">
                 <div class="section-heading">
-                    <span class="eyebrow">Choose Your Path</span>
-                    <h2>Four entries into Sweden’s most coveted experiences.</h2>
-                    <p>Every journey begins with intention. Select the path that mirrors your ambitions, and we’ll compose the narrative with precision, privacy, and cinematic flair.</p>
+                    <span class="eyebrow">Explore Sweden & Beyond</span>
+                    <h2>Tap a destination to discover your journey</h2>
+                    <p>Tap a destination to explore a region, city, place or hidden gem. Whether you're drawn to Stockholm's history, Lapland's auroras, or the archipelago's private islands, each pin opens the gateway to your journey with help of LIV.</p>
                 </div>
-                <div class="card-grid">
-                    <article class="path-card" data-theme="journeys">
-                        <div>
-                            <h3>Journeys</h3>
-                            <p>Curated itineraries blending hidden nature, design, culinary revelations, and heritage moments across Stockholm, Lapland, and beyond.</p>
-                        </div>
-                        <a href="#journeys">Explore Pillars</a>
-                    </article>
-                    <article class="path-card" data-theme="corporate">
-                        <div>
-                            <h3>Corporate &amp; Incentives</h3>
-                            <p>Leadership retreats, innovation safaris, and gala concepts engineered to transform teams and inspire bold thinking.</p>
-                        </div>
-                        <a href="#corporate">Craft Impact</a>
-                    </article>
-                    <article class="path-card" data-theme="concierge">
-                        <div>
-                            <h3>Concierge / LIV</h3>
-                            <p>Meet LIV — the Luxury Itinerary Visionary. Discover how our embedded AI concierge architects your draft itinerary before handoff to human curators.</p>
-                        </div>
-                        <a href="#concierge">Meet LIV</a>
-                    </article>
-                    <article class="path-card" data-theme="stories">
-                        <div>
-                            <h3>Stories</h3>
-                            <p>Seasonal editorials and local voices revealing Sweden’s creative vanguards, remote escapes, and cultural provocateurs.</p>
-                        </div>
-                        <a href="#stories">Read Previews</a>
-                    </article>
+
+                <!-- Map Filters -->
+                <div class="map-controls">
+                    <div class="seasonal-toggle">
+                        <button type="button" class="season-btn active" data-season="summer">Summer</button>
+                        <button type="button" class="season-btn" data-season="winter">Winter</button>
+                    </div>
+                    <div class="theme-filters">
+                        <button type="button" class="filter-btn active" data-filter="all">All</button>
+                        <button type="button" class="filter-btn" data-filter="nature">Nature & Wellness</button>
+                        <button type="button" class="filter-btn" data-filter="design">Design & Innovation</button>
+                        <button type="button" class="filter-btn" data-filter="royal">Royal</button>
+                        <button type="button" class="filter-btn" data-filter="art">Art & Culture</button>
+                        <button type="button" class="filter-btn" data-filter="culinary">Culinary</button>
+                        <button type="button" class="filter-btn" data-filter="nightlife">Nightlife & Celebrations</button>
+                        <button type="button" class="filter-btn" data-filter="legacy">Legacy & Purpose</button>
+                    </div>
                 </div>
+
+                <!-- Interactive Map -->
+                <div class="map-wrapper">
+                    <div id="map" class="interactive-map-container"></div>
+
+                    <!-- Map Overlay Card -->
+                    <div class="map-overlay-card" id="mapOverlayCard" style="display: none;">
+                        <button class="map-card-close" id="mapCardClose" aria-label="Close destination card">×</button>
+                        <div class="map-card-image">
+                            <img src="" alt="" id="mapCardImage">
+                        </div>
+                        <div class="map-card-content">
+                            <h3 class="map-card-title" id="mapCardTitle"></h3>
+                            <p class="map-card-description" id="mapCardDescription"></p>
+                            <div class="map-card-themes" id="mapCardThemes"></div>
+                            <div class="map-card-seasons" id="mapCardSeasons"></div>
+                            <button type="button" class="map-card-cta" data-open-liv>Design My Journey with LIV</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination Cards Grid -->
+                <div class="destination-cards-grid" id="destinationCardsGrid"></div>
             </div>
         </section>
 
@@ -1831,7 +2923,7 @@
                 <div class="section-heading">
                     <span class="eyebrow">Journeys</span>
                     <h2>Six pillars to compose your narrative.</h2>
-                    <p>Blend pillars to author experiences as refined or untamed as you desire — from luminous winter retreats to Stockholm’s after-hours avant-garde.</p>
+                    <p>For discerning travelers who want more than a holiday — who want to step into Sweden's soul. Our journeys are cinematic narratives, curated with exclusive access, emotional storytelling, and ultra-luxury comfort.</p>
                 </div>
                 <div class="pillars-grid">
                     <article class="pillar-card" data-pillar="nature">
@@ -1842,7 +2934,11 @@
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="leaf"></i></div>
                             <div class="pillar-copy">
                                 <h3>Nature &amp; Wellness</h3>
-                                <p>Private forested villas, aurora vigils, biohacking rituals, and restorative spa residencies.</p>
+                                <p>Disappear into silence and reconnect with yourself. Stay in glass igloos under the Northern
+Lights, mirrored forest cabins, or private archipelago villas. Practice sauna rituals, forest
+meditation, and guided digital detoxes. For those who seek more, Sweden’s biohacking
+pioneers and longevity experts curate programs blending nature with the science of
+performance and wellbeing.</p>
                                 <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
@@ -1855,20 +2951,10 @@
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="cpu"></i></div>
                             <div class="pillar-copy">
                                 <h3>Design &amp; Innovation</h3>
-                                <p>Studio immersions with Sweden's design icons, innovation labs, and future-forward showrooms.</p>
-                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="pillar-card" data-pillar="culinary">
-                        <div class="pillar-media" aria-hidden="true">
-                            <img src="https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Nordic chef plating an intimate tasting course" loading="lazy">
-                        </div>
-                        <div class="pillar-body">
-                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="utensils-crossed"></i></div>
-                            <div class="pillar-copy">
-                                <h3>Culinary Experiences</h3>
-                                <p>Chef-led archipelago cruises, foraged feasts, and narrative dining inside hidden creative spaces.</p>
+                                <p>Stockholm is one of the world’s unicorn capitals — a cradle of startups and cutting-edge
+design. We open doors to private design studios, fashion ateliers, and sustainable innovation
+labs. Meet the entrepreneurs behind global icons and enjoy one-on-one encounters with
+Sweden’s creatives and thinkers.</p>
                                 <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
@@ -1881,7 +2967,27 @@
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="crown"></i></div>
                             <div class="pillar-copy">
                                 <h3>Royal, Art &amp; Culture</h3>
-                                <p>After-hours palace access, private museum salons, emerging artist studios, and curated cultural festivals across the seasons.</p>
+                                <p>Discover Sweden’s refined blend of heritage and creativity. Explore private castles and royal
+palaces after hours, then step into the world of contemporary art, design studios, and collector
+salons. A journey where history, culture, and innovation meet in timeless Scandinavian style.</p>
+                                <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="pillar-card" data-pillar="culinary">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/4253312/pexels-photo-4253312.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Nordic chef plating an intimate tasting course" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="utensils-crossed"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Culinary Experiences</h3>
+                                <p>Discover Sweden through its flavors. Join Michelin-trained chefs in hands-on cooking
+sessions inspired by the seasons. Forage for wild herbs and mushrooms with local experts,
+then dine in forest kitchens where nature sets the table. Enjoy gourmet food tours, private
+tasting visits, and warm home dinners that open the door to authentic Swedish life. Hear Sami
+stories and share traditional dishes around the fire — each meal a chapter of Sweden’s land,
+culture, and culinary heritage.</p>
                                 <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
@@ -1894,7 +3000,11 @@
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="party-popper"></i></div>
                             <div class="pillar-copy">
                                 <h3>Nightlife &amp; Celebration</h3>
-                                <p>Secret clubs, bespoke gala production, and immersive celebrations engineered for insiders.</p>
+                                <p>Swedes know how to party — and we bring you inside their most exclusive scenes. Sip
+champagne in members-only clubs, dance under the midnight sun at a private island
+midsummer gala, or host your own soirée in a designer’s loft. For the bold, rent out a mansion
+and let us curate an unforgettable night with live acts, local creatives, and a guest list to
+remember.</p>
                                 <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
@@ -1907,7 +3017,10 @@
                             <div class="pillar-icon" aria-hidden="true"><i data-lucide="globe-2"></i></div>
                             <div class="pillar-copy">
                                 <h3>Legacy &amp; Meaningful Travel</h3>
-                                <p>Impact-driven encounters, philanthropic connections, and multi-generational storytelling.</p>
+                                <p>Travel with purpose and perspective. Support Sami heritage projects, experience rewilding
+initiatives, or participate in sustainable design collaborations. Every journey leaves a positive
+footprint — giving back to the land, the culture, and the communities that make Sweden
+unique.</p>
                                 <button type="button" class="pillar-cta" data-open-liv>Design My Journey with LIV</button>
                             </div>
                         </div>
@@ -1918,23 +3031,127 @@
 
         <section class="section" id="corporate">
             <div class="section-inner">
-                <div class="dual-columns">
-                    <div class="headline-block">
-                        <span class="eyebrow">Corporate &amp; Incentives</span>
-                        <h3>Architect experiences that move culture forward.</h3>
-                        <p>From innovation safaris to transformational leadership gatherings, every agenda is crafted to unlock creativity, strategy, and human connection.</p>
-                    </div>
-                    <div class="accent-card">
-                        <ul>
-                            <li><span>Leadership Retreats</span>Curated residencies where visionaries recalibrate amidst design-forward sanctuaries.</li>
-                            <li><span>Innovation Safaris</span>Immersions inside Sweden’s tech, sustainability, and design ecosystems.</li>
-                            <li><span>Creative Incentives</span>Unexpected experiences that reward daring teams with culture, art, and celebration.</li>
-                            <li><span>Wellness &amp; Biohacking</span>Performance labs, arctic resilience training, and bespoke longevity programs.</li>
-                        </ul>
-                    </div>
+                <div class="section-heading">
+                    <span class="eyebrow">Corporate & Incentives</span>
+                    <h2>Architect experiences that move culture forward</h2>
+                    <p>Sweden is not only a destination — it is a stage for creativity, inspiration, and transformation. We design corporate journeys that reward, engage, and inspire through experiences no traditional DMC can offer.</p>
+                </div>
+
+                <div class="pillars-grid">
+                    <article class="pillar-card" data-pillar="leadership">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Leadership retreat in Swedish nature" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="mountain"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Leadership Retreats</h3>
+                                <p>Swap the boardroom for a castle, a mirrored forest lodge, or a private island villa. Executive retreats combine strategic focus with Swedish wellness: sauna rituals, guided silence, and outdoor adventure.</p>
+                                <button type="button" class="pillar-cta" data-open-enquiry>Plan Your Retreat</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pillar-card" data-pillar="innovation">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Innovation and creativity workshops" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Innovation & Creativity</h3>
+                                <p>Bring your team into Sweden's unicorn factory. Meet startup founders, green-tech pioneers, and design thinkers. Workshops woven into inspiring environments — from design studios to innovation labs.</p>
+                                <button type="button" class="pillar-cta" data-open-enquiry>Explore Innovation</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pillar-card" data-pillar="celebration">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Corporate celebration and gala events" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Celebration & Recognition</h3>
+                                <p>Business milestones deserve more than a ballroom. Celebrate with a Scandi White Party on a private island, a royal gala in a candlelit palace, or an Innovation Party Night with startup founders and Michelin catering.</p>
+                                <button type="button" class="pillar-cta" data-open-enquiry>Design Your Event</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pillar-card" data-pillar="purpose">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Culture and purpose-driven experiences" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="heart"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Culture & Purpose</h3>
+                                <p>Sweden's cultural and social legacy inspires transformation. Backstage access to Stockholm Fashion Week, private design fairs, or CSR narratives supporting Sami communities and eco-startups.</p>
+                                <button type="button" class="pillar-cta" data-open-enquiry>Create Impact</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pillar-card" data-pillar="wellness">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Wellness and biohacking retreats" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="activity"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Wellness & Biohacking</h3>
+                                <p>Executive performance meets longevity. Transform your leadership team through cutting-edge wellness protocols, Nordic cold therapy, and personalized biohacking experiences in pristine Swedish nature.</p>
+                                <button type="button" class="pillar-cta" data-open-enquiry>Optimize Performance</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pillar-card" data-pillar="incentive">
+                        <div class="pillar-media" aria-hidden="true">
+                            <img src="https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1" alt="Creative team incentives" loading="lazy">
+                        </div>
+                        <div class="pillar-body">
+                            <div class="pillar-icon" aria-hidden="true"><i data-lucide="trophy"></i></div>
+                            <div class="pillar-copy">
+                                <h3>Creative Incentives</h3>
+                                <p>Reward your team with unforgettable experiences. Sailing races through the archipelago, gastronomy contests with Michelin chefs, design sprints in iconic studios, or adventure challenges in Lapland.</p>
+                                <button type="button" class="pillar-cta" data-open-enquiry>Reward Excellence</button>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
+
+        <!-- 
+        5. Featured Storytellers
+Experience Sweden beyond the ordinary. Led by local storytellers — from Sami elders and
+Michelin chefs to artists, designers, and innovators — each encounter offers an authentic
+glimpse into Swedish life, culture, and creativity. Whether you travel solo or with others, our
+curated experiences, workshops, and destinations promise meaningful connections and stories
+that stay with you long after the journey ends.
+You need inspiration? Take a peek at our curated selection of storytellers, destinations,
+workshops, and businesses for eventful, meaningful trips (Sub page**)
+User Flow with LIV (Learn More focus only):
+• LIV asks: “Would you like me to help you find a storyteller that matches your
+personal interests and design a journey around him/her?
+• Client write preferences → LIV introduces storyteller’s full background, philosophy,
+and sample experiences.
+• Guests can explore storyteller categories (chef, innovator, elder, designer, wellness
+guide).
+• LIV suggests matching profiles and builds drafts anchored in the chosen storyteller.
+Conversion Path:
+• Storyteller-inspired draft → enquiry form → human curator finalizes.
+Webpages for speakers in Sweden (as data bank for her suggestions):
+e.g. Talarpoolen, Athenas, Booky.se och MySpeaker
+**I would like to show some examples of storytelling experiences so guests get inspiration to
+what an experience look like. My current webpage list some top ones:
+https://sverigeagenten.com/featured-stories/ Could we make a sub page for this? Just cut n
+paste it
+        
+        -->
 
         <section class="section" id="concierge">
             <div class="section-inner">
@@ -1962,7 +3179,7 @@
             </div>
         </section>
 
-        <section class="section" id="sustainability">
+        <!--section class="section" id="sustainability">
             <div class="section-inner">
                 <div class="dual-columns">
                     <div class="headline-block">
@@ -1979,7 +3196,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section-->
 
         <section class="section" id="stories">
             <div class="section-inner">
@@ -2031,7 +3248,105 @@
             </div>
         </section>
 
-        <section class="section" id="testimonials">
+        <!-- Instagram flow -->
+        <section class="section" id="instagram">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <span class="eyebrow">Follow Our Journey</span>
+                    <h2>@LuxuryTravelSweden</h2>
+                    <p><a href="https://www.instagram.com/LuxuryTravelSweden/" target="_blank" rel="noopener noreferrer">Follow us on Instagram</a></p>
+                </div>
+                <div class="instagram-grid">
+                    <div class="instagram-card">
+                        <img src="https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Swedish wilderness" loading="lazy">
+                        <div class="instagram-title">Northern Lights Adventure</div>
+                    </div>
+                    <div class="instagram-card">
+                        <img src="https://images.pexels.com/photos/1319515/pexels-photo-1319515.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Stockholm architecture" loading="lazy">
+                        <div class="instagram-title">Stockholm Design District</div>
+                    </div>
+                    <div class="instagram-card">
+                        <img src="https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Swedish cuisine" loading="lazy">
+                        <div class="instagram-title">Nordic Culinary Experience</div>
+                    </div>
+                    <div class="instagram-card">
+                        <img src="https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Swedish archipelago" loading="lazy">
+                        <div class="instagram-title">Archipelago Escape</div>
+                    </div>
+                    <div class="instagram-card">
+                        <img src="https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Swedish winter" loading="lazy">
+                        <div class="instagram-title">Winter Wonderland</div>
+                    </div>
+                    <div class="instagram-card">
+                        <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Swedish nature" loading="lazy">
+                        <div class="instagram-title">Midnight Sun Journey</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .instagram-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .instagram-card {
+                position: relative;
+                aspect-ratio: 1;
+                overflow: hidden;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+
+            .instagram-card:hover {
+                transform: scale(1.02);
+            }
+
+            .instagram-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .instagram-title {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 1rem;
+                font-size: 1rem;
+                font-weight: 500;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+            }
+
+            .instagram-card:hover .instagram-title {
+                opacity: 1;
+            }
+
+            @media (max-width: 768px) {
+                .instagram-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .instagram-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <!--section class="section" id="testimonials">
             <div class="section-inner">
                 <div class="section-heading">
                     <span class="eyebrow">Testimonials</span>
@@ -2048,7 +3363,7 @@
                     </article>
                 </div>
             </div>
-        </section>
+        </section-->
 
         <section class="section" id="contact">
             <div class="section-inner">
@@ -2109,9 +3424,123 @@
     </main>
 
     <footer>
-        <div class="footer-inner">
-            <span>© 2025 Luxury Travel Sweden</span>
-            <span>Stockholm · Lapland · Göta Archipelago · Gothenburg</span>
+        <!-- Footer Background Slideshow -->
+        <div class="footer-background" id="footerBackground"></div>
+        <div class="footer-bg-overlay"></div>
+
+        <!-- Footer Hero Section -->
+        <div class="footer-hero">
+            <h2 class="footer-hero-title">Your Swedish Story Begins Here</h2>
+            <p class="footer-hero-subtitle">
+                Where wilderness whispers, design speaks, and every journey becomes a legacy.
+                Let us craft your unforgettable chapter in Sweden's endless narrative.
+            </p>
+            <div class="footer-destinations">
+                <span>Stockholm</span>
+                <span>Lapland</span>
+                <span>Göta Archipelago</span>
+                <span>Gothenburg</span>
+                <span>Kiruna</span>
+                <span>Malmö</span>
+            </div>
+        </div>
+
+        <!-- Footer Main Content -->
+        <div class="footer-content">
+            <!-- Explore Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Explore</h3>
+                <nav class="footer-links">
+                    <a href="#destinations" class="footer-link">Interactive Map</a>
+                    <a href="#journeys" class="footer-link">Six Pillars of Journey</a>
+                    <a href="#corporate" class="footer-link">Corporate & Incentives</a>
+                    <a href="#storytellers" class="footer-link">Our Storytellers</a>
+                    <a href="#instagram" class="footer-link">Journal & Stories</a>
+                    <a href="#" class="footer-link" data-open-liv>Design Journey with LIV</a>
+                </nav>
+            </div>
+
+            <!-- Journeys Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Journeys</h3>
+                <nav class="footer-links">
+                    <a href="#journeys" class="footer-link">Nature & Wellness</a>
+                    <a href="#journeys" class="footer-link">Design & Innovation</a>
+                    <a href="#journeys" class="footer-link">Royal, Art & Culture</a>
+                    <a href="#journeys" class="footer-link">Culinary Experiences</a>
+                    <a href="#journeys" class="footer-link">Nightlife & Celebration</a>
+                    <a href="#journeys" class="footer-link">Legacy & Meaningful Travel</a>
+                </nav>
+            </div>
+
+            <!-- About Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">About</h3>
+                <nav class="footer-links">
+                    <a href="#about" class="footer-link">Our Story</a>
+                    <a href="#booking-process" class="footer-link">Booking Process</a>
+                    <a href="#" class="footer-link">Pricing & FAQ</a>
+                    <a href="#press" class="footer-link">What Media Says</a>
+                </nav>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Contact</h3>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <strong>Henrik Tidefjärd</strong>
+                        Founder & Creative Director
+                    </div>
+                    <div class="footer-contact-item">
+                        <a href="tel:+46703872264">+46 (0)70 38 722 64</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <a href="mailto:henrik@luxurytravelsweden.com">henrik@luxurytravelsweden.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <a href="#contact" data-open-enquiry>Start Your Journey</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/LuxuryTravelSweden" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/luxurytravelsweden" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Stay Inspired</h3>
+                <p style="color: rgba(255, 255, 255, 0.65); font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.6;">
+                    Join our community and receive exclusive stories, insider tips, and curated experiences from Sweden.
+                </p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <div class="footer-newsletter-input">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <div class="footer-copyright">
+                    <span>© 2025 Luxury Travel Sweden</span>
+                    <span style="opacity: 0.5;">·</span>
+                    <span>Crafted with passion in Sweden</span>
+                </div>
+                <nav class="footer-legal-links">
+                    <a href="https://luxurytravelsweden.com/terms-conditions/" class="footer-legal-link" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+                    <a href="https://luxurytravelsweden.com/data-protection/" class="footer-legal-link" target="_blank" rel="noopener noreferrer">Data Protection</a>
+                    <a href="https://luxurytravelsweden.com/imprint" class="footer-legal-link" target="_blank" rel="noopener noreferrer">Imprint</a>
+                </nav>
+            </div>
         </div>
     </footer>
 
@@ -2145,8 +3574,7 @@
             const heroContent = document.getElementById('heroContent');
             const heroCompass = document.querySelector('.hero-scroll-compass');
             const navHeader = document.querySelector('.nav-header');
-            const heroMediaPanels = document.querySelectorAll('.media-panel');
-            const heroMediaVideos = document.querySelectorAll('.media-panel video');
+            const heroMediaVideos = document.querySelectorAll('.hero-video');
             const primaryHeroVideo = document.getElementById('heroPrimaryVideo');
             const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
             const aiBtn = document.getElementById('aiConciergeBtn');
@@ -2154,13 +3582,6 @@
             const allowMotion = !prefersReducedMotionQuery.matches;
             let heroHasRevealed = false;
             let revealTimeoutId = null;
-
-            heroMediaPanels.forEach(panel => {
-                const posterValue = panel.style.getPropertyValue('--panel-poster');
-                if (posterValue) {
-                    panel.style.backgroundImage = posterValue;
-                }
-            });
 
             const updateNavPinnedState = () => {
                 if (!navHeader) return;
@@ -2180,17 +3601,17 @@
                     heroMediaVideos.forEach(video => {
                         video.pause();
                         video.removeAttribute('autoplay');
-                        video.parentElement?.classList.add('paused');
+                        video.classList.add('is-paused');
                     });
                 } else {
                     hero.classList.remove('reduced-motion');
                     heroMediaVideos.forEach(video => {
-                        video.parentElement?.classList.remove('paused');
+                        video.classList.remove('is-paused');
                         video.muted = true;
                         const playPromise = video.play();
                         if (playPromise && typeof playPromise.catch === 'function') {
                             playPromise.catch(() => {
-                                video.parentElement?.classList.add('paused');
+                                video.classList.add('is-paused');
                             });
                         }
                     });
@@ -2211,7 +3632,8 @@
 
             heroMediaVideos.forEach(video => {
                 video.addEventListener('error', () => {
-                    video.parentElement?.classList.add('paused');
+                    video.classList.add('is-paused');
+                    hero?.classList.add('reduced-motion');
                 });
             });
 
@@ -2248,23 +3670,13 @@
 
             scheduleHeroReveal(2800);
 
-            if (allowMotion && hero) {
-                const updateParallax = () => {
-                    const rect = hero.getBoundingClientRect();
-                    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-                    const total = rect.height + viewportHeight;
-                    const progress = Math.min(1, Math.max(0, (viewportHeight - rect.top) / total));
-                    hero.style.setProperty('--hero-scroll', progress.toFixed(3));
-                };
-
-                updateParallax();
+            if (hero) {
                 updateNavPinnedState();
 
                 let ticking = false;
                 const onScroll = () => {
                     if (!ticking) {
                         window.requestAnimationFrame(() => {
-                            updateParallax();
                             updateNavPinnedState();
                             ticking = false;
                         });
@@ -2273,15 +3685,6 @@
                 };
 
                 window.addEventListener('scroll', onScroll, { passive: true });
-                const onResize = () => {
-                    updateParallax();
-                    updateNavPinnedState();
-                };
-                window.addEventListener('resize', onResize);
-            } else if (hero) {
-                hero.style.setProperty('--hero-scroll', '0');
-                updateNavPinnedState();
-                window.addEventListener('scroll', updateNavPinnedState, { passive: true });
                 window.addEventListener('resize', updateNavPinnedState);
             }
 
@@ -2306,13 +3709,79 @@
             const navLinks = document.querySelectorAll('.nav-menu a');
 
             if (mobileToggle && navMenu) {
-                mobileToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('open');
+                navMenu.setAttribute('aria-hidden', 'true');
+
+                const closeMenu = (returnFocus = false) => {
+                    navMenu.classList.remove('open');
+                    mobileToggle.classList.remove('is-open');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    mobileToggle.setAttribute('aria-label', 'Open menu');
+                    mobileToggle.textContent = '☰';
+                    navMenu.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('nav-open');
+                    if (returnFocus) {
+                        mobileToggle.focus();
+                    }
+                };
+
+                const toggleMenu = () => {
+                    const isOpen = navMenu.classList.toggle('open');
+                    mobileToggle.classList.toggle('is-open', isOpen);
+                    mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    mobileToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+                    mobileToggle.textContent = isOpen ? '×' : '☰';
+                    navMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+                    document.body.classList.toggle('nav-open', isOpen);
+                    if (isOpen) {
+                        navLinks[0]?.focus();
+                    } else {
+                        mobileToggle.focus();
+                    }
+                };
+
+                mobileToggle.addEventListener('click', () => {
+                    toggleMenu();
                 });
 
                 navLinks.forEach(link => {
                     link.addEventListener('click', () => {
-                        navMenu.classList.remove('open');
+                        closeMenu();
+                    });
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && navMenu.classList.contains('open')) {
+                        closeMenu(true);
+                    }
+                });
+
+                // Submenu interactions
+                const submenuParents = document.querySelectorAll('.has-submenu');
+                submenuParents.forEach(parent => {
+                    const parentLink = parent.querySelector('.nav-link');
+
+                    if (parentLink) {
+                        parentLink.addEventListener('click', (event) => {
+                            event.preventDefault();
+
+                            // Close other submenus
+                            submenuParents.forEach(otherParent => {
+                                if (otherParent !== parent) {
+                                    otherParent.classList.remove('open');
+                                }
+                            });
+
+                            // Toggle current submenu
+                            parent.classList.toggle('open');
+                        });
+                    }
+                });
+
+                // Close submenu when clicking submenu links
+                const submenuLinks = document.querySelectorAll('.submenu a');
+                submenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu();
                     });
                 });
             }
@@ -2790,6 +4259,475 @@
                     chatOverlay.classList.remove('show');
                 }
             });
+
+            // Interactive Map Functionality with Leaflet (Free OpenStreetMap)
+
+            // Ensure Leaflet is loaded
+            if (typeof L === 'undefined') {
+                console.error('Leaflet is not loaded');
+                return;
+            }
+
+            const destinationData = {
+                stockholm: {
+                    title: 'Stockholm',
+                    description: 'Sweden\'s capital blends royal heritage, innovative design, and vibrant cultural scenes. Explore after-hours palace access, Michelin dining, and Stockholm\'s creative underground.',
+                    image: 'https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Nature & Wellness', 'Design & Innovation', 'Royal', 'Art & Culture', 'Culinary', 'Nightlife & Celebrations'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [18.0686, 59.3293],
+                    themeKeys: ['nature', 'design', 'royal', 'art', 'culinary', 'nightlife']
+                },
+                gothenburg: {
+                    title: 'Gothenburg',
+                    description: 'Sweden\'s west coast gem combines maritime heritage with innovative cuisine. Explore seafood markets, contemporary art museums, and the charming Haga district.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Culinary', 'Art & Culture', 'Design & Innovation'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [11.9746, 57.7089],
+                    themeKeys: ['culinary', 'art', 'design']
+                },
+                gotland: {
+                    title: 'Gotland & Visby',
+                    description: 'Medieval walls surround Visby on this Baltic island paradise. Discover ancient rune stones, limestone formations, and summer festivals in Sweden\'s sunniest region.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Royal', 'Art & Culture', 'Nature & Wellness'],
+                    seasons: ['Summer'],
+                    coordinates: [18.2948, 57.6348],
+                    themeKeys: ['royal', 'art', 'nature']
+                },
+                dalarna: {
+                    title: 'Dalarna',
+                    description: 'The heart of Swedish folklore and tradition. Experience genuine Swedish culture, traditional crafts, Lake Siljan, and the iconic red Dala horses.',
+                    image: 'https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Art & Culture', 'Legacy & Purpose', 'Nature & Wellness'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [14.5636, 60.6034],
+                    themeKeys: ['art', 'legacy', 'nature']
+                },
+                lapland: {
+                    title: 'Lapland',
+                    description: 'Enter the Arctic wilderness for aurora vigils, glass-roof lodges, and transformative silence. Experience indigenous Sámi culture and winter\'s profound beauty.',
+                    image: 'https://images.pexels.com/photos/2024881/pexels-photo-2024881.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Nature & Wellness', 'Legacy & Purpose'],
+                    seasons: ['Winter'],
+                    coordinates: [23.6850, 67.9222],
+                    themeKeys: ['nature', 'legacy']
+                },
+                archipelago: {
+                    title: 'Stockholm Archipelago',
+                    description: 'Over 30,000 islands form Sweden\'s maritime playground. Private yacht journeys, foraging expeditions, and hidden island retreats await your discovery.',
+                    image: 'https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Nature & Wellness', 'Culinary'],
+                    seasons: ['Summer'],
+                    coordinates: [18.5500, 59.4500],
+                    themeKeys: ['nature', 'culinary']
+                },
+                malmo: {
+                    title: 'Malmö',
+                    description: 'Sweden\'s gateway to Europe combines Scandinavian cool with continental flair. Explore sustainable architecture, diverse culinary scenes, and proximity to Copenhagen.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Design & Innovation', 'Culinary', 'Art & Culture'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [13.0038, 55.6050],
+                    themeKeys: ['design', 'culinary', 'art']
+                },
+                abisko: {
+                    title: 'Abisko National Park',
+                    description: 'Prime aurora viewing location in Swedish Lapland. Experience the Midnight Sun, pristine wilderness, and some of Europe\'s clearest skies for northern lights.',
+                    image: 'https://images.pexels.com/photos/2024881/pexels-photo-2024881.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Nature & Wellness'],
+                    seasons: ['Winter', 'Summer'],
+                    coordinates: [18.8306, 68.3540],
+                    themeKeys: ['nature']
+                }
+            };
+
+            const destinationCardsGrid = document.getElementById('destinationCardsGrid');
+            const seasonBtns = document.querySelectorAll('.season-btn');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            let currentSeason = 'summer';
+            let currentFilter = 'all';
+            let selectedCities = new Set();
+            let markers = {};
+            let map;
+
+            // Initialize Leaflet Map with OpenStreetMap (Free!)
+            const mapContainer = document.getElementById('map');
+            if (!mapContainer) {
+                console.error('Map container not found');
+                return;
+            }
+
+            console.log('Initializing Leaflet map...');
+
+            try {
+                map = L.map('map', {
+                    center: [62, 15],
+                    zoom: 5,
+                    zoomControl: true,
+                    scrollWheelZoom: true
+                });
+
+                console.log('Map initialized successfully');
+
+                // Add dark theme tile layer from CartoDB (Free)
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '© OpenStreetMap contributors © CARTO',
+                    subdomains: 'abcd',
+                    maxZoom: 19
+                }).addTo(map);
+
+                console.log('Tile layer added');
+
+                // Force map to resize (fixes blank map issue)
+                setTimeout(() => {
+                    map.invalidateSize();
+                    console.log('Map size invalidated');
+                }, 100);
+
+            } catch (error) {
+                console.error('Error initializing map:', error);
+                return;
+            }
+
+            // Map overlay card elements
+            const mapOverlayCard = document.getElementById('mapOverlayCard');
+            const mapCardClose = document.getElementById('mapCardClose');
+            const mapCardImage = document.getElementById('mapCardImage');
+            const mapCardTitle = document.getElementById('mapCardTitle');
+            const mapCardDescription = document.getElementById('mapCardDescription');
+            const mapCardThemes = document.getElementById('mapCardThemes');
+            const mapCardSeasons = document.getElementById('mapCardSeasons');
+
+            // Show map overlay card
+            function showMapOverlayCard(cityKey, data) {
+                if (!mapOverlayCard || !data) return;
+
+                // Populate card content
+                mapCardImage.src = data.image;
+                mapCardImage.alt = data.title;
+                mapCardTitle.textContent = data.title;
+                mapCardDescription.textContent = data.description;
+
+                // Populate themes
+                mapCardThemes.innerHTML = data.themes
+                    .map(theme => `<span class="map-card-theme-tag">${theme}</span>`)
+                    .join('');
+
+                // Populate seasons
+                mapCardSeasons.innerHTML = data.seasons
+                    .map(season => `<span class="map-card-season-tag">${season}</span>`)
+                    .join('');
+
+                // Show card
+                mapOverlayCard.style.display = 'block';
+            }
+
+            // Hide map overlay card
+            function hideMapOverlayCard() {
+                if (mapOverlayCard) {
+                    mapOverlayCard.style.display = 'none';
+                }
+            }
+
+            // Close button handler
+            if (mapCardClose) {
+                mapCardClose.addEventListener('click', hideMapOverlayCard);
+            }
+
+            // Create destination card
+            function createDestinationCard(cityKey) {
+                const data = destinationData[cityKey];
+                if (!data) return null;
+
+                const card = document.createElement('article');
+                card.className = 'destination-card';
+                card.dataset.city = cityKey;
+
+                card.innerHTML = `
+                    <div class="destination-media">
+                        <img src="${data.image}" alt="${data.title}" loading="lazy">
+                    </div>
+                    <div class="destination-body">
+                        <h3>${data.title}</h3>
+                        <p>${data.description}</p>
+                        <div class="destination-tags">
+                            ${data.themes.map(theme => `<span class="destination-tag">${theme}</span>`).join('')}
+                            ${data.seasons.map(season => `<span class="destination-tag destination-season-tag">${season}</span>`).join('')}
+                        </div>
+                        <button type="button" class="destination-cta" data-open-liv>Design Journey with LIV</button>
+                    </div>
+                `;
+
+                return card;
+            }
+
+            // Update cards display
+            function updateCardsDisplay() {
+                destinationCardsGrid.innerHTML = '';
+
+                if (selectedCities.size === 0) {
+                    destinationCardsGrid.classList.remove('show');
+                    return;
+                }
+
+                selectedCities.forEach(cityKey => {
+                    const card = createDestinationCard(cityKey);
+                    if (card) {
+                        destinationCardsGrid.appendChild(card);
+                    }
+                });
+
+                destinationCardsGrid.classList.add('show');
+
+                setTimeout(() => {
+                    destinationCardsGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+
+            // Filter markers
+            function filterMarkers() {
+                Object.keys(destinationData).forEach(cityKey => {
+                    const data = destinationData[cityKey];
+                    const marker = markers[cityKey];
+
+                    if (!marker) return;
+
+                    const seasonMatch = data.seasons.map(s => s.toLowerCase()).includes(currentSeason);
+                    const themeMatch = currentFilter === 'all' || data.themeKeys.includes(currentFilter);
+
+                    const markerEl = marker.getElement();
+                    if (seasonMatch && themeMatch) {
+                        markerEl.classList.remove('marker-hidden');
+                    } else {
+                        markerEl.classList.add('marker-hidden');
+                    }
+                });
+            }
+
+            // Add markers to map
+            Object.keys(destinationData).forEach(cityKey => {
+                const data = destinationData[cityKey];
+
+                // Create custom marker element
+                const el = document.createElement('div');
+                el.className = 'custom-marker';
+                el.dataset.city = cityKey;
+
+                // Add click event
+                el.addEventListener('click', function() {
+                    if (selectedCities.has(cityKey)) {
+                        selectedCities.delete(cityKey);
+                    } else {
+                        selectedCities.add(cityKey);
+                    }
+                    updateCardsDisplay();
+                });
+
+                // Create Leaflet marker with custom icon
+                const icon = L.divIcon({
+                    html: el.outerHTML,
+                    className: '',
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                });
+
+                const marker = L.marker([data.coordinates[1], data.coordinates[0]], { icon: icon })
+                    .addTo(map);
+
+                // Store reference to the actual DOM element
+                marker.getElement = function() {
+                    return marker._icon.querySelector('.custom-marker');
+                };
+
+                // Re-attach click handler to the rendered element
+                setTimeout(() => {
+                    const renderedEl = marker.getElement();
+                    if (renderedEl) {
+                        renderedEl.addEventListener('click', function() {
+                            showMapOverlayCard(cityKey, data);
+                        });
+                    }
+                }, 100);
+
+                markers[cityKey] = marker;
+            });
+
+            // Initial filter
+            setTimeout(() => filterMarkers(), 200);
+
+            // Season toggle
+            seasonBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    seasonBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSeason = this.dataset.season;
+                    filterMarkers();
+                });
+            });
+
+            // Theme filters
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    filterMarkers();
+                });
+            });
+
+            // Pillar card text truncation
+            const MAX_CHARS = 200; // Character limit before truncation
+
+            function truncateText() {
+                const pillarCards = document.querySelectorAll('.pillar-copy p');
+
+                pillarCards.forEach(paragraph => {
+                    const fullText = paragraph.textContent.trim();
+
+                    // Only truncate if text exceeds limit
+                    if (fullText.length > MAX_CHARS) {
+                        const truncatedText = fullText.substring(0, MAX_CHARS);
+
+                        // Store original text as data attribute
+                        paragraph.setAttribute('data-full-text', fullText);
+                        paragraph.setAttribute('data-truncated-text', truncatedText);
+
+                        // Create read more button
+                        const readMoreBtn = document.createElement('button');
+                        readMoreBtn.className = 'read-more-btn';
+                        readMoreBtn.textContent = 'read more';
+                        readMoreBtn.setAttribute('aria-expanded', 'false');
+
+                        // Set truncated text
+                        paragraph.textContent = truncatedText + '... ';
+                        paragraph.classList.add('truncated');
+                        paragraph.appendChild(readMoreBtn);
+
+                        // Toggle functionality
+                        readMoreBtn.addEventListener('click', function() {
+                            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                            if (isExpanded) {
+                                // Collapse
+                                paragraph.textContent = truncatedText + '... ';
+                                paragraph.appendChild(this);
+                                this.textContent = 'read more';
+                                this.setAttribute('aria-expanded', 'false');
+                            } else {
+                                // Expand
+                                paragraph.textContent = fullText + ' ';
+                                paragraph.appendChild(this);
+                                this.textContent = 'read less';
+                                this.setAttribute('aria-expanded', 'true');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Initialize truncation
+            truncateText();
+
+            // Footer background slideshow
+            const footerBackgroundImages = [
+                'https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1920', // Northern Lights
+                'https://images.pexels.com/photos/1670732/pexels-photo-1670732.jpeg?auto=compress&cs=tinysrgb&w=1920', // Stockholm waterfront
+                'https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1920', // Swedish archipelago
+                'https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1920', // Lapland winter
+                'https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1920', // Swedish forest
+                'https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1920'  // Mountain landscape
+            ];
+
+            function initFooterSlideshow() {
+                const footerBg = document.getElementById('footerBackground');
+                if (!footerBg) return;
+
+                let currentImageIndex = 0;
+
+                // Create image elements
+                footerBackgroundImages.forEach((imageUrl, index) => {
+                    const imageDiv = document.createElement('div');
+                    imageDiv.className = 'footer-bg-image';
+                    imageDiv.style.backgroundImage = `url('${imageUrl}')`;
+                    if (index === 0) {
+                        imageDiv.classList.add('active');
+                    }
+                    footerBg.appendChild(imageDiv);
+                });
+
+                const imageElements = footerBg.querySelectorAll('.footer-bg-image');
+
+                // Cycle through images
+                function cycleImages() {
+                    const currentImage = imageElements[currentImageIndex];
+                    const nextImageIndex = (currentImageIndex + 1) % footerBackgroundImages.length;
+                    const nextImage = imageElements[nextImageIndex];
+
+                    // Fade out current, fade in next
+                    currentImage.classList.remove('active');
+                    nextImage.classList.add('active');
+
+                    currentImageIndex = nextImageIndex;
+                }
+
+                // Change image every 6 seconds
+                setInterval(cycleImages, 6000);
+            }
+
+            // Initialize footer slideshow
+            initFooterSlideshow();
+
+            // Hero background slideshow
+            const heroBackgroundImages = [
+                'https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1', // Northern Lights
+                'https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280', // Lapland winter landscape
+                'https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280', // Swedish winter wonderland
+                'https://images.pexels.com/photos/1670732/pexels-photo-1670732.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280', // Stockholm waterfront at dusk
+                'https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280', // Swedish archipelago
+                'https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280'  // Archipelago sunset
+            ];
+
+            function initHeroSlideshow() {
+                const heroBg = document.getElementById('heroBackground');
+                if (!heroBg) return;
+
+                let currentHeroIndex = 0;
+
+                // Create image elements
+                heroBackgroundImages.forEach((imageUrl, index) => {
+                    const imageDiv = document.createElement('div');
+                    imageDiv.className = 'hero-bg-image';
+                    imageDiv.style.backgroundImage = `url('${imageUrl}')`;
+                    if (index === 0) {
+                        imageDiv.classList.add('active');
+                    }
+                    heroBg.appendChild(imageDiv);
+                });
+
+                const heroImageElements = heroBg.querySelectorAll('.hero-bg-image');
+
+                // Cycle through images
+                function cycleHeroImages() {
+                    const currentImage = heroImageElements[currentHeroIndex];
+                    const nextImageIndex = (currentHeroIndex + 1) % heroBackgroundImages.length;
+                    const nextImage = heroImageElements[nextImageIndex];
+
+                    // Fade out current, fade in next
+                    currentImage.classList.remove('active');
+                    nextImage.classList.add('active');
+
+                    currentHeroIndex = nextImageIndex;
+                }
+
+                // Change image every 7 seconds
+                setInterval(cycleHeroImages, 7000);
+            }
+
+            // Initialize hero slideshow
+            initHeroSlideshow();
         });
     </script>
 </body>
