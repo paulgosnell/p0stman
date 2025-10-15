@@ -2379,7 +2379,9 @@
             position: fixed;
             bottom: clamp(1.5rem, 4vw, 2.75rem);
             right: clamp(1.5rem, 4vw, 2.5rem);
-            z-index: 1000002;
+            z-index: 9999999;
+            isolation: isolate;
+            pointer-events: auto;
         }
 
         .ai-concierge-btn {
@@ -2452,7 +2454,7 @@
             width: 100vw;
             height: 100vh;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 1000003;
+            z-index: 99999999;
             display: none;
             opacity: 0;
             transition: opacity 0.4s ease;
@@ -3069,12 +3071,6 @@
             <a href="#map" class="hero-cta primary">Start Explore</a>
             <button type="button" class="hero-cta" data-open-liv>Design My Journey with LIV</button>
             <a href="#choose-path" class="hero-cta">Enter the Experience</a>
-        </div>
-
-        <div class="ai-concierge-wrapper">
-            <button class="ai-concierge-btn" id="aiConciergeBtn" aria-label="Launch LIV concierge - AI travel curator" data-open-liv>
-                ✦
-            </button>
         </div>
     </div>
 
@@ -4968,5 +4964,12 @@ paste it
             initHeroSlideshow();
         });
     </script>
+
+    <!-- LIV Concierge Button - Positioned at top of DOM hierarchy -->
+    <div class="ai-concierge-wrapper">
+        <button class="ai-concierge-btn" id="aiConciergeBtn" aria-label="Launch LIV concierge - AI travel curator" data-open-liv>
+            ✦
+        </button>
+    </div>
 </body>
 </html>
