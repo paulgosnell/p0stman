@@ -43,6 +43,8 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: clamp(6.5rem, 14vw, 8.75rem);
+            overflow-x: hidden;
+            max-width: 100vw;
         }
 
         body {
@@ -53,6 +55,8 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            max-width: 100vw;
+            width: 100%;
         }
 
         a {
@@ -735,6 +739,8 @@
 
             .hero-cta {
                 width: 100%;
+                justify-content: flex-start;
+                text-align: left;
             }
 
             .hero-scroll-compass {
@@ -2345,7 +2351,7 @@
             position: fixed;
             bottom: clamp(1.5rem, 4vw, 2.75rem);
             right: clamp(1.5rem, 4vw, 2.5rem);
-            z-index: 15;
+            z-index: 999999;
         }
 
         .ai-concierge-btn {
@@ -2733,22 +2739,83 @@
                 bottom: clamp(1.25rem, 5vw, 2rem);
                 right: 1rem;
             }
+
+            .accent-card {
+                padding: 1.75rem;
+            }
+
+            .accent-card ul {
+                gap: 0.85rem;
+            }
+
+            .accent-card li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .accent-card li span {
+                font-size: 0.75rem;
+                letter-spacing: 0.28rem;
+            }
         }
 
         @media (max-width: 768px) {
             .chat-container {
-                width: 94%;
-                height: 88vh;
-                margin: 3vh auto;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                border-radius: 0;
+                max-width: none;
+            }
+
+            .chat-header {
+                padding: 1.5rem 1.25rem 1.25rem;
+            }
+
+            .chat-title {
+                font-size: 1.6rem;
+            }
+
+            .chat-subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 0.12rem;
+            }
+
+            .chat-messages {
+                padding: 1.25rem;
+                gap: 1.25rem;
+            }
+
+            .chat-message {
+                max-width: 88%;
+                font-size: 0.92rem;
+                padding: 1rem 1.25rem;
+            }
+
+            .quick-replies {
+                gap: 0.65rem;
+            }
+
+            .quick-replies button {
+                font-size: 0.75rem;
+                padding: 0.75rem 1rem;
+                letter-spacing: 0.08rem;
             }
 
             .chat-input-container {
-                flex-direction: column;
-                align-items: stretch;
+                padding: 1.25rem;
+                gap: 0.75rem;
+            }
+
+            .chat-input {
+                padding: 0.9rem 1.2rem;
+                font-size: 0.9rem;
             }
 
             .send-button {
-                width: 100%;
+                padding: 0.9rem 1.75rem;
+                font-size: 0.85rem;
             }
 
             .theme-filters {
@@ -2762,6 +2829,123 @@
 
             .destination-cards-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .close-chat {
+                width: 40px;
+                height: 40px;
+                font-size: 1.75rem;
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        /* Additional mobile optimizations for smaller screens */
+        @media (max-width: 480px) {
+            .section {
+                padding: clamp(3rem, 8vw, 4rem) 0;
+            }
+
+            .section-inner {
+                padding: 0 1.25rem;
+            }
+
+            .section-heading h2 {
+                font-size: clamp(1.9rem, 7vw, 2.4rem);
+            }
+
+            .section-heading p {
+                font-size: 0.95rem;
+            }
+
+            .eyebrow {
+                font-size: 0.7rem;
+                letter-spacing: 0.3rem;
+            }
+
+            .hero-cta {
+                padding: 0.85rem 2rem;
+                font-size: 0.75rem;
+                letter-spacing: 0.28rem;
+            }
+
+            .pillar-card {
+                min-height: auto;
+            }
+
+            .pillar-media {
+                min-height: 220px;
+            }
+
+            .pillar-copy {
+                padding: 1.5rem;
+            }
+
+            .pillar-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .pillar-card p {
+                font-size: 0.9rem;
+            }
+
+            .map-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .seasonal-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .theme-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.5rem;
+            }
+
+            .filter-btn {
+                flex-shrink: 0;
+            }
+
+            .cta-group a {
+                font-size: 0.8rem;
+                padding: 0.85rem 1.75rem;
+            }
+
+            .footer-hero-title {
+                font-size: clamp(2rem, 8vw, 2.8rem);
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .nav-link {
+                font-size: clamp(1rem, 2.2vw, 1.2rem);
+            }
+
+            .submenu a {
+                font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+            }
+
+            /* Ensure proper touch targets */
+            button,
+            a.hero-cta,
+            .filter-btn,
+            .pillar-cta,
+            .map-card-cta {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .ai-concierge-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -3744,8 +3928,12 @@ paste it
                 });
 
                 navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        closeMenu();
+                    link.addEventListener('click', (e) => {
+                        // Only close menu if it's not a parent link with submenu
+                        const parentLi = link.closest('li');
+                        if (!parentLi.classList.contains('has-submenu')) {
+                            closeMenu();
+                        }
                     });
                 });
 
