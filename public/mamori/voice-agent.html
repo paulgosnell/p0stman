@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to Mamori AI - Voice Agent</title>
+
+    <!-- Voice Agent Styles -->
+    <link rel="stylesheet" href="css/voice-agent.css">
+
+    <!-- Lucid Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 80px 20px 40px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #F5F5F5 0%, #FFFFFF 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #0F172A;
+            margin: 0 0 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.125rem;
+            color: #64748B;
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0EA5E9;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">
+            <i data-lucide="arrow-left"></i>
+            Back to Home
+        </a>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>🎤 Talk to Mamori AI</h1>
+            <p>Get personalized health & wellness advice through voice conversation</p>
+        </div>
+
+        <!-- Voice Agent Panel -->
+        <section class="voice-agent-section">
+            <div class="container">
+                <div class="voice-agent-card">
+                    <!-- Header -->
+                    <div class="voice-agent-header">
+                        <div class="voice-agent-branding">
+                            <div class="voice-orb-mini">
+                                <div class="orb-core"></div>
+                            </div>
+                            <div class="voice-agent-title-group">
+                                <h3 class="voice-agent-title">Mamori Health Assistant</h3>
+                                <p class="voice-agent-subtitle">Ask me anything about supplements, wellness & health</p>
+                            </div>
+                        </div>
+                        <button class="voice-toggle-btn" id="voiceToggleBtn">
+                            <i data-lucide="mic"></i>
+                            <span>Start Conversation</span>
+                        </button>
+                    </div>
+
+                    <!-- Voice Agent Interface (hidden by default) -->
+                    <div class="voice-agent-interface" id="voiceAgentInterface" style="display: none;">
+                        <!-- Language Selector -->
+                        <div class="voice-language-selector">
+                            <i data-lucide="globe"></i>
+                            <select id="voiceLanguageSelect" class="language-select">
+                                <option value="en">🇬🇧 English</option>
+                                <option value="es">🇪🇸 Español</option>
+                                <option value="fr">🇫🇷 Français</option>
+                                <option value="it">🇮🇹 Italiano</option>
+                                <option value="da">🇩🇰 Dansk</option>
+                                <option value="ar">🇸🇦 العربية</option>
+                            </select>
+                        </div>
+
+                        <!-- Waveform Visualization -->
+                        <div class="voice-waveform" id="voiceWaveform">
+                            <!-- 60 bars generated dynamically by JS -->
+                        </div>
+
+                        <!-- Status Display -->
+                        <div class="voice-status" id="voiceStatus">
+                            <div class="status-indicator status-indicator--idle"></div>
+                            <p class="status-text">Click "Start Conversation" to begin talking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Voice Agent Configuration -->
+    <script src="js/config.js"></script>
+
+    <!-- Voice Agent Bundle (includes ElevenLabs SDK) -->
+    <script src="js/voice-agent.bundle.js"></script>
+
+    <!-- Initialize Voice Agent -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Initializing Mamori Voice Agent...');
+
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Check if MamoriVoiceAgent is available
+            if (typeof MamoriVoiceAgent === 'undefined') {
+                console.error('❌ MamoriVoiceAgent not found. Check if bundle loaded.');
+                return;
+            }
+
+            if (typeof ELEVENLABS_CONFIG === 'undefined') {
+                console.error('❌ ELEVENLABS_CONFIG not found.');
+                return;
+            }
+
+            // Initialize voice agent
+            try {
+                window.mamoriVoice = new MamoriVoiceAgent({
+                    agentId: ELEVENLABS_CONFIG.agentId,
+                    apiKey: ELEVENLABS_CONFIG.apiKey,
+                    containerId: 'voiceAgentInterface',
+                    toggleBtnId: 'voiceToggleBtn',
+                    waveformId: 'voiceWaveform',
+                    statusId: 'voiceStatus',
+                    languageSelectId: 'voiceLanguageSelect'
+                });
+
+                console.log('✅ Mamori Voice Agent initialized successfully');
+            } catch (error) {
+                console.error('❌ Failed to initialize voice agent:', error);
+            }
+        });
+    </script>
+</body>
+</html>

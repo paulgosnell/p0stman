@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Agent Integration Example - Mamori</title>
+
+    <!-- Design System Styles -->
+    <link rel="stylesheet" href="css/mamori.css">
+    <link rel="stylesheet" href="layout/grid.css">
+    <link rel="stylesheet" href="components/buttons.css">
+    <link rel="stylesheet" href="components/cards.css">
+    <link rel="stylesheet" href="components/navigation.css">
+
+    <!-- MVP Specific Styles -->
+    <link rel="stylesheet" href="css/mvp.css">
+
+    <!-- Voice Agent Styles -->
+    <link rel="stylesheet" href="css/voice-agent.css">
+
+    <!-- Lucid Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- ElevenLabs SDK (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@elevenlabs/client@0.7.1/dist/elevenlabs.umd.js"></script>
+</head>
+
+<body>
+    <!-- Header Include -->
+    <div data-include="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-lifestyle">
+        <!-- Background Video -->
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-badge">Evidence-First Health</div>
+            <h1 class="hero-title">Find Health Products That Actually Work</h1>
+            <p class="hero-subtitle">
+                Cut through the noise with evidence-based rankings, transparent reviews,
+                and real community outcomes. No house brands, no pay-to-play.
+            </p>
+            <div class="hero-actions">
+                <a href="categories.html" class="btn btn--primary btn--large">Explore Categories</a>
+                <a href="evidence.html" class="btn btn--ghost btn--large">How We Score</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         VOICE AGENT PANEL - ADD THIS SECTION
+         ============================================ -->
+    <section class="voice-agent-section">
+        <div class="container">
+            <div class="voice-agent-card">
+                <!-- Header -->
+                <div class="voice-agent-header">
+                    <div class="voice-agent-branding">
+                        <div class="voice-orb-mini">
+                            <div class="orb-core"></div>
+                        </div>
+                        <div class="voice-agent-title-group">
+                            <h3 class="voice-agent-title">Talk to Mamori AI</h3>
+                            <p class="voice-agent-subtitle">Ask me anything about health & wellness</p>
+                        </div>
+                    </div>
+                    <button class="voice-toggle-btn" id="voiceToggleBtn">
+                        <i data-lucide="mic"></i>
+                        <span>Start Conversation</span>
+                    </button>
+                </div>
+
+                <!-- Voice Agent Interface (hidden by default) -->
+                <div class="voice-agent-interface" id="voiceAgentInterface" style="display: none;">
+                    <!-- Language Selector -->
+                    <div class="voice-language-selector">
+                        <i data-lucide="globe"></i>
+                        <select id="voiceLanguageSelect" class="language-select">
+                            <option value="en">🇬🇧 English</option>
+                            <option value="es">🇪🇸 Español</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="it">🇮🇹 Italiano</option>
+                            <option value="da">🇩🇰 Dansk</option>
+                            <option value="ar">🇸🇦 العربية</option>
+                        </select>
+                    </div>
+
+                    <!-- Waveform Visualization -->
+                    <div class="voice-waveform" id="voiceWaveform">
+                        <!-- 60 bars generated dynamically by JS -->
+                    </div>
+
+                    <!-- Status Display -->
+                    <div class="voice-status" id="voiceStatus">
+                        <div class="status-indicator status-indicator--idle"></div>
+                        <p class="status-text">Click "Start Conversation" to begin talking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your content... -->
+
+    <!-- Footer Include -->
+    <div data-include="footer"></div>
+
+    <!-- Scripts Include -->
+    <div data-include="scripts"></div>
+
+    <!-- Simple Includes -->
+    <script src="js/simple-includes.js"></script>
+
+    <!-- Voice Agent Configuration (contains API keys) -->
+    <script src="js/config.js"></script>
+
+    <!-- Voice Agent Script -->
+    <script src="js/voice-agent.js"></script>
+
+    <!-- Initialize Voice Agent -->
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Initializing Mamori Voice Agent...');
+
+            // Check if dependencies are loaded
+            if (typeof MamoriVoiceAgent === 'undefined') {
+                console.error('MamoriVoiceAgent not found. Check if voice-agent.js is loaded.');
+                return;
+            }
+
+            if (typeof ELEVENLABS_CONFIG === 'undefined') {
+                console.error('ELEVENLABS_CONFIG not found. Check if config.js is loaded.');
+                return;
+            }
+
+            if (!window.ElevenLabs) {
+                console.error('ElevenLabs SDK not loaded. Check CDN script.');
+                return;
+            }
+
+            // Initialize voice agent
+            try {
+                window.mamoriVoice = new MamoriVoiceAgent({
+                    agentId: ELEVENLABS_CONFIG.agentId,
+                    apiKey: ELEVENLABS_CONFIG.apiKey,
+                    containerId: 'voiceAgentInterface',
+                    toggleBtnId: 'voiceToggleBtn',
+                    waveformId: 'voiceWaveform',
+                    statusId: 'voiceStatus',
+                    languageSelectId: 'voiceLanguageSelect'
+                });
+
+                console.log('✅ Mamori Voice Agent initialized successfully');
+            } catch (error) {
+                console.error('❌ Failed to initialize voice agent:', error);
+            }
+
+            // Re-initialize Lucide icons after dynamic content loads
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

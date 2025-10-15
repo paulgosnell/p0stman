@@ -1,0 +1,353 @@
+/* ============================================
+   MAMORI VOICE AGENT STYLES
+   Nordic Design System with Glass Morphism
+   ============================================ */
+
+.voice-agent-section {
+    padding: 3rem 0;
+    background: linear-gradient(180deg, #F5F5F5 0%, #FFFFFF 100%);
+}
+
+.voice-agent-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.voice-agent-card:hover {
+    box-shadow: 0 12px 48px rgba(15, 23, 42, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Header */
+.voice-agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.voice-agent-branding {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.voice-orb-mini {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: orbPulse 3s ease-in-out infinite;
+}
+
+.orb-core {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes orbPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.voice-agent-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.voice-agent-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0F172A;
+    margin: 0;
+}
+
+.voice-agent-subtitle {
+    font-size: 0.875rem;
+    color: #64748B;
+    margin: 0;
+}
+
+/* Toggle Button */
+.voice-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.voice-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+}
+
+.voice-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.voice-toggle-btn.active {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.voice-toggle-btn.active:hover {
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.voice-toggle-btn i {
+    width: 20px;
+    height: 20px;
+}
+
+/* Voice Interface */
+.voice-agent-interface {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Language Selector */
+.voice-language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.voice-language-selector i {
+    width: 20px;
+    height: 20px;
+    color: #64748B;
+}
+
+.language-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0F172A;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-select:hover {
+    border-color: #0EA5E9;
+}
+
+.language-select:focus {
+    outline: none;
+    border-color: #0EA5E9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* Waveform Visualization */
+.voice-waveform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(14, 165, 233, 0.05) 0%, transparent 100%);
+    border-radius: 12px;
+}
+
+.waveform-bar {
+    flex: 1;
+    max-width: 4px;
+    background: linear-gradient(180deg, #0EA5E9 0%, #0284C7 100%);
+    border-radius: 2px;
+    transition: height 0.1s ease-out, opacity 0.3s ease;
+    opacity: 0.3;
+    min-height: 4px;
+}
+
+/* Status Display */
+.voice-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.03);
+    border-radius: 12px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #94A3B8;
+    transition: background 0.3s ease;
+}
+
+.status-indicator--connecting {
+    background: #F59E0B;
+    animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+.status-indicator--listening {
+    background: #0EA5E9;
+    animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+.status-indicator--speaking {
+    background: #10B981;
+    animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+.status-indicator--error {
+    background: #EF4444;
+}
+
+.status-indicator--idle {
+    background: #94A3B8;
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+.status-text {
+    font-size: 0.875rem;
+    color: #64748B;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .voice-agent-section {
+        padding: 2rem 0;
+    }
+
+    .voice-agent-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .voice-agent-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .voice-agent-branding {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .voice-agent-title-group {
+        align-items: center;
+    }
+
+    .voice-toggle-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .voice-waveform {
+        height: 80px;
+        gap: 1px;
+    }
+
+    .waveform-bar {
+        max-width: 3px;
+    }
+
+    .voice-status {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .voice-agent-title {
+        font-size: 1.125rem;
+    }
+
+    .voice-agent-subtitle {
+        font-size: 0.813rem;
+    }
+
+    .voice-toggle-btn {
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
+    }
+}
+
+/* Accessibility */
+.voice-toggle-btn:focus-visible {
+    outline: 2px solid #0EA5E9;
+    outline-offset: 2px;
+}
+
+.language-select:focus-visible {
+    outline: 2px solid #0EA5E9;
+    outline-offset: 2px;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    .voice-agent-card {
+        background: rgba(15, 23, 42, 0.95);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .voice-agent-title {
+        color: #F1F5F9;
+    }
+
+    .voice-agent-subtitle,
+    .status-text {
+        color: #94A3B8;
+    }
+
+    .language-select {
+        background: rgba(30, 41, 59, 0.9);
+        color: #F1F5F9;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .voice-status {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
