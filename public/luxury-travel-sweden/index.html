@@ -1715,6 +1715,8 @@
             background-position: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .story-card::before {
@@ -1724,6 +1726,7 @@
             background: linear-gradient(0deg, rgba(4,5,6,0.95) 0%, rgba(4,5,6,0.75) 35%, rgba(4,5,6,0.25) 65%, rgba(4,5,6,0) 100%);
             z-index: 0;
             transition: opacity 0.4s ease;
+            pointer-events: none;
         }
 
         .story-card:hover {
@@ -1769,6 +1772,49 @@
 
         .story-card[data-story="archipelago"] {
             --story-bg: url('https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
+        }
+
+        /* Storyteller card specific styles */
+        .story-card .story-media {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .story-card .story-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .story-card:hover .story-media img {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+
+        .story-card .story-content {
+            padding: 1.75rem;
+            background: linear-gradient(180deg, rgba(11, 15, 17, 0.95) 0%, rgba(8, 10, 12, 0.98) 100%);
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-card .story-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            line-height: 1.35;
+            margin-bottom: 0.85rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .story-card .story-excerpt {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
         }
 
         .press-strip {
@@ -3339,33 +3385,61 @@ unique.</p>
             </div>
         </section>
 
-        <!-- 
-        5. Featured Storytellers
-Experience Sweden beyond the ordinary. Led by local storytellers — from Sami elders and
-Michelin chefs to artists, designers, and innovators — each encounter offers an authentic
-glimpse into Swedish life, culture, and creativity. Whether you travel solo or with others, our
-curated experiences, workshops, and destinations promise meaningful connections and stories
-that stay with you long after the journey ends.
-You need inspiration? Take a peek at our curated selection of storytellers, destinations,
-workshops, and businesses for eventful, meaningful trips (Sub page**)
-User Flow with LIV (Learn More focus only):
-• LIV asks: “Would you like me to help you find a storyteller that matches your
-personal interests and design a journey around him/her?
-• Client write preferences → LIV introduces storyteller’s full background, philosophy,
-and sample experiences.
-• Guests can explore storyteller categories (chef, innovator, elder, designer, wellness
-guide).
-• LIV suggests matching profiles and builds drafts anchored in the chosen storyteller.
-Conversion Path:
-• Storyteller-inspired draft → enquiry form → human curator finalizes.
-Webpages for speakers in Sweden (as data bank for her suggestions):
-e.g. Talarpoolen, Athenas, Booky.se och MySpeaker
-**I would like to show some examples of storytelling experiences so guests get inspiration to
-what an experience look like. My current webpage list some top ones:
-https://sverigeagenten.com/featured-stories/ Could we make a sub page for this? Just cut n
-paste it
-        
-        -->
+        <section class="section" id="storytellers">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <span class="eyebrow">Featured Storytellers</span>
+                    <h2>Experience Sweden Beyond the Ordinary</h2>
+                    <p>Led by local storytellers — from Sami elders and Michelin chefs to artists, designers, and innovators — each encounter offers an authentic glimpse into Swedish life, culture, and creativity. Whether you travel solo or with others, our curated experiences, workshops, and destinations promise meaningful connections and stories that stay with you long after the journey ends.</p>
+                </div>
+
+                <div class="stories-grid">
+                    <article class="story-card">
+                        <div class="story-media">
+                            <img src="assets/storyteller-priests.jpg" alt="Mogens & Lena in their historical mansion" loading="lazy">
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-title">Dine with the priests Mogens & Lena in a historical mansion</h3>
+                            <p class="story-excerpt">This is the story of two priests - Mogens & Lena - who found the perfect place to host intimate gatherings that blend spirituality, history, and culinary excellence in their beautifully restored mansion.</p>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <div class="story-media">
+                            <img src="assets/storyteller-villa.jpg" alt="Robert & Mikael at THE VILLA" loading="lazy">
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-title">THE VILLA – A bizarre dinner gathering with Robert & Mikael</h3>
+                            <p class="story-excerpt">With the slogan "Louder music, Less conversations" Robert Pihl and Mikael Wennerros create unforgettable evenings where sound, atmosphere, and unexpected encounters take center stage.</p>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <div class="story-media">
+                            <img src="assets/storyteller-stefan.jpg" alt="Trend Stefan on a Stockholm design tour" loading="lazy">
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-title">A Stockholm design tour with Trend Stefan</h3>
+                            <p class="story-excerpt">Trend Stefan is recognized as one of the foremost trend scouts of Sweden and he reveals the hidden design gems, emerging studios, and creative spaces that define Stockholm's innovative spirit.</p>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <div class="story-media">
+                            <img src="assets/storyteller-jessica.jpg" alt="Jessica Stark in Stockholm's startup scene" loading="lazy">
+                        </div>
+                        <div class="story-content">
+                            <h3 class="story-title">A start-up tour in the entrepreneurial world of Jessica Stark</h3>
+                            <p class="story-excerpt">Jessica Stark is one of Sweden's most influential entrepreneurs, frequently cited as a pioneering force in the Nordic startup ecosystem, offering insider access to innovation hubs and unicorn founders.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#storytellers-all" class="hero-cta primary">View All Storytellers</a>
+                </div>
+            </div>
+        </section>
 
         <section class="section" id="concierge">
             <div class="section-inner">
