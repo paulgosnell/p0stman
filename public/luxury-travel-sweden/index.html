@@ -343,6 +343,12 @@
             transform: translateY(0);
         }
 
+        .nav-header.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+
         .nav-header.pinned {
             background: transparent;
             border-bottom: none;
@@ -710,6 +716,12 @@
                 padding: 1.5rem 1.5rem;
             }
 
+            .logo {
+                left: 1.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
             .logo img {
                 height: clamp(45px, 8vw, 65px);
             }
@@ -718,23 +730,32 @@
                 height: clamp(35px, 6vw, 50px);
             }
 
+            .mobile-menu-toggle {
+                right: 1.5rem;
+                font-size: 1.6rem;
+            }
+
             .hero {
                 padding: clamp(1.5rem, 6vw, 2.5rem);
                 padding-top: clamp(7rem, 15vw, 9rem);
                 padding-bottom: clamp(2.5rem, 12vw, 4.5rem);
-                justify-content: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
                 min-height: 100vh;
             }
 
             .hero-content {
                 max-width: 100%;
+                margin-bottom: 0;
             }
 
             .hero-actions {
                 position: static;
-                margin-top: 2rem;
+                margin-top: clamp(2.5rem, 6vw, 3.5rem);
                 flex-direction: column;
                 align-items: stretch;
+                width: 100%;
             }
 
             .hero-cta {
@@ -2351,7 +2372,7 @@
             position: fixed;
             bottom: clamp(1.5rem, 4vw, 2.75rem);
             right: clamp(1.5rem, 4vw, 2.5rem);
-            z-index: 999999;
+            z-index: 1000002;
         }
 
         .ai-concierge-btn {
@@ -2424,7 +2445,7 @@
             width: 100vw;
             height: 100vh;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 20;
+            z-index: 1000003;
             display: none;
             opacity: 0;
             transition: opacity 0.4s ease;
@@ -3767,14 +3788,36 @@ paste it
             let heroHasRevealed = false;
             let revealTimeoutId = null;
 
+            let lastScrollY = window.scrollY;
+            let scrollDirection = 'up';
+
             const updateNavPinnedState = () => {
                 if (!navHeader) return;
+                const currentScrollY = window.scrollY;
                 const threshold = window.innerHeight > 720 ? 28 : 16;
-                if (window.scrollY > threshold) {
+
+                // Determine scroll direction
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    scrollDirection = 'down';
+                } else if (currentScrollY < lastScrollY) {
+                    scrollDirection = 'up';
+                }
+
+                // Handle pinned state
+                if (currentScrollY > threshold) {
                     navHeader.classList.add('pinned');
                 } else {
                     navHeader.classList.remove('pinned');
                 }
+
+                // Handle visibility based on scroll direction
+                if (scrollDirection === 'down' && currentScrollY > 100) {
+                    navHeader.classList.add('hidden');
+                } else {
+                    navHeader.classList.remove('hidden');
+                }
+
+                lastScrollY = currentScrollY;
             };
 
             const applyMotionPreference = (allowAnimation) => {
