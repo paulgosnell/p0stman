@@ -34,6 +34,19 @@
             --transition: all 0.4s ease;
         }
 
+        /* Light theme - color token inversion */
+        [data-theme="light"] {
+            --color-bg: #f8f9fa;
+            --color-card-bg: rgba(255, 255, 255, 0.95);
+            --color-surface: rgba(248, 249, 250, 0.95);
+            --color-accent-forest: #d4e8e0;
+            --color-accent-slate: #dce3ec;
+            --color-text: rgba(15, 20, 25, 0.92);
+            --color-text-muted: rgba(15, 20, 25, 0.65);
+            --color-border: rgba(0, 0, 0, 0.12);
+            --color-border-strong: rgba(0, 0, 0, 0.28);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -57,6 +70,11 @@
             overflow-x: hidden;
             max-width: 100vw;
             width: 100%;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        [data-theme="light"] body {
+            background: linear-gradient(180deg, #f5f7fa 0%, #e8ecf1 100%);
         }
 
         a {
@@ -76,6 +94,11 @@
             overflow: hidden;
             background: #050607;
             isolation: isolate;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .hero {
+            background: #e8ecf1;
         }
 
         .hero-background {
@@ -238,16 +261,29 @@
             font-family: var(--font-sans);
             background: rgba(0, 0, 0, 0.65);
             backdrop-filter: blur(8px);
-            color: var(--color-text);
+            color: rgba(255, 255, 255, 0.95);
             transition: var(--transition);
             cursor: pointer;
             text-decoration: none;
+        }
+
+        [data-theme="light"] .hero-cta {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 0, 0, 0.3);
+            color: rgba(0, 0, 0, 0.9);
         }
 
         .hero-cta.primary {
             background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(10px);
             border-color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.98);
+        }
+
+        [data-theme="light"] .hero-cta.primary {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 0, 0, 0.4);
+            color: rgba(0, 0, 0, 0.95);
         }
 
         .hero-cta:hover,
@@ -257,9 +293,19 @@
             transform: translateY(-2px);
         }
 
+        [data-theme="light"] .hero-cta:hover,
+        [data-theme="light"] .hero-cta:focus-visible {
+            border-color: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.08);
+        }
+
         .hero-cta:focus-visible {
             outline: 2px solid rgba(255, 255, 255, 0.75);
             outline-offset: 3px;
+        }
+
+        [data-theme="light"] .hero-cta:focus-visible {
+            outline-color: rgba(0, 0, 0, 0.5);
         }
 
 
@@ -375,6 +421,10 @@
             transition: all 0.4s ease;
         }
 
+        [data-theme="light"] .logo img {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+        }
+
         .nav-header.pinned .logo img {
             height: clamp(40px, 5vw, 55px);
         }
@@ -382,6 +432,160 @@
         .logo:hover img {
             filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
             transform: translateY(-2px);
+        }
+
+        [data-theme="light"] .logo:hover img {
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+        }
+
+        /* Theme Toggle in Navigation Sidebar */
+        .sidebar-preferences {
+            margin-top: auto;
+            padding-top: 2rem !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-bottom: none !important;
+            transition: border-color 0.4s ease;
+        }
+
+        [data-theme="light"] .sidebar-preferences {
+            border-top-color: rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .theme-toggle-container {
+            margin-top: 0.5rem;
+        }
+
+        .theme-toggle-nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle-nav::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .theme-toggle-nav:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(4px);
+        }
+
+        .theme-toggle-nav:hover::before {
+            opacity: 1;
+        }
+
+        [data-theme="light"] .theme-toggle-nav {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="light"] .theme-toggle-nav:hover {
+            background: rgba(0, 0, 0, 0.06);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-toggle-track {
+            position: relative;
+            width: 48px;
+            height: 26px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 13px;
+            flex-shrink: 0;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .theme-toggle-track {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-toggle-thumb {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="light"] .theme-toggle-thumb {
+            transform: translateX(22px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .theme-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .theme-icon.icon-moon {
+            left: 7px;
+            stroke: rgba(255, 255, 255, 0.6);
+        }
+
+        .theme-icon.icon-sun {
+            right: 7px;
+            stroke: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme="light"] .theme-icon.icon-moon {
+            stroke: rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="light"] .theme-icon.icon-sun {
+            stroke: rgba(0, 0, 0, 0.6);
+        }
+
+        .theme-toggle-label {
+            flex: 1;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease;
+        }
+
+        [data-theme="light"] .theme-toggle-label {
+            color: rgba(0, 0, 0, 0.85);
+        }
+
+        .theme-label-dark,
+        .theme-label-light {
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-label-light {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-label-dark {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-label-light {
+            display: block;
         }
 
         .nav-menu {
@@ -400,8 +604,12 @@
             opacity: 0;
             pointer-events: none;
             visibility: hidden;
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.6s;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.6s, background 0.4s ease;
             z-index: 1000001;
+        }
+
+        [data-theme="light"] .nav-menu {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
         }
 
         .nav-main {
@@ -448,12 +656,23 @@
             white-space: nowrap;
         }
 
+        [data-theme="light"] .nav-link {
+            color: rgba(0, 0, 0, 0.85);
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%);
+            background-size: 0% 1px;
+        }
+
         .nav-link:hover,
         .nav-link:focus-visible {
             color: rgba(255, 255, 255, 1);
             background-size: 100% 1px;
             transform: translateX(8px);
             letter-spacing: 0.08em;
+        }
+
+        [data-theme="light"] .nav-link:hover,
+        [data-theme="light"] .nav-link:focus-visible {
+            color: rgba(0, 0, 0, 1);
         }
 
         .nav-menu.open {
@@ -516,6 +735,10 @@
             white-space: nowrap;
         }
 
+        [data-theme="light"] .submenu a {
+            color: rgba(0, 0, 0, 0.55);
+        }
+
         .submenu a::before {
             content: '—';
             margin-right: 0.6rem;
@@ -527,6 +750,11 @@
         .submenu a:focus-visible {
             color: rgba(255, 255, 255, 0.95);
             transform: translateX(6px);
+        }
+
+        [data-theme="light"] .submenu a:hover,
+        [data-theme="light"] .submenu a:focus-visible {
+            color: rgba(0, 0, 0, 0.95);
         }
 
         .submenu a:hover::before {
@@ -543,6 +771,12 @@
             justify-content: space-between;
             overflow-y: auto;
             backdrop-filter: blur(10px);
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        [data-theme="light"] .nav-sidebar {
+            background: linear-gradient(180deg, rgba(245, 245, 245, 0.98) 0%, rgba(235, 235, 235, 0.98) 100%);
+            border-left-color: rgba(0, 0, 0, 0.1);
         }
 
         .nav-sidebar-content {
@@ -554,6 +788,11 @@
         .sidebar-section {
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding-bottom: 2rem;
+            transition: border-color 0.4s ease;
+        }
+
+        [data-theme="light"] .sidebar-section {
+            border-bottom-color: rgba(0, 0, 0, 0.08);
         }
 
         .sidebar-section:last-child {
@@ -569,6 +808,11 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin: 0 0 1.5rem 0;
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .sidebar-title {
+            color: rgba(0, 0, 0, 0.5);
         }
 
         .sidebar-links {
@@ -588,9 +832,17 @@
             padding: 0.5rem 0;
         }
 
+        [data-theme="light"] .sidebar-link {
+            color: rgba(0, 0, 0, 0.75);
+        }
+
         .sidebar-link:hover {
             color: rgba(255, 255, 255, 1);
             transform: translateX(5px);
+        }
+
+        [data-theme="light"] .sidebar-link:hover {
+            color: rgba(0, 0, 0, 1);
         }
 
         .link-icon {
@@ -598,11 +850,30 @@
             height: 20px;
             opacity: 0.8;
             flex-shrink: 0;
+            transition: opacity 0.3s ease;
         }
 
         .link-icon svg {
             width: 100%;
             height: 100%;
+            stroke: rgba(255, 255, 255, 0.8);
+            transition: stroke 0.4s ease;
+        }
+
+        [data-theme="light"] .link-icon svg {
+            stroke: rgba(0, 0, 0, 0.75);
+        }
+
+        .sidebar-link:hover .link-icon {
+            opacity: 1;
+        }
+
+        .sidebar-link:hover .link-icon svg {
+            stroke: rgba(255, 255, 255, 1);
+        }
+
+        [data-theme="light"] .sidebar-link:hover .link-icon svg {
+            stroke: rgba(0, 0, 0, 1);
         }
 
         .link-text {
@@ -616,6 +887,11 @@
             color: rgba(255, 255, 255, 0.7);
             margin: 0.5rem 0;
             line-height: 1.6;
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .sidebar-text {
+            color: rgba(0, 0, 0, 0.65);
         }
 
         .sidebar-tagline {
@@ -625,6 +901,11 @@
             color: rgba(255, 255, 255, 0.6);
             line-height: 1.5;
             margin: 0;
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .sidebar-tagline {
+            color: rgba(0, 0, 0, 0.55);
         }
 
         body.nav-open .nav-header {
@@ -650,13 +931,56 @@
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
+        /* In hero section, burger stays white (override light theme) */
+        .nav-header:not(.scrolled-past-hero) .mobile-menu-toggle {
+            color: white !important;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3)) !important;
+        }
+
+        .nav-header:not(.scrolled-past-hero) .mobile-menu-toggle:hover {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)) !important;
+        }
+
         .mobile-menu-toggle:hover {
             transform: translateY(-50%) scale(1.1);
             filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
         }
 
+        [data-theme="light"] .mobile-menu-toggle:hover {
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.7));
+        }
+
         .mobile-menu-toggle.is-open {
             color: rgba(255, 255, 255, 0.65);
+        }
+
+        .nav-header:not(.scrolled-past-hero) .mobile-menu-toggle.is-open {
+            color: rgba(255, 255, 255, 0.65) !important;
+        }
+
+        /* When nav is open in light mode, use dark close icon */
+        [data-theme="light"] body.nav-open .mobile-menu-toggle.is-open {
+            color: rgba(0, 0, 0, 0.85) !important;
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3)) !important;
+        }
+
+        [data-theme="light"] body.nav-open .mobile-menu-toggle.is-open:hover {
+            color: rgba(0, 0, 0, 0.95) !important;
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.5)) !important;
+        }
+
+        /* Scrolled past hero in light mode - use black burger */
+        .nav-header.scrolled-past-hero[data-theme="light"] .mobile-menu-toggle {
+            color: rgba(0, 0, 0, 0.85);
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.5));
+        }
+
+        .nav-header.scrolled-past-hero[data-theme="light"] .mobile-menu-toggle:hover {
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.7));
+        }
+
+        .nav-header.scrolled-past-hero[data-theme="light"] .mobile-menu-toggle.is-open {
+            color: rgba(0, 0, 0, 0.65);
         }
 
         body.nav-open {
@@ -710,6 +1034,14 @@
 
             .sidebar-tagline {
                 font-size: 0.95rem;
+            }
+
+            .theme-toggle-nav {
+                padding: 0.85rem 1rem;
+            }
+
+            .theme-toggle-label {
+                font-size: 0.9rem;
             }
         }
 
@@ -818,6 +1150,11 @@
         .section {
             padding: var(--section-padding) 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.4s ease;
+        }
+
+        [data-theme="light"] .section {
+            border-top-color: rgba(0, 0, 0, 0.05);
         }
 
         .section:first-of-type {
@@ -842,6 +1179,11 @@
             color: rgba(255, 255, 255, 0.55);
             display: inline-block;
             margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .section-heading .eyebrow {
+            color: rgba(0, 0, 0, 0.5);
         }
 
         .section-heading h2 {
@@ -984,6 +1326,11 @@
         /* Map Section Styles */
         .map-section {
             background: linear-gradient(180deg, rgba(5, 7, 9, 0.95) 0%, rgba(8, 10, 12, 0.98) 100%);
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .map-section {
+            background: linear-gradient(180deg, rgba(250, 250, 250, 0.98) 0%, rgba(245, 245, 245, 1) 100%);
         }
 
         .map-controls {
@@ -1017,9 +1364,18 @@
             transition: all 0.3s ease;
         }
 
+        [data-theme="light"] .season-btn {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
         .season-btn.active {
             background: rgba(212, 175, 55, 0.9);
             color: #000;
+        }
+
+        [data-theme="light"] .season-btn.active {
+            background: rgba(212, 175, 55, 0.85);
+            color: rgba(0, 0, 0, 0.95);
         }
 
         .theme-filters {
@@ -1043,15 +1399,118 @@
             transition: all 0.3s ease;
         }
 
+        [data-theme="light"] .filter-btn {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            color: rgba(0, 0, 0, 0.8);
+        }
+
         .filter-btn:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme="light"] .filter-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.3);
         }
 
         .filter-btn.active {
             background: rgba(212, 175, 55, 0.2);
             border-color: rgba(212, 175, 55, 0.6);
             color: #d4af37;
+        }
+
+        [data-theme="light"] .filter-btn.active {
+            background: rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.7);
+            color: #b8941f;
+        }
+
+        /* Category filters */
+        .category-filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .category-filter-btn {
+            padding: 0.6rem 1.4rem 0.6rem 2.4rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.08rem;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        [data-theme="light"] .category-filter-btn {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .category-filter-btn::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--filter-color);
+        }
+
+        .category-filter-btn[data-category="region"] {
+            --filter-color: #ef4444;
+        }
+
+        .category-filter-btn[data-category="city"] {
+            --filter-color: #22c55e;
+        }
+
+        .category-filter-btn[data-category="storyteller"] {
+            --filter-color: #eab308;
+        }
+
+        .category-filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme="light"] .category-filter-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .category-filter-btn.active {
+            background: rgba(var(--filter-color-rgb), 0.15);
+            border-color: var(--filter-color);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        [data-theme="light"] .category-filter-btn.active {
+            background: rgba(var(--filter-color-rgb), 0.2);
+            border-color: var(--filter-color);
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        .category-filter-btn[data-category="region"].active {
+            --filter-color-rgb: 239, 68, 68;
+        }
+
+        .category-filter-btn[data-category="city"].active {
+            --filter-color-rgb: 34, 197, 94;
+        }
+
+        .category-filter-btn[data-category="storyteller"].active {
+            --filter-color-rgb: 234, 179, 8;
         }
 
         .map-wrapper {
@@ -1305,6 +1764,31 @@
 
         .marker-hidden {
             display: none !important;
+        }
+
+        /* Category-specific marker colors */
+        .custom-marker[data-category="region"]::before {
+            background: #ef4444; /* Red for Regions */
+        }
+
+        .custom-marker[data-category="region"]::after {
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+        }
+
+        .custom-marker[data-category="city"]::before {
+            background: #22c55e; /* Green for Cities */
+        }
+
+        .custom-marker[data-category="city"]::after {
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+        }
+
+        .custom-marker[data-category="storyteller"]::before {
+            background: #eab308; /* Yellow for Storytellers */
+        }
+
+        .custom-marker[data-category="storyteller"]::after {
+            box-shadow: 0 0 10px rgba(234, 179, 8, 0.8);
         }
 
         .destination-cards-grid {
@@ -1972,6 +2456,11 @@
             text-transform: uppercase;
             letter-spacing: 0.3rem;
             color: rgba(255, 255, 255, 0.6);
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .form-field label {
+            color: rgba(0, 0, 0, 0.6);
         }
 
         .form-field input,
@@ -1988,6 +2477,23 @@
             transition: border-color 0.3s ease, background 0.3s ease;
         }
 
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        [data-theme="light"] .form-field input,
+        [data-theme="light"] .form-field select,
+        [data-theme="light"] .form-field textarea {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        [data-theme="light"] .form-field input::placeholder,
+        [data-theme="light"] .form-field textarea::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
         .form-field textarea {
             min-height: 140px;
             resize: vertical;
@@ -1999,6 +2505,13 @@
             border-color: rgba(255, 255, 255, 0.4);
             background: rgba(0, 0, 0, 0.5);
             outline: none;
+        }
+
+        [data-theme="light"] .form-field input:focus,
+        [data-theme="light"] .form-field select:focus,
+        [data-theme="light"] .form-field textarea:focus {
+            border-color: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .form-field.full {
@@ -2024,9 +2537,19 @@
             transition: var(--transition);
         }
 
+        [data-theme="light"] .form-actions button {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
         .form-actions button:hover {
             transform: translateY(-2px);
             border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        [data-theme="light"] .form-actions button:hover {
+            border-color: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.12);
         }
 
         .form-actions button:focus-visible {
@@ -2034,10 +2557,19 @@
             outline-offset: 3px;
         }
 
+        [data-theme="light"] .form-actions button:focus-visible {
+            outline-color: rgba(0, 0, 0, 0.5);
+        }
+
         .form-status {
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.65);
             letter-spacing: 0.1rem;
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .form-status {
+            color: rgba(0, 0, 0, 0.6);
         }
 
         /* Footer Styles */
@@ -2047,6 +2579,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             background: #000;
             overflow: hidden;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        [data-theme="light"] footer {
+            background: #f5f5f5;
+            border-top-color: rgba(0, 0, 0, 0.08);
         }
 
         .footer-background {
@@ -2087,6 +2625,15 @@
                 rgba(0, 0, 0, 0.95) 100%
             );
             z-index: 1;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .footer-bg-overlay {
+            background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.85) 0%,
+                rgba(245, 245, 245, 0.9) 50%,
+                rgba(240, 240, 240, 0.95) 100%
+            );
         }
 
         footer::before {
@@ -2325,6 +2872,11 @@
 
         .footer-newsletter input::placeholder {
             color: rgba(255, 255, 255, 0.4);
+            transition: color 0.4s ease;
+        }
+
+        [data-theme="light"] .footer-newsletter input::placeholder {
+            color: rgba(0, 0, 0, 0.4);
         }
 
         .footer-newsletter-btn {
@@ -2342,10 +2894,21 @@
             white-space: nowrap;
         }
 
+        [data-theme="light"] .footer-newsletter-btn {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: rgba(0, 0, 0, 0.85);
+        }
+
         .footer-newsletter-btn:hover {
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-1px);
+        }
+
+        [data-theme="light"] .footer-newsletter-btn:hover {
+            background: rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 0, 0, 0.35);
         }
 
         .footer-bottom {
@@ -2532,11 +3095,22 @@
             box-shadow: 0 32px 72px rgba(0, 0, 0, 0.6);
         }
 
+        [data-theme="light"] .chat-container {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.96));
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 0 32px 72px rgba(0, 0, 0, 0.15);
+        }
+
         .chat-header {
             padding: 2rem 2rem 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             text-align: center;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        [data-theme="light"] .chat-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 100%);
         }
 
         .chat-title {
@@ -2548,6 +3122,10 @@
             letter-spacing: 0.02rem;
         }
 
+        [data-theme="light"] .chat-title {
+            color: rgba(0, 0, 0, 0.92);
+        }
+
         .chat-subtitle {
             font-family: var(--font-sans);
             font-size: 0.88rem;
@@ -2555,6 +3133,10 @@
             font-weight: 300;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
+        }
+
+        [data-theme="light"] .chat-subtitle {
+            color: rgba(0, 0, 0, 0.6);
         }
 
         .chat-messages {
@@ -2574,13 +3156,25 @@
             background: rgba(255, 255, 255, 0.03);
         }
 
+        [data-theme="light"] .chat-messages::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
         .chat-messages::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 4px;
         }
 
+        [data-theme="light"] .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
         .chat-messages::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.25);
+        }
+
+        [data-theme="light"] .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .chat-message {
@@ -2610,10 +3204,20 @@
             align-self: flex-start;
         }
 
+        [data-theme="light"] .chat-message.ai {
+            background: linear-gradient(135deg, rgba(212, 232, 222, 0.6), rgba(220, 227, 236, 0.5));
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
         .chat-message.user {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
             border: 1px solid rgba(255, 255, 255, 0.12);
             align-self: flex-end;
+        }
+
+        [data-theme="light"] .chat-message.user {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.05));
+            border: 1px solid rgba(0, 0, 0, 0.12);
         }
 
         .quick-replies {
@@ -2638,11 +3242,22 @@
             min-height: 44px;
         }
 
+        [data-theme="light"] .quick-replies button {
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
         .quick-replies button:hover {
             background: rgba(255, 255, 255, 0.18);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        [data-theme="light"] .quick-replies button:hover {
+            background: rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .quick-replies button:active {
@@ -2667,6 +3282,11 @@
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
         }
 
+        [data-theme="light"] .chat-input-container {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
         .chat-input {
             flex: 1;
             background: rgba(255, 255, 255, 0.06);
@@ -2680,14 +3300,30 @@
             transition: all 0.3s ease;
         }
 
+        [data-theme="light"] .chat-input {
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            color: rgba(0, 0, 0, 0.9);
+        }
+
         .chat-input:focus {
             border-color: rgba(255, 255, 255, 0.5);
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
         }
 
+        [data-theme="light"] .chat-input:focus {
+            border-color: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.06);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+        }
+
         .chat-input::placeholder {
             color: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-theme="light"] .chat-input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
         }
 
         .send-button {
@@ -2705,11 +3341,23 @@
             letter-spacing: 0.3rem;
         }
 
+        [data-theme="light"] .send-button {
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            color: rgba(0, 0, 0, 0.85);
+        }
+
         .send-button:hover {
             background: rgba(255, 255, 255, 0.16);
             border-color: rgba(255, 255, 255, 0.55);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="light"] .send-button:hover {
+            background: rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .send-button:active {
@@ -2740,6 +3388,12 @@
             line-height: 1;
         }
 
+        [data-theme="light"] .close-chat {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            color: rgba(0, 0, 0, 0.7);
+        }
+
         .close-chat:hover {
             color: white;
             background: rgba(255, 255, 255, 0.12);
@@ -2747,9 +3401,19 @@
             transform: rotate(90deg);
         }
 
+        [data-theme="light"] .close-chat:hover {
+            color: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
         .close-chat:focus-visible {
             outline: 2px solid rgba(255, 255, 255, 0.6);
             outline-offset: 2px;
+        }
+
+        [data-theme="light"] .close-chat:focus-visible {
+            outline: 2px solid rgba(0, 0, 0, 0.4);
         }
 
         @media (max-width: 1024px) {
@@ -3035,7 +3699,7 @@
 <body>
     <header class="nav-header">
         <a href="#top" class="logo">
-            <img src="lts-logo.png" alt="Luxury Travel Sweden" />
+            <img src="lts-logo-white.png" alt="Luxury Travel Sweden" id="siteLogo" />
         </a>
         <nav>
             <div class="nav-menu" id="primaryNavigation">
@@ -3101,6 +3765,35 @@
                         <div class="sidebar-section">
                             <p class="sidebar-tagline">Crafting extraordinary Swedish journeys since 2018</p>
                         </div>
+
+                        <div class="sidebar-section sidebar-preferences">
+                            <h3 class="sidebar-title">Preferences</h3>
+                            <div class="theme-toggle-container">
+                                <button class="theme-toggle-nav" id="themeToggle" aria-label="Toggle light/dark theme">
+                                    <div class="theme-toggle-track">
+                                        <div class="theme-toggle-thumb"></div>
+                                        <svg class="theme-icon icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="5"></circle>
+                                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                        </svg>
+                                        <svg class="theme-icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="theme-toggle-label">
+                                        <span class="theme-label-dark">Dark Mode</span>
+                                        <span class="theme-label-light">Light Mode</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3150,6 +3843,11 @@
                         <button type="button" class="filter-btn" data-filter="culinary">Culinary</button>
                         <button type="button" class="filter-btn" data-filter="nightlife">Nightlife & Celebrations</button>
                         <button type="button" class="filter-btn" data-filter="legacy">Legacy & Purpose</button>
+                    </div>
+                    <div class="category-filters">
+                        <button type="button" class="category-filter-btn active" data-category="region">Regions</button>
+                        <button type="button" class="category-filter-btn active" data-category="city">Cities</button>
+                        <button type="button" class="category-filter-btn active" data-category="storyteller">Storytellers</button>
                     </div>
                 </div>
 
@@ -3849,6 +4547,92 @@ unique.</p>
                 window.lucide.createIcons();
             }
 
+            // Theme Toggle Functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            let currentTileLayer = null;
+
+            // Check for saved theme preference or default to user's system preference
+            const getPreferredTheme = () => {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            };
+
+            // Set theme
+            const setTheme = (theme) => {
+                htmlElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+
+                // Update nav-header data-theme if scrolled past hero
+                const navHeader = document.querySelector('.nav-header');
+                if (navHeader && navHeader.classList.contains('scrolled-past-hero')) {
+                    navHeader.setAttribute('data-theme', theme);
+                }
+
+                // Update logo based on theme and scroll position
+                updateLogoAndBurger();
+
+                // Update map tiles if map exists
+                if (window.mapInstance && currentTileLayer) {
+                    currentTileLayer.remove();
+                    if (theme === 'light') {
+                        currentTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                            attribution: '© OpenStreetMap contributors © CARTO',
+                            subdomains: 'abcd',
+                            maxZoom: 19
+                        }).addTo(window.mapInstance);
+                    } else {
+                        currentTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                            attribution: '© OpenStreetMap contributors © CARTO',
+                            subdomains: 'abcd',
+                            maxZoom: 19
+                        }).addTo(window.mapInstance);
+                    }
+                }
+            };
+
+            // Helper function to update logo based on theme and scroll position
+            const updateLogoAndBurger = () => {
+                const logo = document.getElementById('siteLogo');
+                const navHeader = document.querySelector('.nav-header');
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const isScrolledPastHero = navHeader && navHeader.classList.contains('scrolled-past-hero');
+                const isNavOpen = document.body.classList.contains('nav-open');
+
+                if (logo) {
+                    // When nav is open in light mode: black logo (for visibility against light nav background)
+                    // Scrolled past hero in light mode: black logo
+                    // Otherwise: white logo
+                    if (currentTheme === 'light' && (isNavOpen || isScrolledPastHero)) {
+                        logo.src = 'lts-logo-black.png';
+                    } else {
+                        logo.src = 'lts-logo-white.png';
+                    }
+                }
+            };
+
+            // Initialize theme
+            setTheme(getPreferredTheme());
+
+            // Theme toggle click handler
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    setTheme(newTheme);
+                });
+            }
+
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('theme')) {
+                    setTheme(e.matches ? 'light' : 'dark');
+                }
+            });
+
             const hero = document.querySelector('.hero');
             const heroContent = document.getElementById('heroContent');
             const heroCompass = document.querySelector('.hero-scroll-compass');
@@ -3889,6 +4673,26 @@ unique.</p>
                     navHeader.classList.add('hidden');
                 } else {
                     navHeader.classList.remove('hidden');
+                }
+
+                // Handle scrolled past hero state for logo/burger color switching
+                if (hero) {
+                    const heroHeight = hero.offsetHeight;
+                    const wasScrolledPast = navHeader.classList.contains('scrolled-past-hero');
+                    const isScrolledPast = currentScrollY > heroHeight - 100;
+
+                    if (isScrolledPast) {
+                        navHeader.classList.add('scrolled-past-hero');
+                        navHeader.setAttribute('data-theme', htmlElement.getAttribute('data-theme'));
+                    } else {
+                        navHeader.classList.remove('scrolled-past-hero');
+                        navHeader.removeAttribute('data-theme');
+                    }
+
+                    // Update logo/burger if scroll state changed
+                    if (wasScrolledPast !== isScrolledPast) {
+                        updateLogoAndBurger();
+                    }
                 }
 
                 lastScrollY = currentScrollY;
@@ -4020,6 +4824,7 @@ unique.</p>
                     mobileToggle.textContent = '☰';
                     navMenu.setAttribute('aria-hidden', 'true');
                     document.body.classList.remove('nav-open');
+                    updateLogoAndBurger();
                     if (returnFocus) {
                         mobileToggle.focus();
                     }
@@ -4033,6 +4838,7 @@ unique.</p>
                     mobileToggle.textContent = isOpen ? '×' : '☰';
                     navMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
                     document.body.classList.toggle('nav-open', isOpen);
+                    updateLogoAndBurger();
                     if (isOpen) {
                         navLinks[0]?.focus();
                     } else {
@@ -4581,7 +5387,8 @@ unique.</p>
                     themes: ['Nature & Wellness', 'Design & Innovation', 'Royal', 'Art & Culture', 'Culinary', 'Nightlife & Celebrations'],
                     seasons: ['Summer', 'Winter'],
                     coordinates: [18.0686, 59.3293],
-                    themeKeys: ['nature', 'design', 'royal', 'art', 'culinary', 'nightlife']
+                    themeKeys: ['nature', 'design', 'royal', 'art', 'culinary', 'nightlife'],
+                    category: 'city'
                 },
                 gothenburg: {
                     title: 'Gothenburg',
@@ -4590,7 +5397,8 @@ unique.</p>
                     themes: ['Culinary', 'Art & Culture', 'Design & Innovation'],
                     seasons: ['Summer', 'Winter'],
                     coordinates: [11.9746, 57.7089],
-                    themeKeys: ['culinary', 'art', 'design']
+                    themeKeys: ['culinary', 'art', 'design'],
+                    category: 'city'
                 },
                 gotland: {
                     title: 'Gotland & Visby',
@@ -4599,7 +5407,8 @@ unique.</p>
                     themes: ['Royal', 'Art & Culture', 'Nature & Wellness'],
                     seasons: ['Summer'],
                     coordinates: [18.2948, 57.6348],
-                    themeKeys: ['royal', 'art', 'nature']
+                    themeKeys: ['royal', 'art', 'nature'],
+                    category: 'region'
                 },
                 dalarna: {
                     title: 'Dalarna',
@@ -4608,7 +5417,8 @@ unique.</p>
                     themes: ['Art & Culture', 'Legacy & Purpose', 'Nature & Wellness'],
                     seasons: ['Summer', 'Winter'],
                     coordinates: [14.5636, 60.6034],
-                    themeKeys: ['art', 'legacy', 'nature']
+                    themeKeys: ['art', 'legacy', 'nature'],
+                    category: 'region'
                 },
                 lapland: {
                     title: 'Lapland',
@@ -4617,7 +5427,8 @@ unique.</p>
                     themes: ['Nature & Wellness', 'Legacy & Purpose'],
                     seasons: ['Winter'],
                     coordinates: [23.6850, 67.9222],
-                    themeKeys: ['nature', 'legacy']
+                    themeKeys: ['nature', 'legacy'],
+                    category: 'region'
                 },
                 archipelago: {
                     title: 'Stockholm Archipelago',
@@ -4626,7 +5437,8 @@ unique.</p>
                     themes: ['Nature & Wellness', 'Culinary'],
                     seasons: ['Summer'],
                     coordinates: [18.5500, 59.4500],
-                    themeKeys: ['nature', 'culinary']
+                    themeKeys: ['nature', 'culinary'],
+                    category: 'region'
                 },
                 malmo: {
                     title: 'Malmö',
@@ -4635,7 +5447,8 @@ unique.</p>
                     themes: ['Design & Innovation', 'Culinary', 'Art & Culture'],
                     seasons: ['Summer', 'Winter'],
                     coordinates: [13.0038, 55.6050],
-                    themeKeys: ['design', 'culinary', 'art']
+                    themeKeys: ['design', 'culinary', 'art'],
+                    category: 'city'
                 },
                 abisko: {
                     title: 'Abisko National Park',
@@ -4644,16 +5457,109 @@ unique.</p>
                     themes: ['Nature & Wellness'],
                     seasons: ['Winter', 'Summer'],
                     coordinates: [18.8306, 68.3540],
-                    themeKeys: ['nature']
+                    themeKeys: ['nature'],
+                    category: 'region'
+                },
+                vastergotland: {
+                    title: 'Västergötland',
+                    description: 'Ancient Viking heritage meets rolling countryside. Discover medieval churches, archaeological sites, and the birthplace of Swedish history.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Art & Culture', 'Legacy & Purpose', 'Royal'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [13.4, 58.3],
+                    themeKeys: ['art', 'legacy', 'royal'],
+                    category: 'region'
+                },
+                uppsala: {
+                    title: 'Uppsala',
+                    description: 'Sweden\'s ancient university city combines academic excellence with Viking heritage. Explore Scandinavia\'s largest cathedral and historic botanical gardens.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Royal', 'Art & Culture', 'Legacy & Purpose'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [17.6389, 59.8586],
+                    themeKeys: ['royal', 'art', 'legacy'],
+                    category: 'city'
+                },
+                skane: {
+                    title: 'Skåne Region',
+                    description: 'Southern Sweden\'s fertile plains offer castle trails, sandy beaches, and Europe\'s leading New Nordic cuisine scene.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Culinary', 'Royal', 'Nature & Wellness'],
+                    seasons: ['Summer'],
+                    coordinates: [13.5, 55.9],
+                    themeKeys: ['culinary', 'royal', 'nature'],
+                    category: 'region'
+                },
+                orebro: {
+                    title: 'Örebro',
+                    description: 'Lakeside charm with a fairytale castle. Experience innovative Swedish design, vibrant cultural scenes, and authentic local traditions.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Royal', 'Art & Culture', 'Design & Innovation'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [15.2134, 59.2753],
+                    themeKeys: ['royal', 'art', 'design'],
+                    category: 'city'
+                },
+                jamtland: {
+                    title: 'Jämtland',
+                    description: 'Mountain wilderness perfect for outdoor adventures. Discover ski resorts, hiking trails, and authentic Sami cultural experiences.',
+                    image: 'https://images.pexels.com/photos/2024881/pexels-photo-2024881.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Nature & Wellness', 'Legacy & Purpose'],
+                    seasons: ['Winter', 'Summer'],
+                    coordinates: [14.6, 63.2],
+                    themeKeys: ['nature', 'legacy'],
+                    category: 'region'
+                },
+                storyteller_astrid: {
+                    title: 'Astrid\'s Sweden',
+                    description: 'Follow the literary journey of Astrid Lindgren. Explore Vimmerby, storytelling experiences, and the landscapes that inspired Pippi Longstocking.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Art & Culture', 'Legacy & Purpose'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [15.8551, 57.6681],
+                    themeKeys: ['art', 'legacy'],
+                    category: 'storyteller'
+                },
+                storyteller_bergman: {
+                    title: 'Bergman\'s Fårö',
+                    description: 'Discover Ingmar Bergman\'s island retreat. Explore film locations, the director\'s home, and the stark landscapes that shaped cinematic masterpieces.',
+                    image: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Art & Culture', 'Nature & Wellness'],
+                    seasons: ['Summer'],
+                    coordinates: [19.1, 57.95],
+                    themeKeys: ['art', 'nature'],
+                    category: 'storyteller'
+                },
+                storyteller_abba: {
+                    title: 'ABBA Experience',
+                    description: 'Immerse yourself in ABBA\'s musical legacy. Visit the interactive museum, recording studios, and Stockholm venues where the legends performed.',
+                    image: 'https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Art & Culture', 'Nightlife & Celebrations'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [18.09, 59.32],
+                    themeKeys: ['art', 'nightlife'],
+                    category: 'storyteller'
+                },
+                storyteller_nobel: {
+                    title: 'Nobel Legacy',
+                    description: 'Trace Alfred Nobel\'s footsteps through Stockholm. Experience the Nobel Prize Museum, annual ceremony venues, and the inventor\'s innovative spirit.',
+                    image: 'https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1',
+                    themes: ['Legacy & Purpose', 'Design & Innovation', 'Royal'],
+                    seasons: ['Summer', 'Winter'],
+                    coordinates: [18.07, 59.325],
+                    themeKeys: ['legacy', 'design', 'royal'],
+                    category: 'storyteller'
                 }
             };
 
             const destinationCardsGrid = document.getElementById('destinationCardsGrid');
             const seasonBtns = document.querySelectorAll('.season-btn');
             const filterBtns = document.querySelectorAll('.filter-btn');
+            const categoryFilterBtns = document.querySelectorAll('.category-filter-btn');
 
             let currentSeason = 'summer';
             let currentFilter = 'all';
+            let activeCategories = new Set(['region', 'city', 'storyteller']); // All active by default
             let selectedCities = new Set();
             let markers = {};
             let map;
@@ -4697,8 +5603,16 @@ unique.</p>
 
                 console.log('Map initialized successfully');
 
-                // Add dark theme tile layer from CartoDB (Free)
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                // Store map instance for theme toggle
+                window.mapInstance = map;
+
+                // Add tile layer based on current theme
+                const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+                const tileUrl = currentTheme === 'light'
+                    ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
+                    : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+
+                currentTileLayer = L.tileLayer(tileUrl, {
                     attribution: '© OpenStreetMap contributors © CARTO',
                     subdomains: 'abcd',
                     maxZoom: 19
@@ -4822,9 +5736,10 @@ unique.</p>
 
                     const seasonMatch = data.seasons.map(s => s.toLowerCase()).includes(currentSeason);
                     const themeMatch = currentFilter === 'all' || data.themeKeys.includes(currentFilter);
+                    const categoryMatch = activeCategories.has(data.category);
 
                     const markerEl = marker.getElement();
-                    if (seasonMatch && themeMatch) {
+                    if (seasonMatch && themeMatch && categoryMatch) {
                         markerEl.classList.remove('marker-hidden');
                     } else {
                         markerEl.classList.add('marker-hidden');
@@ -4840,6 +5755,7 @@ unique.</p>
                 const el = document.createElement('div');
                 el.className = 'custom-marker';
                 el.dataset.city = cityKey;
+                el.dataset.category = data.category;
 
                 // Add click event
                 el.addEventListener('click', function() {
@@ -4899,6 +5815,24 @@ unique.</p>
                     filterBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                     currentFilter = this.dataset.filter;
+                    filterMarkers();
+                });
+            });
+
+            // Category filters
+            categoryFilterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+
+                    // Toggle category
+                    if (activeCategories.has(category)) {
+                        activeCategories.delete(category);
+                        this.classList.remove('active');
+                    } else {
+                        activeCategories.add(category);
+                        this.classList.add('active');
+                    }
+
                     filterMarkers();
                 });
             });
