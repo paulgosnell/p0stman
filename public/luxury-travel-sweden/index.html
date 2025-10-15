@@ -783,7 +783,7 @@
         @media (max-width: 480px) {
             .nav-header {
                 padding: 1.2rem 1rem;
-                background: rgba(5, 7, 9, 0.92);
+                background: transparent;
             }
 
             .hero-title {
@@ -1536,11 +1536,17 @@
             background: none;
             border: none;
             padding: 0;
-            font-size: 0.96rem;
+            font-size: inherit;
+            line-height: inherit;
             cursor: pointer;
             text-decoration: underline;
-            margin-left: 0.25rem;
+            margin: 0;
+            vertical-align: baseline;
             transition: color 0.3s ease;
+        }
+
+        .read-more-btn::before {
+            content: ' ';
         }
 
         .read-more-btn:hover {
@@ -4597,12 +4603,32 @@ paste it
             console.log('Initializing Leaflet map...');
 
             try {
+                // Detect if mobile/touch device
+                const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+
                 map = L.map('map', {
                     center: [62, 15],
                     zoom: 5,
                     zoomControl: true,
-                    scrollWheelZoom: true
+                    scrollWheelZoom: false, // Disabled by default to prevent scroll hijacking
+                    dragging: !isMobile, // Disable dragging on mobile initially
+                    tap: isMobile,
+                    touchZoom: isMobile
                 });
+
+                // Enable scroll wheel zoom only after user clicks/taps on the map
+                map.once('click focus', function() {
+                    map.scrollWheelZoom.enable();
+                    map.dragging.enable();
+                });
+
+                // Show message to users on mobile
+                if (isMobile) {
+                    map.on('click', function() {
+                        map.scrollWheelZoom.enable();
+                        map.dragging.enable();
+                    });
+                }
 
                 console.log('Map initialized successfully');
 
@@ -4836,7 +4862,7 @@ paste it
                         readMoreBtn.setAttribute('aria-expanded', 'false');
 
                         // Set truncated text
-                        paragraph.textContent = truncatedText + '... ';
+                        paragraph.textContent = truncatedText + '...';
                         paragraph.classList.add('truncated');
                         paragraph.appendChild(readMoreBtn);
 
@@ -4846,13 +4872,13 @@ paste it
 
                             if (isExpanded) {
                                 // Collapse
-                                paragraph.textContent = truncatedText + '... ';
+                                paragraph.textContent = truncatedText + '...';
                                 paragraph.appendChild(this);
                                 this.textContent = 'read more';
                                 this.setAttribute('aria-expanded', 'false');
                             } else {
                                 // Expand
-                                paragraph.textContent = fullText + ' ';
+                                paragraph.textContent = fullText;
                                 paragraph.appendChild(this);
                                 this.textContent = 'read less';
                                 this.setAttribute('aria-expanded', 'true');
