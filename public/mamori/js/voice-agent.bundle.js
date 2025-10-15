@@ -24638,6 +24638,7 @@ registerProcessor("rawAudioProcessor", RawAudioProcessor);
           this.elements = {
             container: document.getElementById(this.config.containerId),
             toggleBtn: document.getElementById(this.config.toggleBtnId),
+            stopBtn: document.getElementById("voiceStopBtn"),
             waveform: document.getElementById(this.config.waveformId),
             status: document.getElementById(this.config.statusId),
             languageSelect: document.getElementById(this.config.languageSelectId)
@@ -24662,12 +24663,13 @@ registerProcessor("rawAudioProcessor", RawAudioProcessor);
         }
         setupEventListeners() {
           this.elements.toggleBtn.addEventListener("click", () => {
-            if (this.isActive) {
-              this.stop();
-            } else {
-              this.start();
-            }
+            this.start();
           });
+          if (this.elements.stopBtn) {
+            this.elements.stopBtn.addEventListener("click", () => {
+              this.stop();
+            });
+          }
           if (this.elements.languageSelect) {
             this.elements.languageSelect.addEventListener("change", (e2) => {
               this.selectedLanguage = e2.target.value;
@@ -24800,22 +24802,13 @@ registerProcessor("rawAudioProcessor", RawAudioProcessor);
             this.elements.container.style.display = this.isActive ? "block" : "none";
           }
           if (this.elements.toggleBtn) {
-            const icon = this.elements.toggleBtn.querySelector("i");
-            const text = this.elements.toggleBtn.querySelector("span");
-            if (icon && text) {
-              if (this.isActive) {
-                icon.setAttribute("data-lucide", "mic-off");
-                text.textContent = "End Conversation";
-                this.elements.toggleBtn.classList.add("active");
-              } else {
-                icon.setAttribute("data-lucide", "mic");
-                text.textContent = "Start Conversation";
-                this.elements.toggleBtn.classList.remove("active");
-              }
-              if (typeof lucide !== "undefined") {
-                lucide.createIcons();
-              }
-            }
+            this.elements.toggleBtn.style.display = this.isActive ? "none" : "flex";
+          }
+          if (this.elements.stopBtn) {
+            this.elements.stopBtn.style.display = this.isActive ? "flex" : "none";
+          }
+          if (typeof lucide !== "undefined") {
+            lucide.createIcons();
           }
         }
         updateStatus(text, state) {

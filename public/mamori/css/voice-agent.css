@@ -83,6 +83,13 @@
     margin: 0;
 }
 
+/* Button Group */
+.voice-button-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
 /* Toggle Button */
 .voice-toggle-btn {
     display: flex;
@@ -109,18 +116,53 @@
     transform: translateY(0);
 }
 
-.voice-toggle-btn.active {
-    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-}
-
-.voice-toggle-btn.active:hover {
-    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-}
-
 .voice-toggle-btn i {
     width: 20px;
     height: 20px;
+}
+
+/* Stop Button */
+.voice-stop-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+.voice-stop-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+}
+
+.voice-stop-btn:active {
+    transform: translateY(0);
+}
+
+.voice-stop-btn i {
+    width: 18px;
+    height: 18px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Voice Interface */

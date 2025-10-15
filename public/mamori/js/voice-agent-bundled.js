@@ -24,6 +24,7 @@ class MamoriVoiceAgent {
         this.elements = {
             container: document.getElementById(this.config.containerId),
             toggleBtn: document.getElementById(this.config.toggleBtnId),
+            stopBtn: document.getElementById('voiceStopBtn'),
             waveform: document.getElementById(this.config.waveformId),
             status: document.getElementById(this.config.statusId),
             languageSelect: document.getElementById(this.config.languageSelectId)
@@ -55,14 +56,17 @@ class MamoriVoiceAgent {
     }
 
     setupEventListeners() {
-        // Toggle button
+        // Toggle button - only starts conversation
         this.elements.toggleBtn.addEventListener('click', () => {
-            if (this.isActive) {
-                this.stop();
-            } else {
-                this.start();
-            }
+            this.start();
         });
+
+        // Stop button - only stops conversation
+        if (this.elements.stopBtn) {
+            this.elements.stopBtn.addEventListener('click', () => {
+                this.stop();
+            });
+        }
 
         // Language selector
         if (this.elements.languageSelect) {
@@ -225,27 +229,18 @@ class MamoriVoiceAgent {
             this.elements.container.style.display = this.isActive ? 'block' : 'none';
         }
 
-        // Update button state
+        // Show/hide appropriate buttons
         if (this.elements.toggleBtn) {
-            const icon = this.elements.toggleBtn.querySelector('i');
-            const text = this.elements.toggleBtn.querySelector('span');
+            this.elements.toggleBtn.style.display = this.isActive ? 'none' : 'flex';
+        }
 
-            if (icon && text) {
-                if (this.isActive) {
-                    icon.setAttribute('data-lucide', 'mic-off');
-                    text.textContent = 'End Conversation';
-                    this.elements.toggleBtn.classList.add('active');
-                } else {
-                    icon.setAttribute('data-lucide', 'mic');
-                    text.textContent = 'Start Conversation';
-                    this.elements.toggleBtn.classList.remove('active');
-                }
+        if (this.elements.stopBtn) {
+            this.elements.stopBtn.style.display = this.isActive ? 'flex' : 'none';
+        }
 
-                // Re-initialize Lucide icons
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
-                }
-            }
+        // Re-initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
         }
     }
 
