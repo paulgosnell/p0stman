@@ -49,7 +49,7 @@ const caseStudies: CaseStudy[] = [
 
 export default function CaseStudiesV3() {
   return (
-    <section id="work" className="py-32 md:py-40 px-6 md:px-0 bg-white">
+    <section id="work" className="py-40 md:py-48 px-6 md:px-0 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="mb-20 md:mb-24">
@@ -108,7 +108,7 @@ export default function CaseStudiesV3() {
                 </p>
 
                 <div className="pt-4 border-t border-gray-200">
-                  <p className="text-lg text-blue-600 font-light">
+                  <p className="text-lg text-blue-600 font-bold">
                     {study.result}
                   </p>
                 </div>

@@ -37,7 +37,7 @@ const services: ServiceTier[] = [
 
 export default function ServicesV3() {
   return (
-    <section id="services" className="py-32 md:py-40 px-6 md:px-0 bg-gray-50/50">
+    <section id="services" className="py-40 md:py-48 px-6 md:px-0 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="mb-20 md:mb-24">
@@ -53,7 +53,7 @@ export default function ServicesV3() {
               key={index}
               className={`group relative rounded-xl p-8 transition-all duration-300 ${
                 service.highlight
-                  ? 'bg-blue-600 text-white border-2 border-blue-600'
+                  ? 'bg-white text-gray-900 border-2 border-blue-600'
                   : 'bg-white border border-gray-200 hover:border-gray-300'
               }`}
             >
@@ -73,7 +73,7 @@ export default function ServicesV3() {
 
                 {/* Description */}
                 <p className={`text-base font-light leading-relaxed ${
-                  service.highlight ? 'text-blue-50' : 'text-gray-600'
+                  service.highlight ? 'text-gray-600' : 'text-gray-600'
                 }`}>
                   {service.description}
                 </p>
@@ -91,7 +91,7 @@ export default function ServicesV3() {
 
                 {/* Timeline */}
                 <p className={`text-sm font-light ${
-                  service.highlight ? 'text-blue-100' : 'text-gray-600'
+                  service.highlight ? 'text-gray-600' : 'text-gray-600'
                 }`}>
                   {service.timeline}
                 </p>

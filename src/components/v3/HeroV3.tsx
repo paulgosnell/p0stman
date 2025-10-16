@@ -20,12 +20,12 @@ export default function HeroV3() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-32 md:py-40 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-40 md:py-48 overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-0 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
           {/* Left Column - Copy */}
           <div className="flex flex-col justify-center space-y-8 md:space-y-10">
             <div>

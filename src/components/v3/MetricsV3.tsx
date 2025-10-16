@@ -22,7 +22,7 @@ const metrics: Metric[] = [
 
 export default function MetricsV3() {
   return (
-    <section className="py-32 md:py-40 px-6 md:px-0 bg-white">
+    <section className="py-40 md:py-48 px-6 md:px-0 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
           {metrics.map((metric, index) => (
