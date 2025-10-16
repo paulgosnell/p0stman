@@ -7,7 +7,6 @@ interface ServiceTier {
   priceRange: string;
   timeline: string;
   cta: string;
-  highlight?: boolean;
 }
 
 const services: ServiceTier[] = [
@@ -23,8 +22,7 @@ const services: ServiceTier[] = [
     description: 'Full-stack web/mobile products. Rapid prototyping, market validation, deployment.',
     priceRange: '$10k - $75k',
     timeline: '6 days to 3 weeks',
-    cta: 'Launch Your MVP',
-    highlight: true
+    cta: 'Launch Your MVP'
   },
   {
     title: 'Fractional Leadership',
@@ -51,58 +49,38 @@ export default function ServicesV3() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative rounded-xl p-8 transition-all duration-300 ${
-                service.highlight
-                  ? 'bg-white text-gray-900 border-2 border-blue-600'
-                  : 'bg-white border border-gray-200 hover:border-gray-300'
-              }`}
+              className="group relative rounded-xl p-8 transition-all duration-300 bg-white border border-gray-200 hover:border-gray-300"
             >
               {/* Top accent line */}
-              <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl ${
-                service.highlight ? 'bg-orange-500' : 'bg-blue-600'
-              }`} />
+              <div className="absolute top-0 left-0 right-0 h-1 rounded-t-xl bg-blue-600" />
 
               {/* Content */}
               <div className="space-y-6 mt-4">
                 {/* Title */}
-                <h3 className={`text-2xl font-light leading-tight ${
-                  service.highlight ? 'text-white' : 'text-gray-900'
-                }`}>
+                <h3 className="text-2xl font-light leading-tight text-gray-900">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className={`text-base font-light leading-relaxed ${
-                  service.highlight ? 'text-gray-600' : 'text-gray-600'
-                }`}>
+                <p className="text-base font-light leading-relaxed text-gray-600">
                   {service.description}
                 </p>
 
                 {/* Price Range */}
-                <div className="pt-4 border-t border-opacity-20" style={{
-                  borderColor: service.highlight ? '#fff' : '#d1d5db'
-                }}>
-                  <p className={`text-lg font-light ${
-                    service.highlight ? 'text-orange-300' : 'text-blue-600'
-                  }`}>
+                <div className="pt-4 border-t border-gray-200">
+                  <p className="text-lg font-light text-blue-600">
                     {service.priceRange}
                   </p>
                 </div>
 
                 {/* Timeline */}
-                <p className={`text-sm font-light ${
-                  service.highlight ? 'text-gray-600' : 'text-gray-600'
-                }`}>
+                <p className="text-sm font-light text-gray-600">
                   {service.timeline}
                 </p>
 
                 {/* CTA Button */}
                 <div className="pt-6">
-                  <button className={`w-full px-6 py-3 rounded-lg font-light text-base transition-colors flex items-center justify-center gap-2 group/btn ${
-                    service.highlight
-                      ? 'bg-orange-500 text-white hover:bg-orange-600'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
-                  }`}>
+                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 group/btn">
                     {service.cta}
                     <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
