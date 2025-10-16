@@ -83,8 +83,7 @@ export default function AnimatedWaveform({
                 ease: 'easeOut',
               },
               backgroundColor: {
-                duration: 0.2,
-                ease: 'easeInOut',
+                duration: 0,
               },
             }}
             onMouseEnter={() => setHoveredBar(i)}

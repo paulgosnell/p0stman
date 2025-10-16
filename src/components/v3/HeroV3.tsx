@@ -74,7 +74,9 @@ export default function HeroV3() {
               {!voiceAgent.isActive && (
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <div className="text-center space-y-2">
-                    <p className="text-sm font-light text-gray-600">Click to talk</p>
+                    <div className="px-4 py-2 bg-blue-600 text-white rounded-lg">
+                      <p className="text-sm font-light">Click to talk</p>
+                    </div>
                   </div>
                 </div>
               )}
