@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight, X, Mic, Volume2, Loader } from 'lucide-react';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
 
@@ -51,15 +51,6 @@ export default function HeroV3() {
                 See How It Works
               </button>
             </div>
-
-            {/* Voice Status */}
-            {voiceAgent.isActive && (
-              <div className="text-sm text-blue-600 font-light">
-                {voiceAgent.isConnecting && '🔄 Connecting to AI Agent...'}
-                {voiceAgent.isConnected && !voiceAgent.isSpeaking && '👂 Listening...'}
-                {voiceAgent.isConnected && voiceAgent.isSpeaking && '🎤 AI is speaking...'}
-              </div>
-            )}
           </div>
 
           {/* Right Column - Animated Waveform */}
@@ -89,17 +80,45 @@ export default function HeroV3() {
               )}
             </div>
 
-            {/* Status text or Close button */}
-            <div className="relative z-10 mt-8 flex flex-col items-center gap-4">
-              {voiceAgent.isActive ? (
+            {/* Status and Controls - Below Waveform */}
+            <div className="relative z-10 mt-8 w-full flex flex-col items-center gap-4">
+              {/* Status Indicator */}
+              {voiceAgent.isActive && (
+                <div className="flex items-center gap-2 text-sm font-light text-gray-600">
+                  {voiceAgent.isConnecting && (
+                    <>
+                      <Loader size={16} className="animate-spin text-blue-600" />
+                      <span>Connecting...</span>
+                    </>
+                  )}
+                  {voiceAgent.isConnected && !voiceAgent.isSpeaking && (
+                    <>
+                      <Mic size={16} className="text-blue-600" />
+                      <span>Listening...</span>
+                    </>
+                  )}
+                  {voiceAgent.isConnected && voiceAgent.isSpeaking && (
+                    <>
+                      <Volume2 size={16} className="text-blue-600 animate-pulse" />
+                      <span>AI is speaking...</span>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {/* Control Button - Subtle when active */}
+              {voiceAgent.isActive && (
                 <button
                   onClick={handleStopVoice}
-                  className="px-6 py-2 bg-red-500/20 text-red-600 rounded-lg font-light text-sm hover:bg-red-500/30 transition-colors flex items-center gap-2"
+                  className="px-4 py-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg font-light text-sm transition-colors flex items-center gap-2 group"
                 >
-                  <X size={16} />
-                  Stop Chat
+                  <X size={16} className="group-hover:scale-110 transition-transform" />
+                  <span>Stop</span>
                 </button>
-              ) : (
+              )}
+
+              {/* Idle State Text */}
+              {!voiceAgent.isActive && (
                 <p className="text-sm text-gray-500 font-light">
                   AI Agent Ready • 6 Days to Production
                 </p>
