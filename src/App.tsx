@@ -10,6 +10,7 @@ import ClientsAdmin from './pages/admin/ClientsAdmin';
 import CRMAdmin from './pages/admin/CRMAdmin';
 import PrivacyPage from './pages/privacy';
 import HomeV2 from './pages/HomeV2';
+import HomeV3 from './pages/HomeV3';
 import Process from './pages/Process';
 import CaseStudies from './pages/CaseStudies';
 import Website from './pages/Website';
@@ -84,6 +85,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomeV2 />} />
           <Route path="/v1" element={<Home />} />
+          <Route path="/v3" element={<HomeV3 />} />
           <Route path="/process" element={<Process />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/projects" element={<CaseStudies />} />
