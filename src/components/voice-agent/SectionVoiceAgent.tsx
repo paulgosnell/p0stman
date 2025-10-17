@@ -115,8 +115,11 @@ export default function SectionVoiceAgent({
   // Use conversation with client tools
   const conversation = useConversation({
     clientTools,
+    onToolCall: (toolCall) => {
+      console.log('🔧 Tool call received:', toolCall.tool_name, 'with params:', toolCall.parameters);
+    },
     onUnhandledClientToolCall: (toolCall) => {
-      console.warn('Unhandled client tool call:', toolCall.tool_name, toolCall.parameters);
+      console.warn('⚠️ Unhandled client tool call:', toolCall.tool_name, toolCall.parameters);
     },
   });
 
