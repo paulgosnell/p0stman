@@ -22,7 +22,8 @@ export default function CTAV3() {
       await sendEmail({
         name: email, // Using email as the name for this simple form
         email: email,
-        form_type: 'cta_homepage'
+        form_type: 'cta_homepage',
+        description: 'New signup from homepage CTA - Ready to Ship Fast form'
       });
 
       setSubmitted(true);
