@@ -60,8 +60,8 @@ export default function AIAgentShowcaseV3() {
           <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 leading-tight">
             Production-Ready AI Experiences
           </h2>
-          <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto leading-relaxed">
-            From concept to production. Built with cutting-edge models, designed for real-world impact.
+          <p className="text-gray-600 text-lg font-light max-w-3xl mx-auto leading-relaxed">
+            These aren't simple apps—they're frontier AI systems in production. Voice agents powered by ElevenLabs. Reasoning models from Claude and OpenAI. RAG systems with extended memory. Multi-API orchestration across Telegram, Oura, Strava. Built with AI SDK and Vercel. Real-time data processing, intelligent context retention, and seamless integrations that actually work.
           </p>
         </motion.div>
 

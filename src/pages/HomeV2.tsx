@@ -1849,8 +1849,8 @@ export default function HomeV2() {
               <h2 className="text-4xl font-thin mb-6 text-gray-900">
                 AI-Powered Mobile Experiences
               </h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                From concept to production-ready AI agents. Built with cutting-edge models, designed for real-world impact.
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                These aren't simple apps—they're frontier AI systems in production. Voice agents powered by ElevenLabs. Reasoning models from Claude and OpenAI. RAG systems with extended memory. Multi-API orchestration across Telegram, Oura, Strava. Built with AI SDK and Vercel. Real-time data processing, intelligent context retention, and seamless integrations that actually work.
               </p>
             </motion.div>
 
