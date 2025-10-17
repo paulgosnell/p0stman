@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center p-4">
       <div className="max-w-2xl mx-auto text-center">
         {/* Animated Bot */}
         <motion.div
@@ -22,7 +22,7 @@ export default function NotFound() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text"
+          className="text-8xl font-thin mb-4 bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text"
         >
           404
         </motion.h1>
@@ -33,7 +33,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-4"
         >
-          <h2 className="text-2xl font-bold">Houston, we have a problem!</h2>
+          <h2 className="text-2xl font-light">Houston, we have a problem!</h2>
           <p className="text-gray-300 max-w-md mx-auto">
             Looks like the P0STMAN got lost in the digital cosmos. Don't worry though, our AI is working on bringing it back!
           </p>

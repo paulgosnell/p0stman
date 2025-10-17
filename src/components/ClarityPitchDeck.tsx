@@ -238,7 +238,7 @@ const ClarityPitchDeck = () => {
                 </div>
                 <div className="lg:w-1/2 space-y-6">
                   {slide.content?.map((item, index) => (
-                    <p key={index} className={`text-xl text-white/80 leading-relaxed animate-slideInRight delay-${index * 200}`}>
+                    <p key={index} className={`text-xl text-gray-700 leading-relaxed animate-slideInRight delay-${index * 200}`}>
                       {item}
                     </p>
                   ))}
@@ -258,7 +258,7 @@ const ClarityPitchDeck = () => {
               </div>
               <div className="grid gap-8 max-w-4xl mx-auto">
                 {slide.content?.map((item, index) => (
-                  <div key={index} className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 animate-slideInUp delay-${index * 150}`}>
+                  <div key={index} className={`bg-gray-50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 animate-slideInUp delay-${index * 150}`}>
                     <p className="text-xl text-white leading-relaxed">{item}</p>
                   </div>
                 ))}
@@ -272,14 +272,14 @@ const ClarityPitchDeck = () => {
               <h1 className="text-6xl md:text-7xl font-thin text-white mb-4">
                 {slide.title}
               </h1>
-              <p className="text-2xl text-white/80 mb-12">{slide.subtitle}</p>
+              <p className="text-2xl text-gray-700 mb-12">{slide.subtitle}</p>
               <div className="grid md:grid-cols-3 gap-8">
                 {slide.steps?.map((step, index) => (
-                  <div key={index} className={`bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20 animate-slideInUp delay-${index * 200} hover:scale-105 transition-transform duration-300`}>
+                  <div key={index} className={`bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 animate-slideInUp delay-${index * 200} hover:scale-105 transition-transform duration-300`}>
                     <div className="text-4xl font-bold text-blue-400 mb-2">{index + 1}</div>
-                    <h3 className="text-2xl font-semibold text-white mb-2">{step.phase}</h3>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">{step.phase}</h3>
                     <p className="text-lg text-blue-300 mb-4">{step.weeks}</p>
-                    <p className="text-white/80">{step.description}</p>
+                    <p className="text-gray-700">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -298,7 +298,7 @@ const ClarityPitchDeck = () => {
               <p className="text-2xl text-blue-300 mb-12">{slide.subtitle}</p>
               <div className="grid gap-6 max-w-4xl mx-auto">
                 {slide.points?.map((point, index) => (
-                  <div key={index} className={`flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 animate-slideInLeft delay-${index * 150}`}>
+                  <div key={index} className={`flex items-center gap-4 bg-gray-50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 animate-slideInLeft delay-${index * 150}`}>
                     <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
                     <p className="text-xl text-white">{point}</p>
                   </div>
@@ -315,12 +315,12 @@ const ClarityPitchDeck = () => {
           {/* Pricing Slide */}
           {slide.id === 'pricing' && (
             <div className="space-y-12 animate-fadeInUp">
-              <h1 className="text-6xl md:text-7xl font-thin text-white mb-12">
+              <h1 className="text-6xl md:text-7xl font-thin text-gray-900 mb-12">
                 {slide.title}
               </h1>
               <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {slide.packages?.map((pkg, index) => (
-                  <div key={index} className={`bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20 animate-slideInUp delay-${index * 200} hover:scale-105 transition-transform duration-300`}>
+                  <div key={index} className={`bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 animate-slideInUp delay-${index * 200} hover:scale-105 transition-transform duration-300`}>
                     <h3 className="text-3xl font-semibold text-white mb-4">{pkg.name}</h3>
                     <div className="text-4xl font-bold text-blue-400 mb-6">{pkg.price}</div>
                     <div className="space-y-3">
@@ -359,14 +359,14 @@ const ClarityPitchDeck = () => {
           {/* Success Stories Slide */}
           {slide.id === 'success' && (
             <div className="space-y-12 animate-fadeInUp">
-              <h1 className="text-6xl md:text-7xl font-thin text-white mb-12">
+              <h1 className="text-6xl md:text-7xl font-thin text-gray-900 mb-12">
                 {slide.title}
               </h1>
               <div className="grid gap-8 max-w-5xl mx-auto">
                 {slide.stories?.map((story, index) => (
                   <div key={index} className={`bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm rounded-2xl p-8 border border-green-500/30 animate-slideInUp delay-${index * 200}`}>
                     <h3 className="text-2xl font-bold text-green-300 mb-2">{story.client}</h3>
-                    <p className="text-lg text-white/80 mb-2">{story.solution}</p>
+                    <p className="text-lg text-gray-700 mb-2">{story.solution}</p>
                     <p className="text-xl text-white font-semibold">{story.result}</p>
                   </div>
                 ))}
@@ -377,14 +377,14 @@ const ClarityPitchDeck = () => {
           {/* Competitive Advantage Slide */}
           {slide.id === 'competitive' && (
             <div className="space-y-12 animate-fadeInUp">
-              <h1 className="text-6xl md:text-7xl font-thin text-white mb-12">
+              <h1 className="text-6xl md:text-7xl font-thin text-gray-900 mb-12">
                 {slide.title}
               </h1>
               <div className="grid gap-6 max-w-4xl mx-auto mb-12">
                 {slide.competitors?.map((competitor, index) => (
                   <div key={index} className={`bg-red-500/20 backdrop-blur-sm rounded-xl p-6 border border-red-500/30 animate-slideInLeft delay-${index * 150}`}>
                     <h3 className="text-xl font-semibold text-red-300 mb-2">{competitor.type}</h3>
-                    <p className="text-white/80">{competitor.weakness}</p>
+                    <p className="text-gray-700">{competitor.weakness}</p>
                   </div>
                 ))}
               </div>
@@ -397,7 +397,7 @@ const ClarityPitchDeck = () => {
           {/* Next Steps Slide */}
           {slide.id === 'next-steps' && (
             <div className="space-y-12 animate-fadeInUp">
-              <h1 className="text-6xl md:text-7xl font-thin text-white mb-12">
+              <h1 className="text-6xl md:text-7xl font-thin text-gray-900 mb-12">
                 {slide.title}
               </h1>
               <div className="grid gap-6 max-w-4xl mx-auto">
@@ -405,8 +405,8 @@ const ClarityPitchDeck = () => {
                   <div key={index} className={`flex items-center gap-6 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-xl p-6 border border-blue-500/30 animate-slideInRight delay-${index * 150}`}>
                     <div className="text-2xl font-bold text-blue-400">{index + 1}</div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-1">{item.phase}</h3>
-                      <p className="text-white/80">{item.detail}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-1">{item.phase}</h3>
+                      <p className="text-gray-700">{item.detail}</p>
                     </div>
                   </div>
                 ))}
@@ -423,7 +423,7 @@ const ClarityPitchDeck = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-4 z-20">
         <button
           onClick={prevSlide}
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 border border-white/20 transition-all duration-200"
+          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 border border-gray-200 transition-all duration-200"
           disabled={isAnimating}
         >
           <ChevronLeft className="w-6 h-6 text-white" />
@@ -444,7 +444,7 @@ const ClarityPitchDeck = () => {
 
         <button
           onClick={nextSlide}
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 border border-white/20 transition-all duration-200"
+          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 border border-gray-200 transition-all duration-200"
           disabled={isAnimating}
         >
           <ChevronRight className="w-6 h-6 text-white" />
@@ -452,7 +452,7 @@ const ClarityPitchDeck = () => {
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-8 right-8 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 z-20">
+      <div className="absolute top-8 right-8 bg-gray-100 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-200 z-20">
         <span className="text-white font-semibold">
           {currentSlide + 1} / {slides.length}
         </span>

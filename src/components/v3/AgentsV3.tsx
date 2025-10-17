@@ -92,8 +92,8 @@ export default function AgentsV3() {
         <CardCarousel
           cards={cardElements}
           cardsPerView={{
-            mobile: 1,
-            tablet: 2,
+            mobile: 3,
+            tablet: 3,
             desktop: 3
           }}
         />

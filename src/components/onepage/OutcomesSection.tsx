@@ -29,7 +29,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, delay }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="text-7xl font-thin text-white mb-2"
+      className="text-7xl font-thin text-gray-900 mb-2"
     >
       {value}
     </motion.div>

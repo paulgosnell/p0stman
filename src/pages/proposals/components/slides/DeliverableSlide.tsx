@@ -46,7 +46,7 @@ export default function DeliverableSlide() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {deliverables.map((phase, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div key={index} className="bg-gray-50 backdrop-blur-sm rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Bot className="w-5 h-5 text-blue-400" />
                 <h4 className="font-medium">{phase.title}</h4>

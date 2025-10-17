@@ -37,7 +37,7 @@ export default function HeroHeading() {
           {t('home.hero.description')}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row gap-8 mt-6">
           <a 
             href="#case-studies"
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] font-medium text-center"
@@ -46,22 +46,22 @@ export default function HeroHeading() {
           </a>
           <a 
             href="#comparison"
-            className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg hover:bg-white/20 transition-all transform hover:scale-[1.02] font-medium text-center"
+            className="px-6 py-3 bg-gray-50 backdrop-blur-sm border border-gray-200 text-white rounded-lg hover:bg-white/20 transition-all transform hover:scale-[1.02] font-medium text-center"
           >
             {t('home.hero.watchDemo')}
           </a>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-300 hover:border-white/20 hover:bg-white/15">
+        <div className="grid grid-cols-3 gap-8">
+          <div className="bg-gray-50 backdrop-blur-sm rounded-lg p-3 border border-gray-200 transition-all duration-300 hover:border-gray-200 hover:bg-white/15">
             <div className="text-2xl md:text-2xl font-bold text-blue-400">50+</div>
             <div className="text-xs text-gray-400">Projects Delivered</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-300 hover:border-white/20 hover:bg-white/15">
+          <div className="bg-gray-50 backdrop-blur-sm rounded-lg p-3 border border-gray-200 transition-all duration-300 hover:border-gray-200 hover:bg-white/15">
             <div className="text-2xl md:text-2xl font-bold text-purple-400">70%</div>
             <div className="text-xs text-gray-400">Cost Savings</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-300 hover:border-white/20 hover:bg-white/15">
+          <div className="bg-gray-50 backdrop-blur-sm rounded-lg p-3 border border-gray-200 transition-all duration-300 hover:border-gray-200 hover:bg-white/15">
             <div className="text-2xl md:text-2xl font-bold text-green-400">100%</div>
             <div className="text-xs text-gray-400">Success Rate</div>
           </div>

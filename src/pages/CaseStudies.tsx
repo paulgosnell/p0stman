@@ -19,9 +19,9 @@ import {
   Code,
   Award
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
-import AnimatedFooter from '../components/AnimatedFooter';
+import FooterV3 from '../components/v3/FooterV3';
 
 // All projects data
 const allProjects = [
@@ -551,7 +551,7 @@ export default function CaseStudies() {
           <link rel="canonical" href="https://p0stman.com/case-studies" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section with Space Animation */}
         <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white overflow-hidden">
@@ -688,7 +688,7 @@ export default function CaseStudies() {
                   <span className="text-blue-400 font-medium">Portfolio</span>
                 </div>
 
-                <h1 className="text-5xl font-bold mb-6 text-white drop-shadow-md">
+                <h1 className="text-5xl font-thin mb-6 text-white drop-shadow-md">
                   Case Studies & Projects
                 </h1>
 
@@ -699,19 +699,19 @@ export default function CaseStudies() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-1">12+</div>
+                    <div className="text-3xl font-light text-blue-400 mb-1">12+</div>
                     <div className="text-sm text-gray-400">Projects Delivered</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-400 mb-1">8</div>
+                    <div className="text-3xl font-light text-purple-400 mb-1">8</div>
                     <div className="text-sm text-gray-400">Industries</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">40+</div>
+                    <div className="text-3xl font-light text-green-400 mb-1">40+</div>
                     <div className="text-sm text-gray-400">Team Members Led</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-400 mb-1">80%</div>
+                    <div className="text-3xl font-light text-yellow-400 mb-1">80%</div>
                     <div className="text-sm text-gray-400">Faster with AI</div>
                   </div>
                 </div>
@@ -837,7 +837,7 @@ export default function CaseStudies() {
                             <span className="text-xs text-blue-600 font-medium">{project.category}</span>
                           </div>
 
-                          <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-2">
+                          <h3 className="text-lg font-light text-gray-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-2">
                             {project.title}
                           </h3>
 
@@ -856,7 +856,7 @@ export default function CaseStudies() {
                                 key={i}
                                 className="text-center flex-1 transition-transform hover:scale-110 hover:-translate-y-1 duration-300"
                               >
-                                <div className="text-base font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                <div className="text-base font-light bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                                   {metric.value}
                                 </div>
                                 <div className="text-[10px] text-gray-500 mt-0.5">{metric.label}</div>
@@ -885,7 +885,7 @@ export default function CaseStudies() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-bold mb-6">
+                <h2 className="text-4xl font-light mb-6">
                   Ready to Start Your Next Project?
                 </h2>
                 
@@ -904,7 +904,7 @@ export default function CaseStudies() {
                   </a>
                   <a 
                     href="/about"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
                   >
                     Learn More About Me
                   </a>
@@ -914,7 +914,7 @@ export default function CaseStudies() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
 
         <CaseStudyModal
           isOpen={showCaseStudyModal}

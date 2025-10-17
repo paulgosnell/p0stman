@@ -16,7 +16,7 @@ import {
   Target,
   TrendingUp
 } from 'lucide-react';
-import AnimatedFooter from '../components/AnimatedFooter';
+import FooterV3 from '../components/v3/FooterV3';
 import ProjectConfigurator from '../components/ProjectConfigurator';
 
 const packageComponents = [
@@ -146,7 +146,7 @@ export default function FounderLaunchPackage() {
   return (
     <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
       {/* Hero Section */}
-      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <section className="min-h-screen relative overflow-hidden bg-white text-gray-900">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
@@ -216,7 +216,7 @@ export default function FounderLaunchPackage() {
                   </motion.button>
                   <a
                     href="#case-studies"
-                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
                   >
                     Recent Launches
                   </a>
@@ -231,16 +231,16 @@ export default function FounderLaunchPackage() {
                 className="space-y-6"
               >
                 {/* Main Stats Card */}
-                <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
+                <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-gray-200 rounded-3xl p-8">
                   <div className="text-center space-y-6">
                     <div className="text-6xl font-thin text-white">30</div>
                     <div className="text-xl text-gray-300">Days to Launch</div>
                     <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="bg-white/10 rounded-lg p-4">
+                      <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-3xl font-thin text-white">$35-50k</div>
                         <div className="text-gray-400 text-xs">vs $80-150k traditional</div>
                       </div>
-                      <div className="bg-white/10 rounded-lg p-4">
+                      <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-3xl font-thin text-white">1 Expert</div>
                         <div className="text-gray-400 text-xs">vs 5-10 person team</div>
                       </div>
@@ -250,28 +250,28 @@ export default function FounderLaunchPackage() {
 
                 {/* Package Preview Cards */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                  <div className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 text-center">
                     <div className="mb-2 flex justify-center">
                       <Smartphone className="w-8 h-8 text-blue-400" />
                     </div>
                     <div className="text-sm text-white font-medium">Live MVP</div>
                     <div className="text-xs text-gray-400">Mobile/Web App</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                  <div className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 text-center">
                     <div className="mb-2 flex justify-center">
                       <Globe className="w-8 h-8 text-green-400" />
                     </div>
                     <div className="text-sm text-white font-medium">Landing Page</div>
                     <div className="text-xs text-gray-400">+ Analytics</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                  <div className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 text-center">
                     <div className="mb-2 flex justify-center">
                       <BarChart3 className="w-8 h-8 text-purple-400" />
                     </div>
                     <div className="text-sm text-white font-medium">Pitch Deck</div>
                     <div className="text-xs text-gray-400">Data-driven</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                  <div className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 text-center">
                     <div className="mb-2 flex justify-center">
                       <Palette className="w-8 h-8 text-pink-400" />
                     </div>
@@ -281,7 +281,7 @@ export default function FounderLaunchPackage() {
                 </div>
 
                 {/* Quick Stats */}
-                <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+                <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 backdrop-blur-sm border border-gray-200 rounded-xl p-6">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                       <div className="text-2xl font-thin text-white">20+</div>
@@ -469,7 +469,7 @@ export default function FounderLaunchPackage() {
                     
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
                         <ExternalLink className="w-4 h-4 text-white" />
                       </div>
                     </div>
@@ -488,7 +488,7 @@ export default function FounderLaunchPackage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <section className="py-24 bg-white text-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -501,7 +501,7 @@ export default function FounderLaunchPackage() {
               <h2 className="text-4xl md:text-5xl font-thin">Ready to Launch in 30 Days?</h2>
 
               {/* Pricing Highlight */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+              <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-8 border border-gray-200">
                 <div className="space-y-6">
                   <div className="text-center">
                     <div className="text-red-400 line-through text-xl mb-2">Traditional: $80-150k + 6 months</div>

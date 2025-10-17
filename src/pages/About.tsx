@@ -23,8 +23,8 @@ import {
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 const journeyMilestones = [
   {
@@ -178,12 +178,12 @@ export default function About() {
           <link rel="canonical" href="https://p0stman.com/about" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section className="relative min-h-[80vh] flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
           </div>
@@ -202,18 +202,18 @@ export default function About() {
                   </div>
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight mb-6">
-                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                       20 Years of Building, Breaking & Learning
                     </span>
                   </h1>
 
-                  <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                     Started with motorsport events in '97, pivoted to digital in '07, and never looked back.
                     I've founded 8+ companies across three continents—from UK Trackdays to Fitlink to Genieology.
                     Some crashed and burned, others got acquired. All taught me something crucial.
                   </p>
 
-                  <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                     Built Genieology from a solo operation to 30+ people before Monstarlab acquired us.
                     Now with AI as my co-pilot, I can ship products faster than my entire former team.
                     It's not about replacing humans—it's about amplifying 27 years of hard-won experience.
@@ -226,11 +226,11 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 text-center"
+                        className="bg-gray-50 backdrop-blur-sm p-4 rounded-xl border border-gray-200 text-center"
                       >
-                        <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-                        <div className="text-sm text-blue-200 mb-1">{stat.label}</div>
-                        <div className="text-xs text-gray-400">{stat.description}</div>
+                        <div className="text-2xl font-light text-gray-900 mb-1">{stat.number}</div>
+                        <div className="text-sm text-blue-600 mb-1">{stat.label}</div>
+                        <div className="text-xs text-gray-600">{stat.description}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -242,8 +242,8 @@ export default function About() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/30 to-purple-600/30 rounded-3xl blur-xl animate-pulse" />
-                  <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl animate-pulse" />
+                  <div className="relative bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
                     <div className="text-center mb-6">
                       <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-blue-500 shadow-lg">
                         <img
@@ -252,11 +252,11 @@ export default function About() {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Paul Gosnell</h3>
-                      <p className="text-blue-400">Serial Entrepreneur & AI Enthusiast</p>
+                      <h3 className="text-2xl font-light text-gray-900 mb-2">Paul Gosnell</h3>
+                      <p className="text-blue-600">Serial Entrepreneur & AI Enthusiast</p>
                     </div>
 
-                    <div className="space-y-4 text-gray-300">
+                    <div className="space-y-4 text-gray-600">
                       <div className="flex items-center gap-3">
                         <MapPin className="w-5 h-5 text-blue-400" />
                         <span>Dubai, UAE</span>
@@ -312,7 +312,7 @@ export default function About() {
 
                       {/* Content */}
                       <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+                        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
                           <div className="flex items-center gap-3 mb-4">
                             <div className={`p-2 rounded-xl ${milestone.type === 'start' ? 'bg-green-100 text-green-600' :
                               milestone.type === 'learning' ? 'bg-red-100 text-red-600' :
@@ -325,7 +325,7 @@ export default function About() {
                             </div>
                             <div>
                               <div className="text-sm font-medium text-gray-500">{milestone.year}</div>
-                              <h3 className="text-xl font-bold text-gray-900">{milestone.title}</h3>
+                              <h3 className="text-xl font-light text-gray-900">{milestone.title}</h3>
                             </div>
                           </div>
                           <p className="text-gray-700 leading-relaxed">{milestone.description}</p>
@@ -373,7 +373,7 @@ export default function About() {
                         {lesson.icon}
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">{lesson.title}</h3>
+                        <h3 className="text-xl font-light text-gray-900 mb-3">{lesson.title}</h3>
                         <p className="text-gray-700 leading-relaxed">{lesson.description}</p>
                       </div>
                     </div>
@@ -413,10 +413,10 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+                  className="bg-gray-50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200"
                 >
                   <Zap className="w-12 h-12 text-yellow-400 mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">Speed</h3>
+                  <h3 className="text-2xl font-light mb-4">Speed</h3>
                   <p className="text-blue-100 leading-relaxed">
                     I can now build MVPs in days, not months. AI handles the repetitive coding while I focus on strategy and user experience.
                   </p>
@@ -427,10 +427,10 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+                  className="bg-gray-50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200"
                 >
                   <Target className="w-12 h-12 text-green-400 mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">Precision</h3>
+                  <h3 className="text-2xl font-light mb-4">Precision</h3>
                   <p className="text-blue-100 leading-relaxed">
                     20 years of experience combined with AI's capabilities means I can spot problems early and solve them efficiently.
                   </p>
@@ -441,10 +441,10 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+                  className="bg-gray-50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200"
                 >
                   <Rocket className="w-12 h-12 text-purple-400 mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">Scale</h3>
+                  <h3 className="text-2xl font-light mb-4">Scale</h3>
                   <p className="text-blue-100 leading-relaxed">
                     I can take on projects that would have required entire teams, delivering enterprise-quality results as a one-person operation.
                   </p>
@@ -488,13 +488,13 @@ export default function About() {
                 {/* Navigation Arrows */}
                 <button
                   onClick={prevLocation}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all text-white"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-gray-100 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all text-white"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={nextLocation}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all text-white"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-100 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all text-white"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
@@ -513,7 +513,7 @@ export default function About() {
                         {currentLocation === 0 ? 'Based in' : 'Escaping to'}
                       </span>
                     </div>
-                    <h3 className="text-4xl font-bold text-white mb-4" style={{ color: '#ffffff !important', textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
+                    <h3 className="text-4xl font-light text-white mb-4" style={{ color: '#ffffff !important', textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
                       {locations[currentLocation].title}
                     </h3>
                     <p className="text-white max-w-2xl font-light leading-relaxed" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
@@ -539,7 +539,7 @@ export default function About() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

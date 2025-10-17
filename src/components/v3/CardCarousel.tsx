@@ -54,7 +54,7 @@ export default function CardCarousel({ cards, cardsPerView }: CardCarouselProps)
           style={{ width: `${(cards.length / itemsPerView) * 100}%` }}
         >
           {cards.map((card, idx) => (
-            <div key={idx} style={{ width: `${100 / (cards.length / itemsPerView)}%` }} className="flex-shrink-0">
+            <div key={idx} style={{ width: `${100 / cards.length}%` }} className="flex-shrink-0">
               {card}
             </div>
           ))}

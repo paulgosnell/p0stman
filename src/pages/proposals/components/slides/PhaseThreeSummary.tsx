@@ -15,7 +15,7 @@ export default function PhaseThreeSummary() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6">
             <div className="flex items-center gap-4">
               <Clock className="w-8 h-8 text-green-400" />
               <div>
@@ -25,7 +25,7 @@ export default function PhaseThreeSummary() {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6">
             <div className="flex items-center gap-4">
               <DollarSign className="w-8 h-8 text-green-400" />
               <div>

@@ -93,7 +93,7 @@ export default function FlyoutNavigation() {
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         onHoverStart={() => setIsOpen(true)}
-        className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all group"
+        className="w-10 h-10 bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-all group"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -128,7 +128,7 @@ export default function FlyoutNavigation() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="absolute top-12 right-0 w-80 bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-purple-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl z-50 overflow-hidden"
+              className="absolute top-12 right-0 w-80 bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-purple-900/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl z-50 overflow-hidden"
               onMouseLeave={() => setIsOpen(false)}
             >
               {/* Animated Background */}
@@ -205,7 +205,7 @@ export default function FlyoutNavigation() {
                         onClick={() => setIsOpen(false)}
                         onMouseEnter={() => setHoveredItem(item.href)}
                         onMouseLeave={() => setHoveredItem(null)}
-                        className="group relative block p-3 rounded-xl hover:bg-white/10 transition-all duration-300"
+                        className="group relative block p-3 rounded-xl hover:bg-gray-50 transition-all duration-300"
                       >
                         <div className="flex items-center gap-3">
                           <motion.div
@@ -255,7 +255,7 @@ export default function FlyoutNavigation() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="pt-4 border-t border-white/10"
+                  className="pt-4 border-t border-gray-200"
                 >
                   <motion.a
                     href="mailto:hello@p0stman.com"

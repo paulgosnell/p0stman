@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, CheckCircle, Clock, ArrowRight, PlayCircle } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import SupportTopics from '../components/support/SupportTopics';
 import SupportBenefits from '../components/support/SupportBenefits';
 import SupportFAQ from '../components/support/SupportFAQ';
@@ -38,11 +38,11 @@ export default function Support() {
           <link rel="canonical" href="https://p0stman.com/support" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section ref={ref} className="relative min-h-[70vh] flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -60,11 +60,11 @@ export default function Support() {
                       <span className="text-indigo-400 font-medium">Expert Support</span>
                     </div>
 
-                    <h1 className="text-5xl font-bold mb-6">
+                    <h1 className="text-5xl font-thin mb-6">
                       Get Unstuck with Expert Guidance
                     </h1>
                     
-                    <p className="text-xl text-gray-300 mb-8">
+                    <p className="text-xl text-gray-600 mb-8">
                       Book a 45-minute support session for personalized help with your Bolt Builder projects. Get expert guidance on integrations, deployment, debugging, and more.
                     </p>
 
@@ -89,7 +89,7 @@ export default function Support() {
 
                     <div className="flex items-center gap-6 mt-8">
                       <div>
-                        <div className="text-3xl font-bold mb-1">$100</div>
+                        <div className="text-3xl font-light mb-1">$100</div>
                         <div className="text-gray-400">45-minute session</div>
                       </div>
                       <button
@@ -110,31 +110,31 @@ export default function Support() {
                   className="relative"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-3xl transform rotate-6" />
-                  <div className="relative z-10 bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8">
+                  <div className="relative z-10 bg-white rounded-3xl p-8 border border-gray-200 shadow-lg">
                     <div className="space-y-6">
-                      <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                      <div className="flex items-center gap-4 bg-gray-50 backdrop-blur-sm rounded-xl p-6">
                         <Clock className="w-8 h-8 text-indigo-400" />
                         <div>
-                          <div className="text-sm text-gray-300">Duration</div>
-                          <div className="text-2xl font-bold">45 Minutes</div>
+                          <div className="text-sm text-gray-600">Duration</div>
+                          <div className="text-2xl font-light">45 Minutes</div>
                         </div>
                       </div>
-                      <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-                        <h3 className="font-medium mb-4">Session Includes:</h3>
+                      <div className="p-6 bg-gray-50 backdrop-blur-sm rounded-xl">
+                        <h3 className="font-light mb-4">Session Includes:</h3>
                         <div className="space-y-3">
-                          <div className="flex items-center gap-2 text-gray-300">
+                          <div className="flex items-center gap-2 text-gray-600">
                             <CheckCircle className="w-5 h-5 text-indigo-400" />
                             <span>Live video call with screen sharing</span>
                           </div>
-                          <div className="flex items-center gap-2 text-gray-300">
+                          <div className="flex items-center gap-2 text-gray-600">
                             <CheckCircle className="w-5 h-5 text-indigo-400" />
                             <span>Direct problem solving assistance</span>
                           </div>
-                          <div className="flex items-center gap-2 text-gray-300">
+                          <div className="flex items-center gap-2 text-gray-600">
                             <CheckCircle className="w-5 h-5 text-indigo-400" />
                             <span>Code review and debugging help</span>
                           </div>
-                          <div className="flex items-center gap-2 text-gray-300">
+                          <div className="flex items-center gap-2 text-gray-600">
                             <CheckCircle className="w-5 h-5 text-indigo-400" />
                             <span>Best practices and recommendations</span>
                           </div>
@@ -145,7 +145,7 @@ export default function Support() {
                       onClick={() => setShowVideoModal(true)}
                       className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity rounded-3xl group"
                     >
-                      <div className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20">
+                      <div className="flex items-center gap-2 px-6 py-3 bg-gray-50 backdrop-blur-sm rounded-full text-white border border-gray-200">
                         <PlayCircle className="w-6 h-6" />
                         <span>Watch Video</span>
                       </div>

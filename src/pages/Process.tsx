@@ -23,8 +23,8 @@ import {
   Cloud,
   HeadphonesIcon
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 const processSteps = [
   {
@@ -203,12 +203,12 @@ export default function Process() {
           <link rel="canonical" href="https://p0stman.com/process" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Enhanced Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+        <section className="relative min-h-[80vh] flex items-center bg-white text-gray-900 overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
             {/* Animated Background Elements */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -229,7 +229,7 @@ export default function Process() {
                   <span className="text-blue-400 font-medium text-lg">Our Methodology</span>
                 </div>
 
-                <h1 className="text-6xl md:text-7xl font-bold mb-8">
+                <h1 className="text-6xl md:text-7xl font-thin mb-8">
                   <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
                     How We Build
                   </span>
@@ -239,7 +239,7 @@ export default function Process() {
                   </span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
                   Our proven AI-powered development process combines cutting-edge technology 
                   with 20+ years of experience to deliver exceptional results in record time.
                 </p>
@@ -255,9 +255,9 @@ export default function Process() {
                       className="group relative"
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="relative bg-gray-50 backdrop-blur-md rounded-2xl p-6 border border-gray-200 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
                         <div className="mb-4">{benefit.icon}</div>
-                        <div className="text-2xl font-bold mb-2 text-white">{benefit.title.split(' ')[0]}</div>
+                        <div className="text-2xl font-light mb-2 text-white">{benefit.title.split(' ')[0]}</div>
                         <div className="text-sm text-gray-300 font-medium">{benefit.title.split(' ').slice(1).join(' ')}</div>
                       </div>
                     </motion.div>
@@ -285,7 +285,7 @@ export default function Process() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Our 3-Step Process
                   </span>
@@ -337,7 +337,7 @@ export default function Process() {
                             {step.icon}
                           </div>
                           <div>
-                            <h3 className="text-3xl font-bold text-gray-900">{step.title}</h3>
+                            <h3 className="text-3xl font-light text-gray-900">{step.title}</h3>
                             <p className="text-gray-600 font-medium">{step.duration}</p>
                           </div>
                         </div>
@@ -348,7 +348,7 @@ export default function Process() {
 
                         {/* Deliverables */}
                         <div className="mb-8">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Deliverables</h4>
+                          <h4 className="text-lg font-medium text-gray-900 mb-4">Key Deliverables</h4>
                           <div className="grid md:grid-cols-2 gap-3">
                             {step.deliverables.map((deliverable, i) => (
                               <div key={i} className="flex items-center gap-3">
@@ -375,7 +375,7 @@ export default function Process() {
                                 {activity.icon}
                               </div>
                               <div>
-                                <h5 className="font-semibold text-gray-900 mb-2">{activity.title}</h5>
+                                <h5 className="font-medium text-gray-900 mb-2">{activity.title}</h5>
                                 <p className="text-gray-600 text-sm">{activity.description}</p>
                               </div>
                             </div>
@@ -401,7 +401,7 @@ export default function Process() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl font-light mb-6 text-gray-900">
                   What Clients Say About Our Process
                 </h2>
                 <p className="text-xl text-gray-600">
@@ -427,7 +427,7 @@ export default function Process() {
                         {testimonial.avatar}
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                        <div className="font-medium text-gray-900">{testimonial.author}</div>
                         <div className="text-gray-600">{testimonial.role}</div>
                       </div>
                     </div>
@@ -453,7 +453,7 @@ export default function Process() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <h2 className="text-4xl md:text-5xl font-light mb-6">
                   Ready to Experience the Difference?
                 </h2>
                 
@@ -472,7 +472,7 @@ export default function Process() {
                   </a>
                   <a
                     href="/case-studies"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
                   >
                     View Case Studies
                   </a>
@@ -486,7 +486,7 @@ export default function Process() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

@@ -118,12 +118,12 @@ function AIPlaybookPresentationComplete() {
         {currentSlide === 1 && (
           <section className="min-h-screen flex items-center relative overflow-hidden">
             <AIAnimatedBackground />
-            <div className="container mx-auto px-8 py-20 relative z-10">
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-6xl font-thin mb-12 text-white">The GenAI gold rush has begun.</h2>
+                  <h2 className="text-5xl md:text-6xl font-thin mb-12 text-white leading-tight">The GenAI gold rush has begun.</h2>
                   <div className="mb-8">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm tracking-wide">
+                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-gray-200 text-gray-300 text-sm tracking-wide">
                       Built for enterprise teams: Marketing, Product, HR & Engineering
                     </span>
                   </div>
@@ -151,11 +151,11 @@ function AIPlaybookPresentationComplete() {
 
         {/* Slide 3 - Shock Numbers */}
         {currentSlide === 2 && (
-          <section className="min-h-screen relative overflow-hidden">
+          <section className="min-h-screen relative overflow-hidden flex items-center">
             <AIAnimatedBackground />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
-            <div className="relative z-10 container mx-auto px-8 py-20">
-              <h2 className="text-7xl font-thin text-center mb-20">GenAI growth like the world has never seen.</h2>
+            <div className="relative z-10 container mx-auto px-6 md:px-8 py-24 md:py-28">
+              <h2 className="text-5xl md:text-7xl font-thin text-center mb-20 leading-tight">GenAI growth like the world has never seen.</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                 <BigNumberCard 
                   number="$320B"
@@ -181,10 +181,10 @@ function AIPlaybookPresentationComplete() {
         {/* Slide 4 - Infrastructure Arms Race */}
         {currentSlide === 3 && (
           <section className="min-h-screen flex items-center">
-            <div className="container mx-auto px-8 py-20">
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                 <div className="lg:col-span-2">
-                  <h2 className="text-6xl font-thin mb-12">LLM compute is the new oil.</h2>
+                  <h2 className="text-5xl md:text-6xl font-thin mb-12 leading-tight">LLM compute is the new oil.</h2>
                   <div className="space-y-8 mb-12">
                     <div>
                       <h3 className="text-2xl font-light text-blue-300 mb-4">UAE Compute Growth</h3>
@@ -216,9 +216,9 @@ function AIPlaybookPresentationComplete() {
 
         {/* Slide 5 - Visionary Leadership */}
         {currentSlide === 4 && (
-          <section className="min-h-screen bg-black relative">
-            <div className="container mx-auto px-8 py-20">
-              <h2 className="text-6xl font-thin text-center mb-20">Visionaries are setting the pace.</h2>
+          <section className="min-h-screen bg-black relative flex items-center">
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
+              <h2 className="text-5xl md:text-6xl font-thin text-center mb-20 leading-tight">Visionaries are setting the pace.</h2>
               <div className="max-w-4xl mx-auto">
                 <div className="grid grid-cols-2 gap-8">
                   <QuoteCard 
@@ -240,16 +240,16 @@ function AIPlaybookPresentationComplete() {
         {/* Slide 5A – Success Signals */}
         {currentSlide === 5 && (
           <section className="min-h-screen bg-gradient-to-br from-emerald-900/10 via-black to-blue-900/10 flex items-center">
-            <div className="container mx-auto px-8 py-20">
-              <div className="max-w-4xl mx-auto text-center mb-14">
-                <h2 className="text-6xl font-thin mb-6">Success Signals</h2>
-                <p className="text-xl text-gray-400">Measured outcomes from GenAI in the enterprise — fast wins your board will care about.</p>
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
+              <div className="max-w-4xl mx-auto text-center mb-16">
+                <h2 className="text-5xl md:text-6xl font-thin mb-8 leading-tight">Success Signals</h2>
+                <p className="text-lg md:text-xl text-gray-400 leading-relaxed">Measured outcomes from GenAI in the enterprise — fast wins your board will care about.</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                  <div className="relative bg-gray-900/70 p-8 rounded-2xl border border-gray-800 text-center">
+                  <div className="relative bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 text-center hover:border-emerald-500/50 transition-all duration-300">
                     <div className="text-5xl font-thin text-emerald-300 mb-2">↓ 28%</div>
                     <div className="text-gray-300 text-lg mb-2">Support AHT</div>
                     <div className="text-gray-500 text-sm">GenAI agent for Tier‑1 queries</div>
@@ -258,7 +258,7 @@ function AIPlaybookPresentationComplete() {
 
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                  <div className="relative bg-gray-900/70 p-8 rounded-2xl border border-gray-800 text-center">
+                  <div className="relative bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 text-center hover:border-blue-500/50 transition-all duration-300">
                     <div className="text-5xl font-thin text-blue-300 mb-2">↓ 40%</div>
                     <div className="text-gray-300 text-lg mb-2">Fraud false positives</div>
                     <div className="text-gray-500 text-sm">RAG + behavioral features</div>
@@ -267,7 +267,7 @@ function AIPlaybookPresentationComplete() {
 
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-sky-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                  <div className="relative bg-gray-900/70 p-8 rounded-2xl border border-gray-800 text-center">
+                  <div className="relative bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 text-center hover:border-cyan-500/50 transition-all duration-300">
                     <div className="text-5xl font-thin text-cyan-300 mb-2">↓ 35%</div>
                     <div className="text-gray-300 text-lg mb-2">Dev cycle time</div>
                     <div className="text-gray-500 text-sm">Code‑gen & test‑gen adoption</div>
@@ -288,13 +288,13 @@ function AIPlaybookPresentationComplete() {
         {/* Slide 6 – Enterprise GenAI Stack */}
         {currentSlide === 6 && (
           <section className="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center">
-            <div className="container mx-auto px-8 py-20">
-              <div className="max-w-4xl mx-auto text-center mb-14">
-                <h2 className="text-6xl font-thin mb-6">Your Enterprise GenAI Stack</h2>
-                <p className="text-xl text-gray-400">Everything you need to ship agents, copilots, and RAG—safely—inside the enterprise.</p>
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
+              <div className="max-w-4xl mx-auto text-center mb-16">
+                <h2 className="text-5xl md:text-6xl font-thin mb-8 leading-tight">Your Enterprise GenAI Stack</h2>
+                <p className="text-lg md:text-xl text-gray-400 leading-relaxed">Everything you need to ship agents, copilots, and RAG—safely—inside the enterprise.</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <StackCard title="Data Layer" desc="Vector stores, feature stores, observability; PII boundaries in your VPC" tag="Secure data" />
                 <StackCard title="Model Layer" desc="Arabic‑capable LLMs, sovereign/hosted options; prompt routing & caching" tag="Arabic‑first" />
                 <StackCard title="Orchestration" desc="Agent frameworks, tools, retrieval; workflow graphs & function calling" tag="Agents" />
@@ -314,11 +314,11 @@ function AIPlaybookPresentationComplete() {
         {/* Slide 7 - Teaser */}
         {currentSlide === 7 && (
           <section className="min-h-screen bg-gradient-to-br from-blue-900/10 via-black to-purple-900/10 flex items-center">
-            <div className="container mx-auto px-8 py-20">
-              <h2 className="text-6xl font-thin text-center mb-20">The 12‑Month Action Plan</h2>
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
+              <h2 className="text-5xl md:text-6xl font-thin text-center mb-20 leading-tight">The 12‑Month Action Plan</h2>
               
               <div className="max-w-5xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                   <ActionItem quarter="Marketing" title="Personalisation at scale, creative automation" />
                   <ActionItem quarter="Product" title="Discovery → delivery in weeks, not quarters" />
                   <ActionItem quarter="HR" title="Recruiting & onboarding agents, L&D copilots" />
@@ -350,12 +350,12 @@ function AIPlaybookPresentationComplete() {
               muted
               playsInline
             />
-            <div className="container mx-auto px-8 py-20 text-center relative z-10">
+            <div className="container mx-auto px-6 md:px-8 py-24 md:py-28 text-center relative z-10">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-6xl md:text-7xl font-thin mb-8">Don’t Be Left Behind.</h2>
-                <p className="text-2xl md:text-3xl font-light text-gray-300 leading-relaxed mb-2">GenAI is rewriting how the Middle East builds, markets, and operates.</p>
-                <p className="text-2xl md:text-3xl font-light text-gray-300 leading-relaxed mb-2">Leaders are shipping real agents, copilots, and code in weeks.</p>
-                <p className="text-xl md:text-2xl font-light text-gray-400 leading-relaxed mb-16">The only question: will your team lead or follow?</p>
+                <h2 className="text-5xl md:text-7xl font-thin mb-12 leading-tight">Don't Be Left Behind.</h2>
+                <p className="text-xl md:text-3xl font-light text-gray-300 leading-relaxed mb-4">GenAI is rewriting how the Middle East builds, markets, and operates.</p>
+                <p className="text-xl md:text-3xl font-light text-gray-300 leading-relaxed mb-4">Leaders are shipping real agents, copilots, and code in weeks.</p>
+                <p className="text-lg md:text-2xl font-light text-gray-400 leading-relaxed mb-16">The only question: will your team lead or follow?</p>
                 {/* CTA removed */}
               </div>
             </div>
@@ -447,7 +447,7 @@ const StackCard: React.FC<{ title: string; desc: string; tag: string }> = ({ tit
     <div className="relative bg-gray-900/70 p-6 rounded-2xl border border-gray-800 group-hover:border-blue-500/40 transition-colors">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-2xl font-light text-white">{title}</h3>
-        <span className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">{tag}</span>
+        <span className="text-xs px-2 py-1 rounded-full bg-white/5 border border-gray-200 text-gray-300">{tag}</span>
       </div>
       <p className="text-gray-400 leading-relaxed">{desc}</p>
     </div>

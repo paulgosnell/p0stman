@@ -133,13 +133,13 @@ export default function HeroShowcase() {
         <div className="absolute top-1/2 -translate-y-1/2 -left-3 -right-3 flex justify-between pointer-events-none">
           <button
             onClick={prevSlide}
-            className="w-10 h-10 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors shadow-lg pointer-events-auto"
+            className="w-10 h-10 flex items-center justify-center bg-gray-50 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors shadow-lg pointer-events-auto"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="w-10 h-10 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors shadow-lg pointer-events-auto"
+            className="w-10 h-10 flex items-center justify-center bg-gray-50 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors shadow-lg pointer-events-auto"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -150,7 +150,7 @@ export default function HeroShowcase() {
           <div className="absolute bottom-6 left-6">
             <Link 
               to={currentCase.path}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg text-white hover:bg-white/20 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 backdrop-blur-sm rounded-lg text-white hover:bg-white/20 transition-colors"
             >
               View Case Study
               <ExternalLink className="w-4 h-4" />

@@ -1651,7 +1651,7 @@ const Hello: React.FC = () => {
                 {[Sparkles, Zap, Globe, Bot].map((Icon, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+                    className="absolute w-8 h-8 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center"
                     style={{
                       top: '50%',
                       left: '50%',
@@ -1679,7 +1679,7 @@ const Hello: React.FC = () => {
             {Array.from({ length: 3 }).map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white/20 rounded-full"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-gray-200 rounded-full"
                 initial={{ scale: 0, opacity: 1 }}
                 animate={{
                   scale: [0, 3, 4],
@@ -1707,7 +1707,7 @@ const Hello: React.FC = () => {
             ].map((message, i) => (
               <motion.div
                 key={i}
-                className="absolute bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 text-white text-sm"
+                className="absolute bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-lg p-3 text-white text-sm"
                 style={{
                   left: `${20 + i * 20}%`,
                   top: `${30 + (i % 2) * 40}%`
@@ -1737,7 +1737,7 @@ const Hello: React.FC = () => {
               transition={{ delay: 4 }}
             >
               <motion.div
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white max-w-md"
+                className="bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-6 text-white max-w-md"
                 whileHover={{ scale: 1.05 }}
               >
                 <h3 className="text-xl font-bold mb-2">🌌 Thank You!</h3>

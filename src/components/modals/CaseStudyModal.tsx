@@ -124,15 +124,15 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                   {/* Close Button */}
                   <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                    className="absolute top-6 right-6 w-10 h-10 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
                   >
                     <X className="w-5 h-5" />
                   </button>
 
                   {/* Title Overlay */}
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="text-sm text-white/80 mb-2">{project.category}</div>
-                    <h2 className="text-3xl font-bold text-white mb-2">{project.title}</h2>
+                    <div className="text-sm text-gray-700 mb-2">{project.category}</div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-2">{project.title}</h2>
                     <p className="text-white/90 text-lg">{project.company}</p>
                   </div>
                 </div>

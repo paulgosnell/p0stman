@@ -53,7 +53,7 @@ export default function AICapabilitiesSlide() {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/10 rounded-full"
+            className="absolute w-2 h-2 bg-gray-50 rounded-full"
             animate={{
               x: [0, Math.random() * 100 - 50],
               y: [0, Math.random() * 100 - 50],
@@ -96,7 +96,7 @@ export default function AICapabilitiesSlide() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+              className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200"
             >
               <div className="flex items-center gap-3 mb-4">
                 {index === 0 ? <Bot className="w-6 h-6 text-purple-400" /> :

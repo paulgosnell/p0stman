@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 import { 
   FileText, 
   Upload, 
@@ -71,7 +71,7 @@ export default function Proposals() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SubHeader />
+      <HeaderV3Global />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
@@ -87,7 +87,7 @@ export default function Proposals() {
                 <span className="text-blue-400 font-medium text-lg">Project Proposals</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <h1 className="text-5xl md:text-6xl font-thin mb-6">
                 Get Your Custom
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"> Proposal</span>
               </h1>
@@ -127,7 +127,7 @@ export default function Proposals() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              <h2 className="text-4xl font-light mb-6 text-gray-900">
                 Choose Your Path
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -149,7 +149,7 @@ export default function Proposals() {
                     {option.icon}
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-light text-gray-900 mb-4">
                     {option.title}
                   </h3>
                   
@@ -197,7 +197,7 @@ export default function Proposals() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              <h2 className="text-4xl font-light mb-6 text-gray-900">
                 Sample Proposals
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -217,7 +217,7 @@ export default function Proposals() {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      <h3 className="text-lg font-medium text-gray-900 mb-1">
                         {proposal.title}
                       </h3>
                       <p className="text-gray-600 text-sm">
@@ -258,7 +258,7 @@ export default function Proposals() {
               viewport={{ once: true }}
             >
               <Zap className="w-16 h-16 mx-auto mb-6 text-yellow-300" />
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-light mb-6">
                 Ready to Start Your Project?
               </h2>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
@@ -284,13 +284,13 @@ export default function Proposals() {
         </div>
       </section>
 
-      <AnimatedFooter />
+      <FooterV3 />
 
       {/* Modals would go here - for now just placeholder */}
       {showRFPForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl p-8 max-w-md w-full">
-            <h3 className="text-2xl font-bold mb-4">RFP Upload</h3>
+            <h3 className="text-2xl font-light mb-4">RFP Upload</h3>
             <p className="text-gray-600 mb-6">
               This feature is coming soon. For now, please email your RFP to paul@p0stman.com
             </p>
@@ -307,7 +307,7 @@ export default function Proposals() {
       {showBuilder && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl p-8 max-w-md w-full">
-            <h3 className="text-2xl font-bold mb-4">Proposal Builder</h3>
+            <h3 className="text-2xl font-light mb-4">Proposal Builder</h3>
             <p className="text-gray-600 mb-6">
               This feature is coming soon. For now, please contact paul@p0stman.com to discuss your project.
             </p>

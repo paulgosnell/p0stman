@@ -41,7 +41,7 @@ export default function PhaseTitleSlide({ phase }: PhaseTitleSlideProps) {
         transition={{ duration: 0.5 }}
         className="text-center space-y-6"
       >
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 mb-6">
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-50 mb-6">
           <Icon className={`w-10 h-10 ${iconColor}`} />
         </div>
         

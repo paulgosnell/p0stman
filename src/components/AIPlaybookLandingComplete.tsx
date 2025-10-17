@@ -74,21 +74,21 @@ const AIPlaybookLandingComplete: React.FC = () => {
           {/* Hero Section */}
           <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             <AIAnimatedBackground />
-          
-          <div className="relative z-10 container mx-auto px-8 py-20">
+
+          <div className="relative z-10 container mx-auto px-6 md:px-8 py-24 md:py-28">
             <div className="text-center max-w-5xl mx-auto">
-              <h1 className={`text-7xl md:text-9xl font-thin tracking-tight mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className={`text-6xl md:text-9xl font-thin tracking-tight mb-8 leading-tight transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 AI in the
                 <span className="block font-light text-gray-300">Middle East</span>
-                <span className="block text-5xl md:text-7xl text-blue-400 font-extralight">2025</span>
+                <span className="block text-4xl md:text-7xl text-blue-400 font-extralight">2025</span>
               </h1>
-              <p className={`text-2xl md:text-3xl font-light text-gray-400 mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <p className={`text-xl md:text-3xl font-light text-gray-400 mb-12 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 The GenAI playbook for Marketing, Product, HR & Engineering
               </p>
 
-              <button 
+              <button
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-6 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl animate-pulse-glow"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg px-12 py-6 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-[1.02] shadow-xl"
                 aria-label="Get the free report"
               >
                 Get the Free Report
@@ -108,9 +108,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
             muted
             playsInline
           />
-          <div className="container mx-auto px-8 relative z-10">
+          <div className="container mx-auto px-6 md:px-8 py-24 md:py-28 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-thin text-center mb-16">Why leaders download this report</h2>
+              <h2 className="text-4xl md:text-5xl font-thin text-center mb-16 leading-tight">Why leaders download this report</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
                 <div>
                   <ul className="space-y-6">
@@ -141,9 +141,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 </div>
               </div>
               <div className="text-center">
-                <button 
+                <button
                   onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-gradient-to-r from-green-600 to-blue-600 px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 hover:shadow-lg px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-[1.02]"
                 >
                   Claim Your Copy Now
                 </button>
@@ -154,9 +154,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
 
         {/* Content Preview */}
   <section className="min-h-screen bg-black flex items-center">
-          <div className="container mx-auto px-8">
-            <h2 className="text-4xl md:text-5xl font-thin text-center mb-16">What’s inside (sneak peek)</h2>
-            
+          <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
+            <h2 className="text-4xl md:text-5xl font-thin text-center mb-16 leading-tight">What's inside (sneak peek)</h2>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
               <ContentCard 
                 icon={<ChartBarIcon className="w-12 h-12 text-blue-400" />}
@@ -176,9 +176,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <button 
+              <button
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 hover:scale-[1.02]"
               >
                 Get the full 40‑page report
               </button>
@@ -197,8 +197,8 @@ const AIPlaybookLandingComplete: React.FC = () => {
             muted
             playsInline
           />
-          <div className="container mx-auto px-8 relative z-10">
-            <h2 className="text-4xl md:text-5xl font-thin text-center mb-16">Who Is This For?</h2>
+          <div className="container mx-auto px-6 md:px-8 py-24 md:py-28 relative z-10">
+            <h2 className="text-4xl md:text-5xl font-thin text-center mb-16 leading-tight">Who Is This For?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
                 { title: 'CMOs & Growth Leaders', description: 'Ship personalisation that performs' },
@@ -212,10 +212,10 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 </div>
               ))}
             </div>
-            <div className="mt-14 text-center">
+            <div className="mt-16 text-center">
               <button
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-[1.02]"
               >
                 Get the free report
               </button>
@@ -225,13 +225,13 @@ const AIPlaybookLandingComplete: React.FC = () => {
 
           {/* Download Form Section */}
           <section id="download-form" className="min-h-screen flex items-center">
-          <div className="container mx-auto px-8">
+          <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
+
                 {/* Left - Reassurance */}
                 <div>
-                  <h2 className="text-4xl md:text-5xl font-thin mb-8">The Offer</h2>
+                  <h2 className="text-4xl md:text-5xl font-thin mb-8 leading-tight">The Offer</h2>
                   <div className="space-y-6">
                     {[
                       '100% free — instant access',
@@ -274,7 +274,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                         <button
                           type="submit"
                           disabled={isLoading}
-                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:scale-105"
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:scale-[1.02]"
                         >
                           {isLoading ? 'Processing...' : 'Send Me the Report'}
                         </button>
@@ -312,15 +312,15 @@ const AIPlaybookLandingComplete: React.FC = () => {
             muted
             playsInline
           />
-          <div className="container mx-auto px-8 text-center relative z-10">
+          <div className="container mx-auto px-6 md:px-8 py-24 md:py-28 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-thin mb-8">Don’t Be Left Behind.</h2>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-2">GenAI is rewriting how the Middle East builds, markets, and operates.</p>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-2">Leaders are shipping real agents, copilots, and code in weeks.</p>
-              <p className="text-xl md:text-2xl font-light text-gray-300 leading-relaxed mb-10">The only question: will your team lead or follow?</p>
-              <button 
+              <h2 className="text-5xl md:text-6xl font-thin mb-12 leading-tight">Don't Be Left Behind.</h2>
+              <p className="text-lg md:text-2xl font-light text-gray-300 leading-relaxed mb-4">GenAI is rewriting how the Middle East builds, markets, and operates.</p>
+              <p className="text-lg md:text-2xl font-light text-gray-300 leading-relaxed mb-4">Leaders are shipping real agents, copilots, and code in weeks.</p>
+              <p className="text-base md:text-xl font-light text-gray-400 leading-relaxed mb-12">The only question: will your team lead or follow?</p>
+              <button
                 onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-[1.02]"
               >
                 Get the free report
               </button>
@@ -329,16 +329,16 @@ const AIPlaybookLandingComplete: React.FC = () => {
         </section>
 
       {/* About P0STMAN Section */}
-        <section className="min-h-screen relative overflow-hidden flex items-center"> 
-          <div className="container mx-auto px-6 md:px-10 py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <section className="min-h-screen relative overflow-hidden flex items-center">
+          <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left: Copy + badges + CTAs */}
               <div>
-                <div className="inline-flex items-center space-x-3 mb-6">
-                  <span className="px-3 py-1 text-xs tracking-widest uppercase bg-white/5 border border-white/10 rounded-full text-gray-300">Built in the Middle East</span>
-                  <span className="px-3 py-1 text-xs tracking-widest uppercase bg-white/5 border border-white/10 rounded-full text-gray-300">Gov • Enterprise • Startup</span>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="px-3 py-1 text-xs tracking-widest uppercase bg-white/5 border border-gray-200 rounded-full text-gray-300">Built in the Middle East</span>
+                  <span className="px-3 py-1 text-xs tracking-widest uppercase bg-white/5 border border-gray-200 rounded-full text-gray-300">Gov • Enterprise • Startup</span>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-light text-white mb-5">P0STMAN — AI product studio for the bold</h2>
+                <h2 className="text-3xl md:text-5xl font-thin text-white mb-6 leading-tight">P0STMAN — AI product studio for the bold</h2>
                 <p className="text-lg md:text-xl text-gray-300/90 leading-relaxed mb-6">
                   We build AI products that ship. From strategy to working software, we partner with governments, enterprises and startups to turn vision into production in weeks, not quarters.
                 </p>
@@ -360,13 +360,13 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <a
                     href="/about"
-                    className="inline-flex justify-center items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 hover:scale-105 text-white"
+                    className="inline-flex justify-center items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg px-8 py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 hover:scale-[1.02] text-white"
                   >
                     Learn more about P0STMAN
                   </a>
                   <button
                     onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="inline-flex justify-center items-center px-8 py-4 rounded-full border border-white/20 text-base md:text-lg font-medium text-white/90 hover:text-white hover:border-white/40 transition-colors"
+                    className="inline-flex justify-center items-center px-8 py-4 rounded-full border border-gray-200 text-base md:text-lg font-medium text-white/90 hover:text-white hover:border-white/40 hover:bg-gray-50 transition-all duration-300"
                   >
                     Get the free report
                   </button>
@@ -374,9 +374,9 @@ const AIPlaybookLandingComplete: React.FC = () => {
 
                 {/* Small stat chips */}
                 <div className="mt-8 flex flex-wrap gap-3 text-sm">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">40+ AI products shipped</span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">7+ sectors</span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300"><span className="tabular-nums">6–8</span>wks avg. to PoC</span>
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-gray-200 text-gray-300">40+ AI products shipped</span>
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-gray-200 text-gray-300">7+ sectors</span>
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-gray-200 text-gray-300"><span className="tabular-nums">6–8</span>wks avg. to PoC</span>
                 </div>
               </div>
 
@@ -385,7 +385,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                 {/* Glow ring */}
                 <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-tr from-blue-600/40 via-purple-600/30 to-cyan-500/30 blur-2xl z-0" />
                 {/* Background video - higher opacity and z-10 */}
-                <div className="relative bg-black/50 border border-white/10 rounded-[28px] p-6 md:p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500 z-20">
+                <div className="relative bg-black/50 border border-gray-200 rounded-[28px] p-6 md:p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500 z-20">
                   <div className="aspect-[4/3] rounded-2xl relative flex items-center justify-center overflow-hidden">
                     {/* Video sits behind all card content */}
                     <video

@@ -96,7 +96,7 @@ export default function TechnologySlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+            className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200"
           >
             <div className="flex items-center gap-3 mb-6">
               {stack.icon}

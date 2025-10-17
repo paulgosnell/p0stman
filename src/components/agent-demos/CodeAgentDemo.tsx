@@ -62,7 +62,7 @@ export default function CodeAgentDemo() {
 
   return (
     <div className="p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg font-mono text-xs overflow-hidden">
-      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/10">
+      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />

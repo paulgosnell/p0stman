@@ -3,12 +3,12 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, Mail, MapPin, Clock, Twitter, Linkedin, ArrowRight } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import ContactForm from '../components/contact/ContactForm';
 import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import ServicesGrid from '../components/ServicesGrid';
-import AnimatedFooter from '../components/AnimatedFooter';
+import FooterV3 from '../components/v3/FooterV3';
 
 export default function ContactPage() {
   const [ref, inView] = useInView({
@@ -34,11 +34,11 @@ export default function ContactPage() {
           <link rel="canonical" href="https://p0stman.com/contact" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section ref={ref} className="relative min-h-[60vh] flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-20" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-20" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -54,11 +54,11 @@ export default function ContactPage() {
                   <span className="text-blue-400 font-medium">Get in Touch</span>
                 </div>
 
-                <h1 className="text-5xl font-bold mb-6">
+                <h1 className="text-5xl font-thin mb-6">
                   Let's Build Something Amazing Together
                 </h1>
-                
-                <p className="text-xl text-gray-300">
+
+                <p className="text-xl text-gray-300 font-light">
                   Whether you have a project in mind or want to explore possibilities, we're here to help turn your vision into reality.
                 </p>
                 
@@ -71,24 +71,24 @@ export default function ContactPage() {
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-6 mt-12">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
                     <MapPin className="w-6 h-6 text-blue-400 mb-4" />
-                    <h3 className="font-medium mb-2">Location</h3>
-                    <p className="text-gray-300">Dubai, UAE</p>
+                    <h3 className="font-light mb-2">Location</h3>
+                    <p className="text-gray-300 font-light">Dubai, UAE</p>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
                     <Mail className="w-6 h-6 text-blue-400 mb-4" />
-                    <h3 className="font-medium mb-2">Email</h3>
-                    <a href="mailto:hello@p0stman.com" className="text-gray-300 hover:text-white transition-colors">
+                    <h3 className="font-light mb-2">Email</h3>
+                    <a href="mailto:hello@p0stman.com" className="text-gray-300 font-light hover:text-white transition-colors">
                       hello@p0stman.com
                     </a>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
                     <Clock className="w-6 h-6 text-blue-400 mb-4" />
-                    <h3 className="font-medium mb-2">Working Hours</h3>
-                    <p className="text-gray-300">Mon - Fri, 9am - 6pm GST</p>
+                    <h3 className="font-light mb-2">Working Hours</h3>
+                    <p className="text-gray-300 font-light">Mon - Fri, 9am - 6pm GST</p>
                   </div>
                 </div>
               </motion.div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
         <ContactFAQ />
         <ServicesGrid />
         
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

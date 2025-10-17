@@ -25,9 +25,9 @@ import {
   Award,
   ExternalLink
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import WebsiteModal from '../components/modals/WebsiteModal';
-import AnimatedFooter from '../components/AnimatedFooter';
+import FooterV3 from '../components/v3/FooterV3';
 
 // Website portfolio examples
 const portfolioExamples = [
@@ -197,12 +197,12 @@ export default function Website() {
           <link rel="canonical" href="https://p0stman.com/website" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Enhanced Hero Section */}
-        <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center bg-white text-gray-900 overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
             {/* Animated Background Elements */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -225,7 +225,7 @@ export default function Website() {
                     <span className="text-blue-400 font-medium text-lg">Professional Website Development</span>
                   </div>
 
-                  <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+                  <h1 className="text-6xl md:text-7xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
                       Your Website,
                     </span>
@@ -258,7 +258,7 @@ export default function Website() {
                   {/* Pricing & CTA */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
                     <div className="text-center sm:text-left">
-                      <div className="text-4xl font-bold mb-1">$10,000</div>
+                      <div className="text-4xl font-light mb-1">$10,000</div>
                       <div className="text-gray-400">Fixed price, no surprises</div>
                     </div>
                     <button
@@ -282,7 +282,7 @@ export default function Website() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl transform rotate-6" />
                   
                   {/* Main Image */}
-                  <div className="relative bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20">
+                  <div className="relative bg-gray-50 backdrop-blur-sm p-6 rounded-3xl border border-gray-200">
                     <img
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80"
                       alt="Professional Website Development"
@@ -291,12 +291,12 @@ export default function Website() {
                     
                     {/* Floating Stats */}
                     <div className="absolute -top-4 -left-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg">
-                      <div className="text-2xl font-bold text-gray-900">2 weeks</div>
+                      <div className="text-2xl font-light text-gray-900">2 weeks</div>
                       <div className="text-sm text-gray-600">Delivery time</div>
                     </div>
                     
                     <div className="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg">
-                      <div className="text-2xl font-bold text-gray-900">100%</div>
+                      <div className="text-2xl font-light text-gray-900">100%</div>
                       <div className="text-sm text-gray-600">Success rate</div>
                     </div>
                   </div>
@@ -317,7 +317,7 @@ export default function Website() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Website Projects
                   </span>
@@ -353,7 +353,7 @@ export default function Website() {
                     </div>
                     
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                      <h3 className="text-xl font-light text-gray-900 mb-2">{project.title}</h3>
                       <p className="text-gray-600 mb-4">{project.description}</p>
                       
                       <div className="space-y-2 mb-4">
@@ -391,7 +391,7 @@ export default function Website() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl font-light mb-6 text-gray-900">
                   Built with Modern Technology
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -412,7 +412,7 @@ export default function Website() {
                     <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center text-white mx-auto mb-4 shadow-lg`}>
                       {category.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{category.category}</h3>
+                    <h3 className="text-xl font-light text-gray-900 mb-4">{category.category}</h3>
                     <div className="space-y-2">
                       {category.technologies.map((tech, i) => (
                         <div key={i} className="text-gray-600">{tech}</div>
@@ -436,7 +436,7 @@ export default function Website() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl font-light mb-6 text-gray-900">
                   Our Streamlined Process
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -456,13 +456,13 @@ export default function Website() {
                   >
                     <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-light">
                           {step.step}
                         </div>
                         <div className="text-blue-600">{step.icon}</div>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                      <h3 className="text-xl font-light text-gray-900 mb-2">{step.title}</h3>
                       <p className="text-gray-600 mb-4">{step.description}</p>
                       <div className="text-sm text-blue-600 font-medium mb-4">Duration: {step.duration}</div>
                       
@@ -498,7 +498,7 @@ export default function Website() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl font-light mb-6 text-gray-900">
                   Everything You Need Included
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -518,7 +518,7 @@ export default function Website() {
                   >
                     <div className="flex-shrink-0">{feature.icon}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">{feature.title}</h3>
                       <p className="text-gray-600">{feature.description}</p>
                     </div>
                   </motion.div>
@@ -539,7 +539,7 @@ export default function Website() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                <h2 className="text-4xl font-light mb-6 text-gray-900">
                   What Clients Say
                 </h2>
                 <p className="text-xl text-gray-600">
@@ -566,11 +566,11 @@ export default function Website() {
                       "{testimonial.quote}"
                     </p>
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-light">
                         {testimonial.avatar}
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                        <div className="font-medium text-gray-900">{testimonial.author}</div>
                         <div className="text-gray-600">{testimonial.role}</div>
                       </div>
                     </div>
@@ -591,7 +591,7 @@ export default function Website() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <h2 className="text-4xl md:text-5xl font-light mb-6">
                   Ready to Launch Your Website?
                 </h2>
                 
@@ -600,18 +600,18 @@ export default function Website() {
                   for faster, better, and more affordable websites.
                 </p>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
+                <div className="bg-gray-50 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
                   <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div>
-                      <div className="text-3xl font-bold mb-1">$10,000</div>
+                      <div className="text-3xl font-light mb-1">$10,000</div>
                       <div className="text-blue-100 text-sm">Fixed Price</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold mb-1">2 weeks</div>
+                      <div className="text-3xl font-light mb-1">2 weeks</div>
                       <div className="text-blue-100 text-sm">Delivery Time</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold mb-1">30 days</div>
+                      <div className="text-3xl font-light mb-1">30 days</div>
                       <div className="text-blue-100 text-sm">Free Support</div>
                     </div>
                   </div>
@@ -627,7 +627,7 @@ export default function Website() {
                   </button>
                   <a
                     href="/case-studies"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
                   >
                     View Portfolio
                   </a>
@@ -641,7 +641,7 @@ export default function Website() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
 
         <WebsiteModal 
           isOpen={showWebsiteModal}

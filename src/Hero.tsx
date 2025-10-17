@@ -35,7 +35,7 @@ export default function Hero() {
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-20" />
       </div>
       
       <Header />

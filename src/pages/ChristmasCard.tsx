@@ -122,7 +122,7 @@ export default function ChristmasCard() {
               <div className="flex flex-wrap justify-center gap-4 py-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10"
+                  className="p-4 bg-gray-50 backdrop-blur-sm rounded-xl border border-gray-200"
                 >
                   <Bot className="w-8 h-8 text-blue-400 mb-2" />
                   <p className="text-sm">Building the Future</p>
@@ -130,7 +130,7 @@ export default function ChristmasCard() {
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10"
+                  className="p-4 bg-gray-50 backdrop-blur-sm rounded-xl border border-gray-200"
                 >
                   <Gift className="w-8 h-8 text-red-400 mb-2" />
                   <p className="text-sm">Spreading Joy</p>
@@ -138,7 +138,7 @@ export default function ChristmasCard() {
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10"
+                  className="p-4 bg-gray-50 backdrop-blur-sm rounded-xl border border-gray-200"
                 >
                   <Sparkles className="w-8 h-8 text-yellow-400 mb-2" />
                   <p className="text-sm">Creating Magic</p>

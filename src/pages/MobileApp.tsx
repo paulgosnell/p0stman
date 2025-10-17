@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, Smartphone, Zap, CheckCircle, ArrowRight } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import ServicesGrid from '../components/ServicesGrid';
 import AppShowcase from '../components/mobile-app/AppShowcase';
 import PlatformFeatures from '../components/mobile-app/PlatformFeatures';
@@ -61,11 +61,11 @@ export default function MobileApp() {
           <link rel="canonical" href="https://p0stman.com/mobile-app" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -87,7 +87,7 @@ export default function MobileApp() {
                       Transform Your Idea Into a Mobile App
                     </h1>
                     
-                    <p className="text-xl text-gray-300 mb-8">
+                    <p className="text-xl text-gray-600 mb-8">
                       Get your mobile app built in 4 weeks using AI-powered development. Native apps for both iOS and Android platforms.
                     </p>
 
@@ -123,13 +123,13 @@ export default function MobileApp() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+                      className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
                     >
                       <div className="flex items-center gap-4">
                         {feature.icon}
                         <div>
                           <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                          <p className="text-gray-300">{feature.description}</p>
+                          <p className="text-gray-600">{feature.description}</p>
                         </div>
                       </div>
                     </motion.div>

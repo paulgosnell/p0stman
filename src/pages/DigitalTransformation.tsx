@@ -23,8 +23,8 @@ import {
   Settings,
   BarChart
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 const transformationAreas = [
   {
@@ -217,7 +217,7 @@ export default function DigitalTransformation() {
           <meta name="keywords" content="digital transformation, enterprise modernization, AI integration, cloud migration, organizational change" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
@@ -234,7 +234,7 @@ export default function DigitalTransformation() {
                     <span className="text-blue-400 font-semibold">Digital Transformation</span>
                   </div>
                   
-                  <h1 className="text-5xl font-bold mb-6 leading-tight">
+                  <h1 className="text-5xl font-thin mb-6 leading-tight">
                     Transform Your Organization
                     <span className="block text-blue-400">For the Digital Future</span>
                   </h1>
@@ -260,7 +260,7 @@ export default function DigitalTransformation() {
                       href="#success-stories"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-400 text-white rounded-lg hover:bg-white/10 transition-all font-semibold text-lg"
+                      className="px-8 py-4 border border-gray-400 text-white rounded-lg hover:bg-gray-50 transition-all font-semibold text-lg"
                     >
                       View Success Stories
                     </motion.a>
@@ -273,27 +273,27 @@ export default function DigitalTransformation() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-                    <h3 className="text-2xl font-bold mb-6">Transformation Impact</h3>
+                  <div className="bg-gray-50 backdrop-blur-sm p-8 rounded-2xl border border-gray-200">
+                    <h3 className="text-2xl font-light mb-6">Transformation Impact</h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <TrendingUp className="w-6 h-6 text-green-400 mt-1" />
                         <div>
-                          <h4 className="font-semibold">Measurable ROI</h4>
+                          <h4 className="font-light">Measurable ROI</h4>
                           <p className="text-gray-300 text-sm">Average 300% ROI within 18 months</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <Zap className="w-6 h-6 text-yellow-400 mt-1" />
                         <div>
-                          <h4 className="font-semibold">Accelerated Innovation</h4>
+                          <h4 className="font-light">Accelerated Innovation</h4>
                           <p className="text-gray-300 text-sm">10x faster product development cycles</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <Users className="w-6 h-6 text-purple-400 mt-1" />
                         <div>
-                          <h4 className="font-semibold">Team Empowerment</h4>
+                          <h4 className="font-light">Team Empowerment</h4>
                           <p className="text-gray-300 text-sm">Enhanced productivity and job satisfaction</p>
                         </div>
                       </div>
@@ -316,7 +316,7 @@ export default function DigitalTransformation() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Transformation Focus Areas</h2>
+                <h2 className="text-4xl font-light mb-6">Transformation Focus Areas</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Comprehensive digital transformation across technology, processes, and people
                 </p>
@@ -333,7 +333,7 @@ export default function DigitalTransformation() {
                     className="text-center p-6 rounded-xl hover:shadow-lg transition-all"
                   >
                     <div className="mb-4 flex justify-center">{area.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
+                    <h3 className="text-xl font-light mb-3">{area.title}</h3>
                     <p className="text-gray-600">{area.description}</p>
                   </motion.div>
                 ))}
@@ -353,7 +353,7 @@ export default function DigitalTransformation() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Industry-Specific Solutions</h2>
+                <h2 className="text-4xl font-light mb-6">Industry-Specific Solutions</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Tailored transformation approaches for different industry challenges
                 </p>
@@ -371,12 +371,12 @@ export default function DigitalTransformation() {
                   >
                     <div className="flex items-center gap-3 mb-6">
                       {industry.icon}
-                      <h3 className="text-2xl font-bold">{industry.name}</h3>
+                      <h3 className="text-2xl font-light">{industry.name}</h3>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-red-600 mb-3">Common Challenges:</h4>
+                        <h4 className="font-light text-red-600 mb-3">Common Challenges:</h4>
                         <ul className="space-y-2">
                           {industry.challenges.map((challenge, i) => (
                             <li key={i} className="flex items-start gap-2">
@@ -388,7 +388,7 @@ export default function DigitalTransformation() {
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-green-600 mb-3">Our Solutions:</h4>
+                        <h4 className="font-light text-green-600 mb-3">Our Solutions:</h4>
                         <ul className="space-y-2">
                           {industry.solutions.map((solution, i) => (
                             <li key={i} className="flex items-start gap-2">
@@ -417,7 +417,7 @@ export default function DigitalTransformation() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Transformation Process</h2>
+                <h2 className="text-4xl font-light mb-6">Transformation Process</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Structured approach to ensure successful digital transformation
                 </p>
@@ -439,10 +439,10 @@ export default function DigitalTransformation() {
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                          <h3 className="text-2xl font-bold">{phase.title}</h3>
+                          <h3 className="text-2xl font-light">{phase.title}</h3>
                           <div className="flex items-center gap-2 text-blue-600">
                             <Clock className="w-4 h-4" />
-                            <span className="font-semibold">{phase.duration}</span>
+                            <span className="font-light">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-gray-600 mb-4">{phase.description}</p>
@@ -474,7 +474,7 @@ export default function DigitalTransformation() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Transformation Success Stories</h2>
+                <h2 className="text-4xl font-light mb-6">Transformation Success Stories</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Real results from digital transformation initiatives across industries
                 </p>
@@ -493,34 +493,34 @@ export default function DigitalTransformation() {
                     <div className="grid lg:grid-cols-3 gap-8">
                       <div>
                         <div className="mb-4">
-                          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                             {story.industry}
                           </span>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4">{story.client}</h3>
+                        <h3 className="text-2xl font-light mb-4">{story.client}</h3>
                         <div className="space-y-4">
                           <div>
-                            <h4 className="font-semibold text-red-600 mb-2">Challenge:</h4>
+                            <h4 className="font-light text-red-600 mb-2">Challenge:</h4>
                             <p className="text-gray-600 text-sm">{story.challenge}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-blue-600 mb-2">Transformation:</h4>
+                            <h4 className="font-light text-blue-600 mb-2">Transformation:</h4>
                             <p className="text-gray-600 text-sm">{story.transformation}</p>
                           </div>
                           <div className="flex items-center gap-2 text-sm text-purple-600">
                             <Clock className="w-4 h-4" />
-                            <span className="font-semibold">{story.timeline}</span>
+                            <span className="font-light">{story.timeline}</span>
                           </div>
                         </div>
                       </div>
                       
                       <div className="lg:col-span-2">
-                        <h4 className="font-semibold text-green-600 mb-4">Results Achieved:</h4>
+                        <h4 className="font-light text-green-600 mb-4">Results Achieved:</h4>
                         <div className="grid md:grid-cols-2 gap-4">
                           {story.results.map((result, i) => (
                             <div key={i} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
                               <BarChart className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700 font-medium">{result}</span>
+                              <span className="text-gray-700 font-light">{result}</span>
                             </div>
                           ))}
                         </div>
@@ -544,7 +544,7 @@ export default function DigitalTransformation() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Transformation Packages</h2>
+                <h2 className="text-4xl font-light mb-6">Transformation Packages</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Flexible engagement models to match your transformation needs
                 </p>
@@ -573,9 +573,9 @@ export default function DigitalTransformation() {
                     )}
                     
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
+                      <h3 className="text-2xl font-light mb-2">{pkg.name}</h3>
                       <div className="mb-2">
-                        <span className="text-4xl font-bold">{pkg.price}</span>
+                        <span className="text-4xl font-light">{pkg.price}</span>
                       </div>
                       <p className="text-gray-600 mb-4">{pkg.description}</p>
                       <div className="flex items-center justify-center gap-2 text-sm text-blue-600">
@@ -599,7 +599,7 @@ export default function DigitalTransformation() {
                         href="mailto:hello@p0stman.com?subject=Digital Transformation Inquiry"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className={`w-full px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center gap-2 ${
+                        className={`w-full px-6 py-3 rounded-lg font-medium transition-all inline-flex items-center justify-center gap-2 ${
                           pkg.popular
                             ? 'bg-blue-600 text-white hover:bg-blue-700'
                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -616,7 +616,7 @@ export default function DigitalTransformation() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

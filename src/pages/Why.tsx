@@ -12,8 +12,8 @@ import {
   Building2,
   Globe
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 export default function Why() {
   const [heroRef, heroInView] = useInView({
@@ -57,7 +57,7 @@ export default function Why() {
           <meta name="description" content="Learn about our mission to help bold ideas get built faster with AI-native product development and our founder-first approach." />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section */}
         <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -206,7 +206,7 @@ export default function Why() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

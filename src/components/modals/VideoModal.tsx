@@ -21,7 +21,7 @@ export default function VideoModal({ isOpen, onClose, videoId }: VideoModalProps
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 text-white/80 hover:text-white transition-colors"
+              className="absolute top-4 right-4 z-10 text-gray-700 hover:text-white transition-colors"
             >
               <X className="w-6 h-6" />
             </button>

@@ -20,9 +20,7 @@ export default function HeroV3() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-40 md:py-48 overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white pointer-events-none" />
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-40 md:py-48 overflow-hidden bg-white">
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-0 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
@@ -47,7 +45,13 @@ export default function HeroV3() {
                 {voiceAgent.isConnecting ? 'Connecting...' : 'Chat with AI Agent'}
                 {!voiceAgent.isConnecting && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
               </button>
-              <button className="px-8 py-3.5 bg-white border border-gray-200 text-gray-900 rounded-lg font-light text-base hover:bg-gray-50 transition-colors">
+              <button
+                onClick={() => {
+                  const element = document.getElementById('agents');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-3.5 bg-white border border-gray-200 text-gray-900 rounded-lg font-light text-base hover:bg-gray-50 transition-colors"
+              >
                 See How It Works
               </button>
             </div>

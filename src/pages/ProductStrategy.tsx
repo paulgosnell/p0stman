@@ -20,8 +20,8 @@ import {
   Map,
   Compass
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 const strategicAreas = [
   {
@@ -174,7 +174,7 @@ export default function ProductStrategy() {
           <meta name="keywords" content="product strategy, product roadmap, product planning, strategic consulting, product vision" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -191,7 +191,7 @@ export default function ProductStrategy() {
                     <span className="text-blue-600 font-semibold">Product Strategy Consulting</span>
                   </div>
                   
-                  <h1 className="text-5xl font-bold mb-6 leading-tight">
+                  <h1 className="text-5xl font-thin mb-6 leading-tight">
                     Strategic Product Planning
                     <span className="block text-blue-600">That Drives Real Growth</span>
                   </h1>
@@ -231,26 +231,26 @@ export default function ProductStrategy() {
                   className="relative"
                 >
                   <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <h3 className="text-2xl font-bold mb-6">Strategic Outcomes</h3>
+                    <h3 className="text-2xl font-light mb-6">Strategic Outcomes</h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <Map className="w-6 h-6 text-blue-600 mt-1" />
                         <div>
-                          <h4 className="font-semibold">Clear Product Roadmap</h4>
+                          <h4 className="font-medium">Clear Product Roadmap</h4>
                           <p className="text-gray-600 text-sm">6-18 month strategic roadmap with priorities</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <BarChart className="w-6 h-6 text-green-600 mt-1" />
                         <div>
-                          <h4 className="font-semibold">Measurable Growth</h4>
+                          <h4 className="font-medium">Measurable Growth</h4>
                           <p className="text-gray-600 text-sm">Data-driven metrics and KPIs for success</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <Users className="w-6 h-6 text-purple-600 mt-1" />
                         <div>
-                          <h4 className="font-semibold">Team Alignment</h4>
+                          <h4 className="font-medium">Team Alignment</h4>
                           <p className="text-gray-600 text-sm">Unified vision across all stakeholders</p>
                         </div>
                       </div>
@@ -273,7 +273,7 @@ export default function ProductStrategy() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Strategic Focus Areas</h2>
+                <h2 className="text-4xl font-light mb-6">Strategic Focus Areas</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Comprehensive product strategy covering all aspects of successful product development
                 </p>
@@ -290,7 +290,7 @@ export default function ProductStrategy() {
                     className="text-center p-6 rounded-xl hover:shadow-lg transition-all"
                   >
                     <div className="mb-4 flex justify-center">{area.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
+                    <h3 className="text-xl font-medium mb-3">{area.title}</h3>
                     <p className="text-gray-600">{area.description}</p>
                   </motion.div>
                 ))}
@@ -310,7 +310,7 @@ export default function ProductStrategy() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Strategic Process</h2>
+                <h2 className="text-4xl font-light mb-6">Strategic Process</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Proven methodology for developing winning product strategies
                 </p>
@@ -332,10 +332,10 @@ export default function ProductStrategy() {
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                          <h3 className="text-2xl font-bold">{step.title}</h3>
+                          <h3 className="text-2xl font-light">{step.title}</h3>
                           <div className="flex items-center gap-2 text-blue-600">
                             <Clock className="w-4 h-4" />
-                            <span className="font-semibold">{step.duration}</span>
+                            <span className="font-medium">{step.duration}</span>
                           </div>
                         </div>
                         <p className="text-gray-600 mb-4">{step.description}</p>
@@ -367,7 +367,7 @@ export default function ProductStrategy() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Strategy Success Stories</h2>
+                <h2 className="text-4xl font-light mb-6">Strategy Success Stories</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Real results from strategic product planning across industries
                 </p>
@@ -384,25 +384,25 @@ export default function ProductStrategy() {
                     className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl border border-gray-200"
                   >
                     <div className="mb-4">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                         {study.industry}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold mb-4">{study.title}</h3>
+                    <h3 className="text-xl font-light mb-4">{study.title}</h3>
                     
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-red-600 mb-2">Challenge:</h4>
+                        <h4 className="font-medium text-red-600 mb-2">Challenge:</h4>
                         <p className="text-gray-600 text-sm">{study.challenge}</p>
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-blue-600 mb-2">Solution:</h4>
+                        <h4 className="font-medium text-blue-600 mb-2">Solution:</h4>
                         <p className="text-gray-600 text-sm">{study.solution}</p>
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-green-600 mb-2">Results:</h4>
+                        <h4 className="font-medium text-green-600 mb-2">Results:</h4>
                         <ul className="space-y-1">
                           {study.results.map((result, i) => (
                             <li key={i} className="flex items-center gap-2">
@@ -431,7 +431,7 @@ export default function ProductStrategy() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-bold mb-6">Strategy Packages</h2>
+                <h2 className="text-4xl font-light mb-6">Strategy Packages</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Flexible engagement models to match your strategic needs
                 </p>
@@ -453,16 +453,16 @@ export default function ProductStrategy() {
                   >
                     {option.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
                           Most Popular
                         </span>
                       </div>
                     )}
                     
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold mb-2">{option.name}</h3>
+                      <h3 className="text-2xl font-light mb-2">{option.name}</h3>
                       <div className="mb-2">
-                        <span className="text-4xl font-bold">{option.price}</span>
+                        <span className="text-4xl font-light">{option.price}</span>
                       </div>
                       <p className="text-gray-600 mb-4">{option.description}</p>
                       <div className="flex items-center justify-center gap-2 text-sm text-blue-600">
@@ -503,7 +503,7 @@ export default function ProductStrategy() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

@@ -49,7 +49,7 @@ export default function Links() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-4 md:p-8">
+    <div className="min-h-screen bg-white text-gray-900 p-4 md:p-8">
       <div className="max-w-lg mx-auto">
         {/* Profile Section */}
         <div className="text-center mb-12">

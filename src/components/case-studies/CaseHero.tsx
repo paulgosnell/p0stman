@@ -111,7 +111,7 @@ export default function CaseHero({
               {prevCase ? (
                 <Link
                   to={prevCase.path}
-                  className="pointer-events-auto w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all group"
+                  className="pointer-events-auto w-12 h-12 bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-white hover:bg-white/20 transition-all group"
                 >
                   <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
                 </Link>
@@ -122,7 +122,7 @@ export default function CaseHero({
               {nextCase ? (
                 <Link
                   to={nextCase.path}
-                  className="pointer-events-auto w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all group"
+                  className="pointer-events-auto w-12 h-12 bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-white hover:bg-white/20 transition-all group"
                 >
                   <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
@@ -202,17 +202,17 @@ export default function CaseHero({
                 className="flex flex-wrap justify-center gap-4 mt-8"
               >
                 {industry && (
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm border border-white/20">
+                  <span className="px-4 py-2 bg-gray-50 backdrop-blur-sm rounded-full text-gray-700 text-sm border border-gray-200">
                     {industry}
                   </span>
                 )}
                 {timeline && (
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm border border-white/20">
+                  <span className="px-4 py-2 bg-gray-50 backdrop-blur-sm rounded-full text-gray-700 text-sm border border-gray-200">
                     {timeline}
                   </span>
                 )}
                 {teamSize && (
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm border border-white/20">
+                  <span className="px-4 py-2 bg-gray-50 backdrop-blur-sm rounded-full text-gray-700 text-sm border border-gray-200">
                     {teamSize}
                   </span>
                 )}
@@ -240,13 +240,13 @@ export default function CaseHero({
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Card */}
-                  <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-500 transform hover:-translate-y-1">
+                  <div className="relative bg-gray-50 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gray-200 hover:bg-white/15 hover:border-white/30 transition-all duration-500 transform hover:-translate-y-1">
                     <div className="text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
                       <span className="bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
                         {stat.value}
                       </span>
                     </div>
-                    <div className="text-white/80 font-medium text-sm md:text-base">
+                    <div className="text-gray-700 font-medium text-sm md:text-base">
                       {stat.label}
                     </div>
                   </div>

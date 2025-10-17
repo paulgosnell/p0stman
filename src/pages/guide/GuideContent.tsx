@@ -9,6 +9,8 @@ import Breadcrumbs from '../../components/guide/Breadcrumbs';
 import GuideIntro from '../../components/guide/GuideIntro';
 import DarkModeToggle from '../../components/guide/DarkModeToggle';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import HeaderV3Global from '../../components/v3/HeaderV3Global';
+import FooterV3 from '../../components/v3/FooterV3';
 
 export default function GuideContent() {
   const [sections, setSections] = useState<GuideSection[]>([]);
@@ -69,7 +71,8 @@ export default function GuideContent() {
 
   return (
     <AccessCheck>
-    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-50'} transition-colors`}>
+      <HeaderV3Global />
+    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'} transition-colors`}>
 
       <DarkModeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
       
@@ -125,6 +128,7 @@ export default function GuideContent() {
         </div>
       </div>
     </div>
+    <FooterV3 />
     </AccessCheck>
   );
 }

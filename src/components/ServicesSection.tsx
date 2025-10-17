@@ -53,16 +53,16 @@ export default function ServicesSection() {
   const { t, isRTL } = useLanguage();
 
   return (
-    <section ref={ref} className="py-24 bg-white" id="packages">
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="py-24 md:py-28 bg-white" id="packages">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-6">
               <Zap className="w-6 h-6 text-blue-600" />
               <span className="text-blue-600 font-medium">Services</span>
             </div>
             
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-light mb-6">
               Services
             </h2>
             
@@ -71,7 +71,7 @@ export default function ServicesSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {[
               {
                 title: "Digital Products",
@@ -109,7 +109,7 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all hover:border-gray-300 group"
+                className="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-lg transition-all hover:border-gray-300 group"
               >
                 <div className={`p-3 bg-gradient-to-r ${service.color} rounded-xl inline-block mb-4 text-white group-hover:scale-110 transition-transform`}>
                   {service.icon}

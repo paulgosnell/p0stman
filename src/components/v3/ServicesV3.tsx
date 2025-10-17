@@ -90,7 +90,13 @@ export default function ServicesV3() {
 
         {/* CTA Button */}
         <div className="pt-6">
-          <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 group/btn">
+          <button
+            onClick={() => {
+              const element = document.getElementById('cta');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 group/btn"
+          >
             {service.cta}
             <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
           </button>
@@ -100,7 +106,7 @@ export default function ServicesV3() {
   ));
 
   return (
-    <section id="services" className="py-40 md:py-48 bg-white">
+    <section id="services" className="py-48 md:py-52 bg-white">
       {/* Section Heading - Contained */}
       <div className="max-w-6xl mx-auto px-6 md:px-0 mb-20 md:mb-24">
         <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
@@ -113,8 +119,8 @@ export default function ServicesV3() {
         <CardCarousel
           cards={cardElements}
           cardsPerView={{
-            mobile: 1,
-            tablet: 2,
+            mobile: 3,
+            tablet: 3,
             desktop: 3
           }}
         />

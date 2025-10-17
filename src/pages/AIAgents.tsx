@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, Brain, Zap, CheckCircle, ArrowRight, Cpu, Network, Settings, Workflow, Bot as BotIcon, MessageSquare, Target } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import Contact from '../components/Contact';
 import ServicesGrid from '../components/ServicesGrid';
 
@@ -85,11 +85,11 @@ export default function AIAgents() {
           <link rel="canonical" href="https://p0stman.com/ai-agents" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -107,11 +107,11 @@ export default function AIAgents() {
                       <span className="text-violet-400 font-medium">Custom AI Agents</span>
                     </div>
 
-                    <h1 className="text-5xl font-bold mb-6">
+                    <h1 className="text-5xl font-thin mb-6">
                       Supercharge Your Business with AI Agents
                     </h1>
                     
-                    <p className="text-xl text-gray-300 mb-8">
+                    <p className="text-xl text-gray-600 mb-8">
                       Not just chatbots - autonomous AI specialists that work 24/7 to transform your business operations. Deploy intelligent agents that learn, adapt, and deliver results.
                     </p>
 
@@ -126,7 +126,7 @@ export default function AIAgents() {
 
                     <div className="flex items-center gap-6 mt-8">
                       <div>
-                        <div className="text-3xl font-bold mb-1">From $5,000</div>
+                        <div className="text-3xl font-light mb-1">From $5,000</div>
                         <div className="text-gray-400">Custom AI Agent</div>
                       </div>
                       <a
@@ -147,13 +147,13 @@ export default function AIAgents() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
+                      className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
                     >
                       <div className="flex items-center gap-4">
                         {useCase.icon}
                         <div>
-                          <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
-                          <p className="text-gray-300">{useCase.description}</p>
+                          <h3 className="text-xl font-light mb-2">{useCase.title}</h3>
+                          <p className="text-gray-600">{useCase.description}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -167,7 +167,7 @@ export default function AIAgents() {
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-bold mb-6">What Makes AI Agents Different?</h2>
+              <h2 className="text-3xl font-light mb-6">What Makes AI Agents Different?</h2>
               <p className="text-gray-600">
                 Unlike traditional chatbots, AI agents are autonomous specialists that can understand context, make decisions, and take actions without constant human input.
               </p>
@@ -185,7 +185,7 @@ export default function AIAgents() {
                   <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4 text-violet-600">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-light mb-2">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </motion.div>
               ))}
@@ -198,7 +198,7 @@ export default function AIAgents() {
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">The Future is Here</h2>
+                  <h2 className="text-3xl font-light mb-6">The Future is Here</h2>
                   <p className="text-gray-600 mb-8">
                     AI agents are revolutionizing how businesses operate. From automating complex workflows to making data-driven decisions, these autonomous systems are delivering unprecedented efficiency and insights.
                   </p>
@@ -208,7 +208,7 @@ export default function AIAgents() {
                         <CheckCircle className="w-4 h-4 text-violet-600" />
                       </div>
                       <div>
-                        <h3 className="font-medium mb-1">Reduce Operational Costs</h3>
+                        <h3 className="font-light mb-1">Reduce Operational Costs</h3>
                         <p className="text-gray-600">AI agents work 24/7 without breaks, significantly reducing operational expenses.</p>
                       </div>
                     </div>
@@ -217,7 +217,7 @@ export default function AIAgents() {
                         <CheckCircle className="w-4 h-4 text-violet-600" />
                       </div>
                       <div>
-                        <h3 className="font-medium mb-1">Improve Efficiency</h3>
+                        <h3 className="font-light mb-1">Improve Efficiency</h3>
                         <p className="text-gray-600">Automate complex tasks and processes with intelligent decision-making capabilities.</p>
                       </div>
                     </div>
@@ -226,7 +226,7 @@ export default function AIAgents() {
                         <CheckCircle className="w-4 h-4 text-violet-600" />
                       </div>
                       <div>
-                        <h3 className="font-medium mb-1">Scale Operations</h3>
+                        <h3 className="font-light mb-1">Scale Operations</h3>
                         <p className="text-gray-600">Easily scale your operations without proportionally increasing costs.</p>
                       </div>
                     </div>

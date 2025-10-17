@@ -60,7 +60,7 @@ const CredibilitySection: React.FC<CredibilitySectionProps> = ({ content }) => {
               className="group"
             >
               <div className="bg-gray-900/80 border border-gray-800 rounded-lg p-6 text-center hover:border-blue-500/30 hover:transform hover:-translate-y-1 transition-all duration-300">
-                <div className="text-lg font-light text-white mb-2">
+                <div className="text-lg font-light text-gray-900 mb-2">
                   {highlight}
                 </div>
                 <div className="w-8 h-0.5 bg-blue-500 mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

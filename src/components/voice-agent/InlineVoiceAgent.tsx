@@ -89,7 +89,7 @@ export default function InlineVoiceAgent({ isActive, onClose, agentId }: InlineV
       exit={{ opacity: 0, height: 0 }}
       className="overflow-visible"
     >
-      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-lg border-t border-white/10">
+      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-lg border-t border-gray-200">
         {/* Header with language selector and close button - positioned outside overflow context */}
         <div className="absolute top-3 left-3 right-3 flex justify-between items-center z-[9999]">
           <LanguageSelector
@@ -100,9 +100,9 @@ export default function InlineVoiceAgent({ isActive, onClose, agentId }: InlineV
 
           <button
             onClick={onClose}
-            className="p-1.5 hover:bg-white/10 rounded-full transition-colors"
+            className="p-1.5 hover:bg-gray-50 rounded-full transition-colors"
           >
-            <X className="w-4 h-4 text-white/70" />
+            <X className="w-4 h-4 text-gray-600" />
           </button>
         </div>
 

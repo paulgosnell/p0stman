@@ -72,7 +72,7 @@ export default function InvestmentSlide() {
             {option.highlighted && (
               <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-blue-600/20 rounded-xl transform rotate-3 animate-pulse" />
             )}
-            <div className={`relative h-full bg-white/10 backdrop-blur-sm rounded-xl p-6 border ${option.highlighted ? 'border-green-500/50' : 'border-white/10'}`}>
+            <div className={`relative h-full bg-gray-50 backdrop-blur-sm rounded-xl p-6 border ${option.highlighted ? 'border-green-500/50' : 'border-gray-200'}`}>
               <div className="flex items-center gap-3 mb-6">
                 {index === 0 ? <Users className="w-6 h-6 text-blue-400" /> :
                  index === 1 ? <Code className="w-6 h-6 text-purple-400" /> :

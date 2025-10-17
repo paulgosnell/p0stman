@@ -6,7 +6,7 @@ export default function AnimatedTitle() {
 
   return (
     <div className="flex flex-col">
-      <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-md">
+      <h1 className="text-5xl md:text-6xl font-thin leading-tight mb-6 text-white drop-shadow-md">
         {t('hero.launch')}
       </h1>
       

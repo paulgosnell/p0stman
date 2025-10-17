@@ -62,7 +62,7 @@ export default function ChatAgentDemo() {
               className={`max-w-[80%] px-3 py-2 rounded-lg text-xs ${
                 msg.role === 'user'
                   ? 'bg-blue-500/20 text-white/90'
-                  : 'bg-white/10 text-white/80'
+                  : 'bg-gray-50 text-gray-700'
               }`}
             >
               {msg.content}
@@ -78,7 +78,7 @@ export default function ChatAgentDemo() {
           animate={{ opacity: 1 }}
           className="flex justify-start"
         >
-          <div className="bg-white/10 px-4 py-2 rounded-lg flex items-center gap-1">
+          <div className="bg-gray-50 px-4 py-2 rounded-lg flex items-center gap-1">
             {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}

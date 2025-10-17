@@ -988,17 +988,17 @@ const DeliveryPage: React.FC = () => {
                               Scaled from Innovation Lab project to 18-month enterprise transformation with 40+ experts across multiple departments. One of the region's biggest digital transformations.
                             </p>
                             <div className="grid grid-cols-3 gap-4 mb-8">
-                              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                              <div className="text-center bg-gray-50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
                                 <div className="text-2xl font-bold text-white">40+</div>
-                                <div className="text-sm text-white/70">Team Size</div>
+                                <div className="text-sm text-gray-600">Team Size</div>
                               </div>
-                              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                              <div className="text-center bg-gray-50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
                                 <div className="text-2xl font-bold text-white">18mo</div>
-                                <div className="text-sm text-white/70">Duration</div>
+                                <div className="text-sm text-gray-600">Duration</div>
                               </div>
-                              <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                              <div className="text-center bg-gray-50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
                                 <div className="text-2xl font-bold text-white">60%</div>
-                                <div className="text-sm text-white/70">Efficiency</div>
+                                <div className="text-sm text-gray-600">Efficiency</div>
                               </div>
                             </div>
                             <div className="flex items-center gap-2 text-blue-300 group-hover:text-blue-200 transition-colors">
@@ -1241,7 +1241,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.5 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1261,7 +1261,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.6 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1281,7 +1281,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.7 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1301,7 +1301,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.8 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1321,7 +1321,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 0.9 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1341,7 +1341,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 1.0 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-purple-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-purple-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1361,7 +1361,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 1.1 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1381,7 +1381,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 1.2 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20"
+                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img

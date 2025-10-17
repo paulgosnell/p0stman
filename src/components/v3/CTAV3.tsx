@@ -67,9 +67,12 @@ export default function CTAV3() {
 
         {/* Alternative CTA */}
         <div className="pt-4">
-          <button className="text-blue-600 hover:text-blue-700 font-light text-base transition-colors">
+          <a
+            href="/contact"
+            className="text-blue-600 hover:text-blue-700 font-light text-base transition-colors inline-block"
+          >
             Or schedule a call →
-          </button>
+          </a>
         </div>
       </div>
     </section>

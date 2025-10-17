@@ -11,17 +11,18 @@ export default function FooterV3() {
         { label: 'P0STMAN', href: '/', isLogo: true }
       ],
       social: [
-        { icon: Linkedin, href: '#', label: 'LinkedIn' },
-        { icon: Twitter, href: '#', label: 'Twitter' },
-        { icon: Github, href: '#', label: 'GitHub' }
+        { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', external: true },
+        { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', external: true },
+        { icon: Github, href: 'https://github.com', label: 'GitHub', external: true }
       ]
     },
     {
       title: 'Product',
       items: [
-        { label: 'AI Agents', href: '#agents' },
-        { label: 'MVP Launch', href: '#services' },
-        { label: 'Services', href: '#services' },
+        { label: 'AI Agents', href: '/ai-agents' },
+        { label: 'MVP Launch', href: '/website' },
+        { label: 'Services', href: '/services' },
+        { label: 'Digital Transform', href: '/digital-transformation' },
         { label: 'chilledsites.com', href: 'https://chilledsites.com', external: true }
       ]
     },
@@ -29,16 +30,25 @@ export default function FooterV3() {
       title: 'Company',
       items: [
         { label: 'About', href: '/about' },
-        { label: 'Work', href: '#work' },
-        { label: 'Blog', href: '#' },
-        { label: 'Contact', href: '#cta' }
+        { label: 'Process', href: '/process' },
+        { label: 'Contact', href: '/contact' },
+        { label: 'Blog', href: '#' }
+      ]
+    },
+    {
+      title: 'Offerings',
+      items: [
+        { label: 'Fractional CPO', href: '/fractional-cpo' },
+        { label: 'Training', href: '/training' },
+        { label: 'Support', href: '/support' },
+        { label: 'Affiliate Program', href: '/affiliate' }
       ]
     },
     {
       title: 'Legal',
       items: [
         { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '#' },
+        { label: 'Terms of Service', href: '/terms' },
         { label: `© ${currentYear} P0STMAN`, href: '#', disabled: true }
       ]
     }
@@ -48,7 +58,7 @@ export default function FooterV3() {
     <footer className="bg-gray-900 text-white py-16 md:py-24 px-6 md:px-0">
       <div className="max-w-6xl mx-auto">
         {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-16 mb-16 md:mb-24">
           {footerColumns.map((column, index) => (
             <div key={index} className="flex flex-col space-y-6">
               {/* Column Title */}
@@ -76,7 +86,7 @@ export default function FooterV3() {
                           className={`text-sm font-light transition-colors ${
                             item.disabled
                               ? 'text-gray-500 cursor-default'
-                              : 'text-gray-300 hover:text-white'
+                              : 'text-gray-300 hover:text-white hover:underline'
                           }`}
                         >
                           {item.label}
@@ -96,6 +106,8 @@ export default function FooterV3() {
                       <a
                         key={socialIndex}
                         href={social.href}
+                        target={social.external ? '_blank' : undefined}
+                        rel={social.external ? 'noopener noreferrer' : undefined}
                         aria-label={social.label}
                         className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                       >

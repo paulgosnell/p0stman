@@ -129,7 +129,7 @@ const OnePageApp: React.FC = () => {
         <link rel="canonical" href="https://p0stman.com/one-pager" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+      <div className="min-h-screen bg-white text-gray-900 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-10" />
@@ -239,7 +239,7 @@ const OnePageApp: React.FC = () => {
                               href={project.liveUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-lg text-white font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
+                              className="px-6 py-3 bg-gray-50 backdrop-blur-sm rounded-lg text-white font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
                             >
                               View Live Demo
                               <ExternalLink className="w-4 h-4" />
@@ -330,7 +330,7 @@ const OnePageApp: React.FC = () => {
                     className="text-center group hover:transform hover:-translate-y-2 transition-transform duration-300"
                   >
                     <div className="bg-gray-900/80 border border-gray-800 rounded-xl p-8 hover:border-blue-500/30 transition-colors duration-300">
-                      <div className="text-6xl font-thin text-white mb-4">{metric.value}</div>
+                      <div className="text-6xl font-thin text-gray-900 mb-4">{metric.value}</div>
                       <div className="text-lg font-medium text-gray-200 mb-2">{metric.label}</div>
                       <div className="text-sm text-gray-300">{metric.description}</div>
                     </div>
@@ -384,7 +384,7 @@ const OnePageApp: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
                           <Play className="w-8 h-8 text-white" />
                         </div>
                       </div>
@@ -410,7 +410,7 @@ const OnePageApp: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-xl p-12 mb-16"
               >
-                <div className="text-8xl font-thin text-white mb-4">20+ yrs in MEA</div>
+                <div className="text-8xl font-thin text-gray-900 mb-4">20+ yrs in MEA</div>
                 <div className="text-2xl font-light text-gray-200">Enterprise Technology Leadership</div>
               </motion.div>
 

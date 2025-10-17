@@ -272,15 +272,15 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10">
+                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-gray-200">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                     <span className="text-sm text-gray-300">Available for Projects</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10">
+                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-gray-200">
                     <MapPin className="w-4 h-4 text-blue-400" />
                     <span className="text-sm text-gray-300">Dubai, UAE</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10">
+                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-gray-200">
                     <MapPin className="w-4 h-4 text-purple-400" />
                     <span className="text-sm text-gray-300">Norwich, UK</span>
                   </div>
@@ -293,7 +293,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                   href="mailto:hello@p0stman.com"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-blue-400/50 transition-all group"
+                  className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm p-4 rounded-xl border border-gray-200 hover:border-blue-400/50 transition-all group"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
@@ -309,7 +309,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                 <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm p-4 rounded-xl border border-white/10 hover:border-green-400/50 transition-all group"
+                  className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm p-4 rounded-xl border border-gray-200 hover:border-green-400/50 transition-all group"
                   onClick={() => {
                     if (onOpenProjectConfigurator) {
                       onOpenProjectConfigurator();
@@ -415,7 +415,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/10"
+            className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-gray-200"
           >
             <div className="flex items-center gap-6 mb-4 sm:mb-0">
               {socialLinks.map((social, index) => (
@@ -426,7 +426,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 hover:border-white/30 transition-all ${social.color}`}
+                  className={`w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-gray-200 hover:border-white/30 transition-all ${social.color}`}
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />

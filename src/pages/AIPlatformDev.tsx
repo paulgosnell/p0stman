@@ -20,8 +20,8 @@ import {
   Sparkles,
   TrendingUp
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 const capabilities = [
   {
@@ -150,7 +150,7 @@ export default function AIPlatformDev() {
           <meta name="keywords" content="AI development, AI platform, GPT-4, Claude, custom AI solutions, AI integration" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white">
@@ -193,7 +193,7 @@ export default function AIPlatformDev() {
                       href="#case-studies"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-400 text-white rounded-lg hover:bg-white/10 transition-all font-semibold text-lg"
+                      className="px-8 py-4 border border-gray-400 text-white rounded-lg hover:bg-gray-50 transition-all font-semibold text-lg"
                     >
                       View Case Studies
                     </motion.a>
@@ -206,7 +206,7 @@ export default function AIPlatformDev() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+                  <div className="bg-gray-50 backdrop-blur-sm p-8 rounded-2xl border border-gray-200">
                     <h3 className="text-2xl font-bold mb-6">Why Choose AI-First Development?</h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
@@ -490,7 +490,7 @@ export default function AIPlatformDev() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

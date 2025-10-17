@@ -34,16 +34,16 @@ export default function ComparisonSection() {
   };
 
   return (
-    <section ref={ref} className="py-24 bg-white" id="comparison">
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="py-24 md:py-28 bg-white" id="comparison">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className={`flex items-center justify-center gap-2 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <Zap className="w-6 h-6 text-blue-600" />
               <span className="text-blue-600 font-medium">How We Work</span>
             </div>
             
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-light mb-6">
               How We Work
             </h2>
             
@@ -52,7 +52,7 @@ export default function ComparisonSection() {
             </p>
           </div>
 
-          <div className={`grid md:grid-cols-2 gap-10 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+          <div className={`grid md:grid-cols-2 gap-8 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
             {/* Traditional Approach */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -85,7 +85,7 @@ export default function ComparisonSection() {
               className="relative p-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl text-white shadow-lg transform hover:scale-[1.01] transition-transform duration-300"
             >
               <div className={`flex items-center gap-3 mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <div className="p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+                <div className="p-3 bg-gray-50 rounded-lg backdrop-blur-sm">
                   <Bot className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-semibold">{t('comparison.modern.title')}</h3>

@@ -18,7 +18,7 @@ import {
   Filter,
   Code
 } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
 
 // All projects data
@@ -255,12 +255,12 @@ export default function Projects() {
           <link rel="canonical" href="https://p0stman.com/projects" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section className="relative min-h-[60vh] flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -275,7 +275,7 @@ export default function Projects() {
                   <span className="text-blue-400 font-medium">Portfolio</span>
                 </div>
 
-                <h1 className="text-5xl font-bold mb-6 text-white drop-shadow-md">
+                <h1 className="text-5xl font-thin mb-6 text-white drop-shadow-md">
                   Projects & Case Studies
                 </h1>
 
@@ -286,19 +286,19 @@ export default function Projects() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-1">12+</div>
+                    <div className="text-3xl font-light text-blue-400 mb-1">12+</div>
                     <div className="text-sm text-gray-400">Projects Delivered</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-400 mb-1">8</div>
+                    <div className="text-3xl font-light text-purple-400 mb-1">8</div>
                     <div className="text-sm text-gray-400">Industries</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">40+</div>
+                    <div className="text-3xl font-light text-green-400 mb-1">40+</div>
                     <div className="text-sm text-gray-400">Team Members Led</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-400 mb-1">80%</div>
+                    <div className="text-3xl font-light text-yellow-400 mb-1">80%</div>
                     <div className="text-sm text-gray-400">Faster with AI</div>
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export default function Projects() {
                       
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
                           <ExternalLink className="w-6 h-6 text-white" />
                         </div>
                       </div>
@@ -395,7 +395,7 @@ export default function Projects() {
                         <span className="text-sm text-blue-600 font-medium">{project.category}</span>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-light text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {project.title}
                       </h3>
                       
@@ -410,7 +410,7 @@ export default function Projects() {
                         <div className="flex gap-4 pt-4 border-t border-gray-100">
                           {project.metrics.slice(0, 2).map((metric, i) => (
                             <div key={i} className="text-center">
-                              <div className="text-lg font-bold text-gray-900">{metric.value}</div>
+                              <div className="text-lg font-light text-gray-900">{metric.value}</div>
                               <div className="text-xs text-gray-500">{metric.label}</div>
                             </div>
                           ))}
@@ -434,7 +434,7 @@ export default function Projects() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-bold mb-6">
+                <h2 className="text-4xl font-light mb-6">
                   Ready to Start Your Next Project?
                 </h2>
                 
@@ -453,7 +453,7 @@ export default function Projects() {
                   </a>
                   <a 
                     href="/about"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
                   >
                     Learn More About Me
                   </a>

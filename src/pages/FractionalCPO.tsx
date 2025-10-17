@@ -16,8 +16,8 @@ import {
   Zap,
   MessageSquare
 } from 'lucide-react';
-import Header from '../components/Header';
-import AnimatedFooter from '../components/AnimatedFooter';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import FooterV3 from '../components/v3/FooterV3';
 
 const benefits = [
   {
@@ -128,12 +128,12 @@ export default function FractionalCPO() {
           <meta name="keywords" content="fractional CPO, chief product officer, product strategy, product leadership, startup advisor" />
         </Helmet>
 
-        <Header />
+        <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section className="min-h-screen relative overflow-hidden bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-20" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
             {/* Animated Background Elements */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
@@ -157,16 +157,16 @@ export default function FractionalCPO() {
                     </div>
 
                     <h1 className="text-5xl md:text-6xl font-thin leading-tight">
-                      <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                         Strategic Product Leadership
                       </span>
                       <br />
-                      <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                         Without the Full-Time Cost
                       </span>
                     </h1>
 
-                    <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+                    <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                       Get experienced C-level product leadership to drive strategy, build teams,
                       and accelerate growth. Perfect for startups and scale-ups ready to take
                       their product to the next level.
@@ -175,17 +175,17 @@ export default function FractionalCPO() {
 
                   {/* Key Benefits */}
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                      <div className="text-2xl font-bold text-white mb-1">50-70%</div>
-                      <div className="text-sm text-gray-300">Cost Savings</div>
+                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                      <div className="text-2xl font-light text-gray-900 mb-1">50-70%</div>
+                      <div className="text-sm text-gray-600">Cost Savings</div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                      <div className="text-2xl font-bold text-white mb-1">Day 1</div>
-                      <div className="text-sm text-gray-300">Impact</div>
+                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                      <div className="text-2xl font-light text-gray-900 mb-1">Day 1</div>
+                      <div className="text-sm text-gray-600">Impact</div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                      <div className="text-2xl font-bold text-white mb-1">20+ yrs</div>
-                      <div className="text-sm text-gray-300">Experience</div>
+                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                      <div className="text-2xl font-light text-gray-900 mb-1">20+ yrs</div>
+                      <div className="text-sm text-gray-600">Experience</div>
                     </div>
                   </div>
 
@@ -204,7 +204,7 @@ export default function FractionalCPO() {
                       href="#pricing"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-600 text-white rounded-xl hover:bg-white/10 transition-all font-medium text-lg"
+                      className="px-8 py-4 border border-gray-300 text-gray-900 rounded-xl hover:bg-gray-50 transition-all font-medium text-lg"
                     >
                       View Pricing
                     </motion.a>
@@ -220,11 +220,11 @@ export default function FractionalCPO() {
                 >
                   <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/30 to-purple-600/30 rounded-3xl blur-xl animate-pulse" />
 
-                  <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                  <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
                     <div className="space-y-6">
                       <div className="text-center mb-8">
-                        <h3 className="text-2xl font-light text-white mb-3">Why Choose Fractional?</h3>
-                        <p className="text-gray-300">Get enterprise-level product leadership without the enterprise cost</p>
+                        <h3 className="text-2xl font-light text-gray-900 mb-3">Why Choose Fractional?</h3>
+                        <p className="text-gray-600">Get enterprise-level product leadership without the enterprise cost</p>
                       </div>
 
                       <div className="space-y-6">
@@ -233,8 +233,8 @@ export default function FractionalCPO() {
                             <DollarSign className="w-6 h-6 text-green-400" />
                           </div>
                           <div>
-                            <h4 className="font-medium text-white mb-2">Cost Effective</h4>
-                            <p className="text-gray-300 text-sm">Get C-level expertise at 50-70% less than full-time hire</p>
+                            <h4 className="font-light text-gray-900 mb-2">Cost Effective</h4>
+                            <p className="text-gray-600 text-sm">Get C-level expertise at 50-70% less than full-time hire</p>
                           </div>
                         </div>
 
@@ -243,8 +243,8 @@ export default function FractionalCPO() {
                             <Clock className="w-6 h-6 text-blue-400" />
                           </div>
                           <div>
-                            <h4 className="font-medium text-white mb-2">Immediate Impact</h4>
-                            <p className="text-gray-300 text-sm">Start making strategic decisions from day one</p>
+                            <h4 className="font-light text-gray-900 mb-2">Immediate Impact</h4>
+                            <p className="text-gray-600 text-sm">Start making strategic decisions from day one</p>
                           </div>
                         </div>
 
@@ -253,8 +253,8 @@ export default function FractionalCPO() {
                             <Award className="w-6 h-6 text-purple-400" />
                           </div>
                           <div>
-                            <h4 className="font-medium text-white mb-2">Proven Experience</h4>
-                            <p className="text-gray-300 text-sm">20+ years across enterprise and startup environments</p>
+                            <h4 className="font-light text-gray-900 mb-2">Proven Experience</h4>
+                            <p className="text-gray-600 text-sm">20+ years across enterprise and startup environments</p>
                           </div>
                         </div>
 
@@ -263,15 +263,15 @@ export default function FractionalCPO() {
                             <Target className="w-6 h-6 text-orange-400" />
                           </div>
                           <div>
-                            <h4 className="font-medium text-white mb-2">Flexible Engagement</h4>
-                            <p className="text-gray-300 text-sm">Tailored to your needs, timeline, and budget</p>
+                            <h4 className="font-light text-gray-900 mb-2">Flexible Engagement</h4>
+                            <p className="text-gray-600 text-sm">Tailored to your needs, timeline, and budget</p>
                           </div>
                         </div>
                       </div>
 
-                      <div className="pt-6 border-t border-gray-700">
+                      <div className="pt-6 border-t border-gray-200">
                         <div className="text-center">
-                          <p className="text-sm text-gray-400 mb-3">Trusted by enterprise clients including:</p>
+                          <p className="text-sm text-gray-600 mb-3">Trusted by enterprise clients including:</p>
                           <div className="flex justify-center items-center gap-4 opacity-60">
                             <span className="text-xs text-gray-500">FAB</span>
                             <span className="text-xs text-gray-500">•</span>
@@ -502,7 +502,7 @@ export default function FractionalCPO() {
                   href="mailto:hello@p0stman.com?subject=Fractional CPO Case Study Discussion"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
+                  className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium text-lg inline-flex items-center gap-2"
                 >
                   <MessageSquare className="w-5 h-5" />
                   Discuss Your Project
@@ -761,7 +761,7 @@ export default function FractionalCPO() {
                   </div>
 
                   <div className="mb-6">
-                    <div className="text-4xl font-bold text-gray-900 mb-2">
+                    <div className="text-4xl font-light text-gray-900 mb-2">
                       $8,000 - $15,000
                       <span className="text-lg font-light text-gray-600">/month</span>
                     </div>
@@ -817,7 +817,7 @@ export default function FractionalCPO() {
                   </div>
 
                   <div className="mb-6">
-                    <div className="text-4xl font-bold text-gray-900 mb-2">
+                    <div className="text-4xl font-light text-gray-900 mb-2">
                       $15,000 - $35,000
                       <span className="text-lg font-light text-gray-600">/project</span>
                     </div>
@@ -955,7 +955,7 @@ export default function FractionalCPO() {
           </div>
         </section>
 
-        <AnimatedFooter />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );

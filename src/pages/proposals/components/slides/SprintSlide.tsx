@@ -49,7 +49,7 @@ export default function SprintSlide() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {sprintSteps.map((step, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div key={index} className="bg-gray-50 backdrop-blur-sm rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 {index === 0 ? <Clock className="w-5 h-5 text-green-400" /> :
                  index === 1 ? <Bot className="w-5 h-5 text-green-400" /> :

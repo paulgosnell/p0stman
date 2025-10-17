@@ -237,15 +237,15 @@ export default function CaseStudy() {
   };
 
   return (
-    <section 
-      ref={ref} 
-      className="bg-gradient-to-b from-gray-900 to-black text-white py-24" 
+    <section
+      ref={ref}
+      className="bg-gradient-to-b from-gray-900 to-black text-white py-24 md:py-28"
       id="case-studies"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2 mb-16">
             <Bot className="w-6 h-6 text-blue-400" />
             <span className="text-blue-400 font-medium">Work</span>
@@ -257,7 +257,7 @@ export default function CaseStudy() {
             transition={{ duration: 0.5 }}
             className="mb-16"
           >
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">{t('caseStudies.subtitle')}</h2>
+            <h2 className="text-5xl font-thin mb-6 bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">{t('caseStudies.subtitle')}</h2>
             <p className="text-gray-300 max-w-2xl text-xl leading-relaxed">
               {t('caseStudies.description')}
             </p>
@@ -271,11 +271,11 @@ export default function CaseStudy() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="grid lg:grid-cols-2 gap-16 items-center"
+                className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center"
               >
                 <div className="relative order-2 lg:order-1">
                   <div className="absolute -inset-6 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl transform rotate-2 blur-xl" />
-                  <div className="relative rounded-2xl overflow-hidden bg-white shadow-2xl border border-gray-200">
+                  <div className="relative rounded-2xl overflow-hidden bg-white shadow-2xl border border-gray-100">
                     <div className={`relative ${currentCase.aspectRatio || 'aspect-video'} flex items-center justify-center bg-gray-50`}>
                       {!isCurrentImageLoaded && (
                         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
@@ -315,7 +315,7 @@ export default function CaseStudy() {
                       )}
                     </div>
                     
-                    <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
+                    <h2 className="text-4xl font-light mb-4 bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
                       {currentCase.titleKey ? t(currentCase.titleKey) : currentCase.title}
                     </h2>
                     
@@ -350,7 +350,7 @@ export default function CaseStudy() {
                     {currentCase.metrics.slice(0, 3).map((metric, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/20"
+                        className="flex items-center gap-3 bg-gray-50 backdrop-blur-sm px-4 py-3 rounded-lg border border-gray-200"
                       >
                         <div className="text-blue-400">{metric.icon}</div>
                         <div>
@@ -401,7 +401,7 @@ export default function CaseStudy() {
             <div className="text-center mt-16">
               <Link 
                 to="/case-studies" 
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-xl hover:bg-white/20 transition-all transform hover:scale-105 border border-white/10"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gray-50 backdrop-blur-sm text-white rounded-xl hover:bg-white/20 transition-all transform hover:scale-105 border border-gray-200"
               >
                 View All Case Studies
                 <ArrowRight className="w-5 h-5" />

@@ -87,9 +87,9 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
   const labelClasses = "block text-sm font-medium text-gray-300 mb-2";
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white" id="contact">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+    <section ref={ref} className="py-24 md:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white" id="contact">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Mail className="w-6 h-6 text-blue-400" />
             <span className="text-blue-400 font-medium">Contact</span>
@@ -101,7 +101,7 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-6 text-white">
+            <h2 className="text-4xl font-light mb-6 text-white">
               Get in Touch
             </h2>
             
@@ -109,7 +109,7 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
               Let's build something great together.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-8">
               <button
                 onClick={handleOpenMessageForm}
                 className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -167,7 +167,7 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
                   <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
                     <CheckCircle className="w-8 h-8 text-green-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Message Sent Successfully!</h3>
+                  <h3 className="text-2xl font-light text-white mb-4">Message Sent Successfully!</h3>
                   <p className="text-gray-400">
                     Thank you for reaching out. I'll review your message and get back to you shortly.
                   </p>
@@ -175,7 +175,7 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-bold text-white">Send a Message</h3>
+                    <h3 className="text-xl font-light text-white">Send a Message</h3>
                     <button
                       onClick={() => setModalOpen(false)}
                       className="text-gray-400 hover:text-gray-200"

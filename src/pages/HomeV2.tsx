@@ -29,7 +29,7 @@ import VideoModal from '../components/modals/VideoModal';
 import WhyWeDoIt from '../components/WhyWeDoIt';
 
 import ProjectConfigurator from '../components/ProjectConfigurator';
-import AnimatedFooter from '../components/AnimatedFooter';
+import FooterV3 from '../components/v3/FooterV3';
 import InlineVoiceAgent from '../components/voice-agent/InlineVoiceAgent';
 import ChatAgentDemo from '../components/agent-demos/ChatAgentDemo';
 import CodeAgentDemo from '../components/agent-demos/CodeAgentDemo';
@@ -423,7 +423,7 @@ export default function HomeV2() {
   return (
     <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
       {/* Hero Section */}
-      <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+      <section className="min-h-screen relative overflow-hidden bg-white text-gray-900">
         {/* Space-themed Background - Similar to Case Studies */}
         <div className="absolute inset-0 z-0">
           <svg className="absolute inset-0 w-full h-full">
@@ -610,7 +610,7 @@ export default function HomeV2() {
                     {aiTechStack.map((tech, index) => (
                       <div
                         key={index}
-                        className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all"
+                        className="px-4 py-2 bg-gray-50 hover:bg-white/20 rounded-lg transition-all"
                       >
                         <span className="text-sm text-white font-light">{tech.name}</span>
                       </div>
@@ -635,7 +635,7 @@ export default function HomeV2() {
                   </motion.button>
                   <a
                     href="#focus"
-                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg inline-flex items-center justify-center"
+                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg inline-flex items-center justify-center"
                   >
                     Explore Services
                   </a>
@@ -693,15 +693,15 @@ export default function HomeV2() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                      <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
                         <span>247 calls/week</span>
                         <span className="text-white/40">•</span>
                         <span>89% qualified</span>
                       </div>
 
-                      <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                      <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                         {agentTypes[0].tech.map((tech, i) => (
-                          <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                          <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
                             {tech.name}
                           </div>
                         ))}
@@ -758,15 +758,15 @@ export default function HomeV2() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
                       <span>2.3s response</span>
                       <span className="text-white/40">•</span>
                       <span>94% satisfaction</span>
                     </div>
 
-                    <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                    <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                       {agentTypes[1].tech.map((tech, i) => (
-                        <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
                           {tech.name}
                         </div>
                       ))}
@@ -804,15 +804,15 @@ export default function HomeV2() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
                       <span>Ships in minutes</span>
                       <span className="text-white/40">•</span>
                       <span>20+ live sites</span>
                     </div>
 
-                    <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                    <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                       {agentTypes[2].tech.map((tech, i) => (
-                        <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
                           {tech.name}
                         </div>
                       ))}
@@ -864,15 +864,15 @@ export default function HomeV2() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-white/80 font-light mb-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
                       <span>Visual analysis</span>
                       <span className="text-white/40">•</span>
                       <span>Content generation</span>
                     </div>
 
-                    <div className="flex items-center gap-3 pt-3 border-t border-white/20">
+                    <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                       {agentTypes[3].tech.map((tech, i) => (
-                        <div key={i} className="px-2 py-1 bg-white/10 rounded text-[10px] text-white/70">
+                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
                           {tech.name}
                         </div>
                       ))}
@@ -1152,7 +1152,7 @@ export default function HomeV2() {
 
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
                           <ExternalLink className="w-4 h-4 text-white" />
                         </div>
                       </div>
@@ -1220,18 +1220,18 @@ export default function HomeV2() {
               <div className="bg-gradient-to-br from-teal-400/90 via-cyan-400/80 to-blue-400/90 p-8 md:p-12 rounded-2xl shadow-xl text-white hover:shadow-2xl transition-all transform hover:-translate-y-1">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl inline-block mb-6">
+                    <div className="p-4 bg-gray-100 backdrop-blur-sm rounded-xl inline-block mb-6">
                       {focusAreas[0].icon}
                     </div>
                     <h3 className="text-3xl font-light mb-4">{focusAreas[0].title}</h3>
                     <p className="text-white/95 text-lg mb-6 leading-relaxed font-light">{focusAreas[0].description}</p>
-                    <div className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-lg">
+                    <div className="inline-block px-6 py-3 bg-gray-100 backdrop-blur-sm rounded-lg">
                       <p className="text-white font-light">{focusAreas[0].pricing}</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     {focusAreas[0].features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <div key={i} className="flex items-center gap-3 bg-gray-50 backdrop-blur-sm rounded-lg p-4">
                         {/* Voice Agent - Waveform */}
                         {i === 0 && (
                           <div className="flex items-center gap-0.5">
@@ -1499,7 +1499,7 @@ export default function HomeV2() {
       {/* <WhyWeDoIt /> */}
 
       {/* AI Building Showcase */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <section className="py-24 bg-white text-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -1527,7 +1527,7 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
+                className="bg-gray-50 backdrop-blur-sm p-8 rounded-xl border border-gray-200"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Bot className="w-8 h-8 text-blue-400" />
@@ -1558,7 +1558,7 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
+                className="bg-gray-50 backdrop-blur-sm p-8 rounded-xl border border-gray-200"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Zap className="w-8 h-8 text-purple-400" />
@@ -1622,7 +1622,7 @@ export default function HomeV2() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
                           <Play className="w-8 h-8 text-white" />
                         </div>
                       </div>
@@ -1645,7 +1645,7 @@ export default function HomeV2() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
                           <Play className="w-8 h-8 text-white" />
                         </div>
                       </div>

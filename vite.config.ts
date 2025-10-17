@@ -7,4 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    host: 'p0stman.local',
+    port: 5173,
+    allowedHosts: ['p0stman.local', 'localhost', '127.0.0.1'],
+  },
 });

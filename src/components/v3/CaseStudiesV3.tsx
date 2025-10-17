@@ -1,7 +1,4 @@
 import React from 'react';
-import chilledCrmDash from '../../assets/images/case-studies/chilledcrm-dashboard.png';
-import harmonyDash from '../../assets/images/case-studies/harmony-dashboard.png';
-import harmonyMobile from '../../assets/images/case-studies/harmony-mobileapp.png';
 
 interface CaseStudy {
   id: number;
@@ -17,32 +14,32 @@ interface CaseStudy {
 const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    client: 'ChilledSites',
-    project: 'AI Website Generator',
-    problem: 'Web design took weeks, cost thousands',
-    solution: 'Built multi-model code agent that generates full sites in minutes',
-    result: '70+ sites built, shipping in 2 minutes instead of 2 weeks',
-    image: chilledCrmDash,
+    client: 'First Abu Dhabi Bank',
+    project: 'Enterprise Digital Transformation',
+    problem: 'FAB needed to modernize their digital infrastructure and create scalable, reusable systems across multiple departments while maintaining security and compliance standards.',
+    solution: 'Built enterprise-grade platforms with unified design systems and code libraries. Established cross-functional teams and agile delivery processes to ensure consistent, high-quality output.',
+    result: 'Scaled from 1 pilot project to 40+ person transformation team. Delivered enterprise-grade platforms across multiple departments with 60% improved efficiency.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
     imagePosition: 'left'
   },
   {
     id: 2,
     client: 'Al Arabiya',
-    project: 'Content Generation AI',
-    problem: 'Manual content creation was bottlenecking editorial workflow',
-    solution: 'Deployed AI agent to automate news article research and drafting',
-    result: '60% reduction in editorial turnaround time, 3x content volume',
-    image: harmonyDash,
+    project: 'News Platform Redesign',
+    problem: 'Al Arabiya needed a modern, scalable news platform that could handle high traffic loads while providing a customizable, multi-platform experience during unprecedented global events.',
+    solution: 'Led a global team through UX research, development, testing, and content delivery. Implemented a future-ready architecture with customizable components and multi-platform support.',
+    result: 'Successfully delivered complete platform redesign during pandemic. Improved page load speeds by 40% and achieved high user satisfaction.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png',
     imagePosition: 'right'
   },
   {
     id: 3,
-    client: 'Harmony',
-    project: 'Voice-First Patient Portal',
-    problem: 'Low adoption of digital health platform due to complexity',
-    solution: 'Added voice agent for appointment booking and health queries',
-    result: '45% increase in engagement, 80% of users now prefer voice interaction',
-    image: harmonyMobile,
+    client: 'Department of Health Abu Dhabi',
+    project: 'My Health Coach',
+    problem: 'Build a standout health app for government that exceeds market standards while partnering with IBM.',
+    solution: 'Suggested ambitious, innovative features to leapfrog existing market offerings with senior development team leadership.',
+    result: 'Successfully launched standout health app for government. Integrated with major fitness platforms and exceeded market standards in app development.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png',
     imagePosition: 'left'
   }
 ];
@@ -69,20 +66,20 @@ export default function CaseStudiesV3() {
             >
               {/* Image */}
               <div
-                className={`relative h-80 md:h-96 rounded-xl overflow-hidden bg-gray-100 ${
+                className={`relative h-auto md:h-auto rounded-xl overflow-hidden bg-white border border-gray-200 p-6 md:p-8 ${
                   study.imagePosition === 'right' ? 'md:order-2' : ''
                 }`}
               >
                 <img
                   src={study.image}
                   alt={study.project}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                   onError={(e) => {
                     // Fallback if image doesn't exist
                     e.currentTarget.src = '/assets/images/p0stman-bg.png';
                   }}
                 />
-                <div className="absolute inset-0 rounded-xl ring-1 ring-gray-200" />
+                <div className="absolute inset-0 rounded-xl ring-1 ring-gray-200 pointer-events-none" />
               </div>
 
               {/* Content */}

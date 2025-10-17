@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, CheckCircle, ArrowRight, PlayCircle } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import TrainingBenefits from '../components/training/TrainingBenefits';
 import TrainingProcess from '../components/training/TrainingProcess';
 import TrainingShowcase from '../components/training/TrainingShowcase';
@@ -39,11 +39,11 @@ export default function Training() {
           <link rel="canonical" href="https://p0stman.com/training" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -61,7 +61,7 @@ export default function Training() {
                       <span className="text-blue-400 font-medium">Expert Training</span>
                     </div>
 
-                    <h1 className="text-5xl font-bold mb-6">
+                    <h1 className="text-5xl font-thin mb-6">
                       Master AI-Powered Development
                     </h1>
                     
@@ -90,7 +90,7 @@ export default function Training() {
 
                     <div className="flex items-center gap-6 mt-8">
                       <div>
-                        <div className="text-3xl font-bold mb-1">$500</div>
+                        <div className="text-3xl font-light mb-1">$500</div>
                         <div className="text-gray-400">All-inclusive package</div>
                       </div>
                       <button
@@ -120,7 +120,7 @@ export default function Training() {
                     onClick={() => setShowVideoModal(true)}
                     className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity rounded-3xl group"
                   >
-                    <div className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20">
+                    <div className="flex items-center gap-2 px-6 py-3 bg-gray-50 backdrop-blur-sm rounded-full text-white border border-gray-200">
                       <PlayCircle className="w-6 h-6" />
                       <span>Watch Video</span>
                     </div>

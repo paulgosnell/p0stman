@@ -63,7 +63,7 @@ export default function ProjectOverview() {
             { value: "$56,000", label: "Total Investment" },
             { value: "3 Phases", label: "Delivery Plan" }
           ].map((stat, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <div key={index} className="bg-gray-50 backdrop-blur-sm rounded-xl p-6">
               <div className="text-3xl font-bold mb-2">{stat.value}</div>
               <div className="text-gray-300">{stat.label}</div>
             </div>

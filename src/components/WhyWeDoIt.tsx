@@ -10,9 +10,9 @@ export default function WhyWeDoIt() {
   });
 
   return (
-    <section ref={ref} className="py-24 bg-gray-50" id="why-we-do-it">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
+    <section ref={ref} className="py-24 md:py-28 bg-gray-50" id="why-we-do-it">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export default function WhyWeDoIt() {
               <span className="text-red-500 font-medium">Why We Do It</span>
             </div>
             
-            <h2 className="text-4xl font-bold mb-8 text-gray-900">
+            <h2 className="text-4xl font-light mb-8 text-gray-900">
               Why We Do It
             </h2>
             

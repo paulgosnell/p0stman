@@ -102,19 +102,19 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-gradient-to-br from-gray-900 to-black border border-white/20 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+          className="bg-gradient-to-br from-gray-900 to-black border border-gray-200 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
           onClick={e => e.stopPropagation()}
         >
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Your Project Blueprint</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Project Blueprint</h3>
             <p className="text-gray-300">AI-generated estimate based on your requirements</p>
           </div>
 
           <div className="space-y-6 mb-8">
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+            <div className="bg-white/5 rounded-xl p-6 border border-gray-200">
               <h4 className="text-lg font-semibold text-white mb-4">Project Overview</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -136,7 +136,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+            <div className="bg-white/5 rounded-xl p-6 border border-gray-200">
               <h4 className="text-lg font-semibold text-white mb-4">Selected Features ({config.features.length})</h4>
               <div className="flex flex-wrap gap-2">
                 {config.features.map(feature => (
@@ -147,7 +147,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-xl p-6 border border-white/10">
+            <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-xl p-6 border border-gray-200">
               <div className="flex items-center gap-3 mb-3">
                 <CheckCircle className="w-6 h-6 text-green-400" />
                 <h4 className="text-lg font-semibold text-white">Recommended Approach</h4>
@@ -178,7 +178,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white/10 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-white/20 transition-all border border-white/20"
+              className="bg-gray-50 text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-white/20 transition-all border border-gray-200"
               onClick={() => window.open('mailto:paul@p0stman.com?subject=Project Inquiry&body=Hi Paul, I used your project configurator and would like to discuss my project.', '_blank')}
             >
               <MessageSquare className="w-5 h-5" />
@@ -200,7 +200,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-gradient-to-br from-gray-900 to-black border border-white/20 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-gradient-to-br from-gray-900 to-black border border-gray-200 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-8">
@@ -238,7 +238,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
                     className={`p-6 rounded-xl border-2 transition-all text-left ${
                       config.type === type.id
                         ? 'border-blue-500 bg-blue-500/20'
-                        : 'border-white/20 bg-white/5 hover:border-white/40'
+                        : 'border-gray-200 bg-white/5 hover:border-white/40'
                     }`}
                     onClick={() => setConfig(prev => ({ ...prev, type: type.id }))}
                   >
@@ -270,7 +270,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
                     className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
                       config.timeline === timeline.id
                         ? 'border-blue-500 bg-blue-500/20'
-                        : 'border-white/20 bg-white/5 hover:border-white/40'
+                        : 'border-gray-200 bg-white/5 hover:border-white/40'
                     }`}
                     onClick={() => setConfig(prev => ({ ...prev, timeline: timeline.id }))}
                   >
@@ -304,7 +304,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
                     className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
                       config.budget === budget.id
                         ? 'border-blue-500 bg-blue-500/20'
-                        : 'border-white/20 bg-white/5 hover:border-white/40'
+                        : 'border-gray-200 bg-white/5 hover:border-white/40'
                     }`}
                     onClick={() => setConfig(prev => ({ ...prev, budget: budget.id }))}
                   >
@@ -338,7 +338,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
                     className={`p-3 rounded-lg border transition-all text-sm ${
                       config.features.includes(feature)
                         ? 'border-blue-500 bg-blue-500/20 text-blue-300'
-                        : 'border-white/20 bg-white/5 text-gray-300 hover:border-white/40'
+                        : 'border-gray-200 bg-white/5 text-gray-300 hover:border-white/40'
                     }`}
                     onClick={() => handleFeatureToggle(feature)}
                   >
@@ -357,7 +357,7 @@ export default function ProjectConfigurator({ onClose }: { onClose: () => void }
             className={`px-6 py-3 rounded-xl font-semibold flex items-center gap-2 ${
               step === 1
                 ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                : 'bg-gray-50 text-white hover:bg-white/20 border border-gray-200'
             }`}
             onClick={prevStep}
             disabled={step === 1}

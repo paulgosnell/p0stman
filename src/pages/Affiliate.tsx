@@ -3,7 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Users, DollarSign, Zap, CheckCircle, ArrowRight } from 'lucide-react';
-import SubHeader from '../components/SubHeader';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CommissionTiers from '../components/affiliate/CommissionTiers';
 import BenefitsSection from '../components/affiliate/BenefitsSection';
 import HowItWorks from '../components/affiliate/HowItWorks';
@@ -37,11 +37,11 @@ export default function Affiliate() {
           <link rel="canonical" href="https://p0stman.com/affiliate" />
         </Helmet>
 
-        <SubHeader />
+        <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
@@ -59,7 +59,7 @@ export default function Affiliate() {
                       <span className="text-pink-400 font-medium">Partner Program</span>
                     </div>
 
-                    <h1 className="text-5xl font-bold mb-6">
+                    <h1 className="text-5xl font-thin mb-6">
                       Earn 20% on all Sales
                     </h1>
                     
@@ -89,7 +89,7 @@ export default function Affiliate() {
 
                   <div className="flex items-center gap-6">
                     <div>
-                      <div className="text-3xl font-bold mb-1">20%</div>
+                      <div className="text-3xl font-light mb-1">20%</div>
                       <div className="text-gray-400">Commission rate</div>
                     </div>
                     <button
@@ -109,20 +109,20 @@ export default function Affiliate() {
                       <div className="p-6 bg-gray-700/50 rounded-xl">
                         <div className="flex items-center gap-3 mb-4">
                           <DollarSign className="w-6 h-6 text-pink-400" />
-                          <h3 className="text-lg font-medium">Example Earnings</h3>
+                          <h3 className="text-lg font-light">Example Earnings</h3>
                         </div>
                         <div className="space-y-4">
                           <div>
                             <div className="text-sm text-gray-400">Training ($500)</div>
-                            <div className="text-xl font-bold">$100 commission</div>
+                            <div className="text-xl font-light">$100 commission</div>
                           </div>
                           <div>
                             <div className="text-sm text-gray-400">Website ($6k)</div>
-                            <div className="text-xl font-bold">$1.2k commission</div>
+                            <div className="text-xl font-light">$1.2k commission</div>
                           </div>
                           <div>
                             <div className="text-sm text-gray-400">Mobile App ($40k)</div>
-                            <div className="text-xl font-bold">$8k commission</div>
+                            <div className="text-xl font-light">$8k commission</div>
                           </div>                        
                         </div>
                       </div>

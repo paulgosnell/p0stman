@@ -6,7 +6,7 @@ import Logo from '../components/Logo';
 
 export default function Thanks() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center p-4">
       <div className="fixed top-8 left-8 z-50">
         <Link to="/">
           <Logo className="text-xl" useGradient />
@@ -42,7 +42,7 @@ export default function Thanks() {
 
           <div className="flex flex-col items-center gap-8 mt-12">
             <div className="grid gap-6 md:grid-cols-2 w-full">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
                 <Mail className="w-6 h-6 text-blue-400 mb-4" />
                 <h3 className="font-medium mb-2">Check Your Email</h3>
                 <p className="text-sm text-gray-400">
@@ -50,7 +50,7 @@ export default function Thanks() {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
                 <Bot className="w-6 h-6 text-purple-400 mb-4" />
                 <h3 className="font-medium mb-2">Next Steps</h3>
                 <p className="text-sm text-gray-400">
@@ -63,7 +63,7 @@ export default function Thanks() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-xl rounded-full" />
               <Link
                 to="/"
-                className="relative flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/10 transition-colors"
+                className="relative flex items-center gap-2 px-6 py-3 bg-gray-50 hover:bg-gray-100 backdrop-blur-sm rounded-full border border-gray-200 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 <span>Return Home</span>

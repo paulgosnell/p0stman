@@ -83,7 +83,7 @@ export default function TeamSlide() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-xl transform rotate-3 group-hover:rotate-1 transition-transform" />
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+            <div className="relative bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
               <div className="flex items-center gap-3 mb-6">
                 {member.icon}
                 <h3 className="text-xl font-semibold">{member.role}</h3>

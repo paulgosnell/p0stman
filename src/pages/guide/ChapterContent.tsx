@@ -10,6 +10,8 @@ import DarkModeToggle from '../../components/guide/DarkModeToggle';
 import ReadingProgress from '../../components/guide/ReadingProgress';
 import KeyboardNav from '../../components/guide/KeyboardNav';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import HeaderV3Global from '../../components/v3/HeaderV3Global';
+import FooterV3 from '../../components/v3/FooterV3';
 
 function useNotes(chapterId: string | undefined) {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -127,7 +129,8 @@ export default function ChapterContent() {
 
   return (
     <AccessCheck>
-    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-50'} transition-colors`}>
+      <HeaderV3Global />
+    <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'} transition-colors`}>
       <DarkModeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
       <KeyboardNav 
         nextSectionId={section.nextSection?.id} 
@@ -321,6 +324,7 @@ export default function ChapterContent() {
         </div>
       </div>
     </div>
+    <FooterV3 />
     </AccessCheck>
   );
 }

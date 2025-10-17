@@ -72,7 +72,6 @@ import Hello from './pages/Hello';
 import Services from './pages/Services';
 import AIPlaybook from './pages/AIPlaybook';
 import OnePageApp from './pages/OnePageApp';
-import Portfolio from './pages/Portfolio';
 import DeliveryPage from './pages/DeliveryPage';
 import FounderLaunchPackage from './pages/FounderLaunchPackage';
 import ClarityPitchDeck from './components/ClarityPitchDeck';
@@ -83,8 +82,8 @@ export default function App() {
       <div className="min-h-screen bg-white">
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<HomeV2 />} />
-          <Route path="/v1" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/v2" element={<HomeV2 />} />
           <Route path="/v3" element={<HomeV3 />} />
           <Route path="/process" element={<Process />} />
           <Route path="/case-studies" element={<CaseStudies />} />
@@ -111,7 +110,6 @@ export default function App() {
           <Route path="/mobile-app" element={<MobileApp />} />
           <Route path="/retainer" element={<Retainer />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/guide" element={<GuideAdmin />} />

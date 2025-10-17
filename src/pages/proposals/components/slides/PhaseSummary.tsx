@@ -35,7 +35,7 @@ export default function PhaseSummary() {
         <h2 className="text-3xl font-bold mb-6">Project Summary</h2>
         
         <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div className="flex items-center gap-4 bg-gray-50 backdrop-blur-sm rounded-xl p-6">
             <Clock className="w-8 h-8 text-blue-400" />
             <div>
               <div className="text-sm text-gray-300">Total Duration</div>
@@ -43,7 +43,7 @@ export default function PhaseSummary() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div className="flex items-center gap-4 bg-gray-50 backdrop-blur-sm rounded-xl p-6">
             <DollarSign className="w-8 h-8 text-green-400" />
             <div>
               <div className="text-sm text-gray-300">Total Investment</div>
@@ -56,7 +56,7 @@ export default function PhaseSummary() {
           {phases.map((phase, index) => (
             <div 
               key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-colors"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-50 transition-colors"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold">{phase.title}</h3>

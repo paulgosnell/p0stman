@@ -147,7 +147,7 @@ const ProjectMockup: React.FC<{
             <div className="w-16 h-16 mx-auto mb-4 bg-blue-600 rounded-lg flex items-center justify-center">
               {getCategoryIcon(mockup.category)}
             </div>
-            <h3 className="text-premium-xl text-white mb-2">{mockup.title}</h3>
+            <h3 className="text-premium-xl text-gray-900 mb-2">{mockup.title}</h3>
             <p className="text-sm text-gray-400 capitalize">{mockup.category} Solution</p>
           </div>
         )}
@@ -157,7 +157,7 @@ const ProjectMockup: React.FC<{
       {mockup.image && !imageError && (
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
           <div className="p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <h3 className="text-premium-xl text-white mb-1">{mockup.title}</h3>
+            <h3 className="text-premium-xl text-gray-900 mb-1">{mockup.title}</h3>
             <p className="text-sm text-gray-300 capitalize">{mockup.category} Solution</p>
           </div>
         </div>

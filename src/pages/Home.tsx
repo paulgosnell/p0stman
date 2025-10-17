@@ -1,12 +1,15 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Hero from '../components/Hero';
-import ServicesSection from '../components/ServicesSection';
-import CaseStudy from '../components/CaseStudy';
-import Contact from '../components/Contact';
-import ComparisonSection from '../components/ComparisonSection';
-import WhyWeDoIt from '../components/WhyWeDoIt';
-import Footer from '../components/Footer';
+import HeaderV3Global from '../components/v3/HeaderV3Global';
+import HeroV3 from '../components/v3/HeroV3';
+import MetricsV3 from '../components/v3/MetricsV3';
+import AgentsV3 from '../components/v3/AgentsV3';
+import AgentShowcaseV3 from '../components/v3/AgentShowcaseV3';
+import CaseStudiesV3 from '../components/v3/CaseStudiesV3';
+import ClientLogosV3 from '../components/v3/ClientLogosV3';
+import ServicesV3 from '../components/v3/ServicesV3';
+import CTAV3 from '../components/v3/CTAV3';
+import FooterV3 from '../components/v3/FooterV3';
 
 export default function Home() {
   return (
@@ -33,12 +36,16 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="theme-color" content="#2563eb" />
         </Helmet>
-        <Hero />
-        <CaseStudy />
-        <ServicesSection />
-        <ComparisonSection />
-        <WhyWeDoIt />
-        <Contact />
+        <HeaderV3Global />
+        <HeroV3 />
+        <MetricsV3 />
+        <AgentsV3 />
+        <AgentShowcaseV3 />
+        <CaseStudiesV3 />
+        <ClientLogosV3 />
+        <ServicesV3 />
+        <CTAV3 />
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );
