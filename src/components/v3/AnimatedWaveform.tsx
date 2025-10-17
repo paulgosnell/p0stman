@@ -13,7 +13,7 @@ interface AnimatedWaveformProps {
 
 export default function AnimatedWaveform({
   barCount = 60,
-  color = '#FF1493',
+  color = '#0066FF',
   hoverColor = '#FF1493',
   animate = true,
   frequencyData,

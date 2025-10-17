@@ -41,7 +41,7 @@ export default function FloatingGuideAgent() {
             >
               <AnimatedWaveform
                 barCount={12}
-                color="#FF1493"
+                color="#ffffff"
                 hoverColor="#FF1493"
                 animate={true}
                 isLive={false}
@@ -91,7 +91,7 @@ export default function FloatingGuideAgent() {
               <div className="h-12 flex items-center justify-center">
                 <AnimatedWaveform
                   barCount={30}
-                  color="#FF1493"
+                  color="#0066FF"
                   hoverColor="#FF1493"
                   animate={true}
                   isLive={false}

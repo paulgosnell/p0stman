@@ -66,7 +66,7 @@ export default function HeroV3() {
             <div className="relative z-10 w-full h-64 md:h-80 flex items-center justify-center px-8 md:px-0 group">
               <AnimatedWaveform
                 barCount={60}
-                color="#FF1493"
+                color="#0066FF"
                 hoverColor="#FF1493"
                 animate={!voiceAgent.isActive}
                 frequencyData={voiceAgent.frequencyData}
