@@ -23,14 +23,23 @@ export default function FloatingGuideAgent() {
 
   return (
     <>
-      {/* Floating Button */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-pink-600 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        aria-label="Open site guide"
-      >
+      {/* Hero detection marker (on homepage only) */}
+      {isHomepage && <div ref={heroRef} className="invisible absolute top-0" />}
+
+      {/* Floating Button - Hide when hero is visible */}
+      <AnimatePresence>
+        {!shouldHide && (
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-pink-600 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Open site guide"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
         <AnimatePresence mode="wait">
           {isOpen ? (
             <motion.div
@@ -61,11 +70,13 @@ export default function FloatingGuideAgent() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.button>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
-      {/* Floating Panel */}
+      {/* Floating Panel - Hide when hero is visible */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && !shouldHide && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -116,7 +127,7 @@ export default function FloatingGuideAgent() {
 
       {/* Overlay when panel is open */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && !shouldHide && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
