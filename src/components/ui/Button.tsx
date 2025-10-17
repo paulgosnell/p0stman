@@ -35,9 +35,9 @@ export default function Button({
 
   // Variant styles
   const variantStyles = {
-    gradient: 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500',
-    outline: 'border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 disabled:border-gray-300 disabled:text-gray-400',
-    solid: 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-gray-400'
+    gradient: 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-pink-600 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500',
+    outline: 'border border-blue-600 text-blue-600 bg-white hover:bg-pink-500 hover:text-white hover:border-pink-500 disabled:border-gray-300 disabled:text-gray-400',
+    solid: 'bg-blue-600 text-white hover:bg-pink-600 disabled:bg-gray-400'
   };
 
   const disabledStyles = disabled ? 'cursor-not-allowed opacity-60' : '';
