@@ -60,7 +60,7 @@ export default function HeroV3() {
           {/* Right Column - Animated Waveform */}
           <div className="flex flex-col items-center justify-center h-96 md:h-full md:min-h-[500px] relative">
             {/* Subtle frame effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50 to-transparent opacity-50 blur-2xl" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50 dark:from-blue-900/20 to-transparent opacity-50 blur-2xl" />
 
             {/* Waveform container */}
             <div className="relative z-10 w-full h-64 md:h-80 flex items-center justify-center px-8 md:px-0 group">
