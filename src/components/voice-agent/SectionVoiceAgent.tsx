@@ -119,7 +119,7 @@ export default function SectionVoiceAgent({
       // Build conversation overrides
       const overrides: any = {
         agent: {
-          prompt: { prompt },
+          prompt: prompt,
           language: selectedLanguage,
         },
       };
