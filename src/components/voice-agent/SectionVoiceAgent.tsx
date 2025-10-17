@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useConversation } from '@elevenlabs/react';
+import { useRouter } from 'next/navigation';
 import { Mic, X, MessageSquare, Loader2, AlertCircle } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
@@ -73,11 +74,52 @@ export default function SectionVoiceAgent({
   const [error, setError] = useState<string | null>(null);
   const [conversationId, setConversationId] = useState<string | undefined>();
 
-  const conversation = useConversation();
+  const router = useRouter();
   const animationFrameRef = useRef<number>();
 
   // Get agent ID from environment
   const agentId = import.meta.env.VITE_ELEVENLABS_AGENT_ID;
+
+  // Client tools for agent to invoke
+  const clientTools: any = {
+    navigateToSection: async (parameters: { section: string }) => {
+      const validSections = ['pricing', 'services', 'case-studies', 'contact', 'home'];
+      if (validSections.includes(parameters.section)) {
+        router.push(`/${parameters.section === 'home' ? '' : parameters.section}`);
+        return `Navigating to ${parameters.section} page`;
+      }
+      return `Cannot navigate to ${parameters.section}`;
+    },
+
+    scrollToElement: async (parameters: { elementId: string }) => {
+      const element = document.getElementById(parameters.elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return `Scrolled to ${parameters.elementId}`;
+      }
+      return `Element ${parameters.elementId} not found`;
+    },
+
+    highlightSection: async (parameters: { sectionId: string }) => {
+      const element = document.getElementById(parameters.sectionId);
+      if (element) {
+        element.classList.add('ring-2', 'ring-blue-500', 'ring-offset-2');
+        setTimeout(() => {
+          element.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-2');
+        }, 3000);
+        return `Highlighted ${parameters.sectionId}`;
+      }
+      return `Section ${parameters.sectionId} not found`;
+    },
+  };
+
+  // Use conversation with client tools
+  const conversation = useConversation({
+    clientTools,
+    onUnhandledClientToolCall: (toolCall) => {
+      console.warn('Unhandled client tool call:', toolCall.tool_name, toolCall.parameters);
+    },
+  });
 
   // Auto-start if enabled
   useEffect(() => {
