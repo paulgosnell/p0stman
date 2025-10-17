@@ -39,8 +39,10 @@ export default function FooterV3() {
       title: 'Offerings',
       items: [
         { label: 'Fractional CPO', href: '/fractional-cpo' },
-        { label: 'Training', href: '/training' },
-        { label: 'Support', href: '/support' },
+        { label: 'Mobile App', href: '/mobile-app' },
+        { label: 'Product Strategy', href: '/product-strategy' },
+        { label: 'AI Platform Dev', href: '/ai-platform-development' },
+        { label: 'Retainer Program', href: '/retainer' },
         { label: 'Affiliate Program', href: '/affiliate' }
       ]
     },
