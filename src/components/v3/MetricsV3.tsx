@@ -36,7 +36,7 @@ export default function MetricsV3() {
               </div>
 
               {/* Label */}
-              <div className="text-base md:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed whitespace-pre-line">
+              <div className="text-base md:text-lg text-gray-600 dark:text-gray-100 font-light leading-relaxed whitespace-pre-line">
                 {metric.label}
               </div>
 

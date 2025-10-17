@@ -21,7 +21,7 @@ export default function ClientLogosV3() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-gray-600 dark:text-gray-300 font-light text-lg">Trusted by leading organizations</p>
+          <p className="text-gray-600 dark:text-gray-100 font-light text-lg">Trusted by leading organizations</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity">
