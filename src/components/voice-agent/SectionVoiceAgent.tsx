@@ -162,7 +162,7 @@ export default function SectionVoiceAgent({
       }
       setIsActive(false);
       setIsExpanded(false);
-      onConversationEnd?..(conversationId);
+      onConversationEnd?.(conversationId);
     } catch (err) {
       console.error('Failed to end conversation:', err);
     }
