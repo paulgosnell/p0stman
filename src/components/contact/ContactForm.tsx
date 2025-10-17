@@ -26,8 +26,9 @@ export default function ContactForm() {
         name: formData.name,
         email: formData.email,
         form_type: 'contact_page',
-        project_type: formData.projectType, // Ensure field name matches
-        description: formData.description
+        project_type: formData.projectType,
+        description: formData.description,
+        message: formData.description // EmailJS template may expect 'message' field
       });
       
       setSuccess(true);

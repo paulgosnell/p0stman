@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useLocation } from 'react-router-dom';
 import { X, MessageCircle } from 'lucide-react';
 import SectionVoiceAgent from './voice-agent/SectionVoiceAgent';
 import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
@@ -7,7 +9,17 @@ import AnimatedWaveform from './v3/AnimatedWaveform';
 
 export default function FloatingGuideAgent() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   const guideTourConfig = getVoiceAgentConfig('guideTour');
+
+  // Check if hero section is in view (on homepage only)
+  const { ref: heroRef, inView: heroInView } = useInView({
+    threshold: 0.3,
+  });
+
+  // Hide floating agent when hero is visible on homepage
+  const isHomepage = location.pathname === '/';
+  const shouldHide = isHomepage && heroInView;
 
   return (
     <>

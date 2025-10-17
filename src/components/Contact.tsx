@@ -44,8 +44,9 @@ export default function Contact({ isModalOpen: propIsModalOpen, setIsModalOpen: 
         name: formState.name,
         email: formState.email,
         form_type: 'general_contact',
-        project_type: formState.projectType, // Ensure this field name matches
-        description: formState.description
+        project_type: formState.projectType,
+        description: formState.description,
+        message: formState.description // EmailJS template may expect 'message' field
       });
 
       setSubmitted(true);
