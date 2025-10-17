@@ -1,0 +1,317 @@
+/* P0STMAN Guides - V3 Design System Override */
+
+/* Base Styles - Light Theme */
+body.guides-v3 {
+  background: white !important;
+  color: #111827 !important;
+  font-weight: 300;
+}
+
+/* Container Styles */
+.container-premium-wide {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Typography - V3 Light Style */
+.text-premium-5xl {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.text-premium-4xl {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.text-premium-3xl {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.text-premium-2xl {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.text-premium-xl {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.text-premium-lg {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* Color Overrides - V3 Blue/Gray instead of Purple */
+.text-gradient-purple {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card Styles - Light Theme */
+.bg-gray-800\/50,
+.bg-gray-800 {
+  background-color: white !important;
+  border: 1px solid #e5e7eb;
+}
+
+.bg-gray-800\/50:hover,
+.bg-gray-800:hover {
+  background-color: #f9fafb !important;
+  border-color: #d1d5db;
+}
+
+/* Prose - Light Theme Override */
+.prose-invert {
+  --tw-prose-body: #374151;
+  --tw-prose-headings: #111827;
+  --tw-prose-lead: #4b5563;
+  --tw-prose-links: #2563eb;
+  --tw-prose-bold: #111827;
+  --tw-prose-counters: #6b7280;
+  --tw-prose-bullets: #9ca3af;
+  --tw-prose-hr: #e5e7eb;
+  --tw-prose-quotes: #111827;
+  --tw-prose-quote-borders: #e5e7eb;
+  --tw-prose-captions: #6b7280;
+  --tw-prose-code: #111827;
+  --tw-prose-pre-code: #e5e7eb;
+  --tw-prose-pre-bg: #1f2937;
+  --tw-prose-th-borders: #d1d5db;
+  --tw-prose-td-borders: #e5e7eb;
+}
+
+.prose-invert {
+  color: #374151;
+}
+
+.prose-invert h1,
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4 {
+  color: #111827;
+  font-weight: 300;
+}
+
+.prose-invert h2 {
+  font-size: 1.875rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-invert h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose-invert p {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.prose-invert strong {
+  color: #111827;
+  font-weight: 500;
+}
+
+.prose-invert a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.prose-invert a:hover {
+  color: #FF1493;
+  text-decoration: underline;
+}
+
+/* List Styles */
+.prose-invert ul,
+.prose-invert ol {
+  color: #4b5563;
+}
+
+.prose-invert li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Table Styles - Light Theme */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+table th {
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  color: #111827;
+}
+
+table td {
+  border: 1px solid #e5e7eb !important;
+  padding: 0.75rem;
+  color: #4b5563;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+table strong {
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Text Color Overrides */
+.text-gray-300 {
+  color: #6b7280 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.text-white {
+  color: #111827 !important;
+}
+
+/* Border Overrides */
+.border-gray-800 {
+  border-color: #e5e7eb !important;
+}
+
+.border-gray-700 {
+  border-color: #d1d5db !important;
+}
+
+/* Article Header Styles */
+article header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+article header h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+article header p:first-of-type {
+  font-size: 1.25rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+article header p.text-gray-400 {
+  color: #9ca3af !important;
+  font-size: 0.875rem;
+}
+
+/* Related Articles Section */
+.guides-v3 section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
+
+.guides-v3 section h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+/* Index Page Card Styles */
+.guides-v3 article.bg-gray-800\/50 {
+  background-color: white !important;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+}
+
+.guides-v3 article.bg-gray-800\/50:hover {
+  background-color: #f9fafb !important;
+  border-color: #d1d5db;
+  transform: scale(1.02);
+}
+
+/* Category Badges */
+.guides-v3 .text-purple-400 {
+  color: #2563eb !important;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Green Checkmark Text */
+.text-green-400 {
+  color: #10b981 !important;
+}
+
+/* Code Blocks */
+.prose-invert pre {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb;
+}
+
+.prose-invert code {
+  background-color: #f3f4f6;
+  color: #111827;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose-invert pre code {
+  background-color: transparent;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .text-premium-5xl {
+    font-size: 2rem;
+  }
+
+  .text-premium-4xl {
+    font-size: 1.75rem;
+  }
+
+  .text-premium-3xl {
+    font-size: 1.5rem;
+  }
+
+  article header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Ensure max-width for article content */
+article.max-w-4xl {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}

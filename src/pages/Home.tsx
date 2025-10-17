@@ -41,8 +41,8 @@ export default function Home() {
         <HeroV3 />
         <MetricsV3 />
         <AgentsV3 />
-        <AIAgentShowcaseV3 />
         <CaseStudiesV3 />
+        <AIAgentShowcaseV3 />
         <ClientLogosV3 />
         <ServicesV3 />
         <CTAV3 />
