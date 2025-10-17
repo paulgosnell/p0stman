@@ -40,7 +40,7 @@ export default function HeroV3() {
               <button
                 onClick={handleStartVoice}
                 disabled={voiceAgent.isActive}
-                className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 disabled:bg-gray-400 transition-colors flex items-center justify-center gap-2 group"
+                className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 disabled:bg-gray-400 transition-colors flex items-center justify-center gap-2 group"
               >
                 {voiceAgent.isConnecting ? 'Connecting...' : 'Chat with AI Agent'}
                 {!voiceAgent.isConnecting && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}

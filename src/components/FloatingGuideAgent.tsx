@@ -14,7 +14,7 @@ export default function FloatingGuideAgent() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
+        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-pink-600 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Open site guide"
@@ -41,8 +41,8 @@ export default function FloatingGuideAgent() {
             >
               <AnimatedWaveform
                 barCount={12}
-                color="#ffffff"
-                hoverColor="#FFD700"
+                color="#FF1493"
+                hoverColor="#FF1493"
                 animate={true}
                 isLive={false}
               />
@@ -91,8 +91,8 @@ export default function FloatingGuideAgent() {
               <div className="h-12 flex items-center justify-center">
                 <AnimatedWaveform
                   barCount={30}
-                  color="#0066FF"
-                  hoverColor="#FF6B35"
+                  color="#FF1493"
+                  hoverColor="#FF1493"
                   animate={true}
                   isLive={false}
                 />

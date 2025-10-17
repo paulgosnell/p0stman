@@ -95,7 +95,7 @@ export default function ServicesV3() {
               const element = document.getElementById('cta');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 group/btn"
+            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors flex items-center justify-center gap-2 group/btn"
           >
             {service.cta}
             <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />

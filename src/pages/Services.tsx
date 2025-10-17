@@ -98,7 +98,7 @@ export default function Services() {
               const element = document.getElementById('cta');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 group/btn"
+            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors flex items-center justify-center gap-2 group/btn"
           >
             {service.cta}
             <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
@@ -162,7 +162,7 @@ export default function Services() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+                  className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   Get Started
                   <ArrowRight size={18} />
@@ -173,7 +173,7 @@ export default function Services() {
             <div className="pt-4">
               <a
                 href="/contact"
-                className="text-blue-600 hover:text-blue-700 font-light text-base transition-colors inline-block"
+                className="text-blue-600 hover:text-pink-600 font-light text-base transition-colors inline-block"
               >
                 Or schedule a call →
               </a>

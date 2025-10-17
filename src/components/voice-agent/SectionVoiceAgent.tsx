@@ -134,10 +134,10 @@ export default function SectionVoiceAgent({
 
   // Color theme mappings
   const colorClasses = {
-    blue: 'bg-blue-600 hover:bg-blue-700',
-    purple: 'bg-purple-600 hover:bg-purple-700',
-    green: 'bg-green-600 hover:bg-green-700',
-    orange: 'bg-orange-600 hover:bg-orange-700',
+    blue: 'bg-blue-600 hover:bg-pink-600',
+    purple: 'bg-purple-600 hover:bg-pink-600',
+    green: 'bg-green-600 hover:bg-pink-600',
+    orange: 'bg-orange-600 hover:bg-pink-600',
     pink: 'bg-pink-600 hover:bg-pink-700',
   };
 

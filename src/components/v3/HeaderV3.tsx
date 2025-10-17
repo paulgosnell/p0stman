@@ -45,7 +45,7 @@ export default function HeaderV3() {
         <div className="hidden md:block">
           <button
             onClick={() => scrollToSection('cta')}
-            className="px-6 py-2.5 bg-blue-600 text-white text-sm font-light rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-2.5 bg-blue-600 text-white text-sm font-light rounded-lg hover:bg-pink-600 transition-colors"
           >
             Let's Build
           </button>
@@ -75,7 +75,7 @@ export default function HeaderV3() {
             ))}
             <button
               onClick={() => scrollToSection('cta')}
-              className="w-full px-6 py-2.5 bg-blue-600 text-white text-sm font-light rounded-lg hover:bg-blue-700 transition-colors mt-4"
+              className="w-full px-6 py-2.5 bg-blue-600 text-white text-sm font-light rounded-lg hover:bg-pink-600 transition-colors mt-4"
             >
               Let's Build
             </button>

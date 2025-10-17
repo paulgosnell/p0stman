@@ -76,7 +76,7 @@ export default function CTAV3() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-blue-700 disabled:bg-gray-400 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+                className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 disabled:bg-gray-400 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 {isLoading ? 'Sending...' : 'Get Started'}
                 {!isLoading && <ArrowRight size={18} />}
@@ -111,7 +111,7 @@ export default function CTAV3() {
         <div className="pt-4">
           <a
             href="/contact"
-            className="text-blue-600 hover:text-blue-700 font-light text-base transition-colors inline-block"
+            className="text-blue-600 hover:text-pink-600 font-light text-base transition-colors inline-block"
           >
             Or schedule a call →
           </a>
