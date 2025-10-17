@@ -14,31 +14,31 @@ interface AIAgent {
 const aiAgents: AIAgent[] = [
   {
     name: 'Clarity',
-    description: 'Mental wellness & mindfulness coach',
+    description: 'Get AI clarity in 5 minutes',
     screenshot: '/agents/clarity.png',
     gradient: 'from-blue-500 to-cyan-500',
-    features: ['Daily check-ins', 'Mood tracking', 'Guided exercises']
+    features: ['Voice agent lead gen', 'Victoria AI coach', 'Hidden value discovery']
   },
   {
     name: 'FitLink',
-    description: 'Personal fitness & nutrition companion',
+    description: 'AI-tailored health coaching via Telegram',
     screenshot: '/agents/fitlink.png',
     gradient: 'from-green-500 to-emerald-500',
-    features: ['Workout plans', 'Meal tracking', 'Progress insights']
+    features: ['Oura & Strava integration', 'Wearable data insights', 'Personalized coaching']
   },
   {
     name: 'Mamori',
-    description: 'AI guardian for child safety online',
+    description: 'Clear, trustworthy health information for everyone',
     screenshot: '/agents/mamori.png',
     gradient: 'from-purple-500 to-pink-500',
-    features: ['Content filtering', 'Activity monitoring', 'Safe browsing']
+    features: ['Analyzes health questions', 'Food labels & blood tests', 'Plain English insights']
   },
   {
     name: 'Pathfinder',
-    description: 'Career guidance & skill development',
+    description: 'AI coach for parents of ADHD children',
     screenshot: '/agents/pathfinder.png',
     gradient: 'from-orange-500 to-red-500',
-    features: ['Career planning', 'Skill assessments', 'Job matching']
+    features: ['Evidence-based support', 'Crisis-safe', 'GDPR compliant']
   }
 ];
 
