@@ -9,6 +9,7 @@ import ClientLogosV3 from '../components/v3/ClientLogosV3';
 import ServicesV3 from '../components/v3/ServicesV3';
 import CTAV3 from '../components/v3/CTAV3';
 import FooterV3 from '../components/v3/FooterV3';
+import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
         <ServicesV3 />
         <CTAV3 />
         <FooterV3 />
+        <FloatingGuideAgent />
       </div>
     </HelmetProvider>
   );

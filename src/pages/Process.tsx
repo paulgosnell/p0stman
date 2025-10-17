@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
+import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
 const processSteps = [
   {
@@ -487,6 +488,7 @@ export default function Process() {
         </section>
 
         <FooterV3 />
+        <FloatingGuideAgent />
       </div>
     </HelmetProvider>
   );

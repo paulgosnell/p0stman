@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
+import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import { ArrowRight } from 'lucide-react';
 
 interface ServiceTier {
@@ -181,6 +182,7 @@ export default function Services() {
         </section>
 
         <FooterV3 />
+        <FloatingGuideAgent />
       </div>
     </>
   );

@@ -22,6 +22,7 @@ import {
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
 import FooterV3 from '../components/v3/FooterV3';
+import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
 // All projects data
 const allProjects = [
@@ -915,6 +916,7 @@ export default function CaseStudies() {
         </section>
 
         <FooterV3 />
+        <FloatingGuideAgent />
 
         <CaseStudyModal
           isOpen={showCaseStudyModal}

@@ -10,6 +10,7 @@ import ContactFAQ from '../components/contact/ContactFAQ';
 import ServicesGrid from '../components/ServicesGrid';
 import FooterV3 from '../components/v3/FooterV3';
 import SectionVoiceAgent from '../components/voice-agent/SectionVoiceAgent';
+import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
 
 export default function ContactPage() {
@@ -135,8 +136,9 @@ export default function ContactPage() {
 
         <ContactFAQ />
         <ServicesGrid />
-        
+
         <FooterV3 />
+        <FloatingGuideAgent />
       </div>
     </HelmetProvider>
   );
