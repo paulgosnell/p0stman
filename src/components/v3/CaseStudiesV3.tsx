@@ -41,6 +41,16 @@ const caseStudies: CaseStudy[] = [
     result: 'Successfully launched beta platform with crypto rewards, created native token and tokenomics model, enabled users to earn cryptocurrency through fitness activities while maintaining on-chain health records.',
     image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
     imagePosition: 'left'
+  },
+  {
+    id: 4,
+    client: 'ChilledSites',
+    project: 'AI Website & DApp Builder Platform',
+    problem: 'Non-technical users faced barriers to building professional websites and applications, while developers needed tools to accelerate development and deploy across multiple platforms and blockchain networks.',
+    solution: 'Created comprehensive AI-powered platform leveraging frontier models, intelligent agents, vision capabilities, and code generation. Users describe their vision in natural language and the AI handles design, development, and deployment. Integrated Web3 capabilities enabling users to build and deploy decentralized applications directly to blockchain networks.',
+    result: 'Democratized web and app development enabling anyone to launch professional sites and Web3 dapps to multiple blockchains. Platform empowers both technical and non-technical users with enterprise-grade AI-assisted development capabilities.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites1.png',
+    imagePosition: 'right'
   }
 ];
 
