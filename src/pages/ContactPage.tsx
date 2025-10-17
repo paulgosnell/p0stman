@@ -9,12 +9,16 @@ import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import ServicesGrid from '../components/ServicesGrid';
 import FooterV3 from '../components/v3/FooterV3';
+import SectionVoiceAgent from '../components/voice-agent/SectionVoiceAgent';
+import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
 
 export default function ContactPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const ctaConfig = getVoiceAgentConfig('cta');
 
   return (
     <HelmetProvider>
@@ -99,9 +103,31 @@ export default function ContactPage() {
         <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-start">
-                <ContactForm />
-                <LocationMap />
+              <div className="grid lg:grid-cols-3 gap-16 items-start">
+                <div className="lg:col-span-2">
+                  <ContactForm />
+                </div>
+
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-light text-gray-900 mb-2">Prefer to talk?</h3>
+                    <p className="text-gray-600 font-light mb-4">
+                      Chat with our AI assistant to discuss your project and get instant feedback.
+                    </p>
+                    <SectionVoiceAgent
+                      section="cta"
+                      prompt={ctaConfig.prompt}
+                      firstMessage={ctaConfig.firstMessage}
+                      placement="inline"
+                      buttonText="Start conversation"
+                      color="blue"
+                      icon="🎤"
+                      showTranscript={false}
+                    />
+                  </div>
+
+                  <LocationMap />
+                </div>
               </div>
             </div>
           </div>
