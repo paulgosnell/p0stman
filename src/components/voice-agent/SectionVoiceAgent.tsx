@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useConversation } from '@elevenlabs/react';
+import { useNavigate } from 'react-router-dom';
 import { Mic, X, MessageSquare, Loader2, AlertCircle } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
@@ -73,6 +74,7 @@ export default function SectionVoiceAgent({
   const [error, setError] = useState<string | null>(null);
   const [conversationId, setConversationId] = useState<string | undefined>();
 
+  const navigate = useNavigate();
   const animationFrameRef = useRef<number>();
 
   // Get agent ID from environment
@@ -84,7 +86,7 @@ export default function SectionVoiceAgent({
       const validSections = ['pricing', 'services', 'case-studies', 'contact', 'home'];
       if (validSections.includes(parameters.section)) {
         const path = parameters.section === 'home' ? '/' : `/${parameters.section}`;
-        window.location.href = path;
+        navigate(path);
         return `Navigating to ${parameters.section} page`;
       }
       return `Cannot navigate to ${parameters.section}`;
