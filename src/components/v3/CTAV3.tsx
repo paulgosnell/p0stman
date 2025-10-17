@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { ArrowRight, Mic, X, Volume2, Loader } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
-import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5af4f8dkjj8pqda592';
+import { getVoiceAgentConfig } from '../../config/voiceAgentPrompts';
+import SectionVoiceAgent from '../voice-agent/SectionVoiceAgent';
 
 export default function CTAV3() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isVoiceActive, setIsVoiceActive] = useState(false);
 
-  const voiceAgent = useVoiceWaveform(AGENT_ID);
+  // Get CTA-specific prompt from config
+  const ctaConfig = getVoiceAgentConfig('cta');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,15 +36,6 @@ export default function CTAV3() {
     }
   };
 
-  const handleStartVoice = () => {
-    setIsVoiceActive(true);
-    voiceAgent.startConversation();
-  };
-
-  const handleStopVoice = () => {
-    setIsVoiceActive(false);
-    voiceAgent.stopConversation();
-  };
 
   return (
     <section id="cta" className="py-40 md:py-48 px-6 md:px-0 bg-white">
@@ -104,87 +93,17 @@ export default function CTAV3() {
             <div className="flex-1 h-px bg-gray-200"></div>
           </div>
 
-          {/* Voice Agent Button/Widget */}
-          {!isVoiceActive ? (
-            <button
-              onClick={handleStartVoice}
-              disabled={voiceAgent.isActive}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg text-gray-700 font-light text-base transition-colors group"
-            >
-              <Mic size={18} className="text-blue-600 group-hover:scale-110 transition-transform" />
-              <span>Prefer to talk? Try our AI assistant</span>
-            </button>
-          ) : (
-            <AnimatePresence>
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="overflow-hidden"
-              >
-                <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg border border-blue-200 space-y-4">
-                  {/* Header */}
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <Mic size={16} className="text-blue-600" />
-                      <span className="text-sm font-light text-gray-700">Voice Assistant</span>
-                    </div>
-                    <button
-                      onClick={handleStopVoice}
-                      className="p-1.5 hover:bg-white/50 rounded-full transition-colors"
-                    >
-                      <X size={16} className="text-gray-600" />
-                    </button>
-                  </div>
-
-                  {/* Waveform Visualization */}
-                  <div className="flex items-center justify-center gap-[2px] h-16">
-                    {voiceAgent.frequencyData.map((height, i) => (
-                      <motion.div
-                        key={i}
-                        animate={{
-                          height: voiceAgent.isSpeaking ? `${Math.max(height, 8)}%` : '8%',
-                          opacity: voiceAgent.isConnected ? 1 : 0.3,
-                        }}
-                        transition={{
-                          duration: 0.1,
-                          ease: 'easeOut',
-                        }}
-                        className="w-[2px] bg-blue-600 rounded-full"
-                        style={{
-                          minHeight: '8%',
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Status */}
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-2 text-sm font-light text-gray-700">
-                      {voiceAgent.isConnecting && (
-                        <>
-                          <Loader size={16} className="animate-spin text-blue-600" />
-                          <span>Connecting...</span>
-                        </>
-                      )}
-                      {voiceAgent.isConnected && !voiceAgent.isSpeaking && (
-                        <>
-                          <Mic size={16} className="text-blue-600" />
-                          <span>Listening... speak now</span>
-                        </>
-                      )}
-                      {voiceAgent.isConnected && voiceAgent.isSpeaking && (
-                        <>
-                          <Volume2 size={16} className="text-blue-600 animate-pulse" />
-                          <span>AI is speaking...</span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          )}
+          {/* Voice Agent - SectionVoiceAgent component */}
+          <SectionVoiceAgent
+            section="cta"
+            prompt={ctaConfig.prompt}
+            firstMessage={ctaConfig.firstMessage}
+            placement="inline"
+            buttonText="Prefer to talk? Try our AI assistant"
+            color="blue"
+            icon="🎤"
+            showTranscript={false}
+          />
         </div>
 
         {/* Alternative CTA */}
