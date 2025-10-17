@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 interface CaseStudy {
   id: number;
@@ -46,17 +47,17 @@ const caseStudies: CaseStudy[] = [
     id: 4,
     client: 'ChilledSites',
     project: 'AI Website & DApp Builder Platform',
-    problem: 'Non-technical users faced barriers to building professional websites and applications, while developers needed tools to accelerate development and deploy across multiple platforms and blockchain networks.',
-    solution: 'Created comprehensive AI-powered platform leveraging frontier models, intelligent agents, vision capabilities, and code generation. Users describe their vision in natural language and the AI handles design, development, and deployment. Integrated Web3 capabilities enabling users to build and deploy decentralized applications directly to blockchain networks.',
-    result: 'Democratized web and app development enabling anyone to launch professional sites and Web3 dapps to multiple blockchains. Platform empowers both technical and non-technical users with enterprise-grade AI-assisted development capabilities.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites1.png',
+    problem: 'Building professional websites and apps requires technical expertise that most people don\'t have. Web3 deployment adds another layer of complexity.',
+    solution: 'Built an AI-powered platform that lets anyone describe their vision in natural language. Frontier models, agents, and code generation handle everything from design to deployment. Web3 integration lets users launch dapps directly to blockchain networks.',
+    result: 'Democratized web and app development. Users can now build professional sites and launch Web3 dapps to multiple blockchains without touching code.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
     imagePosition: 'right'
   }
 ];
 
 export default function CaseStudiesV3() {
   return (
-    <section id="work" className="py-40 md:py-48 px-6 md:px-0 bg-white">
+    <section id="work" className="py-56 md:py-64 px-6 md:px-0 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="mb-20 md:mb-24">
@@ -122,6 +123,17 @@ export default function CaseStudiesV3() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA to See All Case Studies */}
+        <div className="mt-24 md:mt-32 pt-24 md:pt-32 border-t border-gray-200 flex justify-center">
+          <a
+            href="/case-studies"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-light transition-colors group"
+          >
+            View all case studies
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
     </section>
