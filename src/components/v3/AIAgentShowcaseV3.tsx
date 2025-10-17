@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Smartphone, CheckCircle, Bot, ArrowRight } from 'lucide-react';
+import { Smartphone, CheckCircle } from 'lucide-react';
 
 interface AIAgent {
   name: string;
@@ -61,7 +60,7 @@ export default function AIAgentShowcaseV3() {
             Production-Ready AI Experiences
           </h2>
           <p className="text-gray-600 text-lg font-light max-w-3xl mx-auto leading-relaxed">
-            These aren't simple apps—they're frontier AI systems in production. Voice agents powered by ElevenLabs. Reasoning models from Claude and OpenAI. RAG systems with extended memory. Multi-API orchestration across Telegram, Oura, Strava. Built with AI SDK and Vercel. Real-time data processing, intelligent context retention, and seamless integrations that actually work.
+            Frontier AI systems in production. Voice agents with ElevenLabs, reasoning models from Claude and OpenAI, RAG with extended memory, multi-API orchestration across Telegram, Oura, Strava.
           </p>
         </motion.div>
 
@@ -75,71 +74,35 @@ export default function AIAgentShowcaseV3() {
               viewport={{ once: true }}
               className="group relative"
             >
-              {/* Mobile phone frame */}
-              <div className="relative mx-auto" style={{ maxWidth: '280px' }}>
-                {/* Phone bezel/frame */}
-                <div className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl">
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-gray-900 rounded-b-3xl z-10" />
+              {/* Plain image container */}
+              <div className="relative overflow-hidden rounded-xl aspect-[9/19.5] shadow-lg">
+                {/* Gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-10`} />
 
-                  {/* Screen */}
-                  <div className="relative bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
-                    {/* Gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-10`} />
+                {/* Screenshot */}
+                <img
+                  src={agent.screenshot}
+                  alt={`${agent.name} AI Agent`}
+                  className="w-full h-full object-cover object-top"
+                />
 
-                    {/* Screenshot */}
-                    <img
-                      src={agent.screenshot}
-                      alt={`${agent.name} AI Agent`}
-                      className="w-full h-full object-cover object-top"
-                    />
-
-                    {/* Hover overlay with info */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                      <h3 className="text-white font-semibold text-lg mb-2">{agent.name}</h3>
-                      <p className="text-white/90 text-sm mb-3">{agent.description}</p>
-                      <ul className="space-y-1">
-                        {agent.features.map((feature, i) => (
-                          <li key={i} className="text-white/80 text-xs flex items-center gap-2">
-                            <CheckCircle className="w-3 h-3 text-green-400" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Home indicator */}
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full" />
-                </div>
-
-                {/* Agent name below phone */}
-                <div className="mt-6 text-center">
-                  <h3 className="text-gray-900 font-semibold text-lg mb-1">{agent.name}</h3>
-                  <p className="text-gray-600 text-sm font-light">{agent.description}</p>
+                {/* Hover overlay with info */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <h3 className="text-white font-semibold text-lg mb-2">{agent.name}</h3>
+                  <p className="text-white/90 text-sm mb-3">{agent.description}</p>
+                  <ul className="space-y-1">
+                    {agent.features.map((feature, i) => (
+                      <li key={i} className="text-white/80 text-xs flex items-center gap-2">
+                        <CheckCircle className="w-3 h-3 text-green-400" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-pink-600 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 font-light"
-          >
-            <Bot className="w-5 h-5" />
-            Build Your AI Agent
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

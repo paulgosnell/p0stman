@@ -52,7 +52,7 @@ export default function AgentsV3() {
   const cardElements = agents.map((agent, index) => (
     <div
       key={index}
-      className="group bg-white rounded-xl p-8 border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 space-y-6 h-full"
+      className="group rounded-xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300 space-y-6 h-full"
     >
       {/* Icon */}
       <div className="flex items-center justify-start">

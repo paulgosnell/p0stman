@@ -390,9 +390,10 @@ export default function SectionVoiceAgent({
           onClick={startConversation}
           className={`
             w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl
-            ${colorClasses[color]} text-white font-semibold shadow-lg
+            border border-gray-300 bg-transparent text-gray-900 font-light
+            hover:border-gray-400 hover:bg-gray-50
             transition-all duration-300
-            ${error ? 'bg-red-600 hover:bg-red-700' : ''}
+            ${error ? 'border-red-600 text-red-600 hover:bg-red-50' : ''}
           `}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
