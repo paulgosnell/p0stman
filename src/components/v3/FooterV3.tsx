@@ -6,23 +6,12 @@ export default function FooterV3() {
 
   const footerColumns = [
     {
-      title: 'Brand',
-      items: [
-        { label: 'P0STMAN', href: '/', isLogo: true }
-      ],
-      social: [
-        { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', external: true },
-        { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', external: true },
-        { icon: Github, href: 'https://github.com', label: 'GitHub', external: true }
-      ]
-    },
-    {
       title: 'Product',
       items: [
         { label: 'AI Agents', href: '/ai-agents' },
         { label: 'MVP Launch', href: '/website' },
+        { label: 'Mobile App', href: '/mobile-app' },
         { label: 'Services', href: '/services' },
-        { label: 'Digital Transform', href: '/digital-transformation' },
         { label: 'chilledsites.com', href: 'https://chilledsites.com', external: true }
       ]
     },
@@ -31,29 +20,47 @@ export default function FooterV3() {
       items: [
         { label: 'About', href: '/about' },
         { label: 'Process', href: '/process' },
-        { label: 'Contact', href: '/contact' },
-        { label: 'Blog', href: '#' }
+        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Contact', href: '/contact' }
       ]
     },
     {
-      title: 'Offerings',
+      title: 'Services',
       items: [
         { label: 'Fractional CPO', href: '/fractional-cpo' },
-        { label: 'Mobile App', href: '/mobile-app' },
         { label: 'Product Strategy', href: '/product-strategy' },
         { label: 'AI Platform Dev', href: '/ai-platform-development' },
+        { label: 'Digital Transform', href: '/digital-transformation' },
         { label: 'Retainer Program', href: '/retainer' },
         { label: 'Affiliate Program', href: '/affiliate' }
+      ]
+    },
+    {
+      title: 'Guides',
+      items: [
+        { label: 'All Guides', href: '/guides' },
+        { label: 'AI Cost Guide', href: '/guides/ai-agent-development-cost-timeline-guide-2025.html' },
+        { label: 'Voice AI Platforms', href: '/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html' },
+        { label: 'ChatGPT vs Custom', href: '/guides/chatgpt-vs-custom-ai-agent-guide-2025.html' },
+        { label: 'AI Security Guide', href: '/guides/ai-agent-security-data-privacy-guide-2025.html' },
+        { label: 'How AI Works', href: '/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html' },
+        { label: 'Hiring AI Agency', href: '/guides/how-to-hire-ai-development-agency-2025.html' },
+        { label: 'SaaS Roadmap', href: '/guides/building-saas-roadmap-2025.html' }
       ]
     },
     {
       title: 'Legal',
       items: [
         { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' },
-        { label: `© ${currentYear} P0STMAN`, href: '#', disabled: true }
+        { label: 'Terms of Service', href: '/terms' }
       ]
     }
+  ];
+
+  const socialLinks = [
+    { icon: Linkedin, href: 'https://linkedin.com/in/pgosnell', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/paulgosnell', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/paulgosnell', label: 'GitHub' }
   ];
 
   return (
@@ -73,51 +80,17 @@ export default function FooterV3() {
                 <ul className="flex flex-col space-y-4">
                   {column.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                      {item.isLogo ? (
-                        <a
-                          href={item.href}
-                          className="text-lg font-light text-white hover:text-blue-400 transition-colors"
-                        >
-                          {item.label}
-                        </a>
-                      ) : (
-                        <a
-                          href={item.href}
-                          target={item.external ? '_blank' : undefined}
-                          rel={item.external ? 'noopener noreferrer' : undefined}
-                          className={`text-sm font-light transition-colors ${
-                            item.disabled
-                              ? 'text-gray-500 cursor-default'
-                              : 'text-gray-300 hover:text-white hover:underline'
-                          }`}
-                        >
-                          {item.label}
-                        </a>
-                      )}
+                      <a
+                        href={item.href}
+                        target={item.external ? '_blank' : undefined}
+                        rel={item.external ? 'noopener noreferrer' : undefined}
+                        className="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors"
+                      >
+                        {item.label}
+                      </a>
                     </li>
                   ))}
                 </ul>
-              )}
-
-              {/* Social Icons */}
-              {column.social && (
-                <div className="flex gap-4 pt-4">
-                  {column.social.map((social, socialIndex) => {
-                    const Icon = social.icon;
-                    return (
-                      <a
-                        key={socialIndex}
-                        href={social.href}
-                        target={social.external ? '_blank' : undefined}
-                        rel={social.external ? 'noopener noreferrer' : undefined}
-                        aria-label={social.label}
-                        className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
-                      >
-                        <Icon size={20} />
-                      </a>
-                    );
-                  })}
-                </div>
               )}
             </div>
           ))}
@@ -125,9 +98,41 @@ export default function FooterV3() {
 
         {/* Divider */}
         <div className="border-t border-gray-800 pt-12 md:pt-16">
-          <p className="text-sm text-gray-500 font-light text-center">
-            AI-Powered Product Studio. Built for speed. Shipped with care.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Brand & Tagline */}
+            <div className="text-center md:text-left">
+              <a href="/" className="text-xl font-light text-white hover:text-blue-400 transition-colors mb-2 block">
+                P0STMAN
+              </a>
+              <p className="text-sm text-gray-500 font-light">
+                AI-Powered Product Studio. Built for speed. Shipped with care.
+              </p>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex gap-4">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                  >
+                    <Icon size={20} />
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Copyright */}
+            <p className="text-sm text-gray-500 font-light">
+              © {currentYear} P0STMAN
+            </p>
+          </div>
         </div>
       </div>
     </footer>
