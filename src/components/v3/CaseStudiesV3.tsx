@@ -14,32 +14,32 @@ interface CaseStudy {
 const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    client: 'First Abu Dhabi Bank',
-    project: 'Enterprise Digital Transformation',
-    problem: 'FAB needed to modernize their digital infrastructure and create scalable, reusable systems across multiple departments while maintaining security and compliance standards.',
-    solution: 'Built enterprise-grade platforms with unified design systems and code libraries. Established cross-functional teams and agile delivery processes to ensure consistent, high-quality output.',
-    result: 'Scaled from 1 pilot project to 40+ person transformation team. Delivered enterprise-grade platforms across multiple departments with 60% improved efficiency.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
+    client: 'Harmony',
+    project: 'Music Collaboration Platform',
+    problem: 'Musicians needed a way to collaborate globally, find compatible artists, and work together in real-time without geographic constraints.',
+    solution: 'Built revolutionary AI-powered matching system that connects artists worldwide with intelligent pairing based on style, genre, and collaboration preferences. Integrated real-time collaboration tools for seamless creative workflow.',
+    result: 'Platform connected 1000+ artists globally with AI-powered matching enabling real-time music collaboration and creative partnerships across continents.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
     imagePosition: 'left'
   },
   {
     id: 2,
-    client: 'Al Arabiya',
-    project: 'News Platform Redesign',
-    problem: 'Al Arabiya needed a modern, scalable news platform that could handle high traffic loads while providing a customizable, multi-platform experience during unprecedented global events.',
-    solution: 'Led a global team through UX research, development, testing, and content delivery. Implemented a future-ready architecture with customizable components and multi-platform support.',
-    result: 'Successfully delivered complete platform redesign during pandemic. Improved page load speeds by 40% and achieved high user satisfaction.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png',
+    client: 'ClinicBook',
+    project: 'Healthcare Booking System',
+    problem: 'Healthcare providers struggled with manual scheduling, double-bookings, and inefficient patient management, leading to poor resource allocation and patient experience.',
+    solution: 'Developed comprehensive AI-powered booking and management system with intelligent scheduling optimization, automated reminders, and real-time capacity management. Streamlined patient intake and provider workflows.',
+    result: 'Achieved 80% efficiency improvement in scheduling, reduced no-shows by implementing smart reminders, and significantly improved patient experience with seamless booking.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/clinicbook1.png',
     imagePosition: 'right'
   },
   {
     id: 3,
-    client: 'Department of Health Abu Dhabi',
-    project: 'My Health Coach',
-    problem: 'Build a standout health app for government that exceeds market standards while partnering with IBM.',
-    solution: 'Suggested ambitious, innovative features to leapfrog existing market offerings with senior development team leadership.',
-    result: 'Successfully launched standout health app for government. Integrated with major fitness platforms and exceeded market standards in app development.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png',
+    client: 'BFIT Web3',
+    project: 'Blockchain Fitness Platform',
+    problem: 'The fitness industry lacked incentive mechanisms for users to track and maintain consistent health goals. Traditional apps couldn\'t offer real value exchange for user health data.',
+    solution: 'Transitioned platform to Web 3.0 with native cryptocurrency token, tokenomics model, and blockchain-recorded health data. Created earn-while-you-move incentive system where users receive crypto rewards for fitness activities.',
+    result: 'Successfully launched beta platform with crypto rewards, created native token and tokenomics model, enabled users to earn cryptocurrency through fitness activities while maintaining on-chain health records.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
     imagePosition: 'left'
   }
 ];

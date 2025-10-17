@@ -4,7 +4,6 @@ import HeaderV3Global from '../components/v3/HeaderV3Global';
 import HeroV3 from '../components/v3/HeroV3';
 import MetricsV3 from '../components/v3/MetricsV3';
 import AgentsV3 from '../components/v3/AgentsV3';
-import AgentShowcaseV3 from '../components/v3/AgentShowcaseV3';
 import CaseStudiesV3 from '../components/v3/CaseStudiesV3';
 import ClientLogosV3 from '../components/v3/ClientLogosV3';
 import ServicesV3 from '../components/v3/ServicesV3';
@@ -40,7 +39,6 @@ export default function Home() {
         <HeroV3 />
         <MetricsV3 />
         <AgentsV3 />
-        <AgentShowcaseV3 />
         <CaseStudiesV3 />
         <ClientLogosV3 />
         <ServicesV3 />
