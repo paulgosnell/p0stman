@@ -31,7 +31,7 @@ export default function FloatingGuideAgent() {
         {!shouldHide && (
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-pink-600 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
+            className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-pink-600 dark:bg-blue-500 dark:hover:bg-pink-500 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Open site guide"
@@ -82,15 +82,15 @@ export default function FloatingGuideAgent() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-28 right-6 z-50 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+            className="fixed bottom-28 right-6 z-50 w-96 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-800 px-6 py-4">
               <div className="flex items-center gap-3 mb-2">
                 <MessageCircle size={20} className="text-white" />
                 <h3 className="text-lg font-semibold text-white">Site Guide</h3>
               </div>
-              <p className="text-blue-100 text-sm">
+              <p className="text-blue-100 dark:text-blue-200 text-sm">
                 Ask me to show you around or answer any questions
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function FloatingGuideAgent() {
             </div>
 
             {/* Waveform Footer */}
-            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
+            <div className="bg-gray-50 dark:bg-gray-900 px-6 py-4 border-t border-gray-200 dark:border-gray-700">
               <div className="h-12 flex items-center justify-center">
                 <AnimatedWaveform
                   barCount={30}

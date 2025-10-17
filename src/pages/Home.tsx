@@ -15,7 +15,7 @@ import FloatingGuideAgent from '../components/FloatingGuideAgent';
 export default function Home() {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
+      <div className="min-h-screen bg-white dark:bg-gray-900 w-full overflow-x-hidden relative">
         <Helmet>
           <title>P0STMAN | From Vision to Product — Delivered Fast and Brilliantly</title>
           <meta name="description" content="We build and deliver websites, apps, and digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count." />

@@ -315,3 +315,189 @@ article.max-w-4xl {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ========================================
+   DARK MODE STYLES
+   ======================================== */
+
+/* Base Styles - Dark Theme */
+.dark body.guides-v3 {
+  background: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+/* Card Styles - Dark Theme */
+.dark .bg-gray-800\/50,
+.dark .bg-gray-800 {
+  background-color: #1f2937 !important;
+  border: 1px solid #374151;
+}
+
+.dark .bg-gray-800\/50:hover,
+.dark .bg-gray-800:hover {
+  background-color: #374151 !important;
+  border-color: #4b5563;
+}
+
+/* Prose - Dark Theme Override */
+.dark .prose-invert {
+  --tw-prose-body: #d1d5db;
+  --tw-prose-headings: #f3f4f6;
+  --tw-prose-lead: #9ca3af;
+  --tw-prose-links: #60a5fa;
+  --tw-prose-bold: #f3f4f6;
+  --tw-prose-counters: #9ca3af;
+  --tw-prose-bullets: #6b7280;
+  --tw-prose-hr: #374151;
+  --tw-prose-quotes: #f3f4f6;
+  --tw-prose-quote-borders: #374151;
+  --tw-prose-captions: #9ca3af;
+  --tw-prose-code: #f3f4f6;
+  --tw-prose-pre-code: #d1d5db;
+  --tw-prose-pre-bg: #1f2937;
+  --tw-prose-th-borders: #4b5563;
+  --tw-prose-td-borders: #374151;
+}
+
+.dark .prose-invert {
+  color: #d1d5db;
+}
+
+.dark .prose-invert h1,
+.dark .prose-invert h2,
+.dark .prose-invert h3,
+.dark .prose-invert h4 {
+  color: #f3f4f6;
+  font-weight: 300;
+}
+
+.dark .prose-invert p {
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+.dark .prose-invert strong {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+.dark .prose-invert a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.dark .prose-invert a:hover {
+  color: #FF1493;
+  text-decoration: underline;
+}
+
+/* List Styles - Dark */
+.dark .prose-invert ul,
+.dark .prose-invert ol {
+  color: #d1d5db;
+}
+
+/* Table Styles - Dark Theme */
+.dark table th {
+  background-color: #1f2937 !important;
+  border: 1px solid #374151 !important;
+  color: #f3f4f6;
+}
+
+.dark table td {
+  border: 1px solid #374151 !important;
+  color: #d1d5db;
+}
+
+.dark table tr:nth-child(even) {
+  background-color: #1f2937;
+}
+
+.dark table strong {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+/* Text Color Overrides - Dark */
+.dark .text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.dark .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.dark .text-white {
+  color: #f3f4f6 !important;
+}
+
+/* Border Overrides - Dark */
+.dark .border-gray-800 {
+  border-color: #374151 !important;
+}
+
+.dark .border-gray-700 {
+  border-color: #4b5563 !important;
+}
+
+/* Article Header Styles - Dark */
+.dark article header {
+  border-bottom: 1px solid #374151;
+}
+
+.dark article header h1 {
+  color: #f3f4f6;
+}
+
+.dark article header p:first-of-type {
+  color: #d1d5db;
+}
+
+.dark article header p.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* Related Articles Section - Dark */
+.dark .guides-v3 section h2 {
+  color: #f3f4f6;
+}
+
+/* Index Page Card Styles - Dark */
+.dark .guides-v3 article.bg-gray-800\/50 {
+  background-color: #1f2937 !important;
+  border: 1px solid #374151;
+}
+
+.dark .guides-v3 article.bg-gray-800\/50:hover {
+  background-color: #374151 !important;
+  border-color: #4b5563;
+}
+
+/* Category Badges - Dark */
+.dark .guides-v3 .text-purple-400 {
+  color: #60a5fa !important;
+}
+
+/* Green Checkmark Text - Dark */
+.dark .text-green-400 {
+  color: #34d399 !important;
+}
+
+/* Code Blocks - Dark */
+.dark .prose-invert pre {
+  background-color: #1f2937 !important;
+  color: #f3f4f6 !important;
+  border: 1px solid #374151;
+}
+
+.dark .prose-invert code {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.dark .prose-invert pre code {
+  background-color: transparent;
+}

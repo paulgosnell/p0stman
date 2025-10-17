@@ -188,7 +188,7 @@ export default function Process() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <Helmet>
           <title>Our Process | AI-Powered Development Methodology</title>
           <meta name="description" content="Discover our proven AI-powered development process that delivers exceptional results 80% faster. Transparent, efficient, and cost-effective methodology." />
@@ -207,7 +207,7 @@ export default function Process() {
         <HeaderV3Global />
 
         {/* Enhanced Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center bg-white text-gray-900 overflow-hidden">
+        <section className="relative min-h-[80vh] flex items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
             {/* Animated Background Elements */}
@@ -225,9 +225,9 @@ export default function Process() {
               >
                 <div className="flex items-center justify-center gap-3 mb-8">
                   <div className="p-2 bg-blue-500/20 rounded-xl">
-                    <Zap className="w-6 h-6 text-blue-400" />
+                    <Zap className="w-6 h-6 text-blue-400 dark:text-blue-400" />
                   </div>
-                  <span className="text-blue-400 font-medium text-lg">Our Methodology</span>
+                  <span className="text-blue-400 dark:text-blue-400 font-medium text-lg">Our Methodology</span>
                 </div>
 
                 <h1 className="text-6xl md:text-7xl font-thin mb-8">
@@ -240,8 +240,8 @@ export default function Process() {
                   </span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
-                  Our proven AI-powered development process combines cutting-edge technology 
+                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
+                  Our proven AI-powered development process combines cutting-edge technology
                   with 20+ years of experience to deliver exceptional results in record time.
                 </p>
 
@@ -256,10 +256,10 @@ export default function Process() {
                       className="group relative"
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative bg-gray-50 backdrop-blur-md rounded-2xl p-6 border border-gray-200 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="relative bg-gray-50 dark:bg-gray-800 backdrop-blur-md rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
                         <div className="mb-4">{benefit.icon}</div>
-                        <div className="text-2xl font-light mb-2 text-white">{benefit.title.split(' ')[0]}</div>
-                        <div className="text-sm text-gray-300 font-medium">{benefit.title.split(' ').slice(1).join(' ')}</div>
+                        <div className="text-2xl font-light mb-2 text-gray-900 dark:text-gray-100">{benefit.title.split(' ')[0]}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-300 font-medium">{benefit.title.split(' ').slice(1).join(' ')}</div>
                       </div>
                     </motion.div>
                   ))}
@@ -270,7 +270,7 @@ export default function Process() {
         </section>
 
         {/* Interactive Process Steps */}
-        <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
@@ -286,20 +286,20 @@ export default function Process() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+                <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 dark:text-gray-100">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Our 3-Step Process
                   </span>
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  From initial consultation to final deployment, every step is designed 
+                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                  From initial consultation to final deployment, every step is designed
                   for maximum efficiency and exceptional results.
                 </p>
               </motion.div>
 
               {/* Process Navigation */}
               <div className="flex justify-center mb-16">
-                <div className="flex bg-white rounded-2xl p-2 shadow-lg border border-gray-200">
+                <div className="flex bg-white dark:bg-gray-800 rounded-2xl p-2 shadow-lg border border-gray-200 dark:border-gray-700">
                   {processSteps.map((step) => (
                     <button
                       key={step.id}
@@ -307,7 +307,7 @@ export default function Process() {
                       className={`px-6 py-3 rounded-xl font-medium transition-all ${
                         activeStep === step.id
                           ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                          : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700'
                       }`}
                     >
                       Step {step.id}
@@ -338,23 +338,23 @@ export default function Process() {
                             {step.icon}
                           </div>
                           <div>
-                            <h3 className="text-3xl font-light text-gray-900">{step.title}</h3>
-                            <p className="text-gray-600 font-medium">{step.duration}</p>
+                            <h3 className="text-3xl font-light text-gray-900 dark:text-gray-100">{step.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-300 font-medium">{step.duration}</p>
                           </div>
                         </div>
-                        
-                        <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+
+                        <p className="text-xl text-gray-700 dark:text-gray-200 mb-8 leading-relaxed">
                           {step.description}
                         </p>
 
                         {/* Deliverables */}
                         <div className="mb-8">
-                          <h4 className="text-lg font-medium text-gray-900 mb-4">Key Deliverables</h4>
+                          <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">Key Deliverables</h4>
                           <div className="grid md:grid-cols-2 gap-3">
                             {step.deliverables.map((deliverable, i) => (
                               <div key={i} className="flex items-center gap-3">
                                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                                <span className="text-gray-700">{deliverable}</span>
+                                <span className="text-gray-700 dark:text-gray-200">{deliverable}</span>
                               </div>
                             ))}
                           </div>
@@ -369,15 +369,15 @@ export default function Process() {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
-                            className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all transform hover:-translate-y-1"
+                            className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 dark:border-gray-700/50 hover:shadow-xl transition-all transform hover:-translate-y-1"
                           >
                             <div className="flex items-start gap-4">
                               <div className={`p-3 bg-gradient-to-br ${step.color} rounded-xl text-white flex-shrink-0`}>
                                 {activity.icon}
                               </div>
                               <div>
-                                <h5 className="font-medium text-gray-900 mb-2">{activity.title}</h5>
-                                <p className="text-gray-600 text-sm">{activity.description}</p>
+                                <h5 className="font-medium text-gray-900 dark:text-gray-100 mb-2">{activity.title}</h5>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm">{activity.description}</p>
                               </div>
                             </div>
                           </motion.div>
@@ -392,7 +392,7 @@ export default function Process() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -402,10 +402,10 @@ export default function Process() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl font-light mb-6 text-gray-900">
+                <h2 className="text-4xl font-light mb-6 text-gray-900 dark:text-gray-100">
                   What Clients Say About Our Process
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-gray-600 dark:text-gray-300">
                   Real feedback from leaders who've experienced our methodology
                 </p>
               </motion.div>
@@ -418,9 +418,9 @@ export default function Process() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100"
+                    className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700"
                   >
-                    <p className="text-lg text-gray-700 mb-6 italic leading-relaxed">
+                    <p className="text-lg text-gray-700 dark:text-gray-200 mb-6 italic leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                     <div className="flex items-center gap-4">
@@ -428,8 +428,8 @@ export default function Process() {
                         {testimonial.avatar}
                       </div>
                       <div>
-                        <div className="font-medium text-gray-900">{testimonial.author}</div>
-                        <div className="text-gray-600">{testimonial.role}</div>
+                        <div className="font-medium text-gray-900 dark:text-gray-100">{testimonial.author}</div>
+                        <div className="text-gray-600 dark:text-gray-400">{testimonial.role}</div>
                       </div>
                     </div>
                   </motion.div>
@@ -473,7 +473,7 @@ export default function Process() {
                   </a>
                   <a
                     href="/case-studies"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
                   >
                     View Case Studies
                   </a>

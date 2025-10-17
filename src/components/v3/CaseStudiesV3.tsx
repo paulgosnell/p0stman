@@ -57,11 +57,11 @@ const caseStudies: CaseStudy[] = [
 
 export default function CaseStudiesV3() {
   return (
-    <section id="work" className="py-56 md:py-64 px-6 md:px-0 bg-white">
+    <section id="work" className="py-56 md:py-64 px-6 md:px-0 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="mb-20 md:mb-24">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
             Recent Work
           </h2>
         </div>
@@ -77,7 +77,7 @@ export default function CaseStudiesV3() {
             >
               {/* Image */}
               <div
-                className={`relative h-auto md:h-auto rounded-xl overflow-hidden bg-white border border-gray-200 p-6 md:p-8 ${
+                className={`relative h-auto md:h-auto rounded-xl overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 ${
                   study.imagePosition === 'right' ? 'md:order-2' : ''
                 }`}
               >
@@ -90,7 +90,7 @@ export default function CaseStudiesV3() {
                     e.currentTarget.src = '/assets/images/p0stman-bg.png';
                   }}
                 />
-                <div className="absolute inset-0 rounded-xl ring-1 ring-gray-200 pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl ring-1 ring-gray-200 dark:ring-gray-700 pointer-events-none" />
               </div>
 
               {/* Content */}
@@ -99,24 +99,24 @@ export default function CaseStudiesV3() {
                   study.imagePosition === 'right' ? 'md:order-1' : ''
                 }`}
               >
-                <p className="text-sm font-light text-gray-500 uppercase tracking-wide">
+                <p className="text-sm font-light text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                   {study.client}
                 </p>
 
-                <h3 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight">
+                <h3 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 leading-tight">
                   {study.project}
                 </h3>
 
-                <p className="text-lg text-gray-700 font-light">
+                <p className="text-lg text-gray-700 dark:text-gray-200 font-light">
                   {study.problem}
                 </p>
 
-                <p className="text-base text-gray-600 font-light leading-relaxed">
+                <p className="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
                   {study.solution}
                 </p>
 
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-lg text-blue-600 font-bold">
+                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <p className="text-lg text-blue-600 dark:text-blue-400 font-bold">
                     {study.result}
                   </p>
                 </div>
@@ -126,10 +126,10 @@ export default function CaseStudiesV3() {
         </div>
 
         {/* CTA to See All Case Studies */}
-        <div className="mt-24 md:mt-32 pt-24 md:pt-32 border-t border-gray-200 flex justify-center">
+        <div className="mt-24 md:mt-32 pt-24 md:pt-32 border-t border-gray-200 dark:border-gray-700 flex justify-center">
           <a
             href="/case-studies"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-light transition-colors group"
+            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 font-light transition-colors group"
           >
             View all case studies
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

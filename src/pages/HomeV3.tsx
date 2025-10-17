@@ -20,7 +20,7 @@ export default function HomeV3() {
         <meta name="theme-color" content="#FFFFFF" />
       </Helmet>
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <HeaderV3 />
         <HeroV3 />
         <MetricsV3 />

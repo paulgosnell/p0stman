@@ -69,7 +69,7 @@ export default function AIAgents() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <Helmet>
           <title>Custom AI Agents | Autonomous Business Solutions</title>
           <meta name="description" content="Deploy custom AI agents that work autonomously 24/7. Transform your business operations with intelligent automation and continuous learning capabilities." />
@@ -87,7 +87,7 @@ export default function AIAgents() {
 
         <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
+        <section ref={ref} className="relative min-h-screen flex items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
@@ -103,31 +103,31 @@ export default function AIAgents() {
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-6">
-                      <Bot className="w-6 h-6 text-violet-400" />
-                      <span className="text-violet-400 font-medium">Custom AI Agents</span>
+                      <Bot className="w-6 h-6 text-violet-400 dark:text-violet-400" />
+                      <span className="text-violet-400 dark:text-violet-400 font-medium">Custom AI Agents</span>
                     </div>
 
-                    <h1 className="text-5xl font-thin mb-6">
+                    <h1 className="text-5xl font-thin mb-6 text-gray-900 dark:text-gray-100">
                       Supercharge Your Business with AI Agents
                     </h1>
-                    
-                    <p className="text-xl text-gray-600 mb-8">
+
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                       Not just chatbots - autonomous AI specialists that work 24/7 to transform your business operations. Deploy intelligent agents that learn, adapt, and deliver results.
                     </p>
 
                     <div className="space-y-4">
                       {benefits.map((benefit, index) => (
                         <div key={index} className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-violet-400" />
-                          <span>{benefit}</span>
+                          <CheckCircle className="w-5 h-5 text-violet-400 dark:text-violet-400" />
+                          <span className="text-gray-900 dark:text-gray-100">{benefit}</span>
                         </div>
                       ))}
                     </div>
 
                     <div className="flex items-center gap-6 mt-8">
                       <div>
-                        <div className="text-3xl font-light mb-1">From $5,000</div>
-                        <div className="text-gray-400">Custom AI Agent</div>
+                        <div className="text-3xl font-light mb-1 text-gray-900 dark:text-gray-100">From $5,000</div>
+                        <div className="text-gray-600 dark:text-gray-400">Custom AI Agent</div>
                       </div>
                       <a
                         href="#contact"
@@ -147,13 +147,13 @@ export default function AIAgents() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
+                      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm"
                     >
                       <div className="flex items-center gap-4">
                         {useCase.icon}
                         <div>
-                          <h3 className="text-xl font-light mb-2">{useCase.title}</h3>
-                          <p className="text-gray-600">{useCase.description}</p>
+                          <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">{useCase.title}</h3>
+                          <p className="text-gray-600 dark:text-gray-300">{useCase.description}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -164,11 +164,11 @@ export default function AIAgents() {
           </div>
         </section>
 
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-light mb-6">What Makes AI Agents Different?</h2>
-              <p className="text-gray-600">
+              <h2 className="text-3xl font-light mb-6 text-gray-900 dark:text-gray-100">What Makes AI Agents Different?</h2>
+              <p className="text-gray-600 dark:text-gray-300">
                 Unlike traditional chatbots, AI agents are autonomous specialists that can understand context, make decisions, and take actions without constant human input.
               </p>
             </div>
@@ -180,54 +180,54 @@ export default function AIAgents() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
                 >
-                  <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4 text-violet-600">
+                  <div className="w-12 h-12 bg-violet-100 dark:bg-violet-900/30 rounded-xl flex items-center justify-center mb-4 text-violet-600 dark:text-violet-400">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-light mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-3xl font-light mb-6">The Future is Here</h2>
-                  <p className="text-gray-600 mb-8">
+                  <h2 className="text-3xl font-light mb-6 text-gray-900 dark:text-gray-100">The Future is Here</h2>
+                  <p className="text-gray-600 dark:text-gray-300 mb-8">
                     AI agents are revolutionizing how businesses operate. From automating complex workflows to making data-driven decisions, these autonomous systems are delivering unprecedented efficiency and insights.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-violet-600" />
+                      <div className="w-6 h-6 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
                       </div>
                       <div>
-                        <h3 className="font-light mb-1">Reduce Operational Costs</h3>
-                        <p className="text-gray-600">AI agents work 24/7 without breaks, significantly reducing operational expenses.</p>
+                        <h3 className="font-light mb-1 text-gray-900 dark:text-gray-100">Reduce Operational Costs</h3>
+                        <p className="text-gray-600 dark:text-gray-300">AI agents work 24/7 without breaks, significantly reducing operational expenses.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-violet-600" />
+                      <div className="w-6 h-6 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
                       </div>
                       <div>
-                        <h3 className="font-light mb-1">Improve Efficiency</h3>
-                        <p className="text-gray-600">Automate complex tasks and processes with intelligent decision-making capabilities.</p>
+                        <h3 className="font-light mb-1 text-gray-900 dark:text-gray-100">Improve Efficiency</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Automate complex tasks and processes with intelligent decision-making capabilities.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-violet-600" />
+                      <div className="w-6 h-6 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
                       </div>
                       <div>
-                        <h3 className="font-light mb-1">Scale Operations</h3>
-                        <p className="text-gray-600">Easily scale your operations without proportionally increasing costs.</p>
+                        <h3 className="font-light mb-1 text-gray-900 dark:text-gray-100">Scale Operations</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Easily scale your operations without proportionally increasing costs.</p>
                       </div>
                     </div>
                   </div>

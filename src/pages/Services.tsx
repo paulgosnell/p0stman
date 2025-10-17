@@ -62,7 +62,7 @@ export default function Services() {
   const cardElements = services.map((service, index) => (
     <div
       key={index}
-      className="group relative rounded-xl p-8 transition-all duration-300 bg-white border border-gray-200 hover:border-gray-300 h-full flex flex-col"
+      className="group relative rounded-xl p-8 transition-all duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 h-full flex flex-col"
     >
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 rounded-t-xl bg-blue-600" />
@@ -70,24 +70,24 @@ export default function Services() {
       {/* Content */}
       <div className="space-y-6 mt-4 flex-1 flex flex-col">
         {/* Title */}
-        <h3 className="text-2xl font-light leading-tight text-gray-900">
+        <h3 className="text-2xl font-light leading-tight text-gray-900 dark:text-gray-100">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-base font-light leading-relaxed text-gray-600 flex-1">
+        <p className="text-base font-light leading-relaxed text-gray-600 dark:text-gray-300 flex-1">
           {service.description}
         </p>
 
         {/* Price Range */}
-        <div className="pt-4 border-t border-gray-200">
-          <p className="text-lg font-light text-blue-600">
+        <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-lg font-light text-blue-600 dark:text-blue-400">
             {service.priceRange}
           </p>
         </div>
 
         {/* Timeline */}
-        <p className="text-sm font-light text-gray-600">
+        <p className="text-sm font-light text-gray-600 dark:text-gray-300">
           {service.timeline}
         </p>
 
@@ -114,17 +114,17 @@ export default function Services() {
         <title>Services | P0STMAN | AI-Powered Product Studio</title>
         <meta name="description" content="From AI agents to MVPs, fractional leadership to integrations. Our complete service portfolio." />
       </Helmet>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="py-40 md:py-48 px-6 md:px-0 bg-white">
+        <section className="py-40 md:py-48 px-6 md:px-0 bg-white dark:bg-gray-900">
           <div className="max-w-6xl mx-auto">
             <div className="space-y-6 mb-16">
-              <h1 className="text-5xl md:text-6xl font-thin text-gray-900 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-thin text-gray-900 dark:text-gray-100 leading-tight">
                 How We Work
               </h1>
-              <p className="text-lg md:text-xl font-light text-gray-600 leading-relaxed max-w-3xl">
+              <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
                 Six service tiers designed to match every project stage and budget. From pilots to full-scale production, we deliver speed without sacrificing quality.
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function Services() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-24 md:py-32 px-6 md:px-0 bg-gray-50">
+        <section className="py-24 md:py-32 px-6 md:px-0 bg-gray-50 dark:bg-gray-800">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {cardElements}
@@ -141,13 +141,13 @@ export default function Services() {
         </section>
 
         {/* CTA Section */}
-        <section id="cta" className="py-40 md:py-48 px-6 md:px-0 bg-white">
+        <section id="cta" className="py-40 md:py-48 px-6 md:px-0 bg-white dark:bg-gray-900">
           <div className="max-w-3xl mx-auto text-center space-y-12">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-gray-100 leading-tight">
                 Ready to Ship Fast?
               </h2>
-              <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed">
                 Tell us what you're building. We'll tell you the timeline and price.
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function Services() {
                   type="email"
                   placeholder="your@email.com"
                   required
-                  className="flex-1 px-6 py-3.5 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-500 font-light focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors"
+                  className="flex-1 px-6 py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 font-light focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-1 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors"
                 />
                 <button
                   type="submit"
@@ -173,7 +173,7 @@ export default function Services() {
             <div className="pt-4">
               <a
                 href="/contact"
-                className="text-blue-600 hover:text-pink-600 font-light text-base transition-colors inline-block"
+                className="text-blue-600 dark:text-blue-400 hover:text-pink-600 dark:hover:text-pink-400 font-light text-base transition-colors inline-block"
               >
                 Or schedule a call →
               </a>

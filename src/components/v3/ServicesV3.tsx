@@ -59,7 +59,7 @@ export default function ServicesV3() {
   const cardElements = services.map((service, index) => (
     <div
       key={index}
-      className="group relative rounded-xl p-8 transition-all duration-300 bg-white border border-gray-200 hover:border-gray-300 h-full flex flex-col"
+      className="group relative rounded-xl p-8 transition-all duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 h-full flex flex-col"
     >
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 rounded-t-xl bg-blue-600" />
@@ -67,24 +67,24 @@ export default function ServicesV3() {
       {/* Content */}
       <div className="space-y-6 mt-4 flex-1 flex flex-col">
         {/* Title */}
-        <h3 className="text-2xl font-light leading-tight text-gray-900">
+        <h3 className="text-2xl font-light leading-tight text-gray-900 dark:text-gray-100">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-base font-light leading-relaxed text-gray-600 flex-1">
+        <p className="text-base font-light leading-relaxed text-gray-600 dark:text-gray-300 flex-1">
           {service.description}
         </p>
 
         {/* Price Range */}
-        <div className="pt-4 border-t border-gray-200">
-          <p className="text-lg font-light text-blue-600">
+        <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-lg font-light text-blue-600 dark:text-blue-400">
             {service.priceRange}
           </p>
         </div>
 
         {/* Timeline */}
-        <p className="text-sm font-light text-gray-600">
+        <p className="text-sm font-light text-gray-600 dark:text-gray-300">
           {service.timeline}
         </p>
 
@@ -106,10 +106,10 @@ export default function ServicesV3() {
   ));
 
   return (
-    <section id="services" className="py-48 md:py-52 bg-white">
+    <section id="services" className="py-48 md:py-52 bg-white dark:bg-gray-900">
       {/* Section Heading - Contained */}
       <div className="max-w-6xl mx-auto px-6 md:px-0 mb-20 md:mb-24">
-        <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
           How We Work
         </h2>
       </div>

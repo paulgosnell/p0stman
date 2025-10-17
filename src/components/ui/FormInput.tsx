@@ -42,12 +42,13 @@ export default function FormInput({
   const baseClasses = `
     w-full px-4 py-3 rounded-lg
     border
+    bg-white dark:bg-gray-900
     transition-all duration-200
     font-light
-    placeholder:text-gray-400 placeholder:font-light
+    placeholder:text-gray-400 dark:placeholder:text-gray-500 placeholder:font-light
     ${error
-      ? 'border-red-500 text-red-900 focus:border-red-500 focus:ring-2 focus:ring-red-100'
-      : 'border-gray-200 text-gray-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-100'
+      ? 'border-red-500 dark:border-red-700 text-red-900 dark:text-red-200 focus:border-red-500 dark:focus:border-red-600 focus:ring-2 focus:ring-red-100 dark:focus:ring-red-900'
+      : 'border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900'
     }
     focus:outline-none
   `.trim().replace(/\s+/g, ' ');
@@ -60,10 +61,10 @@ export default function FormInput({
     <div className="w-full">
       <label
         htmlFor={inputId}
-        className="block text-sm font-medium text-gray-900 mb-2"
+        className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2"
       >
         {label}
-        {required && <span className="text-red-500 ml-1">*</span>}
+        {required && <span className="text-red-500 dark:text-red-400 ml-1">*</span>}
       </label>
 
       {type === 'textarea' ? (
@@ -97,7 +98,7 @@ export default function FormInput({
       {error && (
         <p
           id={`${inputId}-error`}
-          className="mt-2 text-sm text-red-600"
+          className="mt-2 text-sm text-red-600 dark:text-red-400"
           role="alert"
         >
           {error}

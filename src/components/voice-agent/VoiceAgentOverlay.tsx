@@ -155,7 +155,7 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
             {/* Close button */}
             <button
               onClick={onClose}
-              className="text-gray-700 hover:text-white transition-colors p-2 rounded-full hover:bg-gray-50"
+              className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
               aria-label="Close"
             >
               <X size={28} strokeWidth={2} />
@@ -221,7 +221,7 @@ export default function VoiceAgentOverlay({ isOpen, onClose, agentId, apiKey }: 
                       isSpeaking ? 'bg-orange-400' : 'bg-blue-400'
                     }`}
                   />
-                  <span className="text-xs text-gray-600 uppercase tracking-wider">
+                  <span className="text-xs text-gray-400 uppercase tracking-wider">
                     Connected
                   </span>
                 </div>

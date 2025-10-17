@@ -46,11 +46,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div id="contact-form" className="bg-white rounded-xl shadow-lg p-8">
-      <h2 className="text-2xl font-light text-gray-900 mb-6">Send a Message</h2>
+    <div id="contact-form" className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+      <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-6">Send a Message</h2>
 
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm font-light">
+        <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm font-light">
           {error}
         </div>
       )}
@@ -58,19 +58,19 @@ export default function ContactForm() {
       {success ? (
         <div className="text-center py-12">
           <Mail className="w-12 h-12 text-green-500 mx-auto mb-4" />
-          <h3 className="text-xl font-light mb-2">Message Sent!</h3>
-          <p className="text-gray-600 font-light">
+          <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Message Sent!</h3>
+          <p className="text-gray-600 dark:text-gray-300 font-light">
             Thanks for reaching out. I'll get back to you soon.
           </p>
         </div>
       ) : (
         <>
-          <div className="mb-8 bg-blue-50 p-4 rounded-lg border border-blue-100">
+          <div className="mb-8 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-100 dark:border-blue-800">
             <div className="flex items-start gap-3">
-              <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-              <div className="text-sm text-gray-700 font-light">
+              <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-gray-700 dark:text-gray-300 font-light">
                 <p className="font-medium mb-1">Want a faster response?</p>
-                <p>DM me directly on <a href="https://twitter.com/paulgosnell" className="text-blue-600 hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">Twitter</a> or message me on <a href="https://linkedin.com/in/pgosnell" className="text-blue-600 hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+                <p>DM me directly on <a href="https://twitter.com/paulgosnell" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Twitter</a> or message me on <a href="https://linkedin.com/in/pgosnell" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
             />
 
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2" htmlFor="contact_page_project_type">
+              <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2" htmlFor="contact_page_project_type">
                 Project Type
               </label>
               <select
@@ -111,7 +111,7 @@ export default function ContactForm() {
                 name="projectType"
                 value={formData.projectType}
                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 font-light transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-100 focus:outline-none"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 focus:outline-none"
                 required
               >
                 <option value="">Select project type</option>
@@ -139,14 +139,14 @@ export default function ContactForm() {
             />
           </FormGroup>
 
-          <div className="mt-8 pt-8 border-t border-gray-200">
-            <p className="text-center text-gray-600 font-light mb-4">Also connect with me on:</p>
+          <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-center text-gray-600 dark:text-gray-300 font-light mb-4">Also connect with me on:</p>
             <div className="flex justify-center gap-4">
               <a
                 href="https://twitter.com/paulgosnell"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg text-gray-800 hover:bg-gray-200 transition-colors font-light"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-light"
               >
                 <Twitter className="w-5 h-5 text-[#1DA1F2]" />
                 <span>Twitter</span>
@@ -155,7 +155,7 @@ export default function ContactForm() {
                 href="https://linkedin.com/in/pgosnell"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg text-gray-800 hover:bg-gray-200 transition-colors font-light"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-light"
               >
                 <Linkedin className="w-5 h-5 text-[#0077B5]" />
                 <span>LinkedIn</span>

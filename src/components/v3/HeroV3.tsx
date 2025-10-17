@@ -20,17 +20,17 @@ export default function HeroV3() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-40 md:py-48 overflow-hidden bg-white">
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center py-40 md:py-48 overflow-hidden bg-white dark:bg-gray-900">
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-0 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
           {/* Left Column - Copy */}
           <div className="flex flex-col justify-center space-y-8 md:space-y-10">
             <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-gray-900 mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-gray-900 dark:text-gray-100 mb-6">
                 Faster Than Your Agency Can Think
               </h1>
-              <p className="text-lg md:text-xl font-light text-gray-600 leading-relaxed">
+              <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300 leading-relaxed">
                 Ship production AI products 40% faster. All three: speed, quality, price. AI-first workflows. Human validation. Ready to deploy.
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function HeroV3() {
                   const element = document.getElementById('agents');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-8 py-3.5 bg-white border border-gray-200 text-gray-900 rounded-lg font-light text-base hover:bg-gray-50 transition-colors"
+                className="px-8 py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 rounded-lg font-light text-base hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
                 See How It Works
               </button>
@@ -90,7 +90,7 @@ export default function HeroV3() {
             <div className="relative z-10 mt-8 w-full flex flex-col items-center gap-4">
               {/* Status Indicator */}
               {voiceAgent.isActive && (
-                <div className="flex items-center gap-2 text-sm font-light text-gray-600">
+                <div className="flex items-center gap-2 text-sm font-light text-gray-600 dark:text-gray-400">
                   {voiceAgent.isConnecting && (
                     <>
                       <Loader size={16} className="animate-spin text-blue-600" />
@@ -116,7 +116,7 @@ export default function HeroV3() {
               {voiceAgent.isActive && (
                 <button
                   onClick={handleStopVoice}
-                  className="px-4 py-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg font-light text-sm transition-colors flex items-center gap-2 group"
+                  className="px-4 py-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-light text-sm transition-colors flex items-center gap-2 group"
                 >
                   <X size={16} className="group-hover:scale-110 transition-transform" />
                   <span>Stop</span>
@@ -125,7 +125,7 @@ export default function HeroV3() {
 
               {/* Idle State Text */}
               {!voiceAgent.isActive && (
-                <p className="text-sm text-gray-500 font-light">
+                <p className="text-sm text-gray-500 dark:text-gray-400 font-light">
                   AI Agent Ready • 6 Days to Production
                 </p>
               )}

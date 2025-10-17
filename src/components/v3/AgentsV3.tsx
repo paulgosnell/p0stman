@@ -52,7 +52,7 @@ export default function AgentsV3() {
   const cardElements = agents.map((agent, index) => (
     <div
       key={index}
-      className="group rounded-xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300 space-y-6 h-full"
+      className="group rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 space-y-6 h-full"
     >
       {/* Icon */}
       <div className="flex items-center justify-start">
@@ -60,18 +60,18 @@ export default function AgentsV3() {
       </div>
 
       {/* Title */}
-      <h3 className="text-2xl font-light text-gray-900">
+      <h3 className="text-2xl font-light text-gray-900 dark:text-gray-100">
         {agent.title}
       </h3>
 
       {/* Description */}
-      <p className="text-base text-gray-600 font-light leading-relaxed">
+      <p className="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
         {agent.description}
       </p>
 
       {/* Tech Stack */}
-      <div className="pt-4 border-t border-gray-100 mt-auto">
-        <p className="text-sm text-gray-500 font-light">
+      <div className="pt-4 border-t border-gray-100 dark:border-gray-700 mt-auto">
+        <p className="text-sm text-gray-500 dark:text-gray-400 font-light">
           {agent.tech}
         </p>
       </div>
@@ -79,10 +79,10 @@ export default function AgentsV3() {
   ));
 
   return (
-    <section id="agents" className="py-40 md:py-48 bg-white">
+    <section id="agents" className="py-40 md:py-48 bg-white dark:bg-gray-900">
       {/* Section Heading - Contained */}
       <div className="max-w-6xl mx-auto px-6 md:px-0 mb-20 md:mb-24">
-        <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
           What We Build
         </h2>
       </div>

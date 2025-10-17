@@ -12,7 +12,7 @@ const clientLogos = [
 
 export default function ClientLogosV3() {
   return (
-    <section className="py-16 md:py-24 px-6 md:px-0 bg-white border-y border-gray-100">
+    <section className="py-16 md:py-24 px-6 md:px-0 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export default function ClientLogosV3() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-gray-600 font-light text-lg">Trusted by leading organizations</p>
+          <p className="text-gray-600 dark:text-gray-300 font-light text-lg">Trusted by leading organizations</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity">

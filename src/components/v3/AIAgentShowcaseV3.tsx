@@ -43,7 +43,7 @@ const aiAgents: AIAgent[] = [
 
 export default function AIAgentShowcaseV3() {
   return (
-    <section className="py-40 md:py-48 bg-gray-50">
+    <section className="py-40 md:py-48 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-6 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,13 +53,13 @@ export default function AIAgentShowcaseV3() {
           className="text-center mb-20 md:mb-24"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Smartphone className="w-6 h-6 text-blue-600" />
-            <span className="text-blue-600 font-medium text-sm">AI Agents in Action</span>
+            <Smartphone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <span className="text-blue-600 dark:text-blue-400 font-medium text-sm">AI Agents in Action</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 dark:text-gray-100 leading-tight">
             Production-Ready AI Experiences
           </h2>
-          <p className="text-gray-600 text-lg font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 text-lg font-light max-w-3xl mx-auto leading-relaxed">
             Frontier AI systems in production. Voice agents with ElevenLabs, reasoning models from Claude and OpenAI, RAG with extended memory, multi-API orchestration across Telegram, Oura, Strava.
           </p>
         </motion.div>

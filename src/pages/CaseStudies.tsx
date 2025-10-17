@@ -540,7 +540,7 @@ export default function CaseStudies() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <Helmet>
           <title>Case Studies & Projects | Paul Gosnell - AI Product Development</title>
           <meta name="description" content="Explore Paul Gosnell's portfolio of enterprise transformations and AI-built products. From banking platforms to fitness apps, see real results and measurable impact." />
@@ -685,16 +685,16 @@ export default function CaseStudies() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <Building2 className="w-6 h-6 text-blue-400" />
-                  <span className="text-blue-400 font-medium">Portfolio</span>
+                  <Building2 className="w-6 h-6 text-blue-400 dark:text-blue-400" />
+                  <span className="text-blue-400 dark:text-blue-400 font-medium">Portfolio</span>
                 </div>
 
-                <h1 className="text-5xl font-thin mb-6 text-white drop-shadow-md">
+                <h1 className="text-5xl font-thin mb-6 text-white dark:text-gray-100 drop-shadow-md">
                   Case Studies & Projects
                 </h1>
 
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                  From enterprise transformations to AI-built products, explore a portfolio of real projects 
+                <p className="text-xl text-gray-300 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                  From enterprise transformations to AI-built products, explore a portfolio of real projects
                   with measurable impact across banking, media, health, and technology sectors.
                 </p>
 
@@ -722,7 +722,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Filter Section */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-12 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -739,7 +739,7 @@ export default function CaseStudies() {
                     className={`px-6 py-3 rounded-full font-medium transition-all ${
                       selectedCategory === category
                         ? 'bg-blue-600 text-white shadow-lg'
-                        : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                        : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                     }`}
                   >
                     {category}
@@ -751,7 +751,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Projects Grid */}
-        <section ref={ref} className="py-24 bg-white">
+        <section ref={ref} className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="grid md:grid-cols-3 gap-4">
@@ -767,7 +767,7 @@ export default function CaseStudies() {
                       transition: { duration: 0.3, ease: "easeOut" }
                     }}
                     whileTap={{ scale: 0.98 }}
-                    className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl cursor-pointer bg-white flex flex-col"
+                    className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl cursor-pointer bg-white dark:bg-gray-800 flex flex-col"
                     onClick={() => openCaseStudy(project)}
                   >
                       {/* Shimmer effect on hover */}
@@ -835,23 +835,23 @@ export default function CaseStudies() {
                           </div>
 
                           <div className="mb-2">
-                            <span className="text-xs text-blue-600 font-medium">{project.category}</span>
+                            <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">{project.category}</span>
                           </div>
 
-                          <h3 className="text-lg font-light text-gray-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-2">
+                          <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
                             {project.title}
                           </h3>
 
-                          <p className="text-gray-600 font-medium mb-2 text-sm">{project.company}</p>
+                          <p className="text-gray-600 dark:text-gray-300 font-medium mb-2 text-sm">{project.company}</p>
 
-                          <p className="text-gray-700 text-xs line-clamp-2">
+                          <p className="text-gray-700 dark:text-gray-200 text-xs line-clamp-2">
                             {project.description}
                           </p>
                         </div>
 
                         {/* Metrics with hover animations */}
                         {project.metrics && (
-                          <div className="flex gap-3 pt-3 mt-3 border-t border-gray-100">
+                          <div className="flex gap-3 pt-3 mt-3 border-t border-gray-100 dark:border-gray-700">
                             {project.metrics.slice(0, 2).map((metric, i) => (
                               <div
                                 key={i}
@@ -860,7 +860,7 @@ export default function CaseStudies() {
                                 <div className="text-base font-light bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                                   {metric.value}
                                 </div>
-                                <div className="text-[10px] text-gray-500 mt-0.5">{metric.label}</div>
+                                <div className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{metric.label}</div>
                               </div>
                             ))}
                           </div>
@@ -886,12 +886,12 @@ export default function CaseStudies() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-light mb-6">
+                <h2 className="text-4xl font-light mb-6 text-white dark:text-gray-100">
                   Ready to Start Your Next Project?
                 </h2>
-                
-                <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                  Whether you need enterprise transformation or rapid AI-powered development, 
+
+                <p className="text-xl text-blue-100 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
+                  Whether you need enterprise transformation or rapid AI-powered development,
                   let's discuss how we can deliver exceptional results for your organization.
                 </p>
 
@@ -903,9 +903,9 @@ export default function CaseStudies() {
                     Start Your Project
                     <ArrowRight className="w-5 h-5" />
                   </a>
-                  <a 
+                  <a
                     href="/about"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
                   >
                     Learn More About Me
                   </a>

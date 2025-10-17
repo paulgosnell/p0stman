@@ -22,7 +22,7 @@ const metrics: Metric[] = [
 
 export default function MetricsV3() {
   return (
-    <section className="py-40 md:py-48 px-6 md:px-0 bg-white">
+    <section className="py-40 md:py-48 px-6 md:px-0 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
           {metrics.map((metric, index) => (
@@ -36,13 +36,13 @@ export default function MetricsV3() {
               </div>
 
               {/* Label */}
-              <div className="text-base md:text-lg text-gray-600 font-light leading-relaxed whitespace-pre-line">
+              <div className="text-base md:text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed whitespace-pre-line">
                 {metric.label}
               </div>
 
               {/* Subtle divider on mobile, gap visual on desktop */}
               {index < metrics.length - 1 && (
-                <div className="md:hidden w-12 h-px bg-gray-200 mt-6" />
+                <div className="md:hidden w-12 h-px bg-gray-200 dark:bg-gray-700 mt-6" />
               )}
             </div>
           ))}

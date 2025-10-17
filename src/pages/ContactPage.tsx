@@ -23,7 +23,7 @@ export default function ContactPage() {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <Helmet>
           <title>Contact P0STMAN | AI-Powered Product Studio</title>
           <meta name="description" content="Contact P0STMAN to discuss your project. Based in Dubai, delivering AI-powered development solutions globally. Expert guidance and support available." />
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
         <HeaderV3Global />
 
-        <section ref={ref} className="relative min-h-[60vh] flex items-center bg-white text-gray-900">
+        <section ref={ref} className="relative min-h-[60vh] flex items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-20" />
           </div>
@@ -55,15 +55,15 @@ export default function ContactPage() {
                 className="text-center max-w-3xl mx-auto"
               >
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <Mail className="w-6 h-6 text-blue-400" />
-                  <span className="text-blue-400 font-medium">Get in Touch</span>
+                  <Mail className="w-6 h-6 text-blue-400 dark:text-blue-400" />
+                  <span className="text-blue-400 dark:text-blue-400 font-medium">Get in Touch</span>
                 </div>
 
-                <h1 className="text-5xl font-thin mb-6">
+                <h1 className="text-5xl font-thin mb-6 text-gray-900 dark:text-gray-100">
                   Let's Build Something Amazing Together
                 </h1>
 
-                <p className="text-xl text-gray-300 font-light">
+                <p className="text-xl text-gray-600 dark:text-gray-300 font-light">
                   Whether you have a project in mind or want to explore possibilities, we're here to help turn your vision into reality.
                 </p>
                 
@@ -76,24 +76,24 @@ export default function ContactPage() {
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-6 mt-12">
-                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
-                    <MapPin className="w-6 h-6 text-blue-400 mb-4" />
-                    <h3 className="font-light mb-2">Location</h3>
-                    <p className="text-gray-300 font-light">Dubai, UAE</p>
+                  <div className="bg-gray-50 dark:bg-gray-800 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <MapPin className="w-6 h-6 text-blue-400 dark:text-blue-400 mb-4" />
+                    <h3 className="font-light mb-2 text-gray-900 dark:text-gray-100">Location</h3>
+                    <p className="text-gray-600 dark:text-gray-300 font-light">Dubai, UAE</p>
                   </div>
 
-                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
-                    <Mail className="w-6 h-6 text-blue-400 mb-4" />
-                    <h3 className="font-light mb-2">Email</h3>
-                    <a href="mailto:hello@p0stman.com" className="text-gray-300 font-light hover:text-white transition-colors">
+                  <div className="bg-gray-50 dark:bg-gray-800 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <Mail className="w-6 h-6 text-blue-400 dark:text-blue-400 mb-4" />
+                    <h3 className="font-light mb-2 text-gray-900 dark:text-gray-100">Email</h3>
+                    <a href="mailto:hello@p0stman.com" className="text-gray-600 dark:text-gray-300 font-light hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                       hello@p0stman.com
                     </a>
                   </div>
 
-                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
-                    <Clock className="w-6 h-6 text-blue-400 mb-4" />
-                    <h3 className="font-light mb-2">Working Hours</h3>
-                    <p className="text-gray-300 font-light">Mon - Fri, 9am - 6pm GST</p>
+                  <div className="bg-gray-50 dark:bg-gray-800 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <Clock className="w-6 h-6 text-blue-400 dark:text-blue-400 mb-4" />
+                    <h3 className="font-light mb-2 text-gray-900 dark:text-gray-100">Working Hours</h3>
+                    <p className="text-gray-600 dark:text-gray-300 font-light">Mon - Fri, 9am - 6pm GST</p>
                   </div>
                 </div>
               </motion.div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-3 gap-16 items-start">
@@ -111,8 +111,8 @@ export default function ContactPage() {
 
                 <div className="space-y-8">
                   <div>
-                    <h3 className="text-xl font-light text-gray-900 mb-2">Prefer to talk?</h3>
-                    <p className="text-gray-600 font-light mb-4">
+                    <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-2">Prefer to talk?</h3>
+                    <p className="text-gray-600 dark:text-gray-300 font-light mb-4">
                       Chat with our AI assistant to discuss your project and get instant feedback.
                     </p>
                     <SectionVoiceAgent
