@@ -76,6 +76,7 @@ import OnePageApp from './pages/OnePageApp';
 import DeliveryPage from './pages/DeliveryPage';
 import FounderLaunchPackage from './pages/FounderLaunchPackage';
 import ClarityPitchDeck from './components/ClarityPitchDeck';
+import VoiceAgentDemo from './pages/VoiceAgentDemo';
 
 export default function App() {
   return (
@@ -152,6 +153,7 @@ export default function App() {
           <Route path="/one-pager" element={<OnePageApp />} />
           <Route path="/founder-launch-package" element={<FounderLaunchPackage />} />
           <Route path="/clarity" element={<ClarityPitchDeck />} />
+          <Route path="/voice-agent-demo" element={<VoiceAgentDemo />} />
           <Route path="/delivery-for/:agencySlug" element={<DeliveryPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/social-share" element={<SocialShare />} />
