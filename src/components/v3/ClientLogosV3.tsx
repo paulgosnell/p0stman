@@ -37,7 +37,7 @@ export default function ClientLogosV3() {
               <img
                 src={client.logo}
                 alt={client.name}
-                className="h-12 object-contain filter grayscale hover:grayscale-0 dark:brightness-200 dark:invert transition-all duration-300"
+                className="h-12 object-contain filter grayscale dark:brightness-200 dark:invert transition-all duration-300"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
