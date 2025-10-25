@@ -96,9 +96,15 @@ export default function CaseStudiesV3() {
         {/* Case Studies Grid - 2 columns on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-20">
           {caseStudies.map((study) => (
-            <div
+            <a
               key={study.id}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-gray-800 flex flex-col hover:-translate-y-2"
+              href={
+                study.client === 'FAB Bank' ? '/case-study/fab-bank' :
+                study.client === 'Al Arabiya' ? '/case-study/al-arabiya' :
+                study.client === 'DoH Health' ? '/case-study/doh-health' :
+                `/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`
+              }
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-gray-800 flex flex-col hover:-translate-y-2 cursor-pointer"
             >
               {/* Project Image */}
               <div className={`relative overflow-hidden aspect-[16/10] ${study.fullWidthImage ? '' : 'p-4'}`}>
@@ -137,42 +143,14 @@ export default function CaseStudiesV3() {
                 </p>
 
                 {/* Result */}
-                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
                   {study.result}
                 </p>
-
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={
-                      study.client === 'FAB Bank' ? '/case-study/fab-bank' :
-                      study.client === 'Al Arabiya' ? '/case-study/al-arabiya' :
-                      study.client === 'DoH Health' ? '/case-study/doh-health' :
-                      `/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`
-                    }
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-sm hover:bg-pink-600 transition-colors group/btn"
-                  >
-                    View Case Study
-                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
-
-                  {study.liveUrl && (
-                    <a
-                      href={study.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100 rounded-lg font-light text-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
-                    >
-                      Live Demo
-                      <ExternalLink size={16} />
-                    </a>
-                  )}
-                </div>
               </div>
 
               {/* Bottom glow on hover */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-x-0 group-hover:scale-x-100" />
-            </div>
+            </a>
           ))}
         </div>
 
