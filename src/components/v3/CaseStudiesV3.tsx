@@ -80,82 +80,92 @@ export default function CaseStudiesV3() {
     <section id="work" className="py-56 md:py-64 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Heading */}
-        <div className="mb-20 md:mb-28">
+        <div className="mb-20 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
             Recent Work
           </h2>
         </div>
 
-        {/* Case Studies - Stacked Layout */}
-        <div className="space-y-32 md:space-y-40">
+        {/* Case Studies Grid - 2 columns on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-20">
           {caseStudies.map((study) => (
-            <div key={study.id} className="group">
-              {/* Client Name Above */}
-              <div className="mb-6 md:mb-8">
-                <p className="text-xs md:text-sm font-light text-gray-400 dark:text-gray-500 uppercase tracking-widest">
-                  {study.client}
-                </p>
-              </div>
+            <div
+              key={study.id}
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-gray-800 flex flex-col hover:-translate-y-2"
+            >
+              {/* Project Image */}
+              <div className="relative overflow-hidden aspect-[16/10]">
+                <img
+                  src={study.image}
+                  alt={study.project}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = '/assets/images/p0stman-bg.png';
+                  }}
+                />
 
-              {/* Project Title */}
-              <div className="mb-8 md:mb-10">
-                <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-gray-100 leading-tight">
-                  {study.project}
-                </h3>
-              </div>
-
-              {/* Large Clean Image - NO overlays */}
-              <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-8 md:mb-10">
-                <div className="relative aspect-[16/10] md:aspect-[21/10] bg-gray-100 dark:bg-gray-800">
-                  <img
-                    src={study.image}
-                    alt={study.project}
-                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                    onError={(e) => {
-                      e.currentTarget.src = '/assets/images/p0stman-bg.png';
-                    }}
-                  />
+                {/* Subtle hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/50 transition-transform duration-300 group-hover:scale-110">
+                    <ExternalLink className="w-7 h-7 text-white" />
+                  </div>
                 </div>
               </div>
 
-              {/* Solution & Result Text Below Image */}
-              <div className="space-y-6 md:space-y-8 mb-8 md:mb-10">
-                <p className="text-lg md:text-xl font-light text-gray-700 dark:text-gray-300 leading-relaxed">
+              {/* Content Below Image */}
+              <div className="flex-1 flex flex-col p-8">
+                {/* Client Name */}
+                <p className="text-xs font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
+                  {study.client}
+                </p>
+
+                {/* Project Title */}
+                <h3 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-gray-100 mb-4 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {study.project}
+                </h3>
+
+                {/* Solution */}
+                <p className="text-base font-light text-gray-700 dark:text-gray-300 leading-relaxed mb-4 flex-1">
                   {study.solution}
                 </p>
-                <p className="text-base md:text-lg font-medium text-blue-600 dark:text-blue-400">
+
+                {/* Result */}
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
                   {study.result}
                 </p>
-              </div>
 
-              {/* CTAs Below Text */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors group/btn"
-                >
-                  View Case Study
-                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                </a>
-
-                {study.liveUrl && (
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href={study.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 rounded-lg font-light text-base hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-sm hover:bg-pink-600 transition-colors group/btn"
                   >
-                    Live Demo
-                    <ExternalLink size={18} />
+                    View Case Study
+                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                   </a>
-                )}
+
+                  {study.liveUrl && (
+                    <a
+                      href={study.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100 rounded-lg font-light text-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+                    >
+                      Live Demo
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
               </div>
+
+              {/* Bottom glow on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-x-0 group-hover:scale-x-100" />
             </div>
           ))}
         </div>
 
         {/* CTA to See All Case Studies */}
-        <div className="mt-32 md:mt-40 pt-24 md:pt-32 border-t border-gray-200 dark:border-gray-700 flex justify-center">
+        <div className="pt-12 border-t border-gray-200 dark:border-gray-700 flex justify-center">
           <a
             href="/case-studies"
             className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 font-light transition-colors group text-lg"
