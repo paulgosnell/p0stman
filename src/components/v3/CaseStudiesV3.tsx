@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 
 interface CaseStudy {
@@ -76,8 +76,6 @@ const caseStudies: CaseStudy[] = [
 ];
 
 export default function CaseStudiesV3() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
     <section id="work" className="py-56 md:py-64 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
@@ -89,77 +87,68 @@ export default function CaseStudiesV3() {
         </div>
 
         {/* Case Studies - Stacked Layout */}
-        <div className="space-y-32 md:space-y-48">
+        <div className="space-y-32 md:space-y-40">
           {caseStudies.map((study) => (
-            <div
-              key={study.id}
-              className="group"
-              onMouseEnter={() => setHoveredId(study.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
-              {/* Minimal Text Above Image */}
-              <div className="mb-8 md:mb-10 max-w-4xl">
-                <p className="text-xs md:text-sm font-light text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
+            <div key={study.id} className="group">
+              {/* Client Name Above */}
+              <div className="mb-6 md:mb-8">
+                <p className="text-xs md:text-sm font-light text-gray-400 dark:text-gray-500 uppercase tracking-widest">
                   {study.client}
                 </p>
+              </div>
+
+              {/* Project Title */}
+              <div className="mb-8 md:mb-10">
                 <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-gray-100 leading-tight">
                   {study.project}
                 </h3>
               </div>
 
-              {/* Large Edge-to-Edge Image with Overlay */}
-              <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
-                {/* Main Image */}
+              {/* Large Clean Image - NO overlays */}
+              <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-8 md:mb-10">
                 <div className="relative aspect-[16/10] md:aspect-[21/10] bg-gray-100 dark:bg-gray-800">
                   <img
                     src={study.image}
                     alt={study.project}
-                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
                     onError={(e) => {
                       e.currentTarget.src = '/assets/images/p0stman-bg.png';
                     }}
                   />
-
-                  {/* Gradient Overlay - Always visible on mobile, hover on desktop */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-500 ${
-                    hoveredId === study.id ? 'opacity-100' : 'opacity-100 md:opacity-0'
-                  }`}>
-                    <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
-                      {/* Solution Text */}
-                      <p className="text-white/90 text-base md:text-xl lg:text-2xl font-light leading-relaxed mb-6 md:mb-8 max-w-4xl">
-                        {study.solution}
-                      </p>
-
-                      {/* Result */}
-                      <p className="text-white font-medium text-sm md:text-base lg:text-lg mb-8 md:mb-10 max-w-3xl">
-                        {study.result}
-                      </p>
-
-                      {/* CTAs */}
-                      <div className="flex flex-wrap gap-4">
-                        <a
-                          href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 font-medium text-sm md:text-base"
-                        >
-                          View Case Study
-                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-                        </a>
-
-                        {study.liveUrl && (
-                          <a
-                            href={study.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-lg hover:bg-white/20 transition-all transform hover:scale-105 font-medium text-sm md:text-base"
-                          >
-                            Live Demo
-                            <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
                 </div>
+              </div>
+
+              {/* Solution & Result Text Below Image */}
+              <div className="space-y-6 md:space-y-8 mb-8 md:mb-10">
+                <p className="text-lg md:text-xl font-light text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {study.solution}
+                </p>
+                <p className="text-base md:text-lg font-medium text-blue-600 dark:text-blue-400">
+                  {study.result}
+                </p>
+              </div>
+
+              {/* CTAs Below Text */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors group/btn"
+                >
+                  View Case Study
+                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+
+                {study.liveUrl && (
+                  <a
+                    href={study.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 rounded-lg font-light text-base hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    Live Demo
+                    <ExternalLink size={18} />
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -169,7 +158,7 @@ export default function CaseStudiesV3() {
         <div className="mt-32 md:mt-40 pt-24 md:pt-32 border-t border-gray-200 dark:border-gray-700 flex justify-center">
           <a
             href="/case-studies"
-            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 font-light transition-colors group text-lg"
+            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 font-light transition-colors group text-lg"
           >
             View all case studies
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
