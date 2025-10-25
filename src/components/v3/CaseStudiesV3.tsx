@@ -10,68 +10,75 @@ interface CaseStudy {
   result: string;
   image: string;
   liveUrl?: string;
+  fullWidthImage?: boolean; // True for full-width images, false for images with padding
 }
 
 const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    client: 'Harmony',
-    project: 'Music Collaboration Platform',
-    problem: 'Musicians needed a way to collaborate globally and find compatible artists.',
-    solution: 'AI-powered matching system connects artists worldwide based on style, genre, and collaboration preferences with real-time collaboration tools.',
-    result: '1000+ artists connected globally with AI-powered matching, enabling real-time music collaboration across continents.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/harmony1.png',
-    liveUrl: 'https://ai-banking-app.netlify.app/'
-  },
-  {
-    id: 2,
-    client: 'ClinicBook',
-    project: 'Healthcare Booking System',
-    problem: 'Healthcare providers struggled with manual scheduling and inefficient patient management.',
-    solution: 'Comprehensive AI-powered booking system with intelligent scheduling optimization, automated reminders, and real-time capacity management.',
-    result: '80% efficiency improvement in scheduling, reduced no-shows, significantly improved patient experience.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/clinicbook1.png',
-    liveUrl: 'https://clinic-book.netlify.app/'
-  },
-  {
-    id: 3,
-    client: 'BFIT Web3',
-    project: 'Blockchain Fitness Platform',
-    problem: 'Fitness apps lacked incentive mechanisms for consistent health goals.',
-    solution: 'Web 3.0 platform with native token, tokenomics model, and blockchain-recorded health data. Users earn crypto rewards for fitness activities.',
-    result: 'Successfully launched beta with crypto rewards and native token. Users earn cryptocurrency through fitness while maintaining on-chain records.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
-    liveUrl: 'https://bfit-web3.netlify.app/'
-  },
-  {
-    id: 4,
-    client: 'ChilledSites',
-    project: 'AI Website & DApp Builder',
-    problem: 'Building professional websites requires technical expertise most people don\'t have.',
-    solution: 'AI-powered platform that turns a prompt, photo, or email into a fully hosted website in minutes. Complete with SEO, analytics, and Web3 deployment.',
-    result: 'Users build professional sites in under 10 minutes. 2500+ websites created. £5,000+ cost savings vs traditional agencies.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
-    liveUrl: 'https://chilledsites.com'
-  },
-  {
-    id: 5,
-    client: 'Rhythm',
-    project: 'AI Running Coach',
-    problem: 'Traditional running apps lack personalized coaching and real-time feedback.',
-    solution: 'AI-powered running coach with adaptive music system and personalized training plans that adjust in real-time based on performance.',
-    result: 'Runners improve performance by 35% with personalized AI coaching and dynamic music matching their pace and energy.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/rhythm1.png',
-    liveUrl: 'https://ai-running-app.netlify.app/'
-  },
-  {
-    id: 6,
     client: 'FAB Bank',
     project: 'Enterprise Digital Transformation',
     problem: 'First Abu Dhabi Bank needed to scale from a small Innovation Lab project to enterprise-wide digital transformation.',
     solution: 'Strategic scaling from pilot to enterprise transformation. Assembled 40-50 expert team over 18 months, coordinating across multiple departments with reusable systems.',
     result: '40x team growth from 1 pilot to 40+ experts. 18-month partnership delivering enterprise platforms. 60% efficiency improvement through standardization.',
     image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
-    liveUrl: undefined
+    liveUrl: undefined,
+    fullWidthImage: true
+  },
+  {
+    id: 2,
+    client: 'Al Arabiya',
+    project: 'News Platform Modernization',
+    problem: 'Al Arabiya needed to modernize their digital presence during COVID-19 while coordinating international teams.',
+    solution: 'Led international team of 20 across multiple disciplines to create personalized news experience. Coordinated with in-house teams and external IBM resources, adapting swiftly to remote work.',
+    result: 'Successfully delivered during COVID-19 with 100% remote team. 40% performance improvement. Led 20-member international team across multiple time zones.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png',
+    liveUrl: undefined,
+    fullWidthImage: true
+  },
+  {
+    id: 3,
+    client: 'DoH Health',
+    project: 'Government Health App',
+    problem: 'Department of Health Abu Dhabi needed a standout health app exceeding market standards.',
+    solution: 'Partnered with IBM to build innovative health & fitness app with Google Fit and Fitbit integration. Proposed ambitious features to leapfrog existing market offerings.',
+    result: 'Successfully launched government health app with IBM partnership. Exceeded market standards. Multi-platform support with Google Fit and Fitbit integration.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png',
+    liveUrl: undefined,
+    fullWidthImage: true
+  },
+  {
+    id: 4,
+    client: 'BFIT Web3',
+    project: 'Blockchain Fitness Platform',
+    problem: 'Fitness apps lacked incentive mechanisms for consistent health goals.',
+    solution: 'Web 3.0 platform with native token, tokenomics model, and blockchain-recorded health data. Users earn crypto rewards for fitness activities.',
+    result: 'Successfully launched beta with crypto rewards and native token. Users earn cryptocurrency through fitness while maintaining on-chain records.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png',
+    liveUrl: 'https://bfit-web3.netlify.app/',
+    fullWidthImage: true
+  },
+  {
+    id: 5,
+    client: 'ChilledSites',
+    project: 'AI Website & DApp Builder',
+    problem: 'Building professional websites requires technical expertise most people don\'t have.',
+    solution: 'AI-powered platform that turns a prompt, photo, or email into a fully hosted website in minutes. Complete with SEO, analytics, and Web3 deployment.',
+    result: 'Users build professional sites in under 10 minutes. 2500+ websites created. £5,000+ cost savings vs traditional agencies.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    liveUrl: 'https://chilledsites.com',
+    fullWidthImage: true
+  },
+  {
+    id: 6,
+    client: 'ClinicBook',
+    project: 'Healthcare Booking System',
+    problem: 'Healthcare providers struggled with manual scheduling and inefficient patient management.',
+    solution: 'Comprehensive AI-powered booking system with intelligent scheduling optimization, automated reminders, and real-time capacity management.',
+    result: '80% efficiency improvement in scheduling, reduced no-shows, significantly improved patient experience.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/clinicbook1.png',
+    liveUrl: 'https://clinic-book.netlify.app/',
+    fullWidthImage: false
   }
 ];
 
@@ -94,11 +101,11 @@ export default function CaseStudiesV3() {
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-gray-800 flex flex-col hover:-translate-y-2"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden aspect-[16/10] p-4">
+              <div className={`relative overflow-hidden aspect-[16/10] ${study.fullWidthImage ? '' : 'p-4'}`}>
                 <img
                   src={study.image}
                   alt={study.project}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-lg"
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${study.fullWidthImage ? '' : 'rounded-lg'}`}
                   onError={(e) => {
                     e.currentTarget.src = '/assets/images/p0stman-bg.png';
                   }}
@@ -137,7 +144,12 @@ export default function CaseStudiesV3() {
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href={study.client === 'FAB Bank' ? '/case-study/fab-bank' : `/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={
+                      study.client === 'FAB Bank' ? '/case-study/fab-bank' :
+                      study.client === 'Al Arabiya' ? '/case-study/al-arabiya' :
+                      study.client === 'DoH Health' ? '/case-study/doh-health' :
+                      `/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`
+                    }
                     className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-sm hover:bg-pink-600 transition-colors group/btn"
                   >
                     View Case Study
