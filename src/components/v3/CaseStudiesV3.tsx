@@ -65,13 +65,13 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 6,
-    client: 'Experience A Gift',
-    project: 'Gift Experience Platform',
-    problem: 'Traditional gifting platforms lack personalization and modern digital experiences.',
-    solution: 'AI-powered gift platform with personalized recommendations, seamless booking, and curated experience marketplace.',
-    result: 'Revolutionized gift-giving with AI personalization. 10,000+ unique experiences booked, 95% customer satisfaction.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/experienceagift1.png',
-    liveUrl: 'https://experienceagift-staging1.netlify.app/'
+    client: 'FAB Bank',
+    project: 'Enterprise Digital Transformation',
+    problem: 'First Abu Dhabi Bank needed to scale from a small Innovation Lab project to enterprise-wide digital transformation.',
+    solution: 'Strategic scaling from pilot to enterprise transformation. Assembled 40-50 expert team over 18 months, coordinating across multiple departments with reusable systems.',
+    result: '40x team growth from 1 pilot to 40+ experts. 18-month partnership delivering enterprise platforms. 60% efficiency improvement through standardization.',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
+    liveUrl: undefined
   }
 ];
 
@@ -94,11 +94,11 @@ export default function CaseStudiesV3() {
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-gray-800 flex flex-col hover:-translate-y-2"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden aspect-[16/10]">
+              <div className="relative overflow-hidden aspect-[16/10] p-4">
                 <img
                   src={study.image}
                   alt={study.project}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-lg"
                   onError={(e) => {
                     e.currentTarget.src = '/assets/images/p0stman-bg.png';
                   }}
@@ -137,7 +137,7 @@ export default function CaseStudiesV3() {
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={study.client === 'FAB Bank' ? '/case-study/fab-bank' : `/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}
                     className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-sm hover:bg-pink-600 transition-colors group/btn"
                   >
                     View Case Study
