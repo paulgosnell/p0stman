@@ -1,129 +1,125 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import CardCarousel from './CardCarousel';
+import { motion } from 'framer-motion';
+import { Lightbulb, Layers, Rocket, Repeat } from 'lucide-react';
 
-interface ServiceTier {
+interface ProcessStep {
+  number: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
-  priceRange: string;
+  deliverables: string[];
   timeline: string;
-  cta: string;
 }
 
-const services: ServiceTier[] = [
+const processSteps: ProcessStep[] = [
   {
-    title: 'AI Agent Development',
-    description: 'Voice agents, chat agents, code agents. From pilot to production.',
-    priceRange: '$5k - $50k+',
-    timeline: 'Pilots in days, production in weeks',
-    cta: 'Start a Pilot'
+    number: '01',
+    icon: <Lightbulb className="w-10 h-10" />,
+    title: 'Discovery & Strategy',
+    description: 'Deep dive into your vision. We map requirements, identify risks, validate technical feasibility.',
+    deliverables: ['Product roadmap', 'Technical architecture', 'Cost & timeline estimate'],
+    timeline: '2-3 days'
   },
   {
-    title: 'MVP to Market',
-    description: 'Full-stack web/mobile products. Rapid prototyping, market validation, deployment.',
-    priceRange: '$10k - $75k',
-    timeline: '6 days to 3 weeks',
-    cta: 'Launch Your MVP'
+    number: '02',
+    icon: <Layers className="w-10 h-10" />,
+    title: 'Design & Prototype',
+    description: 'Rapid prototyping with real data. Interactive demos you can click through and test.',
+    deliverables: ['Clickable prototype', 'User flows', 'Design system'],
+    timeline: '3-5 days'
   },
   {
-    title: 'Fractional Leadership',
-    description: 'CPO/CTO/CIO services. Digital transformation, agency white-label, creative prototypes.',
-    priceRange: 'Custom pricing',
-    timeline: 'Ongoing engagement',
-    cta: 'Discuss Strategy'
+    number: '03',
+    icon: <Rocket className="w-10 h-10" />,
+    title: 'Build & Deploy',
+    description: 'AI-accelerated development with human validation. Daily progress updates, live staging environment.',
+    deliverables: ['Production deployment', 'Documentation', 'Training materials'],
+    timeline: '1-3 weeks'
   },
   {
-    title: 'Integration & API',
-    description: 'Connect your systems. Third-party APIs, data pipelines, custom integrations.',
-    priceRange: '$3k - $15k',
-    timeline: '1-2 weeks',
-    cta: 'Connect Systems'
-  },
-  {
-    title: 'Training & Deployment',
-    description: 'Team training, documentation, deployment infrastructure, ongoing support.',
-    priceRange: '$5k - $20k',
-    timeline: '2-4 weeks',
-    cta: 'Get Support'
-  },
-  {
-    title: 'Scale & Optimize',
-    description: 'Performance tuning, infrastructure scaling, cost optimization, monitoring.',
-    priceRange: '$8k - $30k',
-    timeline: '1-3 weeks',
-    cta: 'Optimize Now'
+    number: '04',
+    icon: <Repeat className="w-10 h-10" />,
+    title: 'Iterate & Scale',
+    description: 'Monitor, measure, improve. Real user feedback drives rapid iteration cycles.',
+    deliverables: ['Analytics dashboard', 'Performance optimization', 'Feature updates'],
+    timeline: 'Ongoing'
   }
 ];
 
 export default function ServicesV3() {
-  const cardElements = services.map((service, index) => (
-    <div
-      key={index}
-      className="group relative rounded-xl p-8 transition-all duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 h-full flex flex-col"
-    >
-      {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1 rounded-t-xl bg-blue-600" />
-
-      {/* Content */}
-      <div className="space-y-6 mt-4 flex-1 flex flex-col">
-        {/* Title */}
-        <h3 className="text-2xl font-light leading-tight text-gray-900 dark:text-gray-100">
-          {service.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-base font-light leading-relaxed text-gray-600 dark:text-gray-300 flex-1">
-          {service.description}
-        </p>
-
-        {/* Price Range */}
-        <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-lg font-light text-blue-600 dark:text-blue-400">
-            {service.priceRange}
+  return (
+    <section id="services" className="py-48 md:py-52 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Heading */}
+        <div className="mb-20 md:mb-24">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight mb-4">
+            How We Work
+          </h2>
+          <p className="text-lg font-light text-gray-600 dark:text-gray-300 max-w-2xl">
+            From concept to production in weeks, not months. A proven process that moves fast without breaking things.
           </p>
         </div>
 
-        {/* Timeline */}
-        <p className="text-sm font-light text-gray-600 dark:text-gray-300">
-          {service.timeline}
-        </p>
+        {/* Process Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
+          {/* Connecting Line - Desktop Only */}
+          <div className="hidden lg:block absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
 
-        {/* CTA Button */}
-        <div className="pt-6">
-          <button
-            onClick={() => {
-              const element = document.getElementById('cta');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors flex items-center justify-center gap-2 group/btn"
-          >
-            {service.cta}
-            <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-          </button>
+          {processSteps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              {/* Card */}
+              <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-8 h-full border border-gray-200 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-xl">
+                {/* Step Number */}
+                <div className="absolute -top-4 left-8">
+                  <div className="w-12 h-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <span className="text-gray-900 dark:text-gray-100 font-light text-sm">{step.number}</span>
+                  </div>
+                </div>
+
+                {/* Icon */}
+                <div className="mt-8 mb-6 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {step.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-3">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm font-light text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                  {step.description}
+                </p>
+
+                {/* Deliverables */}
+                <div className="space-y-2 mb-6">
+                  {step.deliverables.map((deliverable, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-blue-600" />
+                      <span className="text-xs font-light text-gray-500 dark:text-gray-400">
+                        {deliverable}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Timeline */}
+                <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
+                  <span className="text-xs font-light text-blue-600 dark:text-blue-400">
+                    {step.timeline}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </div>
-    </div>
-  ));
-
-  return (
-    <section id="services" className="py-48 md:py-52 bg-white dark:bg-gray-900">
-      {/* Section Heading - Contained */}
-      <div className="max-w-6xl mx-auto px-6 md:px-0 mb-20 md:mb-24">
-        <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
-          How We Work
-        </h2>
-      </div>
-
-      {/* Full-width Carousel */}
-      <div className="px-6 md:px-12 lg:px-20">
-        <CardCarousel
-          cards={cardElements}
-          cardsPerView={{
-            mobile: 1,
-            tablet: 3,
-            desktop: 3
-          }}
-        />
       </div>
     </section>
   );
