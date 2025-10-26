@@ -14,9 +14,9 @@ export default function HomeV3() {
     <>
       <Helmet>
         <title>P0STMAN | AI-Powered Product Studio | Ship Faster</title>
-        <meta name="description" content="Ship production AI products 40% faster than agencies. Voice agents, MVPs, digital transformation. Faster than your agency can think." />
+        <meta name="description" content="Ship production-ready products 40% faster than agencies. AI agents, websites, mobile apps. All three: speed, quality, price. Faster than your agency can think." />
         <meta property="og:title" content="P0STMAN | AI-Powered Product Studio" />
-        <meta property="og:description" content="Ship production AI products 40% faster. Voice agents, MVPs, digital transformation." />
+        <meta property="og:description" content="Ship production-ready products 40% faster. AI agents, websites, mobile apps. All three: speed, quality, price." />
         <meta name="theme-color" content="#FFFFFF" />
       </Helmet>
 

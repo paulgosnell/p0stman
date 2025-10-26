@@ -31,7 +31,7 @@ export default function HeroV3() {
                 Faster Than Your Agency Can Think
               </h1>
               <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300 leading-relaxed">
-                Ship production AI products 40% faster. All three: speed, quality, price. AI-first workflows. Human validation. Ready to deploy.
+                Ship production-ready products 40% faster. AI agents, websites, mobile apps. All three: speed, quality, price. AI-first workflows. Human validation. Ready to deploy.
               </p>
             </div>
 

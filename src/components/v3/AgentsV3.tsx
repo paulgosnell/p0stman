@@ -1,5 +1,5 @@
-import React from 'react';
-import { Mic, MessageSquare, Code, Zap, Brain, Workflow } from 'lucide-react';
+import React, { useMemo } from 'react';
+import { Mic, MessageSquare, Code, Zap, Globe, Smartphone, UserCog } from 'lucide-react';
 import CardCarousel from './CardCarousel';
 
 interface AgentCard {
@@ -7,6 +7,16 @@ interface AgentCard {
   title: string;
   description: string;
   tech: string;
+}
+
+// Shuffle array function
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
 }
 
 const agents: AgentCard[] = [
@@ -35,21 +45,30 @@ const agents: AgentCard[] = [
     tech: 'N8n, Make, Zapier'
   },
   {
-    icon: <Brain className="w-12 h-12 text-blue-600" />,
-    title: 'Analysis Agents',
-    description: 'Deep learning models for insights. Market research, competitive analysis, trend prediction. Real-time intelligence.',
-    tech: 'TensorFlow, PyTorch, Hugging Face'
+    icon: <Globe className="w-12 h-12 text-blue-600" />,
+    title: 'Websites',
+    description: 'SaaS platforms, dashboards, e-commerce, landing pages, CMS. Production-ready in weeks, not months. SEO optimized.',
+    tech: 'React, Next.js, Supabase, Tailwind'
   },
   {
-    icon: <Workflow className="w-12 h-12 text-blue-600" />,
-    title: 'Orchestration',
-    description: 'Multi-agent coordination systems. Complex workflows, task delegation, result aggregation. Enterprise-ready.',
-    tech: 'LangChain, AutoGen, CrewAI'
+    icon: <Smartphone className="w-12 h-12 text-blue-600" />,
+    title: 'Mobile Apps',
+    description: 'PWAs, native apps, mobile web. iOS and Android. Online/offline sync. App store deployment included.',
+    tech: 'React Native, PWA, Flutter'
+  },
+  {
+    icon: <UserCog className="w-12 h-12 text-blue-600" />,
+    title: 'Fractional CTO / Delivery Partner',
+    description: 'Strategic tech leadership on demand. Product roadmaps, team scaling, architecture decisions. Your tech co-founder.',
+    tech: 'Strategy, Team Building, Architecture'
   }
 ];
 
 export default function AgentsV3() {
-  const cardElements = agents.map((agent, index) => (
+  // Shuffle agents on component mount
+  const shuffledAgents = useMemo(() => shuffleArray(agents), []);
+
+  const cardElements = shuffledAgents.map((agent, index) => (
     <div
       key={index}
       className="group rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 space-y-6 h-full"
