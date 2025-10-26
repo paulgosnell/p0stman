@@ -42,6 +42,8 @@ const aiAgents: AIAgent[] = [
 ];
 
 export default function AIAgentShowcaseV3() {
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+
   return (
     <section className="py-40 md:py-48 bg-gray-50 dark:bg-gray-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -83,12 +85,15 @@ export default function AIAgentShowcaseV3() {
                   }}
                   viewport={{ once: true, margin: "-100px" }}
                   whileHover={{
-                    scale: 1.05,
-                    y: -translateY - 20,
-                    transition: { duration: 0.2 }
+                    scale: 1.1,
+                    y: -translateY - 30,
+                    rotate: 0,
+                    transition: { duration: 0.3 }
                   }}
+                  onHoverStart={() => setHoveredIndex(index)}
+                  onHoverEnd={() => setHoveredIndex(null)}
                   className="group absolute"
-                  style={{ zIndex: index }}
+                  style={{ zIndex: hoveredIndex === index ? 100 : index }}
                 >
                   {/* Phone Card */}
                   <div className="relative w-[200px] md:w-[240px] aspect-[9/19.5] rounded-3xl shadow-2xl overflow-hidden bg-white dark:bg-gray-900 border-8 border-gray-900 dark:border-gray-700">
@@ -103,17 +108,19 @@ export default function AIAgentShowcaseV3() {
                     />
 
                     {/* Hover overlay with info */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <h3 className="text-white font-semibold text-base mb-1">{agent.name}</h3>
-                      <p className="text-white/90 text-xs mb-2">{agent.description}</p>
-                      <ul className="space-y-1">
-                        {agent.features.map((feature, i) => (
-                          <li key={i} className="text-white/80 text-[10px] flex items-center gap-1">
-                            <CheckCircle className="w-2.5 h-2.5 text-green-400 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <div className="bg-white/90 dark:bg-gray-900/90 rounded-lg p-3">
+                        <h3 className="text-gray-900 dark:text-white font-semibold text-base mb-1">{agent.name}</h3>
+                        <p className="text-gray-800 dark:text-white/90 text-xs mb-2">{agent.description}</p>
+                        <ul className="space-y-1">
+                          {agent.features.map((feature, i) => (
+                            <li key={i} className="text-gray-700 dark:text-white/80 text-[10px] flex items-center gap-1">
+                              <CheckCircle className="w-2.5 h-2.5 text-green-500 dark:text-green-400 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

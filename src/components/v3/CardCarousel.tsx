@@ -27,31 +27,31 @@ export default function CardCarousel({ cards, cardsPerView }: CardCarouselProps)
         /* Custom navigation button styles */
         .${carouselClass} .swiper-button-prev,
         .${carouselClass} .swiper-button-next {
-          width: 48px;
-          height: 48px;
-          background: white;
+          width: 32px;
+          height: 32px;
+          background: rgba(255, 255, 255, 0.9);
           border: 1px solid rgb(229, 231, 235);
           border-radius: 9999px;
-          transition: all 0.3s;
-          box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+          transition: all 0.2s;
+          backdrop-filter: blur(8px);
         }
 
         .dark .${carouselClass} .swiper-button-prev,
         .dark .${carouselClass} .swiper-button-next {
-          background: rgb(31, 41, 55);
+          background: rgba(31, 41, 55, 0.9);
           border-color: rgb(55, 65, 81);
         }
 
         .${carouselClass} .swiper-button-prev:hover,
         .${carouselClass} .swiper-button-next:hover {
-          background: rgb(249, 250, 251);
-          border-color: rgb(209, 213, 219);
+          background: rgb(255, 255, 255);
+          transform: scale(1.1);
         }
 
         .dark .${carouselClass} .swiper-button-prev:hover,
         .dark .${carouselClass} .swiper-button-next:hover {
-          background: rgb(55, 65, 81);
-          border-color: rgb(75, 85, 99);
+          background: rgb(31, 41, 55);
+          transform: scale(1.1);
         }
 
         .${carouselClass} .swiper-button-prev.swiper-button-disabled,
@@ -66,20 +66,20 @@ export default function CardCarousel({ cards, cardsPerView }: CardCarouselProps)
         }
 
         .${carouselClass} .swiper-button-prev {
-          left: -24px;
+          left: -16px;
         }
 
         .${carouselClass} .swiper-button-next {
-          right: -24px;
+          right: -16px;
         }
 
         @media (min-width: 768px) {
           .${carouselClass} .swiper-button-prev {
-            left: -48px;
+            left: -40px;
           }
 
           .${carouselClass} .swiper-button-next {
-            right: -48px;
+            right: -40px;
           }
         }
 
@@ -155,10 +155,10 @@ export default function CardCarousel({ cards, cardsPerView }: CardCarouselProps)
       {cards.length > cardsPerView.desktop && (
         <>
           <button className="swiper-button-prev" aria-label="Previous slide">
-            <ChevronLeft size={24} className="text-gray-600 dark:text-gray-300" />
+            <ChevronLeft size={16} className="text-gray-500 dark:text-gray-400" strokeWidth={1.5} />
           </button>
           <button className="swiper-button-next" aria-label="Next slide">
-            <ChevronRight size={24} className="text-gray-600 dark:text-gray-300" />
+            <ChevronRight size={16} className="text-gray-500 dark:text-gray-400" strokeWidth={1.5} />
           </button>
         </>
       )}

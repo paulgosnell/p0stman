@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 
 interface CaseStudy {
@@ -11,6 +11,16 @@ interface CaseStudy {
   image: string;
   liveUrl?: string;
   fullWidthImage?: boolean; // True for full-width images, false for images with padding
+}
+
+// Shuffle array function
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
 }
 
 const caseStudies: CaseStudy[] = [
@@ -83,6 +93,9 @@ const caseStudies: CaseStudy[] = [
 ];
 
 export default function CaseStudiesV3() {
+  // Shuffle case studies on component mount
+  const shuffledCaseStudies = useMemo(() => shuffleArray(caseStudies), []);
+
   return (
     <section id="work" className="py-56 md:py-64 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
@@ -95,7 +108,7 @@ export default function CaseStudiesV3() {
 
         {/* Case Studies Grid - 2 columns on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-20">
-          {caseStudies.map((study) => (
+          {shuffledCaseStudies.map((study) => (
             <a
               key={study.id}
               href={
