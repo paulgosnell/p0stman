@@ -43,14 +43,14 @@ export default function HeroV3() {
                 left: `${left}%`,
                 top: `${top}%`,
                 background: i % 2 === 0
-                  ? 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%)'
-                  : 'radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, transparent 70%)',
+                  ? 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)'
+                  : 'radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 70%)',
               }}
               animate={{
                 x: [0, Math.random() * 100 - 50, 0],
                 y: [0, Math.random() * 100 - 50, 0],
                 scale: [1, 1.1, 1],
-                opacity: [0.3, 0.6, 0.3],
+                opacity: [0.5, 0.8, 0.5],
               }}
               transition={{
                 duration,
