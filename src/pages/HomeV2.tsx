@@ -615,7 +615,7 @@ export default function HomeV2() {
                 <div className="space-y-4 overflow-visible">
                   <div className="flex items-center gap-3 text-blue-400">
                     <Bot className="w-5 h-5" />
-                    <span className="font-light text-sm opacity-70">HELLO</span>
+                    <span className="font-light text-sm opacity-70">AI-POWERED PRODUCT STUDIO</span>
                   </div>
 
                   <h1 className="text-6xl md:text-7xl font-bold leading-tight py-4" style={{ overflow: 'visible' }}>
