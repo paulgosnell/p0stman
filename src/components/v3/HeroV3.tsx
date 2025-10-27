@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, X, Mic, Volume2, Loader } from 'lucide-react';
+import { motion } from 'framer-motion';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
 
@@ -21,6 +22,89 @@ export default function HeroV3() {
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center py-40 md:py-48 overflow-hidden bg-white dark:bg-gray-900">
+
+      {/* Subtle Background Animations */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating Orbs */}
+        {[...Array(5)].map((_, i) => {
+          const size = Math.random() * 150 + 100;
+          const left = Math.random() * 100;
+          const top = Math.random() * 100;
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 20 + 20;
+
+          return (
+            <motion.div
+              key={`orb-${i}`}
+              className="absolute rounded-full blur-3xl"
+              style={{
+                width: size,
+                height: size,
+                left: `${left}%`,
+                top: `${top}%`,
+                background: i % 2 === 0
+                  ? 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%)'
+                  : 'radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, transparent 70%)',
+              }}
+              animate={{
+                x: [0, Math.random() * 100 - 50, 0],
+                y: [0, Math.random() * 100 - 50, 0],
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration,
+                repeat: Infinity,
+                delay,
+                ease: "easeInOut"
+              }}
+            />
+          );
+        })}
+
+        {/* Shooting Stars */}
+        {[...Array(3)].map((_, i) => {
+          const startY = Math.random() * 50;
+          const delay = i * 8 + Math.random() * 5;
+
+          return (
+            <motion.div
+              key={`star-${i}`}
+              className="absolute w-1 h-1 bg-blue-400/40 dark:bg-blue-300/40 rounded-full"
+              style={{
+                boxShadow: '0 0 8px 2px rgba(59, 130, 246, 0.3)',
+                left: '-10%',
+                top: `${startY}%`,
+              }}
+              initial={{ x: 0, y: 0, opacity: 0 }}
+              animate={{
+                x: ['0vw', '110vw'],
+                y: ['0vh', '60vh'],
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay,
+                repeatDelay: 20,
+                ease: "easeIn",
+                times: [0, 0.1, 0.9, 1]
+              }}
+            />
+          );
+        })}
+
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgb(59, 130, 246) 1px, transparent 1px),
+              linear-gradient(to bottom, rgb(59, 130, 246) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }}
+        />
+      </div>
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-0 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
