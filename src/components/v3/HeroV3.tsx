@@ -27,11 +27,14 @@ export default function HeroV3() {
           {/* Left Column - Copy */}
           <div className="flex flex-col justify-center space-y-8 md:space-y-10">
             <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-gray-900 dark:text-gray-100 mb-6">
-                Faster Than Your Agency Can Think
+              <p className="text-sm font-light text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
+                AI-Powered Product Studio
+              </p>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-gray-900 dark:text-gray-100 mb-6">
+                Ambition.<br />Accelerated.
               </h1>
               <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300 leading-relaxed">
-                Ship production-ready products 40% faster. AI agents, websites, mobile apps. All three: speed, quality, price. AI-first workflows. Human validation. Ready to deploy.
+                Empowering brands to think bigger, move faster, and deliver smarter — powered by AI.
               </p>
             </div>
 

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Mic, MessageSquare, Code, Zap, Globe, Smartphone, UserCog } from 'lucide-react';
+import { Mic, MessageSquare, Code, Zap, Globe, Smartphone, UserCog, Settings, Palette } from 'lucide-react';
 import CardCarousel from './CardCarousel';
 
 interface AgentCard {
@@ -61,6 +61,18 @@ const agents: AgentCard[] = [
     title: 'Fractional CTO / Delivery Partner',
     description: 'Strategic tech leadership on demand. Product roadmaps, team scaling, architecture decisions. Your tech co-founder.',
     tech: 'Strategy, Team Building, Architecture'
+  },
+  {
+    icon: <Settings className="w-12 h-12 text-blue-600" />,
+    title: 'RAG Systems',
+    description: 'Retrieval-Augmented Generation at scale. Knowledge agents trained on your data — private, secure, and lightning-fast. Turns chaos into context, and context into answers.',
+    tech: 'Vector DBs, Custom Knowledge Bases, Private & Secure'
+  },
+  {
+    icon: <Palette className="w-12 h-12 text-blue-600" />,
+    title: 'Artitecture',
+    description: 'Where art meets architecture — the aesthetic logic behind every build. AI-assisted design language, consistent across apps, sites, and agents. Not just style. System-level beauty.',
+    tech: 'Design Systems, Brand Consistency, AI-Assisted'
   }
 ];
 
