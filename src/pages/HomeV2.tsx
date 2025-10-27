@@ -1408,7 +1408,7 @@ export default function HomeV2() {
 
       {/* How We Work Section - HIDDEN */}
       {/* 
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -1418,8 +1418,8 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-thin mb-6">How We Work</h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+              <h2 className="text-4xl font-thin mb-6 dark:text-gray-100">How We Work</h2>
+              <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-light">
                 Every organisation faces challenges. Here's how we help you overcome them.
               </p>
             </motion.div>
@@ -1430,16 +1430,16 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 shadow-lg border border-red-100 hover:shadow-xl transition-all"
+                className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-2xl p-8 shadow-lg border border-red-100 dark:border-red-800/50 hover:shadow-xl transition-all"
               >
                 <div className="flex items-start gap-6">
-                  <div className="p-4 bg-red-100 rounded-2xl">
-                    <Clock className="w-8 h-8 text-red-600" />
+                  <div className="p-4 bg-red-100 dark:bg-red-900/40 rounded-2xl">
+                    <Clock className="w-8 h-8 text-red-600 dark:text-red-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Tight Deadlines</h3>
-                    <p className="text-red-600 font-medium mb-3">We move fast and deliver on time.</p>
-                    <p className="text-gray-700 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Tight Deadlines</h3>
+                    <p className="text-red-600 dark:text-red-400 font-medium mb-3">We move fast and deliver on time.</p>
+                    <p className="text-gray-700 dark:text-gray-300 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1449,16 +1449,16 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all"
+                className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8 shadow-lg border border-green-100 dark:border-green-800/50 hover:shadow-xl transition-all"
               >
                 <div className="flex items-start gap-6">
-                  <div className="p-4 bg-green-100 rounded-2xl">
-                    <DollarSign className="w-8 h-8 text-green-600" />
+                  <div className="p-4 bg-green-100 dark:bg-green-900/40 rounded-2xl">
+                    <DollarSign className="w-8 h-8 text-green-600 dark:text-green-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Limited Resources</h3>
-                    <p className="text-green-600 font-medium mb-3">We work within your budget constraints.</p>
-                    <p className="text-gray-700 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Limited Resources</h3>
+                    <p className="text-green-600 dark:text-green-400 font-medium mb-3">We work within your budget constraints.</p>
+                    <p className="text-gray-700 dark:text-gray-300 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1468,16 +1468,16 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-all"
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 shadow-lg border border-blue-100 dark:border-blue-800/50 hover:shadow-xl transition-all"
               >
                 <div className="flex items-start gap-6">
-                  <div className="p-4 bg-blue-100 rounded-2xl">
-                    <Target className="w-8 h-8 text-blue-600" />
+                  <div className="p-4 bg-blue-100 dark:bg-blue-900/40 rounded-2xl">
+                    <Target className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Tricky Tech Problems</h3>
-                    <p className="text-blue-600 font-medium mb-3">We solve complex technical challenges.</p>
-                    <p className="text-gray-700 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Tricky Tech Problems</h3>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">We solve complex technical challenges.</p>
+                    <p className="text-gray-700 dark:text-gray-300 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1487,16 +1487,16 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all"
+                className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8 shadow-lg border border-purple-100 dark:border-purple-800/50 hover:shadow-xl transition-all"
               >
                 <div className="flex items-start gap-6">
-                  <div className="p-4 bg-purple-100 rounded-2xl">
-                    <Rocket className="w-8 h-8 text-purple-600" />
+                  <div className="p-4 bg-purple-100 dark:bg-purple-900/40 rounded-2xl">
+                    <Rocket className="w-8 h-8 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-light mb-2 text-gray-900">Big Change Projects</h3>
-                    <p className="text-purple-600 font-medium mb-3">We handle large-scale transformations.</p>
-                    <p className="text-gray-700 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
+                    <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Big Change Projects</h3>
+                    <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">We handle large-scale transformations.</p>
+                    <p className="text-gray-700 dark:text-gray-300 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
                   </div>
                 </div>
               </motion.div>
@@ -1509,14 +1509,14 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mt-12"
             >
-              <p className="text-gray-600 mb-6 font-light">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 font-light">
                 Ready to solve your biggest challenges?
               </p>
               <motion.a
                 href="mailto:paul@p0stman.com?subject=Project Discussion"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all font-medium text-lg inline-flex items-center gap-2"
               >
                 <MessageSquare className="w-5 h-5" />
                 Let's Discuss Your Project
