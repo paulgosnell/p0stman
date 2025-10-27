@@ -30,7 +30,7 @@ export default function HeroV3() {
               <p className="text-sm font-light text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                 AI-Powered Product Studio
               </p>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight tracking-tight text-gray-900 dark:text-gray-100 mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-gray-900 dark:text-gray-100 mb-6">
                 Ambition.<br />Accelerated.
               </h1>
               <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300 leading-relaxed">
