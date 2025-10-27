@@ -1363,8 +1363,8 @@ export default function HomeV2() {
                   <div className="space-y-2">
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0" />
-                        <span className="text-gray-700 font-light">{feature}</span>
+                        <div className="w-2 h-2 bg-blue-600 dark:bg-gray-400 rounded-full flex-shrink-0" />
+                        <span className="text-gray-700 dark:text-gray-300 font-light">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -1394,8 +1394,8 @@ export default function HomeV2() {
                   <div className="space-y-2">
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0" />
-                        <span className="text-gray-700 font-light text-xs">{feature}</span>
+                        <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-gray-400 rounded-full flex-shrink-0" />
+                        <span className="text-gray-700 dark:text-gray-300 font-light text-xs">{feature}</span>
                       </div>
                     ))}
                   </div>
