@@ -604,20 +604,18 @@ export default function HomeV2() {
                     <span className="font-light text-sm opacity-70">HELLO</span>
                   </div>
 
-                  <h1 className="text-5xl md:text-6xl font-thin leading-snug py-4" style={{ overflow: 'visible' }}>
-                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'inline-block' }}>
-                      Building{' '}
-                      <RotatingWord
-                        words={['Agents', 'Apps', 'Websites', 'Dashboards', 'Platforms']}
-                        className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-thin"
-                      />
-                      {' '}That Work For You.
+                  <h1 className="text-6xl md:text-7xl font-bold leading-tight py-4" style={{ overflow: 'visible' }}>
+                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'block' }}>
+                      Ambition.
+                    </span>
+                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'block' }}>
+                      Accelerated.
                     </span>
                   </h1>
                 </div>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                  Voice agents for lead gen. Chat agents for support. Code agents that ship features. Plus the websites, apps, and platforms that surround them.
+                  Empowering brands to think bigger, move faster, and deliver smarter — powered by AI.
                 </p>
 
                 {/* Value Props */}
