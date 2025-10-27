@@ -23,7 +23,9 @@ import {
   Smartphone,
   Sparkles,
   Clock,
-  MessageSquare
+  MessageSquare,
+  Settings,
+  Palette
 } from 'lucide-react';
 import VideoModal from '../components/modals/VideoModal';
 import WhyWeDoIt from '../components/WhyWeDoIt';
@@ -164,6 +166,18 @@ const focusAreas = [
     title: "Creative Prototypes",
     description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
     features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
+  },
+  {
+    icon: <Settings className="w-8 h-8 text-slate-600" />,
+    title: "RAG Systems",
+    description: "Retrieval-Augmented Generation at scale. Knowledge agents trained on your data — private, secure, and lightning-fast. Turns chaos into context, and context into answers.",
+    features: ["Custom Knowledge Bases", "Private & Secure", "Real-time Retrieval", "Contextual AI Responses"]
+  },
+  {
+    icon: <Palette className="w-8 h-8 text-rose-600" />,
+    title: "Artitecture",
+    description: "Where art meets architecture — the aesthetic logic behind every build. AI-assisted design language, consistent across apps, sites, and agents. Not just style. System-level beauty.",
+    features: ["Design Systems", "Brand Consistency", "AI-Assisted Design", "Aesthetic Logic"]
   }
 ];
 
