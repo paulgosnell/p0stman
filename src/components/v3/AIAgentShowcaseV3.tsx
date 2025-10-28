@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, CheckCircle } from 'lucide-react';
+import CardCarousel from './CardCarousel';
 
 interface AIAgent {
   name: string;
@@ -44,14 +45,66 @@ const aiAgents: AIAgent[] = [
 export default function AIAgentShowcaseV3() {
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
 
+  // Create phone card component for reuse
+  const createPhoneCard = (agent: AIAgent, index: number, isFanned: boolean = false) => (
+    <div className="relative w-[200px] md:w-[240px] aspect-[9/19.5] rounded-3xl shadow-2xl overflow-hidden bg-white dark:bg-gray-900 border-8 border-gray-900 dark:border-gray-700">
+      {/* Gradient overlay */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-10`} />
+
+      {/* Screenshot */}
+      <img
+        src={agent.screenshot}
+        alt={`${agent.name} AI Agent`}
+        className="w-full h-full object-cover object-top"
+      />
+
+      {/* Hover overlay with info */}
+      <div className={`absolute inset-0 ${isFanned ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'} transition-opacity duration-300 flex flex-col justify-end p-4`}>
+        <div className="bg-white/90 dark:bg-gray-900/90 rounded-lg p-3">
+          <h3 className="text-gray-900 dark:text-white font-semibold text-base mb-1">{agent.name}</h3>
+          <p className="text-gray-800 dark:text-white/90 text-xs mb-2">{agent.description}</p>
+          <ul className="space-y-1">
+            {agent.features.map((feature, i) => (
+              <li key={i} className="text-gray-700 dark:text-white/80 text-[10px] flex items-center gap-1">
+                <CheckCircle className="w-2.5 h-2.5 text-green-500 dark:text-green-400 flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Carousel cards for mobile
+  const carouselCards = aiAgents.map((agent, index) => (
+    <div key={agent.name} className="flex flex-col items-center justify-center h-full px-4">
+      {createPhoneCard(agent, index, false)}
+    </div>
+  ));
+
   return (
     <section className="py-40 md:py-48 bg-gray-50 dark:bg-gray-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Split Layout: Cards on Left, Text on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left Side: Fanned Out Cards */}
-          <div className="relative h-[600px] lg:h-[700px] flex items-center justify-center">
+          {/* Left Side: Carousel on Mobile, Fanned Cards on Desktop */}
+
+          {/* Mobile Carousel */}
+          <div className="lg:hidden">
+            <CardCarousel
+              cards={carouselCards}
+              cardsPerView={{
+                mobile: 1,
+                tablet: 1,
+                desktop: 1
+              }}
+            />
+          </div>
+
+          {/* Desktop Fanned Cards */}
+          <div className="hidden lg:flex relative h-[600px] lg:h-[700px] items-center justify-center">
             {aiAgents.map((agent, index) => {
               // Calculate fan positions and rotations
               const totalCards = aiAgents.length;
@@ -95,34 +148,7 @@ export default function AIAgentShowcaseV3() {
                   className="group absolute"
                   style={{ zIndex: hoveredIndex === index ? 100 : index }}
                 >
-                  {/* Phone Card */}
-                  <div className="relative w-[200px] md:w-[240px] aspect-[9/19.5] rounded-3xl shadow-2xl overflow-hidden bg-white dark:bg-gray-900 border-8 border-gray-900 dark:border-gray-700">
-                    {/* Gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-10`} />
-
-                    {/* Screenshot */}
-                    <img
-                      src={agent.screenshot}
-                      alt={`${agent.name} AI Agent`}
-                      className="w-full h-full object-cover object-top"
-                    />
-
-                    {/* Hover overlay with info */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <div className="bg-white/90 dark:bg-gray-900/90 rounded-lg p-3">
-                        <h3 className="text-gray-900 dark:text-white font-semibold text-base mb-1">{agent.name}</h3>
-                        <p className="text-gray-800 dark:text-white/90 text-xs mb-2">{agent.description}</p>
-                        <ul className="space-y-1">
-                          {agent.features.map((feature, i) => (
-                            <li key={i} className="text-gray-700 dark:text-white/80 text-[10px] flex items-center gap-1">
-                              <CheckCircle className="w-2.5 h-2.5 text-green-500 dark:text-green-400 flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  {createPhoneCard(agent, index, true)}
                 </motion.div>
               );
             })}
