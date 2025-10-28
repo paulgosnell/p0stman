@@ -165,16 +165,77 @@ export default function CaseStudiesV3() {
           </h2>
         </div>
 
-        {/* Case Studies Carousel */}
-        <div className="mb-20">
+        {/* Mobile Carousel */}
+        <div className="md:hidden mb-20">
           <CardCarousel
             cards={caseStudyCards}
             cardsPerView={{
               mobile: 1,
-              tablet: 2,
-              desktop: 2
+              tablet: 1,
+              desktop: 1
             }}
           />
+        </div>
+
+        {/* Desktop Grid - 2 columns */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-20">
+          {shuffledCaseStudies.map((study) => (
+            <a
+              key={study.id}
+              href={
+                study.client === 'FAB Bank' ? '/case-study/fab-bank' :
+                study.client === 'Al Arabiya' ? '/case-study/al-arabiya' :
+                study.client === 'DoH Health' ? '/case-study/doh-health' :
+                `/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`
+              }
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white dark:bg-gray-800 flex flex-col hover:-translate-y-2 cursor-pointer"
+            >
+              {/* Project Image */}
+              <div className={`relative overflow-hidden aspect-[16/10] ${study.fullWidthImage ? '' : 'p-4'}`}>
+                <img
+                  src={study.image}
+                  alt={study.project}
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${study.fullWidthImage ? '' : 'rounded-lg'}`}
+                  onError={(e) => {
+                    e.currentTarget.src = '/assets/images/p0stman-bg.png';
+                  }}
+                />
+
+                {/* Subtle hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/50 transition-transform duration-300 group-hover:scale-110">
+                    <ExternalLink className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Below Image */}
+              <div className="flex-1 flex flex-col p-8">
+                {/* Client Name */}
+                <p className="text-xs font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
+                  {study.client}
+                </p>
+
+                {/* Project Title */}
+                <h3 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-gray-100 mb-4 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {study.project}
+                </h3>
+
+                {/* Solution */}
+                <p className="text-base font-light text-gray-700 dark:text-gray-300 leading-relaxed mb-4 flex-1">
+                  {study.solution}
+                </p>
+
+                {/* Result */}
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                  {study.result}
+                </p>
+              </div>
+
+              {/* Bottom glow on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-x-0 group-hover:scale-x-100" />
+            </a>
+          ))}
         </div>
 
         {/* CTA to See All Case Studies */}

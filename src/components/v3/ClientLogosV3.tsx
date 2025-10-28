@@ -45,14 +45,40 @@ export default function ClientLogosV3() {
           <p className="text-gray-600 dark:text-gray-100 font-light text-lg">Trusted by leading organizations</p>
         </motion.div>
 
-        <CardCarousel
-          cards={logoCards}
-          cardsPerView={{
-            mobile: 2,
-            tablet: 3,
-            desktop: 6
-          }}
-        />
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <CardCarousel
+            cards={logoCards}
+            cardsPerView={{
+              mobile: 2,
+              tablet: 2,
+              desktop: 2
+            }}
+          />
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity">
+          {clientLogos.map((client, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center"
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-12 object-contain filter grayscale dark:brightness-200 dark:invert transition-all duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
