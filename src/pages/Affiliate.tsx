@@ -9,7 +9,7 @@ import BenefitsSection from '../components/affiliate/BenefitsSection';
 import HowItWorks from '../components/affiliate/HowItWorks';
 import FAQ from '../components/affiliate/FAQ';
 import SignupModal from '../components/affiliate/SignupModal';
-import ServicesGrid from '../components/ServicesGrid';
+import FooterV3 from '../components/v3/FooterV3';
 
 export default function Affiliate() {
   const [ref, inView] = useInView({
@@ -141,9 +141,10 @@ export default function Affiliate() {
         <BenefitsSection />
         <HowItWorks />
         <FAQ />
-        <ServicesGrid currentService="affiliate" />
 
-        <SignupModal 
+        <FooterV3 />
+
+        <SignupModal
           isOpen={showSignupModal}
           onClose={() => setShowSignupModal(false)}
         />
