@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, Smartphone, Zap, CheckCircle, ArrowRight } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
-import ServicesGrid from '../components/ServicesGrid';
 import AppShowcase from '../components/mobile-app/AppShowcase';
 import PlatformFeatures from '../components/mobile-app/PlatformFeatures';
 import MobileAppModal from '../components/modals/MobileAppModal';
+import AIAgentShowcaseSimple from '../components/v3/AIAgentShowcaseSimple';
+import MobileAppsV3 from '../components/v3/mobile-apps';
+import FooterV3 from '../components/v3/FooterV3';
 
 const benefits = [
   "Native iOS & Android apps",
@@ -142,9 +144,11 @@ export default function MobileApp() {
 
         <AppShowcase />
         <PlatformFeatures />
-        <ServicesGrid currentService="mobile-app" />
+        <AIAgentShowcaseSimple />
+        <MobileAppsV3 />
+        <FooterV3 />
 
-        <MobileAppModal 
+        <MobileAppModal
           isOpen={showMobileAppModal}
           onClose={() => setShowMobileAppModal(false)}
         />
