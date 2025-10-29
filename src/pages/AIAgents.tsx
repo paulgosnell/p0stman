@@ -5,8 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import { Bot, Brain, Zap, CheckCircle, ArrowRight, Cpu, Network, Settings, Workflow, Bot as BotIcon, MessageSquare, Target } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import Contact from '../components/Contact';
-import ServicesGrid from '../components/ServicesGrid';
 import AIAgentShowcaseSimple from '../components/v3/AIAgentShowcaseSimple';
+import FooterV3 from '../components/v3/FooterV3';
 
 const benefits = [
   "Autonomous task execution",
@@ -248,11 +248,11 @@ export default function AIAgents() {
           </div>
         </section>
 
-        <ServicesGrid currentService="ai-agents" />
-        
         <div id="contact">
           <Contact />
         </div>
+
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );
