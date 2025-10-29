@@ -7,7 +7,6 @@ import HeaderV3Global from '../components/v3/HeaderV3Global';
 import ContactForm from '../components/contact/ContactForm';
 import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
-import ServicesGrid from '../components/ServicesGrid';
 import FooterV3 from '../components/v3/FooterV3';
 import SectionVoiceAgent from '../components/voice-agent/SectionVoiceAgent';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
@@ -135,7 +134,6 @@ export default function ContactPage() {
         </section>
 
         <ContactFAQ />
-        <ServicesGrid />
 
         <FooterV3 />
         <FloatingGuideAgent />
