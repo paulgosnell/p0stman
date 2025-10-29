@@ -4,6 +4,7 @@ import { useConversation } from '@elevenlabs/react';
 import { useNavigate } from 'react-router-dom';
 import { Mic, X, MessageSquare, Loader2, AlertCircle } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import { useWebSpeechCapture } from '../../hooks/useWebSpeechCapture';
 
 export interface SectionVoiceAgentProps {
   /** The section of the site this agent is for (e.g., 'cta', 'services', 'pricing', 'process') */
@@ -44,6 +45,9 @@ export interface SectionVoiceAgentProps {
 
   /** Callback when error occurs */
   onError?: (error: any) => void;
+
+  /** Callback when messages are updated (for data collection demos) */
+  onMessagesUpdate?: (messages: Message[]) => void;
 }
 
 interface Message {
@@ -66,6 +70,7 @@ export default function SectionVoiceAgent({
   onConversationStart,
   onConversationEnd,
   onError,
+  onMessagesUpdate,
 }: SectionVoiceAgentProps) {
   const [isActive, setIsActive] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -114,7 +119,7 @@ export default function SectionVoiceAgent({
     },
   };
 
-  // Use conversation with client tools
+  // Use conversation with client tools (MUST be before useWebSpeechCapture)
   const conversation = useConversation({
     clientTools,
     onToolCall: (toolCall) => {
@@ -124,6 +129,9 @@ export default function SectionVoiceAgent({
       console.warn('⚠️ Unhandled client tool call:', toolCall.tool_name, toolCall.parameters);
     },
   });
+
+  // Use Web Speech API to capture user speech (only when agent is NOT speaking)
+  const { isListening } = useWebSpeechCapture(isActive, conversation.isSpeaking, onMessagesUpdate);
 
   // Auto-start if enabled
   useEffect(() => {
