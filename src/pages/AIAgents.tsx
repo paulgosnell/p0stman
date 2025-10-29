@@ -6,6 +6,7 @@ import { Bot, Brain, Zap, CheckCircle, ArrowRight, Cpu, Network, Settings, Workf
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import Contact from '../components/Contact';
 import ServicesGrid from '../components/ServicesGrid';
+import AIAgentShowcaseSimple from '../components/v3/AIAgentShowcaseSimple';
 
 const benefits = [
   "Autonomous task execution",
@@ -192,6 +193,8 @@ export default function AIAgents() {
             </div>
           </div>
         </section>
+
+        <AIAgentShowcaseSimple />
 
         <section className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
