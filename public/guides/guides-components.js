@@ -24,7 +24,7 @@
   const renderFooter = () => {
     const currentYear = new Date().getFullYear();
     return `
-      <footer class="bg-gray-900 text-white py-16 md:py-24 px-6 md:px-0">
+      <footer class="bg-gray-900 text-white py-16 md:py-24 px-6 md:px-0 border-t border-gray-800">
         <div class="max-w-6xl mx-auto">
           <!-- Footer Grid -->
           <div class="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-16 mb-16 md:mb-24">
