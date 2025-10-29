@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Bot, CheckCircle, ArrowRight, MessageSquare, Mail, Clock, Zap } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import Contact from '../components/Contact';
+import FooterV3 from '../components/v3/FooterV3';
 
 const benefits = [
   "Dedicated private communication channel",
@@ -227,10 +228,12 @@ export default function Retainer() {
           </div>
         </section>
 
-        
+
         <div id="contact">
           <Contact />
         </div>
+
+        <FooterV3 />
       </div>
     </HelmetProvider>
   );
