@@ -58,13 +58,15 @@ import Serenity from './pages/case-studies/Serenity';
 import Fitlink from './pages/case-studies/Fitlink';
 import ClinicBook from './pages/case-studies/ClinicBook';
 import BarberBookingSystem from './pages/case-studies/BarberBookingSystem';
-import FABBank from './pages/case-studies/FABBank';
-import AlArabiya from './pages/case-studies/AlArabiya';
-import EtihadAirways from './pages/case-studies/EtihadAirways';
-import DoHHealth from './pages/case-studies/DoHHealth';
-import BFITWeb3 from './pages/case-studies/BFITWeb3';
-import ArabianMalls from './pages/case-studies/ArabianMalls';
-import Genieology from './pages/case-studies/Genieology';
+import FABBank from './pages/case-studies/FABBankLuxury';
+import AlArabiya from './pages/case-studies/AlArabiyaLuxury';
+import EtihadAirways from './pages/case-studies/EtihadAirwaysLuxury';
+import DoHHealth from './pages/case-studies/DoHHealthLuxury';
+import BFITWeb3 from './pages/case-studies/BFITWeb3Luxury';
+import ArabianMalls from './pages/case-studies/ArabianMallsLuxury';
+import Genieology from './pages/case-studies/GenieologyLuxury';
+import YachtOS from './pages/case-studies/YachtOS';
+import Pathfinder from './pages/case-studies/Pathfinder';
 import Thanks from './pages/Thanks';
 import NotFound from './pages/NotFound';
 import SocialShare from './components/SocialShare';
@@ -144,6 +146,8 @@ export default function App() {
           <Route path="/case-study/arabian-malls" element={<ArabianMalls />} />
           <Route path="/case-study/arabian-center" element={<ArabianMalls />} />
           <Route path="/case-study/genieology" element={<Genieology />} />
+          <Route path="/case-study/yachtos" element={<YachtOS />} />
+          <Route path="/case-study/pathfinder" element={<Pathfinder />} />
           <Route path="/thanks" element={<Thanks />} />
           <Route path="/links" element={<Links />} />
           <Route path="/support" element={<Support />} />
