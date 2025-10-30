@@ -223,6 +223,65 @@ const allProjects = [
     teamSize: '6 people',
     caseStudyUrl: '/case-study/genieology'
   },
+  // New AI Products
+  {
+    id: 'yachtos',
+    title: 'YachtOS Command',
+    company: 'Voice-Powered Maritime Intelligence',
+    category: 'Maritime Technology',
+    type: 'AI-Built',
+    image: '/agents/yachtos-1.png',
+    logo: '/agents/yachtos-icon.png',
+    description: 'First AI-native operating system for superyacht captains with voice commands, computer vision, and real-time operations.',
+    challenge: 'Superyacht captains manage complex operations across weather monitoring, maintenance scheduling, crew coordination, and supplier relationships using 8-12 different apps.',
+    solution: 'Built voice-first AI platform with 7 specialized agent tools, computer vision for maintenance, and unified command center consolidating all operations.',
+    results: [
+      '10+ hours saved weekly in operational coordination',
+      '7 AI agent tools automating maritime operations',
+      '24/7 AI assistant with voice-powered support',
+      '3-second response time for multi-step operations',
+      '85% faster task execution through voice commands',
+      '40% reduction in emergency maintenance incidents'
+    ],
+    metrics: [
+      { label: 'Time Saved', value: '10+hr/wk', icon: <Zap className="w-6 h-6" /> },
+      { label: 'AI Tools', value: '7', icon: <Bot className="w-6 h-6" /> },
+      { label: 'Response Time', value: '3sec', icon: <TrendingUp className="w-6 h-6" /> }
+    ],
+    technologies: ['Claude Sonnet 4.5', 'ElevenLabs AI', 'Next.js 14', 'Supabase', 'OpenWeather Marine API'],
+    timeline: '12 weeks',
+    teamSize: 'Solo + AI',
+    caseStudyUrl: '/case-study/yachtos'
+  },
+  {
+    id: 'pathfinder',
+    title: 'Pathfinder',
+    company: 'Professional ADHD Parent Coaching',
+    category: 'Healthcare Technology',
+    type: 'AI-Built',
+    image: '/agents/pathfinder-1.png',
+    logo: '/agents/pathfinder.png',
+    description: 'Evidence-based AI coaching platform helping parents of ADHD children through professional therapeutic frameworks.',
+    challenge: 'Parents of ADHD children face limited access to professional coaches (£100-200/session) and generic online advice that doesn\'t fit their specific situation.',
+    solution: 'Built therapeutic platform using GROW Model framework with crisis-first multi-agent architecture, dual voice+text interface, and multi-child support.',
+    results: [
+      '162+ coaching exchanges across therapeutic sessions',
+      '0 critical safety incidents with real-time crisis detection',
+      '$0.01 per session cost efficiency (95% gross margin)',
+      '9 children supported across 5 family profiles',
+      '300ms voice latency for real-time conversation quality',
+      'Production-ready with waitlist system'
+    ],
+    metrics: [
+      { label: 'Sessions', value: '162+', icon: <Users className="w-6 h-6" /> },
+      { label: 'Safety Incidents', value: '0', icon: <Award className="w-6 h-6" /> },
+      { label: 'Cost/Session', value: '$0.01', icon: <DollarSign className="w-6 h-6" /> }
+    ],
+    technologies: ['Next.js 15', 'OpenAI GPT-4o-mini', 'ElevenLabs AI', 'Supabase', 'GROW Model Framework'],
+    timeline: '10 months',
+    teamSize: 'Solo + AI',
+    caseStudyUrl: '/case-study/pathfinder'
+  },
   // AI-Built Projects (link to existing case studies)
   {
     id: 'chilled-sites',
