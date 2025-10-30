@@ -289,8 +289,11 @@ export default function CaseHeroLuxury({
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mb-6"
             >
-              <span className="inline-block text-xs tracking-[0.3em] uppercase text-white font-light"
-                style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)' }}>
+              <span className="inline-block text-xs tracking-[0.3em] uppercase font-light"
+                style={{
+                  color: '#FFFFFF',
+                  textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)'
+                }}>
                 {subtitle}
               </span>
             </motion.div>
