@@ -367,7 +367,7 @@ export default function CaseHeroLuxury({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-12"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12"
             >
               {stats.map((stat, index) => (
                 <motion.div
