@@ -108,8 +108,7 @@ export default function Pathfinder() {
           subtitle="Professional ADHD Parent Coaching, Powered by AI"
           description="Evidence-based AI coaching platform helping parents of ADHD children discover their own solutions through professional therapeutic frameworks"
           backgroundVideo="https://videos.pexels.com/video-files/856694/856694-hd_1920_1080_25fps.mp4"
-          logo="/agents/pathfinder.png"
-          logoInvert={false}
+          icon="heart"
           industry="Healthcare Technology"
           timeline="10 months"
           teamSize="Solo + AI"

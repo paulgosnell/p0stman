@@ -107,9 +107,8 @@ export default function YachtOS() {
           title="YachtOS Command"
           subtitle="Voice-Powered Maritime Intelligence"
           description="The first AI-native operating system for superyacht captains. Voice-powered intelligence platform transforming yacht operations through conversational AI and computer vision"
-          backgroundVideo="https://videos.pexels.com/video-files/7333913/7333913-uhd_2560_1440_25fps.mp4"
-          logo="/agents/yachtos-icon.png"
-          logoInvert={true}
+          backgroundVideo="https://cdn.pixabay.com/video/2020/12/06/58444-488804243_large.mp4"
+          icon="ship"
           industry="Maritime Technology"
           timeline="12 weeks"
           teamSize="Solo + AI"

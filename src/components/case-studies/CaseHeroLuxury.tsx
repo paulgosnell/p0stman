@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ArrowDown, Menu, X, ArrowRight, Briefcase, Target, Zap, Users, Mail, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowDown, Menu, X, ArrowRight, Briefcase, Target, Zap, Users, Mail, Sparkles, Ship, Heart } from 'lucide-react';
 
 interface CaseHeroLuxuryProps {
   title: string;
@@ -12,6 +12,7 @@ interface CaseHeroLuxuryProps {
   backgroundVideo?: string;
   logo?: string;
   logoInvert?: boolean;
+  icon?: 'ship' | 'heart' | string;
   industry?: string;
   timeline?: string;
   teamSize?: string;
@@ -43,6 +44,7 @@ export default function CaseHeroLuxury({
   backgroundVideo,
   logo,
   logoInvert = true,
+  icon,
   industry,
   timeline,
   teamSize,
@@ -251,8 +253,20 @@ export default function CaseHeroLuxury({
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Logo - Elegant Placement */}
-          {logo && (
+          {/* Icon - Elegant Placement */}
+          {icon && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mb-16 mt-8 flex justify-center"
+            >
+              {icon === 'ship' && <Ship className="w-12 h-12 md:w-16 md:h-16 text-white opacity-90" strokeWidth={1.5} />}
+              {icon === 'heart' && <Heart className="w-12 h-12 md:w-16 md:h-16 text-white opacity-90" strokeWidth={1.5} />}
+            </motion.div>
+          )}
+          {/* Logo - Elegant Placement (fallback for image logos) */}
+          {!icon && logo && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
