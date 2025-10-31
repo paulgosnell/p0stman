@@ -1,13 +1,13 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
-import HeroV3 from '../components/v3/HeroV3';
+import HeroLuxury from '../components/v3/HeroLuxury';
 import MetricsV3 from '../components/v3/MetricsV3';
 import AgentsV3 from '../components/v3/AgentsV3';
 import AIAgentShowcaseV3 from '../components/v3/AIAgentShowcaseV3';
-import CaseStudiesV3 from '../components/v3/CaseStudiesV3';
+import CaseStudiesLuxury from '../components/v3/CaseStudiesLuxury';
 import ClientLogosV3 from '../components/v3/ClientLogosV3';
-import ServicesV3 from '../components/v3/ServicesV3';
+import ServicesLuxury from '../components/v3/ServicesLuxury';
 import CTAV3 from '../components/v3/CTAV3';
 import FooterV3 from '../components/v3/FooterV3';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
@@ -38,13 +38,13 @@ export default function Home() {
           <meta name="theme-color" content="#2563eb" />
         </Helmet>
         <HeaderV3Global />
-        <HeroV3 />
+        <HeroLuxury />
         <MetricsV3 />
         <AgentsV3 />
-        <CaseStudiesV3 />
+        <CaseStudiesLuxury />
         <AIAgentShowcaseV3 />
         <ClientLogosV3 />
-        <ServicesV3 />
+        <ServicesLuxury />
         <CTAV3 />
         <FooterV3 />
         <FloatingGuideAgent />
