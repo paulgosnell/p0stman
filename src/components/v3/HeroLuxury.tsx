@@ -13,7 +13,7 @@ export default function HeroLuxury() {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Full-Screen Rocket Launch Video Background */}
+      {/* Full-Screen Space Video Background */}
       <div className="absolute inset-0">
         <video
           autoPlay
@@ -22,7 +22,7 @@ export default function HeroLuxury() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://cdn.pixabay.com/video/2018/10/02/18534-293472901_large.mp4" type="video/mp4" />
+          <source src="https://cdn.pixabay.com/video/2023/11/19/189734-886596182_large.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient Overlays for Text Readability */}
