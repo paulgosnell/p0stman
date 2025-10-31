@@ -89,20 +89,13 @@ export default function HeroLuxury() {
             AI-powered product studio building the impossible — fast, brilliant, limitless
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Voice Waveform CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            className="flex justify-center items-center"
           >
-            <button
-              onClick={scrollToWork}
-              className="px-8 py-4 bg-white text-black hover:bg-gray-100 transition-all font-light text-lg"
-            >
-              View Our Work
-            </button>
-
             {/* Voice Waveform Button */}
             <div className="relative group">
               <div className="w-64 h-16 flex items-center justify-center cursor-pointer">
