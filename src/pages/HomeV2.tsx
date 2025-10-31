@@ -130,7 +130,7 @@ const highlights = [
 
 const focusAreas = [
   {
-    icon: <Bot className="w-10 h-10 text-blue-600" />,
+    icon: <Bot className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "AI Agent Development",
     description: "Voice agents for lead gen. Chat agents for support. Code agents that ship features.",
     features: ["Voice Agents (ElevenLabs)", "Chat Agents (Claude/GPT)", "Code Agents (Gemini)", "Workflow Automation"],
@@ -138,43 +138,43 @@ const focusAreas = [
     featured: true
   },
   {
-    icon: <Rocket className="w-8 h-8 text-purple-600" />,
+    icon: <Rocket className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "MVP & Product Launches",
     description: "Fast, focused builds that validate your idea and get you to market in weeks, not months.",
     features: ["Prototypes", "Proof-of-Concepts", "Beta Launches", "Market Validation"]
   },
   {
-    icon: <Globe className="w-8 h-8 text-green-600" />,
+    icon: <Globe className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "Websites & Mobile Apps",
     description: "Modern, responsive digital products that convert visitors into customers.",
     features: ["Responsive Websites", "iOS & Android Apps", "CMS Integration", "Performance Optimization"]
   },
   {
-    icon: <Brain className="w-8 h-8 text-indigo-600" />,
+    icon: <Brain className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "Fractional Product Leadership",
     description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
     features: ["Product Strategy", "Team Leadership", "Stakeholder Management", "Go-to-Market"]
   },
   {
-    icon: <Target className="w-8 h-8 text-teal-600" />,
+    icon: <Target className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "Digital Transformation",
     description: "Consulting and delivery to modernise systems and teams.",
     features: ["AI Strategy", "Process Optimisation", "Roadmaps", "Change Management"]
   },
   {
-    icon: <Sparkles className="w-8 h-8 text-orange-600" />,
+    icon: <Sparkles className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "Creative Prototypes",
     description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
     features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
   },
   {
-    icon: <Settings className="w-8 h-8 text-slate-600" />,
+    icon: <Settings className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "RAG Systems",
     description: "Retrieval-Augmented Generation at scale. Knowledge agents trained on your data — private, secure, and lightning-fast. Turns chaos into context, and context into answers.",
     features: ["Custom Knowledge Bases", "Private & Secure", "Real-time Retrieval", "Contextual AI Responses"]
   },
   {
-    icon: <Palette className="w-8 h-8 text-rose-600" />,
+    icon: <Palette className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
     title: "Artitecture",
     description: "Where art meets architecture — the aesthetic logic behind every build. AI-assisted design language, consistent across apps, sites, and agents. Not just style. System-level beauty.",
     features: ["Design Systems", "Brand Consistency", "AI-Assisted Design", "Aesthetic Logic"]
