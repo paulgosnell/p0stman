@@ -103,25 +103,25 @@ const agentTypes = [
 
 const highlights = [
   {
-    icon: <TrendingUp className="w-6 h-6" />,
+    icon: <TrendingUp className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
     metric: "1→30",
     label: "Team Scale",
     description: "Scaled agency & successful exit"
   },
   {
-    icon: <Globe className="w-6 h-6" />,
+    icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
     metric: "20+",
     label: "AI MVPs",
     description: "Shipped via P0STMAN platform"
   },
   {
-    icon: <Users className="w-6 h-6" />,
+    icon: <Users className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
     metric: "30+",
     label: "Countries",
     description: "Fitlink wellness app reach"
   },
   {
-    icon: <Building2 className="w-6 h-6" />,
+    icon: <Building2 className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
     metric: "Enterprise",
     label: "Clients",
     description: "IBM iX, FAB, Al Arabiya, Abu Dhabi Gov"
@@ -264,9 +264,9 @@ const featuredProjects = [
     timeline: '18 months',
     teamSize: '40+ people',
     metrics: [
-      { label: 'Team Scale', value: '1→40', icon: <Users className="w-6 h-6" /> },
-      { label: 'Duration', value: '18mo', icon: <Calendar className="w-6 h-6" /> },
-      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-6 h-6" /> }
+      { label: 'Team Scale', value: '1→40', icon: <Users className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Duration', value: '18mo', icon: <Calendar className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -280,8 +280,8 @@ const featuredProjects = [
     type: 'enterprise',
     caseStudyUrl: '/case-study/doh-health',
     metrics: [
-      { label: 'Partnership', value: 'IBM', icon: <Building2 className="w-6 h-6" /> },
-      { label: 'Client', value: 'Government', icon: <Award className="w-6 h-6" /> }
+      { label: 'Partnership', value: 'IBM', icon: <Building2 className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Client', value: 'Government', icon: <Award className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
     ]
   },
     // Web3 & Blockchain Showcase Project
@@ -295,10 +295,10 @@ const featuredProjects = [
       type: 'web3',
       caseStudyUrl: '/case-study/bfit-web3',
       metrics: [
-        { label: 'Technology', value: 'Web3', icon: <Bot className="w-6 h-6" /> },
-        { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-6 h-6" /> },
-        { label: 'Focus', value: 'Fitness', icon: <Target className="w-6 h-6" /> },
-        { label: 'Innovation', value: 'High', icon: <Zap className="w-6 h-6" /> }
+        { label: 'Technology', value: 'Web3', icon: <Bot className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+        { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+        { label: 'Focus', value: 'Fitness', icon: <Target className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+        { label: 'Innovation', value: 'High', icon: <Zap className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
       ]
     },
   {
@@ -325,9 +325,9 @@ const featuredProjects = [
     timeline: '8 months',
     teamSize: '15+ global team',
     metrics: [
-      { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Global Team', value: '15+', icon: <Users className="w-6 h-6" /> },
-      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-6 h-6" /> }
+      { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Global Team', value: '15+', icon: <Users className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -341,8 +341,8 @@ const featuredProjects = [
     type: 'enterprise',
     caseStudyUrl: '/case-study/arabian-center',
     metrics: [
-      { label: 'Company', value: 'Al-Futtaim', icon: <Building2 className="w-6 h-6" /> },
-      { label: 'Sector', value: 'Retail', icon: <Globe className="w-6 h-6" /> }
+      { label: 'Company', value: 'Al-Futtaim', icon: <Building2 className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Sector', value: 'Retail', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
     ]
   }
 ];
@@ -359,8 +359,8 @@ const additionalProjects = [
     description: 'Enhanced booking system and customer experience platform for UAE national airline. Streamlined reservation process with improved user interface and backend optimization.',
     caseStudyUrl: '/case-study/etihad-airways',
     metrics: [
-      { label: 'Industry', value: 'Aviation', icon: <Globe className="w-6 h-6" /> },
-      { label: 'Focus', value: 'UX/UI', icon: <Target className="w-6 h-6" /> }
+      { label: 'Industry', value: 'Aviation', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
+      { label: 'Focus', value: 'UX/UI', icon: <Target className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
     ]
   },
   {
