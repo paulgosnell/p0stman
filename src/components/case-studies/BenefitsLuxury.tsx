@@ -59,7 +59,7 @@ export default function BenefitsLuxury({
         </motion.div>
 
         {/* Stats Grid - Large Magazine-Style Numbers */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 mb-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-32">
           {displayItems.slice(0, 6).map((item, index) => (
             <motion.div
               key={index}
