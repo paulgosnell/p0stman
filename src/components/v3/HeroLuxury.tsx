@@ -38,13 +38,7 @@ export default function HeroLuxury() {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Main Headline - Dramatic Typography */}
-          <h1
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-light leading-[0.9] tracking-tight mb-8"
-            style={{
-              color: '#FFFFFF',
-              textShadow: '0 8px 40px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)'
-            }}
-          >
+          <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-light leading-[0.9] tracking-tight mb-8 text-white">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,9 +61,6 @@ export default function HeroLuxury() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="text-xl sm:text-2xl md:text-3xl font-light text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
-            style={{
-              textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)'
-            }}
           >
             AI-powered product studio building the impossible — fast, brilliant, limitless
           </motion.p>
@@ -111,8 +102,7 @@ export default function HeroLuxury() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-white/60 text-xs tracking-[0.3em] uppercase font-light"
-            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+          <span className="text-white/60 text-xs tracking-[0.3em] uppercase font-light">
             Scroll
           </span>
           <ArrowDown className="w-5 h-5 text-white/60" strokeWidth={1.5} />
