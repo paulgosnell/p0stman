@@ -18,9 +18,16 @@ export default function HeroLuxury() {
     }
   };
 
-  const handleStartVoice = () => {
-    setIsVoiceActive(true);
-    voiceAgent.startConversation();
+  const handleStartVoice = async () => {
+    try {
+      // Request microphone permission first
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      setIsVoiceActive(true);
+      voiceAgent.startConversation();
+    } catch (error) {
+      console.error('Microphone access denied or not available:', error);
+      alert('Microphone access is required to use the voice agent. Please allow microphone access and try again.');
+    }
   };
 
   const handleStopVoice = () => {
