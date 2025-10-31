@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import AnimatedWaveform from './AnimatedWaveform';
+import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
+
+const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5af4f8dkjj8pqda592';
 
 export default function HeroLuxury() {
+  const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const voiceAgent = useVoiceWaveform(AGENT_ID);
+
+  const scrollToWork = () => {
+    // Scroll to Selected Work section
+    const workSection = document.getElementById('selected-work');
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleStartVoice = () => {
+    setIsVoiceActive(true);
+    voiceAgent.startConversation();
+  };
+
+  const handleStopVoice = () => {
+    setIsVoiceActive(false);
+    voiceAgent.stopConversation();
+  };
+
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -70,20 +94,38 @@ export default function HeroLuxury() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <Link
-              to="/case-studies"
+            <button
+              onClick={scrollToWork}
               className="px-8 py-4 bg-white text-black hover:bg-gray-100 transition-all font-light text-lg"
             >
               View Our Work
-            </Link>
-            <Link
-              to="/contact"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-all font-light text-lg"
-            >
-              Start Your Project
-            </Link>
+            </button>
+
+            {/* Voice Waveform Button */}
+            <div className="relative group">
+              <div className="w-64 h-16 flex items-center justify-center cursor-pointer">
+                <AnimatedWaveform
+                  barCount={40}
+                  color="#FFFFFF"
+                  hoverColor="#3B82F6"
+                  animate={!voiceAgent.isActive}
+                  frequencyData={voiceAgent.frequencyData}
+                  isLive={voiceAgent.isActive}
+                  onBarClick={() => !voiceAgent.isActive ? handleStartVoice() : handleStopVoice()}
+                />
+              </div>
+
+              {/* Hover hint */}
+              {!voiceAgent.isActive && (
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="px-4 py-2 bg-white/90 backdrop-blur-sm text-black rounded-lg text-sm font-light">
+                    Talk to our AI agent
+                  </div>
+                </div>
+              )}
+            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -49,7 +49,7 @@ const featuredCaseStudies: CaseStudy[] = [
 
 export default function CaseStudiesLuxury() {
   return (
-    <section className="py-32 md:py-48 bg-white">
+    <section id="selected-work" className="py-32 md:py-48 bg-white">
       <div className="container mx-auto px-8 max-w-[90rem]">
         {/* Section Header */}
         <motion.div
