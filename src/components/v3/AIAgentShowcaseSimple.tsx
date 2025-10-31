@@ -88,10 +88,8 @@ export default function AIAgentShowcaseSimple() {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Smartphone className="w-6 h-6 text-blue-600" />
-              <h2 className="text-3xl font-bold">AI Agents in Action</h2>
-            </div>
+            <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">AI Agents in Action</p>
+            <h2 className="text-3xl font-bold text-gray-900">Production-Ready AI Experiences</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Production-ready AI agents powered by frontier models. Voice interfaces, multi-API orchestration, and intelligent data processing.
             </p>

@@ -162,10 +162,7 @@ export default function AIAgentShowcaseV3() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="flex items-center gap-2 mb-4">
-              <Smartphone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              <span className="text-blue-600 dark:text-blue-400 font-medium text-sm">AI Agents in Action</span>
-            </div>
+            <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">AI Agents in Action</p>
 
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
               Production-Ready AI Experiences

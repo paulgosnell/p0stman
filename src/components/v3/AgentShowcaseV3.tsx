@@ -51,8 +51,9 @@ export default function AgentShowcaseV3() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
+          <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">AI Agents in Action</p>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6">
-            AI Agents in Action
+            Production-Ready AI Experiences
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl">
             See real examples of the intelligent agents we build. Each type is specialized for specific tasks, from customer conversations to code generation.
