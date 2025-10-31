@@ -111,7 +111,7 @@ export default function HeroLuxury() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>
 
-      {/* Case Study Link - Bottom Right */}
+      {/* Case Study Link - Bottom Right (hidden on mobile to avoid overlap) */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentVideoIndex}
@@ -119,7 +119,7 @@ export default function HeroLuxury() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.5 }}
-          className="absolute bottom-8 right-8 z-20"
+          className="hidden md:block absolute bottom-8 right-8 z-20"
         >
           <Link
             to={currentCaseStudy.path}
