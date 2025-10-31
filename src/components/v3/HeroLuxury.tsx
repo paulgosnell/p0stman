@@ -42,7 +42,6 @@ export default function HeroLuxury() {
             className="text-7xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-light leading-[0.9] tracking-tight mb-8"
             style={{
               color: '#FFFFFF',
-              fontFamily: "'Playfair Display', 'Georgia', serif",
               textShadow: '0 8px 40px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)'
             }}
           >

@@ -55,10 +55,7 @@ export default function ServicesLuxury() {
             </span>
           </div>
 
-          <h2
-            className="text-5xl md:text-7xl lg:text-8xl font-light text-gray-900 leading-[1.1] tracking-tight max-w-4xl mb-8"
-            style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-          >
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-light text-gray-900 leading-[1.1] tracking-tight max-w-4xl mb-8">
             AI-Native
             <br />
             Product Studio
@@ -87,10 +84,7 @@ export default function ServicesLuxury() {
                 </div>
 
                 {/* Title */}
-                <h3
-                  className="text-3xl md:text-4xl font-light text-gray-900 mb-4 leading-tight group-hover:text-gray-600 transition-colors"
-                  style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-                >
+                <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-4 leading-tight group-hover:text-gray-600 transition-colors">
                   {service.title}
                 </h3>
 

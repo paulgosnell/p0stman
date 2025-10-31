@@ -49,10 +49,7 @@ export default function HeaderV3Global() {
       <div className="max-w-6xl mx-auto px-6 md:px-0 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span
-            className="text-2xl font-light tracking-tight text-gray-900 dark:text-gray-100"
-            style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-          >
+          <span className="text-2xl font-light tracking-tight text-gray-900 dark:text-gray-100">
             P0STMAN
           </span>
         </Link>

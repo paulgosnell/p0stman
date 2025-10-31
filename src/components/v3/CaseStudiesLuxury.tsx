@@ -66,10 +66,7 @@ export default function CaseStudiesLuxury() {
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2
-              className="text-5xl md:text-7xl lg:text-8xl font-light text-gray-900 leading-[1.1] tracking-tight max-w-4xl"
-              style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-            >
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-light text-gray-900 leading-[1.1] tracking-tight max-w-4xl">
               Building the
               <br />
               Impossible
@@ -119,10 +116,7 @@ export default function CaseStudiesLuxury() {
                   </div>
 
                   {/* Title */}
-                  <h3
-                    className="text-3xl md:text-4xl font-light text-gray-900 leading-tight group-hover:text-gray-600 transition-colors"
-                    style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-                  >
+                  <h3 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight group-hover:text-gray-600 transition-colors">
                     {study.title}
                   </h3>
 
