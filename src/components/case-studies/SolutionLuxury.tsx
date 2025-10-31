@@ -38,7 +38,7 @@ export default function SolutionLuxury({
             viewport={{ once: true }}
             className="relative w-full"
           >
-            <div className="aspect-[16/9] md:aspect-[21/9] w-full">
+            <div className="aspect-[4/3] md:aspect-[16/9] w-full">
               <img
                 src={image}
                 alt="Solution"
