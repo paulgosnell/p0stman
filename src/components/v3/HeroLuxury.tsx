@@ -139,14 +139,14 @@ export default function HeroLuxury() {
       </AnimatePresence>
 
       {/* Hero Content */}
-      <div className="relative z-10 px-8 w-full max-w-[90rem] mx-auto text-center">
+      <div className="relative z-10 px-4 sm:px-8 w-full max-w-[90rem] mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Main Headline - Dramatic Typography */}
-          <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-light leading-[0.9] tracking-tight mb-8 text-white">
+          <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] 2xl:text-[14rem] font-light leading-[0.95] tracking-tight mb-6 sm:mb-8 text-white px-2">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export default function HeroLuxury() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl sm:text-2xl md:text-3xl font-light text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-white/90 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4"
           >
             AI-powered product studio building the impossible — fast, brilliant, limitless
           </motion.p>
@@ -178,11 +178,11 @@ export default function HeroLuxury() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-center items-center"
+            className="flex justify-center items-center mb-16 sm:mb-0"
           >
             {/* Voice Waveform Button */}
             <div className="relative group">
-              <div className="w-64 h-16 flex items-center justify-center cursor-pointer">
+              <div className="w-48 sm:w-64 h-12 sm:h-16 flex items-center justify-center cursor-pointer">
                 <AnimatedWaveform
                   barCount={40}
                   color="#FFFFFF"
@@ -196,7 +196,7 @@ export default function HeroLuxury() {
 
               {/* Hover hint */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm text-black rounded-lg text-sm font-light">
+                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm text-black rounded-lg text-xs sm:text-sm font-light">
                   {voiceAgent.isActive ? 'Click to end call' : 'Talk to our AI agent'}
                 </div>
               </div>
