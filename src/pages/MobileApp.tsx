@@ -80,10 +80,7 @@ export default function MobileApp() {
               >
                 <div className="space-y-8">
                   <div>
-                    <div className="flex items-center gap-2 mb-6">
-                      <Smartphone className="w-6 h-6 text-blue-400" />
-                      <span className="text-blue-400 font-medium">Mobile App Development</span>
-                    </div>
+                    <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">Mobile App Development</p>
 
                     <h1 className="text-5xl font-bold mb-6">
                       Transform Your Idea Into a Mobile App

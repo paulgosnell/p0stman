@@ -79,10 +79,7 @@ export default function Retainer() {
                   className="space-y-8"
                 >
                   <div>
-                    <div className="flex items-center gap-2 mb-6">
-                      <Bot className="w-6 h-6 text-teal-400" />
-                      <span className="text-teal-400 font-medium">Expert Retainer Service</span>
-                    </div>
+                    <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">Expert Retainer Service</p>
 
                     <h1 className="text-5xl font-bold mb-6">
                       Your Fractional Tech Team

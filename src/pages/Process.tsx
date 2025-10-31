@@ -223,12 +223,7 @@ export default function Process() {
                 transition={{ duration: 0.8 }}
                 className="text-center max-w-4xl mx-auto"
               >
-                <div className="flex items-center justify-center gap-3 mb-8">
-                  <div className="p-2 bg-blue-500/20 rounded-xl">
-                    <Zap className="w-6 h-6 text-blue-400 dark:text-blue-400" />
-                  </div>
-                  <span className="text-blue-400 dark:text-blue-400 font-medium text-lg">Our Methodology</span>
-                </div>
+                <p className="text-sm text-gray-400 uppercase tracking-wider mb-8">Our Methodology</p>
 
                 <h1 className="text-6xl md:text-7xl font-thin mb-8">
                   <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">

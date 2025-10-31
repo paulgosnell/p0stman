@@ -613,10 +613,7 @@ export default function HomeV2() {
                 className="space-y-8 overflow-visible"
               >
                 <div className="space-y-4 overflow-visible">
-                  <div className="flex items-center gap-3 text-blue-400">
-                    <Bot className="w-5 h-5" />
-                    <span className="font-light text-sm opacity-70">AI-POWERED PRODUCT STUDIO</span>
-                  </div>
+                  <p className="text-sm text-gray-400 uppercase tracking-wider">AI-Powered Product Studio</p>
 
                   <h1 className="text-6xl md:text-7xl font-bold leading-tight py-4" style={{ overflow: 'visible' }}>
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'block' }}>
@@ -1854,10 +1851,7 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Smartphone className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-medium">AI Agents</span>
-              </div>
+              <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">AI Agents</p>
               <h2 className="text-4xl font-thin mb-6 text-gray-900">
                 AI-Powered Mobile Experiences
               </h2>

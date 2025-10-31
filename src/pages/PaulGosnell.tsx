@@ -196,10 +196,7 @@ export default function PaulGosnell() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <Coffee className="w-6 h-6 text-blue-400" />
-                    <span className="text-blue-400 font-medium">The Real Story</span>
-                  </div>
+                  <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">The Real Story</p>
 
                   <h1 className="text-5xl md:text-6xl font-thin leading-tight mb-6">
                     <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">

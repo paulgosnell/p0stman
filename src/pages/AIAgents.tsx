@@ -103,10 +103,7 @@ export default function AIAgents() {
                   className="space-y-8"
                 >
                   <div>
-                    <div className="flex items-center gap-2 mb-6">
-                      <Bot className="w-6 h-6 text-violet-400 dark:text-violet-400" />
-                      <span className="text-violet-400 dark:text-violet-400 font-medium">Custom AI Agents</span>
-                    </div>
+                    <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">Custom AI Agents</p>
 
                     <h1 className="text-5xl font-thin mb-6 text-gray-900 dark:text-gray-100">
                       Supercharge Your Business with AI Agents

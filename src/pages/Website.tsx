@@ -218,12 +218,7 @@ export default function Website() {
                   transition={{ duration: 0.8 }}
                   className="space-y-8"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 bg-blue-500/20 rounded-xl">
-                      <Globe className="w-6 h-6 text-blue-400" />
-                    </div>
-                    <span className="text-blue-400 font-medium text-lg">Professional Website Development</span>
-                  </div>
+                  <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">Professional Website Development</p>
 
                   <h1 className="text-6xl md:text-7xl font-thin leading-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">

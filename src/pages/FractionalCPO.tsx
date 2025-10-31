@@ -151,10 +151,7 @@ export default function FractionalCPO() {
                   className="space-y-8"
                 >
                   <div className="space-y-6">
-                    <div className="flex items-center gap-3">
-                      <Brain className="w-8 h-8 text-blue-400" />
-                      <span className="text-blue-400 font-medium text-lg">Fractional CPO Services</span>
-                    </div>
+                    <p className="text-sm text-gray-400 uppercase tracking-wider">Fractional CPO Services</p>
 
                     <h1 className="text-5xl md:text-6xl font-thin leading-tight">
                       <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 bg-clip-text text-transparent">
