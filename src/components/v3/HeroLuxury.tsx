@@ -22,7 +22,7 @@ export default function HeroLuxury() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/854261/854261-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          <source src="https://cdn.pixabay.com/video/2018/10/02/18534-293472901_large.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient Overlays for Text Readability */}

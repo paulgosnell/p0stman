@@ -100,7 +100,7 @@ export default function CaseStudiesLuxury() {
                 className="group block"
               >
                 {/* Image */}
-                <div className="relative overflow-hidden mb-6 aspect-[4/3]">
+                <div className="relative overflow-hidden mb-6 aspect-[16/10]">
                   <img
                     src={study.image}
                     alt={study.title}
