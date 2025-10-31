@@ -8,8 +8,8 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    host: 'p0stman.local',
-    port: 5173,
+    host: '127.0.0.1', // Use 127.0.0.1 (localhost) for secure context
+    port: 5174, // Different port to avoid conflicts
     allowedHosts: ['p0stman.local', 'localhost', '127.0.0.1'],
   },
 });

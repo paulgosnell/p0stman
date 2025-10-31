@@ -37,22 +37,10 @@ const challenge = {
   title: "Mental Health in the Modern World",
   description: "In today's fast-paced world, mental health challenges are increasingly common, yet many people struggle to find effective ways to manage their well-being. While proven practices like meditation, mindfulness, and breathing exercises exist, there are significant barriers to adoption.",
   points: [
-    {
-      title: "Accessibility Barriers",
-      description: "Lack of awareness about effective mental health practices and limited access to professional guidance create significant obstacles for those seeking help."
-    },
-    {
-      title: "Consistency Challenges",
-      description: "Difficulty maintaining consistent wellness routines due to time constraints in busy modern lifestyles and overwhelming unstructured information."
-    },
-    {
-      title: "Community Support Gap",
-      description: "Isolation and lack of community support prevent individuals from building sustainable mental wellness habits and staying motivated."
-    },
-    {
-      title: "Personalization Needs",
-      description: "One-size-fits-all approaches fail to address individual mental health needs, patterns, and preferences for effective long-term wellness."
-    }
+    "Lack of awareness about effective mental health practices and limited access to professional guidance create significant obstacles for those seeking help.",
+    "Difficulty maintaining consistent wellness routines due to time constraints in busy modern lifestyles and overwhelming unstructured information.",
+    "Isolation and lack of community support prevent individuals from building sustainable mental wellness habits and staying motivated.",
+    "One-size-fits-all approaches fail to address individual mental health needs, patterns, and preferences for effective long-term wellness."
   ]
 };
 

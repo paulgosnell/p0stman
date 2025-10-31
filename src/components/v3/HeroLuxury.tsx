@@ -1,14 +1,57 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowDown, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
 
 const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5af4f8dkjj8pqda592';
 
+const CASE_STUDY_VIDEOS = [
+  {
+    video: 'https://cdn.pixabay.com/video/2022/04/19/114445-701051182_large.mp4',
+    title: 'YachtOS Command',
+    subtitle: 'Maritime Intelligence',
+    path: '/case-study/yachtos'
+  },
+  {
+    video: 'https://videos.pexels.com/video-files/856694/856694-hd_1920_1080_25fps.mp4',
+    title: 'Pathfinder',
+    subtitle: 'ADHD Coaching',
+    path: '/case-study/pathfinder'
+  },
+  {
+    video: 'https://videos.pexels.com/video-files/3995973/3995973-uhd_2560_1440_25fps.mp4',
+    title: 'ChilledSites',
+    subtitle: 'AI Website Builder',
+    path: '/case-study/chilled-sites'
+  },
+  {
+    video: 'https://cdn.pixabay.com/video/2023/11/19/189731-886596163_large.mp4',
+    title: 'Fitlink',
+    subtitle: 'Fitness Platform',
+    path: '/case-study/fitlink'
+  },
+  {
+    video: 'https://cdn.pixabay.com/video/2022/03/03/109471-685078475_large.mp4',
+    title: 'Harmony',
+    subtitle: 'Mental Wellness',
+    path: '/case-study/harmony'
+  }
+];
+
 export default function HeroLuxury() {
   const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const voiceAgent = useVoiceWaveform(AGENT_ID);
+
+  // Cycle through videos every 8 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prev) => (prev + 1) % CASE_STUDY_VIDEOS.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToWork = () => {
     // Scroll to Selected Work section
@@ -18,21 +61,19 @@ export default function HeroLuxury() {
     }
   };
 
-  const handleStartVoice = async () => {
+  const handleStartVoice = () => {
     try {
-      // Request microphone permission first
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-      setIsVoiceActive(true);
       voiceAgent.startConversation();
+      setIsVoiceActive(true);
     } catch (error) {
-      console.error('Microphone access denied or not available:', error);
-      alert('Microphone access is required to use the voice agent. Please allow microphone access and try again.');
+      console.error('Failed to start voice conversation:', error);
+      alert('Unable to start voice conversation. Please ensure microphone access is allowed and try again.');
     }
   };
 
   const handleStopVoice = () => {
-    setIsVoiceActive(false);
     voiceAgent.stopConversation();
+    setIsVoiceActive(false);
   };
 
   const scrollToContent = () => {
@@ -42,24 +83,60 @@ export default function HeroLuxury() {
     });
   };
 
+  const currentCaseStudy = CASE_STUDY_VIDEOS[currentVideoIndex];
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Full-Screen Space Video Background */}
+      {/* Full-Screen Cycling Video Background */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="https://cdn.pixabay.com/video/2023/11/19/189734-886596182_large.mp4" type="video/mp4" />
-        </video>
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={currentVideoIndex}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <source src={currentCaseStudy.video} type="video/mp4" />
+          </motion.video>
+        </AnimatePresence>
 
         {/* Gradient Overlays for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>
+
+      {/* Case Study Link - Bottom Right */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentVideoIndex}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.5 }}
+          className="absolute bottom-8 right-8 z-20"
+        >
+          <Link
+            to={currentCaseStudy.path}
+            className="group flex items-center gap-3 px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all"
+          >
+            <div className="text-left">
+              <div className="text-xs tracking-[0.2em] uppercase text-white/60 font-light mb-1">
+                {currentCaseStudy.subtitle}
+              </div>
+              <div className="text-white font-light text-lg">
+                {currentCaseStudy.title}
+              </div>
+            </div>
+            <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+          </Link>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Hero Content */}
       <div className="relative z-10 px-8 w-full max-w-[90rem] mx-auto text-center">
@@ -118,13 +195,11 @@ export default function HeroLuxury() {
               </div>
 
               {/* Hover hint */}
-              {!voiceAgent.isActive && (
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="px-4 py-2 bg-white/90 backdrop-blur-sm text-black rounded-lg text-sm font-light">
-                    Talk to our AI agent
-                  </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm text-black rounded-lg text-sm font-light">
+                  {voiceAgent.isActive ? 'Click to end call' : 'Talk to our AI agent'}
                 </div>
-              )}
+              </div>
             </div>
           </motion.div>
         </motion.div>

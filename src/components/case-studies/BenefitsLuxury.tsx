@@ -103,7 +103,7 @@ export default function BenefitsLuxury({
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true }}
-                className="aspect-[4/5] overflow-hidden"
+                className="aspect-[16/9] overflow-hidden"
               >
                 <img
                   src={image}
@@ -119,7 +119,7 @@ export default function BenefitsLuxury({
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true }}
-                className="aspect-[4/5] overflow-hidden md:mt-16"
+                className="aspect-[16/9] overflow-hidden md:mt-8"
               >
                 <img
                   src={secondaryImage}
