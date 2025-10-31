@@ -43,13 +43,34 @@ const navigationItems = [
 export default function HeaderV3Global() {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      // Switch to white background after scrolling past hero (viewport height)
+      setIsScrolled(window.scrollY > window.innerHeight - 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 md:px-0 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-light tracking-tight text-gray-900 dark:text-gray-100">
+          <span
+            className={`text-2xl font-light tracking-tight transition-colors duration-300 ${
+              isScrolled ? 'text-gray-900 dark:text-gray-100' : 'text-white'
+            }`}
+          >
             P0STMAN
           </span>
         </Link>
@@ -57,7 +78,11 @@ export default function HeaderV3Global() {
         {/* Hamburger Menu - Desktop & Mobile */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+          className={`p-2 rounded-lg transition-all duration-300 ${
+            isScrolled
+              ? 'text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800'
+              : 'text-white hover:bg-white/10'
+          }`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
