@@ -37,22 +37,10 @@ const challenge = {
   title: "Revolutionizing Gift Experiences",
   description: "Traditional gift-giving platforms often fail to provide truly personalized experiences:",
   points: [
-    {
-      title: 'Limited Personalization',
-      description: 'Traditional platforms offered generic recommendations without understanding individual preferences or the unique relationship between giver and recipient.'
-    },
-    {
-      title: 'Complex User Journey',
-      description: 'Inefficient search capabilities and manual scheduling systems created friction in the booking and gift selection process.'
-    },
-    {
-      title: 'Poor Integration',
-      description: 'Lack of digital integration and seamless payment systems resulted in abandoned purchases and frustrated users.'
-    },
-    {
-      title: 'Inadequate Intelligence',
-      description: 'Existing gift recommendation systems failed to learn from user behavior or adapt to changing trends and preferences.'
-    }
+    "Traditional platforms offered generic recommendations without understanding individual preferences or the unique relationship between giver and recipient.",
+    "Inefficient search capabilities and manual scheduling systems created friction in the booking and gift selection process.",
+    "Lack of digital integration and seamless payment systems resulted in abandoned purchases and frustrated users.",
+    "Existing gift recommendation systems failed to learn from user behavior or adapt to changing trends and preferences."
   ]
 };
 
