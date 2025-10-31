@@ -21,55 +21,55 @@ function shuffleArray<T>(array: T[]): T[] {
 
 const agents: AgentCard[] = [
   {
-    icon: <Mic className="w-12 h-12 text-blue-600" />,
+    icon: <Mic className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Voice Agents',
     description: 'ElevenLabs + LiveKit powered. Lead generation, customer support, information delivery. Sounds human, closes deals.',
     tech: 'ElevenLabs, LiveKit'
   },
   {
-    icon: <MessageSquare className="w-12 h-12 text-blue-600" />,
+    icon: <MessageSquare className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Chat Agents',
     description: 'AI SDK + custom integrations. Support assistants, interactive demos, product walkthroughs. Deployed in hours.',
     tech: 'AI SDK, Custom'
   },
   {
-    icon: <Code className="w-12 h-12 text-blue-600" />,
+    icon: <Code className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Code Agents',
     description: 'Multi-model code generation. Website builders, feature automation, database migrations. chilledsites.com is live proof.',
     tech: 'Claude, OpenAI, Gemini, Grok'
   },
   {
-    icon: <Zap className="w-12 h-12 text-blue-600" />,
+    icon: <Zap className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Workflow Automation',
     description: 'Intelligent process automation. Data extraction, document processing, task orchestration. Scales to millions of operations.',
     tech: 'N8n, Make, Zapier'
   },
   {
-    icon: <Globe className="w-12 h-12 text-blue-600" />,
+    icon: <Globe className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Websites',
     description: 'SaaS platforms, dashboards, e-commerce, landing pages, CMS. Production-ready in weeks, not months. SEO optimized.',
     tech: 'React, Next.js, Supabase, Tailwind'
   },
   {
-    icon: <Smartphone className="w-12 h-12 text-blue-600" />,
+    icon: <Smartphone className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Mobile Apps',
     description: 'PWAs, native apps, mobile web. iOS and Android. Online/offline sync. App store deployment included.',
     tech: 'React Native, PWA, Flutter'
   },
   {
-    icon: <UserCog className="w-12 h-12 text-blue-600" />,
+    icon: <UserCog className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Fractional CTO / Delivery Partner',
     description: 'Strategic tech leadership on demand. Product roadmaps, team scaling, architecture decisions. Your tech co-founder.',
     tech: 'Strategy, Team Building, Architecture'
   },
   {
-    icon: <Settings className="w-12 h-12 text-blue-600" />,
+    icon: <Settings className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'RAG Systems',
     description: 'Retrieval-Augmented Generation at scale. Knowledge agents trained on your data — private, secure, and lightning-fast. Turns chaos into context, and context into answers.',
     tech: 'Vector DBs, Custom Knowledge Bases, Private & Secure'
   },
   {
-    icon: <Palette className="w-12 h-12 text-blue-600" />,
+    icon: <Palette className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Artitecture',
     description: 'Where art meets architecture — the aesthetic logic behind every build. AI-assisted design language, consistent across apps, sites, and agents. Not just style. System-level beauty.',
     tech: 'Design Systems, Brand Consistency, AI-Assisted'
