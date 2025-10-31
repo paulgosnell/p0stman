@@ -40,7 +40,11 @@ const navigationItems = [
   }
 ];
 
-export default function HeaderV3Global() {
+interface HeaderV3GlobalProps {
+  darkMode?: boolean; // When true, header is white text on dark background
+}
+
+export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,6 +59,15 @@ export default function HeaderV3Global() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Determine text color based on darkMode prop and scroll state
+  const textColorClass = darkMode && !isScrolled
+    ? 'text-white'
+    : 'text-gray-900 dark:text-gray-100';
+
+  const hoverBgClass = darkMode && !isScrolled
+    ? 'hover:bg-white/10'
+    : 'hover:bg-gray-50 dark:hover:bg-gray-800';
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -67,9 +80,7 @@ export default function HeaderV3Global() {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <span
-            className={`text-2xl font-light tracking-tight transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900 dark:text-gray-100' : 'text-white'
-            }`}
+            className={`text-2xl font-light tracking-tight transition-colors duration-300 ${textColorClass}`}
           >
             P0STMAN
           </span>
@@ -78,11 +89,7 @@ export default function HeaderV3Global() {
         {/* Hamburger Menu - Desktop & Mobile */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className={`p-2 rounded-lg transition-all duration-300 ${
-            isScrolled
-              ? 'text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800'
-              : 'text-white hover:bg-white/10'
-          }`}
+          className={`p-2 rounded-lg transition-all duration-300 ${textColorClass} ${hoverBgClass}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

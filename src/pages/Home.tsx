@@ -37,7 +37,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="theme-color" content="#2563eb" />
         </Helmet>
-        <HeaderV3Global />
+        <HeaderV3Global darkMode={true} />
         <HeroLuxury />
         <MetricsV3 />
         <AgentsV3 />
