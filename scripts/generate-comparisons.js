@@ -34,6 +34,13 @@ console.log('Reading comparisons data...');
 const comparisons = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'comparisons.json'), 'utf8'));
 console.log('Loaded ' + comparisons.length + ' comparisons\n');
 
+// Read case studies data
+console.log('Reading case studies data...');
+const caseStudies = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'case-study-taxonomy.json'), 'utf8'));
+let conversionTemplate = fs.readFileSync(path.join(TEMPLATES_DIR, 'conversion-components.html'), 'utf8');
+conversionTemplate = conversionTemplate.replace('{{CASE_STUDIES_JSON}}', JSON.stringify(caseStudies, null, 2));
+console.log('Loaded ' + caseStudies.length + ' case studies\n');
+
 // Helper function to generate schema markup
 function generateSchemaMarkup(comparison) {
   const faqQuestions = comparison.faqs.map(faq => {
@@ -98,6 +105,84 @@ function generateFAQHTML(faqs) {
   return items.join('\n');
 }
 
+// Comparison to tech mapping
+const comparisonTechMapping = {
+  'vapi-alternative': 'custom',
+  'voiceflow-alternative': 'custom',
+  'elevenlabs-vs-livekit': 'elevenlabs',
+  'ai-agents-vs-chatbots': null,
+  'build-vs-buy-ai-agents': null,
+  'agency-vs-freelancer-ai': null,
+  'chatgpt-integration-vs-custom': null,
+  'in-house-vs-outsource-ai': null,
+  'ai-voice-agents-vs-call-centers': 'elevenlabs'
+};
+
+// Helper function to generate conversion sections
+function generateConversionSections(comparison) {
+  const tech = comparisonTechMapping[comparison.slug];
+  let techProofSection = '';
+
+  if (tech) {
+    techProofSection = '\n<!-- Tech Social Proof -->\n' +
+      '<section class="tech-proof py-12 px-6 bg-blue-50" data-tech="' + tech + '">\n' +
+      '  <div class="max-w-4xl mx-auto">\n' +
+      '    <div class="flex items-start gap-6">\n' +
+      '      <div class="flex-shrink-0">\n' +
+      '        <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 20 20">\n' +
+      '          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>\n' +
+      '          <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>\n' +
+      '        </svg>\n' +
+      '      </div>\n' +
+      '      <div>\n' +
+      '        <h3 class="text-xl font-light mb-2 text-gray-900">We\'ve Built With <span class="tech-name"></span></h3>\n' +
+      '        <p class="text-gray-700 font-light mb-3">\n' +
+      '          P0STMAN has hands-on experience building production AI voice agents with <span class="tech-name-lower"></span>.\n' +
+      '          <span class="tech-details"></span>\n' +
+      '        </p>\n' +
+      '        <a href="/case-studies" class="text-blue-600 font-light hover:text-blue-700">\n' +
+      '          View our AI projects →\n' +
+      '        </a>\n' +
+      '      </div>\n' +
+      '    </div>\n' +
+      '  </div>\n' +
+      '</section>\n\n';
+  }
+
+  const caseStudySection = '\n<!-- Case Studies -->\n' +
+    '<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="ai-agents,saas">\n' +
+    '  <div class="max-w-6xl mx-auto">\n' +
+    '    <div class="text-center mb-12">\n' +
+    '      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">AI Projects We\'ve Built</h2>\n' +
+    '      <p class="text-xl text-gray-600 font-light">See how we\'ve helped companies implement AI solutions</p>\n' +
+    '    </div>\n' +
+    '    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+
+  const ctaSection = '<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="Your Business" data-solution="AI voice agents">\n' +
+    '  <div class="max-w-4xl mx-auto text-center">\n' +
+    '    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">\n' +
+    '      Need Help Choosing?\n' +
+    '    </h2>\n' +
+    '    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">\n' +
+    '      We\'ve built AI voice agents across multiple platforms. Let us help you make the right choice.\n' +
+    '    </p>\n' +
+    '    <div class="flex flex-col sm:flex-row gap-4 justify-center">\n' +
+    '      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">\n' +
+    '        Schedule Free Consultation\n' +
+    '      </a>\n' +
+    '      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">\n' +
+    '        View All Projects\n' +
+    '      </a>\n' +
+    '    </div>\n' +
+    '    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+
+  return techProofSection + caseStudySection + ctaSection;
+}
+
 // Generate individual comparison pages
 console.log('Generating comparison pages...\n');
 comparisons.forEach((comparison, index) => {
@@ -105,6 +190,7 @@ comparisons.forEach((comparison, index) => {
   const comparisonRows = generateComparisonRows(comparison.comparisonTable);
   const differentiatorsHTML = generateDifferentiatorsHTML(comparison.keyDifferentiators);
   const faqHTML = generateFAQHTML(comparison.faqs);
+  const conversionSections = generateConversionSections(comparison);
 
   // Replace all placeholders
   let html = headerTemplate
@@ -123,6 +209,12 @@ comparisons.forEach((comparison, index) => {
     .replace(/{{WHEN_TO_USE_US}}/g, comparison.whenToUseUs)
     .replace(/{{KEY_DIFFERENTIATORS}}/g, differentiatorsHTML)
     .replace(/{{FAQ_ITEMS}}/g, faqHTML);
+
+  // Add conversion sections
+  html += conversionSections;
+
+  // Add conversion template with JavaScript
+  html += conversionTemplate;
 
   html += footerTemplate;
 

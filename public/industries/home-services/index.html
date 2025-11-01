@@ -505,6 +505,563 @@
       <p class="mt-6 text-gray-300 font-light">No commitment required. Free 30-minute consultation.</p>
     </div>
   </section>
+
+<!-- Case Studies -->
+<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="home-services,beauty">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Built for Home Services</h2>
+      <p class="text-xl text-gray-600 font-light">Real projects. Real results. See what we've built.</p>
+    </div>
+    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="Home Services" data-solution="AI voice agents">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">
+      Ready to Transform <span class="industry-name"></span>?
+    </h2>
+    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+      We've built <span class="solution-name"></span> for <span class="industry-name-lower"></span>. Let us build yours.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">
+        Schedule Free Consultation
+      </a>
+      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">
+        View All Projects
+      </a>
+    </div>
+    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>
+  </div>
+</section>
+
+<!-- Case Study Grid Component -->
+<!-- Usage: Add data-industries="healthcare,dental" to filter -->
+<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Built for Companies Like Yours</h2>
+      <p class="text-xl text-gray-600 font-light">Real projects. Real results. See what we've built.</p>
+    </div>
+    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<!-- Industry-Specific CTA Component -->
+<!-- Usage: Add data-industry="healthcare" and data-solution="AI voice agents" -->
+<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="" data-solution="">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">
+      Ready to Transform <span class="industry-name"></span>?
+    </h2>
+    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+      We've built <span class="solution-name"></span> for <span class="industry-name-lower"></span>. Let us build yours.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">
+        Schedule Free Consultation
+      </a>
+      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">
+        View All Projects
+      </a>
+    </div>
+    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>
+  </div>
+</section>
+
+<!-- Tech Social Proof Component -->
+<!-- Usage: Add data-tech="elevenlabs" or "livekit" -->
+<section class="tech-proof py-12 px-6 bg-blue-50" data-tech="">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-start gap-6">
+      <div class="flex-shrink-0">
+        <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+          <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <div>
+        <h3 class="text-xl font-light mb-2 text-gray-900">We've Built With <span class="tech-name"></span></h3>
+        <p class="text-gray-700 font-light mb-3">
+          P0STMAN has hands-on experience building production AI voice agents with <span class="tech-name-lower"></span>.
+          <span class="tech-details"></span>
+        </p>
+        <a href="/case-studies" class="text-blue-600 font-light hover:text-blue-700">
+          View our AI projects →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Case Study Grid Logic
+(function() {
+  const caseStudies = [
+  {
+    "slug": "clinicbook",
+    "name": "ClinicBook",
+    "title": "AI-Powered Clinic Management System",
+    "industry": [
+      "healthcare",
+      "dental"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "postgresql",
+      "ai-scheduling"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/clinicbook",
+    "thumbnail": "/assets/images/case-studies/clinicbook-dashboard.png",
+    "description": "Modern clinic management with AI-powered scheduling and automated reminders"
+  },
+  {
+    "slug": "doh-health",
+    "name": "Department of Health - UAE",
+    "title": "Healthcare System Transformation",
+    "industry": [
+      "healthcare",
+      "government"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "healthcare-systems"
+    ],
+    "voiceTech": null,
+    "region": "uae",
+    "url": "/case-study/doh-health",
+    "thumbnail": "/assets/images/case-studies/doh-health.png",
+    "description": "Digital transformation for UAE Department of Health"
+  },
+  {
+    "slug": "fab-bank",
+    "name": "FAB Bank",
+    "title": "Banking Digital Experience",
+    "industry": [
+      "fintech",
+      "banking"
+    ],
+    "technologies": [
+      "react",
+      "secure-systems"
+    ],
+    "voiceTech": null,
+    "region": "uae",
+    "url": "/case-study/fab-bank",
+    "thumbnail": "/assets/images/case-studies/fab-bank.png",
+    "description": "Secure digital banking platform for First Abu Dhabi Bank"
+  },
+  {
+    "slug": "barber-booking",
+    "name": "Barber Booking System",
+    "title": "Salon Appointment Platform",
+    "industry": [
+      "beauty",
+      "home-services"
+    ],
+    "technologies": [
+      "react",
+      "booking-system"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/barber-booking",
+    "thumbnail": "/assets/images/case-studies/barber-booking.png",
+    "description": "Modern appointment booking for salons and barber shops"
+  },
+  {
+    "slug": "chilled-crm",
+    "name": "Chilled CRM",
+    "title": "Modern CRM Platform",
+    "industry": [
+      "saas",
+      "crm"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "crm"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/chilled-crm",
+    "thumbnail": "/assets/images/case-studies/chilled-crm.png",
+    "description": "Customer relationship management platform built for modern teams"
+  },
+  {
+    "slug": "serenity",
+    "name": "Serenity",
+    "title": "AI Voice Agent Platform",
+    "industry": [
+      "ai-agents",
+      "saas"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "elevenlabs",
+      "ai-voice"
+    ],
+    "voiceTech": "elevenlabs",
+    "region": "global",
+    "url": "/case-study/serenity",
+    "thumbnail": "/assets/images/case-studies/serenity.png",
+    "description": "AI voice agent platform built with ElevenLabs for automated customer service"
+  },
+  {
+    "slug": "rhythm",
+    "name": "Rhythm",
+    "title": "AI-Powered Music Platform",
+    "industry": [
+      "entertainment",
+      "ai-agents"
+    ],
+    "technologies": [
+      "react",
+      "ai-music"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/rhythm",
+    "thumbnail": "/assets/images/case-studies/rhythm.png",
+    "description": "AI-powered music discovery and recommendation platform"
+  },
+  {
+    "slug": "genieology",
+    "name": "Genieology",
+    "title": "AI Research Platform",
+    "industry": [
+      "education",
+      "research",
+      "ai-agents"
+    ],
+    "technologies": [
+      "react",
+      "ai-research"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/genieology",
+    "thumbnail": "/assets/images/case-studies/genieology.png",
+    "description": "AI-powered research and discovery platform"
+  },
+  {
+    "slug": "experience-gift",
+    "name": "Experience a Gift",
+    "title": "E-commerce Gift Platform",
+    "industry": [
+      "ecommerce",
+      "retail"
+    ],
+    "technologies": [
+      "react",
+      "ecommerce"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/experience-a-gift",
+    "thumbnail": "/assets/images/case-studies/experience-a-gift.png",
+    "description": "Modern e-commerce platform for experience gifts"
+  },
+  {
+    "slug": "arabian-malls",
+    "name": "Arabian Malls",
+    "title": "Mall Management Platform",
+    "industry": [
+      "retail",
+      "property-management"
+    ],
+    "technologies": [
+      "react",
+      "management-system"
+    ],
+    "voiceTech": null,
+    "region": "middle-east",
+    "url": "/case-study/arabian-malls",
+    "thumbnail": "/assets/images/case-studies/arabian-malls.png",
+    "description": "Digital transformation for UAE shopping mall management"
+  },
+  {
+    "slug": "al-arabiya",
+    "name": "Al Arabiya",
+    "title": "Media Platform",
+    "industry": [
+      "media",
+      "entertainment"
+    ],
+    "technologies": [
+      "react",
+      "media-streaming"
+    ],
+    "voiceTech": null,
+    "region": "middle-east",
+    "url": "/case-study/al-arabiya",
+    "thumbnail": "/assets/images/case-studies/al-arabiya.png",
+    "description": "Digital media platform for leading news broadcaster"
+  },
+  {
+    "slug": "etihad-airways",
+    "name": "Etihad Airways",
+    "title": "Airline Digital Experience",
+    "industry": [
+      "travel",
+      "hospitality"
+    ],
+    "technologies": [
+      "react",
+      "booking-system"
+    ],
+    "voiceTech": null,
+    "region": "uae",
+    "url": "/case-study/etihad-airways",
+    "thumbnail": "/assets/images/case-studies/etihad-airways.png",
+    "description": "Premium digital experience for UAE national airline"
+  },
+  {
+    "slug": "harmony",
+    "name": "Harmony",
+    "title": "Wellness Platform",
+    "industry": [
+      "fitness",
+      "healthcare"
+    ],
+    "technologies": [
+      "react",
+      "wellness"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/harmony",
+    "thumbnail": "/assets/images/case-studies/harmony.png",
+    "description": "Integrated wellness and fitness tracking platform"
+  },
+  {
+    "slug": "fitlink",
+    "name": "Fitlink",
+    "title": "Fitness Tracking App",
+    "industry": [
+      "fitness",
+      "health-tech"
+    ],
+    "technologies": [
+      "react",
+      "fitness-tracking"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/fitlink",
+    "thumbnail": "/assets/images/case-studies/fitlink.png",
+    "description": "Modern fitness tracking and community platform"
+  },
+  {
+    "slug": "yacht-os",
+    "name": "YachtOS",
+    "title": "Luxury Yacht Management",
+    "industry": [
+      "luxury",
+      "property-management"
+    ],
+    "technologies": [
+      "react",
+      "iot"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/yacht-os",
+    "thumbnail": "/assets/images/case-studies/yacht-os.png",
+    "description": "Smart yacht management and control system"
+  },
+  {
+    "slug": "bfit-web3",
+    "name": "BFIT Web3",
+    "title": "Web3 Fitness Platform",
+    "industry": [
+      "fitness",
+      "web3",
+      "blockchain"
+    ],
+    "technologies": [
+      "react",
+      "blockchain",
+      "web3"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/bfit-web3",
+    "thumbnail": "/assets/images/case-studies/bfit-web3.png",
+    "description": "Web3-powered fitness platform with token rewards"
+  },
+  {
+    "slug": "chilled-sites",
+    "name": "Chilled Sites",
+    "title": "Website Builder Platform",
+    "industry": [
+      "saas",
+      "web-development"
+    ],
+    "technologies": [
+      "react",
+      "website-builder"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/chilled-sites",
+    "thumbnail": "/assets/images/case-studies/chilled-sites.png",
+    "description": "No-code website builder for modern businesses"
+  },
+  {
+    "slug": "pathfinder",
+    "name": "Pathfinder",
+    "title": "Career Development Platform",
+    "industry": [
+      "education",
+      "hr-tech"
+    ],
+    "technologies": [
+      "react",
+      "ai-matching"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/pathfinder",
+    "thumbnail": "/assets/images/case-studies/pathfinder.png",
+    "description": "AI-powered career path recommendation platform"
+  }
+];
+
+  function loadCaseStudies() {
+    const grids = document.querySelectorAll('.case-study-grid');
+
+    grids.forEach(grid => {
+      const container = grid.querySelector('#case-studies-container');
+      if (!container) return;
+
+      const filterIndustries = (grid.dataset.industries || '').split(',').filter(Boolean);
+      const filterTech = grid.dataset.tech || '';
+      const filterRegion = grid.dataset.region || '';
+
+      // Filter case studies
+      let filtered = caseStudies;
+
+      if (filterIndustries.length > 0) {
+        filtered = filtered.filter(cs =>
+          cs.industry.some(ind => filterIndustries.includes(ind))
+        );
+      }
+
+      if (filterTech) {
+        filtered = filtered.filter(cs =>
+          cs.voiceTech === filterTech ||
+          cs.technologies.includes(filterTech)
+        );
+      }
+
+      if (filterRegion) {
+        filtered = filtered.filter(cs =>
+          cs.region === filterRegion || cs.region === 'global'
+        );
+      }
+
+      // Shuffle and take 6
+      const shuffled = filtered.sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 6);
+
+      // Render cards
+      container.innerHTML = selected.map(cs => `
+        <a href="${cs.url}" class="group block bg-white rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all overflow-hidden">
+          <div class="aspect-video bg-gray-100 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-light text-lg mb-1">${cs.name}</h3>
+              <p class="text-gray-200 text-sm font-light">${cs.title}</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 font-light text-sm mb-4">${cs.description}</p>
+            <div class="flex flex-wrap gap-2">
+              ${cs.industry.slice(0, 2).map(ind => `
+                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded font-light">
+                  ${ind}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+        </a>
+      `).join('');
+    });
+  }
+
+  // Industry CTA Logic
+  function loadIndustryCTAs() {
+    const ctas = document.querySelectorAll('.industry-cta');
+
+    ctas.forEach(cta => {
+      const industry = cta.dataset.industry || 'Your Industry';
+      const solution = cta.dataset.solution || 'AI solutions';
+
+      const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+      const industryNameLower = industry.toLowerCase();
+
+      cta.querySelectorAll('.industry-name').forEach(el => el.textContent = industryName);
+      cta.querySelectorAll('.industry-name-lower').forEach(el => el.textContent = industryNameLower);
+      cta.querySelectorAll('.solution-name').forEach(el => el.textContent = solution);
+    });
+  }
+
+  // Tech Social Proof Logic
+  function loadTechProof() {
+    const proofs = document.querySelectorAll('.tech-proof');
+
+    const techDetails = {
+      'elevenlabs': {
+        name: 'ElevenLabs',
+        details: 'Our website uses ElevenLabs Conversational AI for the live voice agent demo. We\'ve also built production voice agents for client projects using their platform.'
+      },
+      'livekit': {
+        name: 'LiveKit',
+        details: 'We\'ve implemented LiveKit for real-time voice applications requiring low latency and custom workflow control.'
+      },
+      'custom': {
+        name: 'Custom Voice AI',
+        details: 'We build custom voice AI solutions from scratch when clients need maximum flexibility and control.'
+      }
+    };
+
+    proofs.forEach(proof => {
+      const tech = proof.dataset.tech;
+      const details = techDetails[tech];
+
+      if (!details) {
+        proof.style.display = 'none';
+        return;
+      }
+
+      proof.querySelectorAll('.tech-name').forEach(el => el.textContent = details.name);
+      proof.querySelectorAll('.tech-name-lower').forEach(el => el.textContent = details.name);
+      proof.querySelectorAll('.tech-details').forEach(el => el.textContent = details.details);
+    });
+  }
+
+  // Initialize on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCaseStudies();
+      loadIndustryCTAs();
+      loadTechProof();
+    });
+  } else {
+    loadCaseStudies();
+    loadIndustryCTAs();
+    loadTechProof();
+  }
+})();
+</script>
   <!-- Footer - Matches FooterV3 -->
   <footer class="bg-gray-900 text-white py-16 md:py-24 px-6 border-t border-gray-800">
     <div class="max-w-6xl mx-auto">

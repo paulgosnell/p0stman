@@ -34,6 +34,13 @@ console.log('Reading solutions data...');
 const solutions = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'solutions.json'), 'utf8'));
 console.log('Loaded ' + solutions.length + ' solutions\n');
 
+// Read case studies data
+console.log('Reading case studies data...');
+const caseStudies = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'case-study-taxonomy.json'), 'utf8'));
+let conversionTemplate = fs.readFileSync(path.join(TEMPLATES_DIR, 'conversion-components.html'), 'utf8');
+conversionTemplate = conversionTemplate.replace('{{CASE_STUDIES_JSON}}', JSON.stringify(caseStudies, null, 2));
+console.log('Loaded ' + caseStudies.length + ' case studies\n');
+
 // Helper function to generate schema markup
 function generateSchemaMarkup(solution) {
   const faqQuestions = solution.faqs.map(faq => {
@@ -177,6 +184,57 @@ function generateFAQHTML(faqs) {
   return items.join('\n');
 }
 
+// Solution to industry mapping for case studies
+const solutionMapping = {
+  'appointment-booking': 'healthcare,beauty,saas',
+  'customer-support-automation': 'saas,ecommerce,ai-agents',
+  'lead-qualification': 'saas,crm,consulting',
+  'outbound-sales-calls': 'saas,sales',
+  'payment-collection': 'fintech,saas',
+  'survey-research': 'saas,research',
+  'scheduling-coordination': 'healthcare,saas',
+  'order-status-tracking': 'ecommerce,logistics'
+};
+
+// Helper function to generate conversion sections
+function generateConversionSections(solution) {
+  const industries = solutionMapping[solution.slug] || 'saas,ai-agents';
+  const solutionName = solution.name;
+
+  const caseStudySection = '\n<!-- Case Studies -->\n' +
+    '<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="' + industries + '">\n' +
+    '  <div class="max-w-6xl mx-auto">\n' +
+    '    <div class="text-center mb-12">\n' +
+    '      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Built for ' + solutionName + '</h2>\n' +
+    '      <p class="text-xl text-gray-600 font-light">Real projects. Real results. See what we\'ve built.</p>\n' +
+    '    </div>\n' +
+    '    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+
+  const ctaSection = '<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="' + solutionName + '" data-solution="' + solutionName + '">\n' +
+    '  <div class="max-w-4xl mx-auto text-center">\n' +
+    '    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">\n' +
+    '      Ready to Implement <span class="industry-name"></span>?\n' +
+    '    </h2>\n' +
+    '    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">\n' +
+    '      We\'ve built <span class="solution-name"></span> solutions that deliver ROI. Let us build yours.\n' +
+    '    </p>\n' +
+    '    <div class="flex flex-col sm:flex-row gap-4 justify-center">\n' +
+    '      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">\n' +
+    '        Schedule Free Consultation\n' +
+    '      </a>\n' +
+    '      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">\n' +
+    '        View All Projects\n' +
+    '      </a>\n' +
+    '    </div>\n' +
+    '    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+
+  return caseStudySection + ctaSection;
+}
+
 // Generate individual solution pages
 console.log('Generating solution pages...\n');
 solutions.forEach((solution, index) => {
@@ -187,6 +245,7 @@ solutions.forEach((solution, index) => {
   const realWorldExampleHTML = generateRealWorldExampleHTML(solution.realWorldExample);
   const objectionsHTML = generateObjectionsHTML(solution.commonObjections);
   const faqHTML = generateFAQHTML(solution.faqs);
+  const conversionSections = generateConversionSections(solution);
 
   // Replace all placeholders
   let html = headerTemplate
@@ -205,6 +264,12 @@ solutions.forEach((solution, index) => {
     .replace(/{{REAL_WORLD_EXAMPLE}}/g, realWorldExampleHTML)
     .replace(/{{COMMON_OBJECTIONS}}/g, objectionsHTML)
     .replace(/{{FAQ_ITEMS}}/g, faqHTML);
+
+  // Add conversion sections
+  html += conversionSections;
+
+  // Add conversion template with JavaScript
+  html += conversionTemplate;
 
   html += footerTemplate;
 

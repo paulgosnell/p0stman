@@ -34,6 +34,13 @@ console.log('Reading locations data...');
 const locations = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'locations.json'), 'utf8'));
 console.log(`Loaded ${locations.length} locations\n`);
 
+// Read case studies data
+console.log('Reading case studies data...');
+const caseStudies = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'case-study-taxonomy.json'), 'utf8'));
+let conversionTemplate = fs.readFileSync(path.join(TEMPLATES_DIR, 'conversion-components.html'), 'utf8');
+conversionTemplate = conversionTemplate.replace('{{CASE_STUDIES_JSON}}', JSON.stringify(caseStudies, null, 2));
+console.log(`Loaded ${caseStudies.length} case studies\n`);
+
 // Helper function to generate schema markup
 function generateSchemaMarkup(location) {
   const faqQuestions = [
@@ -120,12 +127,64 @@ function generateBenefitsHTML(benefits) {
   `).join('\n');
 }
 
+// Location to region mapping for case studies
+const locationMapping = {
+  'dubai': 'uae,middle-east',
+  'uae': 'uae,middle-east',
+  'abu-dhabi': 'uae,middle-east',
+  'london': 'global',
+  'uk': 'global',
+  'new-york': 'global',
+  'san-francisco': 'global',
+  'saudi-arabia': 'middle-east'
+};
+
+// Helper function to generate conversion sections
+function generateConversionSections(location) {
+  const regions = locationMapping[location.slug] || 'global';
+  const locationName = location.name;
+
+  const caseStudySection = '\n<!-- Case Studies -->\n' +
+    '<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-region="' + regions + '">\n' +
+    '  <div class="max-w-6xl mx-auto">\n' +
+    '    <div class="text-center mb-12">\n' +
+    '      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Built for ' + locationName + '</h2>\n' +
+    '      <p class="text-xl text-gray-600 font-light">Real projects. Real results. See what we\'ve built.</p>\n' +
+    '    </div>\n' +
+    '    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+
+  const ctaSection = '<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="' + locationName + '" data-solution="AI voice agents">\n' +
+    '  <div class="max-w-4xl mx-auto text-center">\n' +
+    '    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">\n' +
+    '      Ready to Transform <span class="industry-name"></span>?\n' +
+    '    </h2>\n' +
+    '    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">\n' +
+    '      We\'ve built <span class="solution-name"></span> for <span class="industry-name-lower"></span>. Let us build yours.\n' +
+    '    </p>\n' +
+    '    <div class="flex flex-col sm:flex-row gap-4 justify-center">\n' +
+    '      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">\n' +
+    '        Schedule Free Consultation\n' +
+    '      </a>\n' +
+    '      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">\n' +
+    '        View All Projects\n' +
+    '      </a>\n' +
+    '    </div>\n' +
+    '    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+
+  return caseStudySection + ctaSection;
+}
+
 // Generate individual location pages
 console.log('Generating location pages...\n');
 locations.forEach((location, index) => {
   const schemaMarkup = generateSchemaMarkup(location);
   const painPointsHTML = generatePainPointsHTML(location.painPoints);
   const benefitsHTML = generateBenefitsHTML(location.benefits);
+  const conversionSections = generateConversionSections(location);
 
   // Replace all placeholders
   let html = headerTemplate
@@ -143,6 +202,12 @@ locations.forEach((location, index) => {
     .replace(/{{STATS}}/g, location.stats)
     .replace(/{{LOCAL_PRESENCE}}/g, location.localPresence)
     .replace(/{{CTA_TEXT}}/g, location.cta);
+
+  // Add conversion sections
+  html += conversionSections;
+
+  // Add conversion template with JavaScript
+  html += conversionTemplate;
 
   html += footerTemplate;
 
