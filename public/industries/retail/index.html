@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Voice Agents for Retail Stores | P0STMAN</title>
+  <meta name="description" content="Handle product availability inquiries, store hours, and loyalty program questions for retail. Reduce call volume 50%. From $5K.">
+  <link rel="canonical" href="https://p0stman.com/industries/retail">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Voice Agents for Retail Stores | P0STMAN">
+  <meta property="og:description" content="Handle product availability inquiries, store hours, and loyalty program questions for retail. Reduce call volume 50%. From $5K.">
+  <meta property="og:url" content="https://p0stman.com/industries/retail">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Voice Agents for Retail Stores | P0STMAN">
+  <meta name="twitter:description" content="Handle product availability inquiries, store hours, and loyalty program questions for retail. Reduce call volume 50%. From $5K.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'p0stman-blue': '#2563eb',
+            'p0stman-purple': '#9333ea',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'Segoe UI', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Voice Agents for Retail",
+  "description": "Handle product availability inquiries, store hours, and loyalty program questions for retail. Reduce call volume 50%. From $5K.",
+  "provider": {
+    "@type": "Organization",
+    "name": "P0STMAN",
+    "url": "https://p0stman.com"
+  },
+  "areaServed": "United States",
+  "serviceType": "AI Voice Agent Development",
+  "offers": {
+    "@type": "Offer",
+    "price": "5000",
+    "priceCurrency": "USD",
+    "description": "6-day MVP development"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does an AI voice agent cost for Retail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom AI voice agents for Retail start at $5,000 for a 6-day MVP. This includes discovery, design, development, integration with your existing systems, and deployment. Monthly costs range from $100-500 depending on call volume (ElevenLabs API fees). We provide transparent pricing upfront - no hidden fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build an AI voice agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We deliver working MVPs in 6 days. Day 1-2: Discovery and design. Day 3-5: Development and integration. Day 6: Testing and deployment. More complex Retail integrations (multiple systems, advanced workflows) may take 2-3 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What AI platforms do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We primarily use ElevenLabs for voice AI (best quality, lowest latency), OpenAI GPT-4 for intelligence, and custom integrations with your Retail software. We choose technologies based on your specific needs - not vendor lock-in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide ongoing support after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer monthly retainer support ($2K/month) for updates, improvements, and monitoring. Or pay-as-you-go for specific enhancements. All projects include 30 days of bug fixes and adjustments after launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI voice agents integrate with existing Retail systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We integrate with practice management software, CRMs, scheduling systems, payment processors, and industry-specific tools used in Retail. If it has an API or webhook, we can connect it. We'll assess your tech stack during the discovery call."
+      }
+    }
+  ]
+}
+</script>
+
+  <style>
+    body {
+      font-weight: 300;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-light">
+  <!-- Navigation - Matches HeaderV3Global -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <span class="text-2xl font-light tracking-tight text-gray-900">
+          P0STMAN
+        </span>
+      </a>
+
+      <!-- Hamburger Menu Button -->
+      <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-gray-50 transition-all text-gray-900">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="mobile-menu absolute top-20 right-0 left-0 md:right-6 md:left-auto md:w-80 bg-white border border-gray-100 shadow-lg z-50 overflow-hidden md:rounded-xl">
+      <div class="p-6 space-y-2">
+        <a href="/case-studies" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Work</span>
+          </div>
+        </a>
+
+        <a href="/services" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Services</span>
+          </div>
+        </a>
+
+        <a href="/industries" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Industries</span>
+          </div>
+        </a>
+
+        <a href="/process" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Process</span>
+          </div>
+        </a>
+
+        <a href="/about" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">About</span>
+          </div>
+        </a>
+
+        <div class="pt-6 border-t border-gray-200 mt-6">
+          <a href="/contact" class="flex items-center justify-center gap-2 w-full p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-light hover:from-blue-700 hover:to-purple-700 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <span>Get Started</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spacer for fixed header -->
+  <div class="h-20"></div>
+
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking on a link
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        mobileMenu.classList.remove('active');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-6xl font-light tracking-tight mb-6">AI Voice Agents for Retail Stores</h1>
+        <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">Answer product questions, check inventory, and handle store inquiries 24/7 with AI voice agents for retail.</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 rounded-lg font-light text-lg hover:bg-gray-100 transition text-center">
+            Get Your AI Agent
+          </a>
+          <a href="/guides/ai-agent-development-cost-timeline-guide-2025.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 rounded-lg font-light text-lg hover:bg-white/20 transition text-center">
+            See Pricing Guide
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-gray-300">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>6 Day MVP</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>From $5K</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>24/7 Voice AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Challenges We Solve for Retail</h2>
+        <p class="text-xl text-gray-600 font-light">Common pain points costing you time and money</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-lg border border-gray-100">
+          <h3 class="text-xl font-light mb-3 text-gray-900">"Do You Have This in Stock?" Calls Interrupt Sales Floor</h3>
+          <p class="text-gray-600 font-light">Store associates leave customers to answer phone calls. AI checks inventory systems in real-time and answers availability questions.</p>
+        </div>
+  
+
+        <div class="bg-white p-8 rounded-lg border border-gray-100">
+          <h3 class="text-xl font-light mb-3 text-gray-900">Store Hours & Location Questions Are Repetitive</h3>
+          <p class="text-gray-600 font-light">30% of calls are basic info that's already online. AI handles these automatically, freeing staff for in-person customer service.</p>
+        </div>
+  
+
+        <div class="bg-white p-8 rounded-lg border border-gray-100">
+          <h3 class="text-xl font-light mb-3 text-gray-900">Loyalty Program Enrollment Is Manual</h3>
+          <p class="text-gray-600 font-light">Cashiers rush through enrollment during checkout. AI calls customers post-purchase to explain benefits and complete signup.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-16 md:py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">How It Works</h2>
+        <p class="text-xl text-gray-600 font-light">From consultation to deployment in 6 days</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-light mx-auto mb-4 shadow-lg">
+            1
+          </div>
+          <h3 class="text-xl font-light mb-3">Discovery Call</h3>
+          <p class="text-gray-600 font-light">We learn about your Retail workflow, pain points, and goals. Define exactly what your AI agent needs to do.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-light mx-auto mb-4 shadow-lg">
+            2
+          </div>
+          <h3 class="text-xl font-light mb-3">Build & Integrate</h3>
+          <p class="text-gray-600 font-light">We build your custom voice agent, integrate with your existing systems, and configure it for your specific use cases.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-light mx-auto mb-4 shadow-lg">
+            3
+          </div>
+          <h3 class="text-xl font-light mb-3">Launch & Support</h3>
+          <p class="text-gray-600 font-light">Deploy your AI agent to production. We provide training, documentation, and ongoing support as your needs evolve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">AI Voice Agents for Retail</h2>
+        <p class="text-xl text-gray-600 font-light">Real-world applications that drive results</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-lg border border-gray-100">
+          <h3 class="text-xl font-light mb-3 text-gray-900">Product Availability & Reservations</h3>
+          <p class="text-gray-600 font-light">AI checks real-time inventory across all locations, reserves items for customer pickup, and provides directions to the correct store.</p>
+        </div>
+  
+
+        <div class="bg-white p-8 rounded-lg border border-gray-100">
+          <h3 class="text-xl font-light mb-3 text-gray-900">Store Information & Hours</h3>
+          <p class="text-gray-600 font-light">Voice agent answers questions about hours, locations, parking, accepted payment methods, return policies, and upcoming sales.</p>
+        </div>
+  
+
+        <div class="bg-white p-8 rounded-lg border border-gray-100">
+          <h3 class="text-xl font-light mb-3 text-gray-900">Loyalty Program Management</h3>
+          <p class="text-gray-600 font-light">AI calls new customers to enroll in rewards programs, explains point balance, notifies of rewards expiration, and promotes exclusive offers.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+        <div>
+          <div class="text-5xl md:text-6xl font-light mb-2">40%</div>
+          <p class="text-xl text-gray-300 font-light">Reduction in Admin Time</p>
+        </div>
+        <div>
+          <div class="text-5xl md:text-6xl font-light mb-2">6 Days</div>
+          <p class="text-xl text-gray-300 font-light">From Kickoff to Launch</p>
+        </div>
+        <div>
+          <div class="text-5xl md:text-6xl font-light mb-2">$5K</div>
+          <p class="text-xl text-gray-300 font-light">Starting Investment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Stats -->
+  <section class="py-16 md:py-24 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">Retail Industry Insights</h2>
+      <p class="text-xl text-gray-700 font-light leading-relaxed">Retail stores spend 15-20 hours weekly answering phone inquiries. AI voice agents reduce call handling time by 50% and increase staff availability for sales.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <details class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            How much does an AI voice agent cost for Retail?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Custom AI voice agents for Retail start at $5,000 for a 6-day MVP. This includes discovery, design, development, integration with your existing systems, and deployment. Monthly costs range from $100-500 depending on call volume (ElevenLabs API fees). We provide transparent pricing upfront - no hidden fees.
+          </p>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            How long does it take to build an AI voice agent?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            We deliver working MVPs in 6 days. Day 1-2: Discovery and design. Day 3-5: Development and integration. Day 6: Testing and deployment. More complex Retail integrations (multiple systems, advanced workflows) may take 2-3 weeks.
+          </p>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            What AI platforms do you use?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            We primarily use ElevenLabs for voice AI (best quality, lowest latency), OpenAI GPT-4 for intelligence, and custom integrations with your Retail software. We choose technologies based on your specific needs - not vendor lock-in.
+          </p>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            Do you provide ongoing support after launch?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Yes. We offer monthly retainer support ($2K/month) for updates, improvements, and monitoring. Or pay-as-you-go for specific enhancements. All projects include 30 days of bug fixes and adjustments after launch.
+          </p>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            Can AI voice agents integrate with existing Retail systems?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Absolutely. We integrate with practice management software, CRMs, scheduling systems, payment processors, and industry-specific tools used in Retail. If it has an API or webhook, we can connect it. We'll assess your tech stack during the discovery call.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-24 md:py-32 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-6xl font-light tracking-tight mb-6">Ready to Build Your AI Voice Agent?</h2>
+      <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+        Join Retail businesses automating communications with custom AI voice agents. 6 days to launch. From $5K.
+      </p>
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-12 py-5 rounded-lg font-light text-xl hover:bg-gray-100 transition shadow-lg">
+        Schedule Discovery Call
+      </a>
+      <p class="mt-6 text-gray-300 font-light">No commitment required. Free 30-minute consultation.</p>
+    </div>
+  </section>
+  <!-- Footer - Matches FooterV3 -->
+  <footer class="bg-gray-900 text-white py-16 md:py-24 px-6 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-16 mb-16 md:mb-24">
+        <!-- Product Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Product</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/ai-agents" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">AI Agents</a></li>
+            <li><a href="/website" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">MVP Launch</a></li>
+            <li><a href="/mobile-app" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Mobile App</a></li>
+            <li><a href="/services" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Company</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/about" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">About</a></li>
+            <li><a href="/process" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Process</a></li>
+            <li><a href="/case-studies" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Case Studies</a></li>
+            <li><a href="/contact" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Services</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/fractional-cpo" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Fractional CPO</a></li>
+            <li><a href="/product-strategy" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Product Strategy</a></li>
+            <li><a href="/ai-platform-development" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">AI Platform Dev</a></li>
+            <li><a href="/digital-transformation" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Digital Transform</a></li>
+            <li><a href="/retainer" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Retainer Program</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Industries</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/industries/healthcare" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Healthcare</a></li>
+            <li><a href="/industries/legal" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Legal</a></li>
+            <li><a href="/industries/real-estate" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Real Estate</a></li>
+            <li><a href="/industries/saas" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">SaaS</a></li>
+            <li><a href="/industries" class="text-sm font-light text-blue-400 hover:text-blue-300 hover:underline transition-colors">View All →</a></li>
+          </ul>
+        </div>
+
+        <!-- Guides Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Guides</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/guides" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">All Guides</a></li>
+            <li><a href="/guides/ai-agent-development-cost-timeline-guide-2025.html" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">AI Cost Guide</a></li>
+            <li><a href="/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Voice AI Platforms</a></li>
+            <li><a href="/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">How AI Works</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-800 pt-12 md:pt-16">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <!-- Brand & Tagline -->
+          <div class="text-center md:text-left">
+            <a href="/" class="text-xl font-light text-white hover:text-blue-400 transition-colors mb-2 block">
+              P0STMAN
+            </a>
+            <p class="text-sm text-gray-500 font-light">
+              AI-Powered Product Studio. Built for speed. Shipped with care.
+            </p>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex gap-4 items-center">
+            <a href="https://linkedin.com/in/pgosnell" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="https://twitter.com/paulgosnell" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="https://github.com/paulgosnell" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path></svg>
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <p class="text-sm text-gray-500 font-light">
+            © 2025 P0STMAN
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

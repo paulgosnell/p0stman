@@ -1,0 +1,1292 @@
+[
+  {
+    "slug": "healthcare",
+    "name": "Healthcare",
+    "metaTitle": "AI Voice Agents for Healthcare | P0STMAN - 6 Day MVP",
+    "metaDescription": "Custom AI voice agents for healthcare practices. Automate appointment scheduling, reduce no-shows 35%, handle after-hours calls. From $5K.",
+    "heroH1": "AI Voice Agents for Healthcare Practices",
+    "heroSubtext": "Automate patient communication, reduce no-shows, and handle after-hours calls with custom AI voice agents. Built in 6 days.",
+    "icon": "🏥",
+    "category": "Healthcare & Medical",
+    "painPoints": [
+      {
+        "title": "Patient No-Shows Cost $150K+ Annually",
+        "description": "Missed appointments drain revenue and waste clinical capacity. Automated voice reminders reduce no-shows by 35% and improve patient outcomes."
+      },
+      {
+        "title": "After-Hours Calls Go to Voicemail",
+        "description": "60% of healthcare calls happen outside office hours. AI agents handle urgent triage, appointment scheduling, and prescription refills 24/7."
+      },
+      {
+        "title": "Staff Burnout from Repetitive Tasks",
+        "description": "Front desk staff spend 40% of time on appointment scheduling and insurance verification. Voice AI handles these tasks automatically."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Appointment Scheduling & Reminders",
+        "description": "AI handles booking, rescheduling, waitlist management, and sends automated reminders via voice call or SMS to reduce no-shows.",
+        "icon": "📅"
+      },
+      {
+        "title": "After-Hours Triage & Support",
+        "description": "24/7 AI voice agent answers patient questions, assesses urgency, schedules emergency appointments, and routes critical cases to on-call staff.",
+        "icon": "🌙"
+      },
+      {
+        "title": "Insurance Verification & Pre-Auth",
+        "description": "Automated calls to insurance providers verify coverage, obtain pre-authorizations, and confirm patient eligibility before appointments.",
+        "icon": "💳"
+      }
+    ],
+    "stats": "Healthcare administrative costs exceed $496B annually in the US. Voice AI reduces admin workload by 40-60% while improving patient satisfaction scores.",
+    "relatedIndustries": ["dental", "veterinary", "mental-health"]
+  },
+  {
+    "slug": "dental",
+    "name": "Dental",
+    "metaTitle": "AI Voice Agents for Dental Practices | P0STMAN",
+    "metaDescription": "Automated appointment reminders, insurance verification, and patient follow-ups for dental practices. Reduce no-shows 40%. Built in 6 days.",
+    "heroH1": "AI Voice Agents for Dental Practices",
+    "heroSubtext": "Reduce no-shows, automate insurance verification, and handle patient follow-ups with AI voice agents built specifically for dental practices.",
+    "icon": "🦷",
+    "category": "Healthcare & Medical",
+    "painPoints": [
+      {
+        "title": "40% No-Show Rate Without Reminders",
+        "description": "Dental appointments have higher no-show rates than other medical specialties. Automated voice reminders reduce no-shows to under 10%."
+      },
+      {
+        "title": "Insurance Verification Takes 15 Min Per Patient",
+        "description": "Front desk staff spend hours verifying dental insurance coverage and pre-authorizations. AI automates this process completely."
+      },
+      {
+        "title": "Post-Treatment Follow-Ups Are Inconsistent",
+        "description": "Patient retention drops when follow-up care isn't scheduled. AI agents automatically schedule cleanings, checkups, and treatment continuations."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Automated Appointment Reminders",
+        "description": "Voice calls and SMS reminders 48 hours and 24 hours before appointments, with easy rescheduling options that sync to your practice management system.",
+        "icon": "📞"
+      },
+      {
+        "title": "6-Month Cleaning Reminders",
+        "description": "AI automatically calls patients when they're due for their next cleaning, offers available time slots, and books appointments without staff intervention.",
+        "icon": "🦷"
+      },
+      {
+        "title": "Treatment Plan Follow-Ups",
+        "description": "For multi-visit treatments, AI agents schedule follow-up appointments, verify insurance coverage, and send pre-appointment care instructions.",
+        "icon": "📋"
+      }
+    ],
+    "stats": "The average dental practice loses $70K annually to no-shows and last-minute cancellations. Practices using AI voice agents see 40% reduction in missed appointments.",
+    "relatedIndustries": ["healthcare", "veterinary", "orthodontics"]
+  },
+  {
+    "slug": "legal",
+    "name": "Legal",
+    "metaTitle": "AI Voice Agents for Law Firms | P0STMAN",
+    "metaDescription": "Automate client intake, appointment scheduling, and case updates for law firms. Qualify leads 24/7, reduce admin costs. From $5K.",
+    "heroH1": "AI Voice Agents for Law Firms",
+    "heroSubtext": "Qualify leads 24/7, automate client intake, and handle appointment scheduling with AI voice agents built for legal practices.",
+    "icon": "⚖️",
+    "category": "Business Services",
+    "painPoints": [
+      {
+        "title": "70% of Leads Call Outside Business Hours",
+        "description": "Potential clients call when they need help most - evenings and weekends. Missing these calls means losing cases to competitors with 24/7 availability."
+      },
+      {
+        "title": "Client Intake Takes 30-45 Minutes",
+        "description": "Paralegals and assistants spend hours on initial consultations and information gathering. AI handles preliminary intake before attorney review."
+      },
+      {
+        "title": "Case Status Calls Interrupt Billable Work",
+        "description": "Attorneys spend 8-10 hours weekly answering routine status update calls. AI provides automated updates freeing time for billable client work."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "24/7 Lead Qualification & Intake",
+        "description": "AI agent answers calls, assesses case viability, collects preliminary information, and schedules consultations with appropriate attorneys based on practice area.",
+        "icon": "📞"
+      },
+      {
+        "title": "Automated Case Status Updates",
+        "description": "Clients call anytime to check case progress. AI provides automated updates based on CRM data, reducing interruptions to attorney workflow.",
+        "icon": "📊"
+      },
+      {
+        "title": "Appointment Scheduling & Rescheduling",
+        "description": "AI handles consultation bookings, court date reminders, deposition scheduling, and sends calendar invites with automated conflict checking.",
+        "icon": "📅"
+      }
+    ],
+    "stats": "Law firms spend $150B annually on administrative support. AI voice agents reduce client intake time by 60% and capture 3x more after-hours leads.",
+    "relatedIndustries": ["accounting", "consulting", "real-estate"]
+  },
+  {
+    "slug": "accounting",
+    "name": "Accounting",
+    "metaTitle": "AI Voice Agents for Accounting Firms | P0STMAN",
+    "metaDescription": "Automate client communications, tax deadline reminders, and document collection for accounting firms. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Accounting Firms",
+    "heroSubtext": "Automate tax deadline reminders, document collection, and client communications during busy season with AI voice agents.",
+    "icon": "💼",
+    "category": "Business Services",
+    "painPoints": [
+      {
+        "title": "Tax Season Overwhelms Staff Capacity",
+        "description": "Accountants handle 300% workload increase from January-April. AI agents handle routine client calls, freeing CPAs for complex tax work."
+      },
+      {
+        "title": "Clients Miss Document Submission Deadlines",
+        "description": "30% of clients submit tax documents late, creating bottlenecks. Automated voice reminders improve on-time submission rates by 50%."
+      },
+      {
+        "title": "Appointment Scheduling Conflicts",
+        "description": "During tax season, double-bookings and scheduling errors increase 4x. AI manages calendar availability and prevents conflicts automatically."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Tax Deadline Reminders",
+        "description": "AI calls clients with upcoming tax deadlines, lists required documents, and offers portal upload instructions or appointment scheduling for drop-off.",
+        "icon": "📅"
+      },
+      {
+        "title": "Document Collection Automation",
+        "description": "Voice agent calls clients to confirm receipt of tax documents, identifies missing forms (W-2, 1099, etc.), and sends secure upload links.",
+        "icon": "📄"
+      },
+      {
+        "title": "Quarterly Review Scheduling",
+        "description": "AI automatically schedules quarterly business review calls with clients, sends pre-meeting financial summaries, and handles rescheduling requests.",
+        "icon": "📊"
+      }
+    ],
+    "stats": "Accounting firms spend 35% of billable hours on administrative tasks. AI voice agents reduce client communication time by 40% during tax season.",
+    "relatedIndustries": ["legal", "consulting", "financial-services"]
+  },
+  {
+    "slug": "real-estate",
+    "name": "Real Estate",
+    "metaTitle": "AI Voice Agents for Real Estate | P0STMAN",
+    "metaDescription": "Qualify leads 24/7, schedule property showings, and automate follow-ups for real estate agents. Increase showing conversion 35%. From $5K.",
+    "heroH1": "AI Voice Agents for Real Estate Agents",
+    "heroSubtext": "Never miss a lead. Qualify prospects 24/7, schedule property showings, and automate follow-ups with AI voice agents.",
+    "icon": "🏡",
+    "category": "Real Estate & Property",
+    "painPoints": [
+      {
+        "title": "80% of Leads Call Outside Business Hours",
+        "description": "Buyers browse listings at night and weekends. Missing these hot leads means losing deals to agents who respond immediately."
+      },
+      {
+        "title": "Showing Coordination Takes 2 Hours Daily",
+        "description": "Agents spend 10-15 hours weekly coordinating property showings, rescheduling conflicts, and confirming appointments. AI handles this automatically."
+      },
+      {
+        "title": "Lead Follow-Up Inconsistency Loses Deals",
+        "description": "48% of agents never follow up after initial contact. Automated follow-ups increase conversion rates by 35% through persistent touchpoints."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "24/7 Lead Qualification",
+        "description": "AI agent answers property inquiries, qualifies buyer budget and timeline, collects pre-approval status, and schedules showings with top prospects.",
+        "icon": "📞"
+      },
+      {
+        "title": "Automated Showing Scheduling",
+        "description": "Voice agent coordinates property tours, checks calendar availability, sends address and lockbox codes, and handles last-minute rescheduling.",
+        "icon": "🗓️"
+      },
+      {
+        "title": "Post-Showing Follow-Ups",
+        "description": "AI calls buyers after showings to gather feedback, answer questions, schedule additional viewings, and keep deals moving forward.",
+        "icon": "🔄"
+      }
+    ],
+    "stats": "The average real estate agent spends 60% of their time on non-revenue activities. AI voice agents reduce admin work by 15 hours weekly.",
+    "relatedIndustries": ["property-management", "mortgage", "home-services"]
+  },
+  {
+    "slug": "ecommerce",
+    "name": "E-commerce",
+    "metaTitle": "AI Voice Agents for E-commerce | P0STMAN",
+    "metaDescription": "Handle order status inquiries, returns, and customer support via voice for e-commerce brands. Reduce support costs 50%. From $5K.",
+    "heroH1": "AI Voice Agents for E-commerce Brands",
+    "heroSubtext": "Automate order tracking, returns processing, and customer support with AI voice agents that handle calls 24/7.",
+    "icon": "🛍️",
+    "category": "Retail & E-commerce",
+    "painPoints": [
+      {
+        "title": "Order Status Calls Cost $5-15 Each",
+        "description": "\"Where is my order?\" calls consume 40% of support capacity. AI provides instant tracking updates, reducing support ticket volume by 60%."
+      },
+      {
+        "title": "Peak Season Support Capacity Crunches",
+        "description": "Black Friday to Christmas sees 300% call volume increase. AI agents scale instantly without hiring seasonal support staff."
+      },
+      {
+        "title": "Returns Processing Takes 3-5 Days",
+        "description": "Manual return authorization delays frustrate customers. AI instantly processes returns, generates RMA numbers, and emails shipping labels."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Order Tracking & Status Updates",
+        "description": "Customers call to check order status. AI looks up tracking info in real-time, provides delivery estimates, and resolves shipping issues.",
+        "icon": "📦"
+      },
+      {
+        "title": "Returns & Exchanges Automation",
+        "description": "Voice agent verifies order details, processes return requests, generates RMA numbers, and emails prepaid return labels within 2 minutes.",
+        "icon": "🔄"
+      },
+      {
+        "title": "Product Recommendations",
+        "description": "AI answers product questions, suggests complementary items based on purchase history, and places reorders for repeat customers.",
+        "icon": "💡"
+      }
+    ],
+    "stats": "E-commerce brands spend $1.3T annually on customer service. AI voice agents reduce support costs by 50% while improving response times from hours to seconds.",
+    "relatedIndustries": ["retail", "logistics", "subscription-services"]
+  },
+  {
+    "slug": "saas",
+    "name": "SaaS",
+    "metaTitle": "AI Voice Agents for SaaS Companies | P0STMAN",
+    "metaDescription": "Qualify leads, handle onboarding calls, and provide technical support for SaaS products. Increase trial-to-paid conversion 25%. From $5K.",
+    "heroH1": "AI Voice Agents for SaaS Companies",
+    "heroSubtext": "Qualify inbound leads, automate onboarding calls, and provide 24/7 technical support with AI voice agents built for SaaS.",
+    "icon": "💻",
+    "category": "Technology & SaaS",
+    "painPoints": [
+      {
+        "title": "Sales Team Can't Follow Up Fast Enough",
+        "description": "50% of SaaS leads expect contact within 5 minutes. AI instantly qualifies and routes hot leads while they're still on your website."
+      },
+      {
+        "title": "Trial Users Churn Without Onboarding",
+        "description": "70% of trial users never complete setup. AI voice agents proactively call to guide onboarding, increasing trial-to-paid conversion by 25%."
+      },
+      {
+        "title": "Support Tickets for Basic Questions",
+        "description": "40% of support tickets are \"how do I...\" questions. AI handles tier-1 support via voice, reducing ticket volume and support costs."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Inbound Lead Qualification",
+        "description": "AI agent calls form submissions within 60 seconds, qualifies budget and timeline, books demos with AEs, and nurtures unqualified leads.",
+        "icon": "🎯"
+      },
+      {
+        "title": "Trial User Onboarding Calls",
+        "description": "Voice agent calls new trial users, walks through initial setup, answers questions, and schedules follow-up success calls to prevent churn.",
+        "icon": "🚀"
+      },
+      {
+        "title": "Tier-1 Technical Support",
+        "description": "AI handles password resets, account setup, billing questions, and basic troubleshooting via voice, escalating complex issues to human agents.",
+        "icon": "🛠️"
+      }
+    ],
+    "stats": "SaaS companies spend $10-20K monthly per sales rep. AI voice agents qualify 300+ leads monthly at 10% of the cost of a full-time SDR.",
+    "relatedIndustries": ["fintech", "marketing-agencies", "consulting"]
+  },
+  {
+    "slug": "fintech",
+    "name": "Fintech",
+    "metaTitle": "AI Voice Agents for Fintech | P0STMAN",
+    "metaDescription": "Automate KYC verification, fraud alerts, and customer support for fintech products. Secure, compliant, built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Fintech Companies",
+    "heroSubtext": "Automate KYC verification, fraud alerts, and customer support with secure, compliant AI voice agents built for financial services.",
+    "icon": "💳",
+    "category": "Technology & SaaS",
+    "painPoints": [
+      {
+        "title": "KYC Verification Bottlenecks Cost Customers",
+        "description": "Manual identity verification takes 24-48 hours. 20% of users abandon signup during KYC delays. AI completes verification in under 5 minutes."
+      },
+      {
+        "title": "Fraud Alerts Require Immediate Action",
+        "description": "Card fraud alerts via email/SMS get missed. Voice calls have 4x higher response rates, preventing fraudulent transactions in real-time."
+      },
+      {
+        "title": "Account Support Calls Cost $8-12 Each",
+        "description": "Balance inquiries, transaction disputes, and payment questions consume support capacity. AI handles 60% of support calls automatically."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Automated KYC Verification Calls",
+        "description": "AI calls new users to verify identity, confirm address, validate employment, and complete compliance checks - reducing onboarding time by 80%.",
+        "icon": "🔐"
+      },
+      {
+        "title": "Fraud Alert Response",
+        "description": "When suspicious activity detected, AI immediately calls customer to verify transactions, freezes card if confirmed fraudulent, issues replacement.",
+        "icon": "🚨"
+      },
+      {
+        "title": "Payment Reminder Calls",
+        "description": "For loan payments, subscriptions, or account fees - AI calls before due dates, offers payment options, and processes payments via voice.",
+        "icon": "💰"
+      }
+    ],
+    "stats": "Fintech companies spend $500M+ annually on customer verification. AI voice agents reduce KYC costs by 70% while improving completion rates by 35%.",
+    "relatedIndustries": ["saas", "insurance", "accounting"]
+  },
+  {
+    "slug": "home-services",
+    "name": "Home Services",
+    "metaTitle": "AI Voice Agents for Home Services | P0STMAN",
+    "metaDescription": "Automate booking for plumbing, HVAC, cleaning, and home repair services. Handle emergency calls 24/7. Increase bookings 40%. From $5K.",
+    "heroH1": "AI Voice Agents for Home Service Businesses",
+    "heroSubtext": "Never miss an emergency call. Automate booking, dispatch, and customer follow-ups for plumbing, HVAC, and home services.",
+    "icon": "🔧",
+    "category": "Home & Local Services",
+    "painPoints": [
+      {
+        "title": "Emergency Calls Come at 2 AM",
+        "description": "Burst pipes and AC failures don't wait for business hours. Missing after-hours calls means losing $500+ emergency jobs to competitors."
+      },
+      {
+        "title": "Phone Tag Delays Scheduling by Days",
+        "description": "Customers call, leave voicemail, wait for callback, miss the return call - averaging 3 days to schedule. AI books appointments instantly."
+      },
+      {
+        "title": "No-Shows Waste $150 Per Appointment",
+        "description": "15-20% of appointments result in no-shows without reminders. Automated confirmation calls reduce no-shows to under 5%."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "24/7 Emergency Dispatch",
+        "description": "AI answers emergency calls anytime, assesses urgency, checks technician availability, dispatches nearest available tech, and provides ETA to customer.",
+        "icon": "🚨"
+      },
+      {
+        "title": "Instant Appointment Booking",
+        "description": "Voice agent checks calendar in real-time, offers available time slots, collects service details and address, confirms booking via SMS.",
+        "icon": "📅"
+      },
+      {
+        "title": "Service Reminders & Follow-Ups",
+        "description": "AI calls before appointments to confirm, sends tech details and ETA, then follows up for satisfaction feedback and maintenance scheduling.",
+        "icon": "🔔"
+      }
+    ],
+    "stats": "Home service businesses lose 30% of potential revenue to missed calls. AI voice agents capture 24/7 bookings and increase revenue by 40%.",
+    "relatedIndustries": ["cleaning-services", "property-management", "construction"]
+  },
+  {
+    "slug": "insurance",
+    "name": "Insurance",
+    "metaTitle": "AI Voice Agents for Insurance | P0STMAN",
+    "metaDescription": "Automate claims intake, policy questions, and renewal reminders for insurance agencies. Reduce operational costs 45%. From $5K.",
+    "heroH1": "AI Voice Agents for Insurance Agencies",
+    "heroSubtext": "Automate claims intake, handle policy questions, and manage renewal reminders with AI voice agents built for insurance.",
+    "icon": "🛡️",
+    "category": "Business Services",
+    "painPoints": [
+      {
+        "title": "Claims Intake During Disasters Overwhelms Staff",
+        "description": "After hurricanes or hailstorms, call volume spikes 500%. AI scales instantly to handle hundreds of claims simultaneously."
+      },
+      {
+        "title": "Policy Questions Don't Require Licensed Agents",
+        "description": "50% of calls are basic coverage questions that don't need agent expertise. AI handles these, freeing agents for sales and complex claims."
+      },
+      {
+        "title": "Renewal Reminders Get Ignored",
+        "description": "Email/SMS renewal reminders have 8% open rates. Voice calls achieve 60% contact rates, reducing lapsed policies by 30%."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Automated Claims Intake",
+        "description": "AI collects accident details, policy number, photos/videos, creates claim file, and schedules adjuster callback - reducing intake time from 20 minutes to 5.",
+        "icon": "📋"
+      },
+      {
+        "title": "Policy Information & Quotes",
+        "description": "Voice agent answers coverage questions, provides quote estimates for new policies, and schedules appointments with licensed agents for binding.",
+        "icon": "💡"
+      },
+      {
+        "title": "Renewal Reminder Campaigns",
+        "description": "AI calls policyholders 60, 30, and 14 days before renewal, offers rate review, processes payments, and handles policy updates.",
+        "icon": "🔄"
+      }
+    ],
+    "stats": "Insurance agencies spend 55% of operational budget on administrative staff. AI voice agents reduce claims processing time by 60% and operational costs by 45%.",
+    "relatedIndustries": ["legal", "real-estate", "automotive"]
+  },
+  {
+    "slug": "manufacturing",
+    "name": "Manufacturing",
+    "metaTitle": "AI Voice Agents for Manufacturing | P0STMAN",
+    "metaDescription": "Automate order status updates, vendor communications, and supply chain coordination for manufacturers. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Manufacturing",
+    "heroSubtext": "Streamline order tracking, vendor coordination, and customer communications with AI voice agents built for manufacturers.",
+    "icon": "🏭",
+    "category": "Industrial & Manufacturing",
+    "painPoints": [
+      {
+        "title": "Order Status Calls Interrupt Production Teams",
+        "description": "Sales reps spend 10+ hours weekly fielding \"when will my order ship?\" calls. AI provides real-time updates from ERP systems."
+      },
+      {
+        "title": "Vendor Coordination Requires Constant Follow-Up",
+        "description": "Supply chain delays cascade when vendors miss deadlines. AI automatically calls suppliers for delivery confirmations and updates."
+      },
+      {
+        "title": "After-Hours Customer Service Is Non-Existent",
+        "description": "International customers in different time zones can't reach anyone. AI handles inquiries 24/7 in multiple languages."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Order Tracking & ETA Updates",
+        "description": "AI integrates with ERP systems to provide real-time order status, production stage, shipping estimates, and proactive delay notifications.",
+        "icon": "📦"
+      },
+      {
+        "title": "Vendor Delivery Confirmations",
+        "description": "Voice agent automatically calls suppliers before scheduled deliveries to confirm shipment, verify quantities, and update receiving schedules.",
+        "icon": "🚚"
+      },
+      {
+        "title": "Quality Issue Reporting",
+        "description": "Customers report defects via voice call. AI creates quality tickets, schedules returns, expedites replacement orders, and tracks RMA status.",
+        "icon": "⚠️"
+      }
+    ],
+    "stats": "Manufacturing companies spend $40B annually on customer service. AI voice agents reduce order inquiry handling time by 75% and improve supply chain visibility.",
+    "relatedIndustries": ["logistics", "construction", "automotive"]
+  },
+  {
+    "slug": "retail",
+    "name": "Retail",
+    "metaTitle": "AI Voice Agents for Retail Stores | P0STMAN",
+    "metaDescription": "Handle product availability inquiries, store hours, and loyalty program questions for retail. Reduce call volume 50%. From $5K.",
+    "heroH1": "AI Voice Agents for Retail Stores",
+    "heroSubtext": "Answer product questions, check inventory, and handle store inquiries 24/7 with AI voice agents for retail.",
+    "icon": "🏪",
+    "category": "Retail & E-commerce",
+    "painPoints": [
+      {
+        "title": "\"Do You Have This in Stock?\" Calls Interrupt Sales Floor",
+        "description": "Store associates leave customers to answer phone calls. AI checks inventory systems in real-time and answers availability questions."
+      },
+      {
+        "title": "Store Hours & Location Questions Are Repetitive",
+        "description": "30% of calls are basic info that's already online. AI handles these automatically, freeing staff for in-person customer service."
+      },
+      {
+        "title": "Loyalty Program Enrollment Is Manual",
+        "description": "Cashiers rush through enrollment during checkout. AI calls customers post-purchase to explain benefits and complete signup."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Product Availability & Reservations",
+        "description": "AI checks real-time inventory across all locations, reserves items for customer pickup, and provides directions to the correct store.",
+        "icon": "📍"
+      },
+      {
+        "title": "Store Information & Hours",
+        "description": "Voice agent answers questions about hours, locations, parking, accepted payment methods, return policies, and upcoming sales.",
+        "icon": "ℹ️"
+      },
+      {
+        "title": "Loyalty Program Management",
+        "description": "AI calls new customers to enroll in rewards programs, explains point balance, notifies of rewards expiration, and promotes exclusive offers.",
+        "icon": "⭐"
+      }
+    ],
+    "stats": "Retail stores spend 15-20 hours weekly answering phone inquiries. AI voice agents reduce call handling time by 50% and increase staff availability for sales.",
+    "relatedIndustries": ["ecommerce", "beauty", "automotive"]
+  },
+  {
+    "slug": "hospitality",
+    "name": "Hospitality",
+    "metaTitle": "AI Voice Agents for Hotels & Hospitality | P0STMAN",
+    "metaDescription": "Automate reservations, guest services, and concierge requests for hotels. Handle multilingual calls 24/7. From $5K.",
+    "heroH1": "AI Voice Agents for Hotels & Hospitality",
+    "heroSubtext": "Automate reservations, handle guest requests, and provide 24/7 concierge services with multilingual AI voice agents.",
+    "icon": "🏨",
+    "category": "Hospitality & Travel",
+    "painPoints": [
+      {
+        "title": "Front Desk Can't Handle Phone + Walk-In Traffic",
+        "description": "Check-in lines grow while staff answers phone calls. AI handles reservation inquiries, freeing front desk for in-person guests."
+      },
+      {
+        "title": "Multilingual Support Requires Expensive Staffing",
+        "description": "International guests need service in their language 24/7. AI speaks 50+ languages fluently without additional headcount."
+      },
+      {
+        "title": "Concierge Requests After Hours Go Unanswered",
+        "description": "Guests need restaurant recommendations and activity bookings at 11 PM. AI provides instant concierge services anytime."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Reservation Booking & Modifications",
+        "description": "AI handles booking inquiries, checks availability, quotes rates, processes reservations, and manages cancellations/changes per hotel policy.",
+        "icon": "🛏️"
+      },
+      {
+        "title": "Guest Services & Room Requests",
+        "description": "Voice agent takes requests for extra towels, room service, wake-up calls, maintenance issues - creating tickets for staff and confirming completion.",
+        "icon": "🔔"
+      },
+      {
+        "title": "Multilingual Concierge",
+        "description": "AI provides restaurant recommendations, books reservations, arranges transportation, suggests local attractions - in 50+ languages 24/7.",
+        "icon": "🗺️"
+      }
+    ],
+    "stats": "Hotels spend $8-15 per call on front desk operations. AI voice agents handle 200+ calls daily at 70% lower cost while improving guest satisfaction scores.",
+    "relatedIndustries": ["travel", "event-planning", "restaurants"]
+  },
+  {
+    "slug": "education",
+    "name": "Education",
+    "metaTitle": "AI Voice Agents for Educational Institutions | P0STMAN",
+    "metaDescription": "Automate enrollment inquiries, class scheduling, and parent communications for schools. Handle calls 24/7. From $5K.",
+    "heroH1": "AI Voice Agents for Educational Institutions",
+    "heroSubtext": "Automate enrollment, handle parent inquiries, and manage scheduling with AI voice agents built for schools and universities.",
+    "icon": "🎓",
+    "category": "Education & Training",
+    "painPoints": [
+      {
+        "title": "Enrollment Inquiries Come Year-Round",
+        "description": "Admissions staff can't answer every prospective student call instantly. AI qualifies leads 24/7 and schedules campus tours automatically."
+      },
+      {
+        "title": "Parent-Teacher Conferences Take 20 Hours to Schedule",
+        "description": "Coordinating availability for 30 students' parents requires dozens of phone calls. AI handles scheduling completely."
+      },
+      {
+        "title": "Absence Notifications Require Manual Calls",
+        "description": "Attendance staff spend 2-3 hours daily calling parents about student absences. AI automates absence notifications with parent confirmation."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Enrollment & Admissions Inquiries",
+        "description": "AI answers program questions, explains tuition and financial aid, qualifies applicants, schedules campus tours, and follows up with application reminders.",
+        "icon": "📝"
+      },
+      {
+        "title": "Parent-Teacher Conference Scheduling",
+        "description": "Voice agent calls parents to offer time slots, confirms appointments, sends calendar invites, and handles rescheduling requests automatically.",
+        "icon": "📅"
+      },
+      {
+        "title": "Attendance & Absence Notifications",
+        "description": "AI calls parents when students are absent, verifies excused vs. unexcused absences, collects documentation needs, and updates attendance records.",
+        "icon": "📞"
+      }
+    ],
+    "stats": "Educational institutions spend $12B annually on administrative communications. AI voice agents reduce enrollment inquiry response time from 24 hours to 2 minutes.",
+    "relatedIndustries": ["training", "consulting", "non-profits"]
+  },
+  {
+    "slug": "consulting",
+    "name": "Consulting",
+    "metaTitle": "AI Voice Agents for Consulting Firms | P0STMAN",
+    "metaDescription": "Qualify leads, schedule discovery calls, and manage client communications for consulting firms. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Consulting Firms",
+    "heroSubtext": "Qualify inbound leads, schedule discovery calls, and handle client check-ins with AI voice agents built for consultants.",
+    "icon": "💡",
+    "category": "Business Services",
+    "painPoints": [
+      {
+        "title": "Billable Time Lost to Scheduling Calls",
+        "description": "Partners spend 5-8 hours weekly coordinating discovery calls and client meetings. AI handles scheduling, preserving billable hours."
+      },
+      {
+        "title": "Lead Response Time Impacts Close Rates",
+        "description": "Responding to inquiries within 5 minutes increases close rates by 400%. AI calls leads instantly while they're engaged."
+      },
+      {
+        "title": "Client Check-Ins Fall Through the Cracks",
+        "description": "Busy consultants forget regular touchpoints with existing clients. AI automates check-in calls and relationship nurturing."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Inbound Lead Qualification",
+        "description": "AI calls form submissions within 60 seconds, qualifies project scope and budget, assesses fit, and schedules discovery calls with partners.",
+        "icon": "🎯"
+      },
+      {
+        "title": "Discovery Call Scheduling",
+        "description": "Voice agent coordinates calendars, offers available time slots, sends meeting prep materials, and handles rescheduling automatically.",
+        "icon": "📅"
+      },
+      {
+        "title": "Client Relationship Management",
+        "description": "AI makes quarterly check-in calls to existing clients, gathers feedback, identifies new project needs, and schedules follow-up meetings.",
+        "icon": "🤝"
+      }
+    ],
+    "stats": "Consultants spend 40% of work time on non-billable admin tasks. AI voice agents recover 10+ billable hours weekly per consultant.",
+    "relatedIndustries": ["legal", "accounting", "marketing-agencies"]
+  },
+  {
+    "slug": "marketing-agencies",
+    "name": "Marketing Agencies",
+    "metaTitle": "AI Voice Agents for Marketing Agencies | P0STMAN",
+    "metaDescription": "Qualify leads, schedule strategy calls, and manage client reporting for marketing agencies. Increase close rates 30%. From $5K.",
+    "heroH1": "AI Voice Agents for Marketing Agencies",
+    "heroSubtext": "Qualify inbound leads, schedule strategy sessions, and automate client reporting with AI voice agents for agencies.",
+    "icon": "📈",
+    "category": "Business Services",
+    "painPoints": [
+      {
+        "title": "Lead Forms Sit Uncontacted for Hours",
+        "description": "Agency owners are in client meetings and can't call leads immediately. 50% of prospects choose competitors who respond faster."
+      },
+      {
+        "title": "Proposal Follow-Ups Are Inconsistent",
+        "description": "After sending proposals, follow-up timing impacts close rates. AI systematically calls prospects at optimal intervals."
+      },
+      {
+        "title": "Client Reporting Calls Take 20+ Hours Monthly",
+        "description": "Account managers spend full days scheduling and conducting monthly reporting calls. AI handles scheduling and initial review."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Instant Lead Qualification",
+        "description": "AI calls website inquiries within 2 minutes, qualifies budget and timeline, identifies decision makers, and books strategy calls with agency principals.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Proposal Follow-Up Automation",
+        "description": "Voice agent calls prospects 3, 7, and 14 days after proposal delivery to answer questions, address objections, and close deals.",
+        "icon": "📄"
+      },
+      {
+        "title": "Monthly Reporting Call Scheduling",
+        "description": "AI schedules client reporting calls, sends performance summaries before meetings, and handles rescheduling to maintain consistent touchpoints.",
+        "icon": "📊"
+      }
+    ],
+    "stats": "Marketing agencies lose 40% of leads to slow response times. AI voice agents increase lead-to-meeting conversion by 30% through instant follow-up.",
+    "relatedIndustries": ["saas", "consulting", "web-development"]
+  },
+  {
+    "slug": "construction",
+    "name": "Construction",
+    "metaTitle": "AI Voice Agents for Construction Companies | P0STMAN",
+    "metaDescription": "Automate project bids, schedule site visits, and handle contractor communications. Never miss an estimate request. From $5K.",
+    "heroH1": "AI Voice Agents for Construction Companies",
+    "heroSubtext": "Never miss a bid opportunity. Automate estimate requests, schedule site visits, and handle subcontractor coordination with AI.",
+    "icon": "👷",
+    "category": "Industrial & Manufacturing",
+    "painPoints": [
+      {
+        "title": "Project Managers Miss Calls While On-Site",
+        "description": "Construction teams are in the field without phone access. Missing estimate requests means losing $50K+ projects to competitors."
+      },
+      {
+        "title": "Subcontractor Coordination Requires Constant Calls",
+        "description": "Scheduling electricians, plumbers, and specialty trades involves phone tag lasting days. AI coordinates availability instantly."
+      },
+      {
+        "title": "Homeowners Want After-Hours Consultations",
+        "description": "Residential customers can only discuss projects evenings/weekends. AI schedules consultations when homeowners are available."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Estimate Request Intake",
+        "description": "AI answers calls from homeowners and commercial clients, collects project details, schedules on-site measurements, and adds to bid pipeline.",
+        "icon": "📋"
+      },
+      {
+        "title": "Subcontractor Scheduling",
+        "description": "Voice agent coordinates multiple subcontractors, checks availability, schedules work sequences, sends site details, and confirms arrivals.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Project Update Notifications",
+        "description": "AI calls clients with milestone updates, schedule changes, material delays, and completion notifications - keeping everyone informed.",
+        "icon": "📞"
+      }
+    ],
+    "stats": "Construction companies lose 25% of potential projects to missed calls. AI voice agents capture 24/7 estimate requests and increase project wins by 35%.",
+    "relatedIndustries": ["home-services", "property-management", "manufacturing"]
+  },
+  {
+    "slug": "logistics",
+    "name": "Logistics",
+    "metaTitle": "AI Voice Agents for Logistics & Shipping | P0STMAN",
+    "metaDescription": "Automate shipment tracking, delivery confirmations, and carrier coordination for logistics companies. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Logistics & Shipping",
+    "heroSubtext": "Automate shipment tracking, delivery notifications, and carrier coordination with AI voice agents built for logistics.",
+    "icon": "📦",
+    "category": "Industrial & Manufacturing",
+    "painPoints": [
+      {
+        "title": "\"Where's My Shipment?\" Calls Overwhelm Dispatchers",
+        "description": "Customer service teams spend 60% of time providing tracking updates. AI integrates with TMS to provide real-time status automatically."
+      },
+      {
+        "title": "Delivery Confirmation Requires Driver Callbacks",
+        "description": "Coordinating delivery windows with recipients requires multiple calls. AI handles scheduling and sends automated confirmations."
+      },
+      {
+        "title": "Carrier Rate Shopping Is Manual and Time-Consuming",
+        "description": "Freight brokers spend hours calling carriers for quotes. AI simultaneously contacts multiple carriers and compares rates."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Shipment Tracking & ETAs",
+        "description": "AI provides real-time shipment location, estimated delivery time, handles delay notifications, and answers routing questions using TMS data.",
+        "icon": "🚚"
+      },
+      {
+        "title": "Delivery Window Confirmation",
+        "description": "Voice agent calls recipients to schedule delivery windows, confirms someone will be present, provides driver contact info and live tracking links.",
+        "icon": "📅"
+      },
+      {
+        "title": "Carrier Coordination & Rate Quotes",
+        "description": "AI calls multiple carriers simultaneously for availability and pricing, negotiates rates based on historical data, and books optimal carriers.",
+        "icon": "💰"
+      }
+    ],
+    "stats": "Logistics companies spend $25B annually on customer service. AI voice agents reduce tracking inquiry costs by 80% and improve on-time delivery rates.",
+    "relatedIndustries": ["ecommerce", "manufacturing", "retail"]
+  },
+  {
+    "slug": "automotive",
+    "name": "Automotive",
+    "metaTitle": "AI Voice Agents for Auto Dealerships | P0STMAN",
+    "metaDescription": "Automate service appointments, sales inquiries, and test drive scheduling for car dealerships. Increase service revenue 25%. From $5K.",
+    "heroH1": "AI Voice Agents for Auto Dealerships",
+    "heroSubtext": "Automate service scheduling, handle sales inquiries, and book test drives 24/7 with AI voice agents for dealerships.",
+    "icon": "🚗",
+    "category": "Automotive & Transportation",
+    "painPoints": [
+      {
+        "title": "Service Department Can't Answer All Calls",
+        "description": "Phone lines stay busy during peak hours. 30% of service calls go to voicemail, resulting in missed appointments and lost revenue."
+      },
+      {
+        "title": "Internet Leads Go Cold Without Instant Follow-Up",
+        "description": "Online shoppers expect immediate response. Dealers who call within 5 minutes are 9x more likely to convert leads to showroom visits."
+      },
+      {
+        "title": "Test Drive Scheduling Requires Multiple Touchpoints",
+        "description": "Coordinating vehicle availability, salesperson schedules, and customer timing takes 3-5 calls. AI handles this in one interaction."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Service Appointment Scheduling",
+        "description": "AI answers service calls, books oil changes and repairs, checks loaner car availability, sends service reminders, and confirms appointments.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Sales Lead Response",
+        "description": "Voice agent calls internet leads within 60 seconds, qualifies budget and trade-in, checks inventory for desired vehicles, and schedules test drives.",
+        "icon": "🎯"
+      },
+      {
+        "title": "Test Drive Coordination",
+        "description": "AI schedules test drives, confirms vehicle availability, assigns sales consultants, sends directions and arrival instructions, and handles rescheduling.",
+        "icon": "🚙"
+      }
+    ],
+    "stats": "Auto dealerships spend $500+ per car sold on sales operations. AI voice agents increase service retention 25% and lead response speed by 10x.",
+    "relatedIndustries": ["insurance", "retail", "home-services"]
+  },
+  {
+    "slug": "fitness",
+    "name": "Fitness",
+    "metaTitle": "AI Voice Agents for Gyms & Fitness Studios | P0STMAN",
+    "metaDescription": "Automate membership inquiries, class bookings, and personal training scheduling for gyms. Reduce front desk costs 40%. From $5K.",
+    "heroH1": "AI Voice Agents for Gyms & Fitness Studios",
+    "heroSubtext": "Automate membership sales, class bookings, and personal training scheduling with AI voice agents built for fitness.",
+    "icon": "💪",
+    "category": "Health & Wellness",
+    "painPoints": [
+      {
+        "title": "Membership Inquiries Come During Peak Classes",
+        "description": "Front desk can't answer calls during 5-7 PM rush. Missing these calls loses 40% of potential new members to competitors."
+      },
+      {
+        "title": "Class Cancellations Leave Empty Spots",
+        "description": "When members cancel 2 hours before class, there's no time to fill the spot. AI calls waitlist members immediately."
+      },
+      {
+        "title": "Personal Training Booking Requires Staff Coordination",
+        "description": "Scheduling sessions across multiple trainers' calendars takes 5-10 minutes per call. AI handles booking instantly."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Membership Inquiry & Tour Scheduling",
+        "description": "AI answers membership questions, explains pricing and class offerings, schedules facility tours, and follows up with trial class offers.",
+        "icon": "🎫"
+      },
+      {
+        "title": "Class Booking & Waitlist Management",
+        "description": "Voice agent handles class reservations, manages waitlists, instantly calls members when spots open, and processes cancellations per policy.",
+        "icon": "📅"
+      },
+      {
+        "title": "Personal Training Scheduling",
+        "description": "AI coordinates trainer availability, books sessions, sends workout prep instructions, handles rescheduling, and manages package renewals.",
+        "icon": "🏋️"
+      }
+    ],
+    "stats": "Fitness businesses lose 30-40% of inquiries to unanswered calls. AI voice agents increase membership conversions by 35% through 24/7 availability.",
+    "relatedIndustries": ["beauty", "healthcare", "wellness"]
+  },
+  {
+    "slug": "beauty",
+    "name": "Beauty & Salons",
+    "metaTitle": "AI Voice Agents for Beauty Salons & Spas | P0STMAN",
+    "metaDescription": "Automate appointment booking, handle cancellations, and send reminders for salons and spas. Reduce no-shows 45%. From $5K.",
+    "heroH1": "AI Voice Agents for Beauty Salons & Spas",
+    "heroSubtext": "Automate appointment booking, reduce no-shows, and handle client communications with AI voice agents for beauty businesses.",
+    "icon": "💅",
+    "category": "Health & Wellness",
+    "painPoints": [
+      {
+        "title": "Stylists Answer Calls Mid-Service",
+        "description": "Interrupting haircuts and treatments to answer phones hurts customer experience. AI handles calls so stylists stay focused on clients."
+      },
+      {
+        "title": "No-Shows Cost $75-150 Per Appointment",
+        "description": "Salons experience 15-25% no-show rates without reminders. AI reduces no-shows to under 5% through automated confirmation calls."
+      },
+      {
+        "title": "Rebooking Clients Requires Manual Outreach",
+        "description": "Regular clients lapse when not prompted to rebook. AI automatically calls clients when they're due for their next appointment."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Appointment Booking & Rescheduling",
+        "description": "AI handles booking requests, checks stylist availability, assigns services to appropriate specialists, and manages rescheduling and cancellations.",
+        "icon": "📅"
+      },
+      {
+        "title": "Automated Appointment Reminders",
+        "description": "Voice and SMS reminders 48 and 24 hours before appointments, with easy confirmation or rescheduling options to minimize no-shows.",
+        "icon": "🔔"
+      },
+      {
+        "title": "Client Retention & Rebooking",
+        "description": "AI calls clients 4-6 weeks after services (haircuts, color, facials) to schedule next appointments, maintaining consistent client relationships.",
+        "icon": "♻️"
+      }
+    ],
+    "stats": "Salons lose $50K+ annually to no-shows and interrupted services. AI voice agents reduce no-show rates by 45% and increase rebooking by 30%.",
+    "relatedIndustries": ["fitness", "healthcare", "wellness"]
+  },
+  {
+    "slug": "veterinary",
+    "name": "Veterinary",
+    "metaTitle": "AI Voice Agents for Veterinary Clinics | P0STMAN",
+    "metaDescription": "Automate appointment scheduling, handle after-hours emergencies, and send vaccination reminders for vet clinics. From $5K.",
+    "heroH1": "AI Voice Agents for Veterinary Clinics",
+    "heroSubtext": "Handle appointment scheduling, triage after-hours emergencies, and automate vaccination reminders with AI voice agents.",
+    "icon": "🐾",
+    "category": "Healthcare & Medical",
+    "painPoints": [
+      {
+        "title": "Pet Emergencies Happen After Hours",
+        "description": "Panicked pet owners call at midnight. Missing these calls means losing emergency cases and overnight boarding revenue to 24-hour competitors."
+      },
+      {
+        "title": "Vaccination Reminders Require Manual Calls",
+        "description": "Vet techs spend hours calling clients about overdue vaccinations. AI automates reminders and books appointments in one call."
+      },
+      {
+        "title": "Appointment Scheduling Takes 5-7 Minutes Per Call",
+        "description": "Collecting pet info, medical history, and reason for visit is time-consuming. AI gathers all details before the appointment."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "After-Hours Emergency Triage",
+        "description": "AI answers emergency calls 24/7, assesses urgency using veterinary protocols, provides first-aid guidance, and dispatches on-call vet for critical cases.",
+        "icon": "🚨"
+      },
+      {
+        "title": "Appointment Scheduling",
+        "description": "Voice agent collects pet details, medical history, reason for visit, books appropriate time slots (wellness vs. sick visits), and sends confirmations.",
+        "icon": "📅"
+      },
+      {
+        "title": "Vaccination & Wellness Reminders",
+        "description": "AI calls pet owners when vaccines are due, schedules annual checkups, sends reminders for heartworm prevention, and promotes dental cleanings.",
+        "icon": "💉"
+      }
+    ],
+    "stats": "Veterinary clinics lose 35% of after-hours emergency revenue to missed calls. AI voice agents capture emergency cases 24/7 and increase wellness visit bookings by 40%.",
+    "relatedIndustries": ["healthcare", "dental", "pet-services"]
+  },
+  {
+    "slug": "recruiting",
+    "name": "Recruiting",
+    "metaTitle": "AI Voice Agents for Recruiting Agencies | P0STMAN",
+    "metaDescription": "Automate candidate screening, schedule interviews, and handle client communications for recruiting firms. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Recruiting Agencies",
+    "heroSubtext": "Automate candidate screening, schedule interviews, and manage client communications with AI voice agents for recruiters.",
+    "icon": "👥",
+    "category": "Business Services",
+    "painPoints": [
+      {
+        "title": "Initial Candidate Screening Takes 15-20 Minutes Each",
+        "description": "Recruiters spend 25+ hours weekly on initial phone screens. AI handles preliminary qualification, freeing recruiters for high-value candidate relationships."
+      },
+      {
+        "title": "Interview Scheduling Requires 5-7 Touchpoints",
+        "description": "Coordinating candidate, hiring manager, and interview panel availability takes days. AI schedules interviews in one automated sequence."
+      },
+      {
+        "title": "Candidate Follow-Ups Fall Through Cracks",
+        "description": "Top candidates ghost when recruiters don't follow up promptly. AI maintains consistent touchpoints throughout the hiring process."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Automated Candidate Screening",
+        "description": "AI calls applicants to verify experience, assess salary expectations, confirm availability, and evaluate basic fit before recruiter involvement.",
+        "icon": "📞"
+      },
+      {
+        "title": "Interview Coordination",
+        "description": "Voice agent schedules interviews, coordinates multiple stakeholders' calendars, sends confirmations and prep materials, and handles rescheduling.",
+        "icon": "📅"
+      },
+      {
+        "title": "Candidate Status Updates",
+        "description": "AI proactively calls candidates with application updates, next steps, interview feedback, and offer negotiations - maintaining engagement throughout process.",
+        "icon": "📊"
+      }
+    ],
+    "stats": "Recruiting agencies spend 60% of time on administrative tasks. AI voice agents reduce screening time by 70% and interview scheduling from 3 days to 3 hours.",
+    "relatedIndustries": ["consulting", "saas", "legal"]
+  },
+  {
+    "slug": "non-profits",
+    "name": "Non-Profits",
+    "metaTitle": "AI Voice Agents for Non-Profit Organizations | P0STMAN",
+    "metaDescription": "Automate donor communications, volunteer coordination, and event registration for non-profits. Increase donations 30%. From $5K.",
+    "heroH1": "AI Voice Agents for Non-Profit Organizations",
+    "heroSubtext": "Automate donor outreach, volunteer coordination, and event registration with AI voice agents built for non-profits.",
+    "icon": "❤️",
+    "category": "Social Impact",
+    "painPoints": [
+      {
+        "title": "Limited Staff Can't Call All Donors",
+        "description": "Small teams lack capacity for personalized donor thank-yous and updates. AI scales outreach without increasing headcount."
+      },
+      {
+        "title": "Volunteer Coordination Requires Constant Calls",
+        "description": "Scheduling volunteers for events, shifts, and programs involves endless phone tag. AI automates coordination completely."
+      },
+      {
+        "title": "Event Registration Is Manual and Time-Consuming",
+        "description": "Processing event registrations, payment collection, and attendee communications takes 20+ hours per event. AI handles end-to-end."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Donor Thank You & Update Calls",
+        "description": "AI calls donors to thank them for contributions, provides program impact updates, answers questions, and invites to upcoming events.",
+        "icon": "🙏"
+      },
+      {
+        "title": "Volunteer Recruitment & Scheduling",
+        "description": "Voice agent calls potential volunteers, explains opportunities, schedules orientation sessions, and coordinates ongoing shift assignments.",
+        "icon": "👥"
+      },
+      {
+        "title": "Event Registration & Confirmations",
+        "description": "AI handles event registrations, processes payments, sends confirmations and reminders, manages waitlists, and collects post-event feedback.",
+        "icon": "🎟️"
+      }
+    ],
+    "stats": "Non-profits spend 30% of budgets on fundraising and admin. AI voice agents reduce operational costs by 40% and increase donor retention by 30%.",
+    "relatedIndustries": ["education", "healthcare", "event-planning"]
+  },
+  {
+    "slug": "event-planning",
+    "name": "Event Planning",
+    "metaTitle": "AI Voice Agents for Event Planners | P0STMAN",
+    "metaDescription": "Automate vendor coordination, guest RSVPs, and event inquiries for event planning businesses. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Event Planning Businesses",
+    "heroSubtext": "Automate vendor coordination, handle RSVPs, and manage event inquiries with AI voice agents for event planners.",
+    "icon": "🎉",
+    "category": "Hospitality & Travel",
+    "painPoints": [
+      {
+        "title": "Event Inquiries Come 24/7, Especially Weekends",
+        "description": "Couples and clients call during their free time - evenings and weekends. Missing calls means losing $15K+ events to competitors."
+      },
+      {
+        "title": "Vendor Coordination Requires 50+ Calls Per Event",
+        "description": "Confirming caterers, photographers, DJs, florists, and venues involves constant phone follow-up. AI coordinates all vendors automatically."
+      },
+      {
+        "title": "RSVP Collection and Tracking Is Manual",
+        "description": "Calling guests for RSVPs, dietary restrictions, and plus-ones takes 10-15 hours per event. AI handles collection and tracking."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Event Inquiry & Consultation Scheduling",
+        "description": "AI answers initial inquiries, collects event details (date, guest count, budget), qualifies leads, and schedules consultation calls with planners.",
+        "icon": "📞"
+      },
+      {
+        "title": "Vendor Confirmation & Coordination",
+        "description": "Voice agent calls vendors to confirm bookings, verify arrival times, collect final headcounts, and coordinates day-of logistics.",
+        "icon": "🤝"
+      },
+      {
+        "title": "Guest RSVP Collection",
+        "description": "AI calls invitees to collect RSVPs, dietary restrictions, song requests, plus-one details, and sends event reminders before the date.",
+        "icon": "📋"
+      }
+    ],
+    "stats": "Event planners spend 40% of project time on administrative coordination. AI voice agents reduce vendor coordination time by 65% and capture 24/7 inquiries.",
+    "relatedIndustries": ["hospitality", "catering", "non-profits"]
+  },
+  {
+    "slug": "property-management",
+    "name": "Property Management",
+    "metaTitle": "AI Voice Agents for Property Management | P0STMAN",
+    "metaDescription": "Automate maintenance requests, tenant inquiries, and lease renewals for property managers. Handle calls 24/7. From $5K.",
+    "heroH1": "AI Voice Agents for Property Management",
+    "heroSubtext": "Automate maintenance requests, handle tenant inquiries, and manage lease renewals with AI voice agents for property managers.",
+    "icon": "🏘️",
+    "category": "Real Estate & Property",
+    "painPoints": [
+      {
+        "title": "Maintenance Emergencies Happen After Hours",
+        "description": "Burst pipes and AC failures don't wait for business hours. AI triages emergencies 24/7 and dispatches appropriate vendors."
+      },
+      {
+        "title": "Tenant Inquiries Overwhelm Leasing Staff",
+        "description": "\"Is the 2BR still available?\" calls interrupt showings and tours. AI answers availability questions and schedules viewings automatically."
+      },
+      {
+        "title": "Lease Renewal Reminders Sent Too Late",
+        "description": "Starting renewal conversations 30 days before lease end results in high turnover. AI calls tenants 90 days early to maximize retention."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "24/7 Maintenance Request Intake",
+        "description": "AI answers maintenance calls, assesses urgency, creates work orders, dispatches vendors for emergencies, and schedules routine repairs.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Prospective Tenant Inquiries",
+        "description": "Voice agent answers availability questions, provides pricing and amenities info, schedules property tours, and collects application information.",
+        "icon": "🏠"
+      },
+      {
+        "title": "Lease Renewal Campaigns",
+        "description": "AI calls tenants 90 days before lease expiration, discusses renewal terms, offers move-in incentives, and processes renewals automatically.",
+        "icon": "📄"
+      }
+    ],
+    "stats": "Property managers spend 50% of time on tenant communications. AI voice agents reduce maintenance coordination time by 60% and increase lease renewals by 25%.",
+    "relatedIndustries": ["real-estate", "home-services", "construction"]
+  },
+  {
+    "slug": "travel",
+    "name": "Travel Agencies",
+    "metaTitle": "AI Voice Agents for Travel Agencies | P0STMAN",
+    "metaDescription": "Automate booking inquiries, itinerary changes, and travel support for travel agencies. Handle multilingual calls 24/7. From $5K.",
+    "heroH1": "AI Voice Agents for Travel Agencies",
+    "heroSubtext": "Automate booking inquiries, handle itinerary changes, and provide 24/7 travel support with multilingual AI voice agents.",
+    "icon": "✈️",
+    "category": "Hospitality & Travel",
+    "painPoints": [
+      {
+        "title": "Travel Emergencies Happen Across Time Zones",
+        "description": "Clients in Paris need help at 3 AM local time. AI provides 24/7 support in 50+ languages for global travelers."
+      },
+      {
+        "title": "Booking Inquiries Peak Outside Business Hours",
+        "description": "Customers research trips evenings and weekends. Missing after-hours calls means losing $3K+ bookings to online competitors."
+      },
+      {
+        "title": "Itinerary Changes Require Multiple System Updates",
+        "description": "Changing flights, hotels, and activities takes 30-45 minutes per request. AI coordinates changes across all platforms."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Travel Inquiry & Quote Requests",
+        "description": "AI answers destination questions, collects travel preferences and budget, provides preliminary quotes, and schedules consultation calls with agents.",
+        "icon": "🗺️"
+      },
+      {
+        "title": "Booking Modifications & Cancellations",
+        "description": "Voice agent handles itinerary changes, processes cancellations per policies, rebooks flights and hotels, and sends updated confirmations.",
+        "icon": "📅"
+      },
+      {
+        "title": "24/7 Travel Support",
+        "description": "AI provides emergency assistance, rebooking for missed connections, hotel recommendations, local emergency contacts - in traveler's language.",
+        "icon": "🆘"
+      }
+    ],
+    "stats": "Travel agencies spend $18 per customer service call. AI voice agents reduce booking inquiry costs by 75% and provide 24/7 support at 10% of traditional cost.",
+    "relatedIndustries": ["hospitality", "airlines", "event-planning"]
+  },
+  {
+    "slug": "food-delivery",
+    "name": "Food Delivery",
+    "metaTitle": "AI Voice Agents for Food Delivery Services | P0STMAN",
+    "metaDescription": "Automate order taking, handle delivery issues, and manage driver coordination for food delivery. Built in 6 days. From $5K.",
+    "heroH1": "AI Voice Agents for Food Delivery Services",
+    "heroSubtext": "Automate phone orders, handle delivery issues, and coordinate drivers with AI voice agents for food delivery.",
+    "icon": "🍔",
+    "category": "Food & Beverage",
+    "painPoints": [
+      {
+        "title": "Phone Lines Overwhelmed During Dinner Rush",
+        "description": "5-8 PM calls go to voicemail when restaurants are busiest. AI handles unlimited simultaneous orders without busy signals."
+      },
+      {
+        "title": "Order Taking Errors Cost 15% in Remakes",
+        "description": "Rushed phone orders result in mistakes. AI confirms every detail, reducing order errors by 80%."
+      },
+      {
+        "title": "Delivery Issue Resolution Delays Orders",
+        "description": "Wrong addresses, missing items, and delivery complaints require staff attention. AI handles 70% of issues automatically."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Automated Phone Order Taking",
+        "description": "AI handles incoming calls, reads menu, takes orders, confirms details, processes payments, and provides accurate delivery time estimates.",
+        "icon": "📞"
+      },
+      {
+        "title": "Order Tracking & Delivery Updates",
+        "description": "Voice agent provides real-time order status, estimated delivery times, driver location, and handles delay notifications proactively.",
+        "icon": "📍"
+      },
+      {
+        "title": "Delivery Issue Resolution",
+        "description": "AI handles wrong orders, missing items, late deliveries - processes refunds, sends replacements, and creates tickets for complex issues.",
+        "icon": "🛠️"
+      }
+    ],
+    "stats": "Food delivery services lose 20% of orders during peak hours due to busy phone lines. AI voice agents handle unlimited simultaneous calls and reduce order errors by 80%.",
+    "relatedIndustries": ["restaurants", "ecommerce", "logistics"]
+  },
+  {
+    "slug": "cleaning-services",
+    "name": "Cleaning Services",
+    "metaTitle": "AI Voice Agents for Cleaning Services | P0STMAN",
+    "metaDescription": "Automate booking, handle scheduling, and manage customer communications for cleaning businesses. Increase bookings 35%. From $5K.",
+    "heroH1": "AI Voice Agents for Cleaning Services",
+    "heroSubtext": "Automate booking, reduce scheduling conflicts, and handle customer communications with AI voice agents for cleaning businesses.",
+    "icon": "🧹",
+    "category": "Home & Local Services",
+    "painPoints": [
+      {
+        "title": "Crews in the Field Can't Answer Booking Calls",
+        "description": "Cleaning teams work on-site without phone access. Missing calls means losing recurring $200/month clients to competitors."
+      },
+      {
+        "title": "Scheduling Conflicts Create Double-Bookings",
+        "description": "Manual calendar management leads to crews showing up at wrong times. AI prevents conflicts and optimizes routing."
+      },
+      {
+        "title": "Customer Confirmations Require Day-Before Calls",
+        "description": "Calling to confirm 15-20 daily appointments takes 2 hours. AI automates confirmations and handles rescheduling."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Instant Booking & Quote Requests",
+        "description": "AI answers calls, collects property details (size, rooms, frequency), provides instant quotes, books services, and sends confirmations.",
+        "icon": "📅"
+      },
+      {
+        "title": "Appointment Confirmations & Reminders",
+        "description": "Voice agent calls clients 24 hours before service to confirm, handles rescheduling, sends crew details and arrival time estimates.",
+        "icon": "🔔"
+      },
+      {
+        "title": "Recurring Service Management",
+        "description": "AI manages weekly/monthly cleaning schedules, handles skip requests, processes billing, and calls to renew annual contracts.",
+        "icon": "♻️"
+      }
+    ],
+    "stats": "Cleaning businesses lose 30% of potential bookings to missed calls. AI voice agents increase booking capture by 35% and reduce scheduling errors by 90%.",
+    "relatedIndustries": ["home-services", "property-management", "hospitality"]
+  },
+  {
+    "slug": "photography",
+    "name": "Photography",
+    "metaTitle": "AI Voice Agents for Photography Businesses | P0STMAN",
+    "metaDescription": "Automate booking inquiries, handle session scheduling, and manage client communications for photographers. From $5K.",
+    "heroH1": "AI Voice Agents for Photography Businesses",
+    "heroSubtext": "Never miss a booking. Automate inquiries, schedule sessions, and handle client communications with AI voice agents.",
+    "icon": "📸",
+    "category": "Creative Services",
+    "painPoints": [
+      {
+        "title": "Photographers Miss Calls During Shoots",
+        "description": "On-location shoots mean 4-6 hours without phone access. Missing wedding/event inquiries loses $2K-5K bookings to faster competitors."
+      },
+      {
+        "title": "Session Scheduling Requires Multiple Touchpoints",
+        "description": "Coordinating location, weather backup, outfit coordination, and timing takes 3-5 calls per session. AI handles everything in one interaction."
+      },
+      {
+        "title": "Post-Session Follow-Ups Are Inconsistent",
+        "description": "Photographers forget to call about gallery delivery, print orders, and rebooking. AI automates the entire client journey."
+      }
+    ],
+    "useCases": [
+      {
+        "title": "Session Inquiry & Booking",
+        "description": "AI answers package questions, checks availability, collects session details (location, participants, style), books dates, and sends prep guides.",
+        "icon": "📞"
+      },
+      {
+        "title": "Session Reminders & Coordination",
+        "description": "Voice agent calls 48 hours before session to confirm, discusses location/outfit plans, checks weather, handles rescheduling if needed.",
+        "icon": "📅"
+      },
+      {
+        "title": "Gallery Delivery & Print Sales",
+        "description": "AI calls when gallery is ready, walks through print ordering process, collects product selections, and schedules annual session rebookings.",
+        "icon": "🖼️"
+      }
+    ],
+    "stats": "Photographers lose 40% of inquiries when not immediately available. AI voice agents capture bookings 24/7 and increase print sales by 25% through proactive follow-up.",
+    "relatedIndustries": ["event-planning", "real-estate", "marketing-agencies"]
+  }
+]
