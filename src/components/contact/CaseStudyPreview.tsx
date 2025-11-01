@@ -29,16 +29,16 @@ const allCaseStudies: CaseStudy[] = [
     title: "DoH Health",
     subtitle: "Healthcare Platform",
     industry: "Healthcare",
-    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/doh-health.png",
-    path: "/case-study/doh-health-luxury",
+    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/doh2.png",
+    path: "/case-study/doh-health",
     metric: "35% reduced no-shows"
   },
   {
     title: "FAB Bank",
     subtitle: "Banking Platform",
     industry: "Fintech",
-    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/fab-bank.png",
-    path: "/case-study/fab-bank-luxury",
+    image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/fab2.png",
+    path: "/case-study/fab-bank",
     metric: "Enterprise security"
   }
 ];
