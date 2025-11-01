@@ -118,13 +118,13 @@ export default function FooterLuxury({ prevCase, nextCase }: FooterLuxuryProps) 
               let's discuss how we can deliver exceptional results.
             </p>
 
-            <a
-              href="mailto:hello@p0stman.com"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black hover:bg-gray-100 transition-colors font-light"
             >
               Start Your Project
               <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

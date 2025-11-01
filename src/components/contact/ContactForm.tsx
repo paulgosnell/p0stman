@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, User, MessageSquare, Loader2, Twitter, Linkedin } from 'lucide-react';
+import { Mail, User, MessageSquare, Loader2, Twitter, Linkedin, CheckCircle } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
 import FormInput from '../ui/FormInput';
 import FormGroup from '../ui/FormGroup';
@@ -10,11 +10,40 @@ export default function ContactForm() {
     name: '',
     email: '',
     projectType: '',
+    timeline: '',
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [formStarted, setFormStarted] = useState(false);
+
+  // Track form interactions
+  useEffect(() => {
+    const referrer = document.referrer || window.location.href;
+
+    // Track page view
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'contact_page_viewed', {
+        source_page: referrer,
+        page_path: window.location.pathname
+      });
+    }
+  }, []);
+
+  const handleFormStart = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      const referrer = document.referrer || window.location.href;
+
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_started', {
+          source_page: referrer,
+          form_type: 'contact_page'
+        });
+      }
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,24 +51,46 @@ export default function ContactForm() {
     setError(null);
 
     try {
+      const referrer = document.referrer || window.location.href;
+
       await sendEmail({
         name: formData.name,
         email: formData.email,
         form_type: 'contact_page',
         project_type: formData.projectType,
+        timeline: formData.timeline,
         description: formData.description,
-        message: formData.description // EmailJS template may expect 'message' field
+        message: formData.description, // EmailJS template may expect 'message' field
+        source_page: referrer
       });
-      
+
+      // Track successful submission
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_submitted', {
+          source_page: referrer,
+          form_type: 'contact_page',
+          project_type: formData.projectType,
+          timeline: formData.timeline
+        });
+      }
+
       setSuccess(true);
       setFormData({
         name: '',
         email: '',
         projectType: '',
+        timeline: '',
         description: ''
       });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to send message');
+
+      // Track error
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'form_error', {
+          error_message: err instanceof Error ? err.message : 'Unknown error'
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -77,7 +128,7 @@ export default function ContactForm() {
 
           <FormGroup
             onSubmit={handleSubmit}
-            submitText="Send Message"
+            submitText="Schedule Free Consultation"
             submitting={isSubmitting}
           >
             <FormInput
@@ -87,7 +138,10 @@ export default function ContactForm() {
               label="Name"
               placeholder="Your full name"
               value={formData.name}
-              onChange={(value) => setFormData({ ...formData, name: value })}
+              onChange={(value) => {
+                handleFormStart();
+                setFormData({ ...formData, name: value });
+              }}
               required
             />
 
@@ -98,7 +152,10 @@ export default function ContactForm() {
               label="Email"
               placeholder="your@email.com"
               value={formData.email}
-              onChange={(value) => setFormData({ ...formData, email: value })}
+              onChange={(value) => {
+                handleFormStart();
+                setFormData({ ...formData, email: value });
+              }}
               required
             />
 
@@ -110,7 +167,10 @@ export default function ContactForm() {
                 id="contact_page_project_type"
                 name="projectType"
                 value={formData.projectType}
-                onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                onChange={(e) => {
+                  handleFormStart();
+                  setFormData({ ...formData, projectType: e.target.value });
+                }}
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 focus:outline-none"
                 required
               >
@@ -126,6 +186,29 @@ export default function ContactForm() {
               </select>
             </div>
 
+            <div>
+              <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2" htmlFor="contact_page_timeline">
+                When do you need this?
+              </label>
+              <select
+                id="contact_page_timeline"
+                name="timeline"
+                value={formData.timeline}
+                onChange={(e) => {
+                  handleFormStart();
+                  setFormData({ ...formData, timeline: e.target.value });
+                }}
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 focus:outline-none"
+                required
+              >
+                <option value="">Select timeline</option>
+                <option value="ASAP (within 2 weeks)">ASAP (within 2 weeks)</option>
+                <option value="This month">This month</option>
+                <option value="Next 2-3 months">Next 2-3 months</option>
+                <option value="Just exploring">Just exploring</option>
+              </select>
+            </div>
+
             <FormInput
               id="contact_page_description"
               name="description"
@@ -133,10 +216,24 @@ export default function ContactForm() {
               label="Message"
               placeholder="Tell me about your project..."
               value={formData.description}
-              onChange={(value) => setFormData({ ...formData, description: value })}
+              onChange={(value) => {
+                handleFormStart();
+                setFormData({ ...formData, description: value });
+              }}
               rows={5}
               required
             />
+
+            {/* Risk Reversal */}
+            <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-lg">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                <div className="text-sm text-gray-700 dark:text-gray-300 font-light">
+                  <p className="font-medium mb-1">Free consultation. No obligation.</p>
+                  <p>We'll assess your project and give you a clear quote and timeline. If it's not a fit, we'll tell you honestly.</p>
+                </div>
+              </div>
+            </div>
           </FormGroup>
 
           <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
