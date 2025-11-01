@@ -17,34 +17,34 @@ const values = [
   {
     icon: <Zap className="w-8 h-8" />,
     title: 'Speed',
-    description: 'Build faster without compromising quality. AI-powered development delivers in weeks, not months.'
+    description: 'Deliver in weeks, not months. AI-powered workflows compress timelines by 40-70% without cutting corners. 6-day MVPs. 3-week production systems. Validated across 12+ recent projects.'
   },
   {
     icon: <Lightbulb className="w-8 h-8" />,
     title: 'Innovation',
-    description: 'Push boundaries with cutting-edge AI agents, Web3 integration, and emerging technologies.'
+    description: 'We live in the tools: Claude Code, Cursor, ElevenLabs, LiveKit. Multi-model AI orchestration. Voice agents. Code generation platforms. If it\'s cutting-edge and production-ready, we\'ve probably shipped it.'
   },
   {
     icon: <Target className="w-8 h-8" />,
     title: 'Results',
-    description: 'Measurable outcomes. Every project delivers real business impact with clear KPIs.'
+    description: 'Measurable outcomes, not vaporware. 89% lead qualification rates. 247 calls/week handled autonomously. <$200/month operating costs. Your ROI is our scorecard.'
   },
   {
     icon: <Users className="w-8 h-8" />,
     title: 'Partnership',
-    description: 'We\'re your extended team. Collaborative approach from discovery to delivery and beyond.'
+    description: 'We challenge your brief. We improve your idea. We don\'t ghost post-launch. You\'re not just getting a vendor—you\'re getting a product team that cares whether your business succeeds.'
   }
 ];
 
 const capabilities = [
-  'AI Agent Development',
-  'Web3 & Blockchain',
-  'Enterprise Platforms',
-  'Mobile Applications',
-  'Real-time Systems',
-  'Cloud Architecture',
-  'Product Strategy',
-  'Team Scaling'
+  'AI Voice & Chat Agents',
+  'Full-Stack Web & Mobile',
+  'Enterprise SaaS Platforms',
+  'Product Strategy (CPO/CTO)',
+  'Digital Transformation',
+  'Multi-Model AI Orchestration',
+  'Workflow Automation',
+  'Team Scaling & Leadership'
 ];
 
 export default function About() {
@@ -90,16 +90,20 @@ export default function About() {
 
                 <h1 className="text-5xl md:text-6xl font-thin leading-tight mb-6">
                   <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    Building the Future of Product Development
+                    The Agency of the Future. Built Today.
                   </span>
                 </h1>
 
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl">
-                  P0STMAN is an AI-powered product studio that combines human creativity with artificial intelligence to deliver innovative digital solutions at unprecedented speed. We help visionary founders, enterprises, and innovators bring their boldest ideas to life.
+                  We're not a 40-person agency with endless meetings and bloated timelines. We're an AI-native product studio that delivers agency-quality work at startup speed and scale. 20+ years of product expertise, turbocharged by cutting-edge AI workflows.
+                </p>
+
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mb-6">
+                  P0STMAN combines battle-tested product development experience with AI-first execution. We've shipped 1,000+ digital products—from MVPs to enterprise platforms—and now leverage Claude, OpenAI, ElevenLabs, and custom AI tooling to deliver faster, smarter, and leaner than traditional agencies.
                 </p>
 
                 <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
-                  Founded on the belief that AI isn't just a tool—it's a superpower that unlocks new possibilities in product development. We leverage cutting-edge technology to compress timelines, reduce costs, and deliver exceptional outcomes.
+                  Whether you're a pre-seed startup validating an idea or an enterprise scaling a new platform, we bring the strategic depth of a seasoned product team with the velocity of AI-powered development.
                 </p>
               </motion.div>
             </div>
@@ -164,9 +168,9 @@ export default function About() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">Rapid Development</h3>
+                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">AI Agents & Intelligent Systems</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                          Compress months of development into weeks using AI-assisted coding, intelligent architecture patterns, and proven methodologies.
+                          Voice agents powered by ElevenLabs and LiveKit. Chat agents using Claude and GPT-4. Workflow automation that saves 40+ hours/month. Not proof-of-concepts—production systems that scale.
                         </p>
                       </div>
                     </div>
@@ -176,9 +180,9 @@ export default function About() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">AI Innovation</h3>
+                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">MVPs & Digital Products</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                          Build intelligent agents, implement cutting-edge AI models, and create products that leverage machine learning for competitive advantage.
+                          Booking platforms. SaaS dashboards. Mobile apps. E-commerce systems. 6-day pilots for validation. 3-week builds for commercial launch. We ship, we don't theorize.
                         </p>
                       </div>
                     </div>
@@ -188,9 +192,9 @@ export default function About() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">Strategic Partnership</h3>
+                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">Strategic Engagements</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                          We don't just build—we become your extended team, providing guidance from concept through launch and beyond.
+                          Fractional CPO/CTO services. Digital transformation roadmaps. White-label builds for agencies. Team scaling support. You get 20 years of product leadership on-demand.
                         </p>
                       </div>
                     </div>
@@ -200,9 +204,9 @@ export default function About() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">Measured Results</h3>
+                        <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">The AI Unlock</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                          Clear ROI, defined KPIs, and tangible business outcomes. We succeed when you succeed.
+                          AI handles the repetitive work—research, documentation, boilerplate code, testing frameworks. Our team focuses on architecture, validation, and commercial viability. 20 years of pattern recognition means we avoid rookie mistakes.
                         </p>
                       </div>
                     </div>
@@ -241,7 +245,93 @@ export default function About() {
           </div>
         </section>
 
+        {/* Team & Expertise */}
+        <section className="py-24 bg-gray-50 dark:bg-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-thin mb-8 text-gray-900 dark:text-gray-100">Lean Team. Deep Bench.</h2>
+
+                <div className="space-y-6 text-gray-600 dark:text-gray-300">
+                  <p className="text-lg leading-relaxed">
+                    P0STMAN is led by Paul Gosnell—20+ years shipping digital products for startups, enterprises, and agencies. Grew a Dubai-based agency from 1 to 30 contractors, navigated a global pandemic, and emerged with a philosophy: smaller teams, better tools, faster results.
+                  </p>
+
+                  <p className="text-lg leading-relaxed">
+                    Today, P0STMAN operates as an AI-native studio with a curated network of specialists—designers, engineers, and strategists—who collaborate on projects as needed. No bloat. No bench warmers. Just experienced builders leveraging AI to output like a 30-person agency.
+                  </p>
+
+                  <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">Notable Clients & Projects:</p>
+                    <p className="text-base leading-relaxed">
+                      FAB Bank (scaled 1→40 team in 18 months), Al Arabiya, Etihad Airways, Department of Health Abu Dhabi, Arabian Malls, plus 100+ startups from pre-seed to Series B.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Choose P0STMAN */}
+        <section className="py-24 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-thin mb-12 text-gray-900 dark:text-gray-100">Why P0STMAN?</h2>
+
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-3">1. We've Been There Before</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      1,000+ products shipped. Startups to Fortune 500. We know what works, what scales, what dies in production. You're not paying us to learn on your dime.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-3">2. AI-First, Human-Validated</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      Every AI output is reviewed by experienced builders. We use Claude Sonnet 4.5, OpenAI GPT-4, Google Gemini, and Grok—but we know when to override the AI and when to trust it. That's 20 years of judgment you can't automate.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-3">3. Speed Without Sacrifice</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      40-70% faster delivery (validated across 12 projects). Not because we cut corners—because AI handles research, documentation, and boilerplate while we focus on architecture and validation.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-3">4. Commercially Viable from Day One</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      We challenge briefs. If your idea won't scale, we'll tell you before you waste budget. If there's a better approach, we'll show you. Your success is our reputation.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-light text-gray-900 dark:text-gray-100 mb-3">5. No Corporate BS</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      Direct access to decision-makers. No account managers. No 6-layer approval chains. You talk to the people building your product.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
         <section className="py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
@@ -251,37 +341,27 @@ export default function About() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-thin mb-8">Why Choose P0STMAN?</h2>
-
-                <div className="grid md:grid-cols-3 gap-8 mb-12">
-                  <div className="text-center">
-                    <div className="text-4xl font-light text-blue-200 mb-3">50-70%</div>
-                    <p className="text-lg">Faster Development</p>
-                    <p className="text-sm text-blue-100 mt-2">Months compressed to weeks</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-light text-blue-200 mb-3">2-3x</div>
-                    <p className="text-lg">More Efficient</p>
-                    <p className="text-sm text-blue-100 mt-2">Reduced resource requirements</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-light text-blue-200 mb-3">100%</div>
-                    <p className="text-lg">Committed</p>
-                    <p className="text-sm text-blue-100 mt-2">Your success is our success</p>
-                  </div>
-                </div>
+                <h2 className="text-4xl font-thin mb-6">What's the Ambitious Version?</h2>
 
                 <p className="text-xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
-                  We combine the latest AI technology with proven product development expertise. Your vision, our execution, exceptional results.
+                  Most founders think small because budgets and timelines force them to. AI breaks that constraint. Tell us what you'd build if you had 100 experts and 6 months. Then let's ship a version in 6 weeks.
                 </p>
 
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-medium text-lg"
-                >
-                  Let's Build Together
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-medium text-lg"
+                  >
+                    Schedule a Strategy Call
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="/case-studies"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all font-medium text-lg"
+                  >
+                    View Case Studies
+                  </a>
+                </div>
               </motion.div>
             </div>
           </div>
