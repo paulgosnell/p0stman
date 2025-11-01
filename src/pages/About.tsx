@@ -70,44 +70,176 @@ export default function About() {
         <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <section className="relative min-h-screen flex items-center bg-white dark:bg-gray-900 overflow-hidden">
+          {/* Premium Titanium Background - Metallic Grid with Gradients */}
+          <div className="absolute inset-0 z-0">
+            {/* Animated Grid Pattern */}
+            <svg className="absolute inset-0 w-full h-full">
+              <defs>
+                {/* Precision Grid Pattern */}
+                <pattern
+                  id="about-titanium-grid"
+                  width="80"
+                  height="80"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 80 0 L 0 0 0 80"
+                    fill="none"
+                    stroke="rgba(100, 116, 139, 0.15)"
+                    strokeWidth="0.5"
+                  />
+                  <circle cx="0" cy="0" r="1.5" fill="rgba(59, 130, 246, 0.3)" />
+                </pattern>
+
+                {/* Premium Gradient Overlays */}
+                <radialGradient id="titanium-glow-1" cx="30%" cy="30%">
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.15" />
+                  <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="titanium-glow-2" cx="70%" cy="70%">
+                  <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.15" />
+                  <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
+                </radialGradient>
+
+                {/* Metallic Shine Effect */}
+                <linearGradient id="metallic-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#e2e8f0" stopOpacity="0.05" />
+                  <stop offset="50%" stopColor="#cbd5e1" stopOpacity="0.1" />
+                  <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.05" />
+                </linearGradient>
+              </defs>
+
+              <rect width="100%" height="100%" fill="url(#about-titanium-grid)" />
+              <rect width="100%" height="100%" fill="url(#titanium-glow-1)" />
+              <rect width="100%" height="100%" fill="url(#titanium-glow-2)" />
+              <rect width="100%" height="100%" fill="url(#metallic-shine)" />
+            </svg>
+
+            {/* Floating Orbs - Titanium Spheres */}
+            <motion.div
+              className="absolute top-1/4 left-1/5 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-transparent rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.5, 0.3],
+                x: [0, 50, 0],
+                y: [0, 30, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/4 right-1/5 w-[500px] h-[500px] bg-gradient-to-br from-purple-500/10 via-purple-400/5 to-transparent rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.6, 0.3],
+                x: [0, -40, 0],
+                y: [0, -50, 0],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
+
+            {/* Subtle Scan Lines for Tech Feel */}
+            <div className="absolute inset-0 opacity-[0.02]"
+              style={{
+                backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(100, 116, 139, 0.3) 2px, rgba(100, 116, 139, 0.3) 4px)'
+              }}
+            />
           </div>
 
-          <div className="container mx-auto px-4 py-24 relative z-10">
-            <div className="max-w-4xl mx-auto">
+          <div className="container mx-auto px-6 py-32 relative z-10">
+            <div className="max-w-6xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <div className="mb-6">
-                  <span className="text-blue-600 dark:text-blue-400 font-medium text-lg">About P0STMAN</span>
-                </div>
-
-                <h1 className="text-5xl md:text-6xl font-thin leading-tight mb-6">
-                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    The Agency of the Future. Built Today.
+                {/* Eyebrow */}
+                <motion.div
+                  className="mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <span className="text-sm text-gray-400 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    About P0STMAN
                   </span>
-                </h1>
+                </motion.div>
 
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl">
-                  We're not a 40-person agency with endless meetings and bloated timelines. We're an AI-native product studio that delivers agency-quality work at startup speed and scale. 20+ years of product expertise, turbocharged by cutting-edge AI workflows.
-                </p>
+                {/* Main Headline - Premium Typography */}
+                <motion.h1
+                  className="text-6xl md:text-7xl lg:text-8xl font-thin leading-[0.95] mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <span className="block text-gray-900 dark:text-gray-100 mb-4">
+                    The Agency
+                  </span>
+                  <span className="block text-gray-900 dark:text-gray-100 mb-4">
+                    of the Future.
+                  </span>
+                  <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-500 bg-clip-text text-transparent">
+                    Built Today.
+                  </span>
+                </motion.h1>
 
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mb-6">
-                  P0STMAN combines battle-tested product development experience with AI-first execution. We've shipped 1,000+ digital products—from MVPs to enterprise platforms—and now leverage Claude, OpenAI, ElevenLabs, and custom AI tooling to deliver faster, smarter, and leaner than traditional agencies.
-                </p>
+                {/* Description - Refined Spacing */}
+                <motion.div
+                  className="space-y-6 max-w-4xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <p className="text-2xl md:text-3xl font-light text-gray-600 dark:text-gray-300 leading-relaxed">
+                    We're not a 40-person agency with endless meetings and bloated timelines.
+                  </p>
 
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
-                  Whether you're a pre-seed startup validating an idea or an enterprise scaling a new platform, we bring the strategic depth of a seasoned product team with the velocity of AI-powered development.
-                </p>
+                  <p className="text-xl md:text-2xl font-light text-gray-500 dark:text-gray-400 leading-relaxed">
+                    We're an AI-native product studio that delivers agency-quality work at startup speed and scale. <span className="text-gray-600 dark:text-gray-300">20+ years of product expertise, turbocharged by cutting-edge AI workflows.</span>
+                  </p>
+                </motion.div>
+
+                {/* Stats Bar - Titanium Accent */}
+                <motion.div
+                  className="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div className="space-y-2">
+                      <div className="text-4xl font-thin text-gray-900 dark:text-gray-100">1,000+</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">Products Shipped</div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-4xl font-thin text-gray-900 dark:text-gray-100">20+</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">Years Experience</div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-4xl font-thin text-gray-900 dark:text-gray-100">40-70%</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">Faster Delivery</div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-4xl font-thin text-gray-900 dark:text-gray-100">AI-First</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">Studio Model</div>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
+
+          {/* Bottom Gradient Fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-gray-900 to-transparent z-10" />
         </section>
 
         {/* Core Values */}
