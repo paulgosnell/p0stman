@@ -611,7 +611,7 @@ export default function CaseStudies() {
           <link rel="canonical" href="https://p0stman.com/case-studies" />
         </Helmet>
 
-        <HeaderV3Global />
+        <HeaderV3Global darkMode={true} />
 
         {/* Hero Section with Space Animation */}
         <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white overflow-hidden">
