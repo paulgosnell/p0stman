@@ -52,7 +52,7 @@ export default function ContactPage() {
           <link rel="canonical" href="https://p0stman.com/contact" />
         </Helmet>
 
-        <HeaderV3Global />
+        <HeaderV3Global darkMode={true} />
 
         {/* Context-Aware Hero */}
         <section ref={ref} className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
