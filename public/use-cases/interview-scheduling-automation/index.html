@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Scheduling Automation | AI for Recruiting 2025</title>
+  <meta name="description" content="Automate interview scheduling for recruiters and HR. AI calendar coordination, candidate communication, multi-round scheduling. Implementation guide.">
+  <link rel="canonical" href="https://p0stman.com/use-cases/interview-scheduling-automation/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Interview Scheduling Automation | AI for Recruiting 2025">
+  <meta property="og:description" content="Automate interview scheduling for recruiters and HR. AI calendar coordination, candidate communication, multi-round scheduling. Implementation guide.">
+  <meta property="og:url" content="https://p0stman.com/use-cases/interview-scheduling-automation/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interview Scheduling Automation | AI for Recruiting 2025">
+  <meta name="twitter:description" content="Automate interview scheduling for recruiters and HR. AI calendar coordination, candidate communication, multi-round scheduling. Implementation guide.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'p0stman-blue': '#2563eb',
+            'p0stman-purple': '#9333ea',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'Segoe UI', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Interview Scheduling Automation: Implementation Guide",
+    "description": "Automate interview scheduling for recruiters and HR. AI calendar coordination, candidate communication, multi-round scheduling. Implementation guide.",
+    "author": {
+      "@type": "Organization",
+      "name": "P0STMAN"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "P0STMAN",
+      "url": "https://p0stman.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Interview Scheduling Automation: Implementation Guide",
+    "description": "AI analyzes interviewer calendars, finds overlapping availability, proposes times to candidate via SMS/email. Candidate selects preferred slot with one click. AI sends calendar invites to all participants, creates Zoom links, sends prep materials. Handles rescheduling, cancellations, and reminder sequences automatically. Integrates with ATS to track interview pipeline.",
+    "totalTime": "2-4 weeks",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "$18K-35K"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Step 1",
+        "text": "Week 1: Integrate with calendar systems and ATS. Map interview types (phone screen, technical, panel, final) and required interviewers. Set up availability rules (no interviews Friday afternoons, etc)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Step 2",
+        "text": "Week 2-3: Build scheduling logic with constraints (30 min buffer, timezone handling, interviewer load balancing). Create candidate communication templates. Set up video conferencing auto-generation."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Step 3",
+        "text": "Week 4: Test with real interview scenarios. Train recruiting team on AI workflows. Beta launch with one hiring manager. Roll out to all teams with usage tracking."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What if interviewers never have overlapping availability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI escalates to recruiter with message: 'No availability found for panel in next 2 weeks. Recommend splitting into 2 separate interviews or adjusting interviewer pool.' Provides suggestions for resolution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it handle different interview formats (phone, video, in-person)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each interview stage configured with format. Phone screens auto-add dial-in number. Video interviews create Zoom link. In-person includes office address and parking instructions. Format-specific templates for candidate communication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about last-minute cancellations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Candidate or interviewer can cancel via email link. AI immediately notifies all participants, proposes 3 new times, and tracks cancellation reason (sick, emergency, candidate withdrew). High cancellation rates flag problems for recruiter attention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does it handle executive or C-suite interviews?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Configurable priority and constraints. 'CEO only interviews finalists, only on Tuesdays 2-4pm, needs exec recruiter on call.' AI respects VIP scheduling rules and escalates conflicts to human coordinator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can candidates see interviewer names and roles beforehand?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Configurable. Some companies share full panel (names, titles, LinkedIn) to help candidates prepare. Others keep it generic ('2 senior engineers, 1 product manager'). AI sends chosen level of detail in confirmation email."
+        }
+      }
+    ]
+  }
+]
+</script>
+
+  <style>
+    body {
+      font-weight: 300;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-light">
+  <!-- Navigation - Matches HeaderV3Global -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <span class="text-2xl font-light tracking-tight text-gray-900">
+          P0STMAN
+        </span>
+      </a>
+
+      <!-- Hamburger Menu Button -->
+      <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-gray-50 transition-all text-gray-900">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="mobile-menu absolute top-20 right-0 left-0 md:right-6 md:left-auto md:w-80 bg-white border border-gray-100 shadow-lg z-50 overflow-hidden md:rounded-xl">
+      <div class="p-6 space-y-2">
+        <a href="/case-studies" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Work</span>
+          </div>
+        </a>
+
+        <a href="/services" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Services</span>
+          </div>
+        </a>
+
+        <a href="/industries" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Industries</span>
+          </div>
+        </a>
+
+        <a href="/locations" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Locations</span>
+          </div>
+        </a>
+
+        <a href="/compare" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Compare</span>
+          </div>
+        </a>
+
+        <a href="/solutions" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Solutions</span>
+          </div>
+        </a>
+
+        <a href="/process" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">Process</span>
+          </div>
+        </a>
+
+        <a href="/about" class="group block p-3 rounded-lg hover:bg-gray-50 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+            </div>
+            <span class="text-gray-900 font-light group-hover:text-blue-600">About</span>
+          </div>
+        </a>
+
+        <div class="pt-6 border-t border-gray-200 mt-6">
+          <a href="/contact" class="flex items-center justify-center gap-2 w-full p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-light hover:from-blue-700 hover:to-purple-700 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <span>Get Started</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spacer for fixed header -->
+  <div class="h-20"></div>
+
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking on a link
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        mobileMenu.classList.remove('active');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-4xl">
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-3 mb-6">
+          <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm font-light rounded-full">
+            Medium Complexity
+          </span>
+          <span class="text-gray-400 text-sm">•</span>
+          <span class="text-gray-300 text-sm font-light">2-4 weeks</span>
+          <span class="text-gray-400 text-sm">•</span>
+          <span class="text-gray-300 text-sm font-light">$18K-35K</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-light tracking-tight mb-6">Interview Scheduling Automation: Implementation Guide</h1>
+        <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">AI that coordinates interview schedules with candidates and hiring managers. Handles multi-round interviews, panel scheduling, and all candidate communication automatically.</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 rounded-lg font-light text-lg hover:bg-gray-100 transition text-center">
+            Schedule Free Consultation
+          </a>
+          <a href="/case-studies" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 rounded-lg font-light text-lg hover:bg-white/20 transition text-center">
+            View Case Studies
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-gray-300">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Proven ROI</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Built by P0STMAN</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>20+ Implementations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">The Problem</h2>
+      <p class="text-xl text-gray-700 font-light leading-relaxed">Recruiters spend 10-15 hours per week playing calendar Tetris. Coordinating 5-person panel interviews takes 20+ emails. Candidates ghost because scheduling takes too long. Time-to-hire extends 5-7 days just waiting for calendar alignment. High-volume recruiting (100+ interviews/month) is impossible without dedicated scheduling coordinators.</p>
+    </div>
+  </section>
+
+  <!-- Technical Approach Section -->
+  <section class="py-16 md:py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">How It Works</h2>
+        <p class="text-xl text-gray-600 font-light">Technical architecture overview</p>
+      </div>
+
+      <div class="bg-white p-8 md:p-12 rounded-lg border border-gray-200">
+        <p class="text-xl text-gray-700 font-light leading-relaxed">AI analyzes interviewer calendars, finds overlapping availability, proposes times to candidate via SMS/email. Candidate selects preferred slot with one click. AI sends calendar invites to all participants, creates Zoom links, sends prep materials. Handles rescheduling, cancellations, and reminder sequences automatically. Integrates with ATS to track interview pipeline.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Components Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Tech Stack</h2>
+        <p class="text-xl text-gray-600 font-light">Core components of the system</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <div class="flex items-start gap-3 mb-3">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-light text-gray-900 mb-1">Calendar Integration</h3>
+              <p class="text-sm text-blue-600 font-light mb-2">Google Calendar / Outlook API</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm font-light">Read interviewer availability, create meetings</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <div class="flex items-start gap-3 mb-3">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-light text-gray-900 mb-1">AI Scheduling Engine</h3>
+              <p class="text-sm text-blue-600 font-light mb-2">Custom Logic + NLP</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm font-light">Find optimal meeting times, handle constraints</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <div class="flex items-start gap-3 mb-3">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-light text-gray-900 mb-1">Video Conferencing</h3>
+              <p class="text-sm text-blue-600 font-light mb-2">Zoom / Teams / Google Meet API</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm font-light">Auto-create meeting links for remote interviews</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <div class="flex items-start gap-3 mb-3">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-light text-gray-900 mb-1">ATS Integration</h3>
+              <p class="text-sm text-blue-600 font-light mb-2">Greenhouse / Lever / Workday API</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm font-light">Sync candidate pipeline, track interview stages</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <div class="flex items-start gap-3 mb-3">
+            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-light text-gray-900 mb-1">Communication Platform</h3>
+              <p class="text-sm text-blue-600 font-light mb-2">Twilio + SendGrid</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm font-light">SMS/email with candidates, reminders, rescheduling</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="py-16 md:py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Key Features</h2>
+        <p class="text-xl text-gray-600 font-light">What makes this solution powerful</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <h3 class="text-2xl font-light text-gray-900 mb-4">Smart Availability Matching</h3>
+          <p class="text-gray-600 font-light">AI scans all interviewer calendars, finds 3-5 optimal slots considering time zones, business hours, and prep time between interviews. Proposes times to candidate with one-click booking.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <h3 class="text-2xl font-light text-gray-900 mb-4">Panel Interview Coordination</h3>
+          <p class="text-gray-600 font-light">Coordinates 5-8 person panels automatically. 'Need CEO, hiring manager, 2 team members for 1-hour panel.' AI finds time when all are available, sends single meeting invite, attaches interview guide.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <h3 class="text-2xl font-light text-gray-900 mb-4">Multi-Round Workflow</h3>
+          <p class="text-gray-600 font-light">Phone screen → technical interview → culture fit → final round. Each round triggers next round scheduling automatically after 'pass' decision in ATS. Complete hiring funnel orchestration.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <h3 class="text-2xl font-light text-gray-900 mb-4">Candidate Self-Rescheduling</h3>
+          <p class="text-gray-600 font-light">Candidate clicks 'I need to reschedule' in confirmation email. AI shows alternative times, candidate picks, everyone's calendar updates automatically. No recruiter involvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Steps Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Implementation Timeline</h2>
+        <p class="text-xl text-gray-600 font-light">Step-by-step deployment process</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-4">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-light text-blue-600">1</span>
+          </div>
+          <p class="text-gray-700 font-light flex-1">Week 1: Integrate with calendar systems and ATS. Map interview types (phone screen, technical, panel, final) and required interviewers. Set up availability rules (no interviews Friday afternoons, etc).</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-4">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-light text-blue-600">2</span>
+          </div>
+          <p class="text-gray-700 font-light flex-1">Week 2-3: Build scheduling logic with constraints (30 min buffer, timezone handling, interviewer load balancing). Create candidate communication templates. Set up video conferencing auto-generation.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-4">
+          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-xl font-light text-blue-600">3</span>
+          </div>
+          <p class="text-gray-700 font-light flex-1">Week 4: Test with real interview scenarios. Train recruiting team on AI workflows. Beta launch with one hiring manager. Roll out to all teams with usage tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real-World Metrics Section -->
+  <section class="py-16 md:py-24 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Real Results</h2>
+        <p class="text-xl text-gray-600 font-light">Metrics from actual implementations</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <div class="text-4xl font-light text-blue-600 mb-2">10-15 hours per recruiter per week</div>
+          <p class="text-gray-600 font-light">Time Saved</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <div class="text-4xl font-light text-purple-600 mb-2">Candidates schedule 24/7 at their convenience</div>
+          <p class="text-gray-600 font-light">After-Hours Captured</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg border border-gray-200">
+          <div class="text-4xl font-light text-orange-600 mb-2">1-2 months</div>
+          <p class="text-gray-600 font-light">Payback Period</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Pitfalls Section -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Common Pitfalls</h2>
+        <p class="text-xl text-gray-600 font-light">Learn from our experience</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100 flex items-start gap-3">
+          <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+          </svg>
+          <p class="text-gray-700 font-light flex-1">Don't: Ignore time zones. Remote hiring means candidates in different zones. AI must propose times in candidate's local time.</p>
+        </div>
+
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100 flex items-start gap-3">
+          <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+          </svg>
+          <p class="text-gray-700 font-light flex-1">Don't: Over-schedule interviewers. If hiring manager has 12 interviews/week, they're burnt out. AI should load balance across interview panel.</p>
+        </div>
+
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100 flex items-start gap-3">
+          <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+          </svg>
+          <p class="text-gray-700 font-light flex-1">Don't: Skip prep time. Back-to-back interviews are exhausting. Build in 15-30 min buffer for notes and bathroom breaks.</p>
+        </div>
+
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100 flex items-start gap-3">
+          <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+          </svg>
+          <p class="text-gray-700 font-light flex-1">Don't: Send generic calendar invites. Include: candidate name, role, resume link, interview guide, Zoom link. Everything interviewer needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-4">Technical FAQs</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="bg-white p-6 rounded-lg border border-gray-200">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            What if interviewers never have overlapping availability?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            AI escalates to recruiter with message: 'No availability found for panel in next 2 weeks. Recommend splitting into 2 separate interviews or adjusting interviewer pool.' Provides suggestions for resolution.
+          </p>
+        </details>
+
+        <details class="bg-white p-6 rounded-lg border border-gray-200">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            Can it handle different interview formats (phone, video, in-person)?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Yes. Each interview stage configured with format. Phone screens auto-add dial-in number. Video interviews create Zoom link. In-person includes office address and parking instructions. Format-specific templates for candidate communication.
+          </p>
+        </details>
+
+        <details class="bg-white p-6 rounded-lg border border-gray-200">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            What about last-minute cancellations?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Candidate or interviewer can cancel via email link. AI immediately notifies all participants, proposes 3 new times, and tracks cancellation reason (sick, emergency, candidate withdrew). High cancellation rates flag problems for recruiter attention.
+          </p>
+        </details>
+
+        <details class="bg-white p-6 rounded-lg border border-gray-200">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            How does it handle executive or C-suite interviews?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Configurable priority and constraints. 'CEO only interviews finalists, only on Tuesdays 2-4pm, needs exec recruiter on call.' AI respects VIP scheduling rules and escalates conflicts to human coordinator.
+          </p>
+        </details>
+
+        <details class="bg-white p-6 rounded-lg border border-gray-200">
+          <summary class="text-xl font-light cursor-pointer hover:text-blue-600">
+            Can candidates see interviewer names and roles beforehand?
+          </summary>
+          <p class="mt-4 text-gray-600 font-light">
+            Configurable. Some companies share full panel (names, titles, LinkedIn) to help candidates prepare. Others keep it generic ('2 senior engineers, 1 product manager'). AI sends chosen level of detail in confirmation email.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-24 md:py-32 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-6xl font-light tracking-tight mb-6">Ready to Build This?</h2>
+      <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+        Get custom implementation in 2-4 weeks. $18K-35K. Proven ROI.
+      </p>
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-12 py-5 rounded-lg font-light text-xl hover:bg-gray-100 transition shadow-lg">
+        Schedule Free Consultation
+      </a>
+      <p class="mt-6 text-gray-300 font-light">No commitment required. 30-minute technical consultation.</p>
+    </div>
+  </section>
+
+<!-- Related Use Cases -->
+<section class="py-16 md:py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Related Use Cases</h2>
+      <p class="text-xl text-gray-600 font-light">Explore similar automation solutions</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <a href="/use-cases/appointment-scheduling-ai/" class="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-lg transition group">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-light text-gray-900 group-hover:text-blue-600 transition">AI Appointment Scheduling</h3>
+            <span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded font-light">Medium</span>
+          </div>
+          <p class="text-gray-600 text-sm font-light mb-4">Automate booking, reminders, rescheduling with AI voice and chat. Technical breakdown from 20+ imple...</p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-500 font-light">⏱️ 2-3 weeks</span>
+            <span class="text-blue-600 font-light group-hover:underline">Learn more →</span>
+          </div>
+        </a>
+
+        <a href="/use-cases/lead-generation-voice-ai/" class="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-lg transition group">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-light text-gray-900 group-hover:text-blue-600 transition">Lead Generation Voice AI</h3>
+            <span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded font-light">Medium</span>
+          </div>
+          <p class="text-gray-600 text-sm font-light mb-4">AI voice agents answer inbound calls, qualify leads, schedule demos, and sync everything to your CRM...</p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-gray-500 font-light">⏱️ 2-4 weeks</span>
+            <span class="text-blue-600 font-light group-hover:underline">Learn more →</span>
+          </div>
+        </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Case Studies -->
+<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="recruiting,hr-tech">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Related Case Studies</h2>
+      <p class="text-xl text-gray-600 font-light">Real projects in recruiting, hr-tech</p>
+    </div>
+    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="Interview Scheduling Automation" data-solution="Interview Scheduling Automation">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">
+      Ready to Implement <span class="industry-name"></span>?
+    </h2>
+    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+      We've built <span class="solution-name"></span> solutions that deliver ROI. Let us build yours.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">
+        Schedule Free Consultation
+      </a>
+      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">
+        View All Projects
+      </a>
+    </div>
+    <p class="mt-6 text-gray-300 font-light">2-4 weeks implementation. $18K-35K. Proven ROI.</p>
+  </div>
+</section>
+
+<!-- Case Study Grid Component -->
+<!-- Usage: Add data-industries="healthcare,dental" to filter -->
+<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Built for Companies Like Yours</h2>
+      <p class="text-xl text-gray-600 font-light">Real projects. Real results. See what we've built.</p>
+    </div>
+    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<!-- Industry-Specific CTA Component -->
+<!-- Usage: Add data-industry="healthcare" and data-solution="AI voice agents" -->
+<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="" data-solution="">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">
+      Ready to Transform <span class="industry-name"></span>?
+    </h2>
+    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+      We've built <span class="solution-name"></span> for <span class="industry-name-lower"></span>. Let us build yours.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">
+        Schedule Free Consultation
+      </a>
+      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">
+        View All Projects
+      </a>
+    </div>
+    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>
+  </div>
+</section>
+
+<!-- Tech Social Proof Component -->
+<!-- Usage: Add data-tech="elevenlabs" or "livekit" -->
+<section class="tech-proof py-12 px-6 bg-blue-50" data-tech="">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-start gap-6">
+      <div class="flex-shrink-0">
+        <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+          <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <div>
+        <h3 class="text-xl font-light mb-2 text-gray-900">We've Built With <span class="tech-name"></span></h3>
+        <p class="text-gray-700 font-light mb-3">
+          P0STMAN has hands-on experience building production AI voice agents with <span class="tech-name-lower"></span>.
+          <span class="tech-details"></span>
+        </p>
+        <a href="/case-studies" class="text-blue-600 font-light hover:text-blue-700">
+          View our AI projects →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Case Study Grid Logic
+(function() {
+  const caseStudies = [
+  {
+    "slug": "clinicbook",
+    "name": "ClinicBook",
+    "title": "AI-Powered Clinic Management System",
+    "industry": [
+      "healthcare",
+      "dental"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "postgresql",
+      "ai-scheduling"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/clinicbook",
+    "thumbnail": "/assets/images/case-studies/clinicbook-dashboard.png",
+    "description": "Modern clinic management with AI-powered scheduling and automated reminders"
+  },
+  {
+    "slug": "doh-health",
+    "name": "Department of Health - UAE",
+    "title": "Healthcare System Transformation",
+    "industry": [
+      "healthcare",
+      "government"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "healthcare-systems"
+    ],
+    "voiceTech": null,
+    "region": "uae",
+    "url": "/case-study/doh-health",
+    "thumbnail": "/assets/images/case-studies/doh-health.png",
+    "description": "Digital transformation for UAE Department of Health"
+  },
+  {
+    "slug": "fab-bank",
+    "name": "FAB Bank",
+    "title": "Banking Digital Experience",
+    "industry": [
+      "fintech",
+      "banking"
+    ],
+    "technologies": [
+      "react",
+      "secure-systems"
+    ],
+    "voiceTech": null,
+    "region": "uae",
+    "url": "/case-study/fab-bank",
+    "thumbnail": "/assets/images/case-studies/fab-bank.png",
+    "description": "Secure digital banking platform for First Abu Dhabi Bank"
+  },
+  {
+    "slug": "barber-booking",
+    "name": "Barber Booking System",
+    "title": "Salon Appointment Platform",
+    "industry": [
+      "beauty",
+      "home-services"
+    ],
+    "technologies": [
+      "react",
+      "booking-system"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/barber-booking",
+    "thumbnail": "/assets/images/case-studies/barber-booking.png",
+    "description": "Modern appointment booking for salons and barber shops"
+  },
+  {
+    "slug": "chilled-crm",
+    "name": "Chilled CRM",
+    "title": "Modern CRM Platform",
+    "industry": [
+      "saas",
+      "crm"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "crm"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/chilled-crm",
+    "thumbnail": "/assets/images/case-studies/chilled-crm.png",
+    "description": "Customer relationship management platform built for modern teams"
+  },
+  {
+    "slug": "serenity",
+    "name": "Serenity",
+    "title": "AI Voice Agent Platform",
+    "industry": [
+      "ai-agents",
+      "saas"
+    ],
+    "technologies": [
+      "react",
+      "nodejs",
+      "elevenlabs",
+      "ai-voice"
+    ],
+    "voiceTech": "elevenlabs",
+    "region": "global",
+    "url": "/case-study/serenity",
+    "thumbnail": "/assets/images/case-studies/serenity.png",
+    "description": "AI voice agent platform built with ElevenLabs for automated customer service"
+  },
+  {
+    "slug": "rhythm",
+    "name": "Rhythm",
+    "title": "AI-Powered Music Platform",
+    "industry": [
+      "entertainment",
+      "ai-agents"
+    ],
+    "technologies": [
+      "react",
+      "ai-music"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/rhythm",
+    "thumbnail": "/assets/images/case-studies/rhythm.png",
+    "description": "AI-powered music discovery and recommendation platform"
+  },
+  {
+    "slug": "genieology",
+    "name": "Genieology",
+    "title": "AI Research Platform",
+    "industry": [
+      "education",
+      "research",
+      "ai-agents"
+    ],
+    "technologies": [
+      "react",
+      "ai-research"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/genieology",
+    "thumbnail": "/assets/images/case-studies/genieology.png",
+    "description": "AI-powered research and discovery platform"
+  },
+  {
+    "slug": "experience-gift",
+    "name": "Experience a Gift",
+    "title": "E-commerce Gift Platform",
+    "industry": [
+      "ecommerce",
+      "retail"
+    ],
+    "technologies": [
+      "react",
+      "ecommerce"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/experience-a-gift",
+    "thumbnail": "/assets/images/case-studies/experience-a-gift.png",
+    "description": "Modern e-commerce platform for experience gifts"
+  },
+  {
+    "slug": "arabian-malls",
+    "name": "Arabian Malls",
+    "title": "Mall Management Platform",
+    "industry": [
+      "retail",
+      "property-management"
+    ],
+    "technologies": [
+      "react",
+      "management-system"
+    ],
+    "voiceTech": null,
+    "region": "middle-east",
+    "url": "/case-study/arabian-malls",
+    "thumbnail": "/assets/images/case-studies/arabian-malls.png",
+    "description": "Digital transformation for UAE shopping mall management"
+  },
+  {
+    "slug": "al-arabiya",
+    "name": "Al Arabiya",
+    "title": "Media Platform",
+    "industry": [
+      "media",
+      "entertainment"
+    ],
+    "technologies": [
+      "react",
+      "media-streaming"
+    ],
+    "voiceTech": null,
+    "region": "middle-east",
+    "url": "/case-study/al-arabiya",
+    "thumbnail": "/assets/images/case-studies/al-arabiya.png",
+    "description": "Digital media platform for leading news broadcaster"
+  },
+  {
+    "slug": "etihad-airways",
+    "name": "Etihad Airways",
+    "title": "Airline Digital Experience",
+    "industry": [
+      "travel",
+      "hospitality"
+    ],
+    "technologies": [
+      "react",
+      "booking-system"
+    ],
+    "voiceTech": null,
+    "region": "uae",
+    "url": "/case-study/etihad-airways",
+    "thumbnail": "/assets/images/case-studies/etihad-airways.png",
+    "description": "Premium digital experience for UAE national airline"
+  },
+  {
+    "slug": "harmony",
+    "name": "Harmony",
+    "title": "Wellness Platform",
+    "industry": [
+      "fitness",
+      "healthcare"
+    ],
+    "technologies": [
+      "react",
+      "wellness"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/harmony",
+    "thumbnail": "/assets/images/case-studies/harmony.png",
+    "description": "Integrated wellness and fitness tracking platform"
+  },
+  {
+    "slug": "fitlink",
+    "name": "Fitlink",
+    "title": "Fitness Tracking App",
+    "industry": [
+      "fitness",
+      "health-tech"
+    ],
+    "technologies": [
+      "react",
+      "fitness-tracking"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/fitlink",
+    "thumbnail": "/assets/images/case-studies/fitlink.png",
+    "description": "Modern fitness tracking and community platform"
+  },
+  {
+    "slug": "yacht-os",
+    "name": "YachtOS",
+    "title": "Luxury Yacht Management",
+    "industry": [
+      "luxury",
+      "property-management"
+    ],
+    "technologies": [
+      "react",
+      "iot"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/yacht-os",
+    "thumbnail": "/assets/images/case-studies/yacht-os.png",
+    "description": "Smart yacht management and control system"
+  },
+  {
+    "slug": "bfit-web3",
+    "name": "BFIT Web3",
+    "title": "Web3 Fitness Platform",
+    "industry": [
+      "fitness",
+      "web3",
+      "blockchain"
+    ],
+    "technologies": [
+      "react",
+      "blockchain",
+      "web3"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/bfit-web3",
+    "thumbnail": "/assets/images/case-studies/bfit-web3.png",
+    "description": "Web3-powered fitness platform with token rewards"
+  },
+  {
+    "slug": "chilled-sites",
+    "name": "Chilled Sites",
+    "title": "Website Builder Platform",
+    "industry": [
+      "saas",
+      "web-development"
+    ],
+    "technologies": [
+      "react",
+      "website-builder"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/chilled-sites",
+    "thumbnail": "/assets/images/case-studies/chilled-sites.png",
+    "description": "No-code website builder for modern businesses"
+  },
+  {
+    "slug": "pathfinder",
+    "name": "Pathfinder",
+    "title": "Career Development Platform",
+    "industry": [
+      "education",
+      "hr-tech"
+    ],
+    "technologies": [
+      "react",
+      "ai-matching"
+    ],
+    "voiceTech": null,
+    "region": "global",
+    "url": "/case-study/pathfinder",
+    "thumbnail": "/assets/images/case-studies/pathfinder.png",
+    "description": "AI-powered career path recommendation platform"
+  }
+];
+
+  function loadCaseStudies() {
+    const grids = document.querySelectorAll('.case-study-grid');
+
+    grids.forEach(grid => {
+      const container = grid.querySelector('#case-studies-container');
+      if (!container) return;
+
+      const filterIndustries = (grid.dataset.industries || '').split(',').filter(Boolean);
+      const filterTech = grid.dataset.tech || '';
+      const filterRegion = grid.dataset.region || '';
+
+      // Filter case studies
+      let filtered = caseStudies;
+
+      if (filterIndustries.length > 0) {
+        filtered = filtered.filter(cs =>
+          cs.industry.some(ind => filterIndustries.includes(ind))
+        );
+      }
+
+      if (filterTech) {
+        filtered = filtered.filter(cs =>
+          cs.voiceTech === filterTech ||
+          cs.technologies.includes(filterTech)
+        );
+      }
+
+      if (filterRegion) {
+        filtered = filtered.filter(cs =>
+          cs.region === filterRegion || cs.region === 'global'
+        );
+      }
+
+      // Shuffle and take 6
+      const shuffled = filtered.sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 6);
+
+      // Function to generate gradient based on company name
+      function getGradient(name) {
+        const gradients = [
+          'from-blue-500 to-blue-600',
+          'from-purple-500 to-purple-600',
+          'from-pink-500 to-pink-600',
+          'from-indigo-500 to-indigo-600',
+          'from-cyan-500 to-cyan-600',
+          'from-teal-500 to-teal-600',
+          'from-green-500 to-green-600',
+          'from-orange-500 to-orange-600',
+          'from-red-500 to-red-600',
+          'from-violet-500 to-violet-600'
+        ];
+        const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+        return gradients[hash % gradients.length];
+      }
+
+      // Function to get company initials
+      function getInitials(name) {
+        return name.split(' ')
+          .map(word => word[0])
+          .join('')
+          .toUpperCase()
+          .substring(0, 2);
+      }
+
+      // Render cards
+      container.innerHTML = selected.map(cs => {
+        const gradient = getGradient(cs.name);
+        const initials = getInitials(cs.name);
+
+        return `
+        <a href="${cs.url}" class="group block bg-white rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all overflow-hidden">
+          <div class="aspect-video bg-gradient-to-br ${gradient} relative overflow-hidden flex items-center justify-center">
+            <div class="text-white text-6xl font-bold opacity-20">${initials}</div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-light text-lg mb-1 drop-shadow-lg">${cs.name}</h3>
+              <p class="text-white/90 text-sm font-light drop-shadow">${cs.title}</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 font-light text-sm mb-4">${cs.description}</p>
+            <div class="flex flex-wrap gap-2">
+              ${cs.industry.slice(0, 2).map(ind => `
+                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded font-light">
+                  ${ind}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+        </a>
+      `;
+      }).join('');
+    });
+  }
+
+  // Industry CTA Logic
+  function loadIndustryCTAs() {
+    const ctas = document.querySelectorAll('.industry-cta');
+
+    ctas.forEach(cta => {
+      const industry = cta.dataset.industry || 'Your Industry';
+      const solution = cta.dataset.solution || 'AI solutions';
+
+      const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+      const industryNameLower = industry.toLowerCase();
+
+      cta.querySelectorAll('.industry-name').forEach(el => el.textContent = industryName);
+      cta.querySelectorAll('.industry-name-lower').forEach(el => el.textContent = industryNameLower);
+      cta.querySelectorAll('.solution-name').forEach(el => el.textContent = solution);
+    });
+  }
+
+  // Tech Social Proof Logic
+  function loadTechProof() {
+    const proofs = document.querySelectorAll('.tech-proof');
+
+    const techDetails = {
+      'elevenlabs': {
+        name: 'ElevenLabs',
+        details: 'Our website uses ElevenLabs Conversational AI for the live voice agent demo. We\'ve also built production voice agents for client projects using their platform.'
+      },
+      'livekit': {
+        name: 'LiveKit',
+        details: 'We\'ve implemented LiveKit for real-time voice applications requiring low latency and custom workflow control.'
+      },
+      'custom': {
+        name: 'Custom Voice AI',
+        details: 'We build custom voice AI solutions from scratch when clients need maximum flexibility and control.'
+      }
+    };
+
+    proofs.forEach(proof => {
+      const tech = proof.dataset.tech;
+      const details = techDetails[tech];
+
+      if (!details) {
+        proof.style.display = 'none';
+        return;
+      }
+
+      proof.querySelectorAll('.tech-name').forEach(el => el.textContent = details.name);
+      proof.querySelectorAll('.tech-name-lower').forEach(el => el.textContent = details.name);
+      proof.querySelectorAll('.tech-details').forEach(el => el.textContent = details.details);
+    });
+  }
+
+  // Initialize on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCaseStudies();
+      loadIndustryCTAs();
+      loadTechProof();
+    });
+  } else {
+    loadCaseStudies();
+    loadIndustryCTAs();
+    loadTechProof();
+  }
+})();
+</script>
+  <!-- Footer - Matches FooterV3 -->
+  <footer class="bg-gray-900 text-white py-16 md:py-24 px-6 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-16 mb-16 md:mb-24">
+        <!-- Product Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Product</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/ai-agents" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">AI Agents</a></li>
+            <li><a href="/website" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">MVP Launch</a></li>
+            <li><a href="/mobile-app" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Mobile App</a></li>
+            <li><a href="/services" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Company</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/about" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">About</a></li>
+            <li><a href="/process" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Process</a></li>
+            <li><a href="/case-studies" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Case Studies</a></li>
+            <li><a href="/contact" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Services</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/fractional-cpo" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Fractional CPO</a></li>
+            <li><a href="/product-strategy" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Product Strategy</a></li>
+            <li><a href="/ai-platform-development" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">AI Platform Dev</a></li>
+            <li><a href="/digital-transformation" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Digital Transform</a></li>
+            <li><a href="/retainer" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Retainer Program</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Industries</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/industries/healthcare" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Healthcare</a></li>
+            <li><a href="/industries/legal" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Legal</a></li>
+            <li><a href="/industries/real-estate" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Real Estate</a></li>
+            <li><a href="/industries/saas" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">SaaS</a></li>
+            <li><a href="/industries" class="text-sm font-light text-blue-400 hover:text-blue-300 hover:underline transition-colors">View All →</a></li>
+          </ul>
+        </div>
+
+        <!-- Guides Column -->
+        <div class="flex flex-col space-y-6">
+          <h3 class="text-sm font-light text-gray-400 uppercase tracking-wider">Guides</h3>
+          <ul class="flex flex-col space-y-4">
+            <li><a href="/guides" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">All Guides</a></li>
+            <li><a href="/guides/ai-agent-development-cost-timeline-guide-2025.html" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">AI Cost Guide</a></li>
+            <li><a href="/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">Voice AI Platforms</a></li>
+            <li><a href="/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html" class="text-sm font-light text-gray-300 hover:text-white hover:underline transition-colors">How AI Works</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-800 pt-12 md:pt-16">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <!-- Brand & Tagline -->
+          <div class="text-center md:text-left">
+            <a href="/" class="text-xl font-light text-white hover:text-blue-400 transition-colors mb-2 block">
+              P0STMAN
+            </a>
+            <p class="text-sm text-gray-500 font-light">
+              AI-Powered Product Studio. Built for speed. Shipped with care.
+            </p>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex gap-4 items-center">
+            <a href="https://linkedin.com/in/pgosnell" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="https://twitter.com/paulgosnell" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="https://github.com/paulgosnell" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path></svg>
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <p class="text-sm text-gray-500 font-light">
+            © 2025 P0STMAN
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

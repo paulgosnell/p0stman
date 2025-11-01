@@ -222,10 +222,54 @@ function generateFAQHTML(faqs) {
   return items.join('\n');
 }
 
+// Helper function to generate related use cases section
+function generateRelatedUseCasesSection(useCase, allUseCases) {
+  if (!useCase.relatedUseCases || useCase.relatedUseCases.length === 0) {
+    return '';
+  }
+
+  const relatedCases = allUseCases.filter(uc =>
+    useCase.relatedUseCases.includes(uc.slug) && uc.slug !== useCase.slug
+  );
+
+  if (relatedCases.length === 0) {
+    return '';
+  }
+
+  const cards = relatedCases.map(related => {
+    return '\n        <a href="/use-cases/' + related.slug + '/" class="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-lg transition group">' +
+      '\n          <div class="flex items-start justify-between mb-3">' +
+      '\n            <h3 class="text-xl font-light text-gray-900 group-hover:text-blue-600 transition">' + related.name + '</h3>' +
+      '\n            <span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded font-light">' + related.complexity + '</span>' +
+      '\n          </div>' +
+      '\n          <p class="text-gray-600 text-sm font-light mb-4">' + related.heroSubtext.substring(0, 100) + '...</p>' +
+      '\n          <div class="flex items-center justify-between text-sm">' +
+      '\n            <span class="text-gray-500 font-light">⏱️ ' + related.typicalTimeline + '</span>' +
+      '\n            <span class="text-blue-600 font-light group-hover:underline">Learn more →</span>' +
+      '\n          </div>' +
+      '\n        </a>';
+  });
+
+  return '\n<!-- Related Use Cases -->\n' +
+    '<section class="py-16 md:py-24 px-6 bg-white">\n' +
+    '  <div class="max-w-6xl mx-auto">\n' +
+    '    <div class="text-center mb-12">\n' +
+    '      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Related Use Cases</h2>\n' +
+    '      <p class="text-xl text-gray-600 font-light">Explore similar automation solutions</p>\n' +
+    '    </div>\n' +
+    '    <div class="grid grid-cols-1 md:grid-cols-' + Math.min(relatedCases.length, 3) + ' gap-6">\n' +
+    cards.join('\n') + '\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '</section>\n\n';
+}
+
 // Helper function to generate conversion sections
-function generateConversionSections(useCase) {
+function generateConversionSections(useCase, allUseCases) {
   const industries = useCase.relatedIndustries.join(',');
   const useCaseName = useCase.name;
+
+  const relatedUseCasesSection = generateRelatedUseCasesSection(useCase, allUseCases);
 
   const caseStudySection = '\n<!-- Case Studies -->\n' +
     '<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="' + industries + '">\n' +
@@ -258,7 +302,7 @@ function generateConversionSections(useCase) {
     '  </div>\n' +
     '</section>\n\n';
 
-  return caseStudySection + ctaSection;
+  return relatedUseCasesSection + caseStudySection + ctaSection;
 }
 
 // Generate individual use case pages
@@ -271,7 +315,7 @@ useCases.forEach((useCase, index) => {
   const realWorldMetricsHTML = generateRealWorldMetricsHTML(useCase.realWorldMetrics);
   const commonPitfallsHTML = generateCommonPitfallsHTML(useCase.commonPitfalls);
   const faqHTML = generateFAQHTML(useCase.faqs);
-  const conversionSections = generateConversionSections(useCase);
+  const conversionSections = generateConversionSections(useCase, useCases);
 
   // Replace all placeholders
   let html = headerTemplate
