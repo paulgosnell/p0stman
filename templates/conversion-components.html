@@ -1,0 +1,191 @@
+<!-- Case Study Grid Component -->
+<!-- Usage: Add data-industries="healthcare,dental" to filter -->
+<section class="case-study-grid py-16 md:py-24 px-6 bg-gray-50" data-industries="">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-4 text-gray-900">Built for Companies Like Yours</h2>
+      <p class="text-xl text-gray-600 font-light">Real projects. Real results. See what we've built.</p>
+    </div>
+    <div id="case-studies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
+<!-- Industry-Specific CTA Component -->
+<!-- Usage: Add data-industry="healthcare" and data-solution="AI voice agents" -->
+<section class="industry-cta py-16 md:py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" data-industry="" data-solution="">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-light tracking-tight mb-6">
+      Ready to Transform <span class="industry-name"></span>?
+    </h2>
+    <p class="text-xl md:text-2xl mb-8 text-gray-300 font-light">
+      We've built <span class="solution-name"></span> for <span class="industry-name-lower"></span>. Let us build yours.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="inline-block bg-white text-gray-900 px-10 py-4 rounded-lg font-light text-lg hover:bg-gray-100 transition">
+        Schedule Free Consultation
+      </a>
+      <a href="/case-studies" class="inline-block bg-white/10 text-white border border-white/20 px-10 py-4 rounded-lg font-light text-lg hover:bg-white/20 transition">
+        View All Projects
+      </a>
+    </div>
+    <p class="mt-6 text-gray-300 font-light">From $5K. 6-day implementation. Proven ROI.</p>
+  </div>
+</section>
+
+<!-- Tech Social Proof Component -->
+<!-- Usage: Add data-tech="elevenlabs" or "livekit" -->
+<section class="tech-proof py-12 px-6 bg-blue-50" data-tech="">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-start gap-6">
+      <div class="flex-shrink-0">
+        <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+          <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <div>
+        <h3 class="text-xl font-light mb-2 text-gray-900">We've Built With <span class="tech-name"></span></h3>
+        <p class="text-gray-700 font-light mb-3">
+          P0STMAN has hands-on experience building production AI voice agents with <span class="tech-name-lower"></span>.
+          <span class="tech-details"></span>
+        </p>
+        <a href="/case-studies" class="text-blue-600 font-light hover:text-blue-700">
+          View our AI projects →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Case Study Grid Logic
+(function() {
+  const caseStudies = {{CASE_STUDIES_JSON}};
+
+  function loadCaseStudies() {
+    const grids = document.querySelectorAll('.case-study-grid');
+
+    grids.forEach(grid => {
+      const container = grid.querySelector('#case-studies-container');
+      if (!container) return;
+
+      const filterIndustries = (grid.dataset.industries || '').split(',').filter(Boolean);
+      const filterTech = grid.dataset.tech || '';
+      const filterRegion = grid.dataset.region || '';
+
+      // Filter case studies
+      let filtered = caseStudies;
+
+      if (filterIndustries.length > 0) {
+        filtered = filtered.filter(cs =>
+          cs.industry.some(ind => filterIndustries.includes(ind))
+        );
+      }
+
+      if (filterTech) {
+        filtered = filtered.filter(cs =>
+          cs.voiceTech === filterTech ||
+          cs.technologies.includes(filterTech)
+        );
+      }
+
+      if (filterRegion) {
+        filtered = filtered.filter(cs =>
+          cs.region === filterRegion || cs.region === 'global'
+        );
+      }
+
+      // Shuffle and take 6
+      const shuffled = filtered.sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 6);
+
+      // Render cards
+      container.innerHTML = selected.map(cs => `
+        <a href="${cs.url}" class="group block bg-white rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all overflow-hidden">
+          <div class="aspect-video bg-gray-100 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="text-white font-light text-lg mb-1">${cs.name}</h3>
+              <p class="text-gray-200 text-sm font-light">${cs.title}</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 font-light text-sm mb-4">${cs.description}</p>
+            <div class="flex flex-wrap gap-2">
+              ${cs.industry.slice(0, 2).map(ind => `
+                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded font-light">
+                  ${ind}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+        </a>
+      `).join('');
+    });
+  }
+
+  // Industry CTA Logic
+  function loadIndustryCTAs() {
+    const ctas = document.querySelectorAll('.industry-cta');
+
+    ctas.forEach(cta => {
+      const industry = cta.dataset.industry || 'Your Industry';
+      const solution = cta.dataset.solution || 'AI solutions';
+
+      const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+      const industryNameLower = industry.toLowerCase();
+
+      cta.querySelectorAll('.industry-name').forEach(el => el.textContent = industryName);
+      cta.querySelectorAll('.industry-name-lower').forEach(el => el.textContent = industryNameLower);
+      cta.querySelectorAll('.solution-name').forEach(el => el.textContent = solution);
+    });
+  }
+
+  // Tech Social Proof Logic
+  function loadTechProof() {
+    const proofs = document.querySelectorAll('.tech-proof');
+
+    const techDetails = {
+      'elevenlabs': {
+        name: 'ElevenLabs',
+        details: 'Our website uses ElevenLabs Conversational AI for the live voice agent demo. We\'ve also built production voice agents for client projects using their platform.'
+      },
+      'livekit': {
+        name: 'LiveKit',
+        details: 'We\'ve implemented LiveKit for real-time voice applications requiring low latency and custom workflow control.'
+      },
+      'custom': {
+        name: 'Custom Voice AI',
+        details: 'We build custom voice AI solutions from scratch when clients need maximum flexibility and control.'
+      }
+    };
+
+    proofs.forEach(proof => {
+      const tech = proof.dataset.tech;
+      const details = techDetails[tech];
+
+      if (!details) {
+        proof.style.display = 'none';
+        return;
+      }
+
+      proof.querySelectorAll('.tech-name').forEach(el => el.textContent = details.name);
+      proof.querySelectorAll('.tech-name-lower').forEach(el => el.textContent = details.name);
+      proof.querySelectorAll('.tech-details').forEach(el => el.textContent = details.details);
+    });
+  }
+
+  // Initialize on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCaseStudies();
+      loadIndustryCTAs();
+      loadTechProof();
+    });
+  } else {
+    loadCaseStudies();
+    loadIndustryCTAs();
+    loadTechProof();
+  }
+})();
+</script>
