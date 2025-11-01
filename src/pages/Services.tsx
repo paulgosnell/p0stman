@@ -12,7 +12,6 @@ interface Service {
   tagline: string;
   description: string;
   whatYouGet: string[];
-  pricing: string;
   timeline: string;
   examples: string;
   cta: string;
@@ -32,7 +31,6 @@ const services: Service[] = [
       'Call routing & escalation logic',
       '30 days of refinement & tuning'
     ],
-    pricing: 'From $5K',
     timeline: '6-day pilot, 2-3 weeks production',
     examples: 'Real estate lead qualification, medical appointment booking, customer support screening',
     cta: 'Build Voice Agent'
@@ -50,7 +48,6 @@ const services: Service[] = [
       'Payment integration (Stripe)',
       'Hosting & deployment setup'
     ],
-    pricing: 'From $10K',
     timeline: '6-day MVP, 3-week production',
     examples: 'SaaS dashboards, booking platforms, e-commerce systems, portfolio sites',
     cta: 'Build Website'
@@ -68,7 +65,6 @@ const services: Service[] = [
       'App store submission support',
       'Backend API integration'
     ],
-    pricing: 'From $20K',
     timeline: '3-4 weeks MVP',
     examples: 'Wellness tracking, booking apps, social platforms, productivity tools',
     cta: 'Build Mobile App'
@@ -86,7 +82,6 @@ const services: Service[] = [
       'Cost optimization & caching',
       'Production monitoring & observability'
     ],
-    pricing: 'From $5K',
     timeline: '1-2 weeks pilot, 2-4 weeks production',
     examples: 'Code generation platforms, document processing, customer support bots, content creation tools',
     cta: 'Build AI Platform'
@@ -104,7 +99,6 @@ const services: Service[] = [
       'Migration execution',
       'Ongoing advisory & oversight'
     ],
-    pricing: 'Custom (typically $50K+)',
     timeline: '3-12 months',
     examples: 'FAB Bank (1→40 team scale), platform re-architecture, cloud migration, API modernization',
     cta: 'Discuss Transformation'
@@ -122,7 +116,6 @@ const services: Service[] = [
       'Vendor & agency management',
       'Board-level reporting'
     ],
-    pricing: 'From $5K/month',
     timeline: 'Ongoing retainer',
     examples: 'Pre-seed startups needing product strategy, agencies scaling delivery teams, enterprises launching new products',
     cta: 'Get Leadership'
@@ -149,9 +142,7 @@ export default function Services() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="inline-block px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full">
-                <span className="text-blue-600 dark:text-blue-400 font-medium text-sm">What We Build</span>
-              </div>
+              <p className="text-sm text-gray-400 uppercase tracking-wider">What We Build</p>
 
               <h1 className="text-5xl md:text-6xl font-thin text-gray-900 dark:text-gray-100 leading-tight max-w-4xl">
                 Agency-Quality Work. <br />
@@ -212,16 +203,9 @@ export default function Services() {
                         </p>
                       </div>
 
-                      <div className="pt-4 space-y-2">
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-2xl font-light text-gray-900 dark:text-gray-100">
-                            {service.pricing}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {service.timeline}
-                        </p>
-                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 pt-4">
+                        Timeline: {service.timeline}
+                      </p>
 
                       <a
                         href="/contact"
