@@ -10,6 +10,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     projectType: '',
+    budget: '',
     timeline: '',
     description: ''
   });
@@ -58,6 +59,7 @@ export default function ContactForm() {
         email: formData.email,
         form_type: 'contact_page',
         project_type: formData.projectType,
+        budget: formData.budget,
         timeline: formData.timeline,
         description: formData.description,
         message: formData.description, // EmailJS template may expect 'message' field
@@ -70,6 +72,7 @@ export default function ContactForm() {
           source_page: referrer,
           form_type: 'contact_page',
           project_type: formData.projectType,
+          budget: formData.budget,
           timeline: formData.timeline
         });
       }
@@ -79,6 +82,7 @@ export default function ContactForm() {
         name: '',
         email: '',
         projectType: '',
+        budget: '',
         timeline: '',
         description: ''
       });
@@ -161,7 +165,7 @@ export default function ContactForm() {
 
             <div>
               <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2" htmlFor="contact_page_project_type">
-                Project Type
+                What are you looking to build?
               </label>
               <select
                 id="contact_page_project_type"
@@ -175,14 +179,42 @@ export default function ContactForm() {
                 required
               >
                 <option value="">Select project type</option>
-                <option value="Builder's Guide">Builder's Guide ($50)</option>
-                <option value="Expert Support">Expert Support ($100)</option>
-                <option value="Expert Training">Expert Training ($500)</option>
-                <option value="Retainer Service">Retainer Service ($5,000/mo)</option>
-                <option value="Custom Website">Custom Website ($10,000)</option>
-                <option value="Mobile App">Mobile App ($20,000)</option>
-                <option value="AI Agents">AI Agents ($5,000)</option>
+                <option value="AI Voice Agents">AI Voice Agents (from $5K)</option>
+                <option value="Custom Website">Custom Website (from $10K)</option>
+                <option value="Mobile App">Mobile App (from $20K)</option>
+                <option value="AI Platform Development">AI Platform Development (from $5K)</option>
+                <option value="Digital Transformation">Digital Transformation (custom)</option>
+                <option value="Retainer Service">Retainer Service ($5K/mo)</option>
+                <option value="Fractional CPO">Fractional CPO (custom)</option>
+                <option value="Consultation">Expert Consultation ($100/hr)</option>
+                <option value="Not Sure">Not Sure - Need Guidance</option>
                 <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2" htmlFor="contact_page_budget">
+                What's your budget?
+              </label>
+              <select
+                id="contact_page_budget"
+                name="budget"
+                value={formData.budget}
+                onChange={(e) => {
+                  handleFormStart();
+                  setFormData({ ...formData, budget: e.target.value });
+                }}
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 focus:outline-none"
+                required
+              >
+                <option value="">Select budget range</option>
+                <option value="Under $5K">Under $5K</option>
+                <option value="$5K - $10K">$5K - $10K</option>
+                <option value="$10K - $20K">$10K - $20K</option>
+                <option value="$20K - $50K">$20K - $50K</option>
+                <option value="$50K - $100K">$50K - $100K</option>
+                <option value="$100K+">$100K+</option>
+                <option value="Not Sure">Not Sure Yet</option>
               </select>
             </div>
 
