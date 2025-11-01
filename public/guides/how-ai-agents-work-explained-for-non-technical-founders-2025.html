@@ -196,6 +196,7 @@
   </script>
 <main class="container-premium-wide py-16">
 
+
     <article class="max-w-4xl mx-auto">
       <header class="mb-12">
         <h1 class="text-premium-5xl font-bold text-gradient-purple mb-6">How AI Agents Actually Work (Non-Technical Guide)</h1>
@@ -414,6 +415,7 @@
       <div id="cta-placeholder" data-title="Ready to Build Your AI Agent?" data-description="Understand your use case and get transparent pricing. No technical expertise required."></div>
     </article>
   
+
 </main>
 
 
@@ -883,14 +885,46 @@
       const shuffled = filtered.sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, 6);
 
+      // Function to generate gradient based on company name
+      function getGradient(name) {
+        const gradients = [
+          'from-blue-500 to-blue-600',
+          'from-purple-500 to-purple-600',
+          'from-pink-500 to-pink-600',
+          'from-indigo-500 to-indigo-600',
+          'from-cyan-500 to-cyan-600',
+          'from-teal-500 to-teal-600',
+          'from-green-500 to-green-600',
+          'from-orange-500 to-orange-600',
+          'from-red-500 to-red-600',
+          'from-violet-500 to-violet-600'
+        ];
+        const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+        return gradients[hash % gradients.length];
+      }
+
+      // Function to get company initials
+      function getInitials(name) {
+        return name.split(' ')
+          .map(word => word[0])
+          .join('')
+          .toUpperCase()
+          .substring(0, 2);
+      }
+
       // Render cards
-      container.innerHTML = selected.map(cs => `
+      container.innerHTML = selected.map(cs => {
+        const gradient = getGradient(cs.name);
+        const initials = getInitials(cs.name);
+
+        return `
         <a href="${cs.url}" class="group block bg-white rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all overflow-hidden">
-          <div class="aspect-video bg-gray-100 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-transparent"></div>
+          <div class="aspect-video bg-gradient-to-br ${gradient} relative overflow-hidden flex items-center justify-center">
+            <div class="text-white text-6xl font-bold opacity-20">${initials}</div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4">
-              <h3 class="text-white font-light text-lg mb-1">${cs.name}</h3>
-              <p class="text-gray-200 text-sm font-light">${cs.title}</p>
+              <h3 class="text-white font-light text-lg mb-1 drop-shadow-lg">${cs.name}</h3>
+              <p class="text-white/90 text-sm font-light drop-shadow">${cs.title}</p>
             </div>
           </div>
           <div class="p-6">
@@ -904,7 +938,8 @@
             </div>
           </div>
         </a>
-      `).join('');
+      `;
+      }).join('');
     });
   }
 
