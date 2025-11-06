@@ -104,11 +104,11 @@ export default function ChilledSites() {
           <meta property="og:title" content="Chilled Sites Case Study | AI Website Builder" />
           <meta property="og:description" content="AI-powered website builder that turns prompts into professional websites in minutes." />
           <meta property="og:type" content="article" />
-          <meta property="og:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png" />
+          <meta property="og:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Chilled Sites Case Study | AI Website Builder" />
           <meta name="twitter:description" content="AI-powered website builder that turns prompts into professional websites in minutes." />
-          <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png" />
+          <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/chilled-sites" />
         </Helmet>
         
@@ -151,7 +151,7 @@ export default function ChilledSites() {
           description={solution.description}
           approach={solution.approach}
           outcome={solution.outcome}
-          image="https://chilledsites.com/images/chilledsites-edit.png"
+          image="https://api.chilledsites.com/storage/v1/object/public/p0stman/canvas.png"
           technologies={technologies}
           features={features}
           liveUrl="https://chilledsites.com"
@@ -162,8 +162,8 @@ export default function ChilledSites() {
           description={benefits.description}
           items={benefits.items}
           points={results}
-          image="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png"
-          secondaryImage="https://chilledsites.com/images/chilledsites-grow.png"
+          image="https://api.chilledsites.com/storage/v1/object/public/p0stman/dashboard.png"
+          secondaryImage="https://api.chilledsites.com/storage/v1/object/public/p0stman/workflow.png"
         />
 
         <Footer

@@ -76,7 +76,7 @@ const caseStudies: CaseStudy[] = [
     problem: 'Building professional websites requires technical expertise most people don\'t have.',
     solution: 'AI-powered platform that turns a prompt, photo, or email into a fully hosted website in minutes. Complete with SEO, analytics, and Web3 deployment.',
     result: 'Users build professional sites in under 10 minutes. 2500+ websites created. £5,000+ cost savings vs traditional agencies.',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png',
     liveUrl: 'https://chilledsites.com',
     fullWidthImage: true
   },
