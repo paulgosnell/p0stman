@@ -56,6 +56,7 @@ export default function CaseHeroLuxury({
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -69,10 +70,19 @@ export default function CaseHeroLuxury({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [navigate, prevCase, nextCase]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show header background when scrolled past hero (viewport height)
+      setScrolled(window.scrollY > window.innerHeight - 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       {/* Transparent Header - HeaderV3Global Style */}
-      <header className="fixed top-0 left-0 right-0 z-[100] backdrop-blur-md bg-gradient-to-b from-black/60 to-black/20">
+      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-gradient-to-b from-black/60 to-black/20' : ''}`}>
         <div className="max-w-6xl mx-auto px-6 md:px-0 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
@@ -212,7 +222,6 @@ export default function CaseHeroLuxury({
 
         {/* Enhanced Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
 
         {/* Additional dark vignette for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
@@ -381,7 +390,7 @@ export default function CaseHeroLuxury({
                   className="border-l-2 border-white/60 pl-4"
                 >
                   <div
-                    className={`text-4xl md:text-5xl font-light mb-2 ${stat.color || 'text-white'}`}
+                    className="text-4xl md:text-5xl font-light mb-2 text-white"
                     style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                   >
                     {stat.value}
@@ -411,9 +420,6 @@ export default function CaseHeroLuxury({
           <ArrowDown className="w-6 h-6" strokeWidth={1} />
         </motion.div>
       </motion.div>
-
-      {/* Bottom Gradient Fade to White */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
     </section>
     </>
   );
