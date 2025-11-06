@@ -391,7 +391,11 @@ export default function CaseHeroLuxury({
                 >
                   <div
                     className="text-4xl md:text-5xl font-light mb-2 text-white"
-                    style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
+                    style={{
+                      fontFamily: "'Playfair Display', 'Georgia', serif",
+                      color: '#FFFFFF',
+                      textShadow: '0 2px 15px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)'
+                    }}
                   >
                     {stat.value}
                   </div>
