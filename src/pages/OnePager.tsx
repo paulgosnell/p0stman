@@ -122,7 +122,7 @@ export default function OnePager() {
               >
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                   {/* Image with Number Overlay */}
-                  <div className="md:col-span-3 relative">
+                  <div className="md:col-span-5 relative">
                     {/* Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
                       <img
@@ -141,7 +141,7 @@ export default function OnePager() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-9">
+                  <div className="md:col-span-7">
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Yacht OS — AI-Native Platform
                     </h4>
@@ -168,7 +168,7 @@ export default function OnePager() {
               >
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                   {/* Image with Number Overlay */}
-                  <div className="md:col-span-3 relative">
+                  <div className="md:col-span-5 relative">
                     {/* Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
                       <img
@@ -187,7 +187,7 @@ export default function OnePager() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-9">
+                  <div className="md:col-span-7">
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       ADHD Coaching App — Mental Health Platform
                     </h4>
@@ -214,7 +214,7 @@ export default function OnePager() {
               >
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                   {/* Image with Number Overlay */}
-                  <div className="md:col-span-3 relative">
+                  <div className="md:col-span-5 relative">
                     {/* Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
                       <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
@@ -231,7 +231,7 @@ export default function OnePager() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-9">
+                  <div className="md:col-span-7">
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Luxury Sweden Travel — AI Concierge Website
                     </h4>
