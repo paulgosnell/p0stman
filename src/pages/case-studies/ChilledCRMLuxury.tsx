@@ -103,7 +103,7 @@ export default function ChilledCRMLuxuryCase() {
         backgroundVideo="https://cdn.pixabay.com/video/2021/07/14/81457-576317119_large.mp4"
         stats={[
           { label: 'Development Time', value: '4 Weeks' },
-          { label: 'Team Size', value: '1 Developer' },
+          { label: 'Team Size', value: '1 Dev' },
           { label: 'Cost Savings', value: '70%' },
           { label: 'Manual Work Reduced', value: '70%' }
         ]}
