@@ -123,7 +123,7 @@ export default function OnePager() {
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                   {/* Image with Number Overlay */}
                   <div className="md:col-span-5 relative">
-                    {/* Image Container with Padding and Border */}
+                    {/* Main Desktop Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
                       <img
                         src="/agents/yachtos-2.png"
@@ -132,9 +132,20 @@ export default function OnePager() {
                       />
                     </div>
 
+                    {/* Mobile Image Overlay - Positioned Right */}
+                    <div className="absolute -right-8 bottom-8 w-32 md:w-40 z-10">
+                      <div className="p-1 border border-gray-300 bg-white shadow-2xl">
+                        <img
+                          src="/agents/yachtos-mobile-1.png"
+                          alt="Yacht OS Mobile"
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    </div>
+
                     {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
                     <div
-                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg z-20"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
                       <span className="text-3xl font-light text-gray-900">01</span>
@@ -169,7 +180,7 @@ export default function OnePager() {
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                   {/* Image with Number Overlay */}
                   <div className="md:col-span-5 relative">
-                    {/* Image Container with Padding and Border */}
+                    {/* Main Desktop Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
                       <img
                         src="/agents/pathfinder-1.png"
@@ -178,9 +189,20 @@ export default function OnePager() {
                       />
                     </div>
 
+                    {/* Mobile Image Overlay - Positioned Right */}
+                    <div className="absolute -right-8 bottom-8 w-32 md:w-40 z-10">
+                      <div className="p-1 border border-gray-300 bg-white shadow-2xl">
+                        <img
+                          src="/agents/pathfinder-mobile-1.png"
+                          alt="ADHD Coaching App Mobile"
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    </div>
+
                     {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
                     <div
-                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg z-20"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
                       <span className="text-3xl font-light text-gray-900">02</span>
