@@ -399,7 +399,7 @@ export default function CaseHeroLuxury({
                   >
                     {stat.value}
                   </div>
-                  <div className="text-white/70 text-sm font-light tracking-wide">
+                  <div className="text-white/70 text-sm font-light tracking-wide" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                     {stat.label}
                   </div>
                 </motion.div>
