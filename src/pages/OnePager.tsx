@@ -121,14 +121,26 @@ export default function OnePager() {
                 className="border-t-2 border-gray-200 pt-12"
               >
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
-                  <div className="md:col-span-3">
+                  {/* Image with Number Overlay */}
+                  <div className="md:col-span-3 relative">
+                    {/* Image Container with Padding and Border */}
+                    <div className="p-1 border border-gray-300 bg-white">
+                      <img
+                        src="/agents/yachtos-2.png"
+                        alt="Yacht OS"
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
                     <div
-                      className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
-                      01
+                      <span className="text-3xl font-light text-gray-900">01</span>
                     </div>
                   </div>
+
                   <div className="md:col-span-9">
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Yacht OS — AI-Native Platform
@@ -155,14 +167,26 @@ export default function OnePager() {
                 className="border-t-2 border-gray-200 pt-12"
               >
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
-                  <div className="md:col-span-3">
+                  {/* Image with Number Overlay */}
+                  <div className="md:col-span-3 relative">
+                    {/* Image Container with Padding and Border */}
+                    <div className="p-1 border border-gray-300 bg-white">
+                      <img
+                        src="/agents/pathfinder-1.png"
+                        alt="ADHD Coaching App"
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
                     <div
-                      className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
-                      02
+                      <span className="text-3xl font-light text-gray-900">02</span>
                     </div>
                   </div>
+
                   <div className="md:col-span-9">
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       ADHD Coaching App — Mental Health Platform
@@ -189,14 +213,24 @@ export default function OnePager() {
                 className="border-t-2 border-gray-200 pt-12"
               >
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
-                  <div className="md:col-span-3">
+                  {/* Image with Number Overlay */}
+                  <div className="md:col-span-3 relative">
+                    {/* Image Container with Padding and Border */}
+                    <div className="p-1 border border-gray-300 bg-white">
+                      <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                        <span className="text-gray-300 text-sm font-light">Coming Soon</span>
+                      </div>
+                    </div>
+
+                    {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
                     <div
-                      className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
-                      03
+                      <span className="text-3xl font-light text-gray-900">03</span>
                     </div>
                   </div>
+
                   <div className="md:col-span-9">
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Luxury Sweden Travel — AI Concierge Website
