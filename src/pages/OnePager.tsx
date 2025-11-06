@@ -134,13 +134,11 @@ export default function OnePager() {
 
                     {/* Mobile Image Overlay - Positioned Right */}
                     <div className="absolute -right-8 bottom-8 w-32 md:w-40 z-10">
-                      <div className="p-1 border border-gray-300 bg-white shadow-2xl">
-                        <img
-                          src="/agents/yachtos-mobile-1.png"
-                          alt="Yacht OS Mobile"
-                          className="w-full h-auto"
-                        />
-                      </div>
+                      <img
+                        src="/agents/yachtos-mobile-1.png"
+                        alt="Yacht OS Mobile"
+                        className="w-full h-auto border-4 border-gray-900 rounded-xl shadow-2xl"
+                      />
                     </div>
 
                     {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
@@ -191,13 +189,11 @@ export default function OnePager() {
 
                     {/* Mobile Image Overlay - Positioned Right */}
                     <div className="absolute -right-8 bottom-8 w-32 md:w-40 z-10">
-                      <div className="p-1 border border-gray-300 bg-white shadow-2xl">
-                        <img
-                          src="/agents/pathfinder-mobile-1.png"
-                          alt="ADHD Coaching App Mobile"
-                          className="w-full h-auto"
-                        />
-                      </div>
+                      <img
+                        src="/agents/pathfinder-mobile-1.png"
+                        alt="ADHD Coaching App Mobile"
+                        className="w-full h-auto border-4 border-gray-900 rounded-xl shadow-2xl"
+                      />
                     </div>
 
                     {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
