@@ -52,7 +52,7 @@ const solution = {
     'Designed token-based system for scalable AI generation'
   ],
   outcome: "Launched a complete AI website builder that enables anyone to create professional websites in minutes, not weeks, with full hosting and growth tools included. Platform serves 1000+ active users who have built 2500+ websites.",
-  image: "https://chilledsites.com/images/chilledsites-edit.png",
+  image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/canvas.png",
   technologies,
   features
 };
@@ -82,8 +82,8 @@ const benefits = {
       metric: "Agencies"
     }
   ],
-  image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png",
-  secondaryImage: "https://chilledsites.com/images/chilledsites-grow.png"
+  image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/dashboard.png",
+  secondaryImage: "https://api.chilledsites.com/storage/v1/object/public/p0stman/workflow.png"
 };
 
 export default function ChilledSitesLuxury() {
@@ -97,11 +97,11 @@ export default function ChilledSitesLuxury() {
           <meta property="og:title" content="Chilled Sites Case Study | AI Website Builder" />
           <meta property="og:description" content="AI-powered website builder that turns prompts into professional websites in minutes." />
           <meta property="og:type" content="article" />
-          <meta property="og:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png" />
+          <meta property="og:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Chilled Sites Case Study | AI Website Builder" />
           <meta name="twitter:description" content="AI-powered website builder that turns prompts into professional websites in minutes." />
-          <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png" />
+          <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/chilled-sites" />
         </Helmet>
 

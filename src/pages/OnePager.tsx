@@ -133,6 +133,16 @@ export default function OnePager() {
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Yacht OS — AI-Native Platform
                     </h4>
+
+                    {/* Image */}
+                    <div className="mb-8 overflow-hidden">
+                      <img
+                        src="/agents/yachtos-2.png"
+                        alt="Yacht OS Dashboard"
+                        className="w-full h-auto hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+
                     <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-6">
                       <p><span className="text-gray-900 font-medium">What:</span> AI-powered yacht management with vision, voice, and chat integration</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> 4 weeks, production-ready</p>
@@ -167,6 +177,16 @@ export default function OnePager() {
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       ADHD Coaching App — Mental Health Platform
                     </h4>
+
+                    {/* Image */}
+                    <div className="mb-8 overflow-hidden">
+                      <img
+                        src="/agents/pathfinder-1.png"
+                        alt="ADHD Coaching Platform"
+                        className="w-full h-auto hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+
                     <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-6">
                       <p><span className="text-gray-900 font-medium">What:</span> Mental health app + website, trained on professional coaching frameworks</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> 4 weeks (2 sprints)</p>
@@ -201,6 +221,12 @@ export default function OnePager() {
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Luxury Sweden Travel — AI Concierge Website
                     </h4>
+
+                    {/* Image Placeholder */}
+                    <div className="mb-8 overflow-hidden aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                      <span className="text-gray-400 font-light text-sm">Image Coming Soon</span>
+                    </div>
+
                     <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-6">
                       <p><span className="text-gray-900 font-medium">What:</span> Context-aware AI concierge (knows if you clicked map/event/review), auto-populates CRM</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> Weeks, not months</p>
