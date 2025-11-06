@@ -111,19 +111,20 @@ export default function OnePager() {
               </h3>
             </motion.div>
 
-            <div className="space-y-24">
+            <div className="space-y-32">
               {/* Yacht OS */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="border-t-2 border-gray-200 pt-12"
+                className="border-t-2 border-gray-200 pt-16"
               >
-                <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+                {/* Header Row */}
+                <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-12">
                   <div className="md:col-span-3">
                     <div
-                      className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                      className="text-5xl md:text-6xl font-light text-gray-900"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
                       01
@@ -133,41 +134,60 @@ export default function OnePager() {
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Yacht OS — AI-Native Platform
                     </h4>
-
-                    {/* Image */}
-                    <div className="mb-8 overflow-hidden">
-                      <img
-                        src="/agents/yachtos-2.png"
-                        alt="Yacht OS Dashboard"
-                        className="w-full h-auto hover:scale-105 transition-transform duration-700"
-                      />
-                    </div>
-
-                    <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-6">
+                    <div className="space-y-4 text-gray-600 font-light leading-relaxed">
                       <p><span className="text-gray-900 font-medium">What:</span> AI-powered yacht management with vision, voice, and chat integration</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> 4 weeks, production-ready</p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Full-Width Image - Magazine Style */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-[16/9] overflow-hidden"
+                >
+                  <img
+                    src="/agents/yachtos-2.png"
+                    alt="Yacht OS Dashboard"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </motion.div>
+
+                {/* Pull Quote Below Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="grid md:grid-cols-12 gap-8 md:gap-16 mt-12"
+                >
+                  <div className="md:col-span-3"></div>
+                  <div className="md:col-span-9">
                     <div className="border-l-4 border-gray-900 pl-6">
-                      <p className="text-lg text-gray-900 font-light italic">
+                      <p className="text-xl md:text-2xl text-gray-900 font-light italic leading-relaxed">
                         Agency quoted 3 months with 10-person team. We did it with 3.
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
 
-              {/* ADHD App */}
+              {/* ADHD App - Offset Layout */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="border-t-2 border-gray-200 pt-12"
+                className="border-t-2 border-gray-200 pt-16"
               >
-                <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+                {/* Header Row */}
+                <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-12">
                   <div className="md:col-span-3">
                     <div
-                      className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                      className="text-5xl md:text-6xl font-light text-gray-900"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
                       02
@@ -177,41 +197,63 @@ export default function OnePager() {
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       ADHD Coaching App — Mental Health Platform
                     </h4>
-
-                    {/* Image */}
-                    <div className="mb-8 overflow-hidden">
-                      <img
-                        src="/agents/pathfinder-1.png"
-                        alt="ADHD Coaching Platform"
-                        className="w-full h-auto hover:scale-105 transition-transform duration-700"
-                      />
-                    </div>
-
-                    <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-6">
+                    <div className="space-y-4 text-gray-600 font-light leading-relaxed">
                       <p><span className="text-gray-900 font-medium">What:</span> Mental health app + website, trained on professional coaching frameworks</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> 4 weeks (2 sprints)</p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Offset Image Layout - Editorial Style */}
+                <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+                  <div className="md:col-span-2"></div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="md:col-span-10 relative aspect-[16/10] overflow-hidden"
+                  >
+                    <img
+                      src="/agents/pathfinder-1.png"
+                      alt="ADHD Coaching Platform"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Pull Quote Below Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="grid md:grid-cols-12 gap-8 md:gap-16 mt-12"
+                >
+                  <div className="md:col-span-3"></div>
+                  <div className="md:col-span-9">
                     <div className="border-l-4 border-gray-900 pl-6">
-                      <p className="text-lg text-gray-900 font-light italic">
+                      <p className="text-xl md:text-2xl text-gray-900 font-light italic leading-relaxed">
                         Live testing, positive feedback from real users already
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
 
-              {/* Luxury Sweden */}
+              {/* Luxury Sweden - Centered Layout */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="border-t-2 border-gray-200 pt-12"
+                className="border-t-2 border-gray-200 pt-16"
               >
-                <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+                {/* Header Row */}
+                <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-12">
                   <div className="md:col-span-3">
                     <div
-                      className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                      className="text-5xl md:text-6xl font-light text-gray-900"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
                       03
@@ -221,23 +263,48 @@ export default function OnePager() {
                     <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}>
                       Luxury Sweden Travel — AI Concierge Website
                     </h4>
-
-                    {/* Image Placeholder */}
-                    <div className="mb-8 overflow-hidden aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                      <span className="text-gray-400 font-light text-sm">Image Coming Soon</span>
-                    </div>
-
-                    <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-6">
+                    <div className="space-y-4 text-gray-600 font-light leading-relaxed">
                       <p><span className="text-gray-900 font-medium">What:</span> Context-aware AI concierge (knows if you clicked map/event/review), auto-populates CRM</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> Weeks, not months</p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Centered Image Placeholder - Editorial Style */}
+                <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+                  <div className="md:col-span-1"></div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="md:col-span-10 relative aspect-[16/9] overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center"
+                  >
+                    <div className="text-center">
+                      <div className="text-4xl mb-4 text-gray-300">✦</div>
+                      <span className="text-gray-400 font-light text-sm tracking-wider uppercase">Coming Soon</span>
+                    </div>
+                  </motion.div>
+                  <div className="md:col-span-1"></div>
+                </div>
+
+                {/* Pull Quote Below Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="grid md:grid-cols-12 gap-8 md:gap-16 mt-12"
+                >
+                  <div className="md:col-span-3"></div>
+                  <div className="md:col-span-9">
                     <div className="border-l-4 border-gray-900 pl-6">
-                      <p className="text-lg text-gray-900 font-light italic">
+                      <p className="text-xl md:text-2xl text-gray-900 font-light italic leading-relaxed">
                         Client used it at trade show this week — already getting praise for AI UX
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
