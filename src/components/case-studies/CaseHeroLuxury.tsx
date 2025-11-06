@@ -346,17 +346,17 @@ export default function CaseHeroLuxury({
               className="flex flex-wrap justify-center gap-3 mb-16"
             >
               {industry && (
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-light rounded-full">
+                <span className="px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/40 text-white text-sm font-light rounded-full">
                   {industry}
                 </span>
               )}
               {timeline && (
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-light rounded-full">
+                <span className="px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/40 text-white text-sm font-light rounded-full">
                   {timeline}
                 </span>
               )}
               {teamSize && (
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-light rounded-full">
+                <span className="px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/40 text-white text-sm font-light rounded-full">
                   {teamSize}
                 </span>
               )}
