@@ -251,16 +251,20 @@ export default function OnePager() {
                   <div className="md:col-span-5 relative">
                     {/* Main Desktop Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
-                      <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                        <span className="text-gray-300 text-sm font-light">Coming Soon</span>
-                      </div>
+                      <img
+                        src="/agents/luxury-travel-sweden-website.png"
+                        alt="Luxury Sweden Travel"
+                        className="w-full h-auto"
+                      />
                     </div>
 
                     {/* Mobile Image Overlay - Positioned Right */}
                     <div className="absolute -right-8 bottom-8 w-32 md:w-40 z-10">
-                      <div className="aspect-[9/16] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center border-4 border-gray-900 rounded-xl shadow-2xl">
-                        <span className="text-gray-300 text-xs font-light">Mobile</span>
-                      </div>
+                      <img
+                        src="/agents/luxury-travel-sweden-mobile.png"
+                        alt="Luxury Sweden Travel Mobile"
+                        className="w-full h-auto border-4 border-gray-900 rounded-xl shadow-2xl"
+                      />
                     </div>
 
                     {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
