@@ -158,11 +158,19 @@ export default function OnePager() {
                       <p><span className="text-gray-900 font-medium">What:</span> AI-powered yacht management with vision, voice, and chat integration</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> 4 weeks, production-ready</p>
                     </div>
-                    <div className="border-l-4 border-gray-900 pl-6">
+                    <div className="border-l-4 border-gray-900 pl-6 mb-6">
                       <p className="text-lg text-gray-900 font-light italic">
                         Agency quoted 3 months with 10-person team. We did it with 3.
                       </p>
                     </div>
+
+                    <a
+                      href="/case-study/yachtos"
+                      className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-light text-sm transition-colors"
+                    >
+                      View full case study
+                      <ArrowRight size={16} />
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -213,11 +221,19 @@ export default function OnePager() {
                       <p><span className="text-gray-900 font-medium">What:</span> Mental health app + website, trained on professional coaching frameworks</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> 4 weeks (2 sprints)</p>
                     </div>
-                    <div className="border-l-4 border-gray-900 pl-6">
+                    <div className="border-l-4 border-gray-900 pl-6 mb-6">
                       <p className="text-lg text-gray-900 font-light italic">
                         Live testing, positive feedback from real users already
                       </p>
                     </div>
+
+                    <a
+                      href="/case-study/pathfinder"
+                      className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-light text-sm transition-colors"
+                    >
+                      View full case study
+                      <ArrowRight size={16} />
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -233,16 +249,23 @@ export default function OnePager() {
                 <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                   {/* Image with Number Overlay */}
                   <div className="md:col-span-5 relative">
-                    {/* Image Container with Padding and Border */}
+                    {/* Main Desktop Image Container with Padding and Border */}
                     <div className="p-1 border border-gray-300 bg-white">
                       <div className="aspect-[4/3] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
                         <span className="text-gray-300 text-sm font-light">Coming Soon</span>
                       </div>
                     </div>
 
+                    {/* Mobile Image Overlay - Positioned Right */}
+                    <div className="absolute -right-8 bottom-8 w-32 md:w-40 z-10">
+                      <div className="aspect-[9/16] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center border-4 border-gray-900 rounded-xl shadow-2xl">
+                        <span className="text-gray-300 text-xs font-light">Mobile</span>
+                      </div>
+                    </div>
+
                     {/* Number Badge - Circular, White BG, Top Left Hanging Off */}
                     <div
-                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-6 -left-6 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg z-20"
                       style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                     >
                       <span className="text-3xl font-light text-gray-900">03</span>
@@ -257,11 +280,20 @@ export default function OnePager() {
                       <p><span className="text-gray-900 font-medium">What:</span> Context-aware AI concierge (knows if you clicked map/event/review), auto-populates CRM</p>
                       <p><span className="text-gray-900 font-medium">Timeline:</span> Weeks, not months</p>
                     </div>
-                    <div className="border-l-4 border-gray-900 pl-6">
+                    <div className="border-l-4 border-gray-900 pl-6 mb-6">
                       <p className="text-lg text-gray-900 font-light italic">
                         Client used it at trade show this week — already getting praise for AI UX
                       </p>
                     </div>
+
+                    {/* Case study link - add when available */}
+                    {/* <a
+                      href="/case-study/luxury-sweden"
+                      className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-light text-sm transition-colors"
+                    >
+                      View full case study
+                      <ArrowRight size={16} />
+                    </a> */}
                   </div>
                 </div>
               </motion.div>
