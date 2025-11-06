@@ -75,6 +75,7 @@ import Hello from './pages/Hello';
 import Services from './pages/Services';
 import AIPlaybook from './pages/AIPlaybook';
 import OnePageApp from './pages/OnePageApp';
+import OnePager from './pages/OnePager';
 import DeliveryPage from './pages/DeliveryPage';
 import FounderLaunchPackage from './pages/FounderLaunchPackage';
 import ClarityPitchDeck from './components/ClarityPitchDeck';
@@ -156,6 +157,7 @@ export default function App() {
           <Route path="/hello" element={<Hello />} />
           <Route path="/ai-playbook" element={<AIPlaybook />} />
           <Route path="/one-pager" element={<OnePageApp />} />
+          <Route path="/pitch" element={<OnePager />} />
           <Route path="/founder-launch-package" element={<FounderLaunchPackage />} />
           <Route path="/clarity" element={<ClarityPitchDeck />} />
           <Route path="/voice-agent-demo" element={<VoiceAgentDemo />} />
