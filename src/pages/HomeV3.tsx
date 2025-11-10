@@ -6,7 +6,6 @@ import MetricsV3 from '../components/v3/MetricsV3';
 import AgentsV3 from '../components/v3/AgentsV3';
 import CaseStudiesV3 from '../components/v3/CaseStudiesV3';
 import ServicesV3 from '../components/v3/ServicesV3';
-import CTAV3 from '../components/v3/CTAV3';
 import FooterV3 from '../components/v3/FooterV3';
 
 export default function HomeV3() {
@@ -27,7 +26,6 @@ export default function HomeV3() {
         <AgentsV3 />
         <CaseStudiesV3 />
         <ServicesV3 />
-        <CTAV3 />
         <FooterV3 />
       </div>
     </>

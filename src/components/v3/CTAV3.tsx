@@ -1,43 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { sendEmail } from '../../lib/emailjs';
-import { getVoiceAgentConfig } from '../../config/voiceAgentPrompts';
-import SectionVoiceAgent from '../voice-agent/SectionVoiceAgent';
+import { Link } from 'react-router-dom';
 
 export default function CTAV3() {
-  const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  // Get CTA-specific prompt from config
-  const ctaConfig = getVoiceAgentConfig('cta');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      await sendEmail({
-        name: email, // Using email as the name for this simple form
-        email: email,
-        form_type: 'cta_homepage',
-        description: 'New signup from homepage CTA - Ready to Ship Fast form'
-      });
-
-      setSubmitted(true);
-      setEmail('');
-      setTimeout(() => setSubmitted(false), 3000);
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setError('Failed to send. Please try again or email hello@p0stman.com');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-
   return (
     <section id="cta" className="py-40 md:py-48 px-6 md:px-0 bg-white dark:bg-gray-900">
       <div className="max-w-3xl mx-auto text-center space-y-12">
@@ -51,70 +16,15 @@ export default function CTAV3() {
           </p>
         </div>
 
-        {/* Email Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {error && (
-            <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm font-light">
-              {error}
-            </div>
-          )}
-
-          {submitted ? (
-            <p className="text-base text-green-600 dark:text-green-400 font-light">
-              Thanks! Check your email for next steps.
-            </p>
-          ) : (
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 px-6 py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 font-light focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-1 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors"
-              />
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 disabled:bg-gray-400 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
-              >
-                {isLoading ? 'Sending...' : 'Get Started'}
-                {!isLoading && <ArrowRight size={18} />}
-              </button>
-            </div>
-          )}
-        </form>
-
-        {/* Voice Agent Option */}
-        <div className="space-y-4">
-          {/* Divider */}
-          <div className="flex items-center gap-4">
-            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700"></div>
-            <span className="text-sm text-gray-400 dark:text-gray-500 font-light">or</span>
-            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700"></div>
-          </div>
-
-          {/* Voice Agent - SectionVoiceAgent component */}
-          <SectionVoiceAgent
-            section="cta"
-            prompt={ctaConfig.prompt}
-            firstMessage={ctaConfig.firstMessage}
-            placement="inline"
-            buttonText="Prefer to talk? Try our AI assistant"
-            color="blue"
-            icon="🎤"
-            showTranscript={false}
-          />
-        </div>
-
-        {/* Alternative CTA */}
-        <div className="pt-4">
-          <a
-            href="/contact"
-            className="text-blue-600 dark:text-blue-400 hover:text-pink-600 dark:hover:text-pink-400 font-light text-base transition-colors inline-block"
+        {/* CTA Button */}
+        <div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors"
           >
-            Or schedule a call →
-          </a>
+            Get Started
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>
