@@ -182,3 +182,23 @@ export async function deleteContact(id: number) {
   if (error) throw error;
   return data;
 }
+
+interface ContactEmailData {
+  name: string;
+  email: string;
+  company?: string;
+  projectType?: string;
+  budget?: string;
+  timeline?: string;
+  message?: string;
+  form_type?: string;
+}
+
+export async function sendContactEmail(emailData: ContactEmailData) {
+  const { data, error } = await supabase.functions.invoke('send-contact-email', {
+    body: emailData,
+  });
+
+  if (error) throw error;
+  return data;
+}

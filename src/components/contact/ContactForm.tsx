@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, User, MessageSquare, Loader2, Twitter, Linkedin, CheckCircle } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
+import { sendContactEmail } from '../../lib/supabase';
 import FormInput from '../ui/FormInput';
 import FormGroup from '../ui/FormGroup';
 
@@ -54,6 +55,7 @@ export default function ContactForm() {
     try {
       const referrer = document.referrer || window.location.href;
 
+      // Send via EmailJS (existing functionality)
       await sendEmail({
         name: formData.name,
         email: formData.email,
@@ -64,6 +66,17 @@ export default function ContactForm() {
         description: formData.description,
         message: formData.description, // EmailJS template may expect 'message' field
         source_page: referrer
+      });
+
+      // Send impressive automated email via Resend
+      await sendContactEmail({
+        name: formData.name,
+        email: formData.email,
+        projectType: formData.projectType,
+        budget: formData.budget,
+        timeline: formData.timeline,
+        message: formData.description,
+        form_type: 'contact_page'
       });
 
       // Track successful submission

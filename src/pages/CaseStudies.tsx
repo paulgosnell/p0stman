@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Building2, 
-  Bot, 
-  Zap, 
-  TrendingUp, 
-  Users, 
-  Globe, 
-  ArrowRight, 
+import {
+  Building2,
+  Bot,
+  Zap,
+  TrendingUp,
+  Users,
+  Globe,
+  ArrowRight,
   ExternalLink,
   Calendar,
   Smartphone,
@@ -17,7 +17,8 @@ import {
   Target,
   Filter,
   Code,
-  Award
+  Award,
+  Heart
 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
@@ -373,6 +374,38 @@ const allProjects = [
     metrics: [
       { label: 'Build Time', value: '3 weeks', icon: <Zap className="w-6 h-6" /> },
       { label: 'Efficiency', value: '+80%', icon: <TrendingUp className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'mamori-healthos',
+    title: 'Mamori HealthOS',
+    company: 'AI-Powered Health Operating System',
+    category: 'HealthTech & AI Agents',
+    type: 'AI-Built',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop',
+    logo: 'https://img.icons8.com/color/96/health-graph.png',
+    description: 'AI-native health operating system that transforms fragmented health data into actionable intelligence through evidence-based guidance. Built in 2-3 weeks with 95% cost reduction.',
+    caseStudyUrl: '/case-study/mamori-healthos',
+    metrics: [
+      { label: 'Build Time', value: '2-3 weeks', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Cost Savings', value: '95%', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Team Size', value: '1 Dev', icon: <Users className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'luxury-travel-sweden',
+    title: 'Luxury Travel Sweden',
+    company: 'AI-Powered Luxury Travel Platform',
+    category: 'Travel & Hospitality',
+    type: 'AI-Built',
+    image: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1200&auto=format&fit=crop',
+    logo: 'https://img.icons8.com/color/96/tourist-map.png',
+    description: 'Sophisticated luxury travel website combining interactive destination mapping, real-time AI concierge services (LIV), and comprehensive CMS. Built in 8 weeks with 70% faster content updates.',
+    caseStudyUrl: '/case-study/luxury-travel-sweden',
+    metrics: [
+      { label: 'Build Time', value: '8 weeks', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Infrastructure', value: '$0-25/mo', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Lead Context', value: '10x', icon: <TrendingUp className="w-6 h-6" /> }
     ]
   },
   {
@@ -776,6 +809,93 @@ export default function CaseStudies() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured: Health & Wellness Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-auto">
+              <Link to="/health" className="block group">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 to-purple-600 shadow-2xl hover:shadow-3xl transition-all duration-500 min-h-[400px] flex items-center"
+                >
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&auto=format&fit=crop"
+                      alt="Health & Wellness"
+                      className="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10 p-12 md:p-16 w-full">
+                    <div className="max-w-4xl">
+                      {/* Badge */}
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6">
+                        <Heart className="w-4 h-4 text-white" />
+                        <span className="text-white text-sm font-medium">Featured Portfolio</span>
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 group-hover:translate-x-2 transition-transform duration-300">
+                        Health & Wellness Projects
+                      </h2>
+
+                      {/* Description */}
+                      <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-3xl">
+                        From AI-powered health platforms to government healthcare apps, we've built across the entire health spectrum.
+                        Wearable integration, mental wellness, fitness tracking, clinic management, and corporate wellness—see our deep health expertise.
+                      </p>
+
+                      {/* Stats Grid */}
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <div className="border-l-2 border-white/40 pl-4">
+                          <div className="text-3xl font-bold text-white">6+</div>
+                          <div className="text-white/70 text-sm">Health Projects</div>
+                        </div>
+                        <div className="border-l-2 border-white/40 pl-4">
+                          <div className="text-3xl font-bold text-white">60K+</div>
+                          <div className="text-white/70 text-sm">Active Users</div>
+                        </div>
+                        <div className="border-l-2 border-white/40 pl-4">
+                          <div className="text-3xl font-bold text-white">95%</div>
+                          <div className="text-white/70 text-sm">Cost Savings</div>
+                        </div>
+                        <div className="border-l-2 border-white/40 pl-4">
+                          <div className="text-3xl font-bold text-white">1-3 wks</div>
+                          <div className="text-white/70 text-sm">Build Time</div>
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-900 rounded-lg font-medium hover:bg-gray-100 transition-all group-hover:gap-4 duration-300">
+                        <span>Explore Health Portfolio</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mt-6">
+                        {['Wearables', 'AI Health', 'Mental Wellness', 'Fitness', 'Clinics', 'Government'].map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
             </div>
           </div>
         </section>

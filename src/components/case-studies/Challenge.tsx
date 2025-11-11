@@ -38,13 +38,13 @@ export default function Challenge({
               <span className="text-red-600 font-medium">The Challenge</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               <span className="bg-gradient-to-r from-red-600 via-orange-600 to-red-700 bg-clip-text text-transparent">
                 {title}
               </span>
             </h2>
-            
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
               {description}
             </p>
           </motion.div>

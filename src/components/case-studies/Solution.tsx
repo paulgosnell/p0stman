@@ -111,13 +111,13 @@ export default function Solution({
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
                   {title}
                 </span>
               </h2>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
+
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 {description}
               </p>
 

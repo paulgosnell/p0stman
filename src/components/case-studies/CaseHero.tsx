@@ -173,22 +173,22 @@ export default function CaseHero({
               </motion.div>
             )}
             
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-6xl md:text-8xl font-bold mb-8 text-white drop-shadow-2xl"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-2xl"
             >
               <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
                 {title}
               </span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl md:text-2xl max-w-4xl mx-auto text-white/90 drop-shadow-lg leading-relaxed font-light"
+              className="text-lg md:text-xl max-w-4xl mx-auto text-white/90 drop-shadow-lg leading-relaxed font-light"
             >
               {description}
             </motion.p>
@@ -240,13 +240,13 @@ export default function CaseHero({
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Card */}
-                  <div className="relative bg-gray-50 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gray-200 hover:bg-white/15 hover:border-white/30 transition-all duration-500 transform hover:-translate-y-1">
-                    <div className="text-3xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
+                  <div className="relative bg-gray-50 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-gray-200 hover:bg-white/15 hover:border-white/30 transition-all duration-500 transform hover:-translate-y-1">
+                    <div className="text-2xl md:text-3xl font-bold mb-1 text-white drop-shadow-lg">
                       <span className="bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
                         {stat.value}
                       </span>
                     </div>
-                    <div className="text-gray-700 font-medium text-sm md:text-base">
+                    <div className="text-gray-700 font-medium text-xs md:text-sm">
                       {stat.label}
                     </div>
                   </div>

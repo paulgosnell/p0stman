@@ -63,13 +63,13 @@ export default function Benefits({
               <span className="text-green-600 font-medium">Results & Impact</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">
                 {title}
               </span>
             </h2>
-            
-            <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
               {description}
             </p>
           </motion.div>

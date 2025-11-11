@@ -313,7 +313,7 @@ export default function CaseHeroLuxury({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.95] tracking-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-tight"
             style={{
               color: '#FFFFFF',
               fontFamily: "'Playfair Display', 'Georgia', serif",
@@ -328,7 +328,7 @@ export default function CaseHeroLuxury({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light mb-12"
+            className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light mb-12"
             style={{
               color: '#FFFFFF',
               textShadow: '0 2px 15px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)'
@@ -379,7 +379,7 @@ export default function CaseHeroLuxury({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -387,10 +387,10 @@ export default function CaseHeroLuxury({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.2 + (0.1 * index) }}
-                  className="border-l-2 border-white/60 pl-4"
+                  className="border-l-2 border-white/60 pl-3"
                 >
                   <div
-                    className="text-4xl md:text-5xl font-light mb-2 text-white"
+                    className="text-2xl md:text-3xl font-light mb-1 text-white"
                     style={{
                       fontFamily: "'Playfair Display', 'Georgia', serif",
                       color: '#FFFFFF',
@@ -399,7 +399,7 @@ export default function CaseHeroLuxury({
                   >
                     {stat.value}
                   </div>
-                  <div className="text-white/70 text-sm font-light tracking-wide" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+                  <div className="text-white/70 text-xs font-light tracking-wide leading-tight" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                     {stat.label}
                   </div>
                 </motion.div>

@@ -40,7 +40,13 @@ export const caseStudiesTranslations = {
     'caseStudies.clinicBook.description': 'نظام إدارة العيادات الطبية مع حجز المواعيد والمرضى',
 
     'caseStudies.barberBooking.title': 'باربر بوكينج',
-    'caseStudies.barberBooking.description': 'نظام حجز وإدارة صالونات الحلاقة مع برنامج الولاء'
+    'caseStudies.barberBooking.description': 'نظام حجز وإدارة صالونات الحلاقة مع برنامج الولاء',
+
+    'caseStudies.mamoriHealthOS.title': 'مامري هيلث أو إس',
+    'caseStudies.mamoriHealthOS.description': 'نظام تشغيل صحي مدعوم بالذكاء الاصطناعي يحول البيانات الصحية المتفرقة إلى توجيه قائم على الأدلة',
+
+    'caseStudies.luxuryTravelSweden.title': 'لوكشري ترافيل سويدن',
+    'caseStudies.luxuryTravelSweden.description': 'منصة سفر فاخرة مدعومة بالذكاء الاصطناعي مع نظام إدارة محتوى شامل'
   },
   en: {
     'caseStudies.title': 'What We\'ve Built',
@@ -83,6 +89,12 @@ export const caseStudiesTranslations = {
     'caseStudies.clinicBook.description': 'Medical practice management with smart scheduling.',
 
     'caseStudies.barberBooking.title': 'Barber Booking',
-    'caseStudies.barberBooking.description': 'Complete salon management with loyalty features.'
+    'caseStudies.barberBooking.description': 'Complete salon management with loyalty features.',
+
+    'caseStudies.mamoriHealthOS.title': 'Mamori HealthOS',
+    'caseStudies.mamoriHealthOS.description': 'AI-native health operating system built in 2-3 weeks with 95% cost reduction.',
+
+    'caseStudies.luxuryTravelSweden.title': 'Luxury Travel Sweden',
+    'caseStudies.luxuryTravelSweden.description': 'AI-powered luxury travel platform with CMS built in 8 weeks. 70% faster content updates.'
   }
 };

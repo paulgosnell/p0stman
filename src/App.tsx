@@ -49,6 +49,7 @@ import NewInvoice from './pages/admin/NewInvoice';
 import NewContract from './pages/admin/NewContract';
 import EditInvoice from './pages/admin/EditInvoice';
 import Links from './pages/Links';
+import HealthLanding from './pages/HealthLanding';
 import Rhythm from './pages/case-studies/RhythmLuxury';
 import ExperienceGift from './pages/case-studies/ExperienceGiftLuxury';
 import ChilledCRM from './pages/case-studies/ChilledCRMLuxury';
@@ -65,6 +66,8 @@ import DoHHealth from './pages/case-studies/DoHHealthLuxury';
 import BFITWeb3 from './pages/case-studies/BFITWeb3Luxury';
 import ArabianMalls from './pages/case-studies/ArabianMallsLuxury';
 import Genieology from './pages/case-studies/GenieologyLuxury';
+import MamoriHealthOS from './pages/case-studies/MamoriHealthOSLuxury';
+import LuxuryTravelSweden from './pages/case-studies/LuxuryTravelSwedenLuxury';
 import YachtOS from './pages/case-studies/YachtOS';
 import Pathfinder from './pages/case-studies/Pathfinder';
 import Thanks from './pages/Thanks';
@@ -94,6 +97,7 @@ export default function App() {
           <Route path="/process" element={<Process />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/projects" element={<CaseStudies />} />
+          <Route path="/health" element={<HealthLanding />} />
           <Route path="/services" element={<Services />} />
           <Route path="/website" element={<Website />} />
           <Route path="/fractional-cpo" element={<FractionalCPO />} />
@@ -147,6 +151,8 @@ export default function App() {
           <Route path="/case-study/arabian-malls" element={<ArabianMalls />} />
           <Route path="/case-study/arabian-center" element={<ArabianMalls />} />
           <Route path="/case-study/genieology" element={<Genieology />} />
+          <Route path="/case-study/mamori-healthos" element={<MamoriHealthOS />} />
+          <Route path="/case-study/luxury-travel-sweden" element={<LuxuryTravelSweden />} />
           <Route path="/case-study/yachtos" element={<YachtOS />} />
           <Route path="/case-study/pathfinder" element={<Pathfinder />} />
           <Route path="/thanks" element={<Thanks />} />

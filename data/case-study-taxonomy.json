@@ -1,5 +1,29 @@
 [
   {
+    "slug": "mamori-healthos",
+    "name": "Mamori HealthOS",
+    "title": "AI-Powered Health Operating System",
+    "industry": ["healthcare", "saas", "ai-agents"],
+    "technologies": ["react", "supabase", "elevenlabs", "claude", "ai-voice", "ai-vision"],
+    "voiceTech": "elevenlabs",
+    "region": "global",
+    "url": "/case-study/mamori-healthos",
+    "thumbnail": "/assets/images/case-studies/mamori-healthos.png",
+    "description": "AI-native health operating system transforming fragmented data into evidence-based guidance"
+  },
+  {
+    "slug": "luxury-travel-sweden",
+    "name": "Luxury Travel Sweden",
+    "title": "AI-Powered Luxury Travel Platform with CMS",
+    "industry": ["travel", "hospitality", "luxury", "ai-agents"],
+    "technologies": ["javascript", "supabase", "openai", "leaflet-maps", "cms"],
+    "voiceTech": "openai",
+    "region": "europe",
+    "url": "/case-study/luxury-travel-sweden",
+    "thumbnail": "/assets/images/case-studies/luxury-travel-sweden.png",
+    "description": "Sophisticated luxury travel platform with AI concierge and comprehensive content management system"
+  },
+  {
     "slug": "clinicbook",
     "name": "ClinicBook",
     "title": "AI-Powered Clinic Management System",
