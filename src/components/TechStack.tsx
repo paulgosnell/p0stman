@@ -129,16 +129,16 @@ export default function TechStack({
                   transition={{ duration: 0.2 }}
                   className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-50 pointer-events-none"
                 >
-                  <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-lg shadow-2xl p-4 w-64 border border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700">
                     {/* Arrow */}
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
-                      <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-900 dark:border-t-gray-800"></div>
+                      <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-900"></div>
                     </div>
 
                     {/* Content */}
                     <div className="text-center">
-                      <h4 className="text-sm font-semibold mb-2">{tech.description}</h4>
-                      <p className="text-xs text-gray-300 leading-relaxed">
+                      <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">{tech.description}</h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                         {tech.usage}
                       </p>
                     </div>
