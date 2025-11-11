@@ -1,4 +1,5 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Brain,
@@ -896,16 +897,17 @@ export default function FractionalCPO() {
                     </div>
                   </div>
 
-                  <motion.a
-                    href="mailto:hello@p0stman.com?subject=Fractional CPO Consultation Request"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all font-medium text-lg inline-flex items-center gap-3"
-                  >
-                    <MessageSquare className="w-5 h-5" />
-                    Book Discovery Call
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.a>
+                  <Link to="/contact">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all font-medium text-lg inline-flex items-center gap-3"
+                    >
+                      <MessageSquare className="w-5 h-5" />
+                      Book Discovery Call
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.div>
+                  </Link>
 
                   <p className="text-sm text-gray-500 mt-4">
                     ✨ No commitment required • Completely confidential • 20+ years of experience
