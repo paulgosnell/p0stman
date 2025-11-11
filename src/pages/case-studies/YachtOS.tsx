@@ -43,26 +43,26 @@ const features = [
 ];
 
 const challenge = {
-  title: "Fragmented Tools Across Five Distinct User Groups",
-  description: "The yacht industry serves five distinct user groups - captains, fleet managers, harbor operators, owners, and charter guests - each requiring specialized interfaces and workflows. Traditional solutions force all users into generic dashboards, creating friction and confusion. Captains need voice-first operations tools, fleet managers require analytics across vessels, harbor teams manage berth logistics, owners want oversight without complexity, and guests expect luxury concierge services.",
+  title: "Five User Groups, Zero Unified Solutions",
+  description: "Five distinct user groups—captains, fleet managers, harbor operators, owners, and guests—each need specialized tools. Traditional maritime software forces everyone into generic dashboards, creating friction and inefficiency across the entire operation.",
   points: [
-    'No single platform serves all five stakeholder types with role-optimized experiences, forcing operations across disconnected systems.',
-    'Captains require hands-free voice operation while underway, but traditional maritime software demands screen interaction and manual data entry.',
-    'Fleet managers lack AI-powered cost optimization insights across multiple vessels, making it impossible to spot efficiency opportunities or overspending patterns.',
-    'Charter guests expect luxury hotel-level digital experiences, but yacht systems typically provide outdated interfaces or require crew mediation.'
+    'No platform serves all five stakeholder types with role-optimized experiences',
+    'Captains need hands-free voice operation, but maritime software demands manual screen interaction',
+    'Fleet managers lack AI-powered cost insights across vessels, missing efficiency opportunities',
+    'Charter guests expect luxury hotel-grade digital experiences, but get outdated interfaces'
   ]
 };
 
 const solution = {
   title: "Five AI-Native Apps, One Unified Platform",
-  description: "YachtOS delivers five specialized Progressive Web Apps sharing a unified codebase and AI infrastructure: COMMAND for captain voice operations with 6 intelligent tools, FLEET for multi-vessel management with AI cost optimization, HARBOR for marina berth coordination and port logistics, OWNER for vessel oversight with real-time tracking and financials, and GUEST for luxury concierge experiences with cabin control. All five apps run on Next.js 14, leveraging Claude Sonnet 4.5 for intelligence, ElevenLabs Conversational AI for voice interaction, and Vercel Edge deployment across 295 global points of presence for sub-200ms latency worldwide.",
+  description: "Five specialized Progressive Web Apps sharing one AI infrastructure: COMMAND (voice-first captain ops), FLEET (multi-vessel analytics + AI cost optimization), HARBOR (berth coordination), OWNER (real-time oversight), GUEST (luxury concierge). Built on Next.js 14 with Claude Sonnet 4.5 and ElevenLabs Voice AI, deployed across 295 global edge locations for sub-200ms worldwide performance.",
   approach: [
-    'Architected modular Next.js codebase with role-based routing serving five distinct user experiences from shared components and AI infrastructure.',
-    'Implemented voice-first COMMAND app with Claude integration, 6 AI tools, and ElevenLabs voice agent for hands-free captain operations.',
-    'Built FLEET analytics dashboard with AI cost insights, vessel health scoring, and compliance tracking across multi-yacht portfolios.',
-    'Created HARBOR berth management system, OWNER oversight portal with live tracking, and GUEST luxury concierge with cabin automation.'
+    'Architected modular Next.js codebase with role-based routing and shared AI infrastructure',
+    'Implemented voice-first COMMAND app with 6 AI tools and ElevenLabs for hands-free operations',
+    'Built FLEET analytics with AI cost insights and vessel health scoring across portfolios',
+    'Created HARBOR, OWNER, and GUEST apps with specialized workflows and cabin automation'
   ],
-  outcome: "Delivered working multi-app platform serving 5 distinct user personas with role-optimized interfaces, shared AI intelligence, unified data layer, offline PWA capability, and global edge deployment, reducing development time by 80% versus building 5 separate applications.",
+  outcome: "Delivered 5 distinct apps with role-optimized interfaces, shared intelligence, offline PWA capability, and global edge deployment—reducing development time 80% versus separate builds.",
   image: "/agents/yachtos-2.png",
   technologies,
   features
@@ -70,36 +70,36 @@ const solution = {
 
 const benefits = {
   title: "Five Apps, One Architecture, Unlimited Scalability",
-  description: "YachtOS's multi-app architecture delivers unprecedented value by serving five distinct user groups from a single codebase, reducing development and maintenance costs by 80% compared to building separate applications. The COMMAND app transforms captain operations with voice-first AI reducing administrative time from 3-4 hours to 30 minutes daily. FLEET managers gain AI-powered cost optimization identifying savings opportunities across vessels (average €12k-45k per vessel annually). HARBOR operations streamline berth coordination and service booking. OWNER portals provide real-time oversight without overwhelming complexity. GUEST experiences deliver luxury hotel-grade digital services with instant AI concierge response. All five apps share Claude AI intelligence, unified database, and global edge deployment ensuring consistent sub-200ms performance worldwide.",
+  description: "Single codebase serving five user groups cuts development costs 80%. Voice-first COMMAND app reduces captain admin from 3-4 hours to 30 minutes daily. AI-powered FLEET analytics identify €12k-45k annual savings per vessel. All five apps share Claude AI intelligence and Vercel Edge deployment, ensuring consistent sub-200ms performance globally with 99.99% uptime.",
   items: [
     {
       title: "Multi-App Efficiency",
-      description: "Built 5 distinct role-optimized applications from single codebase, reducing development cost and time by 80% versus separate builds.",
+      description: "5 role-optimized apps from one codebase, cutting development cost and time 80% versus building separately.",
       metric: "80% cost reduction"
     },
     {
       title: "Captain Time Savings",
-      description: "Voice-first COMMAND app cuts administrative overhead from 3-4 hours to under 30 minutes daily through AI automation and tool orchestration.",
+      description: "Voice-first COMMAND app cuts captain admin from 3-4 hours to 30 minutes daily via AI automation.",
       metric: "3-4hrs → 30min daily"
     },
     {
       title: "Fleet Cost Optimization",
-      description: "AI insights identify spending anomalies and bulk procurement opportunities, delivering €12k-45k annual savings per vessel on average.",
+      description: "AI identifies spending anomalies and bulk opportunities, delivering €12k-45k annual savings per vessel.",
       metric: "€12k-45k per vessel"
     },
     {
       title: "Global Performance",
-      description: "Vercel Edge deployment across 295 PoPs ensures sub-200ms response times worldwide with 99.99% uptime for all five applications.",
+      description: "Vercel Edge across 295 PoPs ensures sub-200ms response worldwide with 99.99% uptime for all five apps.",
       metric: "<200ms + 99.99% SLA"
     },
     {
       title: "Unified Intelligence",
-      description: "Shared Claude AI, vision analysis, and voice processing across all apps eliminates redundancy and ensures consistent smart features.",
+      description: "Shared Claude AI, vision, and voice processing across all apps eliminates redundancy and ensures consistency.",
       metric: "1 AI engine, 5 apps"
     },
     {
       title: "PWA Offline Capability",
-      description: "All five apps function offline as Progressive Web Apps, maintaining yacht operations in remote waters with limited connectivity.",
+      description: "All five apps work offline as PWAs, maintaining yacht operations in remote waters with limited connectivity.",
       metric: "100% offline capable"
     }
   ],
