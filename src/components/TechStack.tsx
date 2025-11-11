@@ -126,7 +126,13 @@ export default function TechStack({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-50 pointer-events-none"
+                    className="absolute z-50 pointer-events-none"
+                    style={{
+                      bottom: '100%',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      marginBottom: '1rem'
+                    }}
                   >
                     <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700 relative">
                       {/* Arrow */}
