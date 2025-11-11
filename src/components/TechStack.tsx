@@ -107,7 +107,7 @@ export default function TechStack({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative group"
+              className="relative group inline-block"
               onMouseEnter={() => setHoveredTech(tech.name)}
               onMouseLeave={() => setHoveredTech(null)}
             >
@@ -129,14 +129,14 @@ export default function TechStack({
                   transition={{ duration: 0.2 }}
                   className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-50 pointer-events-none"
                 >
-                  <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700">
+                  <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700 relative">
                     {/* Arrow */}
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
                       <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-900"></div>
                     </div>
 
                     {/* Content */}
-                    <div className="text-center">
+                    <div className="text-center whitespace-normal">
                       <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">{tech.description}</h4>
                       <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                         {tech.usage}
