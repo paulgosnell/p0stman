@@ -4,22 +4,21 @@ import { motion } from 'framer-motion';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
-import { ArrowRight, Check, Mic, Code, Smartphone, Zap, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Service {
-  icon: React.ReactNode;
   title: string;
   tagline: string;
   description: string;
   whatYouGet: string[];
   timeline: string;
   examples: string;
-  cta: string;
+  path: string;
 }
 
 const services: Service[] = [
   {
-    icon: <Mic className="w-8 h-8" />,
     title: 'AI Voice Agents',
     tagline: 'Autonomous phone systems that actually work',
     description: 'Voice AI agents powered by ElevenLabs and LiveKit. Handle calls 24/7, qualify leads, book appointments, answer questions. Production-ready systems, not demos.',
@@ -33,10 +32,9 @@ const services: Service[] = [
     ],
     timeline: '6-day pilot, 2-3 weeks production',
     examples: 'Real estate lead qualification, medical appointment booking, customer support screening',
-    cta: 'Build Voice Agent'
+    path: '/contact'
   },
   {
-    icon: <Code className="w-8 h-8" />,
     title: 'Custom Websites & SaaS',
     tagline: 'Fast, modern, scalable web platforms',
     description: 'Full-stack web applications built with Next.js, React, and Supabase. From landing pages to multi-tenant SaaS platforms. AI-assisted development, human-validated architecture.',
@@ -50,10 +48,9 @@ const services: Service[] = [
     ],
     timeline: '6-day MVP, 3-week production',
     examples: 'SaaS dashboards, booking platforms, e-commerce systems, portfolio sites',
-    cta: 'Build Website'
+    path: '/contact'
   },
   {
-    icon: <Smartphone className="w-8 h-8" />,
     title: 'Mobile Apps',
     tagline: 'iOS & Android apps, one codebase',
     description: 'Cross-platform mobile apps using React Native. Native performance, shared codebase, faster shipping. Perfect for startups validating mobile-first ideas.',
@@ -67,10 +64,9 @@ const services: Service[] = [
     ],
     timeline: '3-4 weeks MVP',
     examples: 'Wellness tracking, booking apps, social platforms, productivity tools',
-    cta: 'Build Mobile App'
+    path: '/mobile-app'
   },
   {
-    icon: <Zap className="w-8 h-8" />,
     title: 'AI Platform Development',
     tagline: 'Multi-model AI orchestration',
     description: 'Custom AI platforms leveraging Claude, GPT-4, Gemini, and specialized models. Chat agents, code generation, workflow automation. Built for scale and commercial use.',
@@ -84,10 +80,9 @@ const services: Service[] = [
     ],
     timeline: '1-2 weeks pilot, 2-4 weeks production',
     examples: 'Code generation platforms, document processing, customer support bots, content creation tools',
-    cta: 'Build AI Platform'
+    path: '/ai-platform-development'
   },
   {
-    icon: <TrendingUp className="w-8 h-8" />,
     title: 'Digital Transformation',
     tagline: 'Enterprise-scale modernization',
     description: 'Legacy system modernization, platform migrations, team scaling. We\'ve grown teams from 1 to 40+. Strategic roadmaps backed by execution.',
@@ -101,10 +96,9 @@ const services: Service[] = [
     ],
     timeline: '3-12 months',
     examples: 'FAB Bank (1→40 team scale), platform re-architecture, cloud migration, API modernization',
-    cta: 'Discuss Transformation'
+    path: '/digital-transformation'
   },
   {
-    icon: <Users className="w-8 h-8" />,
     title: 'Fractional Leadership',
     tagline: 'CPO/CTO on-demand',
     description: '20 years of product leadership without the $300K/year salary. Strategic guidance, technical architecture, team management, roadmap planning.',
@@ -118,119 +112,177 @@ const services: Service[] = [
     ],
     timeline: 'Ongoing retainer',
     examples: 'Pre-seed startups needing product strategy, agencies scaling delivery teams, enterprises launching new products',
-    cta: 'Get Leadership'
+    path: '/fractional-cpo'
+  }
+];
+
+const differentiators = [
+  {
+    label: 'Traditional Agency',
+    points: [
+      '6-8 week discovery phases',
+      '40-person meetings',
+      'Months to first deliverable',
+      '$200K+ budgets',
+      'Handoffs and silos'
+    ],
+    isNegative: true
+  },
+  {
+    label: 'P0STMAN',
+    points: [
+      '1-2 week discovery (AI-assisted research)',
+      'Direct access to decision-makers',
+      'Working prototypes in days',
+      '$5K pilots to $50K+ systems',
+      'One team, start to finish'
+    ],
+    isNegative: false
   }
 ];
 
 export default function Services() {
-
   return (
     <>
       <Helmet>
         <title>Services | P0STMAN | AI-Native Product Studio</title>
         <meta name="description" content="AI voice agents, custom web platforms, mobile apps, AI development, digital transformation, and fractional leadership. Agency-quality work at startup speed." />
+        <meta name="keywords" content="AI development services, voice AI agents, custom web development, mobile app development, AI platform development, digital transformation, fractional CTO, fractional CPO" />
+        <meta property="og:title" content="Services | P0STMAN | AI-Native Product Studio" />
+        <meta property="og:description" content="AI voice agents, custom web platforms, mobile apps, and AI development services at startup speed." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://p0stman.com/services" />
       </Helmet>
-      <div className="min-h-screen bg-white dark:bg-gray-900">
-        <HeaderV3Global />
+
+      <div className="min-h-screen bg-white">
+        <HeaderV3Global darkMode={false} />
 
         {/* Hero Section */}
-        <section className="py-32 px-6 bg-white dark:bg-gray-900">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-32 md:py-48 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <p className="text-sm text-gray-400 uppercase tracking-wider">What We Build</p>
-
-              <h1 className="text-5xl md:text-6xl font-thin text-gray-900 dark:text-gray-100 leading-tight max-w-4xl">
-                Agency-Quality Work. <br />
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Startup Speed & Scale.
+              {/* Eyebrow */}
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  What We Build
                 </span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight mb-8">
+                Agency Quality.
+                <br />
+                Startup Speed.
               </h1>
 
-              <p className="text-xl font-light text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
+              {/* Description */}
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-4xl mb-12">
                 From AI voice agents to full-stack platforms, we deliver production-ready systems in weeks, not months. No 40-person teams. No endless meetings. Just experienced builders leveraging AI to ship fast.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light text-lg"
                 >
                   Explore Services
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                 </a>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors font-medium"
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-gray-900 border border-gray-200 hover:border-gray-300 transition-colors font-light text-lg"
                 >
                   Schedule a Call
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-24 px-6 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-7xl mx-auto">
-            <div className="space-y-16">
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-900 rounded-2xl p-8 md:p-12 border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 transition-all"
-                >
-                  <div className="grid md:grid-cols-3 gap-8">
-                    {/* Left Column - Icon & Overview */}
-                    <div className="md:col-span-1 space-y-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white">
-                        {service.icon}
-                      </div>
+        <section id="services" className="py-24 md:py-32 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="mb-24"
+            >
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  Core Services
+                </span>
+              </div>
 
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight max-w-4xl">
+                What We Do
+              </h2>
+            </motion.div>
+
+            {/* Services List */}
+            <div className="space-y-16 md:space-y-24">
+              {services.map((service, index) => (
+                <motion.article
+                  key={index}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 md:p-12 lg:p-16 border-t border-gray-200"
+                >
+                  <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
+                    {/* Left Column - Title & Overview */}
+                    <div className="lg:col-span-5 space-y-6">
                       <div>
-                        <h3 className="text-3xl font-light text-gray-900 dark:text-gray-100 mb-2">
+                        <h3 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 leading-tight">
                           {service.title}
                         </h3>
-                        <p className="text-lg text-blue-600 dark:text-blue-400 font-light">
+                        <p className="text-xl md:text-2xl text-gray-500 font-light">
                           {service.tagline}
                         </p>
                       </div>
 
-                      <p className="text-sm text-gray-600 dark:text-gray-400 pt-4">
-                        Timeline: {service.timeline}
-                      </p>
-
-                      <a
-                        href="/contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                      >
-                        {service.cta}
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </div>
-
-                    {/* Middle Column - Description & What You Get */}
-                    <div className="md:col-span-2 space-y-6">
-                      <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-600 font-light leading-relaxed text-lg">
                         {service.description}
                       </p>
 
+                      <div className="pt-4">
+                        <div className="text-sm text-gray-400 uppercase tracking-[0.2em] mb-2">
+                          Timeline
+                        </div>
+                        <p className="text-gray-900 font-light">
+                          {service.timeline}
+                        </p>
+                      </div>
+
+                      <Link
+                        to={service.path}
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light group"
+                      >
+                        Get Started
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+                      </Link>
+                    </div>
+
+                    {/* Right Column - Details */}
+                    <div className="lg:col-span-7 space-y-8">
+                      {/* What You Get */}
                       <div>
-                        <h4 className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wide">
+                        <h4 className="text-sm text-gray-400 uppercase tracking-[0.2em] mb-6">
                           What You Get
                         </h4>
-                        <div className="grid sm:grid-cols-2 gap-3">
+                        <div className="grid sm:grid-cols-2 gap-4">
                           {service.whatYouGet.map((item, i) => (
                             <div key={i} className="flex items-start gap-3">
-                              <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-gray-600 dark:text-gray-300">
+                              <Check className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                              <span className="text-gray-600 font-light leading-relaxed">
                                 {item}
                               </span>
                             </div>
@@ -238,156 +290,137 @@ export default function Services() {
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <h4 className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 uppercase tracking-wide">
+                      {/* Example Use Cases */}
+                      <div className="pt-8 border-t border-gray-200">
+                        <h4 className="text-sm text-gray-400 uppercase tracking-[0.2em] mb-4">
                           Example Use Cases
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-gray-600 font-light leading-relaxed">
                           {service.examples}
                         </p>
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </motion.article>
               ))}
             </div>
           </div>
         </section>
 
         {/* How We're Different */}
-        <section className="py-24 px-6 bg-white dark:bg-gray-900">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-24 md:py-32 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            {/* Section Header */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="mb-24"
             >
-              <h2 className="text-4xl font-thin text-gray-900 dark:text-gray-100 mb-6">
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  The Difference
+                </span>
+              </div>
+
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight max-w-4xl mb-8">
                 How We're Different
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 font-light max-w-3xl mx-auto">
+
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
                 Traditional agencies vs. P0STMAN's AI-native approach
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Traditional Agency */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700"
-              >
-                <h3 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-6">
-                  Traditional Agency
-                </h3>
-                <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>6-8 week discovery phases</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>40-person meetings</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>Months to first deliverable</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>$200K+ budgets</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500 mt-1">✗</span>
-                    <span>Handoffs and silos</span>
-                  </li>
-                </ul>
-              </motion.div>
+            {/* Comparison Grid */}
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-6xl">
+              {differentiators.map((diff, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className={`p-8 lg:p-12 ${
+                    diff.isNegative
+                      ? 'bg-gray-50 border border-gray-200'
+                      : 'bg-black text-white'
+                  }`}
+                >
+                  <h3 className={`text-3xl md:text-4xl font-light mb-8 ${
+                    diff.isNegative ? 'text-gray-900' : 'text-white'
+                  }`}>
+                    {diff.label}
+                  </h3>
 
-              {/* P0STMAN */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-8 border border-blue-200 dark:border-blue-800"
-              >
-                <h3 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-6">
-                  P0STMAN
-                </h3>
-                <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                    <span>1-2 week discovery (AI-assisted research)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                    <span>Direct access to decision-makers</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                    <span>Working prototypes in days</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                    <span>$5K pilots to $50K+ systems</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
-                    <span>One team, start to finish</span>
-                  </li>
-                </ul>
-              </motion.div>
+                  <ul className="space-y-4">
+                    {diff.points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        {diff.isNegative ? (
+                          <span className="text-gray-400 text-lg mt-1">✗</span>
+                        ) : (
+                          <Check className="w-5 h-5 text-white flex-shrink-0 mt-1" strokeWidth={1.5} />
+                        )}
+                        <span className={`font-light leading-relaxed ${
+                          diff.isNegative ? 'text-gray-600' : 'text-white/90'
+                        }`}>
+                          {point}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
             </div>
 
+            {/* Explanation */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className="mt-12 text-center"
+              className="mt-16 lg:mt-24 max-w-4xl"
             >
-              <p className="text-lg text-gray-600 dark:text-gray-300 font-light max-w-3xl mx-auto">
-                <strong className="text-gray-900 dark:text-gray-100">The unlock:</strong> AI handles the repetitive work—research, documentation, boilerplate code, testing frameworks. Our team focuses on architecture, validation, and commercial viability. 20 years of pattern recognition means we avoid rookie mistakes and challenge briefs to make them better before we build.
+              <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed">
+                <strong className="text-gray-900 font-normal">The unlock:</strong> AI handles the repetitive work—research, documentation, boilerplate code, testing frameworks. Our team focuses on architecture, validation, and commercial viability. 20 years of pattern recognition means we avoid rookie mistakes and challenge briefs to make them better before we build.
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-6 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-24 md:py-32 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
+              className="text-center max-w-4xl mx-auto"
             >
-              <h2 className="text-4xl md:text-5xl font-thin mb-6">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-8 leading-tight">
                 Ready to Build?
               </h2>
-              <p className="text-xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
-                Tell us what you\'re building. We\'ll tell you the timeline and price. Most projects start with a quick consultation call—free, no pressure, just honest guidance.
+
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed mb-12">
+                Tell us what you're building. We'll tell you the timeline and price. Most projects start with a quick consultation call—free, no pressure, just honest guidance.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-medium text-lg"
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light text-lg"
                 >
                   Schedule a Call
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <a
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all font-medium text-lg"
+                  <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+                </Link>
+                <Link
+                  to="/case-studies"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 border border-gray-200 hover:border-gray-300 transition-colors font-light text-lg"
                 >
                   View Case Studies
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
