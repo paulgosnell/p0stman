@@ -107,50 +107,50 @@ export default function TechStack({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="group relative"
               onMouseEnter={() => setHoveredTech(tech.name)}
               onMouseLeave={() => setHoveredTech(null)}
             >
               {/* Icon Container */}
-              <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 group-hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 group-hover:shadow-lg transition-all duration-300 cursor-pointer">
                 <img
                   src={tech.icon}
                   alt={tech.name}
                   className="w-10 h-10 md:w-12 md:h-12 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
                 />
-
-                {/* Tooltip */}
-                {hoveredTech === tech.name && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute z-50 pointer-events-none"
-                    style={{
-                      bottom: '100%',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      marginBottom: '1rem'
-                    }}
-                  >
-                    <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700 relative">
-                      {/* Arrow */}
-                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
-                        <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-900"></div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="text-center whitespace-normal">
-                        <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">{tech.description}</h4>
-                        <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {tech.usage}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
               </div>
+
+              {/* Tooltip */}
+              {hoveredTech === tech.name && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute z-50 pointer-events-none"
+                  style={{
+                    bottom: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    marginBottom: '1rem'
+                  }}
+                >
+                  <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700 relative">
+                    {/* Arrow */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
+                      <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-900"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="text-center whitespace-normal">
+                      <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">{tech.description}</h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {tech.usage}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
             </motion.div>
           ))}
         </div>
