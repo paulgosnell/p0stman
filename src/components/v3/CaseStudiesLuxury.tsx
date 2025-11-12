@@ -17,7 +17,7 @@ const featuredCaseStudies: CaseStudy[] = [
     title: 'YachtOS Command',
     company: 'Voice-Powered Maritime Intelligence',
     category: 'Maritime Technology',
-    image: '/agents/yachtos-1.png',
+    image: '/agents/yachtos-home.png',
     path: '/case-study/yachtos',
     description: 'AI-native operating system for superyacht captains saving 10+ hours weekly'
   },
@@ -41,7 +41,7 @@ const featuredCaseStudies: CaseStudy[] = [
     title: 'ChilledSites',
     company: 'AI Website Builder',
     category: 'AI Development',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites-homepage.png',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/canvas.png',
     path: '/case-study/chilled-sites',
     description: '2500+ websites created in under 10 minutes with AI-powered platform'
   }
