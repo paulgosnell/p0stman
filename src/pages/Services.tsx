@@ -344,12 +344,12 @@ export default function Services() {
                   viewport={{ once: true }}
                   className={`p-8 lg:p-12 ${
                     diff.isNegative
-                      ? 'bg-gray-50 border border-gray-200'
+                      ? 'bg-gray-50 border border-gray-200 text-gray-900'
                       : 'bg-black text-white'
                   }`}
                 >
                   <h3 className={`text-3xl md:text-4xl font-light mb-8 ${
-                    diff.isNegative ? 'text-gray-900' : 'text-white'
+                    diff.isNegative ? 'text-gray-900' : 'text-white !text-white'
                   }`}>
                     {diff.label}
                   </h3>
@@ -360,10 +360,10 @@ export default function Services() {
                         {diff.isNegative ? (
                           <span className="text-gray-400 text-lg mt-1">✗</span>
                         ) : (
-                          <Check className="w-5 h-5 text-white flex-shrink-0 mt-1" strokeWidth={1.5} />
+                          <Check className="w-5 h-5 text-white !text-white flex-shrink-0 mt-1" strokeWidth={1.5} />
                         )}
                         <span className={`font-light leading-relaxed ${
-                          diff.isNegative ? 'text-gray-600' : 'text-white/90'
+                          diff.isNegative ? 'text-gray-600' : 'text-white/90 !text-white/90'
                         }`}>
                           {point}
                         </span>
