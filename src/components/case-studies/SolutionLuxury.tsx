@@ -2,6 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
+interface AppScreenshot {
+  name: string;
+  image: string;
+  description?: string;
+}
+
 interface SolutionLuxuryProps {
   title: string;
   description: string;
@@ -9,6 +15,7 @@ interface SolutionLuxuryProps {
   outcome?: string;
   image?: string;
   secondaryImage?: string;
+  appScreenshots?: AppScreenshot[];
   technologies?: string[];
   features?: string[];
   liveUrl?: string;
@@ -21,10 +28,15 @@ export default function SolutionLuxury({
   outcome,
   image,
   secondaryImage,
+  appScreenshots,
   technologies,
   features,
   liveUrl
 }: SolutionLuxuryProps) {
+  // Debug logging
+  console.log('SolutionLuxury appScreenshots:', appScreenshots);
+  console.log('appScreenshots length:', appScreenshots?.length);
+
   return (
     <>
       {/* Solution Section - Full Bleed Image */}
@@ -158,6 +170,91 @@ export default function SolutionLuxury({
             />
           </motion.div>
         </section>
+      )}
+
+      {/* App Screenshots Gallery - Horizontal Scroll */}
+      {appScreenshots && appScreenshots.length > 0 ? (
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light mb-4 block">
+                Platform Applications
+              </span>
+              <h3
+                className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight"
+                style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
+              >
+                Five Specialized Apps
+              </h3>
+            </motion.div>
+
+            {/* Horizontal Scrolling Gallery */}
+            <div className="relative">
+              <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth hide-scrollbar">
+                {appScreenshots.map((app, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex-shrink-0 w-[300px] md:w-[350px] snap-start group"
+                  >
+                    {/* Screenshot Container */}
+                    <div className="relative overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
+                      <div className="aspect-[9/16] relative">
+                        <img
+                          src={app.image}
+                          alt={app.name}
+                          className="w-full h-full object-cover object-top"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+
+                      {/* App Name Badge */}
+                      <div className="absolute top-4 left-4 right-4">
+                        <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                          <p className="text-sm font-semibold text-gray-900 text-center tracking-wide">
+                            {app.name}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Description on Hover */}
+                      {app.description && (
+                        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <p className="text-sm text-white font-light leading-relaxed">
+                            {app.description}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Scroll Indicator */}
+              <div className="mt-6 flex justify-center gap-2">
+                {appScreenshots.map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-2 h-2 rounded-full bg-gray-300"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        appScreenshots && console.log('appScreenshots exists but empty:', appScreenshots)
       )}
 
       {/* Tech Stack - Optional Accordion at Bottom */}

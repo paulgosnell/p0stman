@@ -232,7 +232,7 @@ const allProjects = [
     company: 'Voice-Powered Maritime Intelligence',
     category: 'Maritime Technology',
     type: 'AI-Built',
-    image: '/agents/yachtos-1.png',
+    image: '/agents/yachtos-home.png',
     logo: '/agents/yachtos-icon.png',
     description: 'First AI-native operating system for superyacht captains with voice commands, computer vision, and real-time operations.',
     challenge: 'Superyacht captains manage complex operations across weather monitoring, maintenance scheduling, crew coordination, and supplier relationships using 8-12 different apps.',

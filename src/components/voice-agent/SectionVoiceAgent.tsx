@@ -37,6 +37,12 @@ export interface SectionVoiceAgentProps {
   /** Auto-start the conversation when component mounts */
   autoStart?: boolean;
 
+  /** Maximum conversation duration in seconds (default: 300 = 5 minutes) */
+  maxDurationSeconds?: number;
+
+  /** Maximum number of conversation turns (user + agent exchanges) (default: 10) */
+  maxTurns?: number;
+
   /** Callback when conversation starts */
   onConversationStart?: () => void;
 
@@ -67,20 +73,28 @@ export default function SectionVoiceAgent({
   color = 'blue',
   icon = '🎤',
   autoStart = false,
+  maxDurationSeconds = 300,
+  maxTurns = 10,
   onConversationStart,
   onConversationEnd,
   onError,
   onMessagesUpdate,
 }: SectionVoiceAgentProps) {
+  // TEMPORARY: Voice agent maintenance mode
+  const VOICE_AGENT_MAINTENANCE = false;
+
   const [isActive, setIsActive] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
   const [error, setError] = useState<string | null>(null);
   const [conversationId, setConversationId] = useState<string | undefined>();
+  const [turnCount, setTurnCount] = useState(0);
+  const [conversationStartTime, setConversationStartTime] = useState<number | null>(null);
 
   const navigate = useNavigate();
   const animationFrameRef = useRef<number>();
+  const durationTimerRef = useRef<NodeJS.Timeout>();
 
   // Get agent ID from environment
   const agentId = import.meta.env.VITE_ELEVENLABS_AGENT_ID;
@@ -132,6 +146,49 @@ export default function SectionVoiceAgent({
 
   // Use Web Speech API to capture user speech (only when agent is NOT speaking)
   const { isListening } = useWebSpeechCapture(isActive, conversation.isSpeaking, onMessagesUpdate);
+
+  // Track conversation turns
+  useEffect(() => {
+    if (conversation.status === 'connected') {
+      // Increment turn count when agent speaks (assuming each agent response = 1 turn)
+      if (conversation.isSpeaking) {
+        setTurnCount((prev) => prev + 1);
+      }
+    }
+  }, [conversation.isSpeaking, conversation.status]);
+
+  // Check if conversation limits exceeded
+  useEffect(() => {
+    if (!isActive || conversation.status !== 'connected') return;
+
+    // Check turn limit
+    if (maxTurns && turnCount >= maxTurns) {
+      console.log(`Conversation limit reached: ${turnCount} turns`);
+      endConversation();
+      return;
+    }
+  }, [turnCount, isActive, conversation.status]);
+
+  // Duration timer
+  useEffect(() => {
+    if (isActive && conversation.status === 'connected' && !conversationStartTime) {
+      setConversationStartTime(Date.now());
+
+      // Set timer to end conversation after max duration
+      if (maxDurationSeconds) {
+        durationTimerRef.current = setTimeout(() => {
+          console.log(`Conversation duration limit reached: ${maxDurationSeconds}s`);
+          endConversation();
+        }, maxDurationSeconds * 1000);
+      }
+    }
+
+    return () => {
+      if (durationTimerRef.current) {
+        clearTimeout(durationTimerRef.current);
+      }
+    };
+  }, [isActive, conversation.status, conversationStartTime, maxDurationSeconds]);
 
   // Auto-start if enabled
   useEffect(() => {
@@ -216,6 +273,15 @@ export default function SectionVoiceAgent({
       }
       setIsActive(false);
       setIsExpanded(false);
+      setTurnCount(0);
+      setConversationStartTime(null);
+
+      // Clear duration timer
+      if (durationTimerRef.current) {
+        clearTimeout(durationTimerRef.current);
+        durationTimerRef.current = undefined;
+      }
+
       onConversationEnd?.(conversationId);
     } catch (err) {
       console.error('Failed to end conversation:', err);
@@ -277,6 +343,63 @@ export default function SectionVoiceAgent({
     if (conversation.status === 'disconnected') return 'Disconnected';
     return 'Ready';
   };
+
+  // TEMPORARY: Show maintenance message if voice agent is disabled
+  if (VOICE_AGENT_MAINTENANCE) {
+    // Floating mode - maintenance badge
+    if (placement === 'floating') {
+      return (
+        <motion.div
+          className="bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full px-4 py-2 shadow-lg"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          title="Voice Agent is currently being upgraded"
+        >
+          <div className="flex items-center gap-2 text-sm font-medium">
+            <span>🍔</span>
+            <span>Voice Agent out for lunch</span>
+          </div>
+        </motion.div>
+      );
+    }
+
+    // Inline mode - maintenance banner
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full"
+      >
+        <div className="relative overflow-hidden rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-pink-50 p-6 text-center">
+          {/* Animated background pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(251,146,60,0.3),transparent_50%)]" />
+          </div>
+
+          <div className="relative z-10">
+            <div className="text-4xl mb-3 animate-bounce">🍔</div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Voice Agent Out for Lunch
+            </h3>
+            <p className="text-gray-600 font-light mb-4">
+              Our AI assistant is being upgraded with new capabilities.
+              <br />
+              Back online soon!
+            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-orange-200">
+              <span className="text-sm text-gray-700">
+                In the meantime, you can{' '}
+                <a href="/contact" className="text-orange-600 hover:text-orange-700 font-medium underline">
+                  contact us directly
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
 
   // Floating mode - compact button
   if (placement === 'floating' && !isExpanded) {

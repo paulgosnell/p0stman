@@ -297,6 +297,8 @@ export default function ContactPage() {
                     color="blue"
                     icon="🎤"
                     showTranscript={false}
+                    maxDurationSeconds={180}
+                    maxTurns={8}
                   />
                 </div>
               </motion.div>

@@ -53,6 +53,34 @@ const challenge = {
   ]
 };
 
+const appScreenshots = [
+  {
+    name: "COMMAND",
+    image: "/agents/yachtos-command.png",
+    description: "Voice-first captain operations with AI tools for hands-free vessel management"
+  },
+  {
+    name: "FLEET",
+    image: "/agents/yachtos-fleet.png",
+    description: "Multi-vessel analytics with AI cost optimization and health scoring"
+  },
+  {
+    name: "HARBOR",
+    image: "/agents/yachtos-harbor.png",
+    description: "Berth coordination and marina operations management"
+  },
+  {
+    name: "OWNER",
+    image: "/agents/yachtos-owner.png",
+    description: "Real-time oversight and vessel tracking for yacht owners"
+  },
+  {
+    name: "GUEST",
+    image: "/agents/yachtos-guest.png",
+    description: "Luxury concierge AI with cabin climate control and services"
+  }
+];
+
 const solution = {
   title: "Five AI-Native Apps, One Unified Platform",
   description: "Five specialized Progressive Web Apps sharing one AI infrastructure: COMMAND (voice-first captain ops), FLEET (multi-vessel analytics + AI cost optimization), HARBOR (berth coordination), OWNER (real-time oversight), GUEST (luxury concierge). Built on Next.js 14 with Claude Sonnet 4.5 and ElevenLabs Voice AI, deployed across 295 global edge locations for sub-200ms worldwide performance.",
@@ -63,7 +91,8 @@ const solution = {
     'Created HARBOR, OWNER, and GUEST apps with specialized workflows and cabin automation'
   ],
   outcome: "Delivered 5 distinct apps with role-optimized interfaces, shared intelligence, offline PWA capability, and global edge deployment—reducing development time 80% versus separate builds.",
-  image: "/agents/yachtos-2.png",
+  image: "/agents/fleet-map-desktop.png",
+  appScreenshots,
   technologies,
   features
 };
@@ -103,8 +132,8 @@ const benefits = {
       metric: "100% offline capable"
     }
   ],
-  image: "/agents/yachtos-3.png",
-  secondaryImage: "/agents/yachtos-mobile-1.png"
+  image: "/agents/owner-desktop.png",
+  secondaryImage: "/agents/superadmin.png"
 };
 
 export default function YachtOS() {
@@ -118,11 +147,11 @@ export default function YachtOS() {
           <meta property="og:title" content="YachtOS Platform - Five Maritime AI Apps, One Unified Platform" />
           <meta property="og:description" content="AI-native multi-app suite delivering specialized experiences for every yachting role. Built in 2 months with 80% cost savings." />
           <meta property="og:type" content="article" />
-          <meta property="og:image" content="https://p0stman.com/agents/yachtos-1.png" />
+          <meta property="og:image" content="https://p0stman.com/agents/yachtos-home.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="YachtOS Platform - Multi-App Maritime AI Suite" />
           <meta name="twitter:description" content="Five specialized AI apps for yachting: COMMAND, FLEET, HARBOR, OWNER, GUEST. One unified platform." />
-          <meta name="twitter:image" content="https://p0stman.com/agents/yachtos-1.png" />
+          <meta name="twitter:image" content="https://p0stman.com/agents/yachtos-home.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/yachtos" />
         </Helmet>
 
@@ -159,6 +188,7 @@ export default function YachtOS() {
           approach={solution.approach}
           outcome={solution.outcome}
           image={solution.image}
+          appScreenshots={solution.appScreenshots}
           technologies={solution.technologies}
           features={solution.features}
         />
