@@ -33,10 +33,6 @@ export default function SolutionLuxury({
   features,
   liveUrl
 }: SolutionLuxuryProps) {
-  // Debug logging
-  console.log('SolutionLuxury appScreenshots:', appScreenshots);
-  console.log('appScreenshots length:', appScreenshots?.length);
-
   return (
     <>
       {/* Solution Section - Full Bleed Image */}
@@ -253,9 +249,7 @@ export default function SolutionLuxury({
             </div>
           </div>
         </section>
-      ) : (
-        appScreenshots && console.log('appScreenshots exists but empty:', appScreenshots)
-      )}
+      ) : null}
 
       {/* Tech Stack - Optional Accordion at Bottom */}
       {(technologies && technologies.length > 0) || (features && features.length > 0) ? (
