@@ -713,9 +713,9 @@ export default function CaseStudies() {
                     <img
                       src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&auto=format&fit=crop"
                       alt="Health & Wellness"
-                      className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40" />
                   </div>
 
                   {/* Content */}
@@ -733,7 +733,7 @@ export default function CaseStudies() {
                       </h2>
 
                       {/* Description */}
-                      <p className="text-xl text-gray-300 font-light mb-8 leading-relaxed max-w-3xl">
+                      <p className="text-xl text-gray-200 font-light mb-8 leading-relaxed max-w-3xl">
                         From AI-powered health platforms to government healthcare apps, we've built across the entire health spectrum.
                         Wearable integration, mental wellness, fitness tracking, clinic management, and corporate wellness—see our deep health expertise.
                       </p>
