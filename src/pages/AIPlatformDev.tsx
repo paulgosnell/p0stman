@@ -149,7 +149,7 @@ export default function AIPlatformDev() {
                   </span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight mb-8">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 leading-[1.05] tracking-tight mb-8">
                   Build AI-Powered Platforms
                   <span className="block">That Actually Work</span>
                 </h1>

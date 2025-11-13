@@ -151,7 +151,7 @@ export default function FractionalCPO() {
                   <div className="space-y-6">
                     <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Fractional CPO Services</p>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight text-gray-900">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight text-gray-900">
                       Strategic Product Leadership
                       <br />
                       Without the Full-Time Cost
@@ -166,15 +166,15 @@ export default function FractionalCPO() {
 
                   {/* Key Benefits */}
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                    <div className="bg-gray-50 p-4 border border-gray-200">
                       <div className="text-2xl font-light text-gray-900 mb-1">50-70%</div>
                       <div className="text-sm text-gray-600">Cost Savings</div>
                     </div>
-                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                    <div className="bg-gray-50 p-4 border border-gray-200">
                       <div className="text-2xl font-light text-gray-900 mb-1">Day 1</div>
                       <div className="text-sm text-gray-600">Impact</div>
                     </div>
-                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                    <div className="bg-gray-50 p-4 border border-gray-200">
                       <div className="text-2xl font-light text-gray-900 mb-1">20+ yrs</div>
                       <div className="text-sm text-gray-600">Experience</div>
                     </div>
@@ -209,7 +209,7 @@ export default function FractionalCPO() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
+                  <div className="relative bg-white p-8 border-t border-gray-200">
                     <div className="space-y-6">
                       <div className="text-center mb-8">
                         <h3 className="text-2xl font-light text-gray-900 mb-3">Why Choose Fractional?</h3>
@@ -218,7 +218,7 @@ export default function FractionalCPO() {
 
                       <div className="space-y-6">
                         <div className="flex items-start gap-4">
-                          <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                          <div className="p-3 bg-gray-50 border border-gray-200">
                             <DollarSign className="w-6 h-6 text-gray-900" />
                           </div>
                           <div>
@@ -228,7 +228,7 @@ export default function FractionalCPO() {
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                          <div className="p-3 bg-gray-50 border border-gray-200">
                             <Clock className="w-6 h-6 text-gray-900" />
                           </div>
                           <div>
@@ -238,7 +238,7 @@ export default function FractionalCPO() {
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                          <div className="p-3 bg-gray-50 border border-gray-200">
                             <Award className="w-6 h-6 text-gray-900" />
                           </div>
                           <div>
@@ -248,7 +248,7 @@ export default function FractionalCPO() {
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                          <div className="p-3 bg-gray-50 border border-gray-200">
                             <Target className="w-6 h-6 text-gray-900" />
                           </div>
                           <div>

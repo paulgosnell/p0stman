@@ -61,7 +61,7 @@ export default function Training() {
                       <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Expert Training</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6">
                       Master AI-Powered Development
                     </h1>
 

@@ -211,7 +211,7 @@ export default function Website() {
                 >
                   <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Professional Website Development</p>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight text-black">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight text-black">
                     Your Website,
                     <br />
                     Built with AI

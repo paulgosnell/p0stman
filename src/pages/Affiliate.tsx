@@ -59,7 +59,7 @@ export default function Affiliate() {
                       <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Partner Program</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 leading-[1.05] tracking-tight mb-6">
                       Earn 20% on all Sales
                     </h1>
 

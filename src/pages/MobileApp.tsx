@@ -84,7 +84,7 @@ export default function MobileApp() {
                 </div>
 
                 {/* Headline */}
-                <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 leading-[1.05] tracking-tight">
                   Transform Your Idea Into a Mobile App
                 </h1>
 

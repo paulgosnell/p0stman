@@ -231,7 +231,7 @@ export default function DigitalTransformation() {
                     </span>
                   </div>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 leading-[1.05] tracking-tight text-gray-900">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 leading-[1.05] tracking-tight text-gray-900">
                     Transform Your Organization
                     <span className="block mt-4">For the Digital Future</span>
                   </h1>
