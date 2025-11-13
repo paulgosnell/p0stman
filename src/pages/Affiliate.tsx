@@ -37,14 +37,14 @@ export default function Affiliate() {
           <link rel="canonical" href="https://p0stman.com/affiliate" />
         </Helmet>
 
-        <HeaderV3Global />
+        <HeaderV3Global darkMode={false} />
 
         <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
-          <div className="container mx-auto px-4 py-24 relative z-10">
+          <div className="container mx-auto px-8 py-32 md:py-48 relative z-10">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -55,78 +55,78 @@ export default function Affiliate() {
                 <div className="space-y-8">
                   <div>
                     <div className="flex items-center gap-2 mb-6">
-                      <Users className="w-6 h-6 text-pink-400" />
-                      <span className="text-pink-400 font-medium">Partner Program</span>
+                      <Users className="w-6 h-6 text-gray-400" strokeWidth={1.5} />
+                      <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Partner Program</span>
                     </div>
 
-                    <h1 className="text-5xl font-thin mb-6">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight mb-6">
                       Earn 20% on all Sales
                     </h1>
-                    
-                    <p className="text-xl text-gray-300 mb-8">
+
+                    <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed mb-8">
                       Join our partner program and earn generous commissions by promoting our AI-powered product studio.
                     </p>
 
                     <div className="space-y-4">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-pink-400" />
-                        <span>Up to $8,000 per referral</span>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-gray-900" strokeWidth={1.5} />
+                        <span className="text-gray-900 font-light">Up to $8,000 per referral</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-pink-400" />
-                        <span>Long tracking period</span>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-gray-900" strokeWidth={1.5} />
+                        <span className="text-gray-900 font-light">Long tracking period</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-pink-400" />
-                        <span>Regular payouts</span>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-gray-900" strokeWidth={1.5} />
+                        <span className="text-gray-900 font-light">Regular payouts</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-pink-400" />
-                        <span>Support provided</span>
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-gray-900" strokeWidth={1.5} />
+                        <span className="text-gray-900 font-light">Support provided</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                     <div>
-                      <div className="text-3xl font-light mb-1">20%</div>
-                      <div className="text-gray-400">Commission rate</div>
+                      <div className="text-3xl font-light text-gray-900 mb-1">20%</div>
+                      <div className="text-gray-400 font-light">Commission rate</div>
                     </div>
                     <button
                       onClick={() => setShowSignupModal(true)}
-                      className="px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
+                      className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light"
                     >
                       Join Now
-                      <ArrowRight className="ml-2 inline-block w-5 h-5" />
+                      <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                     </button>
                   </div>
                 </div>
 
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-purple-600/20 rounded-3xl transform rotate-6" />
-                  <div className="relative z-10 bg-gray-800 rounded-3xl p-8">
-                    <div className="space-y-6">
-                      <div className="p-6 bg-gray-700/50 rounded-xl">
-                        <div className="flex items-center gap-3 mb-4">
-                          <DollarSign className="w-6 h-6 text-pink-400" />
-                          <h3 className="text-lg font-light">Example Earnings</h3>
+                  <div className="absolute inset-0 bg-gray-50 transform rotate-3" />
+                  <div className="relative z-10 bg-white border-t border-gray-200 p-8 md:p-12">
+                    <div className="space-y-8">
+                      <div className="p-6 bg-gray-50 border-t border-gray-200">
+                        <div className="flex items-center gap-3 mb-6">
+                          <DollarSign className="w-6 h-6 text-gray-900" strokeWidth={1.5} />
+                          <h3 className="text-lg font-light text-gray-900">Example Earnings</h3>
                         </div>
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                           <div>
-                            <div className="text-sm text-gray-400">Training ($500)</div>
-                            <div className="text-xl font-light">$100 commission</div>
+                            <div className="text-sm text-gray-400 font-light">Training ($500)</div>
+                            <div className="text-xl font-light text-gray-900">$100 commission</div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-400">Website ($6k)</div>
-                            <div className="text-xl font-light">$1.2k commission</div>
+                            <div className="text-sm text-gray-400 font-light">Website ($6k)</div>
+                            <div className="text-xl font-light text-gray-900">$1.2k commission</div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-400">Mobile App ($40k)</div>
-                            <div className="text-xl font-light">$8k commission</div>
-                          </div>                        
+                            <div className="text-sm text-gray-400 font-light">Mobile App ($40k)</div>
+                            <div className="text-xl font-light text-gray-900">$8k commission</div>
+                          </div>
                         </div>
                       </div>
-                      <div className="text-sm text-gray-400 text-center">
+                      <div className="text-sm text-gray-400 font-light text-center">
                         No limit on earnings • Regular payouts • Instant approval
                       </div>
                     </div>

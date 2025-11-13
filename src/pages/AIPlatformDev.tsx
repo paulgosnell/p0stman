@@ -1,46 +1,27 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { 
-  Bot, 
-  Zap, 
-  Code, 
-  Rocket, 
-  CheckCircle, 
-  ArrowRight,
-  Brain,
-  Globe,
-  Shield,
-  Clock,
-  DollarSign,
-  Target,
-  Database,
-  Cloud,
-  MessageSquare,
-  Sparkles,
-  TrendingUp
+import {
+  CheckCircle,
+  ArrowRight
 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
 
 const capabilities = [
   {
-    icon: <Brain className="w-8 h-8 text-blue-600" />,
     title: "AI Integration",
     description: "Seamlessly integrate GPT-4, Claude, Gemini, and custom AI models into your platform."
   },
   {
-    icon: <Rocket className="w-8 h-8 text-purple-600" />,
     title: "Rapid Development",
     description: "Build production-ready platforms in weeks, not months, using AI-powered development."
   },
   {
-    icon: <Shield className="w-8 h-8 text-green-600" />,
     title: "Enterprise Security",
     description: "Bank-grade security, compliance, and data protection built into every solution."
   },
   {
-    icon: <Globe className="w-8 h-8 text-orange-600" />,
     title: "Scalable Architecture",
     description: "Cloud-native solutions that scale from MVP to millions of users seamlessly."
   }
@@ -153,340 +134,390 @@ export default function AIPlatformDev() {
         <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    <Bot className="w-8 h-8 text-blue-400" />
-                    <span className="text-blue-400 font-semibold">AI Platform Development</span>
-                  </div>
-                  
-                  <h1 className="text-5xl font-bold mb-6 leading-tight">
-                    Build AI-Powered Platforms
-                    <span className="block text-blue-400">That Actually Work</span>
-                  </h1>
-                  
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                    From concept to production in weeks, not months. I build custom AI platforms 
-                    using GPT-4, Claude, and cutting-edge AI technologies that deliver real 
-                    business value.
-                  </p>
+        <section className="py-32 md:py-48 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <div className="grid lg:grid-cols-12 gap-16 items-start">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="lg:col-span-7"
+              >
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    AI Platform Development
+                  </span>
+                </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <motion.a
-                      href="mailto:hello@p0stman.com?subject=AI Platform Development Inquiry"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
-                    >
-                      <Sparkles className="w-5 h-5" />
-                      Start Your AI Project
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.a>
-                    <motion.a
-                      href="#case-studies"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-400 text-white rounded-lg hover:bg-gray-50 transition-all font-semibold text-lg"
-                    >
-                      View Case Studies
-                    </motion.a>
-                  </div>
-                </motion.div>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight mb-8">
+                  Build AI-Powered Platforms
+                  <span className="block">That Actually Work</span>
+                </h1>
 
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative"
-                >
-                  <div className="bg-gray-50 backdrop-blur-sm p-8 rounded-2xl border border-gray-200">
-                    <h3 className="text-2xl font-bold mb-6">Why Choose AI-First Development?</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <Zap className="w-6 h-6 text-yellow-400 mt-1" />
-                        <div>
-                          <h4 className="font-semibold">10x Faster Development</h4>
-                          <p className="text-gray-300 text-sm">AI-powered coding accelerates every phase</p>
-                        </div>
+                <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed mb-12">
+                  From concept to production in weeks, not months. I build custom AI platforms
+                  using GPT-4, Claude, and cutting-edge AI technologies that deliver real
+                  business value.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <motion.a
+                    href="mailto:hello@p0stman.com?subject=AI Platform Development Inquiry"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light text-lg"
+                  >
+                    Start Your AI Project
+                    <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+                  </motion.a>
+                  <motion.a
+                    href="#case-studies"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-gray-900 border border-gray-200 hover:border-gray-300 transition-colors font-light text-lg"
+                  >
+                    View Case Studies
+                  </motion.a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="lg:col-span-5"
+              >
+                <div className="bg-gray-50 p-8 lg:p-12 border-t border-gray-200">
+                  <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">Why Choose AI-First Development?</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" strokeWidth={1.5} />
+                      <div>
+                        <h4 className="text-gray-900 font-light mb-1">10x Faster Development</h4>
+                        <p className="text-gray-600 text-sm font-light">AI-powered coding accelerates every phase</p>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Brain className="w-6 h-6 text-purple-400 mt-1" />
-                        <div>
-                          <h4 className="font-semibold">Intelligent by Design</h4>
-                          <p className="text-gray-300 text-sm">AI capabilities built into the core architecture</p>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" strokeWidth={1.5} />
+                      <div>
+                        <h4 className="text-gray-900 font-light mb-1">Intelligent by Design</h4>
+                        <p className="text-gray-600 text-sm font-light">AI capabilities built into the core architecture</p>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <TrendingUp className="w-6 h-6 text-green-400 mt-1" />
-                        <div>
-                          <h4 className="font-semibold">Future-Proof Technology</h4>
-                          <p className="text-gray-300 text-sm">Built with the latest AI models and frameworks</p>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" strokeWidth={1.5} />
+                      <div>
+                        <h4 className="text-gray-900 font-light mb-1">Future-Proof Technology</h4>
+                        <p className="text-gray-600 text-sm font-light">Built with the latest AI models and frameworks</p>
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Capabilities Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl font-bold mb-6">Core Capabilities</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  End-to-end AI platform development with enterprise-grade quality and startup speed
-                </p>
-              </motion.div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {capabilities.map((capability, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-center p-6 rounded-xl hover:shadow-lg transition-all"
-                  >
-                    <div className="mb-4 flex justify-center">{capability.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{capability.title}</h3>
-                    <p className="text-gray-600">{capability.description}</p>
-                  </motion.div>
-                ))}
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="mb-24"
+            >
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  Core Capabilities
+                </span>
               </div>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight mb-8">
+                End-to-end AI platform development
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
+                Enterprise-grade quality with startup speed
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {capabilities.map((capability, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 border-t border-gray-200"
+                >
+                  <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-4">{capability.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed">{capability.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Tech Stack Section */}
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl font-bold mb-6">Technology Stack</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Cutting-edge technologies and AI models for maximum performance and scalability
-                </p>
-              </motion.div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {techStack.map((category, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-white p-6 rounded-xl shadow-sm"
-                  >
-                    <h3 className="text-xl font-semibold mb-4">{category.name}</h3>
-                    <div className="space-y-2">
-                      {category.items.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-gray-700">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="mb-24"
+            >
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  Technology Stack
+                </span>
               </div>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight mb-8">
+                Cutting-edge technologies
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
+                AI models and frameworks for maximum performance and scalability
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {techStack.map((category, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-8 border-t border-gray-200"
+                >
+                  <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-6">{category.name}</h3>
+                  <div className="space-y-3">
+                    {category.items.map((item, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <CheckCircle className="w-4 h-4 text-gray-400 flex-shrink-0" strokeWidth={1.5} />
+                        <span className="text-gray-600 font-light">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Project Types Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl font-bold mb-6">Project Types & Pricing</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  From MVP to enterprise solutions, tailored to your needs and budget
-                </p>
-              </motion.div>
-
-              <div className="grid md:grid-cols-2 gap-8">
-                {projectTypes.map((project, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-gray-200"
-                  >
-                    <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                    <p className="text-gray-600 mb-6">{project.description}</p>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Examples:</h4>
-                      <ul className="space-y-2">
-                        {project.examples.map((example, i) => (
-                          <li key={i} className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-green-600" />
-                            <span className="text-gray-700">{example}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-                      <div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Clock className="w-4 h-4" />
-                          <span>{project.timeline}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600 mt-1">
-                          <DollarSign className="w-4 h-4" />
-                          <span>{project.price}</span>
-                        </div>
-                      </div>
-                      <motion.a
-                        href="mailto:hello@p0stman.com?subject=AI Platform Development Inquiry"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-sm"
-                      >
-                        Get Quote
-                      </motion.a>
-                    </div>
-                  </motion.div>
-                ))}
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="mb-24"
+            >
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  Project Types & Pricing
+                </span>
               </div>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight mb-8">
+                From MVP to enterprise
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
+                Tailored to your needs and budget
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectTypes.map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 lg:p-12 border-t border-gray-200"
+                >
+                  <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">{project.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed mb-8">{project.description}</p>
+
+                  <div className="mb-8">
+                    <h4 className="text-sm text-gray-400 uppercase tracking-[0.2em] mb-4">Examples:</h4>
+                    <ul className="space-y-3">
+                      {project.examples.map((example, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckCircle className="w-4 h-4 text-gray-400 flex-shrink-0" strokeWidth={1.5} />
+                          <span className="text-gray-600 font-light">{example}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 pt-8 border-t border-gray-200">
+                    <div className="space-y-2">
+                      <div className="text-sm text-gray-400 uppercase tracking-[0.2em]">Timeline</div>
+                      <div className="text-gray-900 font-light">{project.timeline}</div>
+                      <div className="text-sm text-gray-400 uppercase tracking-[0.2em] mt-3">Investment</div>
+                      <div className="text-gray-900 font-light">{project.price}</div>
+                    </div>
+                    <motion.a
+                      href="mailto:hello@p0stman.com?subject=AI Platform Development Inquiry"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors font-light"
+                    >
+                      Get Quote
+                    </motion.a>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Case Studies Section */}
-        <section id="case-studies" className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl font-bold mb-6">Success Stories</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Real AI platforms delivering measurable business results
-                </p>
-              </motion.div>
-
-              <div className="grid lg:grid-cols-3 gap-8">
-                {caseStudies.map((study, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-white p-8 rounded-xl shadow-sm"
-                  >
-                    <h3 className="text-xl font-bold mb-4">{study.title}</h3>
-                    <p className="text-gray-600 mb-6">{study.description}</p>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Results:</h4>
-                      <ul className="space-y-2">
-                        {study.results.map((result, i) => (
-                          <li key={i} className="flex items-center gap-2">
-                            <TrendingUp className="w-4 h-4 text-green-600" />
-                            <span className="text-gray-700 text-sm">{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="pt-4 border-t border-gray-200">
-                      <div className="flex flex-wrap gap-2">
-                        {study.tech.map((tech, i) => (
-                          <span key={i} className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+        <section id="case-studies" className="py-24 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="mb-24"
+            >
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  Success Stories
+                </span>
               </div>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight mb-8">
+                Real AI platforms
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
+                Delivering measurable business results
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {caseStudies.map((study, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-8 border-t border-gray-200"
+                >
+                  <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-4">{study.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed mb-8">{study.description}</p>
+
+                  <div className="mb-8">
+                    <h4 className="text-sm text-gray-400 uppercase tracking-[0.2em] mb-4">Results:</h4>
+                    <ul className="space-y-3">
+                      {study.results.map((result, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <CheckCircle className="w-4 h-4 text-gray-400 flex-shrink-0" strokeWidth={1.5} />
+                          <span className="text-gray-600 font-light text-sm">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-6 border-t border-gray-200">
+                    <div className="flex flex-wrap gap-2">
+                      {study.tech.map((tech, i) => (
+                        <span key={i} className="px-3 py-1 bg-white text-gray-600 border border-gray-200 text-xs font-light">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Process Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl font-bold mb-6">Development Process</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Streamlined process from concept to production deployment
-                </p>
-              </motion.div>
-
-              <div className="space-y-8">
-                {process.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-6 p-6 bg-gray-50 rounded-xl"
-                  >
-                    <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                      {step.step}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                      <p className="text-gray-600 mb-2">{step.description}</p>
-                      <div className="flex items-center gap-2 text-sm text-blue-600">
-                        <Clock className="w-4 h-4" />
-                        <span>{step.duration}</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="mb-24"
+            >
+              <div className="mb-8">
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                  Development Process
+                </span>
               </div>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight mb-8">
+                Concept to production
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
+                Streamlined process from planning to deployment
+              </p>
+            </motion.div>
+
+            <div className="space-y-8">
+              {process.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-8 p-8 lg:p-12 bg-white border-t border-gray-200"
+                >
+                  <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-light text-lg flex-shrink-0">
+                    {step.step}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-3">{step.title}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed mb-4">{step.description}</p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-gray-400 uppercase tracking-[0.2em]">Duration:</span>
+                      <span className="text-gray-900 font-light">{step.duration}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-24 md:py-32 bg-black text-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="text-center max-w-4xl mx-auto"
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight">
+                Ready to Build Your AI Platform?
+              </h2>
+
+              <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed mb-12">
+                Let's discuss your AI project. We'll provide honest guidance on feasibility, timeline, and investment.
+              </p>
+
+              <motion.a
+                href="mailto:hello@p0stman.com?subject=AI Platform Development Inquiry"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black hover:bg-gray-200 transition-colors font-light text-lg"
+              >
+                Start Your Project
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+              </motion.a>
+            </motion.div>
           </div>
         </section>
 

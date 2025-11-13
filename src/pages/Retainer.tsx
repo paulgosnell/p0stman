@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -17,22 +17,22 @@ const benefits = [
 
 const features = [
   {
-    icon: <MessageSquare className="w-8 h-8 text-teal-400" />,
+    icon: <MessageSquare className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Direct Access",
     description: "Get direct access to expert guidance through your preferred communication channel"
   },
   {
-    icon: <Clock className="w-8 h-8 text-teal-400" />,
+    icon: <Clock className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Flexible Support",
     description: "Asynchronous communication that works with any timezone"
   },
   {
-    icon: <Bot className="w-8 h-8 text-teal-400" />,
+    icon: <Bot className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "AI Expertise",
     description: "Get guidance on AI implementation, automation, and optimization"
   },
   {
-    icon: <Zap className="w-8 h-8 text-teal-400" />,
+    icon: <Zap className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Fast Response",
     description: "Priority response times for all your questions and needs"
   }
@@ -69,157 +69,165 @@ export default function Retainer() {
             <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
 
-          <div className="container mx-auto px-4 py-24 relative z-10">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5 }}
-                  className="space-y-8"
-                >
-                  <div>
-                    <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">Expert Retainer Service</p>
+          <div className="container mx-auto px-8 py-32 md:py-48 relative z-10 max-w-[90rem]">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="space-y-8"
+              >
+                <div>
+                  <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light mb-8">Expert Retainer Service</p>
 
-                    <h1 className="text-5xl font-bold mb-6">
-                      Your Fractional Tech Team
-                    </h1>
-                    
-                    <p className="text-xl text-gray-600 mb-8">
-                      Get an entire tech team's expertise at a fraction of the cost. Instant access to AI development, design, strategy, and advisory services without the overhead.
-                    </p>
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight mb-8">
+                    Your Fractional Tech Team
+                  </h1>
 
-                    <div className="space-y-4">
-                      {benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-teal-400" />
-                          <span>{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed mb-8">
+                    Get an entire tech team's expertise at a fraction of the cost. Instant access to AI development, design, strategy, and advisory services without the overhead.
+                  </p>
 
-                    <div className="flex items-center gap-6 mt-8">
-                      <div>
-                        <div className="text-3xl font-bold mb-1">$12,000</div>
-                        <div className="text-gray-400">per month</div>
+                  <div className="space-y-4 mb-8">
+                    {benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-gray-900" strokeWidth={1.5} />
+                        <span className="text-gray-600 font-light">{benefit}</span>
                       </div>
-                      <a
-                        href="#contact"
-                        className="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors"
-                      >
-                        Get Started
-                        <ArrowRight className="ml-2 inline-block w-5 h-5" />
-                      </a>
-                    </div>
+                    ))}
                   </div>
-                </motion.div>
 
-                <div className="grid gap-6">
-                  {features.map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-8">
+                    <div>
+                      <div className="text-4xl md:text-5xl font-light text-gray-900 mb-1">$12,000</div>
+                      <div className="text-gray-400 font-light">per month</div>
+                    </div>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light"
                     >
-                      <div className="flex items-center gap-4">
-                        {feature.icon}
-                        <div>
-                          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                          <p className="text-gray-600">{feature.description}</p>
-                        </div>
+                      Get Started
+                      <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className="grid gap-6">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                    transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white border-t border-gray-200 p-8"
+                  >
+                    <div className="flex items-start gap-4">
+                      {feature.icon}
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-2">{feature.title}</h3>
+                        <p className="text-gray-600 font-light leading-relaxed">{feature.description}</p>
                       </div>
-                    </motion.div>
-                  ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 md:py-32 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <div className="max-w-4xl mx-auto text-center">
+              {/* Section Header */}
+              <div className="mb-16">
+                <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light mb-8">The Process</p>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-8">How It Works</h2>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+                <div className="space-y-6">
+                  <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto">
+                    <MessageSquare className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-light text-gray-900">1. Get Connected</h3>
+                  <p className="text-gray-600 font-light leading-relaxed">Get your private Slack channel or preferred communication method setup</p>
+                </div>
+                <div className="space-y-6">
+                  <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto">
+                    <Mail className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-light text-gray-900">2. Share Your Goals</h3>
+                  <p className="text-gray-600 font-light leading-relaxed">Brief overview of your needs, projects and objectives</p>
+                </div>
+                <div className="space-y-6">
+                  <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto">
+                    <Zap className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-light text-gray-900">3. Start Building</h3>
+                  <p className="text-gray-600 font-light leading-relaxed">Get instant access to expertise, guidance and hands-on support</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">How It Works</h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto">
-                    <MessageSquare className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold">1. Get Connected</h3>
-                  <p className="text-gray-600">Get your private Slack channel or preferred communication method setup</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto">
-                    <Mail className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold">2. Share Your Goals</h3>
-                  <p className="text-gray-600">Brief overview of your needs, projects and objectives</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto">
-                    <Zap className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold">3. Start Building</h3>
-                  <p className="text-gray-600">Get instant access to expertise, guidance and hands-on support</p>
-                </div>
+        <section className="py-24 md:py-32 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <div className="max-w-5xl mx-auto text-center">
+              {/* Section Header */}
+              <div className="mb-16">
+                <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light mb-8">Value Proposition</p>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-8">What You Get</h2>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-12">What You Get</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 p-8 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-6">Development & Tech</h3>
-                  <ul className="space-y-4 text-left">
+              <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+                <div className="bg-white border-t border-gray-200 p-8 md:p-12 text-left">
+                  <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">Development & Tech</h3>
+                  <ul className="space-y-4">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>AI implementation guidance</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">AI implementation guidance</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Code review & best practices</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Code review & best practices</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Architecture planning</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Architecture planning</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Technical problem solving</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Technical problem solving</span>
                     </li>
                   </ul>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-6">Strategy & Growth</h3>
-                  <ul className="space-y-4 text-left">
+                <div className="bg-white border-t border-gray-200 p-8 md:p-12 text-left">
+                  <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-8">Strategy & Growth</h3>
+                  <ul className="space-y-4">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Product strategy</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Product strategy</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Growth planning</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Growth planning</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Technology roadmap</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Technology roadmap</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                      <span>Innovation advisory</span>
+                      <CheckCircle className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-600 font-light leading-relaxed">Innovation advisory</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="mt-12 text-gray-600">
-                <p className="mb-4">All for a fraction of the cost of hiring a full-time team.</p>
-                <p className="text-sm">Average cost of a tech team: $40,000+/month<br />Your investment: $12,000/month</p>
+              <div className="mt-16 text-gray-600 font-light leading-relaxed">
+                <p className="mb-4 text-lg">All for a fraction of the cost of hiring a full-time team.</p>
+                <p className="text-base text-gray-500">Average cost of a tech team: $40,000+/month<br />Your investment: $12,000/month</p>
               </div>
             </div>
           </div>

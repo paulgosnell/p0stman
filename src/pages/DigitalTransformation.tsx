@@ -1,20 +1,16 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { 
-  Globe, 
-  Zap, 
-  Brain, 
-  Rocket, 
-  CheckCircle, 
+import {
+  Globe,
+  Brain,
+  Rocket,
+  CheckCircle,
   ArrowRight,
   Building2,
   Users,
-  Award,
   Clock,
-  DollarSign,
   Target,
-  MessageSquare,
   TrendingUp,
   Shield,
   Code,
@@ -28,22 +24,22 @@ import FooterV3 from '../components/v3/FooterV3';
 
 const transformationAreas = [
   {
-    icon: <Brain className="w-8 h-8 text-blue-600" />,
+    icon: <Brain className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "AI Integration & Automation",
     description: "Implement AI-powered solutions to automate processes and enhance decision-making capabilities."
   },
   {
-    icon: <Cloud className="w-8 h-8 text-green-600" />,
+    icon: <Cloud className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Cloud Migration & Modernization",
     description: "Migrate legacy systems to modern cloud infrastructure for scalability and efficiency."
   },
   {
-    icon: <Code className="w-8 h-8 text-purple-600" />,
+    icon: <Code className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Technology Stack Upgrade",
     description: "Modernize development practices with cutting-edge technologies and frameworks."
   },
   {
-    icon: <Users className="w-8 h-8 text-orange-600" />,
+    icon: <Users className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Team & Process Transformation",
     description: "Transform organizational culture and processes to embrace digital-first methodologies."
   }
@@ -52,25 +48,25 @@ const transformationAreas = [
 const industries = [
   {
     name: "Banking & Finance",
-    icon: <Building2 className="w-6 h-6" />,
+    icon: <Building2 className="w-6 h-6 text-gray-900" strokeWidth={1.5} />,
     challenges: ["Legacy system modernization", "Regulatory compliance", "Digital customer experience"],
     solutions: ["AI-powered analytics", "Cloud-native architecture", "Mobile-first platforms"]
   },
   {
     name: "Healthcare",
-    icon: <Shield className="w-6 h-6" />,
+    icon: <Shield className="w-6 h-6 text-gray-900" strokeWidth={1.5} />,
     challenges: ["Data security", "System integration", "Patient experience"],
     solutions: ["HIPAA-compliant platforms", "AI diagnostics", "Telemedicine solutions"]
   },
   {
     name: "Retail & E-commerce",
-    icon: <Globe className="w-6 h-6" />,
+    icon: <Globe className="w-6 h-6 text-gray-900" strokeWidth={1.5} />,
     challenges: ["Omnichannel experience", "Inventory management", "Customer personalization"],
     solutions: ["AI recommendations", "Real-time analytics", "Unified commerce platforms"]
   },
   {
     name: "Manufacturing",
-    icon: <Settings className="w-6 h-6" />,
+    icon: <Settings className="w-6 h-6 text-gray-900" strokeWidth={1.5} />,
     challenges: ["Process optimization", "Supply chain visibility", "Predictive maintenance"],
     solutions: ["IoT integration", "AI-powered insights", "Digital twin technology"]
   }
@@ -220,8 +216,8 @@ export default function DigitalTransformation() {
         <HeaderV3Global />
 
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
-          <div className="container mx-auto px-4">
+        <section className="py-32 md:py-48 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <motion.div
@@ -229,19 +225,20 @@ export default function DigitalTransformation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <Globe className="w-8 h-8 text-blue-400" />
-                    <span className="text-blue-400 font-semibold">Digital Transformation</span>
+                  <div className="mb-8">
+                    <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                      Digital Transformation
+                    </span>
                   </div>
-                  
-                  <h1 className="text-5xl font-thin mb-6 leading-tight">
+
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 leading-[1.05] tracking-tight text-gray-900">
                     Transform Your Organization
-                    <span className="block text-blue-400">For the Digital Future</span>
+                    <span className="block mt-4">For the Digital Future</span>
                   </h1>
-                  
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                    Navigate digital transformation with confidence. From AI integration to 
-                    cloud modernization, I help enterprises embrace technology that drives 
+
+                  <p className="text-xl md:text-2xl text-gray-600 font-light mb-8 leading-relaxed max-w-2xl">
+                    Navigate digital transformation with confidence. From AI integration to
+                    cloud modernization, I help enterprises embrace technology that drives
                     real business value and competitive advantage.
                   </p>
 
@@ -250,17 +247,17 @@ export default function DigitalTransformation() {
                       href="mailto:hello@p0stman.com?subject=Digital Transformation Inquiry"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg inline-flex items-center gap-2"
+                      className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition-all font-light text-lg inline-flex items-center gap-2"
                     >
-                      <Rocket className="w-5 h-5" />
+                      <Rocket className="w-5 h-5" strokeWidth={1.5} />
                       Start Transformation
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                     </motion.a>
                     <motion.a
                       href="#success-stories"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-8 py-4 border border-gray-400 text-white rounded-lg hover:bg-gray-50 transition-all font-semibold text-lg"
+                      className="px-8 py-4 border border-gray-200 text-gray-900 hover:border-gray-300 transition-all font-light text-lg"
                     >
                       View Success Stories
                     </motion.a>
@@ -273,28 +270,28 @@ export default function DigitalTransformation() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="bg-gray-50 backdrop-blur-sm p-8 rounded-2xl border border-gray-200">
-                    <h3 className="text-2xl font-light mb-6">Transformation Impact</h3>
+                  <div className="bg-gray-50 p-8 border-t border-gray-200">
+                    <h3 className="text-2xl font-light mb-6 text-gray-900">Transformation Impact</h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
-                        <TrendingUp className="w-6 h-6 text-green-400 mt-1" />
+                        <TrendingUp className="w-6 h-6 text-gray-900 mt-1" strokeWidth={1.5} />
                         <div>
-                          <h4 className="font-light">Measurable ROI</h4>
-                          <p className="text-gray-300 text-sm">Average 300% ROI within 18 months</p>
+                          <h4 className="font-light text-gray-900">Measurable ROI</h4>
+                          <p className="text-gray-600 text-sm">Average 300% ROI within 18 months</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Zap className="w-6 h-6 text-yellow-400 mt-1" />
+                        <Target className="w-6 h-6 text-gray-900 mt-1" strokeWidth={1.5} />
                         <div>
-                          <h4 className="font-light">Accelerated Innovation</h4>
-                          <p className="text-gray-300 text-sm">10x faster product development cycles</p>
+                          <h4 className="font-light text-gray-900">Accelerated Innovation</h4>
+                          <p className="text-gray-600 text-sm">10x faster product development cycles</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Users className="w-6 h-6 text-purple-400 mt-1" />
+                        <Users className="w-6 h-6 text-gray-900 mt-1" strokeWidth={1.5} />
                         <div>
-                          <h4 className="font-light">Team Empowerment</h4>
-                          <p className="text-gray-300 text-sm">Enhanced productivity and job satisfaction</p>
+                          <h4 className="font-light text-gray-900">Team Empowerment</h4>
+                          <p className="text-gray-600 text-sm">Enhanced productivity and job satisfaction</p>
                         </div>
                       </div>
                     </div>
@@ -306,18 +303,23 @@ export default function DigitalTransformation() {
         </section>
 
         {/* Transformation Areas */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="mb-16"
               >
-                <h2 className="text-4xl font-light mb-6">Transformation Focus Areas</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    Focus Areas
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6">Transformation Focus Areas</h2>
+                <p className="text-xl text-gray-600 font-light max-w-3xl">
                   Comprehensive digital transformation across technology, processes, and people
                 </p>
               </motion.div>
@@ -330,11 +332,11 @@ export default function DigitalTransformation() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="text-center p-6 rounded-xl hover:shadow-lg transition-all"
+                    className="bg-white p-6 border-t border-gray-200"
                   >
                     <div className="mb-4 flex justify-center">{area.icon}</div>
-                    <h3 className="text-xl font-light mb-3">{area.title}</h3>
-                    <p className="text-gray-600">{area.description}</p>
+                    <h3 className="text-xl font-light mb-3 text-gray-900 text-center">{area.title}</h3>
+                    <p className="text-gray-600 font-light text-center">{area.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -343,18 +345,23 @@ export default function DigitalTransformation() {
         </section>
 
         {/* Industry Solutions */}
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="mb-16"
               >
-                <h2 className="text-4xl font-light mb-6">Industry-Specific Solutions</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    Industry Solutions
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6">Industry-Specific Solutions</h2>
+                <p className="text-xl text-gray-600 font-light max-w-3xl">
                   Tailored transformation approaches for different industry challenges
                 </p>
               </motion.div>
@@ -367,33 +374,33 @@ export default function DigitalTransformation() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 rounded-xl shadow-sm"
+                    className="bg-gray-50 p-8 border-t border-gray-200"
                   >
                     <div className="flex items-center gap-3 mb-6">
                       {industry.icon}
-                      <h3 className="text-2xl font-light">{industry.name}</h3>
+                      <h3 className="text-2xl font-light text-gray-900">{industry.name}</h3>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-light text-red-600 mb-3">Common Challenges:</h4>
+                        <h4 className="font-light text-gray-900 mb-3 text-sm tracking-[0.2em] uppercase">Common Challenges:</h4>
                         <ul className="space-y-2">
                           {industry.challenges.map((challenge, i) => (
                             <li key={i} className="flex items-start gap-2">
-                              <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
-                              <span className="text-gray-700 text-sm">{challenge}</span>
+                              <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0" />
+                              <span className="text-gray-600 text-sm font-light">{challenge}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-                      
+
                       <div>
-                        <h4 className="font-light text-green-600 mb-3">Our Solutions:</h4>
+                        <h4 className="font-light text-gray-900 mb-3 text-sm tracking-[0.2em] uppercase">Our Solutions:</h4>
                         <ul className="space-y-2">
                           {industry.solutions.map((solution, i) => (
                             <li key={i} className="flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700 text-sm">{solution}</span>
+                              <CheckCircle className="w-4 h-4 text-gray-900 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                              <span className="text-gray-600 text-sm font-light">{solution}</span>
                             </li>
                           ))}
                         </ul>
@@ -407,18 +414,23 @@ export default function DigitalTransformation() {
         </section>
 
         {/* Transformation Process */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="mb-16"
               >
-                <h2 className="text-4xl font-light mb-6">Transformation Process</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    Our Process
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6">Transformation Process</h2>
+                <p className="text-xl text-gray-600 font-light max-w-3xl">
                   Structured approach to ensure successful digital transformation
                 </p>
               </motion.div>
@@ -431,26 +443,26 @@ export default function DigitalTransformation() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl border border-gray-200"
+                    className="bg-white p-8 border-t border-gray-200"
                   >
                     <div className="flex items-start gap-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                      <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-light text-lg flex-shrink-0">
                         {phase.phase}
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                          <h3 className="text-2xl font-light">{phase.title}</h3>
-                          <div className="flex items-center gap-2 text-blue-600">
-                            <Clock className="w-4 h-4" />
+                          <h3 className="text-2xl font-light text-gray-900">{phase.title}</h3>
+                          <div className="flex items-center gap-2 text-gray-600">
+                            <Clock className="w-4 h-4" strokeWidth={1.5} />
                             <span className="font-light">{phase.duration}</span>
                           </div>
                         </div>
-                        <p className="text-gray-600 mb-4">{phase.description}</p>
+                        <p className="text-gray-600 font-light mb-4">{phase.description}</p>
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
                           {phase.deliverables.map((deliverable, i) => (
                             <div key={i} className="flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-600" />
-                              <span className="text-sm text-gray-700">{deliverable}</span>
+                              <CheckCircle className="w-4 h-4 text-gray-900" strokeWidth={1.5} />
+                              <span className="text-sm text-gray-600 font-light">{deliverable}</span>
                             </div>
                           ))}
                         </div>
@@ -464,18 +476,23 @@ export default function DigitalTransformation() {
         </section>
 
         {/* Success Stories */}
-        <section id="success-stories" className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section id="success-stories" className="py-24 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="mb-16"
               >
-                <h2 className="text-4xl font-light mb-6">Transformation Success Stories</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    Success Stories
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6">Transformation Success Stories</h2>
+                <p className="text-xl text-gray-600 font-light max-w-3xl">
                   Real results from digital transformation initiatives across industries
                 </p>
               </motion.div>
@@ -488,39 +505,39 @@ export default function DigitalTransformation() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 rounded-xl shadow-sm"
+                    className="bg-gray-50 p-8 border-t border-gray-200"
                   >
                     <div className="grid lg:grid-cols-3 gap-8">
                       <div>
                         <div className="mb-4">
-                          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                          <span className="px-3 py-1 bg-gray-200 text-gray-900 text-sm font-light">
                             {story.industry}
                           </span>
                         </div>
-                        <h3 className="text-2xl font-light mb-4">{story.client}</h3>
+                        <h3 className="text-2xl font-light mb-4 text-gray-900">{story.client}</h3>
                         <div className="space-y-4">
                           <div>
-                            <h4 className="font-light text-red-600 mb-2">Challenge:</h4>
-                            <p className="text-gray-600 text-sm">{story.challenge}</p>
+                            <h4 className="font-light text-gray-900 mb-2 text-sm tracking-[0.2em] uppercase">Challenge:</h4>
+                            <p className="text-gray-600 text-sm font-light">{story.challenge}</p>
                           </div>
                           <div>
-                            <h4 className="font-light text-blue-600 mb-2">Transformation:</h4>
-                            <p className="text-gray-600 text-sm">{story.transformation}</p>
+                            <h4 className="font-light text-gray-900 mb-2 text-sm tracking-[0.2em] uppercase">Transformation:</h4>
+                            <p className="text-gray-600 text-sm font-light">{story.transformation}</p>
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-purple-600">
-                            <Clock className="w-4 h-4" />
+                          <div className="flex items-center gap-2 text-sm text-gray-600">
+                            <Clock className="w-4 h-4" strokeWidth={1.5} />
                             <span className="font-light">{story.timeline}</span>
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="lg:col-span-2">
-                        <h4 className="font-light text-green-600 mb-4">Results Achieved:</h4>
+                        <h4 className="font-light text-gray-900 mb-4 text-sm tracking-[0.2em] uppercase">Results Achieved:</h4>
                         <div className="grid md:grid-cols-2 gap-4">
                           {story.results.map((result, i) => (
-                            <div key={i} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
-                              <BarChart className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700 font-light">{result}</span>
+                            <div key={i} className="flex items-start gap-3 p-4 bg-white border-t border-gray-200">
+                              <BarChart className="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                              <span className="text-gray-600 font-light">{result}</span>
                             </div>
                           ))}
                         </div>
@@ -534,18 +551,23 @@ export default function DigitalTransformation() {
         </section>
 
         {/* Service Packages */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="mb-16"
               >
-                <h2 className="text-4xl font-light mb-6">Transformation Packages</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    Packages
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6">Transformation Packages</h2>
+                <p className="text-xl text-gray-600 font-light max-w-3xl">
                   Flexible engagement models to match your transformation needs
                 </p>
               </motion.div>
@@ -558,55 +580,53 @@ export default function DigitalTransformation() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className={`relative bg-white p-8 rounded-2xl border-2 ${
-                      pkg.popular 
-                        ? 'border-blue-500 shadow-lg' 
-                        : 'border-gray-200'
+                    className={`relative bg-white p-8 border-t border-gray-200 ${
+                      pkg.popular ? 'ring-2 ring-black' : ''
                     }`}
                   >
                     {pkg.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        <span className="bg-black text-white px-4 py-2 text-sm font-light">
                           Most Popular
                         </span>
                       </div>
                     )}
-                    
+
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-light mb-2">{pkg.name}</h3>
+                      <h3 className="text-2xl font-light mb-2 text-gray-900">{pkg.name}</h3>
                       <div className="mb-2">
-                        <span className="text-4xl font-light">{pkg.price}</span>
+                        <span className="text-4xl font-light text-gray-900">{pkg.price}</span>
                       </div>
-                      <p className="text-gray-600 mb-4">{pkg.description}</p>
-                      <div className="flex items-center justify-center gap-2 text-sm text-blue-600">
-                        <Clock className="w-4 h-4" />
-                        <span>{pkg.duration}</span>
+                      <p className="text-gray-600 font-light mb-4">{pkg.description}</p>
+                      <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
+                        <Clock className="w-4 h-4" strokeWidth={1.5} />
+                        <span className="font-light">{pkg.duration}</span>
                       </div>
                     </div>
 
                     <div className="space-y-3 mb-8">
                       {pkg.features.map((feature, i) => (
                         <div key={i} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
+                          <CheckCircle className="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                          <span className="text-gray-600 font-light">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <div className="text-center">
-                      <p className="text-sm text-gray-500 mb-4">{pkg.ideal}</p>
+                      <p className="text-sm text-gray-500 font-light mb-4">{pkg.ideal}</p>
                       <motion.a
                         href="mailto:hello@p0stman.com?subject=Digital Transformation Inquiry"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className={`w-full px-6 py-3 rounded-lg font-medium transition-all inline-flex items-center justify-center gap-2 ${
+                        className={`w-full px-6 py-3 font-light transition-all inline-flex items-center justify-center gap-2 ${
                           pkg.popular
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            ? 'bg-black text-white hover:bg-gray-800'
+                            : 'bg-gray-50 text-gray-900 border border-gray-200 hover:border-gray-300'
                         }`}
                       >
                         Get Started
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                       </motion.a>
                     </div>
                   </motion.div>
