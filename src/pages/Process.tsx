@@ -24,6 +24,7 @@ import {
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
+import TechStack from '../components/TechStack';
 
 const processSteps = [
   {
@@ -417,6 +418,14 @@ export default function Process() {
             </div>
           </div>
         </section>
+
+        {/* AI Building Blocks */}
+        <TechStack
+          eyebrow="Technology Stack"
+          title="AI Building Blocks"
+          description="The Technology Stack We Build With"
+          className="bg-white"
+        />
 
         {/* CTA Section */}
         <section className="py-24 md:py-32 bg-gray-50">
