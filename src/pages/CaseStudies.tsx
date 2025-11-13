@@ -733,7 +733,7 @@ export default function CaseStudies() {
                       </h2>
 
                       {/* Description */}
-                      <p className="text-xl text-gray-200 font-light mb-8 leading-relaxed max-w-3xl">
+                      <p className="text-xl text-white font-light mb-8 leading-relaxed max-w-3xl">
                         From AI-powered health platforms to government healthcare apps, we've built across the entire health spectrum.
                         Wearable integration, mental wellness, fitness tracking, clinic management, and corporate wellness—see our deep health expertise.
                       </p>
@@ -742,19 +742,19 @@ export default function CaseStudies() {
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                         <div className="border-l border-white/40 pl-4">
                           <div className="text-3xl font-light text-white">6+</div>
-                          <div className="text-white/70 text-sm font-light">Health Projects</div>
+                          <div className="text-white text-sm font-light">Health Projects</div>
                         </div>
                         <div className="border-l border-white/40 pl-4">
                           <div className="text-3xl font-light text-white">60K+</div>
-                          <div className="text-white/70 text-sm font-light">Active Users</div>
+                          <div className="text-white text-sm font-light">Active Users</div>
                         </div>
                         <div className="border-l border-white/40 pl-4">
                           <div className="text-3xl font-light text-white">95%</div>
-                          <div className="text-white/70 text-sm font-light">Cost Savings</div>
+                          <div className="text-white text-sm font-light">Cost Savings</div>
                         </div>
                         <div className="border-l border-white/40 pl-4">
                           <div className="text-3xl font-light text-white">1-3 wks</div>
-                          <div className="text-white/70 text-sm font-light">Build Time</div>
+                          <div className="text-white text-sm font-light">Build Time</div>
                         </div>
                       </div>
 
