@@ -164,18 +164,18 @@ export default function HealthLanding() {
               className="max-w-4xl"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
-                <Heart className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
-                <span className="text-gray-200 text-sm font-light">Health & Wellness Expertise</span>
+                <Heart className="w-4 h-4 text-white" strokeWidth={1.5} />
+                <span className="text-white text-sm font-light">Health & Wellness Expertise</span>
               </div>
 
               <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight">
                 Building the Future of{' '}
-                <span className="text-gray-400">
+                <span className="text-white">
                   Digital Health
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-white/90 font-light mb-12 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white font-light mb-12 leading-relaxed">
                 From wearable data integration to AI-powered health platforms, government healthcare apps to mental wellness solutions.
                 We've built across the entire health spectrum with speed, precision, and deep domain expertise.
               </p>
