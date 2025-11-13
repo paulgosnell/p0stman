@@ -56,7 +56,7 @@ const agentTypes = [
       { name: "ElevenLabs" },
       { name: "LiveKit" }
     ],
-    gradient: "from-blue-600 to-cyan-600",
+    gradient: "bg-gray-900",
     metrics: [
       { label: "247 calls/week" },
       { label: "89% qualified" }
@@ -68,7 +68,7 @@ const agentTypes = [
       { name: "Anthropic" },
       { name: "OpenAI" }
     ],
-    gradient: "from-purple-600 to-pink-600",
+    gradient: "bg-black",
     metrics: [
       { label: "2.3s response" },
       { label: "94% satisfaction" }
@@ -81,7 +81,7 @@ const agentTypes = [
       { name: "GPT-4" },
       { name: "Gemini" }
     ],
-    gradient: "from-green-600 to-teal-600",
+    gradient: "bg-gray-900",
     metrics: [
       { label: "Ships in minutes" },
       { label: "20+ live sites" }
@@ -93,7 +93,7 @@ const agentTypes = [
       { name: "Claude" },
       { name: "Gemini" }
     ],
-    gradient: "from-orange-600 to-red-600",
+    gradient: "bg-black",
     metrics: [
       { label: "Visual analysis" },
       { label: "Content generation" }
@@ -103,25 +103,25 @@ const agentTypes = [
 
 const highlights = [
   {
-    icon: <TrendingUp className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
+    icon: <TrendingUp className="w-5 h-5 text-gray-400" strokeWidth={1.5} />,
     metric: "1→30",
     label: "Team Scale",
     description: "Scaled agency & successful exit"
   },
   {
-    icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
+    icon: <Globe className="w-5 h-5 text-gray-400" strokeWidth={1.5} />,
     metric: "20+",
     label: "AI MVPs",
     description: "Shipped via P0STMAN platform"
   },
   {
-    icon: <Users className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
+    icon: <Users className="w-5 h-5 text-gray-400" strokeWidth={1.5} />,
     metric: "30+",
     label: "Countries",
     description: "Fitlink wellness app reach"
   },
   {
-    icon: <Building2 className="w-5 h-5 text-gray-700" strokeWidth={1.5} />,
+    icon: <Building2 className="w-5 h-5 text-gray-400" strokeWidth={1.5} />,
     metric: "Enterprise",
     label: "Clients",
     description: "IBM iX, FAB, Al Arabiya, Abu Dhabi Gov"
@@ -130,7 +130,7 @@ const highlights = [
 
 const focusAreas = [
   {
-    icon: <Bot className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Bot className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "AI Agent Development",
     description: "Voice agents for lead gen. Chat agents for support. Code agents that ship features.",
     features: ["Voice Agents (ElevenLabs)", "Chat Agents (Claude/GPT)", "Code Agents (Gemini)", "Workflow Automation"],
@@ -138,43 +138,43 @@ const focusAreas = [
     featured: true
   },
   {
-    icon: <Rocket className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Rocket className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "MVP & Product Launches",
     description: "Fast, focused builds that validate your idea and get you to market in weeks, not months.",
     features: ["Prototypes", "Proof-of-Concepts", "Beta Launches", "Market Validation"]
   },
   {
-    icon: <Globe className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Globe className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "Websites & Mobile Apps",
     description: "Modern, responsive digital products that convert visitors into customers.",
     features: ["Responsive Websites", "iOS & Android Apps", "CMS Integration", "Performance Optimization"]
   },
   {
-    icon: <Brain className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Brain className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "Fractional Product Leadership",
     description: "Hands-on product direction, leadership, and team support when you need extra firepower.",
     features: ["Product Strategy", "Team Leadership", "Stakeholder Management", "Go-to-Market"]
   },
   {
-    icon: <Target className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Target className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "Digital Transformation",
     description: "Consulting and delivery to modernise systems and teams.",
     features: ["AI Strategy", "Process Optimisation", "Roadmaps", "Change Management"]
   },
   {
-    icon: <Sparkles className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Sparkles className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "Creative Prototypes",
     description: "Live, interactive demos that win pitches, unlock budget, and excite stakeholders.",
     features: ["Campaign Mockups", "Pitch Support", "Innovation Labs"]
   },
   {
-    icon: <Settings className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Settings className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "RAG Systems",
     description: "Retrieval-Augmented Generation at scale. Knowledge agents trained on your data — private, secure, and lightning-fast. Turns chaos into context, and context into answers.",
     features: ["Custom Knowledge Bases", "Private & Secure", "Real-time Retrieval", "Contextual AI Responses"]
   },
   {
-    icon: <Palette className="w-7 h-7 text-gray-700" strokeWidth={1.5} />,
+    icon: <Palette className="w-7 h-7 text-gray-400" strokeWidth={1.5} />,
     title: "Artitecture",
     description: "Where art meets architecture — the aesthetic logic behind every build. AI-assisted design language, consistent across apps, sites, and agents. Not just style. System-level beauty.",
     features: ["Design Systems", "Brand Consistency", "AI-Assisted Design", "Aesthetic Logic"]
@@ -211,28 +211,28 @@ const aiAgents = [
     name: 'Clarity',
     description: 'Get AI clarity in 5 minutes',
     screenshot: '/agents/clarity.png',
-    gradient: 'from-blue-500 to-cyan-500',
+    gradient: 'bg-gray-900',
     features: ['Voice agent lead gen', 'Victoria AI coach', 'Hidden value discovery']
   },
   {
     name: 'FitLink',
     description: 'AI-tailored health coaching via Telegram',
     screenshot: '/agents/fitlink.png',
-    gradient: 'from-green-500 to-emerald-500',
+    gradient: 'bg-black',
     features: ['Oura & Strava integration', 'Wearable data insights', 'Personalized coaching']
   },
   {
     name: 'Mamori',
     description: 'Clear, trustworthy health information for everyone',
     screenshot: '/agents/mamori.png',
-    gradient: 'from-purple-500 to-pink-500',
+    gradient: 'bg-gray-900',
     features: ['Analyzes health questions', 'Food labels & blood tests', 'Plain English insights']
   },
   {
     name: 'Pathfinder',
     description: 'AI coach for parents of ADHD children',
     screenshot: '/agents/pathfinder.png',
-    gradient: 'from-orange-500 to-red-500',
+    gradient: 'bg-black',
     features: ['Evidence-based support', 'Crisis-safe', 'GDPR compliant']
   }
 ];
@@ -264,9 +264,9 @@ const featuredProjects = [
     timeline: '18 months',
     teamSize: '40+ people',
     metrics: [
-      { label: 'Team Scale', value: '1→40', icon: <Users className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Duration', value: '18mo', icon: <Calendar className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
+      { label: 'Team Scale', value: '1→40', icon: <Users className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Duration', value: '18mo', icon: <Calendar className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -280,8 +280,8 @@ const featuredProjects = [
     type: 'enterprise',
     caseStudyUrl: '/case-study/doh-health',
     metrics: [
-      { label: 'Partnership', value: 'IBM', icon: <Building2 className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Client', value: 'Government', icon: <Award className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
+      { label: 'Partnership', value: 'IBM', icon: <Building2 className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Client', value: 'Government', icon: <Award className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> }
     ]
   },
     // Web3 & Blockchain Showcase Project
@@ -295,10 +295,10 @@ const featuredProjects = [
       type: 'web3',
       caseStudyUrl: '/case-study/bfit-web3',
       metrics: [
-        { label: 'Technology', value: 'Web3', icon: <Bot className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-        { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-        { label: 'Focus', value: 'Fitness', icon: <Target className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-        { label: 'Innovation', value: 'High', icon: <Zap className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
+        { label: 'Technology', value: 'Web3', icon: <Bot className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+        { label: 'Platform', value: 'Blockchain', icon: <Globe className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+        { label: 'Focus', value: 'Fitness', icon: <Target className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+        { label: 'Innovation', value: 'High', icon: <Zap className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> }
       ]
     },
   {
@@ -325,9 +325,9 @@ const featuredProjects = [
     timeline: '8 months',
     teamSize: '15+ global team',
     metrics: [
-      { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Global Team', value: '15+', icon: <Users className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
+      { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Global Team', value: '15+', icon: <Users className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -341,8 +341,8 @@ const featuredProjects = [
     type: 'enterprise',
     caseStudyUrl: '/case-study/arabian-center',
     metrics: [
-      { label: 'Company', value: 'Al-Futtaim', icon: <Building2 className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Sector', value: 'Retail', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
+      { label: 'Company', value: 'Al-Futtaim', icon: <Building2 className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Sector', value: 'Retail', icon: <Globe className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> }
     ]
   }
 ];
@@ -359,8 +359,8 @@ const additionalProjects = [
     description: 'Enhanced booking system and customer experience platform for UAE national airline. Streamlined reservation process with improved user interface and backend optimization.',
     caseStudyUrl: '/case-study/etihad-airways',
     metrics: [
-      { label: 'Industry', value: 'Aviation', icon: <Globe className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> },
-      { label: 'Focus', value: 'UX/UI', icon: <Target className="w-5 h-5 text-gray-700" strokeWidth={1.5} /> }
+      { label: 'Industry', value: 'Aviation', icon: <Globe className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> },
+      { label: 'Focus', value: 'UX/UI', icon: <Target className="w-5 h-5 text-gray-400" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -471,11 +471,11 @@ export default function HomeV2() {
     <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
       {/* Hero Section */}
       <section className="min-h-screen relative overflow-hidden bg-white text-gray-900">
-        {/* Space-themed Background - Similar to Case Studies */}
+        {/* Minimal Background */}
         <div className="absolute inset-0 z-0">
           <svg className="absolute inset-0 w-full h-full">
             <defs>
-              {/* Grid Pattern */}
+              {/* Subtle Grid Pattern */}
               <pattern
                 id="hero-grid"
                 width="60"
@@ -485,125 +485,20 @@ export default function HomeV2() {
                 <path
                   d="M 60 0 L 0 0 0 60"
                   fill="none"
-                  stroke="rgba(147, 51, 234, 0.3)"
+                  stroke="rgba(229, 231, 235, 0.3)"
                   strokeWidth="1"
                 />
               </pattern>
-              <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#6366F1" stopOpacity="0.6" />
-                <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#EC4899" stopOpacity="0.6" />
-              </linearGradient>
             </defs>
             <rect width="100%" height="100%" fill="url(#hero-grid)" />
           </svg>
         </div>
 
-        {/* Floating Stars */}
-        <div className="absolute inset-0 z-[2]">
-          {Array.from({ length: 40 }).map((_, i) => {
-            // Calculate these once per star using index-based randomness
-            const randomLeft = ((i * 37) % 100);
-            const randomTop = ((i * 73) % 100);
-            const starSize = i % 3 === 0 ? 4 : i % 2 === 0 ? 3 : 2;
-            const duration = 2 + (i % 5); // 2-6 seconds based on index
-            const delay = (i * 0.3) % 10; // Stagger delays 0-10 seconds
-
-            return (
-              <motion.div
-                key={`star-${i}`}
-                className="absolute bg-white rounded-full pointer-events-none"
-                style={{
-                  width: `${starSize}px`,
-                  height: `${starSize}px`,
-                  left: `${randomLeft}%`,
-                  top: `${randomTop}%`,
-                  boxShadow: '0 0 8px rgba(255,255,255,0.8)'
-                }}
-                animate={{
-                  opacity: [0.7, 1, 0.7],
-                  scale: [1, 1.2, 1]
-                }}
-                transition={{
-                  duration: duration,
-                  delay: delay,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            );
-          })}
-        </div>
-
-        {/* Shooting Stars */}
-        <div className="absolute inset-0 z-[3]">
-          {Array.from({ length: 2 }).map((_, i) => {
-            const randomStartY = Math.random() * 300;
-            const randomEndY = Math.random() * 300 + 100;
-
-            return (
-              <motion.div
-                key={`shooting-${i}`}
-                className="absolute w-1 h-1 bg-white rounded-full pointer-events-none"
-                initial={{
-                  x: -100,
-                  y: randomStartY,
-                  opacity: 0
-                }}
-                animate={{
-                  x: '100vw',
-                  y: randomEndY,
-                  opacity: [0, 1, 1, 0]
-                }}
-                transition={{
-                  duration: 2,
-                  delay: i * 4,
-                  repeat: Infinity,
-                  repeatDelay: 8,
-                  ease: "linear"
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-20 h-0.5 -translate-y-0.5" />
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Floating Orbs */}
-        <div className="absolute inset-0 z-[1]">
-          {[
-            { size: 'w-40 h-40', color: 'from-cyan-400/60 to-blue-500/60', x: '10%', y: '20%' },
-            { size: 'w-32 h-32', color: 'from-purple-400/70 to-pink-500/70', x: '85%', y: '15%' },
-            { size: 'w-48 h-48', color: 'from-indigo-400/60 to-purple-500/60', x: '70%', y: '70%' },
-            { size: 'w-36 h-36', color: 'from-blue-300/50 to-cyan-400/50', x: '50%', y: '40%' }
-          ].map((orb, i) => (
-            <motion.div
-              key={`orb-${i}`}
-              className={`absolute ${orb.size} bg-gradient-to-br ${orb.color} rounded-full blur-xl pointer-events-none`}
-              style={{ left: orb.x, top: orb.y }}
-              animate={{
-                scale: [1, 1.4, 0.8, 1],
-                opacity: [0.5, 0.8, 0.4, 0.5],
-                x: [0, 40, -30, 0],
-                y: [0, -30, 40, 0]
-              }}
-              transition={{
-                duration: 8 + i * 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-[4]" />
-
         <div className="relative z-50">
           <Header />
         </div>
-        <div className="container mx-auto px-4 pt-24 md:pt-40 pb-16 md:pb-20 relative z-10">
-          <div className="max-w-7xl mx-auto">
+        <div className="container max-w-[90rem] mx-auto px-8 py-32 md:py-48 relative z-10">
+          <div className="max-w-[90rem] mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               {/* Left Column - Hero Content */}
               <motion.div
@@ -613,48 +508,48 @@ export default function HomeV2() {
                 className="space-y-8 overflow-visible"
               >
                 <div className="space-y-4 overflow-visible">
-                  <p className="text-sm text-gray-400 uppercase tracking-wider">AI-Powered Product Studio</p>
+                  <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">AI-Powered Product Studio</p>
 
-                  <h1 className="text-6xl md:text-7xl font-bold leading-tight py-4" style={{ overflow: 'visible' }}>
-                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'block' }}>
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight py-4" style={{ overflow: 'visible' }}>
+                    <span className="text-black" style={{ overflow: 'visible', display: 'block' }}>
                       Ambition.
                     </span>
-                    <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent" style={{ overflow: 'visible', display: 'block' }}>
+                    <span className="text-black" style={{ overflow: 'visible', display: 'block' }}>
                       Accelerated.
                     </span>
                   </h1>
                 </div>
 
-                <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl font-light">
                   Empowering brands to think bigger, move faster, and deliver smarter — powered by AI.
                 </p>
 
                 {/* Value Props */}
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                    <span className="text-lg">20+ production AI systems shipped</span>
+                  <div className="flex items-center gap-3 text-gray-900">
+                    <CheckCircle className="w-6 h-6 text-gray-400 flex-shrink-0" strokeWidth={1.5} />
+                    <span className="text-lg font-light">20+ production AI systems shipped</span>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                    <span className="text-lg">ElevenLabs, OpenAI, Anthropic, LiveKit integrations</span>
+                  <div className="flex items-center gap-3 text-gray-900">
+                    <CheckCircle className="w-6 h-6 text-gray-400 flex-shrink-0" strokeWidth={1.5} />
+                    <span className="text-lg font-light">ElevenLabs, OpenAI, Anthropic, LiveKit integrations</span>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-                    <span className="text-lg">$5k pilots to $50k+ production systems</span>
+                  <div className="flex items-center gap-3 text-gray-900">
+                    <CheckCircle className="w-6 h-6 text-gray-400 flex-shrink-0" strokeWidth={1.5} />
+                    <span className="text-lg font-light">$5k pilots to $50k+ production systems</span>
                   </div>
                 </div>
 
                 {/* Powered by AI Tech Stack */}
                 <div className="space-y-3">
-                  <p className="text-sm text-gray-400 uppercase tracking-wider">Powered by</p>
+                  <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Powered by</p>
                   <div className="flex flex-wrap items-center gap-3">
                     {aiTechStack.map((tech, index) => (
                       <div
                         key={index}
-                        className="px-4 py-2 bg-gray-50 hover:bg-white/20 rounded-lg transition-all"
+                        className="px-4 py-2 bg-gray-50 hover:bg-gray-200 rounded-lg transition-all"
                       >
-                        <span className="text-sm text-white font-light">{tech.name}</span>
+                        <span className="text-sm text-gray-900 font-light">{tech.name}</span>
                       </div>
                     ))}
                   </div>
@@ -669,15 +564,15 @@ export default function HomeV2() {
                       voiceCard?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                       setTimeout(() => setActiveVoiceAgent(true), 500);
                     }}
-                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all font-medium text-lg inline-flex items-center justify-center gap-2"
+                    className="px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-all font-light text-lg inline-flex items-center justify-center gap-2"
                   >
-                    <MessageSquare className="w-5 h-5" />
+                    <MessageSquare className="w-5 h-5" strokeWidth={1.5} />
                     Talk to P0STMAN
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                   </motion.button>
                   <a
                     href="#focus"
-                    className="px-8 py-4 border border-gray-600 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg inline-flex items-center justify-center"
+                    className="px-8 py-4 border border-gray-200 text-gray-900 rounded-lg hover:bg-gray-50 transition-all font-light text-lg inline-flex items-center justify-center"
                   >
                     Explore Services
                   </a>
@@ -696,25 +591,13 @@ export default function HomeV2() {
                   <motion.div
                     id="voice-agent-card"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      boxShadow: [
-                        "0 10px 30px -10px rgba(59, 130, 246, 0.3)",
-                        "0 10px 40px -10px rgba(59, 130, 246, 0.5)",
-                        "0 10px 30px -10px rgba(59, 130, 246, 0.3)"
-                      ]
-                    }}
-                    transition={{
-                      opacity: { duration: 0.5, delay: 0.3 },
-                      y: { duration: 0.5, delay: 0.3 },
-                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 cursor-pointer hover:shadow-xl transition-all"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ opacity: { duration: 0.5, delay: 0.3 }, y: { duration: 0.5, delay: 0.3 } }}
+                    className="group relative overflow-hidden rounded-xl bg-white border-t border-gray-200 cursor-pointer hover:shadow-xl transition-all"
                   >
                     <div className="p-6" onClick={() => setActiveVoiceAgent(!activeVoiceAgent)}>
                       <div className="flex items-start justify-between mb-4">
-                        <h4 className="text-lg font-light text-white">Voice Agent</h4>
+                        <h4 className="text-lg font-light text-gray-900">Voice Agent</h4>
                         {/* Subtle waveform animation */}
                         <div className="flex items-center gap-0.5">
                           {[...Array(4)].map((_, i) => (
@@ -729,21 +612,21 @@ export default function HomeV2() {
                                 delay: i * 0.2,
                                 ease: "easeInOut"
                               }}
-                              className="w-0.5 h-3 bg-white/60 rounded-full"
+                              className="w-0.5 h-3 bg-gray-400 rounded-full"
                             />
                           ))}
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
+                      <div className="flex items-center gap-3 text-xs text-gray-600 font-light mb-4">
                         <span>247 calls/week</span>
-                        <span className="text-white/40">•</span>
+                        <span className="text-gray-400">•</span>
                         <span>89% qualified</span>
                       </div>
 
                       <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                         {agentTypes[0].tech.map((tech, i) => (
-                          <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
+                          <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-900 font-light">
                             {tech.name}
                           </div>
                         ))}
@@ -761,25 +644,13 @@ export default function HomeV2() {
                   {/* Chat Agent */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      boxShadow: [
-                        "0 10px 30px -10px rgba(168, 85, 247, 0.3)",
-                        "0 10px 40px -10px rgba(168, 85, 247, 0.5)",
-                        "0 10px 30px -10px rgba(168, 85, 247, 0.3)"
-                      ]
-                    }}
-                    transition={{
-                      opacity: { duration: 0.5, delay: 0.4 },
-                      y: { duration: 0.5, delay: 0.4 },
-                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }
-                    }}
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 cursor-pointer hover:shadow-xl transition-all"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ opacity: { duration: 0.5, delay: 0.4 }, y: { duration: 0.5, delay: 0.4 } }}
+                    className="group relative overflow-hidden rounded-xl bg-white border-t border-gray-200 cursor-pointer hover:shadow-xl transition-all"
                   >
                     <div className="p-6" onClick={() => setActiveChatDemo(!activeChatDemo)}>
                     <div className="flex items-start justify-between mb-4">
-                      <h4 className="text-lg font-light text-white">Chat Agent</h4>
+                      <h4 className="text-lg font-light text-gray-900">Chat Agent</h4>
                       {/* Subtle typing dots animation */}
                       <div className="flex items-center gap-1">
                         {[...Array(3)].map((_, i) => (
@@ -794,21 +665,21 @@ export default function HomeV2() {
                               delay: i * 0.3,
                               ease: "easeInOut"
                             }}
-                            className="w-1 h-1 bg-white/60 rounded-full"
+                            className="w-1 h-1 bg-gray-400 rounded-full"
                           />
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-600 font-light mb-4">
                       <span>2.3s response</span>
-                      <span className="text-white/40">•</span>
+                      <span className="text-gray-400">•</span>
                       <span>94% satisfaction</span>
                     </div>
 
                     <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                       {agentTypes[1].tech.map((tech, i) => (
-                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
+                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-900 font-light">
                           {tech.name}
                         </div>
                       ))}
@@ -821,40 +692,28 @@ export default function HomeV2() {
                   {/* Code Agent */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      boxShadow: [
-                        "0 10px 30px -10px rgba(5, 150, 105, 0.3)",
-                        "0 10px 40px -10px rgba(5, 150, 105, 0.5)",
-                        "0 10px 30px -10px rgba(5, 150, 105, 0.3)"
-                      ]
-                    }}
-                    transition={{
-                      opacity: { duration: 0.5, delay: 0.5 },
-                      y: { duration: 0.5, delay: 0.5 },
-                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }
-                    }}
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-green-600 to-teal-600 cursor-pointer hover:shadow-xl transition-all"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ opacity: { duration: 0.5, delay: 0.5 }, y: { duration: 0.5, delay: 0.5 } }}
+                    className="group relative overflow-hidden rounded-xl bg-white border-t border-gray-200 cursor-pointer hover:shadow-xl transition-all"
                   >
                     <div className="p-6" onClick={() => setActiveCodeDemo(!activeCodeDemo)}>
                     <div className="flex items-start justify-between mb-4">
-                      <h4 className="text-lg font-light text-white">Code Agent</h4>
+                      <h4 className="text-lg font-light text-gray-900">Code Agent</h4>
                       {/* Subtle code typing animation */}
-                      <div className="font-mono text-xs text-white/60">
+                      <div className="font-mono text-xs text-gray-400">
                         {codeText}<span className="animate-pulse">|</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-600 font-light mb-4">
                       <span>Ships in minutes</span>
-                      <span className="text-white/40">•</span>
+                      <span className="text-gray-400">•</span>
                       <span>20+ live sites</span>
                     </div>
 
                     <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                       {agentTypes[2].tech.map((tech, i) => (
-                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
+                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-900 font-light">
                           {tech.name}
                         </div>
                       ))}
@@ -867,25 +726,13 @@ export default function HomeV2() {
                   {/* Image/Video Agent */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      boxShadow: [
-                        "0 10px 30px -10px rgba(234, 88, 12, 0.3)",
-                        "0 10px 40px -10px rgba(234, 88, 12, 0.5)",
-                        "0 10px 30px -10px rgba(234, 88, 12, 0.3)"
-                      ]
-                    }}
-                    transition={{
-                      opacity: { duration: 0.5, delay: 0.6 },
-                      y: { duration: 0.5, delay: 0.6 },
-                      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-                    }}
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-600 to-red-600 cursor-pointer hover:shadow-xl transition-all"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ opacity: { duration: 0.5, delay: 0.6 }, y: { duration: 0.5, delay: 0.6 } }}
+                    className="group relative overflow-hidden rounded-xl bg-white border-t border-gray-200 cursor-pointer hover:shadow-xl transition-all"
                   >
                     <div className="p-6" onClick={() => setActiveImageDemo(!activeImageDemo)}>
                     <div className="flex items-start justify-between mb-4">
-                      <h4 className="text-lg font-light text-white">Image/Video Agent</h4>
+                      <h4 className="text-lg font-light text-gray-900">Image/Video Agent</h4>
                       {/* Subtle frame/image animation */}
                       <div className="flex items-center gap-0.5">
                         {[...Array(3)].map((_, i) => (
@@ -900,21 +747,21 @@ export default function HomeV2() {
                               delay: i * 0.4,
                               ease: "easeInOut"
                             }}
-                            className="w-2 h-2 bg-white/60 rounded-sm"
+                            className="w-2 h-2 bg-gray-400 rounded-sm"
                           />
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-gray-700 font-light mb-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-600 font-light mb-4">
                       <span>Visual analysis</span>
-                      <span className="text-white/40">•</span>
+                      <span className="text-gray-400">•</span>
                       <span>Content generation</span>
                     </div>
 
                     <div className="flex items-center gap-3 pt-3 border-t border-gray-200">
                       {agentTypes[3].tech.map((tech, i) => (
-                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-600">
+                        <div key={i} className="px-2 py-1 bg-gray-50 rounded text-[10px] text-gray-900 font-light">
                           {tech.name}
                         </div>
                       ))}
@@ -932,8 +779,8 @@ export default function HomeV2() {
 
       {/* Client Logos */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+        <div className="container max-w-[90rem] mx-auto px-8">
+          <div className="max-w-[90rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -941,7 +788,7 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <p className="text-gray-700 font-medium">Trusted by leading organizations</p>
+              <p className="text-gray-400 font-light">Trusted by leading organizations</p>
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
@@ -968,8 +815,8 @@ export default function HomeV2() {
 
       {/* Projects Showcase */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+        <div className="container max-w-[90rem] mx-auto px-8">
+          <div className="max-w-[90rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -978,11 +825,11 @@ export default function HomeV2() {
               className="text-center mb-16"
             >
 
-              <h2 className="text-4xl font-thin mb-6 text-gray-900" style={{ color: '#111827' }}>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 text-gray-900">
                 What We've Built
               </h2>
 
-              <p className="text-gray-700 max-w-2xl mx-auto text-lg font-light">
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
                 Banking, media, health, retail and Web3. From innovation pilots to
                 enterprise transformations, delivering measurable impact at scale.
               </p>
@@ -997,7 +844,7 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
+                  className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer border-t border-gray-200"
                   onClick={() => window.location.href = project.caseStudyUrl}
                 >
                   <div className="grid lg:grid-cols-2 gap-0">
@@ -1023,26 +870,26 @@ export default function HomeV2() {
                       <div className="space-y-6">
                         <div>
                           <h3 className="text-2xl font-light text-gray-900 mb-2">{project.title}</h3>
-                          <p className="text-blue-600 font-medium mb-1">{project.company}</p>
+                          <p className="text-gray-900 font-light mb-1">{project.company}</p>
                           <p className="text-gray-600 font-light">{project.category}</p>
                         </div>
 
-                        <p className="text-gray-700 font-light leading-relaxed">{project.description}</p>
+                        <p className="text-gray-600 font-light leading-relaxed">{project.description}</p>
 
                         {project.metrics && (
                           <div className="grid grid-cols-3 gap-4">
                             {project.metrics.map((metric, i) => (
                               <div key={i} className="text-center">
-                                <div className="text-2xl font-thin text-blue-600 mb-1">{metric.value}</div>
-                                <div className="text-xs text-gray-500">{metric.label}</div>
+                                <div className="text-2xl font-light text-gray-900 mb-1">{metric.value}</div>
+                                <div className="text-xs text-gray-400">{metric.label}</div>
                               </div>
                             ))}
                           </div>
                         )}
 
-                        <div className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
-                          <span className="font-medium">View Case Study</span>
-                          <ExternalLink className="w-4 h-4" />
+                        <div className="flex items-center gap-2 text-gray-900 hover:text-gray-600 transition-colors">
+                          <span className="font-light">View Case Study</span>
+                          <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
@@ -1060,7 +907,7 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer border-t border-gray-200"
                   onClick={() => window.location.href = project.caseStudyUrl}
                 >
                   <div className="relative h-64">
@@ -1071,7 +918,7 @@ export default function HomeV2() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full shadow-lg">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-light rounded-full shadow-lg">
                         {project.category}
                       </span>
                     </div>
@@ -1090,25 +937,25 @@ export default function HomeV2() {
                     <div className="space-y-4">
                       <div>
                         <h3 className="text-xl font-light text-gray-900 mb-1">{project.title}</h3>
-                        <p className="text-blue-600 font-medium text-sm">{project.company}</p>
+                        <p className="text-gray-900 font-light text-sm">{project.company}</p>
                       </div>
 
-                      <p className="text-gray-700 font-light text-sm leading-relaxed">{project.description}</p>
+                      <p className="text-gray-600 font-light text-sm leading-relaxed">{project.description}</p>
 
                       {project.metrics && (
                         <div className="grid grid-cols-2 gap-3">
                           {project.metrics.slice(0, 2).map((metric, i) => (
                             <div key={i} className="text-center bg-gray-50 rounded-lg p-3">
-                              <div className="text-lg font-thin text-blue-600 mb-1">{metric.value}</div>
-                              <div className="text-xs text-gray-500">{metric.label}</div>
+                              <div className="text-lg font-light text-gray-900 mb-1">{metric.value}</div>
+                              <div className="text-xs text-gray-400">{metric.label}</div>
                             </div>
                           ))}
                         </div>
                       )}
 
-                      <div className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
-                        <span className="font-medium text-sm">View Case Study</span>
-                        <ExternalLink className="w-4 h-4" />
+                      <div className="flex items-center gap-2 text-gray-900 hover:text-gray-600 transition-colors">
+                        <span className="font-light text-sm">View Case Study</span>
+                        <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
                       </div>
                     </div>
                   </div>
@@ -1125,7 +972,7 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all cursor-pointer border-t border-gray-200"
                   onClick={() => window.location.href = project.caseStudyUrl}
                 >
                   <div className="grid md:grid-cols-2 gap-0">
@@ -1151,14 +998,14 @@ export default function HomeV2() {
                       <div className="space-y-3">
                         <div>
                           <h4 className="text-lg font-light text-gray-900 mb-1">{project.title}</h4>
-                          <p className="text-blue-600 font-medium text-sm">{project.company}</p>
+                          <p className="text-gray-900 font-light text-sm">{project.company}</p>
                         </div>
                         <div className="text-xs text-gray-600 uppercase tracking-wide font-light">
                           {project.category}
                         </div>
-                        <div className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors">
-                          <span className="font-medium text-sm">View Project</span>
-                          <ExternalLink className="w-3 h-3" />
+                        <div className="flex items-center gap-2 text-gray-900 hover:text-gray-600 transition-colors">
+                          <span className="font-light text-sm">View Project</span>
+                          <ExternalLink className="w-3 h-3" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
@@ -1177,7 +1024,7 @@ export default function HomeV2() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer bg-white"
+                    className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer bg-white border-t border-gray-200"
                     onClick={() => window.location.href = project.caseStudyUrl}
                   >
                     <div className="relative h-32 p-2">
@@ -1187,22 +1034,22 @@ export default function HomeV2() {
                         className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute top-2 right-2">
-                        <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-light rounded-full shadow-sm">
+                        <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-light rounded-full shadow-sm">
                           {project.category}
                         </span>
                       </div>
 
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-8 h-8 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <ExternalLink className="w-4 h-4 text-white" />
+                        <div className="w-8 h-8 bg-white backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <ExternalLink className="w-4 h-4 text-gray-900" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
 
                     {/* Bottom Content */}
                     <div className="p-3">
-                      <h5 className="font-medium text-gray-900 text-sm mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h5>
+                      <h5 className="font-light text-gray-900 text-sm mb-1 group-hover:text-gray-600 transition-colors">{project.title}</h5>
                       <p className="text-gray-600 text-xs font-light">{project.company}</p>
                     </div>
                   </motion.div>
@@ -1220,10 +1067,10 @@ export default function HomeV2() {
             >
               <Link
                 to="/case-studies"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-[1.02] font-medium text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-all transform hover:scale-[1.02] font-light text-lg"
               >
                 View All Projects
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </Link>
             </motion.div>
           </div>
@@ -1231,9 +1078,9 @@ export default function HomeV2() {
       </section>
 
       {/* Services Section - Tiered Layout */}
-      <section id="focus" className="py-24 bg-gray-50" style={{ color: '#111827' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+      <section id="focus" className="py-24 bg-gray-50">
+        <div className="container max-w-[90rem] mx-auto px-8">
+          <div className="max-w-[90rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1242,11 +1089,11 @@ export default function HomeV2() {
               className="text-center mb-16"
             >
 
-              <h2 className="text-4xl font-thin mb-6 text-black">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 text-black">
                 Services
               </h2>
 
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
                 From AI agents to full-stack products, we cover the complete spectrum of modern digital development.
               </p>
             </motion.div>
@@ -1259,21 +1106,21 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="mb-8"
             >
-              <div className="bg-gradient-to-br from-teal-400/90 via-cyan-400/80 to-blue-400/90 p-8 md:p-12 rounded-2xl shadow-xl text-white hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <div className="bg-black p-8 md:p-12 rounded-2xl shadow-xl text-white hover:shadow-2xl transition-all transform hover:-translate-y-1">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <div className="p-4 bg-gray-100 backdrop-blur-sm rounded-xl inline-block mb-6">
+                    <div className="p-4 bg-white/10 backdrop-blur-sm rounded-xl inline-block mb-6">
                       {focusAreas[0].icon}
                     </div>
                     <h3 className="text-3xl font-light mb-4">{focusAreas[0].title}</h3>
-                    <p className="text-white/95 text-lg mb-6 leading-relaxed font-light">{focusAreas[0].description}</p>
-                    <div className="inline-block px-6 py-3 bg-gray-100 backdrop-blur-sm rounded-lg">
-                      <p className="text-white font-light">{focusAreas[0].pricing}</p>
+                    <p className="text-gray-200 text-lg mb-6 leading-relaxed font-light">{focusAreas[0].description}</p>
+                    <div className="inline-block px-6 py-3 bg-white/10 backdrop-blur-sm rounded-lg">
+                      <p className="text-gray-200 font-light">{focusAreas[0].pricing}</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     {focusAreas[0].features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-gray-50 backdrop-blur-sm rounded-lg p-4">
+                      <div key={i} className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-lg p-4">
                         {/* Voice Agent - Waveform */}
                         {i === 0 && (
                           <div className="flex items-center gap-0.5">
@@ -1289,7 +1136,7 @@ export default function HomeV2() {
                                   delay: idx * 0.2,
                                   ease: "easeInOut"
                                 }}
-                                className="w-0.5 h-3 bg-white/80 rounded-full flex-shrink-0"
+                                className="w-0.5 h-3 bg-gray-400 rounded-full flex-shrink-0"
                               />
                             ))}
                           </div>
@@ -1309,7 +1156,7 @@ export default function HomeV2() {
                                   delay: idx * 0.3,
                                   ease: "easeInOut"
                                 }}
-                                className="w-1 h-1 bg-white/80 rounded-full flex-shrink-0"
+                                className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"
                               />
                             ))}
                           </div>
@@ -1319,7 +1166,7 @@ export default function HomeV2() {
                           <motion.div
                             animate={{ opacity: [1, 0, 1] }}
                             transition={{ duration: 0.8, repeat: Infinity }}
-                            className="w-0.5 h-4 bg-white/80 flex-shrink-0"
+                            className="w-0.5 h-4 bg-gray-400 flex-shrink-0"
                           />
                         )}
                         {/* Workflow/Image - Frame squares */}
@@ -1337,12 +1184,12 @@ export default function HomeV2() {
                                   delay: idx * 0.4,
                                   ease: "easeInOut"
                                 }}
-                                className="w-2 h-2 bg-white/80 rounded-sm flex-shrink-0"
+                                className="w-2 h-2 bg-gray-400 rounded-sm flex-shrink-0"
                               />
                             ))}
                           </div>
                         )}
-                        <span className="text-white font-light">{feature}</span>
+                        <span className="text-gray-200 font-light">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -1359,21 +1206,21 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1"
+                  className="bg-white p-8 rounded-xl border-t border-gray-200 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1"
                 >
                   <div className="mb-6">
                     <div className="p-4 bg-gray-50 rounded-xl inline-block mb-4">
                       {area.icon}
                     </div>
-                    <h3 className="text-2xl font-semibold mb-3 text-black">{area.title}</h3>
+                    <h3 className="text-2xl font-light mb-3 text-black">{area.title}</h3>
                     <p className="text-gray-600 font-light leading-relaxed">{area.description}</p>
                   </div>
 
                   <div className="space-y-2">
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-blue-600 dark:bg-gray-400 rounded-full flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300 font-light">{feature}</span>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0" />
+                        <span className="text-gray-600 font-light">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -1390,21 +1237,21 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
+                  className="bg-white p-6 rounded-xl border-t border-gray-200 shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1"
                 >
                   <div className="mb-4">
                     <div className="p-3 bg-gray-50 rounded-xl inline-block mb-4">
                       {area.icon}
                     </div>
-                    <h3 className="text-lg font-medium mb-2 text-black">{area.title}</h3>
+                    <h3 className="text-lg font-light mb-2 text-black">{area.title}</h3>
                     <p className="text-gray-600 mb-4 font-light text-sm leading-relaxed">{area.description}</p>
                   </div>
 
                   <div className="space-y-2">
                     {area.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-gray-400 rounded-full flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300 font-light text-xs">{feature}</span>
+                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0" />
+                        <span className="text-gray-600 font-light text-xs">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -1416,7 +1263,7 @@ export default function HomeV2() {
       </section>
 
       {/* How We Work Section - HIDDEN */}
-      {/* 
+      {/*
       <section className="py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -1427,7 +1274,7 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-thin mb-6 dark:text-gray-100">How We Work</h2>
+              <h2 className="text-4xl font-light mb-6 dark:text-gray-100">How We Work</h2>
               <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-light">
                 Every organisation faces challenges. Here's how we help you overcome them.
               </p>
@@ -1447,7 +1294,7 @@ export default function HomeV2() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Tight Deadlines</h3>
-                    <p className="text-red-600 dark:text-red-400 font-medium mb-3">We move fast and deliver on time.</p>
+                    <p className="text-red-600 dark:text-red-400 font-light mb-3">We move fast and deliver on time.</p>
                     <p className="text-gray-700 dark:text-gray-300 font-light">When deadlines are tight and stakes are high, our AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
                   </div>
                 </div>
@@ -1466,7 +1313,7 @@ export default function HomeV2() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Limited Resources</h3>
-                    <p className="text-green-600 dark:text-green-400 font-medium mb-3">We work within your budget constraints.</p>
+                    <p className="text-green-600 dark:text-green-400 font-light mb-3">We work within your budget constraints.</p>
                     <p className="text-gray-700 dark:text-gray-300 font-light">Get C-level strategic thinking and senior technical execution without the full-time overhead. Scale your capabilities without scaling your costs.</p>
                   </div>
                 </div>
@@ -1485,7 +1332,7 @@ export default function HomeV2() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Tricky Tech Problems</h3>
-                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">We solve complex technical challenges.</p>
+                    <p className="text-blue-600 dark:text-blue-400 font-light mb-3">We solve complex technical challenges.</p>
                     <p className="text-gray-700 dark:text-gray-300 font-light">From startup MVPs to enterprise transformations, we've solved complex technical and organizational challenges across every scale and industry.</p>
                   </div>
                 </div>
@@ -1504,7 +1351,7 @@ export default function HomeV2() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-light mb-2 text-gray-900 dark:text-gray-100">Big Change Projects</h3>
-                    <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">We handle large-scale transformations.</p>
+                    <p className="text-purple-600 dark:text-purple-400 font-light mb-3">We handle large-scale transformations.</p>
                     <p className="text-gray-700 dark:text-gray-300 font-light">Navigate the complexity of digital transformation with strategic guidance, technical execution, and change management that delivers measurable results.</p>
                   </div>
                 </div>
@@ -1525,11 +1372,11 @@ export default function HomeV2() {
                 href="mailto:paul@p0stman.com?subject=Project Discussion"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all font-medium text-lg inline-flex items-center gap-2"
+                className="px-8 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-all font-light text-lg inline-flex items-center gap-2"
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-5 h-5" strokeWidth={1.5} />
                 Let's Discuss Your Project
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </motion.a>
             </motion.div>
           </div>
@@ -1542,8 +1389,8 @@ export default function HomeV2() {
 
       {/* AI Building Showcase */}
       <section className="py-24 bg-white text-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+        <div className="container max-w-[90rem] mx-auto px-8">
+          <div className="max-w-[90rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1552,11 +1399,11 @@ export default function HomeV2() {
               className="text-center mb-16"
             >
 
-              <h2 className="text-4xl font-thin mb-6">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6">
                 Building with AI, Not Just Talking About It
               </h2>
 
-              <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+              <p className="text-gray-600 max-w-3xl mx-auto text-lg font-light">
                 We are deeply immersed in the coding revolution — experimenting, testing, and shaping
                 what AI-first development looks like. Through P0STMAN and Chilled Tools, we've shipped
                 20+ production-grade platforms using Claude, GPT-4, and Gemini.
@@ -1569,27 +1416,27 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 backdrop-blur-sm p-8 rounded-xl border border-gray-200"
+                className="bg-gray-50 backdrop-blur-sm p-8 rounded-xl border-t border-gray-200"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Bot className="w-8 h-8 text-blue-400" />
+                  <Bot className="w-8 h-8 text-gray-400" strokeWidth={1.5} />
                   <h3 className="text-2xl font-light">P0STMAN Agency</h3>
                 </div>
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-600 mb-6 font-light">
                   AI-powered digital agency delivering production-ready apps in days, not months.
                   Created an AI-powered stack that cuts dev time by 80%.
                 </p>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
                     <span>20+ apps shipped in 5 days each</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
                     <span>80% reduction in development time</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
                     <span>Full-stack AI integration</span>
                   </div>
                 </div>
@@ -1600,27 +1447,27 @@ export default function HomeV2() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 backdrop-blur-sm p-8 rounded-xl border border-gray-200"
+                className="bg-gray-50 backdrop-blur-sm p-8 rounded-xl border-t border-gray-200"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Zap className="w-8 h-8 text-purple-400" />
+                  <Zap className="w-8 h-8 text-gray-400" strokeWidth={1.5} />
                   <h3 className="text-2xl font-light">Chilled Tools</h3>
                 </div>
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-600 mb-6 font-light">
                   B2B SaaS suite empowering solo founders and SMEs with AI-built tools for CRM,
                   dashboards, and automation - all plug-and-play, no dev team needed.
                 </p>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
                     <span>Chilled CRM used across 4+ markets</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
                     <span>High-utility SaaS in under 1 week</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
                     <span>AI-assist features & automation</span>
                   </div>
                 </div>
@@ -1639,11 +1486,11 @@ export default function HomeV2() {
               <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Bolt Experience Quote */}
                 <div className="lg:col-span-1 flex items-center">
-                  <div className="bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
+                  <div className="bg-gray-50 backdrop-blur-sm rounded-xl p-6 border-t border-gray-200">
                     <div className="flex items-start gap-4">
-                      <div className="text-4xl text-blue-400 font-serif leading-none">"</div>
+                      <div className="text-4xl text-gray-400 font-serif leading-none">"</div>
                       <div>
-                        <blockquote className="text-gray-200 italic leading-relaxed">
+                        <blockquote className="text-gray-900 italic leading-relaxed font-light">
                           From power user, to joining and helping them secure $100M, I've been on both sides of the fence with Bolt. One of the fastest growing startups ever, it was a wild ride to experience hyper-growth. More learnings for me which I pass on to my clients.
                         </blockquote>
                       </div>
@@ -1664,13 +1511,13 @@ export default function HomeV2() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <Play className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 bg-white backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <Play className="w-8 h-8 text-gray-900" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
-                    <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
-                      <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                    <div className="p-4 bg-gray-50 backdrop-blur-sm">
+                      <h4 className="font-light text-gray-900 group-hover:text-gray-600 transition-colors">
                         How we built a CRM system in one week with AI
                       </h4>
                     </div>
@@ -1687,13 +1534,13 @@ export default function HomeV2() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <Play className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 bg-white backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <Play className="w-8 h-8 text-gray-900" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
-                    <div className="p-4 bg-gray-800/70 backdrop-blur-sm">
-                      <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                    <div className="p-4 bg-gray-50 backdrop-blur-sm">
+                      <h4 className="font-light text-gray-900 group-hover:text-gray-600 transition-colors">
                         Adding Stripe payments to your AI-built app
                       </h4>
                     </div>
@@ -1718,16 +1565,16 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-4 border border-blue-500/30 hover:border-blue-400/50 transition-all relative"
+                  className="bg-gray-50 backdrop-blur-sm rounded-xl p-4 border-t border-gray-200 hover:border-gray-400 transition-all relative"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-blue-400">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-400">
                       <path fill="currentColor" d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
                     </svg>
-                    <span className="text-white/90 font-medium">Bolt.new CEO</span>
+                    <span className="text-gray-900 font-light">Bolt.new CEO</span>
                   </div>
                   <div className={`${expandedTweets[0] ? '' : 'max-h-[300px]'} overflow-hidden transition-all duration-300`}>
-                    <blockquote className="twitter-tweet" data-theme="dark" data-conversation="none" data-cards="hidden">
+                    <blockquote className="twitter-tweet" data-theme="light" data-conversation="none" data-cards="hidden">
                       <p lang="en" dir="ltr">The Builders program is led on our side by <a href="https://twitter.com/paulgosnell?ref_src=twsrc%5Etfw">@paulgosnell</a>, one of the earliest adopters of Bolt &amp; leader in our community.<br/><br/>Paul has helped countless folks w/ their Bolt apps and has run web dev shops for 20+ years — basically the perfect person to make this a reality</p>
                       &mdash; Eric Simons (@EricSimons) <a href="https://twitter.com/EricSimons40/status/1887552934692721135?ref_src=twsrc%5Etfw">February 6, 2025</a>
                     </blockquote>
@@ -1736,17 +1583,17 @@ export default function HomeV2() {
                     <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                       <button
                         onClick={() => setExpandedTweets({...expandedTweets, 0: true})}
-                        className="px-4 py-2 bg-blue-500/80 hover:bg-blue-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
+                        className="px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
                       >
                         <span>Expand Tweet</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                       </button>
                     </div>
                   )}
                   {expandedTweets[0] && (
                     <button
                       onClick={() => setExpandedTweets({...expandedTweets, 0: false})}
-                      className="mt-3 px-4 py-2 bg-blue-500/80 hover:bg-blue-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
+                      className="mt-3 px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
                     >
                       Collapse
                     </button>
@@ -1759,16 +1606,16 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-xl p-4 border border-purple-500/30 hover:border-purple-400/50 transition-all relative"
+                  className="bg-gray-50 backdrop-blur-sm rounded-xl p-4 border-t border-gray-200 hover:border-gray-400 transition-all relative"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-purple-400">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-400">
                       <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
-                    <span className="text-white/90 font-medium">Ben's Bites Workshop</span>
+                    <span className="text-gray-900 font-light">Ben's Bites Workshop</span>
                   </div>
                   <div className={`${expandedTweets[1] ? '' : 'max-h-[300px]'} overflow-hidden transition-all duration-300`}>
-                    <blockquote className="twitter-tweet" data-theme="dark" data-conversation="none" data-cards="hidden">
+                    <blockquote className="twitter-tweet" data-theme="light" data-conversation="none" data-cards="hidden">
                       <p lang="en" dir="ltr">A subtle insight from today's <a href="https://twitter.com/bensbitesdaily?ref_src=twsrc%5Etfw">@bensbitesdaily</a> expert workshop: the best prompts aren&#39;t always the most technical and elaborate. <a href="https://twitter.com/paulgosnell?ref_src=twsrc%5Etfw">@paulgosnell</a> showed how everyday language + clear context can go a long way when building with AI in <a href="https://twitter.com/boltdotnew?ref_src=twsrc%5Etfw">@boltdotnew</a></p>
                       &mdash; Amie DeLisa (@AmieDelisa) <a href="https://twitter.com/AmieDelisa/status/1889385200834302289?ref_src=twsrc%5Etfw">February 11, 2025</a>
                     </blockquote>
@@ -1777,17 +1624,17 @@ export default function HomeV2() {
                     <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                       <button
                         onClick={() => setExpandedTweets({...expandedTweets, 1: true})}
-                        className="px-4 py-2 bg-purple-500/80 hover:bg-purple-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
+                        className="px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
                       >
                         <span>Expand Tweet</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                       </button>
                     </div>
                   )}
                   {expandedTweets[1] && (
                     <button
                       onClick={() => setExpandedTweets({...expandedTweets, 1: false})}
-                      className="mt-3 px-4 py-2 bg-purple-500/80 hover:bg-purple-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
+                      className="mt-3 px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
                     >
                       Collapse
                     </button>
@@ -1800,16 +1647,16 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-green-600/20 to-teal-600/20 backdrop-blur-sm rounded-xl p-4 border border-green-500/30 hover:border-green-400/50 transition-all relative"
+                  className="bg-gray-50 backdrop-blur-sm rounded-xl p-4 border-t border-gray-200 hover:border-gray-400 transition-all relative"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-green-400">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 text-gray-400">
                       <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
-                    <span className="text-white/90 font-medium">Replit Founder</span>
+                    <span className="text-gray-900 font-light">Replit Founder</span>
                   </div>
                   <div className={`${expandedTweets[2] ? '' : 'max-h-[300px]'} overflow-hidden transition-all duration-300`}>
-                    <blockquote className="twitter-tweet" data-theme="dark" data-conversation="none" data-cards="hidden">
+                    <blockquote className="twitter-tweet" data-theme="light" data-conversation="none" data-cards="hidden">
                       <p lang="en" dir="ltr">This is brilliant! 🔥</p>
                       &mdash; Amjad Masad (@amasad) <a href="https://twitter.com/amasad/status/1833195032280764617?ref_src=twsrc%5Etfw">September 9, 2024</a>
                     </blockquote>
@@ -1818,17 +1665,17 @@ export default function HomeV2() {
                     <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                       <button
                         onClick={() => setExpandedTweets({...expandedTweets, 2: true})}
-                        className="px-4 py-2 bg-green-500/80 hover:bg-green-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
+                        className="px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded-lg backdrop-blur-sm transition-all flex items-center gap-2"
                       >
                         <span>Expand Tweet</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                       </button>
                     </div>
                   )}
                   {expandedTweets[2] && (
                     <button
                       onClick={() => setExpandedTweets({...expandedTweets, 2: false})}
-                      className="mt-3 px-4 py-2 bg-green-500/80 hover:bg-green-500 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
+                      className="mt-3 px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded-lg backdrop-blur-sm transition-all w-full"
                     >
                       Collapse
                     </button>
@@ -1842,8 +1689,8 @@ export default function HomeV2() {
 
       {/* AI Agents Showcase */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+        <div className="container max-w-[90rem] mx-auto px-8">
+          <div className="max-w-[90rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1851,11 +1698,11 @@ export default function HomeV2() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">AI Agents</p>
-              <h2 className="text-4xl font-thin mb-6 text-gray-900">
+              <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light mb-4">AI Agents</p>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 text-gray-900">
                 AI-Powered Mobile Experiences
               </h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto font-light">
                 These aren't simple apps—they're frontier AI systems in production. Voice agents powered by ElevenLabs. Reasoning models from Claude and OpenAI. RAG systems with extended memory. Multi-API orchestration across Telegram, Oura, Strava. Built with AI SDK and Vercel. Real-time data processing, intelligent context retention, and seamless integrations that actually work.
               </p>
             </motion.div>
@@ -1879,9 +1726,6 @@ export default function HomeV2() {
 
                       {/* Screen */}
                       <div className="relative bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
-                        {/* Gradient overlay */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-10`} />
-
                         {/* Screenshot */}
                         <img
                           src={agent.screenshot}
@@ -1891,12 +1735,12 @@ export default function HomeV2() {
 
                         {/* Hover overlay with info */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                          <h3 className="text-white font-semibold text-lg mb-2">{agent.name}</h3>
-                          <p className="text-white/90 text-sm mb-3">{agent.description}</p>
+                          <h3 className="text-white font-light text-lg mb-2">{agent.name}</h3>
+                          <p className="text-white/90 text-sm mb-3 font-light">{agent.description}</p>
                           <ul className="space-y-1">
                             {agent.features.map((feature, i) => (
                               <li key={i} className="text-white/80 text-xs flex items-center gap-2">
-                                <CheckCircle className="w-3 h-3 text-green-400" />
+                                <CheckCircle className="w-3 h-3 text-gray-400" strokeWidth={1.5} />
                                 {feature}
                               </li>
                             ))}
@@ -1910,8 +1754,8 @@ export default function HomeV2() {
 
                     {/* Agent name below phone */}
                     <div className="mt-6 text-center">
-                      <h3 className="text-gray-900 font-semibold text-lg mb-1">{agent.name}</h3>
-                      <p className="text-gray-600 text-sm">{agent.description}</p>
+                      <h3 className="text-gray-900 font-light text-lg mb-1">{agent.name}</h3>
+                      <p className="text-gray-600 text-sm font-light">{agent.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1928,11 +1772,11 @@ export default function HomeV2() {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-pink-600 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                <Bot className="w-5 h-5" />
+                <Bot className="w-5 h-5" strokeWidth={1.5} />
                 Build Your AI Agent
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
               </Link>
             </motion.div>
           </div>
@@ -1941,8 +1785,8 @@ export default function HomeV2() {
 
       {/* Testimonials */}
       <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
+        <div className="container max-w-[90rem] mx-auto px-8">
+          <div className="max-w-[90rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1951,7 +1795,7 @@ export default function HomeV2() {
               className="text-center mb-16"
             >
 
-              <h2 className="text-4xl font-thin mb-6">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6">
                 What Our Partners Say
               </h2>
             </motion.div>
@@ -1964,17 +1808,17 @@ export default function HomeV2() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-xl shadow-sm border border-gray-200"
+                  className="bg-white p-8 rounded-xl shadow-sm border-t border-gray-200"
                 >
-                  <p className="text-gray-700 text-lg mb-6 italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-600 text-lg mb-6 italic font-light">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                    <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-light">
                       {testimonial.author.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                      <div className="text-gray-700">{testimonial.role}</div>
-                      <div className="text-sm text-gray-600">{testimonial.company}</div>
+                      <div className="font-light text-gray-900">{testimonial.author}</div>
+                      <div className="text-gray-600 font-light">{testimonial.role}</div>
+                      <div className="text-sm text-gray-400 font-light">{testimonial.company}</div>
                     </div>
                   </div>
                 </motion.div>
