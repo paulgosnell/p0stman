@@ -697,7 +697,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Featured: Health & Wellness Section */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <Link to="/health" className="block group">
