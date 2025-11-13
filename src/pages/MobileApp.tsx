@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Smartphone, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Bot, Smartphone, Zap, Check, ArrowRight } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import AppShowcase from '../components/mobile-app/AppShowcase';
 import PlatformFeatures from '../components/mobile-app/PlatformFeatures';
@@ -21,17 +21,17 @@ const benefits = [
 
 const features = [
   {
-    icon: <Bot className="w-8 h-8 text-blue-400" />,
+    icon: <Bot className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "AI-Powered Development",
     description: "Rapid development using cutting-edge AI technology"
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-blue-400" />,
+    icon: <Smartphone className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Cross-Platform",
     description: "Single codebase for iOS and Android"
   },
   {
-    icon: <Zap className="w-8 h-8 text-blue-400" />,
+    icon: <Zap className="w-8 h-8 text-gray-400" strokeWidth={1.5} />,
     title: "Fast Delivery",
     description: "4 week turnaround time"
   }
@@ -63,78 +63,82 @@ export default function MobileApp() {
           <link rel="canonical" href="https://p0stman.com/mobile-app" />
         </Helmet>
 
-        <HeaderV3Global />
+        <HeaderV3Global darkMode={false} />
 
-        <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
-          </div>
-
-          <div className="container mx-auto px-4 py-24 relative z-10">
-            <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <section ref={ref} className="py-32 md:py-48 bg-white">
+          <div className="container mx-auto px-8 max-w-[90rem]">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column - Content */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5 }}
-                className="grid lg:grid-cols-2 gap-16 items-center"
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="space-y-8"
               >
-                <div className="space-y-8">
-                  <div>
-                    <p className="text-sm text-gray-400 uppercase tracking-wider mb-6">Mobile App Development</p>
-
-                    <h1 className="text-5xl font-bold mb-6">
-                      Transform Your Idea Into a Mobile App
-                    </h1>
-                    
-                    <p className="text-xl text-gray-600 mb-8">
-                      Get your mobile app built in 4 weeks using AI-powered development. Native apps for both iOS and Android platforms.
-                    </p>
-
-                    <div className="space-y-4">
-                      {benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-blue-400" />
-                          <span>{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center gap-6 mt-8">
-                      <div>
-                        <div className="text-3xl font-bold mb-1">$20,000</div>
-                        <div className="text-gray-400">iOS & Android</div>
-                      </div>
-                      <button
-                        onClick={() => setShowMobileAppModal(true)}
-                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                      >
-                        Start Your Project
-                        <ArrowRight className="ml-2 inline-block w-5 h-5" />
-                      </button>
-                    </div>
-                  </div>
+                {/* Eyebrow */}
+                <div>
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
+                    Mobile App Development
+                  </span>
                 </div>
 
-                <div className="grid gap-6">
-                  {features.map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
-                    >
-                      <div className="flex items-center gap-4">
-                        {feature.icon}
-                        <div>
-                          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                          <p className="text-gray-600">{feature.description}</p>
-                        </div>
-                      </div>
-                    </motion.div>
+                {/* Headline */}
+                <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.05] tracking-tight">
+                  Transform Your Idea Into a Mobile App
+                </h1>
+
+                {/* Description */}
+                <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
+                  Get your mobile app built in 4 weeks using AI-powered development. Native apps for both iOS and Android platforms.
+                </p>
+
+                {/* Benefits List */}
+                <div className="space-y-4 pt-4">
+                  {benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-gray-900 flex-shrink-0" strokeWidth={1.5} />
+                      <span className="text-gray-900 font-light">{benefit}</span>
+                    </div>
                   ))}
                 </div>
+
+                {/* Pricing & CTA */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-8">
+                  <div>
+                    <div className="text-4xl md:text-5xl font-light text-gray-900 mb-2">$20,000</div>
+                    <div className="text-sm text-gray-400 uppercase tracking-[0.2em]">iOS & Android</div>
+                  </div>
+                  <button
+                    onClick={() => setShowMobileAppModal(true)}
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light text-lg group"
+                  >
+                    Start Your Project
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+                  </button>
+                </div>
               </motion.div>
+
+              {/* Right Column - Features */}
+              <div className="grid gap-6">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+                    transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white p-8 border-t border-gray-200"
+                  >
+                    <div className="flex items-start gap-4">
+                      {feature.icon}
+                      <div>
+                        <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-3">{feature.title}</h3>
+                        <p className="text-gray-600 font-light leading-relaxed">{feature.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
