@@ -55,7 +55,7 @@ export default function ContactPage() {
         <HeaderV3Global darkMode={true} />
 
         {/* Context-Aware Hero */}
-        <section ref={ref} className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
+        <section ref={ref} className="relative min-h-[60vh] flex items-center bg-black text-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
           </div>
@@ -69,19 +69,19 @@ export default function ContactPage() {
                 className="text-center max-w-3xl mx-auto"
               >
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <Mail className="w-6 h-6 text-blue-400" />
-                  <span className="text-blue-400 font-medium">Get in Touch</span>
+                  <Mail className="w-6 h-6 text-gray-400" />
+                  <span className="text-gray-400 font-light text-xs tracking-[0.3em] uppercase">Get in Touch</span>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl font-thin mb-6 text-white">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white leading-tight">
                   {context.title}
                 </h1>
 
-                <p className="text-xl text-gray-200 font-light mb-4">
+                <p className="text-xl text-gray-300 font-light mb-4 leading-relaxed">
                   {context.subtitle}
                 </p>
 
-                <p className="text-lg text-blue-300 font-light mb-8">
+                <p className="text-lg text-gray-400 font-light mb-8">
                   {context.proof}
                 </p>
 
@@ -93,13 +93,13 @@ export default function ContactPage() {
                 >
                   <a
                     href="#contact-form"
-                    className="px-8 py-4 bg-white text-gray-900 rounded-lg font-light hover:bg-gray-100 transition-all shadow-lg"
+                    className="px-8 py-4 bg-white text-gray-900 hover:bg-gray-100 transition-all font-light text-lg"
                   >
                     Schedule Free Consultation
                   </a>
                   <a
                     href="/case-studies"
-                    className="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-lg font-light hover:bg-white/20 transition-all"
+                    className="px-8 py-4 bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-all font-light text-lg"
                   >
                     View Our Work
                   </a>
@@ -110,7 +110,7 @@ export default function ContactPage() {
         </section>
 
         {/* Social Proof Stats */}
-        <section className="py-12 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+        <section className="py-12 bg-gray-50 dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <motion.div
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 className="text-center"
               >
                 <div className="flex items-center justify-center mb-3">
-                  <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                  <Users className="w-8 h-8 text-gray-400 dark:text-gray-400" strokeWidth={1.5} />
                 </div>
                 <div className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-2">
                   2,500+
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 className="text-center"
               >
                 <div className="flex items-center justify-center mb-3">
-                  <Zap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                  <Zap className="w-8 h-8 text-gray-400 dark:text-gray-400" strokeWidth={1.5} />
                 </div>
                 <div className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-2">
                   6 Days
@@ -157,7 +157,7 @@ export default function ContactPage() {
                 className="text-center"
               >
                 <div className="flex items-center justify-center mb-3">
-                  <Award className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                  <Award className="w-8 h-8 text-gray-400 dark:text-gray-400" strokeWidth={1.5} />
                 </div>
                 <div className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-2">
                   $5K
@@ -175,7 +175,7 @@ export default function ContactPage() {
                 className="text-center"
               >
                 <div className="flex items-center justify-center mb-3">
-                  <Bot className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                  <Bot className="w-8 h-8 text-gray-400 dark:text-gray-400" strokeWidth={1.5} />
                 </div>
                 <div className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-2">
                   18+
