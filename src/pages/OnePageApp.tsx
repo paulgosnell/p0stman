@@ -97,21 +97,12 @@ const OnePageApp: React.FC = () => {
   const getTechIcon = (tech: string) => {
     const lowerTech = tech.toLowerCase();
     if (lowerTech.includes('supabase') || lowerTech.includes('firebase') || lowerTech.includes('postgres'))
-      return <Database className="w-3 h-3" />;
+      return <Database className="w-3 h-3" strokeWidth={1.5} />;
     if (lowerTech.includes('openai') || lowerTech.includes('tensorflow'))
-      return <Bot className="w-3 h-3" />;
+      return <Bot className="w-3 h-3" strokeWidth={1.5} />;
     if (lowerTech.includes('stripe'))
-      return <DollarSign className="w-3 h-3" />;
-    return <Cloud className="w-3 h-3" />;
-  };
-
-  const getBadgeColor = (tech: string) => {
-    const lowerTech = tech.toLowerCase();
-    if (lowerTech.includes('react')) return 'bg-blue-900/60 text-blue-300';
-    if (lowerTech.includes('supabase')) return 'bg-green-900/60 text-green-300';
-    if (lowerTech.includes('openai')) return 'bg-purple-900/60 text-purple-300';
-    if (lowerTech.includes('stripe')) return 'bg-indigo-900/60 text-indigo-300';
-    return 'bg-gray-800/60 text-gray-300';
+      return <DollarSign className="w-3 h-3" strokeWidth={1.5} />;
+    return <Cloud className="w-3 h-3" strokeWidth={1.5} />;
   };
 
   const project = showcaseProjects[currentProject];
@@ -133,7 +124,6 @@ const OnePageApp: React.FC = () => {
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-10" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-cyan-600/5" />
         </div>
 
         {/* Hero Section */}
@@ -151,21 +141,21 @@ const OnePageApp: React.FC = () => {
                 >
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <Bot className="w-8 h-8 text-blue-400" />
-                      <span className="text-blue-400 font-medium text-lg">P0STMAN + Chilled Sites</span>
+                      <Bot className="w-8 h-8 text-gray-400" strokeWidth={1.5} />
+                      <span className="text-gray-400 font-light text-lg">P0STMAN + Chilled Sites</span>
                     </div>
 
-                    <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
-                      <span className="bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent">
+                    <h1 className="text-6xl lg:text-7xl font-light leading-tight">
+                      <span className="text-gray-900">
                         The AI-Powered
                       </span>
                       <br />
-                      <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                      <span className="text-gray-900">
                         Alternative to Agencies
                       </span>
                     </h1>
 
-                    <p className="text-2xl text-gray-200 leading-relaxed max-w-2xl">
+                    <p className="text-2xl text-gray-600 leading-relaxed max-w-2xl font-light">
                       AI Adoption • Advisory • Delivery. Get AI-ready and ship on-brand digital in weeks, not quarters.
                     </p>
                   </div>
@@ -173,7 +163,7 @@ const OnePageApp: React.FC = () => {
                   {/* Social Proof */}
                   <div className="flex flex-wrap gap-4">
                     {['20+ yrs in MEA', 'Production-ready code', 'Arabic-first', 'Security/Gov'].map((proof, index) => (
-                      <div key={index} className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm rounded-full text-gray-200 border border-gray-700/50">
+                      <div key={index} className="px-4 py-2 bg-gray-50 backdrop-blur-sm rounded-full text-gray-600 border border-gray-200 font-light">
                         {proof}
                       </div>
                     ))}
@@ -183,18 +173,18 @@ const OnePageApp: React.FC = () => {
                   <div className="flex flex-wrap gap-4">
                     <a
                       href="mailto:paul@p0stman.com"
-                      className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 font-medium text-lg"
+                      className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-900 transition-all transform hover:scale-105 font-light text-lg"
                     >
-                      <Mail className="w-5 h-5" />
+                      <Mail className="w-5 h-5" strokeWidth={1.5} />
                       Email Paul
                     </a>
                     <a
                       href="https://wa.me/971501234567?text=Hi Paul, I'm interested in P0STMAN AI adoption services."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-8 py-4 bg-gray-800/80 backdrop-blur-sm text-white rounded-xl hover:bg-gray-700 transition-all transform hover:scale-105 font-medium text-lg border border-gray-700/50"
+                      className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 hover:bg-gray-50 transition-all transform hover:scale-105 font-light text-lg border border-gray-200"
                     >
-                      <MessageCircle className="w-5 h-5" />
+                      <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
                       WhatsApp
                     </a>
                   </div>
@@ -207,8 +197,6 @@ const OnePageApp: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/30 to-purple-600/30 rounded-3xl blur-xl animate-pulse" />
-
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentProject}
@@ -216,14 +204,14 @@ const OnePageApp: React.FC = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.5 }}
-                      className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700/50"
+                      className="relative bg-white rounded-3xl p-8 shadow-lg border border-gray-200"
                     >
                       <div className="space-y-6">
                         <div className="flex items-center justify-between">
-                          <div className="px-3 py-1 bg-blue-600/30 backdrop-blur-sm rounded-full text-blue-400 text-sm font-medium">
+                          <div className="px-3 py-1 bg-gray-100 backdrop-blur-sm rounded-full text-gray-600 text-sm font-light">
                             {project.category}
                           </div>
-                          <div className="text-gray-400 text-sm">
+                          <div className="text-gray-400 text-sm font-light">
                             {currentProject + 1}/{showcaseProjects.length}
                           </div>
                         </div>
@@ -239,24 +227,24 @@ const OnePageApp: React.FC = () => {
                               href={project.liveUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-6 py-3 bg-gray-50 backdrop-blur-sm rounded-lg text-white font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
+                              className="px-6 py-3 bg-white backdrop-blur-sm rounded-lg text-gray-900 font-light hover:bg-gray-100 transition-colors flex items-center gap-2"
                             >
                               View Live Demo
-                              <ExternalLink className="w-4 h-4" />
+                              <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
                             </a>
                           </div>
                         </div>
 
                         <div className="space-y-4">
-                          <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                          <p className="text-gray-200 leading-relaxed">{project.description}</p>
+                          <h3 className="text-2xl font-light text-gray-900">{project.title}</h3>
+                          <p className="text-gray-600 leading-relaxed font-light">{project.description}</p>
 
                           {/* Tech Stack */}
                           <div className="flex flex-wrap gap-2">
                             {project.techStack.map((tech, index) => (
                               <div
                                 key={index}
-                                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium ${getBadgeColor(tech)}`}
+                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-light bg-gray-50 text-gray-600 border border-gray-200"
                               >
                                 {getTechIcon(tech)}
                                 {tech}
@@ -268,9 +256,9 @@ const OnePageApp: React.FC = () => {
                           <div className="grid grid-cols-3 gap-4">
                             {project.metrics.map((metric, index) => (
                               <div key={index} className="text-center">
-                                <div className="text-blue-400 mb-1">{metric.icon}</div>
-                                <div className="text-lg font-bold text-white">{metric.value}</div>
-                                <div className="text-xs text-gray-300">{metric.label}</div>
+                                <div className="text-gray-400 mb-1">{metric.icon}</div>
+                                <div className="text-lg font-light text-gray-900">{metric.value}</div>
+                                <div className="text-xs text-gray-600 font-light">{metric.label}</div>
                               </div>
                             ))}
                           </div>
@@ -285,7 +273,7 @@ const OnePageApp: React.FC = () => {
                       <button
                         key={index}
                         onClick={() => setCurrentProject(index)}
-                        className={`w-3 h-3 rounded-full transition-all ${index === currentProject ? 'bg-blue-400 scale-125' : 'bg-gray-700 hover:bg-gray-600'
+                        className={`w-3 h-3 rounded-full transition-all ${index === currentProject ? 'bg-gray-900 scale-125' : 'bg-gray-300 hover:bg-gray-400'
                           }`}
                       />
                     ))}
@@ -307,10 +295,10 @@ const OnePageApp: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-16"
               >
-                <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <h2 className="text-5xl font-light mb-6 text-gray-900">
                   Proven Outcomes
                 </h2>
-                <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
                   Quantified results from AI adoption and implementation across enterprise clients
                 </p>
               </motion.div>
@@ -329,10 +317,10 @@ const OnePageApp: React.FC = () => {
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     className="text-center group hover:transform hover:-translate-y-2 transition-transform duration-300"
                   >
-                    <div className="bg-gray-900/80 border border-gray-800 rounded-xl p-8 hover:border-blue-500/30 transition-colors duration-300">
-                      <div className="text-6xl font-thin text-gray-900 mb-4">{metric.value}</div>
-                      <div className="text-lg font-medium text-gray-200 mb-2">{metric.label}</div>
-                      <div className="text-sm text-gray-300">{metric.description}</div>
+                    <div className="bg-white border border-gray-200 rounded-xl p-8 hover:border-gray-300 transition-colors duration-300">
+                      <div className="text-6xl font-light text-gray-900 mb-4">{metric.value}</div>
+                      <div className="text-lg font-light text-gray-900 mb-2">{metric.label}</div>
+                      <div className="text-sm text-gray-600 font-light">{metric.description}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -342,7 +330,7 @@ const OnePageApp: React.FC = () => {
         </section>
 
         {/* Bolt AI Section */}
-        <section className="relative z-10 py-20">
+        <section className="relative z-10 py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -352,17 +340,17 @@ const OnePageApp: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-16"
               >
-                <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <h2 className="text-5xl font-light mb-6 text-gray-900">
                   Building the Future with AI
                 </h2>
-                <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
                   Leading Bolt power user and ambassador, leveraging the world's most advanced AI development platform
                 </p>
               </motion.div>
 
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 flex items-center">
-                  <p className="text-gray-200 text-lg leading-relaxed">
+                <div className="bg-white backdrop-blur-sm rounded-xl p-8 border border-gray-200 flex items-center">
+                  <p className="text-gray-600 text-lg leading-relaxed font-light">
                     I build and scale digital ventures, fast. As a leading Bolt power user and ambassador, I leverage cutting-edge AI to deliver exceptional results.
                   </p>
                 </div>
@@ -384,13 +372,13 @@ const OnePageApp: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <Play className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 bg-white backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <Play className="w-8 h-8 text-gray-900" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
-                    <div className="p-4 bg-gray-800/70 backdrop-blur-sm border-t border-gray-700/50">
-                      <h3 className="font-medium text-white group-hover:text-blue-400 transition-colors">{video.title}</h3>
+                    <div className="p-4 bg-white border-t border-gray-200">
+                      <h3 className="font-light text-gray-900 group-hover:text-gray-600 transition-colors">{video.title}</h3>
                     </div>
                   </motion.div>
                 ))}
@@ -408,10 +396,10 @@ const OnePageApp: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-xl p-12 mb-16"
+                className="bg-gray-50 border border-gray-200 rounded-xl p-12 mb-16"
               >
-                <div className="text-8xl font-thin text-gray-900 mb-4">20+ yrs in MEA</div>
-                <div className="text-2xl font-light text-gray-200">Enterprise Technology Leadership</div>
+                <div className="text-8xl font-light text-gray-900 mb-4">20+ yrs in MEA</div>
+                <div className="text-2xl font-light text-gray-600">Enterprise Technology Leadership</div>
               </motion.div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
@@ -427,10 +415,10 @@ const OnePageApp: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-gray-900/80 border border-gray-800 rounded-lg p-6 hover:border-blue-500/30 transition-colors duration-300"
+                    className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-300"
                   >
-                    <div className="text-3xl font-bold text-blue-400 mb-2">{stat.value}</div>
-                    <div className="text-sm text-gray-300">{stat.label}</div>
+                    <div className="text-3xl font-light text-gray-900 mb-2">{stat.value}</div>
+                    <div className="text-sm text-gray-600 font-light">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -441,27 +429,27 @@ const OnePageApp: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="bg-gray-900/50 border border-gray-800 rounded-xl p-12"
+                className="bg-white border border-gray-200 rounded-xl p-12"
               >
-                <h3 className="text-4xl font-bold text-white mb-6">Ready to Get AI-Ready?</h3>
-                <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                <h3 className="text-4xl font-light text-gray-900 mb-6">Ready to Get AI-Ready?</h3>
+                <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-light">
                   Contact Paul directly for P0STMAN AI adoption advisory and consultation.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <a
                     href="mailto:paul@p0stman.com"
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 font-medium text-lg"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-900 transition-all transform hover:scale-105 font-light text-lg"
                   >
-                    <Mail className="w-5 h-5" />
+                    <Mail className="w-5 h-5" strokeWidth={1.5} />
                     Email Paul
                   </a>
                   <a
                     href="https://wa.me/971501234567?text=Hi Paul, I'm interested in P0STMAN AI adoption services."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gray-800/80 backdrop-blur-sm text-white rounded-xl hover:bg-gray-700 transition-all transform hover:scale-105 font-medium text-lg border border-gray-700/50"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 hover:bg-gray-50 transition-all transform hover:scale-105 font-light text-lg border border-gray-200"
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
                     WhatsApp
                   </a>
                 </div>
@@ -471,9 +459,9 @@ const OnePageApp: React.FC = () => {
         </section>
 
         {/* Footer */}
-        <footer className="relative z-10 py-12 border-t border-gray-800">
+        <footer className="relative z-10 py-12 border-t border-gray-200">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-gray-400">© 2024 P0STMAN. All rights reserved.</p>
+            <p className="text-gray-400 font-light">© 2024 P0STMAN. All rights reserved.</p>
           </div>
         </footer>
 

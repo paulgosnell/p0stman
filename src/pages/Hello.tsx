@@ -1773,19 +1773,19 @@ const Hello: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <div className="flex justify-between items-center p-6">
         <div className="flex items-center space-x-2">
-          <Bot className="w-8 h-8 text-blue-600" />
-          <span className="text-xl font-bold text-gray-900">P0STMAN</span>
+          <Bot className="w-8 h-8 text-gray-900" strokeWidth={1.5} />
+          <span className="text-xl font-light text-gray-900">P0STMAN</span>
         </div>
         <div className="flex items-center space-x-4">
           <button
             onClick={togglePlayPause}
             className="p-2 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow"
           >
-            {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+            {isPlaying ? <Pause className="w-5 h-5" strokeWidth={1.5} /> : <Play className="w-5 h-5" strokeWidth={1.5} />}
           </button>
           <div className="text-sm text-gray-600">
             {currentSlide + 1} / {slides.length}
@@ -1797,7 +1797,7 @@ const Hello: React.FC = () => {
       <div className="px-6 mb-4">
         <div className="w-full bg-gray-200 rounded-full h-1">
           <motion.div
-            className="bg-blue-600 h-1 rounded-full"
+            className="bg-black h-1 rounded-full"
             style={{ width: `${progress}%` }}
             transition={{ duration: 0.1 }}
           />
@@ -1826,13 +1826,13 @@ const Hello: React.FC = () => {
                     transition={{ delay: 0.2 }}
                     className="text-center"
                   >
-                    <div className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
+                    <div className="text-sm font-light text-gray-400 uppercase tracking-wide mb-2">
                       {slides[currentSlide].subtitle}
                     </div>
-                    <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-4">
                       {slides[currentSlide].title}
                     </h1>
-                    <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
                       {slides[currentSlide].content}
                     </p>
                   </motion.div>
@@ -1853,13 +1853,13 @@ const Hello: React.FC = () => {
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <div className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
+                      <div className="text-sm font-light text-gray-400 uppercase tracking-wide mb-2">
                         {slides[currentSlide].subtitle}
                       </div>
-                      <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                      <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-4">
                         {slides[currentSlide].title}
                       </h1>
-                      <p className="text-xl text-gray-600 leading-relaxed">
+                      <p className="text-xl text-gray-600 font-light leading-relaxed">
                         {slides[currentSlide].content}
                       </p>
                     </motion.div>
@@ -1875,14 +1875,14 @@ const Hello: React.FC = () => {
                           href="https://p0stman.com"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+                          className="inline-flex items-center justify-center space-x-2 bg-black text-white px-6 py-3 rounded-xl font-light hover:bg-gray-800 transition-colors"
                         >
                           <span>Explore P0STMAN</span>
                           <ExternalLink className="w-4 h-4" />
                         </a>
                         <a
                           href="mailto:paul@p0stman.com"
-                          className="inline-flex items-center justify-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors"
+                          className="inline-flex items-center justify-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-light hover:bg-gray-800 transition-colors"
                         >
                           <Mail className="w-4 h-4" />
                           <span>Get In Touch</span>
@@ -1919,7 +1919,7 @@ const Hello: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
+              className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-black' : 'bg-gray-300'
                 }`}
             />
           ))}

@@ -18,7 +18,7 @@ export default function ChristmasCard() {
 
   return (
     <HelmetProvider>
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white overflow-hidden relative">
+    <div className="min-h-screen bg-black text-white overflow-hidden relative">
       <Helmet>
         <title>{`Season's Greetings from P0STMAN | Happy Holidays ${currentYear}`}</title>
         <meta name="description" content={`Wishing you a wonderful holiday season filled with joy, innovation, and success. Thank you for being part of our journey in ${currentYear}.`} />
@@ -36,10 +36,10 @@ export default function ChristmasCard() {
         <motion.div
           key={`snow-${i}`}
           className="absolute"
-          initial={{ 
+          initial={{
             x: Math.random() * window.innerWidth,
             y: -20,
-            opacity: 0 
+            opacity: 0
           }}
           animate={{
             y: window.innerHeight + 20,
@@ -52,7 +52,7 @@ export default function ChristmasCard() {
             delay: Math.random() * 3
           }}
         >
-          <Snowflake className="w-4 h-4 text-white/30" />
+          <Snowflake className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
         </motion.div>
       ))}
 
@@ -75,7 +75,7 @@ export default function ChristmasCard() {
             delay: Math.random() * 2
           }}
         >
-          <Star className="w-3 h-3 text-yellow-200/50" />
+          <Star className="w-3 h-3 text-gray-400" strokeWidth={1.5} />
         </motion.div>
       ))}
 
@@ -84,15 +84,15 @@ export default function ChristmasCard() {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ 
+          transition={{
             type: "spring",
             stiffness: 260,
             damping: 20,
-            duration: 0.5 
+            duration: 0.5
           }}
           className="mb-12"
         >
-          <Logo className="text-3xl md:text-4xl" useGradient />
+          <Logo className="text-3xl md:text-4xl" useGradient={false} />
         </motion.div>
 
         <AnimatePresence>
@@ -104,17 +104,12 @@ export default function ChristmasCard() {
               className="text-center max-w-2xl mx-auto space-y-8"
             >
               <div className="relative">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-green-500/20 to-blue-500/20 rounded-full blur-3xl"
-                />
-                <h1 className="relative text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-400 via-green-400 to-blue-400 text-transparent bg-clip-text">
+                <h1 className="relative text-4xl md:text-6xl font-light mb-6 text-white">
                   Season's Greetings!
                 </h1>
               </div>
 
-              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
                 Wishing you a wonderful holiday season filled with joy, innovation, and success.
                 Thank you for being part of our journey in {currentYear}.
               </p>
@@ -122,30 +117,30 @@ export default function ChristmasCard() {
               <div className="flex flex-wrap justify-center gap-4 py-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-gray-50 backdrop-blur-sm rounded-xl border border-gray-200"
+                  className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800"
                 >
-                  <Bot className="w-8 h-8 text-blue-400 mb-2" />
-                  <p className="text-sm">Building the Future</p>
+                  <Bot className="w-8 h-8 text-gray-400 mb-2" strokeWidth={1.5} />
+                  <p className="text-sm font-light text-gray-400">Building the Future</p>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-gray-50 backdrop-blur-sm rounded-xl border border-gray-200"
+                  className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800"
                 >
-                  <Gift className="w-8 h-8 text-red-400 mb-2" />
-                  <p className="text-sm">Spreading Joy</p>
+                  <Gift className="w-8 h-8 text-gray-400 mb-2" strokeWidth={1.5} />
+                  <p className="text-sm font-light text-gray-400">Spreading Joy</p>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-gray-50 backdrop-blur-sm rounded-xl border border-gray-200"
+                  className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800"
                 >
-                  <Sparkles className="w-8 h-8 text-yellow-400 mb-2" />
-                  <p className="text-sm">Creating Magic</p>
+                  <Sparkles className="w-8 h-8 text-gray-400 mb-2" strokeWidth={1.5} />
+                  <p className="text-sm font-light text-gray-400">Creating Magic</p>
                 </motion.div>
               </div>
 
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-500 text-sm font-light">
                 <p>Here's to an amazing {currentYear + 1}!</p>
                 <p className="mt-2">- Paul & the P0STMAN team</p>
               </div>

@@ -43,10 +43,10 @@ export default function Training() {
 
         <section ref={ref} className="relative min-h-screen flex items-center bg-white text-gray-900">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-5" />
           </div>
 
-          <div className="container mx-auto px-4 py-24 relative z-10">
+          <div className="container mx-auto max-w-[90rem] px-8 py-32 md:py-48 relative z-10">
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <motion.div
@@ -57,48 +57,48 @@ export default function Training() {
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-6">
-                      <Bot className="w-6 h-6 text-blue-400" />
-                      <span className="text-blue-400 font-medium">Expert Training</span>
+                      <Bot className="w-6 h-6 text-gray-400" strokeWidth={1.5} />
+                      <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Expert Training</span>
                     </div>
 
-                    <h1 className="text-5xl font-thin mb-6">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6">
                       Master AI-Powered Development
                     </h1>
-                    
-                    <p className="text-xl text-gray-300 mb-8">
+
+                    <p className="text-xl text-gray-600 mb-8 font-light">
                       Get personalized training to build production-ready applications in weeks, not months. No coding experience required.
                     </p>
 
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-blue-400" />
-                        <span>One-on-one intensive training</span>
+                        <CheckCircle className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
+                        <span className="font-light">One-on-one intensive training</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-blue-400" />
-                        <span>3 x 2-hour sessions</span>
+                        <CheckCircle className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
+                        <span className="font-light">3 x 2-hour sessions</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-blue-400" />
-                        <span>Hands-on project development</span>
+                        <CheckCircle className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
+                        <span className="font-light">Hands-on project development</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-blue-400" />
-                        <span>Guide included (worth $50)</span>
+                        <CheckCircle className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
+                        <span className="font-light">Guide included (worth $50)</span>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-6 mt-8">
                       <div>
                         <div className="text-3xl font-light mb-1">$500</div>
-                        <div className="text-gray-400">All-inclusive package</div>
+                        <div className="text-gray-400 font-light">All-inclusive package</div>
                       </div>
                       <button
                         onClick={() => setShowBookingModal(true)}
-                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors font-light"
                       >
                         Book Your Training
-                        <ArrowRight className="ml-2 inline-block w-5 h-5" />
+                        <ArrowRight className="ml-2 inline-block w-5 h-5" strokeWidth={1.5} />
                       </button>
                     </div>
                   </div>
@@ -110,18 +110,18 @@ export default function Training() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl transform rotate-6" />
+                  <div className="absolute inset-0 bg-gray-200 transform rotate-6" />
                   <img
                     src="https://mediacdn.carrd.co/assets/images/image09.jpg"
                     alt="AI Development Training"
-                    className="relative z-10 w-full rounded-3xl shadow-2xl"
+                    className="relative z-10 w-full shadow-2xl"
                   />
                   <button
                     onClick={() => setShowVideoModal(true)}
-                    className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity rounded-3xl group"
+                    className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity group"
                   >
-                    <div className="flex items-center gap-2 px-6 py-3 bg-gray-50 backdrop-blur-sm rounded-full text-white border border-gray-200">
-                      <PlayCircle className="w-6 h-6" />
+                    <div className="flex items-center gap-2 px-6 py-3 bg-white backdrop-blur-sm text-gray-900 border border-gray-200 font-light">
+                      <PlayCircle className="w-6 h-6 text-gray-900" strokeWidth={1.5} />
                       <span>Watch Video</span>
                     </div>
                   </button>
@@ -137,7 +137,7 @@ export default function Training() {
         <FAQ />
         <ServicesGrid currentService="training" />
 
-        <BookingModal 
+        <BookingModal
           isOpen={showBookingModal}
           onClose={() => setShowBookingModal(false)}
         />

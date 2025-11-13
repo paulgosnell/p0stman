@@ -26,7 +26,7 @@ const QuickActionButton: React.FC<{
         onClick={onClick}
         whileHover={{ scale: 1.02, y: -1 }}
         whileTap={{ scale: 0.98 }}
-        className="group relative px-4 py-2 bg-gray-800/40 backdrop-blur-sm rounded-lg border border-gray-600/30 text-gray-300 font-medium text-sm hover:bg-gray-700/50 hover:border-gray-500/40 hover:text-white transition-all duration-200"
+        className="group relative px-4 py-2 bg-gray-800/40 backdrop-blur-sm rounded-lg border border-gray-600/30 text-gray-300 font-light text-sm hover:bg-gray-700/50 hover:border-gray-500/40 hover:text-white transition-all duration-200"
       >
         {/* Button Content */}
         <div className="relative flex items-center gap-2">
@@ -35,7 +35,7 @@ const QuickActionButton: React.FC<{
             animate={{ y: [0, 2, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-4 h-4" />
+            <ChevronDown className="w-4 h-4" strokeWidth={1.5}/>
           </motion.div>
         </div>
       </motion.button>
@@ -99,7 +99,7 @@ const ChatSection: React.FC<{
           transition={{ duration: 0.8 }}
           className="flex-shrink-0"
         >
-          <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-blue-500/30 shadow-xl">
+          <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-gray-700/30 shadow-xl">
             <img
               src="https://api.chilledsites.com/storage/v1/object/public/p0stman/paul.jpg"
               alt="Paul Gosnell"
@@ -115,7 +115,7 @@ const ChatSection: React.FC<{
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-blue-500/20 backdrop-blur-sm rounded-2xl rounded-tl-sm p-4 border border-blue-400/30 shadow-lg"
+              className="bg-gray-800/30 backdrop-blur-sm rounded-2xl rounded-tl-sm p-4 border border-gray-700/30 shadow-lg"
             >
               <div className="text-white/90 leading-relaxed space-y-2">
                 {messages.map((message, index) => (
@@ -133,7 +133,7 @@ const ChatSection: React.FC<{
               transition={{ duration: 0.6 }}
               className="flex justify-end"
             >
-              <div className="bg-green-500/20 backdrop-blur-sm rounded-2xl rounded-tr-sm p-4 border border-green-400/30 max-w-xs shadow-lg">
+              <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl rounded-tr-sm p-4 border border-gray-700/30 max-w-xs shadow-lg">
                 <p className="text-white/90 leading-relaxed text-sm">{userReply}</p>
               </div>
             </motion.div>
@@ -153,14 +153,14 @@ const ChatSection: React.FC<{
                 onChange={(e) => setUserReply(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleReply()}
                 placeholder="Type your reply..."
-                className="flex-1 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 text-sm shadow-lg"
+                className="flex-1 bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-700/50 focus:ring-2 focus:ring-gray-600/20 text-sm shadow-lg"
               />
               <button
                 onClick={handleReply}
                 disabled={!userReply.trim()}
-                className="p-3 bg-blue-500/30 backdrop-blur-sm border border-blue-400/30 rounded-xl text-blue-300 hover:bg-blue-500/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                className="p-3 bg-gray-800/40 backdrop-blur-sm border border-gray-700/30 rounded-xl text-gray-400 hover:bg-gray-700/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-4 h-4" strokeWidth={1.5}/>
               </button>
             </motion.div>
           )}
@@ -237,9 +237,9 @@ const DeliveryPage: React.FC = () => {
               className="min-h-screen flex items-center justify-center relative"
             >
               <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent"></div>
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute inset-0 bg-transparent"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
               </div>
               <div className="relative z-10 text-center">
                 <motion.div
@@ -249,11 +249,11 @@ const DeliveryPage: React.FC = () => {
                   className="mb-12"
                 >
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                      <Bot className="w-9 h-9 text-white" />
+                    <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center">
+                      <Bot className="w-9 h-9 text-white" strokeWidth={1.5}/>
                     </div>
                     <div>
-                      <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                      <h1 className="text-4xl font-bold bg-gray-700 ">
                         P0STMAN
                       </h1>
                       <p className="text-gray-400 text-sm">AI-Native Product Studio</p>
@@ -267,22 +267,22 @@ const DeliveryPage: React.FC = () => {
                   className="relative mx-auto mb-8"
                 >
                   <div onClick={openEnvelope} className="cursor-pointer group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl transform translate-y-4 group-hover:translate-y-2 transition-transform duration-500"></div>
-                    <div className="relative w-[500px] h-[320px] bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl shadow-2xl border border-gray-200 overflow-hidden group-hover:scale-105 transition-all duration-500">
-                      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-gray-200 to-gray-150 rounded-t-3xl border-b border-gray-300">
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gray-900/30 rounded-3xl blur-xl transform translate-y-4 group-hover:translate-y-2 transition-transform duration-500"></div>
+                    <div className="relative w-[500px] h-[320px] bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden group-hover:scale-105 transition-all duration-500">
+                      <div className="absolute top-0 left-0 w-full h-32 bg-gray-100 rounded-t-3xl border-b border-gray-300">
+                        <div className="absolute inset-0 bg-white/10"></div>
                       </div>
-                      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-full border-4 border-red-700 shadow-lg flex items-center justify-center">
-                        <div className="text-red-100 font-bold text-xs">P0ST</div>
+                      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-900 rounded-full border-4 border-gray-800 shadow-lg flex items-center justify-center">
+                        <div className="text-gray-100 font-bold text-xs">P0ST</div>
                       </div>
                       <div className="absolute bottom-12 left-12 right-12">
                         <div className="text-gray-600 text-lg font-light mb-2">Special Delivery for</div>
                         <div className="text-gray-900 text-4xl font-bold mb-4 tracking-tight">{agencyName}</div>
                         <div className="text-gray-500 text-base">From: P0STMAN (Paul Gosnell)</div>
                       </div>
-                      <div className="absolute top-8 right-8 w-24 h-32 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-xl border-4 border-white shadow-xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                      <div className="absolute top-8 right-8 w-24 h-32 bg-gray-900 rounded-xl border-4 border-white shadow-xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500">
                         <div className="flex flex-col items-center justify-center h-full text-white text-center">
-                          <Sparkles className="w-6 h-6 mb-1" />
+                          <Sparkles className="w-6 h-6 mb-1" strokeWidth={1.5}/>
                           <div className="text-xs font-bold leading-tight">SPECIAL<br />DELIVERY<br />2025</div>
                         </div>
                       </div>
@@ -296,10 +296,10 @@ const DeliveryPage: React.FC = () => {
                   className="space-y-4"
                 >
                   <div className="text-gray-300 text-xl font-light">Click to open your delivery</div>
-                  <div className="flex items-center justify-center text-blue-400 text-sm animate-bounce">
-                    <ArrowRight className="w-4 h-4 mr-2 rotate-90" />
+                  <div className="flex items-center justify-center text-gray-400 text-sm animate-bounce">
+                    <ArrowRight className="w-4 h-4 mr-2 rotate-90" strokeWidth={1.5}/>
                     Tap the envelope
-                    <ArrowRight className="w-4 h-4 ml-2 rotate-90" />
+                    <ArrowRight className="w-4 h-4 ml-2 rotate-90" strokeWidth={1.5}/>
                   </div>
                 </motion.div>
               </div>
@@ -313,10 +313,10 @@ const DeliveryPage: React.FC = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
                 <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-10" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.15),transparent_50%)]"></div>
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.03),transparent_50%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.03),transparent_50%)]"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
               </div>
               <div className="relative z-10 max-w-7xl mx-auto px-8 py-20">
                 {/* Combined Opening Introduction */}
@@ -350,24 +350,24 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateY: -15 }}
                         animate={{ opacity: revealedSections.has(1) ? 1 : 0, y: revealedSections.has(1) ? 0 : 30, rotateY: revealedSections.has(1) ? 0 : -15 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-500/20 to-orange-500/20 backdrop-blur-xl border border-red-500/30 hover:border-red-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:rotate-1 hover:shadow-2xl hover:shadow-red-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:rotate-1 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Animated Background Elements */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="absolute top-4 right-4 w-32 h-32 bg-red-500/20 rounded-full blur-2xl animate-pulse" />
-                        <div className="absolute bottom-4 left-4 w-24 h-24 bg-orange-500/20 rounded-full blur-xl animate-pulse delay-1000" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute top-4 right-4 w-32 h-32 bg-gray-800/30 rounded-full blur-2xl animate-pulse" />
+                        <div className="absolute bottom-4 left-4 w-24 h-24 bg-gray-800/30 rounded-full blur-xl animate-pulse delay-1000" />
 
                         {/* Floating Clock Elements */}
                         <div className="absolute top-8 right-8 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
                           <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                            className="w-16 h-16 border-2 border-red-300/50 rounded-full flex items-center justify-center"
+                            className="w-16 h-16 border-2 border-gray-400/50 rounded-full flex items-center justify-center"
                           >
                             <motion.div
                               animate={{ rotate: -360 }}
                               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                              className="w-1 h-6 bg-red-300/70 rounded-full origin-bottom"
+                              className="w-1 h-6 bg-gray-400/70 rounded-full origin-bottom"
                             />
                           </motion.div>
                         </div>
@@ -376,32 +376,32 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-start gap-6 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="p-4 bg-gradient-to-br from-red-500/40 to-orange-500/40 backdrop-blur-sm rounded-2xl border border-red-400/50 shadow-lg"
+                              className="p-4 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg"
                             >
                               <motion.div
                                 animate={{ rotate: [0, 10, -10, 0] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                               >
-                                <Clock className="w-12 h-12 text-red-200" />
+                                <Clock className="w-12 h-12 text-gray-400" strokeWidth={1.5}/>
                               </motion.div>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-red-100 transition-colors">Time-to-Market Pressure</h3>
+                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-gray-100 transition-colors">Time-to-Market Pressure</h3>
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(1) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 1 }}
-                                className="h-1 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mb-4"
+                                className="h-1 bg-gray-700 rounded-full mb-4"
                               />
                             </div>
                           </div>
                           <div className="space-y-4 flex-1">
-                            <p className="text-red-300 font-bold text-lg">AI-accelerated development will compress timelines dramatically (often 2-5x)</p>
+                            <p className="text-gray-400 font-bold text-lg">AI-accelerated development will compress timelines dramatically (often 2-5x)</p>
                             <p className="text-gray-300 font-light leading-relaxed">AI-powered development process cuts months off traditional timelines while maintaining enterprise quality.</p>
                           </div>
 
                           {/* Speed Indicator */}
-                          <div className="mt-6 flex items-center gap-2 text-red-300/80">
+                          <div className="mt-6 flex items-center gap-2 text-gray-400/80">
                             <div className="flex gap-1">
                               {[...Array(5)].map((_, i) => (
                                 <motion.div
@@ -409,11 +409,11 @@ const DeliveryPage: React.FC = () => {
                                   initial={{ scale: 0 }}
                                   animate={{ scale: 1 }}
                                   transition={{ delay: 1.2 + i * 0.1, duration: 0.3 }}
-                                  className="w-2 h-8 bg-gradient-to-t from-red-500 to-orange-400 rounded-full"
+                                  className="w-2 h-8 bg-gray-700 rounded-full"
                                 />
                               ))}
                             </div>
-                            <span className="text-sm font-medium">Speed Boost</span>
+                            <span className="text-sm font-light">Speed Boost</span>
                           </div>
                         </div>
                       </motion.div>
@@ -423,10 +423,10 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateY: 15 }}
                         animate={{ opacity: revealedSections.has(1) ? 1 : 0, y: revealedSections.has(1) ? 0 : 30, rotateY: revealedSections.has(1) ? 0 : 15 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-500/30 hover:border-green-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:-rotate-1 hover:shadow-2xl hover:shadow-green-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:-rotate-1 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Animated Background */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Floating Money Elements */}
                         <div className="absolute inset-0 overflow-hidden">
@@ -444,9 +444,9 @@ const DeliveryPage: React.FC = () => {
                                 repeat: Infinity,
                                 ease: "linear"
                               }}
-                              className="absolute w-6 h-6 text-green-300/30"
+                              className="absolute w-6 h-6 text-gray-400/30"
                             >
-                              <DollarSign className="w-full h-full" />
+                              <DollarSign className="w-full h-full" strokeWidth={1.5}/>
                             </motion.div>
                           ))}
                         </div>
@@ -455,40 +455,40 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-start gap-6 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: -5 }}
-                              className="p-4 bg-gradient-to-br from-green-500/40 to-emerald-500/40 backdrop-blur-sm rounded-2xl border border-green-400/50 shadow-lg"
+                              className="p-4 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg"
                             >
                               <motion.div
                                 animate={{ scale: [1, 1.1, 1] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                               >
-                                <DollarSign className="w-12 h-12 text-green-200" />
+                                <DollarSign className="w-12 h-12 text-gray-400" strokeWidth={1.5}/>
                               </motion.div>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-green-100 transition-colors">Budget & Resource Constraints</h3>
+                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-gray-100 transition-colors">Budget & Resource Constraints</h3>
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(1) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 1.2 }}
-                                className="h-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mb-4"
+                                className="h-1 bg-gray-700 rounded-full mb-4"
                               />
                             </div>
                           </div>
                           <div className="space-y-4 flex-1">
-                            <p className="text-green-300 font-bold text-lg">Fractional senior support at a fraction of the cost of full-time</p>
+                            <p className="text-gray-400 font-bold text-lg">Fractional senior support at a fraction of the cost of full-time</p>
                             <p className="text-gray-300 font-light leading-relaxed">Get C-level strategic thinking and senior technical execution without the full-time overhead.</p>
                           </div>
 
                           {/* Cost Savings Indicator */}
                           <div className="mt-6 flex items-center justify-between">
-                            <div className="text-green-300/80">
+                            <div className="text-gray-400/80">
                               <div className="text-2xl font-bold">70%</div>
                               <div className="text-xs">Cost Savings</div>
                             </div>
                             <motion.div
                               animate={{ rotate: [0, 360] }}
                               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                              className="w-8 h-8 border-2 border-green-400/50 border-t-green-400 rounded-full"
+                              className="w-8 h-8 border-2 border-gray-700/50 border-t-green-400 rounded-full"
                             />
                           </div>
                         </div>
@@ -499,7 +499,7 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateX: 15 }}
                         animate={{ opacity: revealedSections.has(1) ? 1 : 0, y: revealedSections.has(1) ? 0 : 30, rotateX: revealedSections.has(1) ? 0 : 15 }}
                         transition={{ duration: 0.8, delay: 0.9 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-xl border border-blue-500/30 hover:border-blue-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Matrix Code Background */}
                         <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
@@ -515,7 +515,7 @@ const DeliveryPage: React.FC = () => {
                                   repeat: Infinity,
                                   ease: "linear"
                                 }}
-                                className="absolute text-blue-300/30 text-xs font-mono"
+                                className="absolute text-gray-400/30 text-xs font-mono"
                                 style={{ left: `${i * 12.5}%` }}
                               >
                                 {Array.from({ length: 20 }, () => Math.random() > 0.5 ? '1' : '0').join('')}
@@ -528,33 +528,33 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-start gap-6 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1 }}
-                              className="p-4 bg-gradient-to-br from-blue-500/40 to-indigo-500/40 backdrop-blur-sm rounded-2xl border border-blue-400/50 shadow-lg"
+                              className="p-4 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg"
                             >
                               <motion.div
                                 animate={{ rotateY: [0, 180, 360] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                               >
-                                <Target className="w-12 h-12 text-blue-200" />
+                                <Target className="w-12 h-12 text-gray-400" strokeWidth={1.5}/>
                               </motion.div>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-100 transition-colors">Complex Technical Challenges</h3>
+                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-gray-100 transition-colors">Complex Technical Challenges</h3>
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(1) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 1.4 }}
-                                className="h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full mb-4"
+                                className="h-1 bg-gray-700 rounded-full mb-4"
                               />
                             </div>
                           </div>
                           <div className="space-y-4 flex-1">
-                            <p className="text-blue-300 font-bold text-lg">Proven track record scaling 1→40 teams</p>
+                            <p className="text-gray-400 font-bold text-lg">Proven track record scaling 1→40 teams</p>
                             <p className="text-gray-300 font-light leading-relaxed">From startup MVPs to enterprise transformations, I've solved complex technical and organizational challenges across every scale and industry.</p>
                           </div>
 
                           {/* Complexity Meter */}
                           <div className="mt-6 space-y-2">
-                            <div className="flex justify-between text-blue-300/80 text-sm">
+                            <div className="flex justify-between text-gray-400/80 text-sm">
                               <span>Complexity Level</span>
                               <span>Production Ready</span>
                             </div>
@@ -563,7 +563,7 @@ const DeliveryPage: React.FC = () => {
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(1) ? "95%" : 0 }}
                                 transition={{ duration: 2, delay: 1.6 }}
-                                className="h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full"
+                                className="h-2 bg-gray-700 rounded-full"
                               />
                             </div>
                           </div>
@@ -575,7 +575,7 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateX: -15 }}
                         animate={{ opacity: revealedSections.has(1) ? 1 : 0, y: revealedSections.has(1) ? 0 : 30, rotateX: revealedSections.has(1) ? 0 : -15 }}
                         transition={{ duration: 0.8, delay: 1.0 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 hover:border-purple-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Rocket Trail Effect */}
                         <div className="absolute inset-0 overflow-hidden">
@@ -583,7 +583,7 @@ const DeliveryPage: React.FC = () => {
                             initial={{ x: "-100%", y: "100%" }}
                             animate={{ x: "100%", y: "-100%" }}
                             transition={{ duration: 4, delay: 2, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute w-2 h-20 bg-gradient-to-t from-purple-400/50 to-transparent rounded-full transform rotate-45"
+                            className="absolute w-2 h-20 bg-gray-700/50 rounded-full transform rotate-45"
                           />
                         </div>
 
@@ -616,27 +616,27 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-start gap-6 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, y: -5 }}
-                              className="p-4 bg-gradient-to-br from-purple-500/40 to-pink-500/40 backdrop-blur-sm rounded-2xl border border-purple-400/50 shadow-lg"
+                              className="p-4 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg"
                             >
                               <motion.div
                                 animate={{ y: [0, -5, 0] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                               >
-                                <Rocket className="w-12 h-12 text-purple-200" />
+                                <Rocket className="w-12 h-12 text-gray-400" strokeWidth={1.5}/>
                               </motion.div>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-purple-100 transition-colors">Digital Transformation</h3>
+                              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-gray-100 transition-colors">Digital Transformation</h3>
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(1) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 1.6 }}
-                                className="h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mb-4"
+                                className="h-1 bg-gray-700 rounded-full mb-4"
                               />
                             </div>
                           </div>
                           <div className="space-y-4 flex-1">
-                            <p className="text-purple-300 font-bold text-lg">End-to-end transformation expertise</p>
+                            <p className="text-gray-400 font-bold text-lg">End-to-end transformation expertise</p>
                             <p className="text-gray-300 font-light leading-relaxed">Navigate the complexity of digital transformation with strategic guidance, technical execution, and rollout & adoption that deliver measurable results.</p>
                           </div>
 
@@ -648,12 +648,12 @@ const DeliveryPage: React.FC = () => {
                                 transition={{ duration: 1, repeat: Infinity }}
                                 className="w-3 h-3 bg-purple-400 rounded-full"
                               />
-                              <span className="text-purple-300/80 text-sm">Ready for Launch</span>
+                              <span className="text-gray-400/80 text-sm">Ready for Launch</span>
                             </div>
                             <motion.div
                               animate={{ rotate: 360 }}
                               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                              className="w-6 h-6 border border-purple-400/50 border-t-purple-400 rounded-full"
+                              className="w-6 h-6 border border-gray-700/50 border-t-purple-400 rounded-full"
                             />
                           </div>
                         </div>
@@ -692,13 +692,13 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateY: -15 }}
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30, rotateY: revealedSections.has(2) ? 0 : -15 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-xl border border-blue-500/30 hover:border-blue-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Animated Background */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Floating Elements */}
-                        <div className="absolute top-4 right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
+                        <div className="absolute top-4 right-4 w-24 h-24 bg-gray-800/30 rounded-full blur-xl animate-pulse" />
                         <div className="absolute bottom-4 left-4 w-16 h-16 bg-indigo-500/20 rounded-full blur-lg animate-pulse delay-1000" />
 
                         <div className="relative p-8 h-full flex flex-col">
@@ -706,48 +706,48 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-blue-500/40 to-indigo-500/40 backdrop-blur-sm rounded-2xl border border-blue-400/50 shadow-lg flex items-center justify-center"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg flex items-center justify-center"
                             >
-                              <span className="text-2xl font-bold text-blue-200">1</span>
+                              <span className="text-2xl font-bold text-gray-400">1</span>
                             </motion.div>
                             <div className="flex-1">
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(2) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 0.8 }}
-                                className="h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full"
+                                className="h-1 bg-gray-700 rounded-full"
                               />
                             </div>
                           </div>
 
-                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-100 transition-colors">Strategy & Discovery</h3>
+                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-gray-100 transition-colors">Strategy & Discovery</h3>
 
                           <div className="space-y-4 flex-1">
-                            <p className="text-blue-300 font-bold text-lg">Deep-dive analysis in 48 hours</p>
+                            <p className="text-gray-400 font-bold text-lg">Deep-dive analysis in 48 hours</p>
                             <ul className="space-y-3 text-gray-300 font-light">
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>Market research & competitive analysis</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>User journey mapping & pain point identification</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>Technical architecture planning</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>AI-powered feature prioritization</span>
                               </li>
                             </ul>
                           </div>
 
                           {/* Timeline */}
-                          <div className="mt-6 flex items-center gap-2 text-blue-300/80">
-                            <Clock className="w-4 h-4" />
-                            <span className="text-sm font-medium">1-2 Days</span>
+                          <div className="mt-6 flex items-center gap-2 text-gray-400/80">
+                            <Clock className="w-4 h-4" strokeWidth={1.5}/>
+                            <span className="text-sm font-light">1-2 Days</span>
                           </div>
                         </div>
                       </motion.div>
@@ -757,13 +757,13 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 hover:border-purple-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Animated Background */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Floating Elements */}
-                        <div className="absolute top-4 right-4 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
+                        <div className="absolute top-4 right-4 w-24 h-24 bg-gray-800/30 rounded-full blur-xl animate-pulse" />
                         <div className="absolute bottom-4 left-4 w-16 h-16 bg-pink-500/20 rounded-full blur-lg animate-pulse delay-1000" />
 
                         <div className="relative p-8 h-full flex flex-col">
@@ -771,48 +771,48 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: -5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-purple-500/40 to-pink-500/40 backdrop-blur-sm rounded-2xl border border-purple-400/50 shadow-lg flex items-center justify-center"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg flex items-center justify-center"
                             >
-                              <span className="text-2xl font-bold text-purple-200">2</span>
+                              <span className="text-2xl font-bold text-gray-400">2</span>
                             </motion.div>
                             <div className="flex-1">
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(2) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 1.0 }}
-                                className="h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"
+                                className="h-1 bg-gray-700 rounded-full"
                               />
                             </div>
                           </div>
 
-                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-purple-100 transition-colors">Design & Prototype</h3>
+                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-gray-100 transition-colors">Design & Prototype</h3>
 
                           <div className="space-y-4 flex-1">
-                            <p className="text-purple-300 font-bold text-lg">Interactive prototypes in 1 week</p>
+                            <p className="text-gray-400 font-bold text-lg">Interactive prototypes in 1 week</p>
                             <ul className="space-y-3 text-gray-300 font-light">
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>AI-generated design systems & components</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>High-fidelity interactive prototypes</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>User testing & feedback integration</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>Pitch-ready demos & presentations</span>
                               </li>
                             </ul>
                           </div>
 
                           {/* Timeline */}
-                          <div className="mt-6 flex items-center gap-2 text-purple-300/80">
-                            <Clock className="w-4 h-4" />
-                            <span className="text-sm font-medium">3-7 Days</span>
+                          <div className="mt-6 flex items-center gap-2 text-gray-400/80">
+                            <Clock className="w-4 h-4" strokeWidth={1.5}/>
+                            <span className="text-sm font-light">3-7 Days</span>
                           </div>
                         </div>
                       </motion.div>
@@ -822,13 +822,13 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateY: 15 }}
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30, rotateY: revealedSections.has(2) ? 0 : 15 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-500/30 hover:border-green-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-green-500/30"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Animated Background */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Floating Elements */}
-                        <div className="absolute top-4 right-4 w-24 h-24 bg-green-500/20 rounded-full blur-xl animate-pulse" />
+                        <div className="absolute top-4 right-4 w-24 h-24 bg-gray-800/30 rounded-full blur-xl animate-pulse" />
                         <div className="absolute bottom-4 left-4 w-16 h-16 bg-emerald-500/20 rounded-full blur-lg animate-pulse delay-1000" />
 
                         <div className="relative p-8 h-full flex flex-col">
@@ -836,48 +836,48 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-green-500/40 to-emerald-500/40 backdrop-blur-sm rounded-2xl border border-green-400/50 shadow-lg flex items-center justify-center"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg flex items-center justify-center"
                             >
-                              <span className="text-2xl font-bold text-green-200">3</span>
+                              <span className="text-2xl font-bold text-gray-400">3</span>
                             </motion.div>
                             <div className="flex-1">
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: revealedSections.has(2) ? "100%" : 0 }}
                                 transition={{ duration: 1, delay: 1.2 }}
-                                className="h-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full"
+                                className="h-1 bg-gray-700 rounded-full"
                               />
                             </div>
                           </div>
 
-                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-100 transition-colors">Build & Deploy</h3>
+                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-gray-100 transition-colors">Build & Deploy</h3>
 
                           <div className="space-y-4 flex-1">
-                            <p className="text-green-300 font-bold text-lg">Production-ready in 2-4 weeks</p>
+                            <p className="text-gray-400 font-bold text-lg">Production-ready in 2-4 weeks</p>
                             <ul className="space-y-3 text-gray-300 font-light">
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>AI-accelerated full-stack development</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>Enterprise-grade security & scalability</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>Automated testing & CI/CD pipelines</span>
                               </li>
                               <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" strokeWidth={1.5}/>
                                 <span>Cloud deployment & monitoring setup</span>
                               </li>
                             </ul>
                           </div>
 
                           {/* Timeline */}
-                          <div className="mt-6 flex items-center gap-2 text-green-300/80">
-                            <Clock className="w-4 h-4" />
-                            <span className="text-sm font-medium">2-4 Weeks</span>
+                          <div className="mt-6 flex items-center gap-2 text-gray-400/80">
+                            <Clock className="w-4 h-4" strokeWidth={1.5}/>
+                            <span className="text-sm font-light">2-4 Weeks</span>
                           </div>
                         </div>
                       </motion.div>
@@ -891,26 +891,26 @@ const DeliveryPage: React.FC = () => {
                       className="mt-16 mb-8 flex items-center justify-center"
                     >
                       <div className="flex items-center gap-4 text-gray-400">
-                        <div className="w-8 h-8 rounded-full bg-blue-500/30 border-2 border-blue-400/50 flex items-center justify-center">
-                          <span className="text-xs font-bold text-blue-300">1</span>
+                        <div className="w-8 h-8 rounded-full bg-blue-500/30 border-2 border-gray-700/50 flex items-center justify-center">
+                          <span className="text-xs font-bold text-gray-400">1</span>
                         </div>
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: revealedSections.has(2) ? "120px" : 0 }}
                           transition={{ duration: 0.8, delay: 1.6 }}
-                          className="h-0.5 bg-gradient-to-r from-blue-400 to-purple-400"
+                          className="h-0.5 bg-gray-700"
                         />
-                        <div className="w-8 h-8 rounded-full bg-purple-500/30 border-2 border-purple-400/50 flex items-center justify-center">
-                          <span className="text-xs font-bold text-purple-300">2</span>
+                        <div className="w-8 h-8 rounded-full bg-purple-500/30 border-2 border-gray-700/50 flex items-center justify-center">
+                          <span className="text-xs font-bold text-gray-400">2</span>
                         </div>
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: revealedSections.has(2) ? "120px" : 0 }}
                           transition={{ duration: 0.8, delay: 1.8 }}
-                          className="h-0.5 bg-gradient-to-r from-purple-400 to-green-400"
+                          className="h-0.5 bg-gray-700"
                         />
-                        <div className="w-8 h-8 rounded-full bg-green-500/30 border-2 border-green-400/50 flex items-center justify-center">
-                          <span className="text-xs font-bold text-green-300">3</span>
+                        <div className="w-8 h-8 rounded-full bg-green-500/30 border-2 border-gray-700/50 flex items-center justify-center">
+                          <span className="text-xs font-bold text-gray-400">3</span>
                         </div>
                       </div>
                     </motion.div>
@@ -922,11 +922,11 @@ const DeliveryPage: React.FC = () => {
                       transition={{ duration: 0.8, delay: 2.0 }}
                       className="text-center"
                     >
-                      <div className="max-w-3xl mx-auto bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
+                      <div className="max-w-3xl mx-auto bg-gray-900/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
                         <h4 className="text-2xl font-bold text-white mb-4">Total Timeline: 3-6 Weeks</h4>
                         <p className="text-gray-300 text-lg leading-relaxed">
                           From initial strategy to production deployment. Compare that to traditional 6-12 month development cycles.
-                          <span className="text-blue-400 font-semibold"> That's 10x faster delivery</span> without compromising on quality or scalability.
+                          <span className="text-gray-400 font-semibold"> That's 10x faster delivery</span> without compromising on quality or scalability.
                         </p>
                       </div>
                     </motion.div>
@@ -966,10 +966,10 @@ const DeliveryPage: React.FC = () => {
                     >
                       <div
                         onClick={() => window.open('/case-study/fab-bank', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/25"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-sm border border-gray-700/30 hover:border-gray-700/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
                         {/* Background Glow */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         <div className="grid lg:grid-cols-2 gap-0">
                           {/* Content Side */}
@@ -980,10 +980,10 @@ const DeliveryPage: React.FC = () => {
                                 alt="FAB Bank Logo"
                                 className="h-12 w-auto filter brightness-0 invert"
                               />
-                              <div className="px-4 py-2 bg-blue-500/30 backdrop-blur-sm text-blue-300 text-sm font-bold rounded-full border border-blue-400/30">ENTERPRISE</div>
+                              <div className="px-4 py-2 bg-gray-800/40 backdrop-blur-sm text-gray-400 text-sm font-bold rounded-full border border-gray-700/30">ENTERPRISE</div>
                             </div>
                             <h3 className="text-4xl font-bold text-white mb-4">First Abu Dhabi Bank</h3>
-                            <p className="text-xl text-blue-200 mb-6 font-medium">Digital Transformation</p>
+                            <p className="text-xl text-gray-400 mb-6 font-light">Digital Transformation</p>
                             <p className="text-gray-300 text-lg leading-relaxed mb-8">
                               Scaled from Innovation Lab project to 18-month enterprise transformation with 40+ experts across multiple departments. One of the region's biggest digital transformations.
                             </p>
@@ -1001,9 +1001,9 @@ const DeliveryPage: React.FC = () => {
                                 <div className="text-sm text-gray-600">Efficiency</div>
                               </div>
                             </div>
-                            <div className="flex items-center gap-2 text-blue-300 group-hover:text-blue-200 transition-colors">
-                              <span className="font-medium">View Full Case Study</span>
-                              <ExternalLink className="w-5 h-5" />
+                            <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-400 transition-colors">
+                              <span className="font-light">View Full Case Study</span>
+                              <ExternalLink className="w-5 h-5" strokeWidth={1.5}/>
                             </div>
                           </div>
 
@@ -1014,7 +1014,7 @@ const DeliveryPage: React.FC = () => {
                               alt="FAB Bank Project"
                               className="w-full h-full object-cover rounded-r-3xl group-hover:scale-105 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-blue-900/20 rounded-r-3xl" />
+                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-gray-900/20 rounded-r-3xl" />
                           </div>
                         </div>
                       </div>
@@ -1028,9 +1028,9 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         onClick={() => window.open('/case-study/al-arabiya', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-500/30 hover:border-red-500/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/25"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-sm border border-gray-700/30 hover:border-gray-700/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         <div className="aspect-video relative overflow-hidden">
                           <img
@@ -1038,26 +1038,26 @@ const DeliveryPage: React.FC = () => {
                             alt="Al Arabiya Project"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                           <div className="absolute top-4 left-4 flex items-center gap-3">
                             <img
                               src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Al-Arabiya_new_logo.svg/500px-Al-Arabiya_new_logo.svg.png"
                               alt="Al Arabiya Logo"
                               className="h-8 w-auto filter brightness-0 invert"
                             />
-                            <div className="px-3 py-1 bg-red-500/30 backdrop-blur-sm text-red-300 text-xs font-bold rounded-full border border-red-400/30">ENTERPRISE</div>
+                            <div className="px-3 py-1 bg-red-500/30 backdrop-blur-sm text-gray-400 text-xs font-bold rounded-full border border-gray-700/30">ENTERPRISE</div>
                           </div>
                         </div>
 
                         <div className="relative p-8">
                           <h3 className="text-2xl font-bold text-white mb-2">Al Arabiya News Platform</h3>
-                          <p className="text-red-200 mb-4 font-medium">Media & Broadcasting</p>
+                          <p className="text-gray-400 mb-4 font-light">Media & Broadcasting</p>
                           <p className="text-gray-300 leading-relaxed mb-6">
                             Led international team of 20 to modernize leading news brand during COVID-19. Created personalized, customizable news experience from ground up.
                           </p>
-                          <div className="flex items-center gap-2 text-red-300 group-hover:text-red-200 transition-colors">
-                            <span className="font-medium">View Case Study</span>
-                            <ExternalLink className="w-4 h-4" />
+                          <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-400 transition-colors">
+                            <span className="font-light">View Case Study</span>
+                            <ExternalLink className="w-4 h-4" strokeWidth={1.5}/>
                           </div>
                         </div>
                       </motion.div>
@@ -1068,9 +1068,9 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         onClick={() => window.open('/case-study/harmony', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 hover:border-purple-500/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/25"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-sm border border-gray-700/30 hover:border-gray-700/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         <div className="aspect-video relative overflow-hidden">
                           <img
@@ -1078,24 +1078,24 @@ const DeliveryPage: React.FC = () => {
                             alt="Harmony AI Music Platform"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                           <div className="absolute top-4 left-4 flex items-center gap-3">
-                            <div className="w-8 h-8 bg-purple-500/30 backdrop-blur-sm rounded-lg flex items-center justify-center border border-purple-400/30">
-                              <Bot className="w-5 h-5 text-purple-300" />
+                            <div className="w-8 h-8 bg-purple-500/30 backdrop-blur-sm rounded-lg flex items-center justify-center border border-gray-700/30">
+                              <Bot className="w-5 h-5 text-gray-400" strokeWidth={1.5}/>
                             </div>
-                            <div className="px-3 py-1 bg-purple-500/30 backdrop-blur-sm text-purple-300 text-xs font-bold rounded-full border border-purple-400/30">AI-BUILT</div>
+                            <div className="px-3 py-1 bg-purple-500/30 backdrop-blur-sm text-gray-400 text-xs font-bold rounded-full border border-gray-700/30">AI-BUILT</div>
                           </div>
                         </div>
 
                         <div className="relative p-8">
                           <h3 className="text-2xl font-bold text-white mb-2">Harmony AI Music Platform</h3>
-                          <p className="text-purple-200 mb-4 font-medium">AI-Powered Music Creation</p>
+                          <p className="text-gray-400 mb-4 font-light">AI-Powered Music Creation</p>
                           <p className="text-gray-300 leading-relaxed mb-6">
                             AI-powered music collaboration platform built in 4 weeks. Complete music creation suite with intelligent composition tools and real-time collaboration.
                           </p>
-                          <div className="flex items-center gap-2 text-purple-300 group-hover:text-purple-200 transition-colors">
-                            <span className="font-medium">View Case Study</span>
-                            <ExternalLink className="w-4 h-4" />
+                          <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-400 transition-colors">
+                            <span className="font-light">View Case Study</span>
+                            <ExternalLink className="w-4 h-4" strokeWidth={1.5}/>
                           </div>
                         </div>
                       </motion.div>
@@ -1106,9 +1106,9 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         onClick={() => window.open('/case-study/doh-health', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 hover:border-green-500/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/25"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-sm border border-gray-700/30 hover:border-gray-700/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         <div className="aspect-video relative overflow-hidden">
                           <img
@@ -1116,26 +1116,26 @@ const DeliveryPage: React.FC = () => {
                             alt="DoH Health Project"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                           <div className="absolute top-4 left-4 flex items-center gap-3">
                             <img
                               src="https://api.chilledsites.com/storage/v1/object/public/p0stman/doh-logo.png"
                               alt="DoH Logo"
                               className="h-8 w-auto filter brightness-0 invert"
                             />
-                            <div className="px-3 py-1 bg-green-500/30 backdrop-blur-sm text-green-300 text-xs font-bold rounded-full border border-green-400/30">GOVERNMENT</div>
+                            <div className="px-3 py-1 bg-green-500/30 backdrop-blur-sm text-gray-400 text-xs font-bold rounded-full border border-gray-700/30">GOVERNMENT</div>
                           </div>
                         </div>
 
                         <div className="relative p-8">
                           <h3 className="text-2xl font-bold text-white mb-2">My Health Coach</h3>
-                          <p className="text-green-200 mb-4 font-medium">Department of Health Abu Dhabi</p>
+                          <p className="text-gray-400 mb-4 font-light">Department of Health Abu Dhabi</p>
                           <p className="text-gray-300 leading-relaxed mb-6">
                             Partnered with IBM to build standout health & fitness app for Abu Dhabi residents. Personalized wellness app integrating with Google Fit and Fitbit.
                           </p>
-                          <div className="flex items-center gap-2 text-green-300 group-hover:text-green-200 transition-colors">
-                            <span className="font-medium">View Case Study</span>
-                            <ExternalLink className="w-4 h-4" />
+                          <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-400 transition-colors">
+                            <span className="font-light">View Case Study</span>
+                            <ExternalLink className="w-4 h-4" strokeWidth={1.5}/>
                           </div>
                         </div>
                       </motion.div>
@@ -1146,9 +1146,9 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: revealedSections.has(2) ? 1 : 0, y: revealedSections.has(2) ? 0 : 30 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                         onClick={() => window.open('/case-study/rhythm', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border border-cyan-500/30 hover:border-cyan-500/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/25"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-sm border border-gray-700/30 hover:border-gray-700/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/30"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         <div className="aspect-video relative overflow-hidden">
                           <img
@@ -1156,24 +1156,24 @@ const DeliveryPage: React.FC = () => {
                             alt="Rhythm AI Running Coach"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                           <div className="absolute top-4 left-4 flex items-center gap-3">
                             <div className="w-8 h-8 bg-cyan-500/30 backdrop-blur-sm rounded-lg flex items-center justify-center border border-cyan-400/30">
-                              <Bot className="w-5 h-5 text-cyan-300" />
+                              <Bot className="w-5 h-5 text-gray-400" strokeWidth={1.5}/>
                             </div>
-                            <div className="px-3 py-1 bg-cyan-500/30 backdrop-blur-sm text-cyan-300 text-xs font-bold rounded-full border border-cyan-400/30">AI-BUILT</div>
+                            <div className="px-3 py-1 bg-cyan-500/30 backdrop-blur-sm text-gray-400 text-xs font-bold rounded-full border border-cyan-400/30">AI-BUILT</div>
                           </div>
                         </div>
 
                         <div className="relative p-8">
                           <h3 className="text-2xl font-bold text-white mb-2">Rhythm AI Running Coach</h3>
-                          <p className="text-cyan-200 mb-4 font-medium">AI-Powered Fitness Coaching</p>
+                          <p className="text-gray-400 mb-4 font-light">AI-Powered Fitness Coaching</p>
                           <p className="text-gray-300 leading-relaxed mb-6">
                             Intelligent running coach app with AI-powered training plans, real-time form analysis, and personalized coaching that adapts to your progress.
                           </p>
-                          <div className="flex items-center gap-2 text-cyan-300 group-hover:text-cyan-200 transition-colors">
-                            <span className="font-medium">View Case Study</span>
-                            <ExternalLink className="w-4 h-4" />
+                          <div className="flex items-center gap-2 text-gray-400 group-hover:text-gray-400 transition-colors">
+                            <span className="font-light">View Case Study</span>
+                            <ExternalLink className="w-4 h-4" strokeWidth={1.5}/>
                           </div>
                         </div>
                       </motion.div>
@@ -1204,9 +1204,9 @@ const DeliveryPage: React.FC = () => {
                     className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-xl rounded-3xl p-12 border border-gray-700/40 shadow-2xl mb-16 overflow-hidden pt-20"
                   >
                     {/* Background Effects */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl blur-xl" />
-                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
-                    <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+                    <div className="absolute inset-0 bg-gray-900/10 rounded-3xl blur-xl" />
+                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
+                    <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
 
                     {/* Floating Particles */}
                     <div className="absolute inset-0">
@@ -1241,7 +1241,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.5 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1251,7 +1251,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-red-300 transition-colors">HSBC</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">HSBC</div>
                             <div className="text-gray-400 text-xs mt-1">Global Banking</div>
                           </div>
                         </motion.div>
@@ -1261,7 +1261,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.6 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1271,7 +1271,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-blue-300 transition-colors">Visa</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">Visa</div>
                             <div className="text-gray-400 text-xs mt-1">Payments</div>
                           </div>
                         </motion.div>
@@ -1281,7 +1281,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.7 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-blue-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1291,7 +1291,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-blue-300 transition-colors">FAB</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">FAB</div>
                             <div className="text-gray-400 text-xs mt-1">Banking</div>
                           </div>
                         </motion.div>
@@ -1301,7 +1301,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : -15 }}
                           transition={{ duration: 0.6, delay: 0.8 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1311,7 +1311,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-red-300 transition-colors">Al Arabiya</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">Al Arabiya</div>
                             <div className="text-gray-400 text-xs mt-1">Media</div>
                           </div>
                         </motion.div>
@@ -1321,7 +1321,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 0.9 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1331,7 +1331,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-green-300 transition-colors">Al Futtaim</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">Al Futtaim</div>
                             <div className="text-gray-400 text-xs mt-1">Conglomerate</div>
                           </div>
                         </motion.div>
@@ -1341,7 +1341,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 1.0 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-purple-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1351,7 +1351,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-purple-300 transition-colors">Coutts</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">Coutts</div>
                             <div className="text-gray-400 text-xs mt-1">Private Banking</div>
                           </div>
                         </motion.div>
@@ -1361,7 +1361,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 1.1 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-red-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1371,7 +1371,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-red-300 transition-colors">Ferrari World</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">Ferrari World</div>
                             <div className="text-gray-400 text-xs mt-1">Entertainment</div>
                           </div>
                         </motion.div>
@@ -1381,7 +1381,7 @@ const DeliveryPage: React.FC = () => {
                           initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
                           animate={{ opacity: revealedSections.has(2) ? 1 : 0, scale: revealedSections.has(2) ? 1 : 0.8, rotateY: revealedSections.has(2) ? 0 : 15 }}
                           transition={{ duration: 0.6, delay: 1.2 }}
-                          className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-green-500/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20"
+                          className="group relative bg-gray-900/20 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 hover:border-gray-700/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-gray-900/30"
                         >
                           <div className="flex items-center justify-center h-16 mb-3">
                             <img
@@ -1391,7 +1391,7 @@ const DeliveryPage: React.FC = () => {
                             />
                           </div>
                           <div className="text-center">
-                            <div className="text-white/90 font-bold text-sm group-hover:text-green-300 transition-colors">Saudi Football</div>
+                            <div className="text-white/90 font-bold text-sm group-hover:text-gray-400 transition-colors">Saudi Football</div>
                             <div className="text-gray-400 text-xs mt-1">Sports</div>
                           </div>
                         </motion.div>
@@ -1406,23 +1406,23 @@ const DeliveryPage: React.FC = () => {
                       >
                         <div className="flex items-center gap-6 mb-4 md:mb-0">
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-blue-400">$2B+</div>
+                            <div className="text-2xl font-bold text-gray-400">$2B+</div>
                             <div className="text-gray-400 text-xs">Combined Market Cap</div>
                           </div>
                           <div className="w-px h-12 bg-gray-600/50" />
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-purple-400">50M+</div>
+                            <div className="text-2xl font-bold text-gray-400">50M+</div>
                             <div className="text-gray-400 text-xs">Users Impacted</div>
                           </div>
                           <div className="w-px h-12 bg-gray-600/50" />
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-green-400">15+</div>
+                            <div className="text-2xl font-bold text-gray-400">15+</div>
                             <div className="text-gray-400 text-xs">Countries</div>
                           </div>
                         </div>
 
                         <div className="flex items-center gap-2 text-gray-400">
-                          <Sparkles className="w-4 h-4 text-blue-400" />
+                          <Sparkles className="w-4 h-4 text-gray-400" strokeWidth={1.5}/>
                           <span className="text-sm">Enterprise-grade delivery</span>
                         </div>
                       </motion.div>
@@ -1461,14 +1461,14 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0, rotateX: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                         onClick={() => window.open('/case-study/genieology', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 hover:border-purple-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/30 cursor-pointer"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30 cursor-pointer"
                       >
                         {/* Background Effects */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Success Badge */}
                         <div className="absolute top-6 right-6 z-10">
-                          <div className="px-4 py-2 bg-green-500/30 backdrop-blur-sm text-green-300 text-sm font-bold rounded-full border border-green-400/30">
+                          <div className="px-4 py-2 bg-green-500/30 backdrop-blur-sm text-gray-400 text-sm font-bold rounded-full border border-gray-700/30">
                             ACQUIRED ✓
                           </div>
                         </div>
@@ -1478,7 +1478,7 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-purple-500/40 to-pink-500/40 backdrop-blur-sm rounded-2xl border border-purple-400/50 shadow-lg flex items-center justify-center overflow-hidden"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg flex items-center justify-center overflow-hidden"
                             >
                               <img
                                 src="https://api.chilledsites.com/storage/v1/object/public/p0stman/genieology-logo.webp"
@@ -1487,13 +1487,13 @@ const DeliveryPage: React.FC = () => {
                               />
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold text-white group-hover:text-purple-100 transition-colors">Genieology</h3>
-                              <p className="text-purple-300 font-medium">Creative Agency • Founded → Acquired</p>
+                              <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition-colors">Genieology</h3>
+                              <p className="text-gray-400 font-light">Creative Agency • Founded → Acquired</p>
                             </div>
                           </div>
 
                           <div className="space-y-4 mb-6">
-                            <p className="text-purple-300 font-bold text-lg">Founded → 30 staff → Acquired</p>
+                            <p className="text-gray-400 font-bold text-lg">Founded → 30 staff → Acquired</p>
                             <p className="text-gray-300 font-light leading-relaxed">
                               Built from scratch to a 30-person creative agency, then successfully acquired.
                               Full-cycle entrepreneurship with proven exit strategy.
@@ -1503,15 +1503,15 @@ const DeliveryPage: React.FC = () => {
                           {/* Metrics */}
                           <div className="flex items-center justify-between pt-4 border-t border-purple-500/20">
                             <div className="text-center">
-                              <div className="text-xl font-bold text-purple-300">30</div>
+                              <div className="text-xl font-bold text-gray-400">30</div>
                               <div className="text-xs text-gray-400">Team Size</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-pink-300">5+</div>
+                              <div className="text-xl font-bold text-gray-400">5+</div>
                               <div className="text-xs text-gray-400">Years</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-green-300">EXIT</div>
+                              <div className="text-xl font-bold text-gray-400">EXIT</div>
                               <div className="text-xs text-gray-400">Acquired</div>
                             </div>
                           </div>
@@ -1524,14 +1524,14 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0, rotateX: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                         onClick={() => window.open('https://bolt.new', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-500/30 hover:border-blue-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/30 cursor-pointer"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30 cursor-pointer"
                       >
                         {/* Background Effects */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Power User Badge */}
                         <div className="absolute top-6 right-6 z-10">
-                          <div className="px-4 py-2 bg-blue-500/30 backdrop-blur-sm text-blue-300 text-sm font-bold rounded-full border border-blue-400/30">
+                          <div className="px-4 py-2 bg-gray-800/40 backdrop-blur-sm text-gray-400 text-sm font-bold rounded-full border border-gray-700/30">
                             POWER USER ⚡
                           </div>
                         </div>
@@ -1541,7 +1541,7 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-blue-500/40 to-cyan-500/40 backdrop-blur-sm rounded-2xl border border-blue-400/50 shadow-lg flex items-center justify-center p-2"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg flex items-center justify-center p-2"
                             >
                               <img
                                 src="https://api.chilledsites.com/storage/v1/object/public/p0stman/bolt.svg"
@@ -1550,13 +1550,13 @@ const DeliveryPage: React.FC = () => {
                               />
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold text-white group-hover:text-blue-100 transition-colors">Bolt.new</h3>
-                              <p className="text-blue-300 font-medium">AI Development Platform • Power User & Ambassador</p>
+                              <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition-colors">Bolt.new</h3>
+                              <p className="text-gray-400 font-light">AI Development Platform • Power User & Ambassador</p>
                             </div>
                           </div>
 
                           <div className="space-y-4 mb-6">
-                            <p className="text-blue-300 font-bold text-lg">Supported through $100m+ hypergrowth</p>
+                            <p className="text-gray-400 font-bold text-lg">Supported through $100m+ hypergrowth</p>
                             <p className="text-gray-300 font-light leading-relaxed">
                               Power user and ambassador for Bolt.new during their explosive growth phase.
                               Deep expertise in AI-powered development workflows.
@@ -1566,15 +1566,15 @@ const DeliveryPage: React.FC = () => {
                           {/* Metrics */}
                           <div className="flex items-center justify-between pt-4 border-t border-blue-500/20">
                             <div className="text-center">
-                              <div className="text-xl font-bold text-blue-300">$100M+</div>
+                              <div className="text-xl font-bold text-gray-400">$100M+</div>
                               <div className="text-xs text-gray-400">Funding Round</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-cyan-300">AI</div>
+                              <div className="text-xl font-bold text-gray-400">AI</div>
                               <div className="text-xs text-gray-400">Platform</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-green-300">GROWTH</div>
+                              <div className="text-xl font-bold text-gray-400">GROWTH</div>
                               <div className="text-xs text-gray-400">Hypergrowth</div>
                             </div>
                           </div>
@@ -1586,14 +1586,14 @@ const DeliveryPage: React.FC = () => {
                         initial={{ opacity: 0, y: 30, rotateX: 10 }}
                         animate={{ opacity: revealedSections.has(3) ? 1 : 0, y: revealedSections.has(3) ? 0 : 30, rotateX: revealedSections.has(3) ? 0 : 10 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-500/30 hover:border-green-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-green-500/30 cursor-pointer"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30 cursor-pointer"
                       >
                         {/* Background Effects */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* World Record Badge */}
                         <div className="absolute top-6 right-6 z-10">
-                          <div className="px-4 py-2 bg-yellow-500/30 backdrop-blur-sm text-yellow-300 text-sm font-bold rounded-full border border-yellow-400/30">
+                          <div className="px-4 py-2 bg-yellow-500/30 backdrop-blur-sm text-gray-400 text-sm font-bold rounded-full border border-gray-700/30">
                             WORLD'S LARGEST 🏆
                           </div>
                         </div>
@@ -1603,18 +1603,18 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-green-500/40 to-emerald-500/40 backdrop-blur-sm rounded-2xl border border-green-400/50 shadow-lg flex items-center justify-center"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-lg flex items-center justify-center"
                             >
                               <span className="text-white font-bold text-2xl">🎮</span>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold text-white group-hover:text-green-100 transition-colors">Vibe Gaming</h3>
-                              <p className="text-green-300 font-medium">Sponsorship • World's Largest Hackathon</p>
+                              <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition-colors">Vibe Gaming</h3>
+                              <p className="text-gray-400 font-light">Sponsorship • World's Largest Hackathon</p>
                             </div>
                           </div>
 
                           <div className="space-y-4 mb-6">
-                            <p className="text-green-300 font-bold text-lg">World's largest hackathon & AI builders community</p>
+                            <p className="text-gray-400 font-bold text-lg">World's largest hackathon & AI builders community</p>
                             <p className="text-gray-300 font-light leading-relaxed">
                               Created and executed sponsorship strategy for record-breaking hackathon event.
                               Built massive AI builders community around gaming innovation.
@@ -1624,15 +1624,15 @@ const DeliveryPage: React.FC = () => {
                           {/* Metrics */}
                           <div className="flex items-center justify-between pt-4 border-t border-green-500/20">
                             <div className="text-center">
-                              <div className="text-xl font-bold text-green-300">WORLD</div>
+                              <div className="text-xl font-bold text-gray-400">WORLD</div>
                               <div className="text-xs text-gray-400">Record</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-emerald-300">AI</div>
+                              <div className="text-xl font-bold text-gray-400">AI</div>
                               <div className="text-xs text-gray-400">Community</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-yellow-300">HACK</div>
+                              <div className="text-xl font-bold text-gray-400">HACK</div>
                               <div className="text-xs text-gray-400">Event</div>
                             </div>
                           </div>
@@ -1645,14 +1645,14 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: revealedSections.has(3) ? 1 : 0, y: revealedSections.has(3) ? 0 : 30, rotateX: revealedSections.has(3) ? 0 : 10 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
                         onClick={() => window.open('https://chilledsites.com', '_blank')}
-                        className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-xl border border-orange-500/30 hover:border-orange-500/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/30 cursor-pointer"
+                        className="group relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-700/30 hover:border-gray-700/50 transition-all duration-700 transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-gray-900/30 cursor-pointer"
                       >
                         {/* Background Effects */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* AI Products Badge */}
                         <div className="absolute top-6 right-6 z-10">
-                          <div className="px-4 py-2 bg-orange-500/30 backdrop-blur-sm text-orange-300 text-sm font-bold rounded-full border border-orange-400/30">
+                          <div className="px-4 py-2 bg-orange-500/30 backdrop-blur-sm text-gray-400 text-sm font-bold rounded-full border border-gray-700/30">
                             AI PRODUCTS 🤖
                           </div>
                         </div>
@@ -1662,18 +1662,18 @@ const DeliveryPage: React.FC = () => {
                           <div className="flex items-center gap-4 mb-6">
                             <motion.div
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              className="w-16 h-16 bg-gradient-to-br from-orange-500/40 to-red-500/40 backdrop-blur-sm rounded-2xl border border-orange-400/50 shadow-lg flex items-center justify-center"
+                              className="w-16 h-16 bg-gray-800/40 backdrop-blur-sm rounded-2xl border border-orange-400/50 shadow-lg flex items-center justify-center"
                             >
-                              <Bot className="w-8 h-8 text-orange-200" />
+                              <Bot className="w-8 h-8 text-gray-400" strokeWidth={1.5}/>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold text-white group-hover:text-orange-100 transition-colors">P0STMAN & Chilled Sites</h3>
-                              <p className="text-orange-300 font-medium">AI Platform • SaaS Products</p>
+                              <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition-colors">P0STMAN & Chilled Sites</h3>
+                              <p className="text-gray-400 font-light">AI Platform • SaaS Products</p>
                             </div>
                           </div>
 
                           <div className="space-y-4 mb-6">
-                            <p className="text-orange-300 font-bold text-lg">Built P0STMAN & Chilled Sites (AI products)</p>
+                            <p className="text-gray-400 font-bold text-lg">Built P0STMAN & Chilled Sites (AI products)</p>
                             <p className="text-gray-300 font-light leading-relaxed">
                               Created AI-native product studio and website builder platform.
                               Full-stack AI products serving agencies and businesses globally.
@@ -1683,15 +1683,15 @@ const DeliveryPage: React.FC = () => {
                           {/* Metrics */}
                           <div className="flex items-center justify-between pt-4 border-t border-orange-500/20">
                             <div className="text-center">
-                              <div className="text-xl font-bold text-orange-300">2</div>
+                              <div className="text-xl font-bold text-gray-400">2</div>
                               <div className="text-xs text-gray-400">AI Products</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-red-300">SAAS</div>
+                              <div className="text-xl font-bold text-gray-400">SAAS</div>
                               <div className="text-xs text-gray-400">Platform</div>
                             </div>
                             <div className="text-center">
-                              <div className="text-xl font-bold text-yellow-300">LIVE</div>
+                              <div className="text-xl font-bold text-gray-400">LIVE</div>
                               <div className="text-xs text-gray-400">Production</div>
                             </div>
                           </div>
@@ -1707,23 +1707,23 @@ const DeliveryPage: React.FC = () => {
                       transition={{ duration: 0.8, delay: 1.0 }}
                       className="mt-16 text-center"
                     >
-                      <div className="max-w-4xl mx-auto bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
+                      <div className="max-w-4xl mx-auto bg-gray-900/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
                         <h4 className="text-2xl font-bold text-white mb-6">Track Record Summary</h4>
                         <div className="grid md:grid-cols-4 gap-6">
                           <div className="text-center">
-                            <div className="text-3xl font-bold text-purple-400 mb-2">1</div>
+                            <div className="text-3xl font-bold text-gray-400 mb-2">1</div>
                             <div className="text-gray-300 text-sm">Successful Exit</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-3xl font-bold text-blue-400 mb-2">$100M+</div>
+                            <div className="text-3xl font-bold text-gray-400 mb-2">$100M+</div>
                             <div className="text-gray-300 text-sm">Funding Supported</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-3xl font-bold text-green-400 mb-2">WORLD</div>
+                            <div className="text-3xl font-bold text-gray-400 mb-2">WORLD</div>
                             <div className="text-gray-300 text-sm">Record Event</div>
                           </div>
                           <div className="text-center">
-                            <div className="text-3xl font-bold text-orange-400 mb-2">2</div>
+                            <div className="text-3xl font-bold text-gray-400 mb-2">2</div>
                             <div className="text-gray-300 text-sm">AI Products Built</div>
                           </div>
                         </div>
@@ -1770,10 +1770,10 @@ const DeliveryPage: React.FC = () => {
                         whileHover={{ scale: 1.05, y: -5 }}
                         className="group relative bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30 hover:border-gray-500/50 transition-all duration-300 text-center"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 to-black/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gray-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative">
-                          <MessageCircle className="w-8 h-8 text-gray-300 mx-auto mb-3 group-hover:text-white transition-colors" />
-                          <div className="text-white font-medium text-sm mb-1">X (Twitter)</div>
+                          <MessageCircle className="w-8 h-8 text-gray-300 mx-auto mb-3 group-hover:text-white transition-colors" strokeWidth={1.5}/>
+                          <div className="text-white font-light text-sm mb-1">X (Twitter)</div>
                           <div className="text-gray-400 text-xs">@paulgosnell</div>
                         </div>
                       </motion.a>
@@ -1787,13 +1787,13 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         whileHover={{ scale: 1.05, y: -5 }}
-                        className="group relative bg-blue-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 text-center"
+                        className="group relative bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/30 hover:border-gray-700/50 transition-all duration-300 text-center"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gray-900/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative">
-                          <Linkedin className="w-8 h-8 text-blue-300 mx-auto mb-3 group-hover:text-blue-200 transition-colors" />
-                          <div className="text-white font-medium text-sm mb-1">LinkedIn</div>
-                          <div className="text-blue-300 text-xs">Profile</div>
+                          <Linkedin className="w-8 h-8 text-gray-400 mx-auto mb-3 group-hover:text-gray-400 transition-colors" strokeWidth={1.5}/>
+                          <div className="text-white font-light text-sm mb-1">LinkedIn</div>
+                          <div className="text-gray-400 text-xs">Profile</div>
                         </div>
                       </motion.a>
 
@@ -1806,13 +1806,13 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         whileHover={{ scale: 1.05, y: -5 }}
-                        className="group relative bg-blue-500/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/30 hover:border-blue-300/50 transition-all duration-300 text-center"
+                        className="group relative bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/30 hover:border-blue-300/50 transition-all duration-300 text-center"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gray-900/40 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative">
-                          <Send className="w-8 h-8 text-blue-300 mx-auto mb-3 group-hover:text-blue-200 transition-colors" />
-                          <div className="text-white font-medium text-sm mb-1">Telegram</div>
-                          <div className="text-blue-300 text-xs">@g00zzy</div>
+                          <Send className="w-8 h-8 text-gray-400 mx-auto mb-3 group-hover:text-gray-400 transition-colors" strokeWidth={1.5}/>
+                          <div className="text-white font-light text-sm mb-1">Telegram</div>
+                          <div className="text-gray-400 text-xs">@g00zzy</div>
                         </div>
                       </motion.a>
 
@@ -1825,13 +1825,13 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         whileHover={{ scale: 1.05, y: -5 }}
-                        className="group relative bg-green-600/20 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30 hover:border-green-400/50 transition-all duration-300 text-center"
+                        className="group relative bg-green-600/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/30 hover:border-gray-700/50 transition-all duration-300 text-center"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gray-900/40 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative">
-                          <Phone className="w-8 h-8 text-green-300 mx-auto mb-3 group-hover:text-green-200 transition-colors" />
-                          <div className="text-white font-medium text-sm mb-1">WhatsApp</div>
-                          <div className="text-green-300 text-xs">056 8471 173</div>
+                          <Phone className="w-8 h-8 text-gray-400 mx-auto mb-3 group-hover:text-gray-400 transition-colors" strokeWidth={1.5}/>
+                          <div className="text-white font-light text-sm mb-1">WhatsApp</div>
+                          <div className="text-gray-400 text-xs">056 8471 173</div>
                         </div>
                       </motion.a>
 
@@ -1842,13 +1842,13 @@ const DeliveryPage: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                         whileHover={{ scale: 1.05, y: -5 }}
-                        className="group relative bg-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 text-center"
+                        className="group relative bg-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/30 hover:border-gray-700/50 transition-all duration-300 text-center"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gray-900/40 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative">
-                          <Mail className="w-8 h-8 text-purple-300 mx-auto mb-3 group-hover:text-purple-200 transition-colors" />
-                          <div className="text-white font-medium text-sm mb-1">Email</div>
-                          <div className="text-purple-300 text-xs">hello@p0stman.com</div>
+                          <Mail className="w-8 h-8 text-gray-400 mx-auto mb-3 group-hover:text-gray-400 transition-colors" strokeWidth={1.5}/>
+                          <div className="text-white font-light text-sm mb-1">Email</div>
+                          <div className="text-gray-400 text-xs">hello@p0stman.com</div>
                         </div>
                       </motion.a>
                     </div>

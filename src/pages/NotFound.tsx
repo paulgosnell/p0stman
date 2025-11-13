@@ -14,7 +14,7 @@ export default function NotFound() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="mb-8"
         >
-          <Bot className="w-24 h-24 text-blue-400 mx-auto" />
+          <Bot className="w-24 h-24 text-gray-400 mx-auto" strokeWidth={1.5} />
         </motion.div>
 
         {/* 404 Text */}
@@ -22,7 +22,7 @@ export default function NotFound() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-8xl font-thin mb-4 bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text"
+          className="text-5xl md:text-7xl lg:text-8xl font-light mb-4 text-gray-900"
         >
           404
         </motion.h1>
@@ -33,8 +33,8 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-4"
         >
-          <h2 className="text-2xl font-light">Houston, we have a problem!</h2>
-          <p className="text-gray-300 max-w-md mx-auto">
+          <h2 className="text-2xl font-light text-gray-900">Houston, we have a problem!</h2>
+          <p className="text-gray-600 max-w-md mx-auto font-light">
             Looks like the P0STMAN got lost in the digital cosmos. Don't worry though, our AI is working on bringing it back!
           </p>
 
@@ -53,7 +53,7 @@ export default function NotFound() {
                 }}
                 className="absolute left-1/2 top-1/2"
               >
-                <Zap className="w-6 h-6 text-yellow-400 transform -rotate-45" />
+                <Zap className="w-6 h-6 text-gray-400 transform -rotate-45" strokeWidth={1.5} />
               </motion.div>
             ))}
           </div>
@@ -62,16 +62,16 @@ export default function NotFound() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-light"
             >
-              <Home className="w-5 h-5" />
+              <Home className="w-5 h-5" strokeWidth={1.5} />
               Return Home
             </Link>
             <a
               href="mailto:hello@p0stman.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-light"
             >
-              <Rocket className="w-5 h-5" />
+              <Rocket className="w-5 h-5" strokeWidth={1.5} />
               Contact Support
             </a>
           </div>

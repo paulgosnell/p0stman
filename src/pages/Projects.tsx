@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Building2, 
-  Bot, 
-  Zap, 
-  TrendingUp, 
-  Users, 
-  Globe, 
-  ArrowRight, 
+import {
+  Building2,
+  Bot,
+  Zap,
+  TrendingUp,
+  Users,
+  Globe,
+  ArrowRight,
   ExternalLink,
   Calendar,
   Smartphone,
@@ -44,9 +44,9 @@ const allProjects = [
       'Successfully delivered 18 months of continuous innovation'
     ],
     metrics: [
-      { label: 'Team Scale', value: '1→40', icon: <Users className="w-6 h-6" /> },
-      { label: 'Duration', value: '18mo', icon: <Calendar className="w-6 h-6" /> },
-      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-6 h-6" /> }
+      { label: 'Team Scale', value: '1→40', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Duration', value: '18mo', icon: <Calendar className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Efficiency Gain', value: '60%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> }
     ],
     technologies: ['React', 'Node.js', 'Azure', 'Design Systems', 'Microservices', 'DevOps'],
     timeline: '18 months',
@@ -72,9 +72,9 @@ const allProjects = [
       'Implemented real-time content management system'
     ],
     metrics: [
-      { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Global Team', value: '15+', icon: <Users className="w-6 h-6" /> },
-      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-6 h-6" /> }
+      { label: 'Load Speed', value: '+40%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Global Team', value: '15+', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Platforms', value: 'Multi', icon: <Globe className="w-6 h-6" strokeWidth={1.5} /> }
     ],
     technologies: ['React', 'Next.js', 'GraphQL', 'CMS', 'CDN', 'Real-time APIs'],
     timeline: '8 months',
@@ -100,9 +100,9 @@ const allProjects = [
       'Mobile-optimized experience with 60% mobile conversion improvement'
     ],
     metrics: [
-      { label: 'Conversion', value: '+25%', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Mobile Boost', value: '+60%', icon: <Smartphone className="w-6 h-6" /> },
-      { label: 'Launch Time', value: '1 Day', icon: <Zap className="w-6 h-6" /> }
+      { label: 'Conversion', value: '+25%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Mobile Boost', value: '+60%', icon: <Smartphone className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Launch Time', value: '1 Day', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> }
     ],
     technologies: ['React', 'Node.js', 'Payment APIs', 'A/B Testing', 'Analytics', 'Mobile-First'],
     timeline: '4 months',
@@ -120,9 +120,9 @@ const allProjects = [
     description: 'Next-generation CRM system built with AI at its core, delivering unprecedented efficiency and insights. Built in 4 weeks using AI-powered development.',
     caseStudyUrl: '/case-study/chilled-crm',
     metrics: [
-      { label: 'Build Time', value: '4 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Cost Saving', value: '70%', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Team Size', value: '1', icon: <Users className="w-6 h-6" /> }
+      { label: 'Build Time', value: '4 weeks', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Cost Saving', value: '70%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Team Size', value: '1', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -136,9 +136,9 @@ const allProjects = [
     description: 'Find your perfect running rhythm with AI-powered coaching and adaptive music. Revolutionary fitness app built in just 1 week using AI development.',
     caseStudyUrl: '/case-study/rhythm',
     metrics: [
-      { label: 'Build Time', value: '1 week', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Performance', value: '+45%', icon: <TrendingUp className="w-6 h-6" /> },
-      { label: 'Team Size', value: '1', icon: <Users className="w-6 h-6" /> }
+      { label: 'Build Time', value: '1 week', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Performance', value: '+45%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Team Size', value: '1', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -151,8 +151,8 @@ const allProjects = [
     description: 'Revolutionary music collaboration platform that connects artists worldwide with AI-powered matching and real-time collaboration tools.',
     caseStudyUrl: '/case-study/harmony',
     metrics: [
-      { label: 'Build Time', value: '2 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Artists', value: '1000+', icon: <Users className="w-6 h-6" /> }
+      { label: 'Build Time', value: '2 weeks', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Artists', value: '1000+', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -165,8 +165,8 @@ const allProjects = [
     description: 'Comprehensive healthcare booking and management system with AI-powered scheduling optimization and patient management.',
     caseStudyUrl: '/case-study/clinic-book',
     metrics: [
-      { label: 'Build Time', value: '3 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Efficiency', value: '+80%', icon: <TrendingUp className="w-6 h-6" /> }
+      { label: 'Build Time', value: '3 weeks', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Efficiency', value: '+80%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -179,8 +179,8 @@ const allProjects = [
     description: 'AI-powered wellness and meditation platform with personalized mindfulness programs and mental health tracking.',
     caseStudyUrl: '/case-study/serenity',
     metrics: [
-      { label: 'Build Time', value: '2 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'User Retention', value: '85%', icon: <Users className="w-6 h-6" /> }
+      { label: 'Build Time', value: '2 weeks', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'User Retention', value: '85%', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -193,8 +193,8 @@ const allProjects = [
     description: 'Social fitness platform connecting fitness enthusiasts worldwide with AI-powered workout recommendations and community features.',
     caseStudyUrl: '/case-study/fitlink',
     metrics: [
-      { label: 'Countries', value: '30+', icon: <Globe className="w-6 h-6" /> },
-      { label: 'Active Users', value: '50K+', icon: <Users className="w-6 h-6" /> }
+      { label: 'Countries', value: '30+', icon: <Globe className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Active Users', value: '50K+', icon: <Users className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   },
   {
@@ -207,8 +207,8 @@ const allProjects = [
     description: 'Complete salon and barber shop management system with AI-powered scheduling, customer management, and business analytics.',
     caseStudyUrl: '/case-study/barber-booking',
     metrics: [
-      { label: 'Build Time', value: '2 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Bookings', value: '+200%', icon: <TrendingUp className="w-6 h-6" /> }
+      { label: 'Build Time', value: '2 weeks', icon: <Zap className="w-6 h-6" strokeWidth={1.5} /> },
+      { label: 'Bookings', value: '+200%', icon: <TrendingUp className="w-6 h-6" strokeWidth={1.5} /> }
     ]
   }
 ];
@@ -225,10 +225,10 @@ export default function Projects() {
     threshold: 0.1,
   });
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? allProjects 
-    : allProjects.filter(project => 
-        project.type === selectedCategory || 
+  const filteredProjects = selectedCategory === 'All'
+    ? allProjects
+    : allProjects.filter(project =>
+        project.type === selectedCategory ||
         project.category.includes(selectedCategory)
       );
 
@@ -271,35 +271,35 @@ export default function Projects() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <Building2 className="w-6 h-6 text-blue-400" />
-                  <span className="text-blue-400 font-medium">Portfolio</span>
+                  <Building2 className="w-6 h-6 text-gray-400" strokeWidth={1.5} />
+                  <span className="text-gray-400 font-light">Portfolio</span>
                 </div>
 
-                <h1 className="text-5xl font-thin mb-6 text-white drop-shadow-md">
+                <h1 className="text-5xl font-light mb-6 text-gray-900">
                   Projects & Case Studies
                 </h1>
 
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                  From enterprise transformations to AI-built products, explore a portfolio of real projects 
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+                  From enterprise transformations to AI-built products, explore a portfolio of real projects
                   with measurable impact across banking, media, health, and technology sectors.
                 </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-light text-blue-400 mb-1">12+</div>
-                    <div className="text-sm text-gray-400">Projects Delivered</div>
+                    <div className="text-3xl font-light text-gray-900 mb-1">12+</div>
+                    <div className="text-sm text-gray-400 font-light">Projects Delivered</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-purple-400 mb-1">8</div>
-                    <div className="text-sm text-gray-400">Industries</div>
+                    <div className="text-3xl font-light text-gray-900 mb-1">8</div>
+                    <div className="text-sm text-gray-400 font-light">Industries</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-green-400 mb-1">40+</div>
-                    <div className="text-sm text-gray-400">Team Members Led</div>
+                    <div className="text-3xl font-light text-gray-900 mb-1">40+</div>
+                    <div className="text-sm text-gray-400 font-light">Team Members Led</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-yellow-400 mb-1">80%</div>
-                    <div className="text-sm text-gray-400">Faster with AI</div>
+                    <div className="text-3xl font-light text-gray-900 mb-1">80%</div>
+                    <div className="text-sm text-gray-400 font-light">Faster with AI</div>
                   </div>
                 </div>
               </motion.div>
@@ -322,9 +322,9 @@ export default function Projects() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-3 rounded-full font-medium transition-all ${
+                    className={`px-6 py-3 rounded-full font-light transition-all ${
                       selectedCategory === category
-                        ? 'bg-blue-600 text-white shadow-lg'
+                        ? 'bg-black text-white shadow-lg'
                         : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                     }`}
                   >
@@ -358,13 +358,13 @@ export default function Projects() {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      
+
                       {/* Type Badge */}
                       <div className="absolute top-4 left-4">
-                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                          project.type === 'Enterprise' 
-                            ? 'bg-blue-600 text-white' 
-                            : 'bg-purple-600 text-white'
+                        <span className={`px-3 py-1 text-xs font-light rounded-full ${
+                          project.type === 'Enterprise'
+                            ? 'bg-gray-900 text-white'
+                            : 'bg-gray-900 text-white'
                         }`}>
                           {project.type}
                         </span>
@@ -380,38 +380,38 @@ export default function Projects() {
                           />
                         </div>
                       )}
-                      
+
                       {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-gray-100 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <ExternalLink className="w-6 h-6 text-white" />
+                      <div className="absolute inset-0 bg-gray-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <ExternalLink className="w-6 h-6 text-gray-900" strokeWidth={1.5} />
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div className="p-6">
                       <div className="mb-3">
-                        <span className="text-sm text-blue-600 font-medium">{project.category}</span>
+                        <span className="text-sm text-gray-600 font-light">{project.category}</span>
                       </div>
-                      
-                      <h3 className="text-xl font-light text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+
+                      <h3 className="text-xl font-light text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">
                         {project.title}
                       </h3>
-                      
-                      <p className="text-gray-600 font-medium mb-3">{project.company}</p>
-                      
-                      <p className="text-gray-700 text-sm mb-4 line-clamp-3">
+
+                      <p className="text-gray-600 font-light mb-3">{project.company}</p>
+
+                      <p className="text-gray-700 text-sm mb-4 line-clamp-3 font-light">
                         {project.description}
                       </p>
-                      
+
                       {/* Metrics */}
                       {project.metrics && (
                         <div className="flex gap-4 pt-4 border-t border-gray-100">
                           {project.metrics.slice(0, 2).map((metric, i) => (
                             <div key={i} className="text-center">
                               <div className="text-lg font-light text-gray-900">{metric.value}</div>
-                              <div className="text-xs text-gray-500">{metric.label}</div>
+                              <div className="text-xs text-gray-500 font-light">{metric.label}</div>
                             </div>
                           ))}
                         </div>
@@ -425,7 +425,7 @@ export default function Projects() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div
@@ -437,23 +437,23 @@ export default function Projects() {
                 <h2 className="text-4xl font-light mb-6">
                   Ready to Start Your Next Project?
                 </h2>
-                
-                <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                  Whether you need enterprise transformation or rapid AI-powered development, 
+
+                <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-light">
+                  Whether you need enterprise transformation or rapid AI-powered development,
                   let's discuss how we can deliver exceptional results for your organization.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
+                  <a
                     href="mailto:hello@p0stman.com"
-                    className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-[1.02] font-medium text-lg inline-flex items-center gap-2"
+                    className="px-8 py-4 bg-black text-white hover:bg-gray-900 transition-all transform hover:scale-[1.02] font-light text-lg inline-flex items-center gap-2"
                   >
                     Start Your Project
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                   </a>
-                  <a 
+                  <a
                     href="/about"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-gray-50 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-gray-200 text-gray-900 hover:bg-gray-50 transition-all font-light text-lg"
                   >
                     Learn More About Me
                   </a>
