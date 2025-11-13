@@ -89,7 +89,7 @@ export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps
         {/* Hamburger Menu - Desktop & Mobile */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className={`p-2 rounded-lg transition-all duration-300 ${textColorClass} ${hoverBgClass}`}
+          className={`p-2 transition-all duration-300 ${textColorClass} ${hoverBgClass}`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -125,7 +125,7 @@ export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-20 right-0 left-0 md:right-6 md:left-auto md:w-80 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg z-50 overflow-hidden md:rounded-xl"
+              className="absolute top-20 right-0 left-0 md:right-6 md:left-auto md:w-80 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg z-50 overflow-hidden"
               onClick={() => setIsOpen(false)}
             >
               <div className="p-6 space-y-2">
@@ -142,16 +142,16 @@ export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps
                         to={item.href}
                         onMouseEnter={() => setHoveredItem(item.href)}
                         onMouseLeave={() => setHoveredItem(null)}
-                        className="group relative block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200"
+                        className="group relative block p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                            <Icon size={16} />
+                          <div className="w-8 h-8 bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-900 dark:text-gray-100 group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
+                            <Icon size={16} strokeWidth={1.5} />
                           </div>
 
                           <div className="flex-1">
                             <div className="flex items-center gap-2">
-                              <span className="text-gray-900 dark:text-gray-100 font-light group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                              <span className="text-gray-900 dark:text-gray-100 font-light transition-colors">
                                 {item.label}
                               </span>
                               <motion.div
@@ -162,7 +162,7 @@ export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps
                                 }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <ArrowRight size={16} className="text-blue-600" />
+                                <ArrowRight size={16} className="text-gray-900 dark:text-gray-100" strokeWidth={1.5} />
                               </motion.div>
                             </div>
                           </div>
@@ -181,11 +181,11 @@ export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps
                 >
                   <a
                     href="/contact"
-                    className="flex items-center justify-center gap-2 w-full p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-light hover:from-blue-700 hover:to-purple-700 transition-all group"
+                    className="flex items-center justify-center gap-2 w-full p-3 bg-black text-white font-light hover:bg-gray-800 transition-all group"
                   >
-                    <Sparkles size={16} className="group-hover:text-yellow-300 transition-colors" />
+                    <Sparkles size={16} strokeWidth={1.5} />
                     <span>Get Started</span>
-                    <ArrowRight size={16} />
+                    <ArrowRight size={16} strokeWidth={1.5} />
                   </a>
                 </motion.div>
               </div>

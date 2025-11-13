@@ -713,18 +713,18 @@ export default function CaseStudies() {
                     <img
                       src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&auto=format&fit=crop"
                       alt="Health & Wellness"
-                      className="w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-black/80" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70" />
                   </div>
 
                   {/* Content */}
                   <div className="relative z-10 p-12 md:p-16 w-full">
                     <div className="max-w-4xl">
                       {/* Badge */}
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6">
-                        <Heart className="w-4 h-4 text-white" />
-                        <span className="text-white text-sm font-medium">Featured Portfolio</span>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+                        <Heart className="w-4 h-4 text-white" strokeWidth={1.5} />
+                        <span className="text-white text-sm font-light">Featured Portfolio</span>
                       </div>
 
                       {/* Title */}
@@ -733,7 +733,7 @@ export default function CaseStudies() {
                       </h2>
 
                       {/* Description */}
-                      <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-3xl">
+                      <p className="text-xl text-gray-300 font-light mb-8 leading-relaxed max-w-3xl">
                         From AI-powered health platforms to government healthcare apps, we've built across the entire health spectrum.
                         Wearable integration, mental wellness, fitness tracking, clinic management, and corporate wellness—see our deep health expertise.
                       </p>
@@ -769,7 +769,7 @@ export default function CaseStudies() {
                         {['Wearables', 'AI Health', 'Mental Wellness', 'Fitness', 'Clinics', 'Government'].map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs rounded-full"
+                            className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-light"
                           >
                             {tag}
                           </span>
