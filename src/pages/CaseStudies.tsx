@@ -647,128 +647,11 @@ export default function CaseStudies() {
 
         <HeaderV3Global darkMode={true} />
 
-        {/* Hero Section with Space Animation */}
-        <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white overflow-hidden">
-          {/* Animated Grid Background */}
-          <div className="absolute inset-0 z-0">
-            <svg className="absolute inset-0 w-full h-full">
-              <defs>
-                <pattern
-                  id="case-studies-grid"
-                  width="60"
-                  height="60"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path
-                    d="M 60 0 L 0 0 0 60"
-                    fill="none"
-                    stroke="rgba(147, 51, 234, 0.3)"
-                    strokeWidth="1"
-                  />
-                </pattern>
-                <linearGradient id="neural-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#6366F1" stopOpacity="0.6" />
-                  <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#EC4899" stopOpacity="0.6" />
-                </linearGradient>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#case-studies-grid)" />
-            </svg>
-          </div>
+        {/* Hero Section */}
+        <section className="relative min-h-[60vh] flex items-center bg-black text-white overflow-hidden">
+          {/* Simple Background */}
+          <div className="absolute inset-0 z-0 bg-[url('/p0stman-page-bg.png')] bg-cover bg-center opacity-20"></div>
 
-          {/* Floating Stars */}
-          <div className="absolute inset-0 z-[2]">
-            {Array.from({ length: 50 }).map((_, i) => {
-              const randomLeft = Math.random() * 100;
-              const randomTop = Math.random() * 100;
-              const randomDuration = Math.random() * 5 + 3;
-
-              return (
-                <motion.div
-                  key={`star-${i}`}
-                  className="absolute bg-white rounded-full pointer-events-none shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                  style={{
-                    width: i % 3 === 0 ? '4px' : i % 2 === 0 ? '3px' : '2px',
-                    height: i % 3 === 0 ? '4px' : i % 2 === 0 ? '3px' : '2px',
-                    left: `${randomLeft}%`,
-                    top: `${randomTop}%`
-                  }}
-                  initial={{ opacity: 0.5, scale: 0.8 }}
-                  animate={{
-                    opacity: [0.5, 1, 0.7, 1, 0.5],
-                    scale: [0.8, 1.2, 0.9, 1.3, 0.8]
-                  }}
-                  transition={{
-                    duration: randomDuration,
-                    delay: i * 0.05,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-              );
-            })}
-          </div>
-
-          {/* Shooting Stars */}
-          <div className="absolute inset-0 z-[3]">
-            {Array.from({ length: 3 }).map((_, i) => {
-              const randomStartY = Math.random() * 300;
-              const randomEndY = Math.random() * 300 + 100;
-
-              return (
-                <motion.div
-                  key={`shooting-${i}`}
-                  className="absolute w-1 h-1 bg-white rounded-full pointer-events-none"
-                  initial={{
-                    x: -100,
-                    y: randomStartY,
-                    opacity: 0
-                  }}
-                  animate={{
-                    x: '100vw',
-                    y: randomEndY,
-                    opacity: [0, 1, 1, 0]
-                  }}
-                  transition={{
-                    duration: 2,
-                    delay: i * 4,
-                    repeat: Infinity,
-                    repeatDelay: 8,
-                    ease: "linear"
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-20 h-0.5 -translate-y-0.5" />
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Floating Orbs */}
-          <div className="absolute inset-0 z-[1]">
-            {[
-              { size: 'w-40 h-40', color: 'from-cyan-400/60 to-blue-500/60', x: '10%', y: '20%' },
-              { size: 'w-32 h-32', color: 'from-purple-400/70 to-pink-500/70', x: '85%', y: '15%' },
-              { size: 'w-48 h-48', color: 'from-indigo-400/60 to-purple-500/60', x: '70%', y: '70%' },
-              { size: 'w-36 h-36', color: 'from-blue-300/50 to-cyan-400/50', x: '50%', y: '40%' }
-            ].map((orb, i) => (
-              <motion.div
-                key={`orb-${i}`}
-                className={`absolute ${orb.size} bg-gradient-to-br ${orb.color} rounded-full blur-xl pointer-events-none`}
-                style={{ left: orb.x, top: orb.y }}
-                animate={{
-                  scale: [1, 1.4, 0.8, 1],
-                  opacity: [0.5, 0.8, 0.4, 0.5],
-                  x: [0, 40, -30, 0],
-                  y: [0, -30, 40, 0]
-                }}
-                transition={{
-                  duration: 8 + i * 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            ))}
-          </div>
 
           <div className="container mx-auto px-4 py-24 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
@@ -777,36 +660,35 @@ export default function CaseStudies() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <Building2 className="w-6 h-6 text-blue-400 dark:text-blue-400" />
-                  <span className="text-blue-400 dark:text-blue-400 font-medium">Portfolio</span>
+                <div className="mb-8">
+                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Portfolio</span>
                 </div>
 
-                <h1 className="text-5xl font-thin mb-6 text-white dark:text-gray-100 drop-shadow-md">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 text-white leading-[1.05] tracking-tight">
                   Case Studies & Projects
                 </h1>
 
-                <p className="text-xl text-gray-300 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-xl md:text-2xl text-gray-400 font-light mb-12 leading-relaxed max-w-3xl mx-auto">
                   From enterprise transformations to AI-built products, explore a portfolio of real projects
                   with measurable impact across banking, media, health, and technology sectors.
                 </p>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-light text-blue-400 mb-1">12+</div>
-                    <div className="text-sm text-gray-400">Projects Delivered</div>
+                    <div className="text-3xl font-light text-white mb-1">12+</div>
+                    <div className="text-sm text-gray-400 font-light">Projects Delivered</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-purple-400 mb-1">8</div>
-                    <div className="text-sm text-gray-400">Industries</div>
+                    <div className="text-3xl font-light text-white mb-1">8</div>
+                    <div className="text-sm text-gray-400 font-light">Industries</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-green-400 mb-1">40+</div>
-                    <div className="text-sm text-gray-400">Team Members Led</div>
+                    <div className="text-3xl font-light text-white mb-1">40+</div>
+                    <div className="text-sm text-gray-400 font-light">Team Members Led</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-yellow-400 mb-1">80%</div>
-                    <div className="text-sm text-gray-400">Faster with AI</div>
+                    <div className="text-3xl font-light text-white mb-1">80%</div>
+                    <div className="text-sm text-gray-400 font-light">Faster with AI</div>
                   </div>
                 </div>
               </motion.div>
@@ -815,7 +697,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Featured: Health & Wellness Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <section className="py-16 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <Link to="/health" className="block group">
@@ -824,16 +706,16 @@ export default function CaseStudies() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 to-purple-600 shadow-2xl hover:shadow-3xl transition-all duration-500 min-h-[400px] flex items-center"
+                  className="relative overflow-hidden bg-black shadow-2xl hover:shadow-3xl transition-all duration-500 min-h-[400px] flex items-center border-t border-gray-800"
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <img
                       src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&auto=format&fit=crop"
                       alt="Health & Wellness"
-                      className="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90" />
+                    <div className="absolute inset-0 bg-black/80" />
                   </div>
 
                   {/* Content */}
@@ -846,7 +728,7 @@ export default function CaseStudies() {
                       </div>
 
                       {/* Title */}
-                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 group-hover:translate-x-2 transition-transform duration-300">
+                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 group-hover:translate-x-2 transition-transform duration-300">
                         Health & Wellness Projects
                       </h2>
 
@@ -858,28 +740,28 @@ export default function CaseStudies() {
 
                       {/* Stats Grid */}
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-                        <div className="border-l-2 border-white/40 pl-4">
-                          <div className="text-3xl font-bold text-white">6+</div>
-                          <div className="text-white/70 text-sm">Health Projects</div>
+                        <div className="border-l border-white/40 pl-4">
+                          <div className="text-3xl font-light text-white">6+</div>
+                          <div className="text-white/70 text-sm font-light">Health Projects</div>
                         </div>
-                        <div className="border-l-2 border-white/40 pl-4">
-                          <div className="text-3xl font-bold text-white">60K+</div>
-                          <div className="text-white/70 text-sm">Active Users</div>
+                        <div className="border-l border-white/40 pl-4">
+                          <div className="text-3xl font-light text-white">60K+</div>
+                          <div className="text-white/70 text-sm font-light">Active Users</div>
                         </div>
-                        <div className="border-l-2 border-white/40 pl-4">
-                          <div className="text-3xl font-bold text-white">95%</div>
-                          <div className="text-white/70 text-sm">Cost Savings</div>
+                        <div className="border-l border-white/40 pl-4">
+                          <div className="text-3xl font-light text-white">95%</div>
+                          <div className="text-white/70 text-sm font-light">Cost Savings</div>
                         </div>
-                        <div className="border-l-2 border-white/40 pl-4">
-                          <div className="text-3xl font-bold text-white">1-3 wks</div>
-                          <div className="text-white/70 text-sm">Build Time</div>
+                        <div className="border-l border-white/40 pl-4">
+                          <div className="text-3xl font-light text-white">1-3 wks</div>
+                          <div className="text-white/70 text-sm font-light">Build Time</div>
                         </div>
                       </div>
 
                       {/* CTA */}
-                      <div className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-900 rounded-lg font-medium hover:bg-gray-100 transition-all group-hover:gap-4 duration-300">
+                      <div className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-light hover:bg-gray-100 transition-all group-hover:gap-4 duration-300">
                         <span>Explore Health Portfolio</span>
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                       </div>
 
                       {/* Tags */}
@@ -916,9 +798,9 @@ export default function CaseStudies() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-3 rounded-full font-medium transition-all ${
+                    className={`px-6 py-3 font-light transition-all ${
                       selectedCategory === category
-                        ? 'bg-blue-600 text-white shadow-lg'
+                        ? 'bg-black text-white'
                         : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                     }`}
                   >
@@ -947,23 +829,9 @@ export default function CaseStudies() {
                       transition: { duration: 0.3, ease: "easeOut" }
                     }}
                     whileTap={{ scale: 0.98 }}
-                    className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl cursor-pointer bg-white dark:bg-gray-800 flex flex-col"
+                    className="group relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-white dark:bg-gray-800 flex flex-col border-t border-gray-200 dark:border-gray-700"
                     onClick={() => openCaseStudy(project)}
                   >
-                      {/* Shimmer effect on hover */}
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"
-                        style={{ x: '-100%' }}
-                        animate={{
-                          x: ['100%', '-100%']
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          repeatDelay: 5,
-                          ease: "linear"
-                        }}
-                      />
 
                       {/* Project Image */}
                       <div className="relative overflow-hidden h-56">
@@ -987,10 +855,10 @@ export default function CaseStudies() {
                           </div>
                         )}
 
-                        {/* Hover Overlay with ripple effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-purple-600/20 to-pink-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
-                          <div className="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-45">
-                            <ExternalLink className="w-7 h-7 text-white" />
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <div className="w-16 h-16 bg-white/30 backdrop-blur-sm flex items-center justify-center border border-white/50 transition-transform duration-300 group-hover:scale-110">
+                            <ExternalLink className="w-7 h-7 text-white" strokeWidth={1.5} />
                           </div>
                         </div>
                       </div>
@@ -1000,54 +868,47 @@ export default function CaseStudies() {
                         <div className="flex-1">
                           {/* Badges below image */}
                           <div className="flex gap-2 mb-2">
-                            <span className={`px-2 py-0.5 text-xs font-semibold rounded transition-transform hover:scale-105 hover:-translate-y-0.5 ${
-                                project.type === 'Enterprise'
-                                  ? 'bg-indigo-100 text-indigo-700'
-                                  : 'bg-violet-100 text-violet-700'
-                              }`}>
+                            <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
                               {project.type}
                             </span>
                             {project.caseStudyUrl && (
-                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-emerald-100 text-emerald-700 transition-transform hover:scale-105 hover:-translate-y-0.5">
+                              <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
                                 Full Case Study
                               </span>
                             )}
                           </div>
 
                           <div className="mb-2">
-                            <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">{project.category}</span>
+                            <span className="text-xs text-gray-500 dark:text-gray-400 font-light">{project.category}</span>
                           </div>
 
-                          <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+                          <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-1 transition-colors line-clamp-2">
                             {project.title}
                           </h3>
 
-                          <p className="text-gray-600 dark:text-gray-300 font-medium mb-2 text-sm">{project.company}</p>
+                          <p className="text-gray-600 dark:text-gray-300 font-light mb-2 text-sm">{project.company}</p>
 
                           <p className="text-gray-700 dark:text-gray-200 text-xs line-clamp-2">
                             {project.description}
                           </p>
                         </div>
 
-                        {/* Metrics with hover animations */}
+                        {/* Metrics */}
                         {project.metrics && (
                           <div className="flex gap-3 pt-3 mt-3 border-t border-gray-100 dark:border-gray-700">
                             {project.metrics.slice(0, 2).map((metric, i) => (
                               <div
                                 key={i}
-                                className="text-center flex-1 transition-transform hover:scale-110 hover:-translate-y-1 duration-300"
+                                className="text-center flex-1"
                               >
-                                <div className="text-base font-light bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                <div className="text-base font-light text-gray-900 dark:text-gray-100">
                                   {metric.value}
                                 </div>
-                                <div className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{metric.label}</div>
+                                <div className="text-[10px] text-gray-500 dark:text-gray-400 font-light mt-0.5">{metric.label}</div>
                               </div>
                             ))}
                           </div>
                         )}
-
-                        {/* Subtle glow effect at bottom */}
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-x-0 group-hover:scale-x-100" />
                       </div>
                   </motion.div>
                 ))}
@@ -1057,7 +918,7 @@ export default function CaseStudies() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+        <section className="py-24 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div
@@ -1066,26 +927,26 @@ export default function CaseStudies() {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-light mb-6 text-white dark:text-gray-100">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-white">
                   Ready to Start Your Next Project?
                 </h2>
 
-                <p className="text-xl text-blue-100 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
+                <p className="text-xl md:text-2xl text-gray-400 font-light mb-8 max-w-2xl mx-auto">
                   Whether you need enterprise transformation or rapid AI-powered development,
                   let's discuss how we can deliver exceptional results for your organization.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
+                  <a
                     href="mailto:hello@p0stman.com"
-                    className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-[1.02] font-medium text-lg inline-flex items-center gap-2"
+                    className="px-8 py-4 bg-white text-black hover:bg-gray-100 transition-all font-light text-lg inline-flex items-center gap-2"
                   >
                     Start Your Project
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
                   </a>
                   <a
                     href="/about"
-                    className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg"
+                    className="px-8 py-4 border border-white/30 text-white hover:bg-white/10 transition-all font-light text-lg"
                   >
                     Learn More About Me
                   </a>
