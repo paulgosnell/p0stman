@@ -661,14 +661,14 @@ export default function CaseStudies() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="mb-8">
-                  <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Portfolio</span>
+                  <span className="text-xs tracking-[0.3em] uppercase text-white font-light">Portfolio</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 text-white leading-[1.05] tracking-tight">
                   Case Studies & Projects
                 </h1>
 
-                <p className="text-xl md:text-2xl text-gray-400 font-light mb-12 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-xl md:text-2xl text-white font-light mb-12 leading-relaxed max-w-3xl mx-auto">
                   From enterprise transformations to AI-built products, explore a portfolio of real projects
                   with measurable impact across banking, media, health, and technology sectors.
                 </p>
@@ -676,19 +676,19 @@ export default function CaseStudies() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
                   <div className="text-center">
                     <div className="text-3xl font-light text-white mb-1">12+</div>
-                    <div className="text-sm text-gray-400 font-light">Projects Delivered</div>
+                    <div className="text-sm text-white font-light">Projects Delivered</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-light text-white mb-1">8</div>
-                    <div className="text-sm text-gray-400 font-light">Industries</div>
+                    <div className="text-sm text-white font-light">Industries</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-light text-white mb-1">40+</div>
-                    <div className="text-sm text-gray-400 font-light">Team Members Led</div>
+                    <div className="text-sm text-white font-light">Team Members Led</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-light text-white mb-1">80%</div>
-                    <div className="text-sm text-gray-400 font-light">Faster with AI</div>
+                    <div className="text-sm text-white font-light">Faster with AI</div>
                   </div>
                 </div>
               </motion.div>
