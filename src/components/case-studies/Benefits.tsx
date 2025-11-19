@@ -5,7 +5,7 @@ import { TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 interface BenefitsProps {
   title: string;
   description: string;
-  items: Array<{
+  items?: Array<{
     title: string;
     description: string;
     metric: string;
