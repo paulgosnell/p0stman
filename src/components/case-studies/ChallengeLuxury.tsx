@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 interface ChallengeLuxuryProps {
   title: string;
   description: string;
-  points: string[];
+  points: (string | { title: string; description: string })[];
   image?: string;
 }
 
@@ -81,7 +81,14 @@ export default function ChallengeLuxury({
                   className="flex items-start gap-4 group"
                 >
                   <div className="flex-shrink-0 w-1 h-1 bg-gray-400 rounded-full mt-3 group-hover:scale-150 transition-transform" />
-                  <p className="text-gray-700 text-lg font-light leading-relaxed">{point}</p>
+                  {typeof point === 'string' ? (
+                    <p className="text-gray-700 text-lg font-light leading-relaxed">{point}</p>
+                  ) : (
+                    <div>
+                      <h4 className="text-gray-900 text-lg font-medium mb-1">{point.title}</h4>
+                      <p className="text-gray-700 text-base font-light leading-relaxed">{point.description}</p>
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </motion.div>
