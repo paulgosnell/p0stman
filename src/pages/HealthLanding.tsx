@@ -150,7 +150,7 @@ export default function HealthLanding() {
             <img
               src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&auto=format&fit=crop"
               alt="Health & Wellness"
-              className="absolute inset-0 w-full h-full object-cover grayscale"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/50" />
           </div>
@@ -298,7 +298,7 @@ export default function HealthLanding() {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute top-4 right-4">
