@@ -302,7 +302,7 @@ export default function HealthLanding() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <div className="absolute top-4 right-4">
-                          <span className="px-3 py-1 bg-black text-white text-xs font-light rounded-full">
+                          <span className="px-3 py-1 bg-white/95 backdrop-blur-sm text-gray-900 text-xs font-medium rounded-full shadow-lg">
                             {project.category}
                           </span>
                         </div>
