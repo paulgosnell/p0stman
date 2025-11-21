@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, User, MessageSquare, Loader2, Twitter, Linkedin, CheckCircle } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
 import { sendContactEmail } from '../../lib/supabase';
+import { trackFormStarted, trackFormSubmitted, trackFormError, trackSocialClick } from '../../lib/analytics';
 import FormInput from '../ui/FormInput';
 import FormGroup from '../ui/FormGroup';
 
@@ -36,8 +37,12 @@ export default function ContactForm() {
   const handleFormStart = () => {
     if (!formStarted) {
       setFormStarted(true);
-      const referrer = document.referrer || window.location.href;
 
+      // Track with Vercel Analytics
+      trackFormStarted('contact_page', window.location.pathname);
+
+      // Keep existing gtag tracking if needed
+      const referrer = document.referrer || window.location.href;
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_started', {
           source_page: referrer,
@@ -79,7 +84,14 @@ export default function ContactForm() {
         form_type: 'contact_page'
       });
 
-      // Track successful submission
+      // Track successful submission with Vercel Analytics
+      trackFormSubmitted('contact_page', window.location.pathname, {
+        project_type: formData.projectType,
+        budget: formData.budget,
+        timeline: formData.timeline
+      });
+
+      // Keep existing gtag tracking if needed
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_submitted', {
           source_page: referrer,
@@ -100,9 +112,13 @@ export default function ContactForm() {
         description: ''
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send message');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to send message';
+      setError(errorMessage);
 
-      // Track error
+      // Track error with Vercel Analytics
+      trackFormError('contact_page', window.location.pathname, errorMessage);
+
+      // Keep existing gtag tracking if needed
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_error', {
           error_message: err instanceof Error ? err.message : 'Unknown error'
@@ -138,7 +154,7 @@ export default function ContactForm() {
               <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-gray-700 dark:text-gray-300 font-light">
                 <p className="font-medium mb-1">Want a faster response?</p>
-                <p>DM me directly on <a href="https://twitter.com/paulgosnell" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Twitter</a> or message me on <a href="https://linkedin.com/in/pgosnell" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+                <p>DM me directly on <a href="https://twitter.com/paulgosnell" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('Twitter', 'contact_form_info', window.location.pathname)}>Twitter</a> or message me on <a href="https://linkedin.com/in/pgosnell" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('LinkedIn', 'contact_form_info', window.location.pathname)}>LinkedIn</a>.</p>
               </div>
             </div>
           </div>
@@ -288,6 +304,7 @@ export default function ContactForm() {
                 href="https://twitter.com/paulgosnell"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocialClick('Twitter', 'contact_form_footer', window.location.pathname)}
                 className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-light"
               >
                 <Twitter className="w-5 h-5 text-[#1DA1F2]" />
@@ -297,6 +314,7 @@ export default function ContactForm() {
                 href="https://linkedin.com/in/pgosnell"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocialClick('LinkedIn', 'contact_form_footer', window.location.pathname)}
                 className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-light"
               >
                 <Linkedin className="w-5 h-5 text-[#0077B5]" />

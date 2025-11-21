@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackCTAButtonClick } from '../../lib/analytics';
 
 export default function CTAV3() {
   return (
@@ -20,6 +21,7 @@ export default function CTAV3() {
         <div>
           <Link
             to="/contact"
+            onClick={() => trackCTAButtonClick('Get Started', 'ctav3_section', window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 text-white rounded-lg font-light text-base hover:bg-pink-600 transition-colors"
           >
             Get Started

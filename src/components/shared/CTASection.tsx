@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCTAButtonClick } from '../../lib/analytics';
 
 export interface CTASectionProps {
   title: string;
@@ -45,7 +46,10 @@ export const CTASection: React.FC<CTASectionProps> = ({
         {/* CTA Button */}
         <div className="pt-4">
           <button
-            onClick={buttonOnClick}
+            onClick={() => {
+              trackCTAButtonClick(buttonText, 'cta_section', window.location.pathname);
+              buttonOnClick();
+            }}
             className={`
               px-10 py-4 rounded-lg font-light text-base transition-all duration-300
               ${variant === 'gradient'

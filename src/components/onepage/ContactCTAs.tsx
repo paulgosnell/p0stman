@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import { ContactInfo } from '../../types/onepage';
+import { trackCTAButtonClick } from '../../lib/analytics';
 
 interface ContactCTAsProps {
   contactInfo: ContactInfo;
@@ -8,12 +9,14 @@ interface ContactCTAsProps {
   className?: string;
 }
 
-const ContactCTAs: React.FC<ContactCTAsProps> = ({ 
-  contactInfo, 
+const ContactCTAs: React.FC<ContactCTAsProps> = ({
+  contactInfo,
   variant = 'hero',
-  className = '' 
+  className = ''
 }) => {
   const handleEmailClick = () => {
+    trackCTAButtonClick('Email Paul', `contact_ctas_${variant}`, window.location.pathname);
+
     const subject = encodeURIComponent('P0STMAN AI Adoption Services Inquiry');
     const body = encodeURIComponent(
       'Hi Paul,\n\nI\'m interested in learning more about P0STMAN\'s AI adoption and advisory services.\n\nBest regards'
@@ -22,6 +25,7 @@ const ContactCTAs: React.FC<ContactCTAsProps> = ({
   };
 
   const handleWhatsAppClick = () => {
+    trackCTAButtonClick('WhatsApp', `contact_ctas_${variant}`, window.location.pathname);
     // Middle East optimized number formatting
     // Remove all non-numeric characters and ensure proper international format
     let cleanNumber = contactInfo.whatsapp.number.replace(/[^0-9]/g, '');
