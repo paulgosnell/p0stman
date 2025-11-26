@@ -637,7 +637,7 @@ export default function HomeV2() {
                     <InlineVoiceAgent
                       isActive={activeVoiceAgent}
                       onClose={() => setActiveVoiceAgent(false)}
-                      agentId={import.meta.env.VITE_ELEVENLABS_AGENT_ID || "agent_8701k6q7xc5af4f8dkjj8pqda592"}
+                      voice="coral"
                     />
                   </motion.div>
 
