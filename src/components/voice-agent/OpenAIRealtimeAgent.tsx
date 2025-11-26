@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+'use client';
+
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Mic, X, MessageSquare, Loader2, AlertCircle } from 'lucide-react';
+import { Mic, X, Loader2, AlertCircle } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import {
   OPENAI_REALTIME_URL,
@@ -11,8 +13,8 @@ import {
   type OpenAIRealtimeVoice,
 } from '../../config/openai-realtime';
 
-export interface SectionVoiceAgentProps {
-  /** The section of the site this agent is for (e.g., 'cta', 'services', 'pricing', 'process') */
+export interface OpenAIRealtimeAgentProps {
+  /** The section of the site this agent is for */
   section: string;
 
   /** Custom system prompt for this section */
@@ -27,12 +29,6 @@ export interface SectionVoiceAgentProps {
   /** Optional button text for the trigger button */
   buttonText?: string;
 
-  /** Enable text-only mode (chat mode, no voice) - NOT SUPPORTED with OpenAI Realtime */
-  textOnly?: boolean;
-
-  /** Show live transcript of the conversation */
-  showTranscript?: boolean;
-
   /** Theme color for the component */
   color?: 'blue' | 'purple' | 'green' | 'orange' | 'pink';
 
@@ -42,28 +38,19 @@ export interface SectionVoiceAgentProps {
   /** Auto-start the conversation when component mounts */
   autoStart?: boolean;
 
-  /** Maximum conversation duration in seconds (default: 300 = 5 minutes) */
-  maxDurationSeconds?: number;
-
-  /** Maximum number of conversation turns (user + agent exchanges) (default: 10) */
-  maxTurns?: number;
-
   /** OpenAI voice selection */
   voice?: OpenAIRealtimeVoice;
-
-  /** Custom voice style instructions (overrides default) */
-  voiceStyleInstructions?: string;
 
   /** Callback when conversation starts */
   onConversationStart?: () => void;
 
   /** Callback when conversation ends */
-  onConversationEnd?: (conversationId?: string) => void;
+  onConversationEnd?: () => void;
 
   /** Callback when error occurs */
   onError?: (error: any) => void;
 
-  /** Callback when messages are updated (for data collection demos) */
+  /** Callback when messages are updated */
   onMessagesUpdate?: (messages: Message[]) => void;
 }
 
@@ -83,26 +70,21 @@ const languageMapping: Record<string, string> = {
   ar: 'Arabic',
 };
 
-export default function SectionVoiceAgent({
+export default function OpenAIRealtimeAgent({
   section,
   prompt,
   firstMessage,
   placement = 'inline',
   buttonText,
-  textOnly = false,
-  showTranscript = false,
   color = 'blue',
   icon = '🎤',
   autoStart = false,
-  maxDurationSeconds = 300,
-  maxTurns = 10,
   voice = 'coral',
-  voiceStyleInstructions,
   onConversationStart,
   onConversationEnd,
   onError,
   onMessagesUpdate,
-}: SectionVoiceAgentProps) {
+}: OpenAIRealtimeAgentProps) {
   // TEMPORARY: Voice agent maintenance mode
   const VOICE_AGENT_MAINTENANCE = false;
 
@@ -115,8 +97,6 @@ export default function SectionVoiceAgent({
   const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
-  const [turnCount, setTurnCount] = useState(0);
-  const [conversationStartTime, setConversationStartTime] = useState<number | null>(null);
 
   // Refs
   const peerConnectionRef = useRef<RTCPeerConnection | null>(null);
@@ -127,7 +107,6 @@ export default function SectionVoiceAgent({
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const animationFrameRef = useRef<number>();
-  const durationTimerRef = useRef<NodeJS.Timeout>();
 
   const navigate = useNavigate();
 
@@ -156,19 +135,17 @@ export default function SectionVoiceAgent({
   // Build the full system prompt with language context and voice style
   const buildSystemPrompt = useCallback(() => {
     const languageName = languageMapping[selectedLanguage] || 'English';
-    const voiceStyle = voiceStyleInstructions || DEFAULT_VOICE_STYLE_INSTRUCTIONS;
-
     return `${prompt}
 
 IMPORTANT LANGUAGE INSTRUCTION: You MUST respond in ${languageName}. The user has selected ${languageName} as their preferred language. All your responses should be in ${languageName}.
 
-${voiceStyle}
+${DEFAULT_VOICE_STYLE_INSTRUCTIONS}
 
 You have access to the following tools for navigation:
 - navigateToSection: Navigate to different pages (pricing, services, case-studies, contact, home)
 - scrollToElement: Scroll to a specific element on the page
 - highlightSection: Highlight a section with visual effect`;
-  }, [prompt, selectedLanguage, voiceStyleInstructions]);
+  }, [prompt, selectedLanguage]);
 
   // Setup audio element on mount
   useEffect(() => {
@@ -191,38 +168,9 @@ You have access to the following tools for navigation:
     }
   }, [autoStart]);
 
-  // Duration timer
-  useEffect(() => {
-    if (isConnected && !conversationStartTime) {
-      setConversationStartTime(Date.now());
-
-      // Set timer to end conversation after max duration
-      if (maxDurationSeconds) {
-        durationTimerRef.current = setTimeout(() => {
-          console.log(`Conversation duration limit reached: ${maxDurationSeconds}s`);
-          disconnect();
-        }, maxDurationSeconds * 1000);
-      }
-    }
-
-    return () => {
-      if (durationTimerRef.current) {
-        clearTimeout(durationTimerRef.current);
-      }
-    };
-  }, [isConnected, conversationStartTime, maxDurationSeconds]);
-
-  // Check turn limit
-  useEffect(() => {
-    if (isConnected && maxTurns && turnCount >= maxTurns) {
-      console.log(`Conversation limit reached: ${turnCount} turns`);
-      disconnect();
-    }
-  }, [turnCount, isConnected, maxTurns]);
-
   // Handle tool calls from OpenAI
   const handleToolCall = useCallback(
-    (toolName: string, parameters: any): string => {
+    (toolName: string, parameters: any) => {
       console.log('🔧 Tool call received:', toolName, 'with params:', parameters);
 
       switch (toolName) {
@@ -381,10 +329,9 @@ You have access to the following tools for navigation:
 
           case 'response.audio.done':
           case 'response.audio_transcript.done':
-            // Audio finished - increment turn count
+            // Audio finished
             if (isMountedRef.current) {
               setIsAgentSpeaking(false);
-              setTurnCount((prev) => prev + 1);
             }
             break;
 
@@ -594,12 +541,6 @@ You have access to the following tools for navigation:
 
   // Disconnect and cleanup
   const disconnect = () => {
-    // Clear duration timer
-    if (durationTimerRef.current) {
-      clearTimeout(durationTimerRef.current);
-      durationTimerRef.current = undefined;
-    }
-
     // Cancel animation frame
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
@@ -629,8 +570,6 @@ You have access to the following tools for navigation:
       setIsAgentSpeaking(false);
       setIsMicrophoneActive(false);
       setIsExpanded(false);
-      setTurnCount(0);
-      setConversationStartTime(null);
       setBarHeights(new Array(placement === 'floating' ? 20 : 60).fill(0));
     }
 
@@ -663,7 +602,6 @@ You have access to the following tools for navigation:
 
   // TEMPORARY: Show maintenance message if voice agent is disabled
   if (VOICE_AGENT_MAINTENANCE) {
-    // Floating mode - maintenance badge
     if (placement === 'floating') {
       return (
         <motion.div
@@ -681,24 +619,15 @@ You have access to the following tools for navigation:
       );
     }
 
-    // Inline mode - maintenance banner
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full"
-      >
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="w-full">
         <div className="relative overflow-hidden rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-pink-50 p-6 text-center">
-          {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(251,146,60,0.3),transparent_50%)]" />
           </div>
-
           <div className="relative z-10">
             <div className="text-4xl mb-3 animate-bounce">🍔</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              Voice Agent Out for Lunch
-            </h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Voice Agent Out for Lunch</h3>
             <p className="text-gray-600 font-light mb-4">
               Our AI assistant is being upgraded with new capabilities.
               <br />
@@ -707,7 +636,10 @@ You have access to the following tools for navigation:
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-orange-200">
               <span className="text-sm text-gray-700">
                 In the meantime, you can{' '}
-                <a href="/contact" className="text-orange-600 hover:text-orange-700 font-medium underline">
+                <a
+                  href="/contact"
+                  className="text-orange-600 hover:text-orange-700 font-medium underline"
+                >
                   contact us directly
                 </a>
               </span>
@@ -739,8 +671,6 @@ You have access to the following tools for navigation:
           <AlertCircle className="w-6 h-6" />
         ) : isInitializing ? (
           <Loader2 className="w-6 h-6 animate-spin" />
-        ) : textOnly ? (
-          <MessageSquare className="w-6 h-6" />
         ) : (
           <span className="text-2xl">{icon}</span>
         )}
@@ -806,24 +736,24 @@ You have access to the following tools for navigation:
 
           {/* Status indicator */}
           <div className="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <div className={`
+            <div
+              className={`
               w-2 h-2 rounded-full
               ${isAgentSpeaking ? 'bg-orange-500 animate-pulse' : 'bg-green-500'}
               ${!isConnected ? 'bg-gray-400' : ''}
-            `} />
+            `}
+            />
             <span>{getStatusText()}</span>
           </div>
 
           {/* Language selector */}
-          {!textOnly && (
-            <div className="mt-3 flex justify-center">
-              <LanguageSelector
-                selectedLanguage={selectedLanguage}
-                onLanguageChange={handleLanguageChange}
-                disabled={isConnected}
-              />
-            </div>
-          )}
+          <div className="mt-3 flex justify-center">
+            <LanguageSelector
+              selectedLanguage={selectedLanguage}
+              onLanguageChange={handleLanguageChange}
+              disabled={isConnected}
+            />
+          </div>
         </div>
       </motion.div>
     );
@@ -855,11 +785,7 @@ You have access to the following tools for navigation:
             </>
           ) : (
             <>
-              {textOnly ? (
-                <MessageSquare className="w-5 h-5" />
-              ) : (
-                <Mic className="w-5 h-5" />
-              )}
+              <Mic className="w-5 h-5" />
               <span>{buttonText || `Talk to ${section} assistant`}</span>
             </>
           )}
@@ -876,13 +802,11 @@ You have access to the following tools for navigation:
             <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-lg border-t border-gray-200 dark:border-gray-700">
               {/* Header with language selector and close button */}
               <div className="absolute top-3 left-3 right-3 flex justify-between items-center z-[9999]">
-                {!textOnly && (
-                  <LanguageSelector
-                    selectedLanguage={selectedLanguage}
-                    onLanguageChange={handleLanguageChange}
-                    disabled={isConnected}
-                  />
-                )}
+                <LanguageSelector
+                  selectedLanguage={selectedLanguage}
+                  onLanguageChange={handleLanguageChange}
+                  disabled={isConnected}
+                />
 
                 <button
                   onClick={disconnect}
@@ -923,33 +847,8 @@ You have access to the following tools for navigation:
 
                 {/* Status text */}
                 <div className="text-center">
-                  <p className="text-white/90 font-light text-sm">
-                    {getStatusText()}
-                  </p>
+                  <p className="text-white/90 font-light text-sm">{getStatusText()}</p>
                 </div>
-
-                {/* Transcript (if enabled) */}
-                {showTranscript && messages.length > 0 && (
-                  <div className="mt-4 space-y-2 max-h-64 overflow-y-auto bg-white/5 rounded-lg p-4">
-                    {messages.map((msg, i) => (
-                      <div
-                        key={i}
-                        className={`
-                          p-3 rounded-lg text-sm
-                          ${msg.role === 'user'
-                            ? 'bg-blue-500/20 text-white ml-8'
-                            : 'bg-gray-500/20 text-white/90 mr-8'
-                          }
-                        `}
-                      >
-                        <div className="font-semibold capitalize mb-1 text-xs opacity-70">
-                          {msg.role}
-                        </div>
-                        <div>{msg.text}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
           </motion.div>
