@@ -298,7 +298,7 @@ export default function About() {
 
                 <div className="space-y-6 text-gray-600">
                   <p className="text-lg font-light leading-relaxed">
-                    P0STMAN is led by Paul Gosnell—20+ years shipping digital products for startups, enterprises, and agencies. Grew a Dubai-based agency from 1 to 30 contractors, navigated a global pandemic, and emerged with a philosophy: smaller teams, better tools, faster results.
+                    P0STMAN is led by Paul Gosnell—20+ years shipping digital products for startups, enterprises, and agencies. Grew an agency from 1 to 30 contractors, navigated a global pandemic, and emerged with a philosophy: smaller teams, better tools, faster results.
                   </p>
 
                   <p className="text-lg font-light leading-relaxed">

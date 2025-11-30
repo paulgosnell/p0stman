@@ -25,6 +25,7 @@ import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
 import FooterV3 from '../components/v3/FooterV3';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
+import FeaturedSectionsCarousel from '../components/FeaturedSectionsCarousel';
 
 // All projects data
 const allProjects = [
@@ -696,92 +697,8 @@ export default function CaseStudies() {
           </div>
         </section>
 
-        {/* Featured: Health & Wellness Section */}
-        <section className="py-16 bg-black">
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <Link to="/health" className="block group">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="relative overflow-hidden bg-black shadow-2xl hover:shadow-3xl transition-all duration-500 min-h-[400px] flex items-center border-t border-gray-800"
-                >
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
-                    <img
-                      src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1920&auto=format&fit=crop"
-                      alt="Health & Wellness"
-                      className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/40" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10 p-12 md:p-16 w-full">
-                    <div className="max-w-4xl">
-                      {/* Badge */}
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                        <Heart className="w-4 h-4 text-white" strokeWidth={1.5} />
-                        <span className="text-white text-sm font-light">Featured Portfolio</span>
-                      </div>
-
-                      {/* Title */}
-                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 group-hover:translate-x-2 transition-transform duration-300">
-                        Health & Wellness Projects
-                      </h2>
-
-                      {/* Description */}
-                      <p className="text-xl text-white font-light mb-8 leading-relaxed max-w-3xl">
-                        From AI-powered health platforms to government healthcare apps, we've built across the entire health spectrum.
-                        Wearable integration, mental wellness, fitness tracking, clinic management, and corporate wellness—see our deep health expertise.
-                      </p>
-
-                      {/* Stats Grid */}
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-                        <div className="border-l border-white/40 pl-4">
-                          <div className="text-3xl font-light text-white">6+</div>
-                          <div className="text-white text-sm font-light">Health Projects</div>
-                        </div>
-                        <div className="border-l border-white/40 pl-4">
-                          <div className="text-3xl font-light text-white">60K+</div>
-                          <div className="text-white text-sm font-light">Active Users</div>
-                        </div>
-                        <div className="border-l border-white/40 pl-4">
-                          <div className="text-3xl font-light text-white">95%</div>
-                          <div className="text-white text-sm font-light">Cost Savings</div>
-                        </div>
-                        <div className="border-l border-white/40 pl-4">
-                          <div className="text-3xl font-light text-white">1-3 wks</div>
-                          <div className="text-white text-sm font-light">Build Time</div>
-                        </div>
-                      </div>
-
-                      {/* CTA */}
-                      <div className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-light hover:bg-gray-100 transition-all group-hover:gap-4 duration-300">
-                        <span>Explore Health Portfolio</span>
-                        <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mt-6">
-                        {['Wearables', 'AI Health', 'Mental Wellness', 'Fitness', 'Clinics', 'Government'].map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-light"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Featured Sections Carousel: Health, AI, FinTech */}
+        <FeaturedSectionsCarousel />
 
         {/* Filter Section */}
         <section className="py-12 bg-gray-50 dark:bg-gray-800">

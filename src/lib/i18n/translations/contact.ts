@@ -35,7 +35,7 @@ export const contactTranslations = {
     'contact.info.location': 'Location',
     'contact.info.email': 'Email',
     'contact.info.hours': 'Working Hours',
-    'contact.info.hoursDetail': 'Mon - Fri, 9am - 6pm GST',
+    'contact.info.hoursDetail': 'Mon - Fri, 9am - 6pm GMT',
     
     // FAQ
     'contact.faq.title': 'Common Questions',

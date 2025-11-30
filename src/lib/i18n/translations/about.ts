@@ -37,6 +37,6 @@ export const aboutTranslations = {
     
     // Location
     'about.location.title': 'Location',
-    'about.location.city': 'Dubai, United Arab Emirates'
+    'about.location.city': 'London, United Kingdom'
   }
 };
