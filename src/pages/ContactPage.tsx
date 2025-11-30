@@ -297,7 +297,7 @@ export default function ContactPage() {
                       <div className="flex items-start gap-4">
                         <Building2 className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" strokeWidth={1.5} />
                         <div>
-                          <p className="text-gray-900 dark:text-gray-100 font-light">Thrive Venture Studio Ltd</p>
+                          <p className="text-gray-900 dark:text-gray-100 font-light">Thrive Venture Labs Ltd</p>
                           <p className="text-gray-500 dark:text-gray-400 font-light text-sm">trading as P0STMAN</p>
                         </div>
                       </div>
@@ -354,22 +354,22 @@ export default function ContactPage() {
                   </div>
 
                   {/* Response Time */}
-                  <div className="bg-black text-white rounded-xl p-8">
+                  <div className="bg-white dark:bg-gray-700 rounded-xl p-8 border border-gray-200 dark:border-gray-600">
                     <div className="flex items-center gap-3 mb-4">
-                      <Zap className="w-6 h-6 text-yellow-400" strokeWidth={1.5} />
-                      <h3 className="text-xl font-light">Quick Response</h3>
+                      <Zap className="w-6 h-6 text-yellow-500" strokeWidth={1.5} />
+                      <h3 className="text-xl font-light text-gray-900 dark:text-gray-100">Quick Response</h3>
                     </div>
-                    <p className="text-gray-300 font-light mb-4">
+                    <p className="text-gray-600 dark:text-gray-300 font-light mb-4">
                       We respond to all enquiries within 24 hours during business days. For urgent matters, start a voice conversation with our AI assistant.
                     </p>
                     <div className="grid grid-cols-2 gap-4 mt-6">
-                      <div className="text-center p-4 bg-white/10 rounded-lg">
-                        <div className="text-2xl font-light text-white">24h</div>
-                        <div className="text-xs text-gray-400 font-light">Response Time</div>
+                      <div className="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
+                        <div className="text-2xl font-light text-gray-900 dark:text-gray-100">24h</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400 font-light">Response Time</div>
                       </div>
-                      <div className="text-center p-4 bg-white/10 rounded-lg">
-                        <div className="text-2xl font-light text-white">6 days</div>
-                        <div className="text-xs text-gray-400 font-light">Avg. MVP Build</div>
+                      <div className="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
+                        <div className="text-2xl font-light text-gray-900 dark:text-gray-100">6 days</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400 font-light">Avg. MVP Build</div>
                       </div>
                     </div>
                   </div>
