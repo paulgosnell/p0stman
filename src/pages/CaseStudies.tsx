@@ -25,7 +25,6 @@ import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
 import FooterV3 from '../components/v3/FooterV3';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
-import FeaturedSectionsCarousel from '../components/FeaturedSectionsCarousel';
 
 // All projects data
 const allProjects = [
@@ -696,9 +695,6 @@ export default function CaseStudies() {
             </div>
           </div>
         </section>
-
-        {/* Featured Sections Carousel: Health, AI, FinTech */}
-        <FeaturedSectionsCarousel />
 
         {/* Filter Section */}
         <section className="py-12 bg-gray-50 dark:bg-gray-800">
