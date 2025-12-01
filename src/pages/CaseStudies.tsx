@@ -399,7 +399,7 @@ const allProjects = [
     company: 'AI-Powered Luxury Travel Platform',
     category: 'Travel & Hospitality',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1200&auto=format&fit=crop',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png',
     logo: 'https://img.icons8.com/color/96/tourist-map.png',
     description: 'Sophisticated luxury travel website combining interactive destination mapping, real-time AI concierge services (LIV), and comprehensive CMS. Built in 8 weeks with 70% faster content updates.',
     caseStudyUrl: '/case-study/luxury-travel-sweden',
