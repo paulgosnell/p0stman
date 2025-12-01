@@ -1,97 +1,104 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CardCarousel from './CardCarousel';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Metric {
   number: string;
   label: string;
+  sublabel: string;
 }
 
 const metrics: Metric[] = [
   {
     number: '20+',
-    label: 'Years\nShipped 1000+ products'
+    label: 'Years Experience',
+    sublabel: '1000+ products shipped'
   },
   {
     number: '40%',
-    label: 'Faster\nThan traditional agencies'
+    label: 'Faster Delivery',
+    sublabel: 'Than traditional agencies'
   },
   {
-    number: 'Live',
-    label: 'In Production\nNot POCs. Real systems in 3 weeks'
+    number: '3wks',
+    label: 'To Production',
+    sublabel: 'Real systems, not POCs'
   }
 ];
 
 export default function MetricsV3() {
-  const metricCards = metrics.map((metric, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="relative flex flex-col items-center text-center px-6 h-full"
-    >
-      {/* Number */}
-      <div className="text-6xl md:text-7xl font-extralight text-gray-600 dark:text-gray-300 mb-6">
-        {metric.number}
-      </div>
-
-      {/* Horizontal keyline */}
-      <div className="w-12 h-px bg-gray-300 dark:bg-gray-500 mb-6" />
-
-      {/* Label */}
-      <div className="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed whitespace-pre-line">
-        {metric.label}
-      </div>
-    </motion.div>
-  ));
-
   return (
-    <section className="py-40 md:py-48 px-6 bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto">
-        {/* Mobile Carousel */}
-        <div className="md:hidden">
-          <CardCarousel
-            cards={metricCards}
-            cardsPerView={{
-              mobile: 1,
-              tablet: 1,
-              desktop: 1
-            }}
-          />
-        </div>
+    <section className="relative py-24 md:py-32 bg-gray-950 overflow-hidden">
+      {/* Subtle grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}
+      />
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-3 gap-12 md:gap-0">
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="relative flex flex-col items-center text-center px-6"
+      {/* Gradient accent */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-950/20 to-transparent" />
+
+      <div className="container mx-auto px-8 max-w-[90rem] relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Left side - Bold statement */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+          >
+            <span className="text-xs tracking-[0.3em] uppercase text-gray-500 font-light mb-6 block">
+              Why Work With Us
+            </span>
+
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight mb-6">
+              We ship products that{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                actually work
+              </span>
+            </h2>
+
+            <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed mb-8 max-w-lg">
+              Two decades of building for enterprise and startups. AI-augmented development means we move fast without cutting corners.
+            </p>
+
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 hover:bg-gray-100 transition-all font-light group"
             >
-              {/* Vertical keyline (left side, except first item) */}
-              {index > 0 && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-24 w-px bg-gray-200 dark:bg-gray-500" />
-              )}
+              See Our Work
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+            </Link>
+          </motion.div>
 
-              {/* Number */}
-              <div className="text-6xl md:text-7xl font-extralight text-gray-600 dark:text-gray-300 mb-6">
-                {metric.number}
-              </div>
-
-              {/* Horizontal keyline */}
-              <div className="w-12 h-px bg-gray-300 dark:bg-gray-500 mb-6" />
-
-              {/* Label */}
-              <div className="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed whitespace-pre-line">
-                {metric.label}
-              </div>
-            </motion.div>
-          ))}
+          {/* Right side - Metrics */}
+          <div className="grid grid-cols-1 gap-8">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true }}
+                className="group relative pl-8 border-l-2 border-gray-800 hover:border-blue-500 transition-colors duration-300"
+              >
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span className="text-5xl md:text-6xl font-light text-white tracking-tight">
+                    {metric.number}
+                  </span>
+                  <span className="text-lg md:text-xl text-gray-300 font-light">
+                    {metric.label}
+                  </span>
+                </div>
+                <p className="text-gray-500 font-light">
+                  {metric.sublabel}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
