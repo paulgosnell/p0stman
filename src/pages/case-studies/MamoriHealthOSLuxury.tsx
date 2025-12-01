@@ -114,7 +114,7 @@ export default function MamoriHealthOSLuxuryCase() {
         title="Mamori HealthOS"
         subtitle="AI-Powered Health Operating System"
         description="Transforming fragmented health data into actionable intelligence through evidence-based guidance."
-        backgroundImage="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-product.png"
+        backgroundImage="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-hero.png"
         stats={[
           { label: 'Development Time', value: '2-3 Weeks' },
           { label: 'Cost Reduction', value: '95%' },
