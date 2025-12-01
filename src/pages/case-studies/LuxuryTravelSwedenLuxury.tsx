@@ -48,13 +48,15 @@ const challenge = {
 const solution = {
   title: "AI-First Luxury Travel Architecture",
   description: "Built a sophisticated platform that transforms passive browsing into intelligent, context-aware conversations while empowering the team with enterprise-grade content management. The platform centers on LIV (Luxury Itinerary Visionary), an OpenAI GPT-4o-powered AI concierge that captures context from every interaction. When a visitor clicks Stockholm on the interactive map, LIV opens with personalized greetings and instantly knows their interests. Behind this intelligent frontend sits a complete CMS built on Supabase, giving the marketing team control over every aspect without touching code.",
-  image: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1200&auto=format&fit=crop"
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png",
+  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-chat-casestudy.png"
 };
 
 const benefits = {
   title: "Transforming Luxury Travel Operations",
   description: "The platform eliminated the bottleneck between visitor interest and meaningful engagement while giving the marketing team unprecedented agility. Where changes previously took weeks of developer time, content updates now happen in minutes through the admin dashboard or inline editing. The AI concierge captures 10x more context than traditional forms—not just contact details but conversation history, destination interests, and booking intent.",
-  image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&auto=format&fit=crop",
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-cms-casestudy.png",
+  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-map-casestudy.png",
   items: [
     {
       title: 'Content Update Revolution',
@@ -100,18 +102,18 @@ export default function LuxuryTravelSwedenLuxuryCase() {
           <meta property="og:title" content="Luxury Travel Sweden Case Study | AI-Powered Travel Platform" />
           <meta property="og:description" content="AI-powered luxury travel platform built in 8 weeks with comprehensive CMS." />
           <meta property="og:type" content="article" />
-          <meta property="og:image" content="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1200&auto=format&fit=crop" />
+          <meta property="og:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Luxury Travel Sweden Case Study | AI-Powered Travel Platform" />
           <meta name="twitter:description" content="AI-powered luxury travel platform built in 8 weeks with comprehensive CMS." />
-          <meta name="twitter:image" content="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1200&auto=format&fit=crop" />
+          <meta name="twitter:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/luxury-travel-sweden" />
         </Helmet>
       <CaseHeroLuxury
         title="Luxury Travel Sweden"
         subtitle="AI-Powered CMS Platform"
         description="A sophisticated luxury travel website combining interactive destination mapping, real-time AI concierge services, and comprehensive content management."
-        backgroundVideo="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1920&auto=format&fit=crop"
+        backgroundImage="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-pillars-casestudy.png"
         stats={[
           { label: 'Development Time', value: '8 Weeks' },
           { label: 'Infrastructure Cost', value: '$0-25/mo' },
