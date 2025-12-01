@@ -59,7 +59,7 @@ export default function BenefitsLuxury({
         </motion.div>
 
         {/* Stats Grid - Large Magazine-Style Numbers */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-32">
           {displayItems.slice(0, 6).map((item, index) => (
             <motion.div
               key={index}
@@ -72,7 +72,7 @@ export default function BenefitsLuxury({
               {/* Metric - Large Number */}
               {item.metric && (
                 <div
-                  className="text-5xl md:text-6xl font-light mb-4 text-gray-900"
+                  className="text-3xl md:text-4xl font-light mb-4 text-gray-900"
                   style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
                 >
                   {item.metric}
@@ -81,13 +81,13 @@ export default function BenefitsLuxury({
 
               {/* Title */}
               {item.title && (
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                <h3 className="text-base font-medium text-gray-900 mb-2">
                   {item.title}
                 </h3>
               )}
 
               {/* Description */}
-              <p className="text-gray-600 font-light leading-relaxed">
+              <p className="text-gray-600 font-light leading-relaxed text-sm">
                 {item.description}
               </p>
             </motion.div>
