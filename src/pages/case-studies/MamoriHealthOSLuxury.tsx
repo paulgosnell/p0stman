@@ -49,13 +49,15 @@ const challenge = {
 const solution = {
   title: "Evidence-First AI Health Platform",
   description: "Mamori built an AI-native operating system that aggregates fragmented health data, applies evidence-based analysis, and delivers personalized guidance through natural conversational interfaces. The platform acts as a unified health trust layer, ingesting data from wearables (Oura, Apple Watch, Whoop), lab results, behavior tracking (food photos via vision AI), and environmental context. It applies a proprietary AI Evidence Engine™ that analyzes clinical trials, product labels, and peer-reviewed studies to generate actionable recommendations tailored to individual health profiles.",
-  image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop"
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png",
+  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-chat.png"
 };
 
 const benefits = {
   title: "Transforming Health Decision-Making at Scale",
   description: "Mamori demonstrated that AI-native architecture can deliver enterprise-grade health platforms at unprecedented velocity while maintaining clinical-grade accuracy and user trust. The platform proved the viability of consumer-first, evidence-based health guidance by building what traditionally requires 6-month agency timelines and €500K budgets in just 2-3 weeks with a solo developer.",
-  image: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&auto=format&fit=crop",
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-dls1.png",
+  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-dls2.png",
   items: [
     {
       title: 'Development Cost Revolution',
@@ -101,18 +103,18 @@ export default function MamoriHealthOSLuxuryCase() {
           <meta property="og:title" content="Mamori HealthOS Case Study | AI-Powered Health Operating System" />
           <meta property="og:description" content="AI-native health operating system built in 2-3 weeks with 95% cost reduction." />
           <meta property="og:type" content="article" />
-          <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop" />
+          <meta property="og:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Mamori HealthOS Case Study | AI-Powered Health Operating System" />
           <meta name="twitter:description" content="AI-native health operating system built in 2-3 weeks with 95% cost reduction." />
-          <meta name="twitter:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop" />
+          <meta name="twitter:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/mamori-healthos" />
         </Helmet>
       <CaseHeroLuxury
         title="Mamori HealthOS"
         subtitle="AI-Powered Health Operating System"
         description="Transforming fragmented health data into actionable intelligence through evidence-based guidance."
-        backgroundVideo="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&auto=format&fit=crop"
+        backgroundImage="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-product.png"
         stats={[
           { label: 'Development Time', value: '2-3 Weeks' },
           { label: 'Cost Reduction', value: '95%' },

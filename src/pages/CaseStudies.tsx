@@ -383,7 +383,7 @@ const allProjects = [
     company: 'AI-Powered Health Operating System',
     category: 'HealthTech & AI Agents',
     type: 'AI-Built',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png',
     logo: 'https://img.icons8.com/color/96/health-graph.png',
     description: 'AI-native health operating system that transforms fragmented health data into actionable intelligence through evidence-based guidance. Built in 2-3 weeks with 95% cost reduction.',
     caseStudyUrl: '/case-study/mamori-healthos',
