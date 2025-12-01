@@ -748,13 +748,6 @@ export default function CaseStudies() {
                       className="group relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-white dark:bg-gray-800 flex flex-col border-t border-gray-200 dark:border-gray-700"
                       onClick={() => openCaseStudy(project)}
                     >
-                      {/* Featured Badge */}
-                      <div className="absolute top-4 left-4 z-10">
-                        <span className="px-3 py-1.5 text-xs font-medium tracking-wide bg-white text-black shadow-lg">
-                          LATEST
-                        </span>
-                      </div>
-
                       {/* Project Image - Taller for featured */}
                       <div className="relative overflow-hidden h-72 md:h-80">
                         <img
@@ -774,19 +767,22 @@ export default function CaseStudies() {
                       {/* Content - Larger for featured */}
                       <div className="flex-1 flex flex-col p-6">
                         <div className="flex-1">
-                          <div className="flex gap-2 mb-3">
-                            <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
-                              {project.type}
-                            </span>
-                            {project.caseStudyUrl && (
-                              <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
-                                Full Case Study
-                              </span>
-                            )}
-                          </div>
-
-                          <div className="mb-2">
+                          {/* Top row: Category left, Badges right */}
+                          <div className="flex justify-between items-start mb-3">
                             <span className="text-sm text-gray-500 dark:text-gray-400 font-light">{project.category}</span>
+                            <div className="flex gap-2">
+                              <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                                {project.type}
+                              </span>
+                              {project.caseStudyUrl && (
+                                <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                                  Full Case Study
+                                </span>
+                              )}
+                              <span className="px-2 py-0.5 text-xs font-medium tracking-wide bg-black text-white">
+                                LATEST
+                              </span>
+                            </div>
                           </div>
 
                           <h3 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-2 transition-colors">
