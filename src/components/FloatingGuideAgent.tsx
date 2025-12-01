@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLocation } from 'react-router-dom';
-import { X, MessageCircle } from 'lucide-react';
+import { X } from 'lucide-react';
 import SectionVoiceAgent from './voice-agent/SectionVoiceAgent';
 import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
 import AnimatedWaveform from './v3/AnimatedWaveform';
@@ -81,18 +81,15 @@ export default function FloatingGuideAgent() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.3 }}
-            className="fixed bottom-28 right-6 z-50 w-96 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed bottom-24 right-6 z-50 w-80 bg-gray-950 border border-white/10 overflow-hidden shadow-2xl"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-800 px-6 py-4">
-              <div className="flex items-center gap-3 mb-2">
-                <MessageCircle size={20} className="text-white" />
-                <h3 className="text-lg font-semibold text-white">Site Guide</h3>
-              </div>
-              <p className="text-blue-100 dark:text-blue-200 text-sm">
-                Ask me to show you around or answer any questions
-              </p>
+            <div className="px-6 py-5 border-b border-white/10">
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-500 font-light block mb-2">
+                AI Assistant
+              </span>
+              <h3 className="text-lg font-light text-white">How can I help?</h3>
             </div>
 
             {/* Content */}
@@ -102,20 +99,20 @@ export default function FloatingGuideAgent() {
                 prompt={guideTourConfig.prompt}
                 firstMessage={guideTourConfig.firstMessage}
                 placement="inline"
-                buttonText="Start Guide"
-                color="blue"
-                icon="🗺️"
+                buttonText="Start Conversation"
+                color="white"
+                icon=""
                 showTranscript={false}
               />
             </div>
 
-            {/* Waveform Footer */}
-            <div className="bg-gray-50 dark:bg-gray-900 px-6 py-4 border-t border-gray-200 dark:border-gray-700">
-              <div className="h-12 flex items-center justify-center">
+            {/* Footer with waveform */}
+            <div className="px-6 py-4 border-t border-white/10 bg-white/5">
+              <div className="h-8 flex items-center justify-center">
                 <AnimatedWaveform
-                  barCount={30}
-                  color="#0066FF"
-                  hoverColor="#FF1493"
+                  barCount={24}
+                  color="#ffffff"
+                  hoverColor="#3B82F6"
                   animate={true}
                   isLive={false}
                 />
