@@ -750,8 +750,8 @@ export default function CaseStudies() {
                     >
                       {/* Featured Badge */}
                       <div className="absolute top-4 left-4 z-10">
-                        <span className="px-3 py-1 text-xs font-light bg-black text-white">
-                          Latest
+                        <span className="px-3 py-1.5 text-xs font-medium tracking-wide bg-white text-black shadow-lg">
+                          LATEST
                         </span>
                       </div>
 
