@@ -48,18 +48,48 @@ const challenge = {
   ]
 };
 
+const appScreenshots = [
+  {
+    name: "HOME",
+    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png",
+    description: "Dashboard with quick access to coaching sessions, progress tracking, and action items"
+  },
+  {
+    name: "COACHING",
+    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app1.png",
+    description: "AI-powered coaching conversation with voice and text interface"
+  },
+  {
+    name: "INSIGHTS",
+    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app2.png",
+    description: "Strategic insights and recommendations based on conversation history"
+  },
+  {
+    name: "PROGRESS",
+    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-progress.png",
+    description: "Track goals, commitments, and daily/weekly progress summaries"
+  },
+  {
+    name: "ACTIONS",
+    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app3.png",
+    description: "Automatically extracted action items and accountability tracking"
+  },
+  {
+    name: "PROFILE",
+    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-info.png",
+    description: "Business context and preferences for personalized coaching"
+  }
+];
+
 const solution = {
   title: "AI-Native Executive Coaching Platform",
   description: "Built an on-demand business coaching application that combines conversational AI with professional coaching methodologies. The platform features natural voice interaction with full contextual awareness, using RAG and semantic search to recall past conversations and track progress over time. Multiple AI models (GPT-4o for strategic reasoning, Gemini for fast analysis) work together to deliver nuanced coaching that adapts to each executive's unique situation.",
-  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png",
-  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app1.png"
+  appScreenshots
 };
 
 const benefits = {
   title: "Transforming Executive Performance",
   description: "Coach OS delivers professional-quality strategic guidance with instant availability, complete context retention, and structured frameworks—all at a fraction of traditional coaching costs while maintaining the depth expected by senior executives.",
-  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app2.png",
-  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-progress.png",
   items: [
     {
       title: 'Instant Strategic Access',
