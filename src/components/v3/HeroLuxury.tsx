@@ -252,11 +252,11 @@ export default function HeroLuxury() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
         onClick={() => setShowSettings(true)}
-        className="hidden md:flex absolute bottom-8 left-8 z-20 items-center gap-2 px-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group"
+        className="hidden md:flex absolute bottom-8 left-8 z-20 items-center gap-0 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group overflow-hidden"
         aria-label="Voice agent settings"
       >
         <Settings className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-90 transition-all duration-300" strokeWidth={1.5} />
-        <span className="text-xs text-white/60 group-hover:text-white transition-colors font-light">
+        <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
           Voice Settings
         </span>
       </motion.button>

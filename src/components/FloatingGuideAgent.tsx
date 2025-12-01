@@ -31,8 +31,8 @@ export default function FloatingGuideAgent() {
         {!shouldHide && (
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-blue-600 hover:bg-pink-600 dark:bg-blue-500 dark:hover:bg-pink-500 rounded-full shadow-lg flex items-center justify-center transition-colors overflow-hidden"
-            whileHover={{ scale: 1.1 }}
+            className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 rounded-lg shadow-lg flex items-center justify-center transition-colors overflow-hidden border border-white/10 dark:border-black/10"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Open site guide"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -49,7 +49,7 @@ export default function FloatingGuideAgent() {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X size={24} className="text-white" />
+              <X size={20} className="text-white dark:text-black" />
             </motion.div>
           ) : (
             <motion.div
@@ -58,12 +58,12 @@ export default function FloatingGuideAgent() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="w-12 h-12 flex items-center justify-center px-1"
+              className="w-10 h-10 flex items-center justify-center"
             >
               <AnimatedWaveform
-                barCount={12}
+                barCount={10}
                 color="#ffffff"
-                hoverColor="#FF1493"
+                hoverColor="#3B82F6"
                 animate={true}
                 isLive={false}
               />
