@@ -14,6 +14,22 @@ interface CaseStudy {
 
 const featuredCaseStudies: CaseStudy[] = [
   {
+    title: 'Luxury Travel Sweden',
+    company: 'AI-Powered Luxury Travel Platform',
+    category: 'Travel & Hospitality',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png',
+    path: '/case-study/luxury-travel-sweden',
+    description: 'Interactive destination mapping, AI concierge (LIV), and comprehensive CMS. Built in 8 weeks.'
+  },
+  {
+    title: 'Mamori HealthOS',
+    company: 'AI-Powered Health Operating System',
+    category: 'HealthTech & AI Agents',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png',
+    path: '/case-study/mamori-healthos',
+    description: 'AI-native health platform transforming fragmented data into evidence-based guidance. 95% cost reduction.'
+  },
+  {
     title: 'YachtOS Command',
     company: 'Voice-Powered Maritime Intelligence',
     category: 'Maritime Technology',
@@ -28,22 +44,6 @@ const featuredCaseStudies: CaseStudy[] = [
     image: '/agents/pathfinder-1.png',
     path: '/case-study/pathfinder',
     description: 'Evidence-based AI coaching platform with 162+ therapeutic sessions'
-  },
-  {
-    title: 'FAB Bank',
-    company: 'Enterprise Digital Transformation',
-    category: 'Banking & Finance',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png',
-    path: '/case-study/fab-bank',
-    description: '18-month transformation with 40+ experts across multiple departments'
-  },
-  {
-    title: 'ChilledSites',
-    company: 'AI Website Builder',
-    category: 'AI Development',
-    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/canvas.png',
-    path: '/case-study/chilled-sites',
-    description: '2500+ websites created in under 10 minutes with AI-powered platform'
   }
 ];
 
