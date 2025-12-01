@@ -779,7 +779,7 @@ export default function CaseStudies() {
                                   Full Case Study
                                 </span>
                               )}
-                              <span className="px-2 py-0.5 text-xs font-medium tracking-wide bg-blue-600 text-white">
+                              <span className="px-2 py-0.5 text-xs font-medium tracking-wide bg-black text-white">
                                 LATEST
                               </span>
                             </div>
