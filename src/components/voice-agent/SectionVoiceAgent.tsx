@@ -34,7 +34,7 @@ export interface SectionVoiceAgentProps {
   showTranscript?: boolean;
 
   /** Theme color for the component */
-  color?: 'blue' | 'purple' | 'green' | 'orange' | 'pink';
+  color?: 'blue' | 'purple' | 'green' | 'orange' | 'pink' | 'white';
 
   /** Icon to display on the button */
   icon?: string;
@@ -138,6 +138,7 @@ export default function SectionVoiceAgent({
     green: 'bg-green-600 hover:bg-pink-600',
     orange: 'bg-orange-600 hover:bg-pink-600',
     pink: 'bg-pink-600 hover:bg-pink-700',
+    white: 'bg-white hover:bg-gray-100',
   };
 
   const barColorClasses = {
@@ -146,6 +147,7 @@ export default function SectionVoiceAgent({
     green: 'bg-green-500',
     orange: 'bg-orange-500',
     pink: 'bg-pink-500',
+    white: 'bg-white',
   };
 
   // Waveform state
@@ -830,6 +832,8 @@ You have access to the following tools for navigation:
   }
 
   // Inline mode
+  const isWhiteTheme = color === 'white';
+
   return (
     <div className="w-full">
       {!isConnected && !isInitializing ? (
@@ -837,10 +841,12 @@ You have access to the following tools for navigation:
         <motion.button
           onClick={connect}
           className={`
-            w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl
-            border border-gray-300 bg-transparent text-gray-900 font-light
-            hover:border-gray-400 hover:bg-gray-50
-            transition-all duration-300
+            w-full flex items-center justify-center gap-3 px-6 py-4
+            font-light transition-all duration-300
+            ${isWhiteTheme
+              ? 'bg-white text-gray-900 hover:bg-gray-100 border-0'
+              : 'rounded-xl border border-gray-300 bg-transparent text-gray-900 hover:border-gray-400 hover:bg-gray-50'
+            }
             ${error ? 'border-red-600 text-red-600 hover:bg-red-50' : ''}
           `}
           whileHover={{ scale: 1.02 }}
