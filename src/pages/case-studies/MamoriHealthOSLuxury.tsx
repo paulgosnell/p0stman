@@ -56,7 +56,7 @@ const solution = {
 const benefits = {
   title: "Transforming Health Decision-Making at Scale",
   description: "Mamori demonstrated that AI-native architecture can deliver enterprise-grade health platforms at unprecedented velocity while maintaining clinical-grade accuracy and user trust. The platform proved the viability of consumer-first, evidence-based health guidance by building what traditionally requires 6-month agency timelines and €500K budgets in just 2-3 weeks with a solo developer.",
-  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-dls1.png",
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-app.png",
   secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-dls2.png",
   items: [
     {
