@@ -15,7 +15,7 @@ const CASE_STUDY_VIDEOS = [
     path: '/case-study/luxury-travel-sweden'
   },
   {
-    video: 'https://cdn.pixabay.com/video/2022/04/19/114445-701051182_large.mp4',
+    video: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/Yacht_Gliding_Through_Calm_Sea.mp4',
     title: 'YachtOS Command',
     subtitle: 'Maritime Intelligence',
     path: '/case-study/yachtos'

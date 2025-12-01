@@ -159,7 +159,7 @@ export default function YachtOS() {
           title="YachtOS Platform"
           subtitle="AI-Native Multi-App Suite For Yachting"
           description="Comprehensive AI platform delivering 5 specialized apps for every yachting role: captain command, fleet management, harbor operations, owner oversight, and guest experiences."
-          backgroundVideo="https://cdn.pixabay.com/video/2022/04/19/114445-701051182_large.mp4"
+          backgroundVideo="https://api.chilledsites.com/storage/v1/object/public/p0stman/Yacht_Gliding_Through_Calm_Sea.mp4"
           icon="ship"
           industry="Maritime & Luxury"
           timeline="2 months"
