@@ -113,7 +113,7 @@ export default function LuxuryTravelSwedenLuxuryCase() {
         title="Luxury Travel Sweden"
         subtitle="AI-Powered CMS Platform"
         description="A sophisticated luxury travel website combining interactive destination mapping, real-time AI concierge services, and comprehensive content management."
-        backgroundImage="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-pillars-casestudy.png"
+        backgroundImage="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-hero-casestudy.png"
         stats={[
           { label: 'Development Time', value: '8 Weeks' },
           { label: 'Infrastructure Cost', value: '$0-25/mo' },
