@@ -28,6 +28,39 @@ import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
 // All projects data
 const allProjects = [
+  // Featured / Newest Projects
+  {
+    id: 'luxury-travel-sweden',
+    title: 'Luxury Travel Sweden',
+    company: 'AI-Powered Luxury Travel Platform',
+    category: 'Travel & Hospitality',
+    type: 'AI-Built',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png',
+    logo: 'https://img.icons8.com/color/96/tourist-map.png',
+    description: 'Sophisticated luxury travel website combining interactive destination mapping, real-time AI concierge services (LIV), and comprehensive CMS. Built in 8 weeks with 70% faster content updates.',
+    caseStudyUrl: '/case-study/luxury-travel-sweden',
+    metrics: [
+      { label: 'Build Time', value: '8 weeks', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Infrastructure', value: '$0-25/mo', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Lead Context', value: '10x', icon: <TrendingUp className="w-6 h-6" /> }
+    ]
+  },
+  {
+    id: 'mamori-healthos',
+    title: 'Mamori HealthOS',
+    company: 'AI-Powered Health Operating System',
+    category: 'HealthTech & AI Agents',
+    type: 'AI-Built',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png',
+    logo: 'https://img.icons8.com/color/96/health-graph.png',
+    description: 'AI-native health operating system that transforms fragmented health data into actionable intelligence through evidence-based guidance. Built in 2-3 weeks with 95% cost reduction.',
+    caseStudyUrl: '/case-study/mamori-healthos',
+    metrics: [
+      { label: 'Build Time', value: '2-3 weeks', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Cost Savings', value: '95%', icon: <DollarSign className="w-6 h-6" /> },
+      { label: 'Team Size', value: '1 Dev', icon: <Users className="w-6 h-6" /> }
+    ]
+  },
   // Enterprise Projects
   {
     id: 'fab',
@@ -378,38 +411,6 @@ const allProjects = [
     ]
   },
   {
-    id: 'mamori-healthos',
-    title: 'Mamori HealthOS',
-    company: 'AI-Powered Health Operating System',
-    category: 'HealthTech & AI Agents',
-    type: 'AI-Built',
-    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png',
-    logo: 'https://img.icons8.com/color/96/health-graph.png',
-    description: 'AI-native health operating system that transforms fragmented health data into actionable intelligence through evidence-based guidance. Built in 2-3 weeks with 95% cost reduction.',
-    caseStudyUrl: '/case-study/mamori-healthos',
-    metrics: [
-      { label: 'Build Time', value: '2-3 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Cost Savings', value: '95%', icon: <DollarSign className="w-6 h-6" /> },
-      { label: 'Team Size', value: '1 Dev', icon: <Users className="w-6 h-6" /> }
-    ]
-  },
-  {
-    id: 'luxury-travel-sweden',
-    title: 'Luxury Travel Sweden',
-    company: 'AI-Powered Luxury Travel Platform',
-    category: 'Travel & Hospitality',
-    type: 'AI-Built',
-    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png',
-    logo: 'https://img.icons8.com/color/96/tourist-map.png',
-    description: 'Sophisticated luxury travel website combining interactive destination mapping, real-time AI concierge services (LIV), and comprehensive CMS. Built in 8 weeks with 70% faster content updates.',
-    caseStudyUrl: '/case-study/luxury-travel-sweden',
-    metrics: [
-      { label: 'Build Time', value: '8 weeks', icon: <Zap className="w-6 h-6" /> },
-      { label: 'Infrastructure', value: '$0-25/mo', icon: <DollarSign className="w-6 h-6" /> },
-      { label: 'Lead Context', value: '10x', icon: <TrendingUp className="w-6 h-6" /> }
-    ]
-  },
-  {
     id: 'serenity',
     title: 'Serenity',
     company: 'Wellness & Meditation App',
@@ -729,8 +730,98 @@ export default function CaseStudies() {
         <section ref={ref} className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
+              {/* Featured Row - 2 Larger Cards */}
+              {selectedCategory === 'All' && (
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  {filteredProjects.slice(0, 2).map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{
+                        y: -8,
+                        scale: 1.01,
+                        transition: { duration: 0.3, ease: "easeOut" }
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-white dark:bg-gray-800 flex flex-col border-t border-gray-200 dark:border-gray-700"
+                      onClick={() => openCaseStudy(project)}
+                    >
+                      {/* Featured Badge */}
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-3 py-1 text-xs font-light bg-black text-white">
+                          Latest
+                        </span>
+                      </div>
+
+                      {/* Project Image - Taller for featured */}
+                      <div className="relative overflow-hidden h-72 md:h-80">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <div className="w-20 h-20 bg-white/30 backdrop-blur-sm flex items-center justify-center border border-white/50 transition-transform duration-300 group-hover:scale-110">
+                            <ExternalLink className="w-8 h-8 text-white" strokeWidth={1.5} />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Content - Larger for featured */}
+                      <div className="flex-1 flex flex-col p-6">
+                        <div className="flex-1">
+                          <div className="flex gap-2 mb-3">
+                            <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                              {project.type}
+                            </span>
+                            {project.caseStudyUrl && (
+                              <span className="px-2 py-0.5 text-xs font-light bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                                Full Case Study
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="mb-2">
+                            <span className="text-sm text-gray-500 dark:text-gray-400 font-light">{project.category}</span>
+                          </div>
+
+                          <h3 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-2 transition-colors">
+                            {project.title}
+                          </h3>
+
+                          <p className="text-gray-600 dark:text-gray-300 font-light mb-3">{project.company}</p>
+
+                          <p className="text-gray-700 dark:text-gray-200 text-sm line-clamp-3">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        {/* Metrics */}
+                        {project.metrics && (
+                          <div className="flex gap-4 pt-4 mt-4 border-t border-gray-100 dark:border-gray-700">
+                            {project.metrics.slice(0, 3).map((metric, i) => (
+                              <div key={i} className="text-center flex-1">
+                                <div className="text-lg font-light text-gray-900 dark:text-gray-100">
+                                  {metric.value}
+                                </div>
+                                <div className="text-xs text-gray-500 dark:text-gray-400 font-light mt-0.5">{metric.label}</div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+
+              {/* Regular Grid - 3 Columns */}
               <div className="grid md:grid-cols-3 gap-4">
-                {filteredProjects.map((project, index) => (
+                {(selectedCategory === 'All' ? filteredProjects.slice(2) : filteredProjects).map((project, index) => (
                   <motion.div
                     key={project.id}
                     initial={{ opacity: 0, y: 20 }}
