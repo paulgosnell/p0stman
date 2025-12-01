@@ -50,12 +50,7 @@ const challenge = {
 
 const appScreenshots = [
   {
-    name: "HOME",
-    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png",
-    description: "Dashboard with quick access to coaching sessions, progress tracking, and action items"
-  },
-  {
-    name: "COACHING",
+    name: "COACH",
     image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app1.png",
     description: "AI-powered coaching conversation with voice and text interface"
   },
@@ -65,19 +60,9 @@ const appScreenshots = [
     description: "Strategic insights and recommendations based on conversation history"
   },
   {
-    name: "PROGRESS",
-    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-progress.png",
-    description: "Track goals, commitments, and daily/weekly progress summaries"
-  },
-  {
     name: "ACTIONS",
     image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-app3.png",
     description: "Automatically extracted action items and accountability tracking"
-  },
-  {
-    name: "PROFILE",
-    image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-info.png",
-    description: "Business context and preferences for personalized coaching"
   }
 ];
 
