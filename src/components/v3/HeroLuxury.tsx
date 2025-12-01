@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
+import VoiceAgentSettings, { VoiceSettings } from './VoiceAgentSettings';
 
 const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5af4f8dkjj8pqda592';
+
+const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
+  voice: 'verse',
+  silenceDuration: 500,
+  threshold: 0.5,
+};
 
 const CASE_STUDY_VIDEOS = [
   {
@@ -49,7 +56,14 @@ const CASE_STUDY_VIDEOS = [
 export default function HeroLuxury() {
   const [isVoiceActive, setIsVoiceActive] = useState(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const voiceAgent = useVoiceWaveform(AGENT_ID);
+  const [showSettings, setShowSettings] = useState(false);
+  const [voiceSettings, setVoiceSettings] = useState<VoiceSettings>(DEFAULT_VOICE_SETTINGS);
+
+  const voiceAgent = useVoiceWaveform(AGENT_ID, {
+    voice: voiceSettings.voice,
+    threshold: voiceSettings.threshold,
+    silenceDuration: voiceSettings.silenceDuration,
+  });
 
   // Cycle through videos every 8 seconds
   useEffect(() => {
@@ -231,6 +245,29 @@ export default function HeroLuxury() {
           <ArrowDown className="w-5 h-5 text-white/60" strokeWidth={1.5} />
         </motion.div>
       </motion.button>
+
+      {/* Voice Settings Button - Bottom Left */}
+      <motion.button
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        onClick={() => setShowSettings(true)}
+        className="hidden md:flex absolute bottom-8 left-8 z-20 items-center gap-2 px-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group"
+        aria-label="Voice agent settings"
+      >
+        <Settings className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-90 transition-all duration-300" strokeWidth={1.5} />
+        <span className="text-xs text-white/60 group-hover:text-white transition-colors font-light">
+          Voice Settings
+        </span>
+      </motion.button>
+
+      {/* Voice Settings Panel */}
+      <VoiceAgentSettings
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+        settings={voiceSettings}
+        onSettingsChange={setVoiceSettings}
+      />
     </section>
   );
 }

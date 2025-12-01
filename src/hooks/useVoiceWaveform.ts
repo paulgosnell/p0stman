@@ -23,6 +23,10 @@ export interface UseVoiceWaveformOptions {
   firstMessage?: string;
   /** OpenAI voice selection */
   voice?: OpenAIRealtimeVoice;
+  /** Voice activity detection threshold (0.0-1.0) */
+  threshold?: number;
+  /** Silence duration before AI responds (ms) */
+  silenceDuration?: number;
 }
 
 const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN, an AI-powered product studio that builds intelligent software products.
@@ -49,6 +53,8 @@ export function useVoiceWaveform(
     prompt = DEFAULT_PROMPT,
     firstMessage = DEFAULT_FIRST_MESSAGE,
     voice = 'coral',
+    threshold = DEFAULT_VAD_CONFIG.threshold,
+    silenceDuration = DEFAULT_VAD_CONFIG.silence_duration_ms,
   } = options;
 
   // State
@@ -102,7 +108,12 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
                   instructions: buildSystemPrompt(),
                   voice: voice,
                   input_audio_transcription: { model: TRANSCRIPTION_MODEL },
-                  turn_detection: DEFAULT_VAD_CONFIG,
+                  turn_detection: {
+                    type: 'server_vad',
+                    threshold: threshold,
+                    prefix_padding_ms: DEFAULT_VAD_CONFIG.prefix_padding_ms,
+                    silence_duration_ms: silenceDuration,
+                  },
                 },
               })
             );
@@ -157,7 +168,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         console.error('Failed to parse data channel message:', e);
       }
     },
-    [buildSystemPrompt, voice, firstMessage]
+    [buildSystemPrompt, voice, firstMessage, threshold, silenceDuration]
   );
 
   // Start conversation
