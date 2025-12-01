@@ -9,6 +9,12 @@ const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5a
 
 const CASE_STUDY_VIDEOS = [
   {
+    video: 'https://cdn.pixabay.com/video/2022/11/24/140352-774824285_large.mp4',
+    title: 'Luxury Travel Sweden',
+    subtitle: 'AI-Powered Travel',
+    path: '/case-study/luxury-travel-sweden'
+  },
+  {
     video: 'https://cdn.pixabay.com/video/2022/04/19/114445-701051182_large.mp4',
     title: 'YachtOS Command',
     subtitle: 'Maritime Intelligence',

@@ -14,6 +14,14 @@ interface CaseStudy {
 
 const featuredCaseStudies: CaseStudy[] = [
   {
+    title: 'Coach OS',
+    company: 'AI-Powered Executive Coaching',
+    category: 'AI & Leadership',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png',
+    path: '/case-study/coach-os',
+    description: 'On-demand business coaching with voice interface, long-term memory, and GROW model frameworks.'
+  },
+  {
     title: 'Luxury Travel Sweden',
     company: 'AI-Powered Luxury Travel Platform',
     category: 'Travel & Hospitality',
@@ -36,14 +44,6 @@ const featuredCaseStudies: CaseStudy[] = [
     image: '/agents/yachtos-home.png',
     path: '/case-study/yachtos',
     description: 'AI-native operating system for superyacht captains saving 10+ hours weekly'
-  },
-  {
-    title: 'Pathfinder',
-    company: 'Professional ADHD Parent Coaching',
-    category: 'Healthcare Technology',
-    image: '/agents/pathfinder-1.png',
-    path: '/case-study/pathfinder',
-    description: 'Evidence-based AI coaching platform with 162+ therapeutic sessions'
   }
 ];
 

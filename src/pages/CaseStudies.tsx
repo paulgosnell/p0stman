@@ -30,6 +30,22 @@ import FloatingGuideAgent from '../components/FloatingGuideAgent';
 const allProjects = [
   // Featured / Newest Projects
   {
+    id: 'coach-os',
+    title: 'Coach OS',
+    company: 'AI-Powered Executive Coaching',
+    category: 'AI & Leadership',
+    type: 'AI-Built',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png',
+    logo: 'https://img.icons8.com/color/96/coach.png',
+    description: 'On-demand AI business coaching for executives and founders with voice interface, long-term memory, and professional coaching frameworks like GROW, SWOT, and OKRs.',
+    caseStudyUrl: '/case-study/coach-os',
+    metrics: [
+      { label: 'Availability', value: '24/7', icon: <Zap className="w-6 h-6" /> },
+      { label: 'Frameworks', value: '6+', icon: <Target className="w-6 h-6" /> },
+      { label: 'Cost Savings', value: '90%', icon: <DollarSign className="w-6 h-6" /> }
+    ]
+  },
+  {
     id: 'luxury-travel-sweden',
     title: 'Luxury Travel Sweden',
     company: 'AI-Powered Luxury Travel Platform',

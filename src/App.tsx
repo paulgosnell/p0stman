@@ -68,6 +68,7 @@ import ArabianMalls from './pages/case-studies/ArabianMallsLuxury';
 import Genieology from './pages/case-studies/GenieologyLuxury';
 import MamoriHealthOS from './pages/case-studies/MamoriHealthOSLuxury';
 import LuxuryTravelSweden from './pages/case-studies/LuxuryTravelSwedenLuxury';
+import CoachOS from './pages/case-studies/CoachOSLuxury';
 import YachtOS from './pages/case-studies/YachtOS';
 import Pathfinder from './pages/case-studies/Pathfinder';
 import Thanks from './pages/Thanks';
@@ -153,6 +154,7 @@ export default function App() {
           <Route path="/case-study/genieology" element={<Genieology />} />
           <Route path="/case-study/mamori-healthos" element={<MamoriHealthOS />} />
           <Route path="/case-study/luxury-travel-sweden" element={<LuxuryTravelSweden />} />
+          <Route path="/case-study/coach-os" element={<CoachOS />} />
           <Route path="/case-study/yachtos" element={<YachtOS />} />
           <Route path="/case-study/pathfinder" element={<Pathfinder />} />
           <Route path="/thanks" element={<Thanks />} />
