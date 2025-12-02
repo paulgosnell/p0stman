@@ -34,10 +34,10 @@ const CASE_STUDY_VIDEOS = [
     path: '/case-study/pathfinder'
   },
   {
-    video: 'https://videos.pexels.com/video-files/3995973/3995973-uhd_2560_1440_25fps.mp4',
-    title: 'ChilledSites',
-    subtitle: 'AI Website Builder',
-    path: '/case-study/chilled-sites'
+    video: 'https://cdn.pixabay.com/video/2018/10/02/18534-293472901_large.mp4',
+    title: 'Serenity',
+    subtitle: 'Mental Wellness',
+    path: '/case-study/serenity'
   },
   {
     video: 'https://cdn.pixabay.com/video/2023/11/19/189731-886596163_large.mp4',
@@ -48,7 +48,7 @@ const CASE_STUDY_VIDEOS = [
   {
     video: 'https://cdn.pixabay.com/video/2022/03/03/109471-685078475_large.mp4',
     title: 'Harmony',
-    subtitle: 'Mental Wellness',
+    subtitle: 'Fintech Platform',
     path: '/case-study/harmony'
   }
 ];

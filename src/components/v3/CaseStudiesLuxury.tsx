@@ -115,7 +115,7 @@ export default function CaseStudiesLuxury() {
                   </div>
 
                   {/* Screenshot */}
-                  <div className="relative overflow-hidden aspect-[16/10]">
+                  <div className="relative overflow-hidden aspect-video">
                     <img
                       src={study.image}
                       alt={study.title}
