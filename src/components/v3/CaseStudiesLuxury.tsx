@@ -74,10 +74,10 @@ export default function CaseStudiesLuxury() {
 
             <Link
               to="/case-studies"
-              className="inline-flex items-center gap-3 text-lg font-light text-gray-900 hover:gap-5 transition-all group"
+              className="inline-flex items-center gap-3 text-lg font-light text-gray-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400 hover:gap-5 transition-all duration-300 group"
             >
               View All Projects
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+              <ArrowRight className="w-5 h-5 text-gray-900 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" strokeWidth={1.5} />
             </Link>
           </div>
         </motion.div>
@@ -96,16 +96,35 @@ export default function CaseStudiesLuxury() {
                 to={study.path}
                 className="group block"
               >
-                {/* Image */}
-                <div className="relative overflow-hidden mb-6 aspect-[16/10]">
-                  <img
-                    src={study.image}
-                    alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                {/* Browser Mockup */}
+                <div className="relative mb-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+                  {/* Browser Chrome */}
+                  <div className="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2 border-b border-gray-200 dark:border-gray-700">
+                    {/* Traffic Lights */}
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    </div>
+                    {/* URL Bar */}
+                    <div className="flex-1 ml-3">
+                      <div className="bg-white dark:bg-gray-900 rounded px-3 py-1 text-xs text-gray-400 font-light truncate max-w-[200px]">
+                        {study.path.replace('/case-study/', '') + '.com'}
+                      </div>
+                    </div>
+                  </div>
 
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                  {/* Screenshot */}
+                  <div className="relative overflow-hidden aspect-[16/10]">
+                    <img
+                      src={study.image}
+                      alt={study.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                  </div>
                 </div>
 
                 {/* Content */}

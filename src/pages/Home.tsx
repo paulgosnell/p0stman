@@ -2,12 +2,10 @@ import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import HeroLuxury from '../components/v3/HeroLuxury';
-import MetricsV3 from '../components/v3/MetricsV3';
-import AgentsV3 from '../components/v3/AgentsV3';
+import ClientLogosV3 from '../components/v3/ClientLogosV3';
 import AIAgentShowcaseV3 from '../components/v3/AIAgentShowcaseV3';
 import CaseStudiesLuxury from '../components/v3/CaseStudiesLuxury';
-import ClientLogosV3 from '../components/v3/ClientLogosV3';
-import ServicesLuxury from '../components/v3/ServicesLuxury';
+import MetricsV3 from '../components/v3/MetricsV3';
 import FooterV3 from '../components/v3/FooterV3';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
@@ -38,12 +36,10 @@ export default function Home() {
         </Helmet>
         <HeaderV3Global darkMode={true} />
         <HeroLuxury />
-        <MetricsV3 />
-        <AgentsV3 />
-        <CaseStudiesLuxury />
-        <AIAgentShowcaseV3 />
         <ClientLogosV3 />
-        <ServicesLuxury />
+        <AIAgentShowcaseV3 />
+        <CaseStudiesLuxury />
+        <MetricsV3 />
         <FooterV3 />
         <FloatingGuideAgent />
       </div>

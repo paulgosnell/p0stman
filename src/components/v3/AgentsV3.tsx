@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Mic, MessageSquare, Code, Zap, Globe, Smartphone, UserCog, Settings, Palette } from 'lucide-react';
+import { Mic, MessageSquare, Code, Globe, Smartphone, Settings } from 'lucide-react';
 import CardCarousel from './CardCarousel';
 
 interface AgentCard {
@@ -39,12 +39,6 @@ const agents: AgentCard[] = [
     tech: 'Claude, OpenAI, Gemini, Grok'
   },
   {
-    icon: <Zap className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
-    title: 'Workflow Automation',
-    description: 'Intelligent process automation. Data extraction, document processing, task orchestration. Scales to millions of operations.',
-    tech: 'N8n, Make, Zapier'
-  },
-  {
     icon: <Globe className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'Websites',
     description: 'SaaS platforms, dashboards, e-commerce, landing pages, CMS. Production-ready in weeks, not months. SEO optimized.',
@@ -57,22 +51,10 @@ const agents: AgentCard[] = [
     tech: 'React Native, PWA, Flutter'
   },
   {
-    icon: <UserCog className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
-    title: 'Fractional CTO / Delivery Partner',
-    description: 'Strategic tech leadership on demand. Product roadmaps, team scaling, architecture decisions. Your tech co-founder.',
-    tech: 'Strategy, Team Building, Architecture'
-  },
-  {
     icon: <Settings className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
     title: 'RAG Systems',
     description: 'Retrieval-Augmented Generation at scale. Knowledge agents trained on your data — private, secure, and lightning-fast. Turns chaos into context, and context into answers.',
     tech: 'Vector DBs, Custom Knowledge Bases, Private & Secure'
-  },
-  {
-    icon: <Palette className="w-10 h-10 text-gray-700" strokeWidth={1.5} />,
-    title: 'Artitecture',
-    description: 'Where art meets architecture — the aesthetic logic behind every build. AI-assisted design language, consistent across apps, sites, and agents. Not just style. System-level beauty.',
-    tech: 'Design Systems, Brand Consistency, AI-Assisted'
   }
 ];
 

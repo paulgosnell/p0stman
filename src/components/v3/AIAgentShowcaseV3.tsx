@@ -163,10 +163,10 @@ export default function AIAgentShowcaseV3() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">AI Agents in Action</p>
+            <p className="text-sm text-gray-400 uppercase tracking-wider mb-4">What We Build</p>
 
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight">
-              Production-Ready AI Experiences
+              AI Products in Production
             </h2>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg font-light leading-relaxed">
@@ -215,7 +215,7 @@ export default function AIAgentShowcaseV3() {
             >
               <Link
                 to="/ai-agents"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-light text-sm"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400 dark:hover:from-blue-400 dark:hover:to-cyan-400 dark:hover:text-white transition-all duration-300 font-light text-sm"
               >
                 Explore AI Agents
                 <ArrowRight className="w-4 h-4" strokeWidth={1.5} />

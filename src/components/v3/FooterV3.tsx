@@ -8,46 +8,20 @@ export default function FooterV3() {
 
   const footerColumns = [
     {
-      title: 'Product',
+      title: 'Work',
       items: [
+        { label: 'Case Studies', href: '/case-studies' },
         { label: 'AI Agents', href: '/ai-agents' },
-        { label: 'MVP Launch', href: '/website' },
-        { label: 'Mobile App', href: '/mobile-app' },
         { label: 'Services', href: '/services' },
-        { label: 'chilledsites.com', href: 'https://chilledsites.com', external: true }
+        { label: 'Process', href: '/process' }
       ]
     },
     {
       title: 'Company',
       items: [
         { label: 'About', href: '/about' },
-        { label: 'Process', href: '/process' },
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'Contact', href: '/contact' }
-      ]
-    },
-    {
-      title: 'Services',
-      items: [
-        { label: 'Fractional CPO', href: '/fractional-cpo' },
-        { label: 'Product Strategy', href: '/product-strategy' },
-        { label: 'AI Platform Dev', href: '/ai-platform-development' },
-        { label: 'Digital Transform', href: '/digital-transformation' },
-        { label: 'Retainer Program', href: '/retainer' },
-        { label: 'Affiliate Program', href: '/affiliate' }
-      ]
-    },
-    {
-      title: 'Guides',
-      items: [
-        { label: 'All Guides', href: '/guides' },
-        { label: 'AI Cost Guide', href: '/guides/ai-agent-development-cost-timeline-guide-2025.html' },
-        { label: 'Voice AI Platforms', href: '/guides/voice-ai-platforms-elevenlabs-livekit-custom-comparison-2025.html' },
-        { label: 'ChatGPT vs Custom', href: '/guides/chatgpt-vs-custom-ai-agent-guide-2025.html' },
-        { label: 'AI Security Guide', href: '/guides/ai-agent-security-data-privacy-guide-2025.html' },
-        { label: 'How AI Works', href: '/guides/how-ai-agents-work-explained-for-non-technical-founders-2025.html' },
-        { label: 'Hiring AI Agency', href: '/guides/how-to-hire-ai-development-agency-2025.html' },
-        { label: 'SaaS Roadmap', href: '/guides/building-saas-roadmap-2025.html' }
+        { label: 'Contact', href: '/contact' },
+        { label: 'Guides', href: '/guides' }
       ]
     },
     {
@@ -69,7 +43,7 @@ export default function FooterV3() {
     <footer className="bg-gray-900 dark:bg-black text-white py-16 md:py-24 px-6 md:px-0 border-t border-gray-800 dark:border-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-16 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 mb-16 md:mb-24">
           {footerColumns.map((column, index) => (
             <div key={index} className="flex flex-col space-y-6">
               {/* Column Title */}

@@ -66,10 +66,10 @@ export default function MetricsV3() {
             </p>
 
             <Link
-              to="/case-studies"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 hover:bg-gray-100 transition-all font-light group"
+              to="/contact"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400 hover:text-white transition-all duration-300 font-light group"
             >
-              See Our Work
+              Start a Project
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
             </Link>
           </motion.div>
