@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { createPortal } from 'react-dom';
 
@@ -16,9 +16,10 @@ interface TechStackProps {
   className?: string;
 }
 
-interface TooltipPosition {
-  top: number;
-  left: number;
+interface TooltipState {
+  tech: TechItem;
+  x: number;
+  y: number;
 }
 
 const techStack: TechItem[] = [
@@ -66,78 +67,25 @@ const techStack: TechItem[] = [
   }
 ];
 
-// Tooltip component rendered via portal
-function Tooltip({ tech, position }: { tech: TechItem; position: TooltipPosition }) {
-  // Use bottom of viewport minus the icon's top position to position from bottom
-  const bottomPosition = window.innerHeight - position.top + 12; // 12px gap above icon
-
-  return createPortal(
-    <motion.div
-      initial={{ opacity: 0, y: 5 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 5 }}
-      transition={{ duration: 0.15 }}
-      style={{
-        position: 'fixed',
-        bottom: bottomPosition,
-        left: position.left,
-        transform: 'translateX(-50%)',
-        zIndex: 9999,
-        pointerEvents: 'none'
-      }}
-    >
-      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700">
-        {/* Arrow */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-8px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: 0,
-            height: 0,
-            borderLeft: '8px solid transparent',
-            borderRight: '8px solid transparent',
-            borderTop: '8px solid white'
-          }}
-        />
-        {/* Content */}
-        <div className="text-center">
-          <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">{tech.description}</h4>
-          <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
-            {tech.usage}
-          </p>
-        </div>
-      </div>
-    </motion.div>,
-    document.body
-  );
-}
-
 export default function TechStack({
   eyebrow = 'AI Building Blocks',
   title = 'The Technology Stack We Build With',
   description,
   className = ''
 }: TechStackProps) {
-  const [hoveredTech, setHoveredTech] = useState<TechItem | null>(null);
-  const [tooltipPosition, setTooltipPosition] = useState<TooltipPosition>({ top: 0, left: 0 });
-  const iconRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
-  const handleMouseEnter = (tech: TechItem) => {
-    const element = iconRefs.current[tech.name];
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      setTooltipPosition({
-        top: rect.top - 16, // 16px gap above the icon
-        left: rect.left + rect.width / 2 // center horizontally
-      });
-      setHoveredTech(tech);
-    }
+  const handleMouseEnter = (tech: TechItem, e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setTooltip({
+      tech,
+      x: rect.left + rect.width / 2,
+      y: rect.top
+    });
   };
 
   const handleMouseLeave = () => {
-    setHoveredTech(null);
+    setTooltip(null);
   };
 
   return (
@@ -175,21 +123,22 @@ export default function TechStack({
           {techStack.map((tech, index) => (
             <motion.div
               key={tech.name}
-              ref={(el) => { iconRefs.current[tech.name] = el; }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="group"
-              onMouseEnter={() => handleMouseEnter(tech)}
-              onMouseLeave={handleMouseLeave}
             >
-              {/* Icon Container */}
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 group-hover:shadow-lg transition-all duration-300 cursor-pointer">
+              {/* Icon Container - event handlers on this element */}
+              <div
+                className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-500 group-hover:shadow-lg transition-all duration-300 cursor-pointer"
+                onMouseEnter={(e) => handleMouseEnter(tech, e)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <img
                   src={tech.icon}
                   alt={tech.name}
-                  className="w-10 h-10 md:w-12 md:h-12 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                  className="w-10 h-10 md:w-12 md:h-12 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 pointer-events-none"
                 />
               </div>
             </motion.div>
@@ -197,7 +146,43 @@ export default function TechStack({
         </div>
 
         {/* Tooltip rendered via portal */}
-        {hoveredTech && <Tooltip tech={hoveredTech} position={tooltipPosition} />}
+        {tooltip && createPortal(
+          <div
+            style={{
+              position: 'fixed',
+              bottom: window.innerHeight - tooltip.y + 12,
+              left: tooltip.x,
+              transform: 'translateX(-50%)',
+              zIndex: 9999,
+              pointerEvents: 'none'
+            }}
+          >
+            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700">
+              {/* Arrow */}
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: '-8px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: 0,
+                  height: 0,
+                  borderLeft: '8px solid transparent',
+                  borderRight: '8px solid transparent',
+                  borderTop: '8px solid white'
+                }}
+              />
+              {/* Content */}
+              <div className="text-center">
+                <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">{tooltip.tech.description}</h4>
+                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {tooltip.tech.usage}
+                </p>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
 
         {/* Bottom Helper Text */}
         <motion.div
