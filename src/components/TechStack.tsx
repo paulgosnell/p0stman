@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { createPortal } from 'react-dom';
 
@@ -68,6 +68,9 @@ const techStack: TechItem[] = [
 
 // Tooltip component rendered via portal
 function Tooltip({ tech, position }: { tech: TechItem; position: TooltipPosition }) {
+  // Use bottom of viewport minus the icon's top position to position from bottom
+  const bottomPosition = window.innerHeight - position.top + 12; // 12px gap above icon
+
   return createPortal(
     <motion.div
       initial={{ opacity: 0, y: 5 }}
@@ -76,7 +79,7 @@ function Tooltip({ tech, position }: { tech: TechItem; position: TooltipPosition
       transition={{ duration: 0.15 }}
       style={{
         position: 'fixed',
-        top: position.top,
+        bottom: bottomPosition,
         left: position.left,
         transform: 'translateX(-50%)',
         zIndex: 9999,
