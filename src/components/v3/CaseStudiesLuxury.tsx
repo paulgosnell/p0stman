@@ -9,6 +9,7 @@ interface CaseStudy {
   category: string;
   image: string;
   path: string;
+  url: string;
   description: string;
 }
 
@@ -19,6 +20,7 @@ const featuredCaseStudies: CaseStudy[] = [
     category: 'AI & Leadership',
     image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png',
     path: '/case-study/coach-os',
+    url: 'ceocoachos.com',
     description: 'On-demand business coaching with voice interface, long-term memory, and GROW model frameworks.'
   },
   {
@@ -27,6 +29,7 @@ const featuredCaseStudies: CaseStudy[] = [
     category: 'Travel & Hospitality',
     image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png',
     path: '/case-study/luxury-travel-sweden',
+    url: 'luxurytravelsweden.com',
     description: 'Interactive destination mapping, AI concierge (LIV), and comprehensive CMS. Built in 8 weeks.'
   },
   {
@@ -35,6 +38,7 @@ const featuredCaseStudies: CaseStudy[] = [
     category: 'HealthTech & AI Agents',
     image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png',
     path: '/case-study/mamori-healthos',
+    url: 'mamori.health',
     description: 'AI-native health platform transforming fragmented data into evidence-based guidance. 95% cost reduction.'
   },
   {
@@ -43,6 +47,7 @@ const featuredCaseStudies: CaseStudy[] = [
     category: 'Maritime Technology',
     image: '/agents/yachtos-home.png',
     path: '/case-study/yachtos',
+    url: 'yacht-os.com',
     description: 'AI-native operating system for superyacht captains saving 10+ hours weekly'
   }
 ];
@@ -109,7 +114,7 @@ export default function CaseStudiesLuxury() {
                     {/* URL Bar */}
                     <div className="flex-1 ml-3">
                       <div className="bg-white dark:bg-gray-900 rounded px-3 py-1 text-xs text-gray-400 font-light truncate max-w-[200px]">
-                        {study.path.replace('/case-study/', '') + '.com'}
+                        {study.url}
                       </div>
                     </div>
                   </div>
