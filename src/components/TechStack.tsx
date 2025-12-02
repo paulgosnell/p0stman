@@ -99,7 +99,7 @@ export default function TechStack({
         </motion.div>
 
         {/* Tech Icons Row */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 overflow-visible">
           {techStack.map((tech, index) => (
             <motion.div
               key={tech.name}
@@ -107,7 +107,8 @@ export default function TechStack({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative"
+              className="group"
+              style={{ position: 'relative' }}
               onMouseEnter={() => setHoveredTech(tech.name)}
               onMouseLeave={() => setHoveredTech(null)}
             >
@@ -127,17 +128,19 @@ export default function TechStack({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute z-50 pointer-events-none"
                   style={{
+                    position: 'absolute',
                     bottom: '100%',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    marginBottom: '1rem'
+                    marginBottom: '16px',
+                    zIndex: 50,
+                    pointerEvents: 'none'
                   }}
                 >
                   <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-4 w-64 border border-gray-200 dark:border-gray-700 relative">
                     {/* Arrow */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
                       <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-900"></div>
                     </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, CheckCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CardCarousel from './CardCarousel';
 
 interface AIAgent {
@@ -203,6 +204,26 @@ export default function AIAgentShowcaseV3() {
                 </motion.div>
               ))}
             </div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="pt-6"
+            >
+              <Link
+                to="/ai-agents"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-light text-sm"
+              >
+                Explore AI Agents
+                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+              </Link>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 font-light">
+                Voice, memory, frontier models — see how we build them
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
