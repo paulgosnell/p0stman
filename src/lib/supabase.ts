@@ -29,6 +29,16 @@ interface Contact {
   replied?: boolean;
   replied_at?: string;
   reply_content?: string;
+  // Source tracking fields
+  session_id?: string;
+  referrer?: string;
+  referrer_domain?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  landing_page?: string;
+  device_type?: string;
+  page_views_before_contact?: number;
 }
 
 interface Message {

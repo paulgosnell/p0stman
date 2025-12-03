@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import RTLWrapper from './components/RTLWrapper';
 import ScrollToTop from './components/ScrollToTop';
+import { TrackingProvider } from './hooks/useTracking';
 
 import Home from './pages/Home';
 import ReportsAdmin from './pages/admin/ReportsAdmin';
@@ -89,10 +90,11 @@ import SalesProspectDemo from './pages/SalesProspectDemo';
 export default function App() {
   return (
     <RTLWrapper>
-      <div className="min-h-screen bg-white">
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
+      <TrackingProvider>
+        <div className="min-h-screen bg-white">
+          <ScrollToTop />
+            <Routes>
+            <Route path="/" element={<Home />} />
           <Route path="/v2" element={<HomeV2 />} />
           <Route path="/v3" element={<HomeV3 />} />
           <Route path="/process" element={<Process />} />
@@ -175,9 +177,10 @@ export default function App() {
           <Route path="/social-share" element={<SocialShare />} />
           <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Analytics />
-      </div>
+          </Routes>
+          <Analytics />
+        </div>
+      </TrackingProvider>
     </RTLWrapper>
   );
 }

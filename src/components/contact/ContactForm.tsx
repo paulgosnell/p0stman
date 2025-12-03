@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, User, MessageSquare, Loader2, Twitter, Linkedin, CheckCircle } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
-import { sendContactEmail } from '../../lib/supabase';
+import { sendContactEmail, supabase } from '../../lib/supabase';
 import FormInput from '../ui/FormInput';
 import FormGroup from '../ui/FormGroup';
+import { useTracking, useTrackForm } from '../../hooks/useTracking';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,27 +21,18 @@ export default function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [formStarted, setFormStarted] = useState(false);
 
-  // Track form interactions
-  useEffect(() => {
-    const referrer = document.referrer || window.location.href;
-
-    // Track page view
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'contact_page_viewed', {
-        source_page: referrer,
-        page_path: window.location.pathname
-      });
-    }
-  }, []);
+  // Tracking hooks
+  const { getSourceData, markConversion, trackEvent } = useTracking();
+  const { trackFormStart, trackFormField, trackFormSubmit } = useTrackForm('contact_page');
 
   const handleFormStart = () => {
     if (!formStarted) {
       setFormStarted(true);
-      const referrer = document.referrer || window.location.href;
+      trackFormStart();
 
+      // Also send to gtag if available
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_started', {
-          source_page: referrer,
           form_type: 'contact_page'
         });
       }
@@ -53,7 +45,8 @@ export default function ContactForm() {
     setError(null);
 
     try {
-      const referrer = document.referrer || window.location.href;
+      // Get source tracking data
+      const sourceData = await getSourceData();
 
       // Send via EmailJS (existing functionality)
       await sendEmail({
@@ -64,8 +57,28 @@ export default function ContactForm() {
         budget: formData.budget,
         timeline: formData.timeline,
         description: formData.description,
-        message: formData.description, // EmailJS template may expect 'message' field
-        source_page: referrer
+        message: formData.description,
+        source_page: sourceData?.referrer || document.referrer || ''
+      });
+
+      // Save contact with source tracking data to Supabase
+      await supabase.from('contacts').insert({
+        name: formData.name,
+        email: formData.email,
+        project_type: formData.projectType,
+        budget: formData.budget,
+        timeline: formData.timeline,
+        description: formData.description,
+        // Source tracking fields
+        session_id: sourceData?.session_id,
+        referrer: sourceData?.referrer,
+        referrer_domain: sourceData?.referrer_domain,
+        utm_source: sourceData?.utm_source,
+        utm_medium: sourceData?.utm_medium,
+        utm_campaign: sourceData?.utm_campaign,
+        landing_page: sourceData?.landing_page,
+        device_type: sourceData?.device_type,
+        page_views_before_contact: sourceData?.page_views_before_contact
       });
 
       // Send impressive automated email via Resend
@@ -79,10 +92,15 @@ export default function ContactForm() {
         form_type: 'contact_page'
       });
 
-      // Track successful submission
+      // Mark conversion in tracking
+      markConversion('contact_form');
+      trackFormSubmit(true, { project_type: formData.projectType, budget: formData.budget });
+
+      // Track successful submission in gtag
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_submitted', {
-          source_page: referrer,
+          source: sourceData?.referrer_domain || 'direct',
+          utm_source: sourceData?.utm_source,
           form_type: 'contact_page',
           project_type: formData.projectType,
           budget: formData.budget,
@@ -101,8 +119,9 @@ export default function ContactForm() {
       });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to send message');
+      trackFormSubmit(false, { error: err instanceof Error ? err.message : 'Unknown error' });
 
-      // Track error
+      // Track error in gtag
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'form_error', {
           error_message: err instanceof Error ? err.message : 'Unknown error'
