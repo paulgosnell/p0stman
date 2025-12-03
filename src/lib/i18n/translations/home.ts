@@ -51,8 +51,6 @@ export const homeTranslations = {
     'home.comparison.traditional.title': 'الطريقة التقليدية',
     'home.comparison.ai.title': 'طريقة الذكاء الاصطناعي',
     'home.comparison.description': 'الوكالات التقليدية مكلفة لأنك تدفع مقابل الفرق الكبيرة والمكاتب والنفقات العامة - وليس تطوير المنتج النقي.',
-    'home.comparison.title': 'بناء أذكى',
-    'home.comparison.subtitle': 'لماذا تدفع أكثر مقابل أقل؟',
     'comparison.description': 'الوكالات التقليدية مكلفة لأنك تدفع مقابل الفرق الكبيرة والمكاتب والنفقات العامة - وليس تطوير المنتج الفعلي.',
     
     // Comparison Traditional
@@ -139,8 +137,6 @@ export const homeTranslations = {
     'home.services.ai.subtitle': 'Fast & Affordable',
 
     // Comparison Section
-    'comparison.title': 'Build Smarter',
-    'comparison.subtitle': 'Why Pay More for Less?',
     'comparison.description': 'Traditional agencies are expensive because you\'re paying for large teams, offices and overhead—not pure product build.',
     
     // Comparison Traditional
