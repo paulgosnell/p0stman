@@ -10,8 +10,6 @@ import ReportsAdmin from './pages/admin/ReportsAdmin';
 import ClientsAdmin from './pages/admin/ClientsAdmin';
 import CRMAdmin from './pages/admin/CRMAdmin';
 import PrivacyPage from './pages/privacy';
-import HomeV2 from './pages/HomeV2';
-import HomeV3 from './pages/HomeV3';
 import Process from './pages/Process';
 import CaseStudies from './pages/CaseStudies';
 import Website from './pages/Website';
@@ -19,21 +17,16 @@ import Guide from './pages/Guide';
 import GuideContent from './pages/guide/GuideContent';
 import ChapterContent from './pages/guide/ChapterContent';
 import WorkOrderProposal from './pages/proposals/documents/WorkOrderProposal';
-import Training from './pages/Training';
 import Contract from './pages/Contract';
 import Invoice from './pages/Invoice';
-import ChristmasCard from './pages/ChristmasCard';
 import GenericProposal from './pages/proposals/GenericProposal';
 import ClientProposal from './pages/proposals/ClientProposal';
 import Proposals from './pages/Proposals';
 import About from './pages/About';
 import PaulGosnell from './pages/PaulGosnell';
 import Why from './pages/Why';
-import Support from './pages/Support';
-import Affiliate from './pages/Affiliate';
 import AIAgents from './pages/AIAgents';
 import MobileApp from './pages/MobileApp';
-import Retainer from './pages/Retainer';
 import Admin from './pages/Admin';
 import AdminLogin from './pages/AdminLogin';
 import ContactPage from './pages/ContactPage';
@@ -50,8 +43,6 @@ import ContractsAdmin from './pages/admin/ContractsAdmin';
 import NewInvoice from './pages/admin/NewInvoice';
 import NewContract from './pages/admin/NewContract';
 import EditInvoice from './pages/admin/EditInvoice';
-import Links from './pages/Links';
-import HealthLanding from './pages/HealthLanding';
 import Rhythm from './pages/case-studies/RhythmLuxury';
 import ExperienceGift from './pages/case-studies/ExperienceGiftLuxury';
 import ChilledCRM from './pages/case-studies/ChilledCRMLuxury';
@@ -77,10 +68,8 @@ import Thanks from './pages/Thanks';
 import NotFound from './pages/NotFound';
 import SocialShare from './components/SocialShare';
 import SocialPreview from './components/SocialPreview';
-import Hello from './pages/Hello';
 import Services from './pages/Services';
 import AIPlaybook from './pages/AIPlaybook';
-import OnePageApp from './pages/OnePageApp';
 import OnePager from './pages/OnePager';
 import DeliveryPage from './pages/DeliveryPage';
 import FounderLaunchPackage from './pages/FounderLaunchPackage';
@@ -96,12 +85,8 @@ export default function App() {
           <ScrollToTop />
             <Routes>
             <Route path="/" element={<Home />} />
-          <Route path="/v2" element={<HomeV2 />} />
-          <Route path="/v3" element={<HomeV3 />} />
           <Route path="/process" element={<Process />} />
           <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/projects" element={<CaseStudies />} />
-          <Route path="/health" element={<HealthLanding />} />
           <Route path="/services" element={<Services />} />
           <Route path="/website" element={<Website />} />
           <Route path="/fractional-cpo" element={<FractionalCPO />} />
@@ -116,14 +101,12 @@ export default function App() {
           <Route path="/contracts/:id" element={<Contract />} />
           <Route path="/invoice/:id" element={<Invoice />} />
           <Route path="/proposals/generic" element={<GenericProposal />} />
-          <Route path="/christmas" element={<ChristmasCard />} />
           <Route path="/about" element={<About />} />
           <Route path="/paulgosnell" element={<PaulGosnell />} />
           <Route path="/why" element={<Why />} />
           <Route path="/proposals/client/:id" element={<ClientProposal />} />
           <Route path="/ai-agents" element={<AIAgents />} />
           <Route path="/mobile-app" element={<MobileApp />} />
-          <Route path="/retainer" element={<Retainer />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -162,13 +145,7 @@ export default function App() {
           <Route path="/case-study/yachtos" element={<YachtOS />} />
           <Route path="/case-study/pathfinder" element={<Pathfinder />} />
           <Route path="/thanks" element={<Thanks />} />
-          <Route path="/links" element={<Links />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/affiliate" element={<Affiliate />} />
-          <Route path="/training" element={<Training />} />
-          <Route path="/hello" element={<Hello />} />
           <Route path="/ai-playbook" element={<AIPlaybook />} />
-          <Route path="/one-pager" element={<OnePageApp />} />
           <Route path="/pitch" element={<OnePager />} />
           <Route path="/founder-launch-package" element={<FounderLaunchPackage />} />
           <Route path="/clarity" element={<ClarityPitchDeck />} />
