@@ -11,7 +11,6 @@ import FooterV3 from '../components/v3/FooterV3';
 import SectionVoiceAgent from '../components/voice-agent/SectionVoiceAgent';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import TestimonialCard from '../components/contact/TestimonialCard';
-import CaseStudyPreview from '../components/contact/CaseStudyPreview';
 import ExitIntentPopup from '../components/contact/ExitIntentPopup';
 import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
 import { getContactContext } from '../utils/contactContext';
@@ -381,9 +380,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* Case Study Preview */}
-        <CaseStudyPreview filter={context.caseStudyFilter} />
 
         <ContactFAQ />
 
