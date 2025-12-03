@@ -44,6 +44,7 @@ import ProductStrategy from './pages/ProductStrategy';
 import DigitalTransformation from './pages/DigitalTransformation';
 import TokenManagement from './pages/admin/TokenManagement';
 import MessagesAdmin from './pages/admin/MessagesAdmin';
+import AnalyticsAdmin from './pages/admin/AnalyticsAdmin';
 import InvoicingAdmin from './pages/admin/InvoicingAdmin';
 import ContractsAdmin from './pages/admin/ContractsAdmin';
 import NewInvoice from './pages/admin/NewInvoice';
@@ -137,6 +138,7 @@ export default function App() {
           <Route path="/admin/clients" element={<ClientsAdmin />} />
           <Route path="/admin/crm" element={<CRMAdmin />} />
           <Route path="/admin/reports" element={<ReportsAdmin />} />
+          <Route path="/admin/analytics" element={<AnalyticsAdmin />} />
           <Route path="/case-study/rhythm" element={<Rhythm />} />
           <Route path="/case-study/experience-a-gift" element={<ExperienceGift />} />
           <Route path="/case-study/chilled-crm" element={<ChilledCRM />} />

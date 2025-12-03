@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Bot, BookOpen, Key, MessageSquare, FileText, Users } from 'lucide-react';
+import { Bot, BookOpen, Key, MessageSquare, FileText, Users, BarChart3 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const adminSections = [
+  {
+    icon: <BarChart3 className="w-6 h-6 text-cyan-600" />,
+    title: "Visitor Analytics",
+    description: "Track visitor sources, journeys, and conversions",
+    link: "/admin/analytics",
+    color: "hover:bg-cyan-50 hover:border-cyan-200"
+  },
   {
     icon: <BookOpen className="w-6 h-6 text-indigo-600" />,
     title: "Reports",
