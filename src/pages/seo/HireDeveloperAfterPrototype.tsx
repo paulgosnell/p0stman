@@ -673,11 +673,6 @@ export default function HireDeveloperAfterPrototype() {
           </div>
         </section>
 
-        <ContactModal
-          isOpen={showContactModal}
-          onClose={() => setShowContactModal(false)}
-        />
-
         <FooterV3 />
       </div>
     </HelmetProvider>

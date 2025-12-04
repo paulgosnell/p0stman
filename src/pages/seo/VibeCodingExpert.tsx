@@ -625,11 +625,6 @@ export default function VibeCodingExpert() {
           </div>
         </section>
 
-        <ContactModal
-          isOpen={showContactModal}
-          onClose={() => setShowContactModal(false)}
-        />
-
         <FooterV3 />
       </div>
     </HelmetProvider>

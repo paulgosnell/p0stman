@@ -530,11 +530,6 @@ export default function BoltToProduction() {
           </div>
         </section>
 
-        <ContactModal
-          isOpen={showContactModal}
-          onClose={() => setShowContactModal(false)}
-        />
-
         <FooterV3 />
       </div>
     </HelmetProvider>
