@@ -76,6 +76,12 @@ import FounderLaunchPackage from './pages/FounderLaunchPackage';
 import ClarityPitchDeck from './components/ClarityPitchDeck';
 import VoiceAgentDemo from './pages/VoiceAgentDemo';
 import SalesProspectDemo from './pages/SalesProspectDemo';
+import FromPrototypeToProduction from './pages/seo/FromPrototypeToProduction';
+import LovableToProduction from './pages/seo/LovableToProduction';
+import BoltToProduction from './pages/seo/BoltToProduction';
+import ReplitToProduction from './pages/seo/ReplitToProduction';
+import VibeCodingExpert from './pages/seo/VibeCodingExpert';
+import HireDeveloperAfterPrototype from './pages/seo/HireDeveloperAfterPrototype';
 
 export default function App() {
   return (
@@ -155,6 +161,12 @@ export default function App() {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/social-share" element={<SocialShare />} />
           <Route path="/social-preview/:platform/:type" element={<SocialPreview />} />
+          <Route path="/from-prototype-to-production" element={<FromPrototypeToProduction />} />
+          <Route path="/lovable-to-production" element={<LovableToProduction />} />
+          <Route path="/bolt-to-production" element={<BoltToProduction />} />
+          <Route path="/replit-to-production" element={<ReplitToProduction />} />
+          <Route path="/vibe-coding-expert" element={<VibeCodingExpert />} />
+          <Route path="/hire-developer-after-prototype" element={<HireDeveloperAfterPrototype />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
           <Analytics />
