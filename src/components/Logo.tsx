@@ -20,7 +20,7 @@ export default function Logo({ className = '', useGradient = false, hideText = f
 }) {
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+      <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center">
         <P0stmanIcon className="w-7 h-7 text-white" />
       </div>
       {!hideText && (
