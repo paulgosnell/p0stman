@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Moon, Sun } from 'lucide-react';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import Logo from '../Logo';
 
 export default function FooterV3() {
   const currentYear = new Date().getFullYear();
@@ -77,8 +78,8 @@ export default function FooterV3() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Brand & Tagline */}
             <div className="text-center md:text-left">
-              <a href="/" className="text-xl font-light text-white hover:text-blue-400 transition-colors mb-2 block">
-                P0STMAN
+              <a href="/" className="inline-block mb-2">
+                <Logo size="small" showStrapline={false} className="text-white" />
               </a>
               <p className="text-sm text-gray-500 font-light">
                 AI-Powered Product Studio. Built for speed. Shipped with care.
