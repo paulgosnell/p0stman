@@ -1,16 +1,27 @@
 import React from 'react';
-import { Bot } from 'lucide-react';
 
-export default function Logo({ className = '', useGradient = false, hideText = false, showStrapline = false }: { 
-  className?: string, 
-  useGradient?: boolean, 
+// P0STMAN Icon - Speed lines with chevron representing motion and delivery
+export function P0stmanIcon({ className = "w-7 h-7" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 10L24 16L18 22" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8 12H14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M6 16H16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M8 20H14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+export default function Logo({ className = '', useGradient = false, hideText = false, showStrapline = false }: {
+  className?: string,
+  useGradient?: boolean,
   hideText?: boolean,
-  showStrapline?: boolean 
+  showStrapline?: boolean
 }) {
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
       <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-        <Bot className="w-7 h-7 text-white" />
+        <P0stmanIcon className="w-7 h-7 text-white" />
       </div>
       {!hideText && (
         <div>
