@@ -8,7 +8,7 @@ import ConversationalContactForm from '../components/contact/ConversationalConta
 import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import FooterV3 from '../components/v3/FooterV3';
-import SectionVoiceAgent from '../components/voice-agent/SectionVoiceAgent';
+import GeminiVoiceAgent from '../components/voice-agent/GeminiVoiceAgent';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import TestimonialCard from '../components/contact/TestimonialCard';
 import ExitIntentPopup from '../components/contact/ExitIntentPopup';
@@ -256,7 +256,7 @@ export default function ContactPage() {
                     <p className="text-gray-600 dark:text-gray-300 font-light text-sm mb-4">
                       Chat with our AI assistant to discuss your project and get instant feedback.
                     </p>
-                    <SectionVoiceAgent
+                    <GeminiVoiceAgent
                       section="cta"
                       prompt={ctaConfig.prompt}
                       firstMessage={ctaConfig.firstMessage}

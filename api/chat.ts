@@ -3,7 +3,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 /**
  * Chat API Route for Conversational Contact Form
  *
- * Uses OpenAI GPT-4o to provide intelligent responses to visitor messages.
+ * Uses Google Gemini 2.5 Flash for intelligent responses to visitor messages.
  * This is a text-based chat endpoint (not realtime voice).
  */
 
@@ -49,10 +49,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      console.error('OPENAI_API_KEY not configured');
+      console.error('GEMINI_API_KEY not configured');
       return res.status(500).json({ error: 'API key not configured' });
     }
 
@@ -77,29 +77,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       userContext += `\nThey're interested in the "${userInfo.role}" role.`;
     }
 
-    const systemMessage = SYSTEM_PROMPT + (userContext ? `\n\nCONTEXT ABOUT THIS VISITOR:${userContext}` : '');
+    const systemInstruction = SYSTEM_PROMPT + (userContext ? `\n\nCONTEXT ABOUT THIS VISITOR:${userContext}` : '');
 
-    // Call OpenAI Chat Completions API
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o',
-        messages: [
-          { role: 'system', content: systemMessage },
-          ...messages
-        ],
-        max_tokens: 300,
-        temperature: 0.7
-      })
-    });
+    // Convert messages to Gemini format
+    const geminiContents = messages.map((msg: { role: string; content: string }) => ({
+      role: msg.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: msg.content }]
+    }));
+
+    // Call Gemini API
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          contents: geminiContents,
+          systemInstruction: {
+            parts: [{ text: systemInstruction }]
+          },
+          generationConfig: {
+            maxOutputTokens: 300,
+            temperature: 0.7
+          }
+        })
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('OpenAI chat failed:', response.status, errorText);
+      console.error('Gemini chat failed:', response.status, errorText);
       return res.status(response.status).json({
         error: 'Failed to get response',
         details: errorText
@@ -107,7 +116,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const data = await response.json();
-    const assistantMessage = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response. Please try again.";
+    const assistantMessage = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response. Please try again.";
 
     return res.status(200).json({
       message: assistantMessage

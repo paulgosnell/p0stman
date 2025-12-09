@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import SectionVoiceAgent from '../components/voice-agent/SectionVoiceAgent';
+import GeminiVoiceAgent from '../components/voice-agent/GeminiVoiceAgent';
 import { getSectionConfig, getAvailableSections } from '../config/voice-agent-sections';
 
 /**
@@ -119,14 +119,13 @@ export default function VoiceAgentDemo() {
           <h2 className="text-2xl font-bold mb-6">Live Demo</h2>
 
           <div className="max-w-3xl mx-auto">
-            <SectionVoiceAgent
-              key={`${selectedSection}-${placement}-${textOnly}-${showTranscript}`}
+            <GeminiVoiceAgent
+              key={`${selectedSection}-${placement}-${showTranscript}`}
               section={selectedSection}
               prompt={config.prompt}
               firstMessage={config.firstMessage}
               placement={placement}
               buttonText={config.buttonText}
-              textOnly={textOnly}
               showTranscript={showTranscript}
               color={config.color}
               icon={config.icon}

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLocation } from 'react-router-dom';
 import { X } from 'lucide-react';
-import SectionVoiceAgent from './voice-agent/SectionVoiceAgent';
+import GeminiVoiceAgent from './voice-agent/GeminiVoiceAgent';
 import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
 import AnimatedWaveform from './v3/AnimatedWaveform';
 
@@ -94,7 +94,7 @@ export default function FloatingGuideAgent() {
 
             {/* Content */}
             <div className="p-6">
-              <SectionVoiceAgent
+              <GeminiVoiceAgent
                 section="guideTour"
                 prompt={guideTourConfig.prompt}
                 firstMessage={guideTourConfig.firstMessage}
