@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Bot, Mail, MapPin, Clock, Twitter, Linkedin, ArrowRight, Users, Zap, Award, Building2 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
-import ContactForm from '../components/contact/ContactForm';
+import ConversationalContactForm from '../components/contact/ConversationalContactForm';
 import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import FooterV3 from '../components/v3/FooterV3';
@@ -240,14 +240,7 @@ export default function ContactPage() {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-4">
-                    Let's Discuss Your Project
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-300 font-light mb-8">
-                    Fill out the form below and we'll get back to you within 24 hours with a detailed assessment and quote.
-                  </p>
-
-                  <ContactForm />
+                  <ConversationalContactForm />
 
                   {/* Voice Agent Alternative */}
                   <motion.div
