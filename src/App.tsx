@@ -82,6 +82,7 @@ import BoltToProduction from './pages/seo/BoltToProduction';
 import ReplitToProduction from './pages/seo/ReplitToProduction';
 import VibeCodingExpert from './pages/seo/VibeCodingExpert';
 import HireDeveloperAfterPrototype from './pages/seo/HireDeveloperAfterPrototype';
+import Careers from './pages/Careers';
 
 export default function App() {
   return (
@@ -108,6 +109,7 @@ export default function App() {
           <Route path="/invoice/:id" element={<Invoice />} />
           <Route path="/proposals/generic" element={<GenericProposal />} />
           <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/paulgosnell" element={<PaulGosnell />} />
           <Route path="/why" element={<Why />} />
           <Route path="/proposals/client/:id" element={<ClientProposal />} />

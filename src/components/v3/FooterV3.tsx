@@ -21,6 +21,7 @@ export default function FooterV3() {
       title: 'Company',
       items: [
         { label: 'About', href: '/about' },
+        { label: 'Careers', href: '/careers' },
         { label: 'Contact', href: '/contact' },
         { label: 'Guides', href: '/guides' }
       ]
