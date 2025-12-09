@@ -89,7 +89,7 @@ export default function AnimatedWaveform({
 
   return (
     <div
-      className="relative"
+      className="relative w-full h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
