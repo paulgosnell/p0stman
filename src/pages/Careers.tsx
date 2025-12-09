@@ -315,8 +315,8 @@ export default function Careers() {
                         <ul className="space-y-4">
                           {role.questions.map((question, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <span className="w-6 h-6 bg-gray-900 text-white inline-flex items-center justify-center text-sm flex-shrink-0 mt-0.5">
-                                {i + 1}
+                              <span className="min-w-6 w-6 h-6 bg-gray-900 text-white inline-flex items-center justify-center text-sm font-normal flex-shrink-0 mt-0.5 rounded-sm">
+                                <span className="text-white">{i + 1}</span>
                               </span>
                               <span className="text-gray-700 font-light">{question}</span>
                             </li>
