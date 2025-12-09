@@ -9,7 +9,7 @@ import VoiceAgentSettings, { VoiceSettings } from './VoiceAgentSettings';
 const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5af4f8dkjj8pqda592';
 
 const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
-  voice: 'verse',
+  voice: 'Puck',
   silenceDuration: 500,
   threshold: 0.5,
 };

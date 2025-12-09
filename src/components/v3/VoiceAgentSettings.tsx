@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import { OPENAI_REALTIME_VOICES, type OpenAIRealtimeVoice } from '../../config/openai-realtime';
+import { GEMINI_LIVE_VOICES, type GeminiLiveVoice } from '../../config/gemini-realtime';
 
 export interface VoiceSettings {
-  voice: OpenAIRealtimeVoice;
+  voice: GeminiLiveVoice;
   silenceDuration: number;
   threshold: number;
 }
@@ -16,17 +16,13 @@ interface VoiceAgentSettingsProps {
   onSettingsChange: (settings: VoiceSettings) => void;
 }
 
-const voiceDescriptions: Record<OpenAIRealtimeVoice, string> = {
-  alloy: 'Neutral, balanced',
-  ash: 'Warm, conversational',
-  ballad: 'Soft, melodic',
-  coral: 'Clear, professional',
-  echo: 'Deep, resonant',
-  sage: 'Calm, thoughtful',
-  shimmer: 'Bright, energetic',
-  verse: 'Natural, conversational',
-  cedar: 'Rich, assistant-quality',
-  marin: 'Friendly, assistant-quality',
+const voiceDescriptions: Record<GeminiLiveVoice, string> = {
+  Aoede: 'Bright, musical',
+  Charon: 'Deep, authoritative',
+  Fenrir: 'Strong, confident',
+  Kore: 'Warm, nurturing',
+  Puck: 'Playful, energetic',
+  Zephyr: 'Calm, breeze-like',
 };
 
 export default function VoiceAgentSettings({
@@ -35,7 +31,7 @@ export default function VoiceAgentSettings({
   settings,
   onSettingsChange,
 }: VoiceAgentSettingsProps) {
-  const handleVoiceChange = (voice: OpenAIRealtimeVoice) => {
+  const handleVoiceChange = (voice: GeminiLiveVoice) => {
     onSettingsChange({ ...settings, voice });
   };
 
@@ -87,7 +83,7 @@ export default function VoiceAgentSettings({
                   Choose the voice personality for your AI assistant
                 </p>
                 <div className="grid grid-cols-2 gap-2">
-                  {OPENAI_REALTIME_VOICES.map((voice) => (
+                  {GEMINI_LIVE_VOICES.map((voice) => (
                     <button
                       key={voice}
                       onClick={() => handleVoiceChange(voice)}
@@ -97,7 +93,7 @@ export default function VoiceAgentSettings({
                           : 'bg-white/5 text-gray-300 hover:bg-white/10'
                       }`}
                     >
-                      <div className="text-sm font-medium capitalize">{voice}</div>
+                      <div className="text-sm font-medium">{voice}</div>
                       <div className={`text-xs ${settings.voice === voice ? 'text-blue-200' : 'text-gray-500'}`}>
                         {voiceDescriptions[voice]}
                       </div>
