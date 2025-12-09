@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Loader2, User, Bot, ArrowRight } from 'lucide-react';
+import { Send, Loader2, User, Bot, Mic, MicOff } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
 import { sendContactEmail, supabase } from '../../lib/supabase';
 import { useTracking, useTrackForm } from '../../hooks/useTracking';
@@ -13,27 +13,27 @@ interface Message {
   timestamp: Date;
 }
 
-const INITIAL_MESSAGES: Record<string, string> = {
-  default: "Hey! I'm the P0STMAN AI. What brings you here today? Looking to build something, or interested in joining our roster?",
-  careers: "Hey! I see you're interested in joining the P0STMAN roster. That's exciting! What role caught your eye, and what have you been building lately?",
-  project: "Hey! Ready to build something fast? Tell me what you're thinking - product idea, timeline, whatever's on your mind. I'll help figure out if we're a good fit."
-};
-
 export default function ConversationalContactForm() {
   const [searchParams] = useSearchParams();
   const roleParam = searchParams.get('role');
   const fromCareers = !!roleParam;
 
-  const [step, setStep] = useState<'intro' | 'chat'>('intro');
+  const [step, setStep] = useState<'form' | 'chat'>('form');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [initialMessage, setInitialMessage] = useState(
+    roleParam ? `I'm interested in the ${roleParam} role.` : ''
+  );
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [isVoiceMode, setIsVoiceMode] = useState(false);
+  const [isListening, setIsListening] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const recognitionRef = useRef<any>(null);
 
   // Tracking hooks
   const { getSourceData, markConversion } = useTracking();
@@ -44,6 +44,35 @@ export default function ConversationalContactForm() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Setup speech recognition
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        recognitionRef.current = new SpeechRecognition();
+        recognitionRef.current.continuous = true;
+        recognitionRef.current.interimResults = true;
+
+        recognitionRef.current.onresult = (event: any) => {
+          const transcript = Array.from(event.results)
+            .map((result: any) => result[0].transcript)
+            .join('');
+          setInputValue(transcript);
+        };
+
+        recognitionRef.current.onend = () => {
+          setIsListening(false);
+        };
+      }
+    }
+
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+    };
+  }, []);
+
   // Auto-resize textarea
   const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value);
@@ -51,37 +80,86 @@ export default function ConversationalContactForm() {
     e.target.style.height = `${Math.min(e.target.scrollHeight, 150)}px`;
   };
 
-  // Start the conversation
-  const handleStartChat = (e: React.FormEvent) => {
+  // Handle initial form submission - transforms into chat
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim()) return;
+    if (!name.trim() || !email.trim() || !initialMessage.trim()) return;
 
     trackFormStart();
     setStep('chat');
+    setIsLoading(true);
 
-    // Add initial AI message
-    const initialMessage = fromCareers
-      ? INITIAL_MESSAGES.careers
-      : INITIAL_MESSAGES.default;
-
-    const aiGreeting: Message = {
-      id: 'initial',
-      role: 'assistant',
-      content: roleParam
-        ? `Hey ${name.split(' ')[0]}! I see you're interested in the "${roleParam}" role. That's awesome! Tell me a bit about yourself - what have you been building with AI lately?`
-        : `Hey ${name.split(' ')[0]}! ${initialMessage.split('!')[1] || "What brings you here today?"}`,
+    // Add user's initial message
+    const userMessage: Message = {
+      id: `user-${Date.now()}`,
+      role: 'user',
+      content: initialMessage.trim(),
       timestamp: new Date()
     };
 
-    setMessages([aiGreeting]);
+    setMessages([userMessage]);
 
-    // Focus the input after transition
-    setTimeout(() => inputRef.current?.focus(), 100);
+    try {
+      // Get AI response to their initial message
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [{ role: 'user', content: initialMessage.trim() }],
+          userInfo: {
+            name,
+            email,
+            fromCareers,
+            role: roleParam
+          }
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get response');
+      }
+
+      const data = await response.json();
+
+      const aiMessage: Message = {
+        id: `ai-${Date.now()}`,
+        role: 'assistant',
+        content: data.message,
+        timestamp: new Date()
+      };
+
+      setMessages(prev => [...prev, aiMessage]);
+
+      // Save initial conversation
+      await saveConversation([userMessage, aiMessage]);
+      setHasSubmitted(true);
+
+    } catch (error) {
+      console.error('Chat error:', error);
+
+      const errorMessage: Message = {
+        id: `error-${Date.now()}`,
+        role: 'assistant',
+        content: `Thanks for reaching out, ${name.split(' ')[0]}! I'm having a brief technical moment, but don't worry - Paul will personally review your message and get back to you within 24 hours. Feel free to continue the conversation or email us directly at hello@p0stman.com.`,
+        timestamp: new Date()
+      };
+
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => inputRef.current?.focus(), 100);
+    }
   };
 
-  // Send a message
+  // Send a message in chat mode
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
+
+    // Stop listening if in voice mode
+    if (isListening && recognitionRef.current) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    }
 
     const userMessage: Message = {
       id: `user-${Date.now()}`,
@@ -101,12 +179,10 @@ export default function ConversationalContactForm() {
 
     try {
       // Build messages array for API
-      const apiMessages = messages
-        .filter(m => m.id !== 'initial' || m.role === 'assistant')
-        .map(m => ({
-          role: m.role,
-          content: m.content
-        }));
+      const apiMessages = messages.map(m => ({
+        role: m.role,
+        content: m.content
+      }));
 
       apiMessages.push({ role: 'user', content: userMessage.content });
 
@@ -139,11 +215,15 @@ export default function ConversationalContactForm() {
 
       setMessages(prev => [...prev, aiMessage]);
 
-      // Check if this seems like a good point to save the conversation
-      // (after 2+ user messages)
-      if (messages.filter(m => m.role === 'user').length >= 1 && !hasSubmitted) {
-        await saveConversation([...messages, userMessage, aiMessage]);
-        setHasSubmitted(true);
+      // Save updated conversation
+      await saveConversation([...messages, userMessage, aiMessage]);
+
+      // Speak the response if in voice mode
+      if (isVoiceMode && 'speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(data.message);
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
       }
 
     } catch (error) {
@@ -152,7 +232,7 @@ export default function ConversationalContactForm() {
       const errorMessage: Message = {
         id: `error-${Date.now()}`,
         role: 'assistant',
-        content: "Sorry, I hit a snag there. Feel free to email us directly at hello@p0stman.com or try again!",
+        content: "Sorry, I hit a snag there. Feel free to continue typing or email us directly at hello@p0stman.com!",
         timestamp: new Date()
       };
 
@@ -209,8 +289,10 @@ export default function ConversationalContactForm() {
         form_type: 'conversational'
       });
 
-      markConversion('conversational_contact');
-      trackFormSubmit(true, { type: fromCareers ? 'careers' : 'general' });
+      if (!hasSubmitted) {
+        markConversion('conversational_contact');
+        trackFormSubmit(true, { type: fromCareers ? 'careers' : 'general' });
+      }
 
     } catch (error) {
       console.error('Failed to save conversation:', error);
@@ -222,74 +304,107 @@ export default function ConversationalContactForm() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
+      if (step === 'form') {
+        // Don't submit form on enter in textarea
+        return;
+      }
       handleSendMessage();
+    }
+  };
+
+  // Toggle voice mode
+  const toggleVoiceMode = () => {
+    if (!recognitionRef.current) {
+      alert('Speech recognition is not supported in your browser. Please use Chrome or Edge.');
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    } else {
+      setIsVoiceMode(true);
+      recognitionRef.current.start();
+      setIsListening(true);
     }
   };
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
       <AnimatePresence mode="wait">
-        {step === 'intro' ? (
+        {step === 'form' ? (
           <motion.div
-            key="intro"
+            key="form"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="p-8"
           >
-            {/* AI Avatar and Greeting */}
-            <div className="flex items-start gap-4 mb-8">
-              <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
-                <Bot className="w-6 h-6 text-white" strokeWidth={1.5} />
+            <h2 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-2">
+              Let's Talk
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 font-light mb-6">
+              Tell us what you're thinking. Our AI will respond instantly, and Paul will follow up personally.
+            </p>
+
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Your name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Jane Smith"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-gray-900 dark:focus:border-gray-400 focus:ring-0 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Your email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="jane@company.com"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-gray-900 dark:focus:border-gray-400 focus:ring-0 focus:outline-none"
+                  />
+                </div>
               </div>
+
               <div>
-                <p className="text-lg text-gray-900 dark:text-gray-100 font-light leading-relaxed">
-                  {fromCareers
-                    ? `Interested in joining the roster? Let's chat. I'm the P0STMAN AI - I'll get us started and Paul will follow up personally.`
-                    : `Hey! I'm the P0STMAN AI. Tell me what you're looking to build and I'll help figure out if we're a good fit.`
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  What can we help you with?
+                </label>
+                <textarea
+                  id="message"
+                  value={initialMessage}
+                  onChange={(e) => setInitialMessage(e.target.value)}
+                  placeholder={fromCareers
+                    ? "Tell us about yourself and what you've been building..."
+                    : "I'm looking to build... / I need help with... / I have a question about..."
                   }
-                </p>
-              </div>
-            </div>
-
-            {/* Simple Name/Email Form */}
-            <form onSubmit={handleStartChat} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Your name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Jane Smith"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-gray-900 dark:focus:border-gray-400 focus:ring-0 focus:outline-none"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Your email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="jane@company.com"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-gray-900 dark:focus:border-gray-400 focus:ring-0 focus:outline-none"
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light transition-all focus:border-gray-900 dark:focus:border-gray-400 focus:ring-0 focus:outline-none resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors font-light text-lg rounded-lg"
+                disabled={!name.trim() || !email.trim() || !initialMessage.trim()}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gray-900 text-white hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-light text-lg rounded-lg"
               >
-                Start Conversation
-                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+                <Send className="w-5 h-5" strokeWidth={1.5} />
+                Send Message
               </button>
             </form>
           </motion.div>
@@ -301,16 +416,37 @@ export default function ConversationalContactForm() {
             className="flex flex-col h-[500px]"
           >
             {/* Chat Header */}
-            <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
-              <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
-                <Bot className="w-4 h-4 text-white" strokeWidth={1.5} />
+            <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-white" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">P0STMAN AI</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    {hasSubmitted ? "Conversation saved - Paul will follow up" : "Let's figure out how we can help"}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-900 dark:text-gray-100">P0STMAN AI</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  {hasSubmitted ? "Conversation saved - Paul will follow up" : "Let's figure out how we can help"}
-                </p>
-              </div>
+
+              {/* Voice toggle */}
+              <button
+                onClick={toggleVoiceMode}
+                className={`p-2 rounded-lg transition-all ${
+                  isListening
+                    ? 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'
+                    : isVoiceMode
+                    ? 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400'
+                    : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+                title={isListening ? 'Stop listening' : 'Start voice input'}
+              >
+                {isListening ? (
+                  <MicOff className="w-5 h-5" strokeWidth={1.5} />
+                ) : (
+                  <Mic className="w-5 h-5" strokeWidth={1.5} />
+                )}
+              </button>
             </div>
 
             {/* Messages */}
@@ -374,9 +510,13 @@ export default function ConversationalContactForm() {
                   value={inputValue}
                   onChange={handleTextareaChange}
                   onKeyDown={handleKeyDown}
-                  placeholder="Type your message..."
+                  placeholder={isListening ? "Listening..." : "Type or speak your message..."}
                   rows={1}
-                  className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light resize-none transition-all focus:border-gray-900 dark:focus:border-gray-400 focus:ring-0 focus:outline-none"
+                  className={`flex-1 px-4 py-3 rounded-xl border bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-light resize-none transition-all focus:ring-0 focus:outline-none ${
+                    isListening
+                      ? 'border-red-300 dark:border-red-700 focus:border-red-500'
+                      : 'border-gray-200 dark:border-gray-700 focus:border-gray-900 dark:focus:border-gray-400'
+                  }`}
                   style={{ minHeight: '48px', maxHeight: '150px' }}
                 />
                 <button
@@ -391,7 +531,7 @@ export default function ConversationalContactForm() {
                 </button>
               </div>
               <p className="text-xs text-gray-400 mt-2 text-center">
-                Press Enter to send, Shift+Enter for new line
+                {isVoiceMode ? 'Voice mode active - click mic to toggle' : 'Press Enter to send, or click the mic for voice'}
               </p>
             </div>
           </motion.div>
