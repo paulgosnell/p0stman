@@ -480,8 +480,8 @@ section.bg-white h3,
 section.bg-white h4,
 section.bg-white h5,
 section.bg-white h6,
-section.bg-white span:not(.text-blue-600):not(.text-purple-600):not(.text-green-600),
-section.bg-white div:not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-green"]),
+section.bg-white span:not(.text-blue-600):not(.text-purple-600):not(.text-green-600):not(.text-white):not([class*="text-white"]),
+section.bg-white div:not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-green"]):not([class*="text-white"]),
 section.bg-gray-50 p,
 section.bg-gray-50 h1,
 section.bg-gray-50 h2,
@@ -489,8 +489,8 @@ section.bg-gray-50 h3,
 section.bg-gray-50 h4,
 section.bg-gray-50 h5,
 section.bg-gray-50 h6,
-section.bg-gray-50 span:not(.text-blue-600):not(.text-purple-600):not(.text-green-600),
-section.bg-gray-50 div:not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-green"]) {
+section.bg-gray-50 span:not(.text-blue-600):not(.text-purple-600):not(.text-green-600):not(.text-white):not([class*="text-white"]),
+section.bg-gray-50 div:not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-green"]):not([class*="text-white"]) {
   color: #111827;
 }
 
