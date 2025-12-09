@@ -66,6 +66,7 @@ export default function FloatingGuideAgent() {
                 hoverColor="#3B82F6"
                 animate={true}
                 isLive={false}
+                showControls={false}
               />
             </motion.div>
           )}
@@ -115,6 +116,7 @@ export default function FloatingGuideAgent() {
                   hoverColor="#3B82F6"
                   animate={true}
                   isLive={false}
+                  showControls={false}
                 />
               </div>
             </div>

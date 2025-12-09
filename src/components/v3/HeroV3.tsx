@@ -158,7 +158,10 @@ export default function HeroV3() {
                 animate={!voiceAgent.isActive}
                 frequencyData={voiceAgent.frequencyData}
                 isLive={voiceAgent.isActive}
-                onBarClick={() => !voiceAgent.isActive && handleStartVoice()}
+                onVoiceStart={handleStartVoice}
+                onVoiceStop={handleStopVoice}
+                isVoiceActive={isVoiceActive}
+                showControls={true}
               />
 
               {/* Hover hint - only show on demo mode */}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowRight, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -55,9 +55,12 @@ const CASE_STUDY_VIDEOS = [
 
 export default function HeroLuxury() {
   const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const [isCameraActive, setIsCameraActive] = useState(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [showSettings, setShowSettings] = useState(false);
   const [voiceSettings, setVoiceSettings] = useState<VoiceSettings>(DEFAULT_VOICE_SETTINGS);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const streamRef = useRef<MediaStream | null>(null);
 
   const voiceAgent = useVoiceWaveform(AGENT_ID, {
     voice: voiceSettings.voice,
@@ -71,6 +74,15 @@ export default function HeroLuxury() {
       setCurrentVideoIndex((prev) => (prev + 1) % CASE_STUDY_VIDEOS.length);
     }, 8000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Cleanup camera stream on unmount
+  useEffect(() => {
+    return () => {
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+      }
+    };
   }, []);
 
   const scrollToWork = () => {
@@ -94,6 +106,36 @@ export default function HeroLuxury() {
   const handleStopVoice = () => {
     voiceAgent.stopConversation();
     setIsVoiceActive(false);
+  };
+
+  const handleStartCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'user', width: 320, height: 240 }
+      });
+      streamRef.current = stream;
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+      }
+      setIsCameraActive(true);
+
+      // If voice is active, we could send a frame to the AI
+      // For now, just enable the camera view
+    } catch (error) {
+      console.error('Failed to start camera:', error);
+      alert('Unable to access camera. Please ensure camera permissions are allowed.');
+    }
+  };
+
+  const handleStopCamera = () => {
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current = null;
+    }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
+    }
+    setIsCameraActive(false);
   };
 
   const scrollToContent = () => {
@@ -130,6 +172,30 @@ export default function HeroLuxury() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>
+
+      {/* User Camera Feed - Picture in Picture style */}
+      <AnimatePresence>
+        {isCameraActive && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 0.8, x: 50 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-24 right-8 z-30 w-48 h-36 rounded-lg overflow-hidden border-2 border-white/30 shadow-2xl"
+          >
+            <video
+              ref={videoRef}
+              autoPlay
+              playsInline
+              muted
+              className="w-full h-full object-cover transform -scale-x-100"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
+              <span className="text-xs text-white/80 font-light">You</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Case Study Link - Bottom Right (hidden on mobile to avoid overlap) */}
       <AnimatePresence mode="wait">
@@ -200,26 +266,23 @@ export default function HeroLuxury() {
             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex justify-center items-center mb-16 sm:mb-0"
           >
-            {/* Voice Waveform Button */}
-            <div className="relative group">
-              <div className="w-48 sm:w-64 h-12 sm:h-16 flex items-center justify-center cursor-pointer">
-                <AnimatedWaveform
-                  barCount={40}
-                  color="#FFFFFF"
-                  hoverColor="#3B82F6"
-                  animate={!voiceAgent.isActive}
-                  frequencyData={voiceAgent.frequencyData}
-                  isLive={voiceAgent.isActive}
-                  onBarClick={() => !voiceAgent.isActive ? handleStartVoice() : handleStopVoice()}
-                />
-              </div>
-
-              {/* Hover hint */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm text-black rounded-lg text-xs sm:text-sm font-light">
-                  {voiceAgent.isActive ? 'Click to end call' : 'Talk to our AI agent'}
-                </div>
-              </div>
+            {/* Voice Waveform with Controls */}
+            <div className="w-48 sm:w-64 h-12 sm:h-16 flex items-center justify-center">
+              <AnimatedWaveform
+                barCount={40}
+                color="#FFFFFF"
+                hoverColor="#3B82F6"
+                animate={!voiceAgent.isActive}
+                frequencyData={voiceAgent.frequencyData}
+                isLive={voiceAgent.isActive}
+                onVoiceStart={handleStartVoice}
+                onVoiceStop={handleStopVoice}
+                onCameraStart={handleStartCamera}
+                onCameraStop={handleStopCamera}
+                isVoiceActive={isVoiceActive}
+                isCameraActive={isCameraActive}
+                showControls={true}
+              />
             </div>
           </motion.div>
         </motion.div>

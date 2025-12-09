@@ -606,7 +606,10 @@ export default function AIAgents() {
                       animate={!voiceAgent.isActive}
                       frequencyData={voiceAgent.frequencyData}
                       isLive={voiceAgent.isActive}
-                      onBarClick={() => !voiceAgent.isActive ? handleStartVoice() : handleStopVoice()}
+                      onVoiceStart={handleStartVoice}
+                      onVoiceStop={handleStopVoice}
+                      isVoiceActive={voiceAgent.isActive}
+                      showControls={true}
                     />
                   </div>
                 </div>
