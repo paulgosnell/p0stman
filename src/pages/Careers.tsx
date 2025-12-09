@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Cpu,
   Zap,
@@ -287,13 +287,13 @@ export default function Careers() {
                       </div>
 
                       {/* Apply Button */}
-                      <a
-                        href={`mailto:hello@p0stman.com?subject=Application: ${role.title}`}
+                      <Link
+                        to={`/contact?role=${encodeURIComponent(role.title)}`}
                         className="inline-flex items-center gap-3 px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors font-light text-base"
                       >
                         Apply Now
                         <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-                      </a>
+                      </Link>
                     </div>
 
                     {/* Role Details */}
@@ -363,14 +363,14 @@ export default function Careers() {
                 </p>
               </div>
 
-              <a
-                href="mailto:hello@p0stman.com?subject=I want to join the roster"
+              <Link
+                to="/contact?role=General"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-gray-800 transition-colors font-light text-lg"
               >
                 <Mail className="w-5 h-5" strokeWidth={1.5} />
                 Get in Touch
                 <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, User, MessageSquare, Loader2, Twitter, Linkedin, CheckCircle } from 'lucide-react';
 import { sendEmail } from '../../lib/emailjs';
@@ -8,13 +9,16 @@ import FormGroup from '../ui/FormGroup';
 import { useTracking, useTrackForm } from '../../hooks/useTracking';
 
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
+  const roleParam = searchParams.get('role');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: '',
-    budget: '',
+    projectType: roleParam ? 'Careers' : '',
+    budget: roleParam ? 'N/A' : '',
     timeline: '',
-    description: ''
+    description: roleParam ? `Applying for: ${roleParam}\n\n` : ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -219,6 +223,7 @@ export default function ContactForm() {
                 <option value="Retainer Service">Retainer Service ($5K/mo)</option>
                 <option value="Fractional CPO">Fractional CPO (custom)</option>
                 <option value="Consultation">Expert Consultation ($100/hr)</option>
+                <option value="Careers">Careers - Join the Roster</option>
                 <option value="Not Sure">Not Sure - Need Guidance</option>
                 <option value="Other">Other</option>
               </select>
@@ -247,6 +252,7 @@ export default function ContactForm() {
                 <option value="$50K - $100K">$50K - $100K</option>
                 <option value="$100K+">$100K+</option>
                 <option value="Not Sure">Not Sure Yet</option>
+                <option value="N/A">N/A (Careers Application)</option>
               </select>
             </div>
 
