@@ -6,10 +6,10 @@
  */
 
 // Gemini Live model for native audio
-export const GEMINI_LIVE_MODEL = 'gemini-2.5-flash-preview-native-audio-dialog';
+export const GEMINI_LIVE_MODEL = 'gemini-2.5-flash-native-audio-preview-09-2025';
 
 // WebSocket endpoint for Gemini Live API
-export const GEMINI_LIVE_WS_URL = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
+export const GEMINI_LIVE_WS_URL = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent';
 
 // Available voices for Gemini Live
 // See: https://ai.google.dev/gemini-api/docs/live#voices

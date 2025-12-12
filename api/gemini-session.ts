@@ -31,13 +31,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // In production, you'd want to use ephemeral tokens via the SDK.
 
     // The client will use this to establish a WebSocket connection
-    // to: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent
+    // to: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
 
     return res.status(200).json({
       apiKey: apiKey,
-      model: 'gemini-2.5-flash-preview-native-audio-dialog',
+      model: 'gemini-2.5-flash-native-audio-preview-09-2025',
       voice: voice,
-      wsUrl: 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent'
+      wsUrl: 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent'
     });
 
   } catch (error) {

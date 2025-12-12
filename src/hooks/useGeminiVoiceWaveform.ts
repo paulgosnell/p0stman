@@ -65,6 +65,7 @@ export function useGeminiVoiceWaveform(
   const wsRef = useRef<WebSocket | null>(null);
   const audioStreamRef = useRef<MediaStream | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
+  const playbackContextRef = useRef<AudioContext | null>(null); // Separate context for playback at 24kHz
   const processorRef = useRef<ScriptProcessorNode | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const audioQueueRef = useRef<ArrayBuffer[]>([]);
@@ -98,6 +99,18 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     return int16Array;
   };
 
+  // Convert ArrayBuffer to base64 (safe method that won't overflow stack)
+  const arrayBufferToBase64 = (buffer: ArrayBuffer): string => {
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    const chunkSize = 8192;
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+      const chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode.apply(null, Array.from(chunk));
+    }
+    return btoa(binary);
+  };
+
   // Convert base64 to ArrayBuffer
   const base64ToArrayBuffer = (base64: string): ArrayBuffer => {
     const binaryString = atob(base64);
@@ -117,9 +130,21 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       setIsSpeaking(true);
     }
 
+    // Create playback context if needed (at 24kHz for Gemini output)
+    if (!playbackContextRef.current) {
+      playbackContextRef.current = new AudioContext({
+        sampleRate: AUDIO_CONFIG.outputSampleRate,
+      });
+    }
+
+    // Ensure context is running (required after user gesture)
+    if (playbackContextRef.current.state === 'suspended') {
+      await playbackContextRef.current.resume();
+    }
+
     while (audioQueueRef.current.length > 0) {
       const audioData = audioQueueRef.current.shift();
-      if (!audioData || !audioContextRef.current) break;
+      if (!audioData || !playbackContextRef.current) break;
 
       try {
         // Create audio buffer from PCM data
@@ -129,7 +154,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
           float32Array[i] = int16Array[i] / 32768;
         }
 
-        const audioBuffer = audioContextRef.current.createBuffer(
+        const audioBuffer = playbackContextRef.current.createBuffer(
           1,
           float32Array.length,
           AUDIO_CONFIG.outputSampleRate
@@ -137,14 +162,14 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         audioBuffer.getChannelData(0).set(float32Array);
 
         // Create analyzer for output audio
-        const outputAnalyser = audioContextRef.current.createAnalyser();
+        const outputAnalyser = playbackContextRef.current.createAnalyser();
         outputAnalyser.fftSize = 256;
 
         // Play the buffer
-        const source = audioContextRef.current.createBufferSource();
+        const source = playbackContextRef.current.createBufferSource();
         source.buffer = audioBuffer;
         source.connect(outputAnalyser);
-        source.connect(audioContextRef.current.destination);
+        source.connect(playbackContextRef.current.destination);
 
         // Update waveform from output
         const updateOutputWaveform = () => {
@@ -180,9 +205,39 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
 
   // Handle WebSocket messages
   const handleMessage = useCallback(
-    (event: MessageEvent) => {
+    async (event: MessageEvent) => {
       try {
-        const data = JSON.parse(event.data);
+        let data;
+
+        // Handle Blob data (Gemini sends everything as Blobs)
+        if (event.data instanceof Blob) {
+          const text = await event.data.text();
+          try {
+            data = JSON.parse(text);
+            console.log('WebSocket message (from Blob):', data);
+          } catch {
+            // Not JSON, treat as binary audio
+            console.log('Received audio Blob, size:', event.data.size);
+            const arrayBuffer = await event.data.arrayBuffer();
+            audioQueueRef.current.push(arrayBuffer);
+            playAudioQueue();
+            return;
+          }
+        } else if (event.data instanceof ArrayBuffer) {
+          console.log('Received ArrayBuffer, size:', event.data.byteLength);
+          audioQueueRef.current.push(event.data);
+          playAudioQueue();
+          return;
+        } else {
+          data = JSON.parse(event.data);
+          console.log('WebSocket message:', data);
+        }
+
+        // Handle error from server
+        if (data.error) {
+          console.error('Gemini error:', data.error);
+          return;
+        }
 
         // Handle setup complete
         if (data.setupComplete) {
@@ -242,18 +297,28 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     try {
       setStatus('connecting');
 
-      // 1. Get API key from our backend
-      const sessionResponse = await fetch('/api/gemini-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ voice }),
-      });
+      // Get API key - use env var in dev mode, API call in production
+      let apiKey: string;
+      const devApiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
-      if (!sessionResponse.ok) {
-        throw new Error('Failed to get session');
+      if (import.meta.env.DEV && devApiKey && devApiKey !== 'your-gemini-api-key-here') {
+        // Use direct API key in development
+        apiKey = devApiKey;
+      } else {
+        // Get API key from our backend in production
+        const sessionResponse = await fetch('/api/gemini-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ voice }),
+        });
+
+        if (!sessionResponse.ok) {
+          throw new Error('Failed to get session');
+        }
+
+        const data = await sessionResponse.json();
+        apiKey = data.apiKey;
       }
-
-      const { apiKey } = await sessionResponse.json();
 
       // 2. Get microphone access
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -284,7 +349,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
           setup: {
             model: `models/${GEMINI_LIVE_MODEL}`,
             generationConfig: {
-              responseModalities: ['AUDIO', 'TEXT'],
+              responseModalities: ['AUDIO'],
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
@@ -311,8 +376,8 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         }
       };
 
-      ws.onclose = () => {
-        console.log('WebSocket closed');
+      ws.onclose = (e) => {
+        console.log('WebSocket closed:', e.code, e.reason);
         if (isMountedRef.current) {
           setStatus('disconnected');
         }
@@ -334,7 +399,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         if (ws.readyState === WebSocket.OPEN && isConnected) {
           const inputData = e.inputBuffer.getChannelData(0);
           const pcmData = floatTo16BitPCM(inputData);
-          const base64Audio = btoa(String.fromCharCode(...new Uint8Array(pcmData.buffer)));
+          const base64Audio = arrayBufferToBase64(pcmData.buffer);
 
           ws.send(
             JSON.stringify({
@@ -409,6 +474,9 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     audioContextRef.current?.close();
     audioContextRef.current = null;
     analyserRef.current = null;
+
+    playbackContextRef.current?.close();
+    playbackContextRef.current = null;
 
     audioQueueRef.current = [];
     isPlayingRef.current = false;

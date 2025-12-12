@@ -245,6 +245,18 @@ You have tools for navigation:
     return int16Array;
   };
 
+  // Convert ArrayBuffer to base64 (safe method that won't overflow stack)
+  const arrayBufferToBase64 = (buffer: ArrayBuffer): string => {
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    const chunkSize = 8192;
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+      const chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode.apply(null, Array.from(chunk));
+    }
+    return btoa(binary);
+  };
+
   // Convert base64 to ArrayBuffer
   const base64ToArrayBuffer = (base64: string): ArrayBuffer => {
     const binaryString = atob(base64);
@@ -405,18 +417,28 @@ You have tools for navigation:
       setIsInitializing(true);
       setError(null);
 
-      // 1. Get API key from our backend
-      const sessionResponse = await fetch('/api/gemini-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ voice }),
-      });
+      // Get API key - use env var in dev mode, API call in production
+      let apiKey: string;
+      const devApiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
-      if (!sessionResponse.ok) {
-        throw new Error('Failed to get session');
+      if (import.meta.env.DEV && devApiKey && devApiKey !== 'your-gemini-api-key-here') {
+        // Use direct API key in development
+        apiKey = devApiKey;
+      } else {
+        // Get API key from our backend in production
+        const sessionResponse = await fetch('/api/gemini-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ voice }),
+        });
+
+        if (!sessionResponse.ok) {
+          throw new Error('Failed to get session');
+        }
+
+        const data = await sessionResponse.json();
+        apiKey = data.apiKey;
       }
-
-      const { apiKey } = await sessionResponse.json();
 
       // 2. Get microphone access
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -447,7 +469,7 @@ You have tools for navigation:
           setup: {
             model: `models/${GEMINI_LIVE_MODEL}`,
             generationConfig: {
-              responseModalities: ['AUDIO', 'TEXT'],
+              responseModalities: ['AUDIO'],
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
@@ -538,7 +560,7 @@ You have tools for navigation:
         if (ws.readyState === WebSocket.OPEN && isConnected) {
           const inputData = e.inputBuffer.getChannelData(0);
           const pcmData = floatTo16BitPCM(inputData);
-          const base64Audio = btoa(String.fromCharCode(...new Uint8Array(pcmData.buffer)));
+          const base64Audio = arrayBufferToBase64(pcmData.buffer);
 
           ws.send(
             JSON.stringify({

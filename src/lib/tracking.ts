@@ -258,10 +258,12 @@ export async function trackPageView(
 
     currentPageViewId = data?.id || null;
 
-    // Update session page count
-    await supabase.rpc('increment_session_page_count', { p_session_id: sessionId }).catch(() => {
+    // Update session page count (ignore errors if RPC doesn't exist)
+    try {
+      await supabase.rpc('increment_session_page_count', { p_session_id: sessionId });
+    } catch {
       // Function might not exist yet, ignore
-    });
+    }
   } catch (error) {
     console.error('Failed to track page view:', error);
   }
@@ -284,6 +286,7 @@ export function trackScrollDepth(sessionId: string): void {
           .from('page_views')
           .update({ scroll_depth_percent: maxScrollDepth })
           .eq('id', currentPageViewId)
+          .then(() => {})
           .catch(() => {});
       }
     }
@@ -322,10 +325,12 @@ export async function trackEvent(
       properties: properties || {},
     });
 
-    // Update session event count
-    await supabase.rpc('increment_session_event_count', { p_session_id: sessionId }).catch(() => {
+    // Update session event count (ignore errors if RPC doesn't exist)
+    try {
+      await supabase.rpc('increment_session_event_count', { p_session_id: sessionId });
+    } catch {
       // Function might not exist yet, ignore
-    });
+    }
   } catch (error) {
     console.error('Failed to track event:', error);
   }
