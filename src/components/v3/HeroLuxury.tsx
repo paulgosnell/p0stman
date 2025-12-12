@@ -3,16 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowRight, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
-import { useVoiceWaveform } from '../../hooks/useVoiceWaveform';
+import { useGeminiVoiceWaveform } from '../../hooks/useGeminiVoiceWaveform';
 import VoiceAgentSettings, { VoiceSettings } from './VoiceAgentSettings';
-
-const AGENT_ID = import.meta.env.VITE_ELEVENLABS_AGENT_ID || 'agent_8701k6q7xc5af4f8dkjj8pqda592';
+import type { GeminiLiveVoice } from '../../config/gemini-realtime';
 
 const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
   voice: 'Puck',
   silenceDuration: 500,
   threshold: 0.5,
 };
+
+// Removed AGENT_ID - no longer using ElevenLabs
 
 const CASE_STUDY_VIDEOS = [
   {
@@ -62,8 +63,8 @@ export default function HeroLuxury() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
 
-  const voiceAgent = useVoiceWaveform(AGENT_ID, {
-    voice: voiceSettings.voice,
+  const voiceAgent = useGeminiVoiceWaveform(undefined, {
+    voice: voiceSettings.voice as GeminiLiveVoice,
     threshold: voiceSettings.threshold,
     silenceDuration: voiceSettings.silenceDuration,
   });
@@ -116,6 +117,12 @@ export default function HeroLuxury() {
       streamRef.current = stream;
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
+        // Explicitly call play() to ensure video starts in all browsers
+        try {
+          await videoRef.current.play();
+        } catch (playError) {
+          console.warn('Auto-play was prevented:', playError);
+        }
       }
       setIsCameraActive(true);
 
