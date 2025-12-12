@@ -17,6 +17,17 @@ export interface GeminiVoiceWaveformState {
   status: string;
 }
 
+export interface CollectedLead {
+  name?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
+  interest?: string;
+  budget?: string;
+  timeline?: string;
+  notes?: string;
+}
+
 export interface UseGeminiVoiceWaveformOptions {
   /** System prompt for the agent */
   prompt?: string;
@@ -28,19 +39,40 @@ export interface UseGeminiVoiceWaveformOptions {
   threshold?: number;
   /** Silence duration before AI responds (ms) - not directly used by Gemini but kept for API compatibility */
   silenceDuration?: number;
+  /** Callback when lead info is collected */
+  onLeadCollected?: (lead: CollectedLead) => void;
 }
 
-const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN (pronounced "postman" - the zero is stylistic), an AI-powered product studio that builds intelligent software products.
+const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN (pronounced "postman" - the zero is stylistic), an AI-powered product studio based in Dubai that builds intelligent software products.
 
 IMPORTANT: Always pronounce "P0STMAN" as "postman" (like the mail carrier), never "p zero stman" or "p zero man".
 
-You help visitors understand:
-- What P0STMAN does (AI-powered product development)
-- Our services (voice agents, chat agents, code agents, workflow automation)
-- Our process (rapid prototyping, AI-first development)
-- How to get started (book a call, contact us)
+ABOUT P0STMAN:
+- AI-powered product studio that builds websites, apps, and digital products
+- Services: Voice AI agents, chatbots, mobile apps, websites, AI workflow automation
+- Process: Rapid prototyping, AI-first development, fast delivery
+- Founded by Paul Gosnell, experienced product strategist and AI expert
+- Based in Dubai, works with clients globally
 
-Be friendly, concise, and helpful. Guide visitors to relevant sections of the website when appropriate.`;
+WEBSITE PAGES:
+- Home (/) - Main landing page with case studies
+- Services (/services) - All services offered
+- AI Agents (/ai-agents) - Voice and chat AI agent development
+- Case Studies (/case-studies) - Portfolio of completed projects
+- About (/about) - About the company and team
+- Contact (/contact) - Contact form and booking
+- Careers (/careers) - Job opportunities
+- Mobile App Development (/mobile-app) - iOS and Android apps
+- Website Development (/website) - Custom websites
+
+COLLECTING CONTACT INFO:
+When a visitor wants to be contacted, get in touch, or learn more:
+1. Use the collectContactInfo tool to save their details
+2. Ask for their name and email at minimum
+3. Optionally ask about their project, budget, and timeline
+4. Confirm you've noted their info and someone will reach out
+
+Be friendly, conversational, and helpful. Don't be pushy about collecting info - only ask when they express interest in being contacted.`;
 
 const DEFAULT_FIRST_MESSAGE = "Hey! Welcome to postman. I'm the AI assistant here - kind of meta, right? What brings you by today?";
 
@@ -56,6 +88,7 @@ export function useGeminiVoiceWaveform(
     prompt = DEFAULT_PROMPT,
     firstMessage = DEFAULT_FIRST_MESSAGE,
     voice = DEFAULT_GEMINI_VOICE,
+    onLeadCollected,
   } = options;
 
   // State
@@ -275,11 +308,50 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
             }
           }
         }
+
+        // Handle tool calls
+        if (data.toolCall) {
+          const { functionCalls } = data.toolCall;
+          if (functionCalls && wsRef.current) {
+            const responses = functionCalls.map((call: { id: string; name: string; args: Record<string, string> }) => {
+              if (call.name === 'collectContactInfo') {
+                // Call the callback with collected lead data
+                const leadData: CollectedLead = {
+                  name: call.args.name,
+                  email: call.args.email,
+                  phone: call.args.phone,
+                  company: call.args.company,
+                  interest: call.args.interest,
+                  budget: call.args.budget,
+                  timeline: call.args.timeline,
+                  notes: call.args.notes,
+                };
+                console.log('Lead collected:', leadData);
+                onLeadCollected?.(leadData);
+                return {
+                  id: call.id,
+                  name: call.name,
+                  response: { result: 'Contact information saved successfully. Someone from the team will reach out soon.' },
+                };
+              }
+              return {
+                id: call.id,
+                name: call.name,
+                response: { result: 'Unknown tool' },
+              };
+            });
+
+            // Send tool response back to Gemini
+            wsRef.current.send(JSON.stringify({
+              toolResponse: { functionResponses: responses },
+            }));
+          }
+        }
       } catch (e) {
         console.error('Error parsing message:', e);
       }
     },
-    [firstMessage, playAudioQueue]
+    [firstMessage, playAudioQueue, onLeadCollected]
   );
 
   // Start conversation
@@ -353,6 +425,26 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
             systemInstruction: {
               parts: [{ text: buildSystemPrompt() }],
             },
+            tools: [{
+              functionDeclarations: [{
+                name: 'collectContactInfo',
+                description: 'Save contact information when a visitor wants to be contacted or learn more about services. Use this when someone provides their email, phone, or wants to schedule a call.',
+                parameters: {
+                  type: 'object',
+                  properties: {
+                    name: { type: 'string', description: 'Visitor name' },
+                    email: { type: 'string', description: 'Email address' },
+                    phone: { type: 'string', description: 'Phone number' },
+                    company: { type: 'string', description: 'Company name' },
+                    interest: { type: 'string', description: 'What they are interested in (e.g., voice agent, website, mobile app)' },
+                    budget: { type: 'string', description: 'Budget range if mentioned' },
+                    timeline: { type: 'string', description: 'Project timeline if mentioned' },
+                    notes: { type: 'string', description: 'Any other relevant notes from the conversation' },
+                  },
+                  required: ['email'],
+                },
+              }],
+            }],
           },
         };
 

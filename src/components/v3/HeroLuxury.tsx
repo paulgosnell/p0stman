@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowRight, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
-import { useGeminiVoiceWaveform } from '../../hooks/useGeminiVoiceWaveform';
+import { useGeminiVoiceWaveform, CollectedLead } from '../../hooks/useGeminiVoiceWaveform';
 import VoiceAgentSettings, { VoiceSettings } from './VoiceAgentSettings';
 import type { GeminiLiveVoice } from '../../config/gemini-realtime';
+import { supabase } from '../../lib/supabase';
 
 const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
   voice: 'Puck',
@@ -63,10 +64,33 @@ export default function HeroLuxury() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
 
+  // Handle lead collection from voice agent
+  const handleLeadCollected = useCallback(async (lead: CollectedLead) => {
+    try {
+      // Save to contacts table
+      const { error } = await supabase.from('contacts').insert({
+        name: lead.name || 'Voice Lead',
+        email: lead.email,
+        project_type: lead.interest || 'Voice Agent Inquiry',
+        budget: lead.budget || 'Not specified',
+        timeline: lead.timeline || 'Not specified',
+        description: `Voice agent lead. Company: ${lead.company || 'N/A'}. Notes: ${lead.notes || 'N/A'}`,
+      });
+      if (error) {
+        console.error('Failed to save lead:', error);
+      } else {
+        console.log('Lead saved to database');
+      }
+    } catch (err) {
+      console.error('Error saving lead:', err);
+    }
+  }, []);
+
   const voiceAgent = useGeminiVoiceWaveform(undefined, {
     voice: voiceSettings.voice as GeminiLiveVoice,
     threshold: voiceSettings.threshold,
     silenceDuration: voiceSettings.silenceDuration,
+    onLeadCollected: handleLeadCollected,
   });
 
   // Cycle through videos every 8 seconds
