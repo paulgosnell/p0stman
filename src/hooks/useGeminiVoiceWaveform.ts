@@ -30,7 +30,9 @@ export interface UseGeminiVoiceWaveformOptions {
   silenceDuration?: number;
 }
 
-const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN, an AI-powered product studio that builds intelligent software products.
+const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN (pronounced "postman" - the zero is stylistic), an AI-powered product studio that builds intelligent software products.
+
+IMPORTANT: Always pronounce "P0STMAN" as "postman" (like the mail carrier), never "p zero stman" or "p zero man".
 
 You help visitors understand:
 - What P0STMAN does (AI-powered product development)
@@ -40,7 +42,7 @@ You help visitors understand:
 
 Be friendly, concise, and helpful. Guide visitors to relevant sections of the website when appropriate.`;
 
-const DEFAULT_FIRST_MESSAGE = "Hey! Welcome to P0STMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?";
+const DEFAULT_FIRST_MESSAGE = "Hey! Welcome to postman. I'm the AI assistant here - kind of meta, right? What brings you by today?";
 
 /**
  * Hook for managing Gemini Live voice agent with waveform visualization
@@ -121,14 +123,12 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     return bytes.buffer;
   };
 
-  // Play audio from queue
-  const playAudioQueue = useCallback(async () => {
-    if (isPlayingRef.current || audioQueueRef.current.length === 0) return;
+  // Track next play time for seamless audio
+  const nextPlayTimeRef = useRef<number>(0);
 
-    isPlayingRef.current = true;
-    if (isMountedRef.current) {
-      setIsSpeaking(true);
-    }
+  // Play audio from queue - schedule chunks seamlessly
+  const playAudioQueue = useCallback(async () => {
+    if (audioQueueRef.current.length === 0) return;
 
     // Create playback context if needed (at 24kHz for Gemini output)
     if (!playbackContextRef.current) {
@@ -142,9 +142,12 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       await playbackContextRef.current.resume();
     }
 
+    const ctx = playbackContextRef.current;
+
+    // Process all queued audio chunks
     while (audioQueueRef.current.length > 0) {
       const audioData = audioQueueRef.current.shift();
-      if (!audioData || !playbackContextRef.current) break;
+      if (!audioData || !ctx) break;
 
       try {
         // Create audio buffer from PCM data
@@ -154,52 +157,46 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
           float32Array[i] = int16Array[i] / 32768;
         }
 
-        const audioBuffer = playbackContextRef.current.createBuffer(
+        const audioBuffer = ctx.createBuffer(
           1,
           float32Array.length,
           AUDIO_CONFIG.outputSampleRate
         );
         audioBuffer.getChannelData(0).set(float32Array);
 
-        // Create analyzer for output audio
-        const outputAnalyser = playbackContextRef.current.createAnalyser();
-        outputAnalyser.fftSize = 256;
-
-        // Play the buffer
-        const source = playbackContextRef.current.createBufferSource();
+        // Schedule playback seamlessly
+        const source = ctx.createBufferSource();
         source.buffer = audioBuffer;
-        source.connect(outputAnalyser);
-        source.connect(playbackContextRef.current.destination);
+        source.connect(ctx.destination);
 
-        // Update waveform from output
-        const updateOutputWaveform = () => {
-          if (outputAnalyser && isMountedRef.current && isPlayingRef.current) {
-            const dataArray = new Uint8Array(outputAnalyser.frequencyBinCount);
-            outputAnalyser.getByteFrequencyData(dataArray);
+        // Calculate when to start this chunk
+        const startTime = Math.max(ctx.currentTime, nextPlayTimeRef.current);
+        source.start(startTime);
 
-            const step = Math.floor(dataArray.length / 60);
-            const newHeights = Array.from({ length: 60 }, (_, i) => {
-              const value = dataArray[i * step] || 0;
-              return (value / 255) * 100;
-            });
-            setHeights(newHeights);
-            requestAnimationFrame(updateOutputWaveform);
+        // Update next play time for seamless scheduling
+        nextPlayTimeRef.current = startTime + audioBuffer.duration;
+
+        // Track speaking state
+        if (!isPlayingRef.current) {
+          isPlayingRef.current = true;
+          if (isMountedRef.current) {
+            setIsSpeaking(true);
+          }
+        }
+
+        // Set up end handler for last chunk
+        source.onended = () => {
+          // Check if this was the last scheduled chunk
+          if (ctx.currentTime >= nextPlayTimeRef.current - 0.1) {
+            isPlayingRef.current = false;
+            if (isMountedRef.current) {
+              setIsSpeaking(false);
+            }
           }
         };
-        updateOutputWaveform();
-
-        await new Promise<void>((resolve) => {
-          source.onended = () => resolve();
-          source.start();
-        });
       } catch (e) {
         console.error('Error playing audio:', e);
       }
-    }
-
-    isPlayingRef.current = false;
-    if (isMountedRef.current) {
-      setIsSpeaking(false);
     }
   }, []);
 
@@ -214,23 +211,19 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
           const text = await event.data.text();
           try {
             data = JSON.parse(text);
-            console.log('WebSocket message (from Blob):', data);
           } catch {
             // Not JSON, treat as binary audio
-            console.log('Received audio Blob, size:', event.data.size);
             const arrayBuffer = await event.data.arrayBuffer();
             audioQueueRef.current.push(arrayBuffer);
             playAudioQueue();
             return;
           }
         } else if (event.data instanceof ArrayBuffer) {
-          console.log('Received ArrayBuffer, size:', event.data.byteLength);
           audioQueueRef.current.push(event.data);
           playAudioQueue();
           return;
         } else {
           data = JSON.parse(event.data);
-          console.log('WebSocket message:', data);
         }
 
         // Handle error from server
@@ -241,7 +234,6 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
 
         // Handle setup complete
         if (data.setupComplete) {
-          console.log('Gemini setup complete');
           if (isMountedRef.current) {
             setStatus('connected');
           }
@@ -436,12 +428,19 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       };
       updateWaveform();
 
-      // Set connected flag after setup
-      ws.addEventListener('message', (e) => {
+      // Set connected flag after setup (handle Blob data from Gemini)
+      ws.addEventListener('message', async (e) => {
         try {
-          const data = JSON.parse(e.data);
+          let data;
+          if (e.data instanceof Blob) {
+            const text = await e.data.text();
+            data = JSON.parse(text);
+          } else {
+            data = JSON.parse(e.data);
+          }
           if (data.setupComplete) {
             isConnected = true;
+            console.log('Audio input enabled');
           }
         } catch {}
       });
@@ -488,6 +487,41 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     }
   };
 
+  // Send a video frame to Gemini
+  const sendVideoFrame = useCallback((videoElement: HTMLVideoElement) => {
+    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || status !== 'connected') {
+      return;
+    }
+
+    try {
+      // Create canvas to capture frame
+      const canvas = document.createElement('canvas');
+      canvas.width = 640;  // Reasonable size for Gemini
+      canvas.height = 480;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // Draw video frame to canvas
+      ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+      // Convert to base64 JPEG
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+      const base64Data = dataUrl.split(',')[1];
+
+      // Send to Gemini as realtime input
+      wsRef.current.send(JSON.stringify({
+        realtimeInput: {
+          mediaChunks: [{
+            mimeType: 'image/jpeg',
+            data: base64Data,
+          }],
+        },
+      }));
+    } catch (e) {
+      console.error('Error sending video frame:', e);
+    }
+  }, [status]);
+
   return {
     // Voice agent state
     isActive: status === 'connected' || status === 'connecting',
@@ -502,5 +536,6 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     // Controls
     startConversation,
     stopConversation,
+    sendVideoFrame,
   };
 }

@@ -115,24 +115,40 @@ export default function HeroLuxury() {
         video: { facingMode: 'user', width: 320, height: 240 }
       });
       streamRef.current = stream;
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        // Explicitly call play() to ensure video starts in all browsers
-        try {
-          await videoRef.current.play();
-        } catch (playError) {
-          console.warn('Auto-play was prevented:', playError);
-        }
-      }
+      // Set camera active first so the video element renders
       setIsCameraActive(true);
-
-      // If voice is active, we could send a frame to the AI
-      // For now, just enable the camera view
     } catch (error) {
       console.error('Failed to start camera:', error);
       alert('Unable to access camera. Please ensure camera permissions are allowed.');
     }
   };
+
+  // Connect stream to video element after it renders
+  useEffect(() => {
+    if (isCameraActive && videoRef.current && streamRef.current) {
+      videoRef.current.srcObject = streamRef.current;
+      videoRef.current.play().catch(err => console.warn('Auto-play prevented:', err));
+    }
+  }, [isCameraActive]);
+
+  // Send video frames to Gemini when camera and voice are both active
+  useEffect(() => {
+    if (!isCameraActive || !isVoiceActive || !videoRef.current) return;
+
+    // Send a frame every 2 seconds (Gemini doesn't need high fps for vision)
+    const frameInterval = setInterval(() => {
+      if (videoRef.current && voiceAgent.isConnected) {
+        voiceAgent.sendVideoFrame(videoRef.current);
+      }
+    }, 2000);
+
+    // Send initial frame
+    if (voiceAgent.isConnected) {
+      voiceAgent.sendVideoFrame(videoRef.current);
+    }
+
+    return () => clearInterval(frameInterval);
+  }, [isCameraActive, isVoiceActive, voiceAgent.isConnected, voiceAgent.sendVideoFrame]);
 
   const handleStopCamera = () => {
     if (streamRef.current) {
