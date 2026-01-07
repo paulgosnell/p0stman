@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Mail, MapPin, Clock, Twitter, Linkedin, ArrowRight, Users, Zap, Award, Building2 } from 'lucide-react';
+import { Bot, Mail, MapPin, Clock, Twitter, Linkedin, Users, Zap, Award, Building2 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import ConversationalContactForm from '../components/contact/ConversationalContactForm';
-import LocationMap from '../components/contact/LocationMap';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import FooterV3 from '../components/v3/FooterV3';
-import GeminiVoiceAgent from '../components/voice-agent/GeminiVoiceAgent';
 import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import TestimonialCard from '../components/contact/TestimonialCard';
 import ExitIntentPopup from '../components/contact/ExitIntentPopup';
-import { getVoiceAgentConfig } from '../config/voiceAgentPrompts';
 import { getContactContext } from '../utils/contactContext';
 
 export default function ContactPage() {
@@ -20,8 +17,6 @@ export default function ContactPage() {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const ctaConfig = getVoiceAgentConfig('cta');
 
   // Get context-aware messaging
   const [context, setContext] = useState(getContactContext());
@@ -109,7 +104,7 @@ export default function ContactPage() {
         </section>
 
         {/* Social Proof Stats */}
-        <section className="py-12 bg-gray-50 dark:from-gray-800 dark:to-gray-900">
+        <section className="py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <motion.div
@@ -187,47 +182,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h3 className="text-3xl font-light text-gray-900 dark:text-gray-100 mb-3">
-                What Our Clients Say
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 font-light">
-                Real results from real projects
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <TestimonialCard
-                quote="P0STMAN built our AI website generator in 6 days. We now serve 1000+ active users who have built 2,500+ websites."
-                author="Chilled Sites"
-                role="Founder"
-                result="2,500+ websites built"
-              />
-              <TestimonialCard
-                quote="The healthcare platform reduced our no-show rates by 35% in the first month. Patient satisfaction increased significantly."
-                author="DoH Health"
-                role="Operations Director"
-                result="35% reduced no-shows"
-              />
-              <TestimonialCard
-                quote="Enterprise-grade security, rapid delivery, and seamless integration. Exactly what we needed for our banking platform."
-                author="FAB Bank"
-                role="Digital Innovation Lead"
-                result="Enterprise security certified"
-              />
-            </div>
-          </div>
-        </section>
-
         {/* Contact Form Section - 2 Column Layout */}
         <section id="contact-form" className="py-24 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
@@ -241,34 +195,6 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                 >
                   <ConversationalContactForm />
-
-                  {/* Voice Agent Alternative */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="mt-8 p-6 bg-white dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600"
-                  >
-                    <h3 className="text-lg font-light text-gray-900 dark:text-gray-100 mb-2">
-                      Prefer to Talk Instead?
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 font-light text-sm mb-4">
-                      Chat with our AI assistant to discuss your project and get instant feedback.
-                    </p>
-                    <GeminiVoiceAgent
-                      section="cta"
-                      prompt={ctaConfig.prompt}
-                      firstMessage={ctaConfig.firstMessage}
-                      placement="inline"
-                      buttonText="Start Voice Conversation"
-                      color="blue"
-                      icon="🎤"
-                      showTranscript={false}
-                      maxDurationSeconds={180}
-                      maxTurns={8}
-                    />
-                  </motion.div>
                 </motion.div>
 
                 {/* Right Column - Info */}
@@ -345,31 +271,49 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Response Time */}
-                  <div className="bg-white dark:bg-gray-700 rounded-xl p-8 border border-gray-200 dark:border-gray-600">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Zap className="w-6 h-6 text-yellow-500" strokeWidth={1.5} />
-                      <h3 className="text-xl font-light text-gray-900 dark:text-gray-100">Quick Response</h3>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300 font-light mb-4">
-                      We respond to all enquiries within 24 hours during business days. For urgent matters, start a voice conversation with our AI assistant.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 mt-6">
-                      <div className="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                        <div className="text-2xl font-light text-gray-900 dark:text-gray-100">24h</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400 font-light">Response Time</div>
-                      </div>
-                      <div className="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                        <div className="text-2xl font-light text-gray-900 dark:text-gray-100">6 days</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400 font-light">Avg. MVP Build</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Location Map */}
-                  <LocationMap />
                 </motion.div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-20 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-gray-100 mb-4">
+                What Our Clients Say
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 font-light max-w-2xl mx-auto">
+                Real results from real projects
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <TestimonialCard
+                quote="P0STMAN built our AI website generator in 6 days. We now serve 1000+ active users who have built 2,500+ websites."
+                author="Chilled Sites"
+                role="Founder"
+                result="2,500+ websites built"
+              />
+              <TestimonialCard
+                quote="The healthcare platform reduced our no-show rates by 35% in the first month. Patient satisfaction increased significantly."
+                author="DoH Health"
+                role="Operations Director"
+                result="35% reduced no-shows"
+              />
+              <TestimonialCard
+                quote="Enterprise-grade security, rapid delivery, and seamless integration. Exactly what we needed for our banking platform."
+                author="FAB Bank"
+                role="Digital Innovation Lead"
+                result="Enterprise security certified"
+              />
             </div>
           </div>
         </section>
