@@ -1242,49 +1242,51 @@ export default function SaladProject() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="sp-footer" style={{ marginTop: '32px', fontSize: '12px', color: colors.warmGray }}>
-          <div>SP Command Centre • Built by P0STMAN</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span
-                style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: colors.mint, animation: 'pulse 2s ease-in-out infinite' }}
-              ></span>
-              AI models active
-            </span>
-            <span>Data refreshed 2 mins ago</span>
-          </div>
+        {/* Footer - with padding for bottom toolbar */}
+        <div style={{ marginTop: '32px', marginBottom: '80px', fontSize: '12px', color: colors.warmGray, textAlign: 'center' }}>
+          SP Command Centre • Built by P0STMAN
         </div>
 
-        {/* Floating Voice Assistant - Bottom Center */}
+        {/* Bottom Toolbar with Voice Assistant */}
         <div
-          className="sp-floating-orb"
           style={{
             position: 'fixed',
             bottom: 0,
-            left: '50%',
-            transform: 'translateX(-50%)',
+            left: 0,
+            right: 0,
+            height: '56px',
+            background: `linear-gradient(to right, ${colors.forest}, ${colors.sage}, ${colors.forest})`,
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0 24px',
             zIndex: 1000,
           }}
         >
-          {/* Voice Orb */}
+          {/* Left side */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: colors.mint, animation: 'pulse 2s ease-in-out infinite' }}></span>
+            <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.9)', fontWeight: '500' }}>AI models active</span>
+          </div>
+
+          {/* Center - Voice Orb popping out */}
           <div
             className="sp-voice-orb"
             style={{
-              width: '64px',
-              height: '64px',
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              bottom: '20px',
+              width: '72px',
+              height: '72px',
               borderRadius: '50%',
               background: `linear-gradient(135deg, ${colors.forest}, ${colors.sage})`,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 8px 32px rgba(26, 58, 47, 0.3)',
-              marginBottom: '-32px',
-              position: 'relative',
+              boxShadow: '0 -4px 20px rgba(26, 58, 47, 0.4)',
+              border: `4px solid ${colors.cream}`,
             }}
           >
             <div
@@ -1293,9 +1295,9 @@ export default function SaladProject() {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                border: `2px solid ${colors.sage}`,
+                border: `2px solid ${colors.mint}`,
                 animation: 'ripple 2s ease-out infinite',
-                opacity: 0.5,
+                opacity: 0.6,
               }}
             ></div>
             <div
@@ -1304,31 +1306,19 @@ export default function SaladProject() {
                 width: '100%',
                 height: '100%',
                 borderRadius: '50%',
-                border: `2px solid ${colors.sage}`,
+                border: `2px solid ${colors.mint}`,
                 animation: 'ripple 2s ease-out infinite 0.5s',
                 opacity: 0.3,
               }}
             ></div>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill={colors.white}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill={colors.white}>
               <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
             </svg>
           </div>
-          {/* Connected Bottom Bar */}
-          <div
-            style={{
-              width: '120px',
-              height: '40px',
-              background: `linear-gradient(to top, ${colors.forest}, ${colors.sage})`,
-              borderRadius: '24px 24px 0 0',
-              display: 'flex',
-              alignItems: 'flex-end',
-              justifyContent: 'center',
-              paddingBottom: '8px',
-            }}
-          >
-            <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.8)', fontWeight: '500', letterSpacing: '0.5px' }}>
-              ASK AI
-            </span>
+
+          {/* Right side */}
+          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)' }}>
+            Data refreshed 2 mins ago
           </div>
         </div>
       </div>
