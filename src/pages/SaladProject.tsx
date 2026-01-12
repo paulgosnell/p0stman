@@ -1256,50 +1256,80 @@ export default function SaladProject() {
           </div>
         </div>
 
-        {/* Floating Voice Assistant Orb */}
+        {/* Floating Voice Assistant - Bottom Center */}
         <div
-          className="sp-voice-orb sp-floating-orb"
+          className="sp-floating-orb"
           style={{
             position: 'fixed',
-            bottom: '32px',
-            right: '32px',
-            width: '64px',
-            height: '64px',
-            borderRadius: '50%',
-            background: `linear-gradient(135deg, ${colors.forest}, ${colors.sage})`,
+            bottom: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            boxShadow: '0 8px 32px rgba(26, 58, 47, 0.3)',
             zIndex: 1000,
           }}
         >
+          {/* Voice Orb */}
+          <div
+            className="sp-voice-orb"
+            style={{
+              width: '64px',
+              height: '64px',
+              borderRadius: '50%',
+              background: `linear-gradient(135deg, ${colors.forest}, ${colors.sage})`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(26, 58, 47, 0.3)',
+              marginBottom: '-32px',
+              position: 'relative',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                borderRadius: '50%',
+                border: `2px solid ${colors.sage}`,
+                animation: 'ripple 2s ease-out infinite',
+                opacity: 0.5,
+              }}
+            ></div>
+            <div
+              style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                borderRadius: '50%',
+                border: `2px solid ${colors.sage}`,
+                animation: 'ripple 2s ease-out infinite 0.5s',
+                opacity: 0.3,
+              }}
+            ></div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill={colors.white}>
+              <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
+            </svg>
+          </div>
+          {/* Connected Bottom Bar */}
           <div
             style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              border: `2px solid ${colors.sage}`,
-              animation: 'ripple 2s ease-out infinite',
-              opacity: 0.5,
+              width: '120px',
+              height: '40px',
+              background: `linear-gradient(to top, ${colors.forest}, ${colors.sage})`,
+              borderRadius: '24px 24px 0 0',
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              paddingBottom: '8px',
             }}
-          ></div>
-          <div
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              border: `2px solid ${colors.sage}`,
-              animation: 'ripple 2s ease-out infinite 0.5s',
-              opacity: 0.3,
-            }}
-          ></div>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill={colors.white}>
-            <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
-          </svg>
+          >
+            <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.8)', fontWeight: '500', letterSpacing: '0.5px' }}>
+              ASK AI
+            </span>
+          </div>
         </div>
       </div>
     </HelmetProvider>
