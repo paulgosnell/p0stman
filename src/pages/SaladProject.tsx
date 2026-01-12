@@ -1071,7 +1071,7 @@ export default function SaladProject() {
             <div style={{ position: 'relative', height: '280px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#e8e4dc' }}>
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-0.25%2C51.45%2C0.02%2C51.55&layer=mapnik"
-                style={{ width: '100%', height: '100%', border: 'none', filter: 'saturate(0.8) contrast(1.1)' }}
+                style={{ width: '100%', height: '100%', border: 'none', filter: 'saturate(0.8) contrast(1.1)', pointerEvents: 'none' }}
                 title="Store Locations Map"
               />
 
