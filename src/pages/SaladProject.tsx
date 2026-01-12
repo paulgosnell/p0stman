@@ -52,17 +52,17 @@ export default function SaladProject() {
   ];
 
   const mapMarkers = [
-    { name: 'Spitalfields', top: '35%', left: '72%' },
-    { name: 'Bank', top: '40%', left: '68%' },
-    { name: 'Oxford Circus', top: '38%', left: '48%' },
-    { name: 'Mansion House', top: '42%', left: '66%' },
-    { name: 'Fenchurch', top: '40%', left: '70%' },
-    { name: 'Tottenham Ct Rd', top: '36%', left: '52%' },
-    { name: 'Bond Street', top: '38%', left: '44%' },
-    { name: 'Victoria', top: '55%', left: '46%' },
-    { name: 'Southwark', top: '48%', left: '62%' },
-    { name: 'Notting Hill', top: '38%', left: '32%' },
-    { name: 'Battersea', top: '62%', left: '46%' },
+    { name: 'Spitalfields', top: '20%', left: '79%' },
+    { name: 'Bank', top: '28%', left: '72%' },
+    { name: 'Oxford Circus', top: '25%', left: '40%' },
+    { name: 'Mansion House', top: '30%', left: '68%' },
+    { name: 'Fenchurch', top: '30%', left: '77%' },
+    { name: 'Tottenham Ct Rd', top: '23%', left: '47%' },
+    { name: 'Bond Street', top: '27%', left: '36%' },
+    { name: 'Victoria', top: '58%', left: '39%' },
+    { name: 'Southwark', top: '42%', left: '69%' },
+    { name: 'Notting Hill', top: '35%', left: '8%' },
+    { name: 'Battersea', top: '90%', left: '32%' },
   ];
 
   return (
@@ -1070,7 +1070,7 @@ export default function SaladProject() {
             {/* Map Container */}
             <div style={{ position: 'relative', height: '280px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#e8e4dc' }}>
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.25%2C51.45%2C0.02%2C51.55&layer=mapnik"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.21%2C51.47%2C-0.04%2C51.53&layer=mapnik"
                 style={{ width: '100%', height: '100%', border: 'none', filter: 'saturate(0.8) contrast(1.1)' }}
                 title="Store Locations Map"
               />
