@@ -83,6 +83,7 @@ import ReplitToProduction from './pages/seo/ReplitToProduction';
 import VibeCodingExpert from './pages/seo/VibeCodingExpert';
 import HireDeveloperAfterPrototype from './pages/seo/HireDeveloperAfterPrototype';
 import Careers from './pages/Careers';
+import SaladProject from './pages/SaladProject';
 
 export default function App() {
   return (
@@ -169,6 +170,7 @@ export default function App() {
           <Route path="/replit-to-production" element={<ReplitToProduction />} />
           <Route path="/vibe-coding-expert" element={<VibeCodingExpert />} />
           <Route path="/hire-developer-after-prototype" element={<HireDeveloperAfterPrototype />} />
+          <Route path="/saladproject" element={<SaladProject />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
           <Analytics />
