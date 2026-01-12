@@ -74,15 +74,15 @@ export default function SaladProject() {
       </Helmet>
 
       <div
+        className="sp-container"
         style={{
           minHeight: '100vh',
           backgroundColor: colors.cream,
           fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif",
-          padding: '32px',
           position: 'relative',
         }}
       >
-        {/* Google Font Import + Animations */}
+        {/* Google Font Import + Animations + Responsive */}
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap');
 
@@ -171,28 +171,216 @@ export default function SaladProject() {
             transform: scale(1.3);
             z-index: 10;
           }
+
+          /* Responsive Grid Classes */
+          .sp-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 400px;
+            grid-template-rows: auto auto;
+            gap: 24px;
+          }
+
+          .sp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+          }
+
+          .sp-header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+          }
+
+          .sp-header-title {
+            font-size: 32px;
+          }
+
+          .sp-right-col {
+            grid-row: span 2;
+          }
+
+          .sp-map-section {
+            grid-column: span 2;
+          }
+
+          .sp-opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+          }
+
+          .sp-store-locations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+          }
+
+          .sp-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .sp-container {
+            padding: 32px;
+          }
+
+          .sp-revenue-value {
+            font-size: 48px;
+          }
+
+          .sp-small-card-value {
+            font-size: 32px;
+          }
+
+          .sp-insights-badge {
+            display: flex;
+          }
+
+          .sp-date-badge {
+            display: flex;
+          }
+
+          .sp-ai-analysing {
+            display: inline;
+          }
+
+          /* Tablet */
+          @media (max-width: 1200px) {
+            .sp-main-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+            .sp-right-col {
+              grid-row: auto;
+              grid-column: span 2;
+            }
+            .sp-map-section {
+              grid-column: span 2;
+            }
+          }
+
+          /* Mobile */
+          @media (max-width: 768px) {
+            .sp-container {
+              padding: 16px;
+            }
+
+            .sp-header {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 16px;
+              margin-bottom: 24px;
+            }
+
+            .sp-header-right {
+              width: 100%;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 8px;
+            }
+
+            .sp-header-title {
+              font-size: 24px;
+            }
+
+            .sp-insights-badge {
+              display: none;
+            }
+
+            .sp-date-badge {
+              display: none;
+            }
+
+            .sp-ai-analysing {
+              display: none;
+            }
+
+            .sp-main-grid {
+              grid-template-columns: 1fr;
+              gap: 16px;
+            }
+
+            .sp-right-col {
+              grid-row: auto;
+              grid-column: auto;
+            }
+
+            .sp-map-section {
+              grid-column: auto;
+            }
+
+            .sp-opportunities-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .sp-store-locations-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 8px;
+            }
+
+            .sp-footer {
+              flex-direction: column;
+              gap: 12px;
+              text-align: center;
+            }
+
+            .sp-revenue-value {
+              font-size: 36px;
+            }
+
+            .sp-small-card-value {
+              font-size: 28px;
+            }
+
+            .sp-floating-orb {
+              width: 56px !important;
+              height: 56px !important;
+              bottom: 20px !important;
+              right: 20px !important;
+            }
+          }
+
+          /* Small Mobile */
+          @media (max-width: 480px) {
+            .sp-container {
+              padding: 12px;
+            }
+
+            .sp-header-title {
+              font-size: 20px;
+            }
+
+            .sp-store-locations-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .sp-revenue-value {
+              font-size: 32px;
+            }
+
+            .sp-small-card-value {
+              font-size: 24px;
+            }
+          }
         `}</style>
 
         {/* Header */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '40px',
-          }}
-        >
+        <div className="sp-header">
           <div>
             <div
+              className="sp-header-title"
               style={{
                 fontFamily: "'Fraunces', Georgia, serif",
-                fontSize: '32px',
                 fontWeight: '600',
                 color: colors.forest,
                 letterSpacing: '-0.5px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px',
+                flexWrap: 'wrap',
               }}
             >
               SP Command Centre
@@ -219,9 +407,10 @@ export default function SaladProject() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
+                flexWrap: 'wrap',
               }}
             >
-              Good morning, Florian — here's your business at a glance
+              Good morning, Florian
               <span
                 className="sp-typing-indicator"
                 style={{
@@ -234,18 +423,18 @@ export default function SaladProject() {
                 <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: colors.sage }}></span>
                 <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: colors.sage }}></span>
               </span>
-              <span style={{ fontSize: '12px', color: colors.sage }}>AI analysing...</span>
+              <span className="sp-ai-analysing" style={{ fontSize: '12px', color: colors.sage }}>AI analysing...</span>
             </div>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div className="sp-header-right">
             <div
+              className="sp-insights-badge"
               style={{
                 padding: '8px 16px',
                 backgroundColor: 'rgba(74, 124, 89, 0.1)',
                 borderRadius: '20px',
                 fontSize: '12px',
                 color: colors.sage,
-                display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
               }}
@@ -262,6 +451,7 @@ export default function SaladProject() {
               4 AI insights ready
             </div>
             <div
+              className="sp-date-badge"
               style={{
                 padding: '10px 20px',
                 backgroundColor: colors.white,
@@ -269,7 +459,6 @@ export default function SaladProject() {
                 fontSize: '14px',
                 color: colors.charcoal,
                 boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
               }}
@@ -294,6 +483,7 @@ export default function SaladProject() {
                 color: colors.white,
                 fontWeight: '600',
                 fontSize: '14px',
+                flexShrink: 0,
               }}
             >
               F
@@ -302,14 +492,7 @@ export default function SaladProject() {
         </div>
 
         {/* Main Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 400px',
-            gridTemplateRows: 'auto auto',
-            gap: '24px',
-          }}
-        >
+        <div className="sp-main-grid">
           {/* Left Column - Key Metrics */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* Revenue Card */}
@@ -343,7 +526,7 @@ export default function SaladProject() {
                 AI detected trend
               </div>
               <div style={{ fontSize: '13px', opacity: 0.7, marginBottom: '8px', letterSpacing: '0.5px' }}>TOTAL REVENUE MTD</div>
-              <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: '48px', fontWeight: '600', letterSpacing: '-1px' }}>£1.24M</div>
+              <div className="sp-revenue-value" style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: '600', letterSpacing: '-1px' }}>£1.24M</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                 <span
                   style={{
@@ -384,7 +567,7 @@ export default function SaladProject() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div style={{ backgroundColor: colors.white, borderRadius: '16px', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
                 <div style={{ fontSize: '12px', color: colors.warmGray, marginBottom: '8px', letterSpacing: '0.5px' }}>AVG ORDER VALUE</div>
-                <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: '32px', fontWeight: '600', color: colors.forest }}>£14.20</div>
+                <div className="sp-small-card-value" style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: '600', color: colors.forest }}>£14.20</div>
                 <div style={{ fontSize: '13px', color: colors.sage, marginTop: '4px' }}>↑ 3.2%</div>
                 <div
                   style={{
@@ -408,7 +591,7 @@ export default function SaladProject() {
               </div>
               <div style={{ backgroundColor: colors.white, borderRadius: '16px', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
                 <div style={{ fontSize: '12px', color: colors.warmGray, marginBottom: '8px', letterSpacing: '0.5px' }}>ORDERS TODAY</div>
-                <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: '32px', fontWeight: '600', color: colors.forest }}>2,847</div>
+                <div className="sp-small-card-value" style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: '600', color: colors.forest }}>2,847</div>
                 <div style={{ fontSize: '13px', color: colors.sage, marginTop: '4px' }}>↑ 8.1%</div>
                 <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: colors.sage }}>
                   <span
@@ -640,7 +823,7 @@ export default function SaladProject() {
           </div>
 
           {/* Right Column - AI Insights & Assistant */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', gridRow: 'span 2' }}>
+          <div className="sp-right-col" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* AI Insights Panel */}
             <div style={{ backgroundColor: colors.white, borderRadius: '20px', padding: '28px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
@@ -855,7 +1038,7 @@ export default function SaladProject() {
           </div>
 
           {/* Store Locations Map - Spans both left columns */}
-          <div style={{ gridColumn: 'span 2', backgroundColor: colors.white, borderRadius: '20px', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+          <div className="sp-map-section" style={{ backgroundColor: colors.white, borderRadius: '20px', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div
@@ -980,7 +1163,7 @@ export default function SaladProject() {
               </div>
             </div>
 
-            <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+            <div className="sp-store-locations-grid">
               {storeLocations.map((store, i) => (
                 <div key={i} style={{ padding: '10px 12px', backgroundColor: colors.cream, borderRadius: '10px', fontSize: '11px' }}>
                   <div style={{ fontWeight: '500', color: colors.charcoal, marginBottom: '2px' }}>{store.name}</div>
@@ -1015,7 +1198,7 @@ export default function SaladProject() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          <div className="sp-opportunities-grid">
             {aiOpportunities.map((opp, i) => (
               <div key={i} className="sp-opportunity-card" style={{ padding: '20px', backgroundColor: colors.cream, borderRadius: '16px', cursor: 'pointer' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
@@ -1057,7 +1240,7 @@ export default function SaladProject() {
         </div>
 
         {/* Footer */}
-        <div style={{ marginTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: colors.warmGray }}>
+        <div className="sp-footer" style={{ marginTop: '32px', fontSize: '12px', color: colors.warmGray }}>
           <div>SP Command Centre • Built by P0STMAN</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -1072,7 +1255,7 @@ export default function SaladProject() {
 
         {/* Floating Voice Assistant Orb */}
         <div
-          className="sp-voice-orb"
+          className="sp-voice-orb sp-floating-orb"
           style={{
             position: 'fixed',
             bottom: '32px',
