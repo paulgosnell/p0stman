@@ -2,60 +2,6 @@
 // Three dashboards: Menu Performance, Store Quality, Customer Insights
 // AI-informed hero sections with drill-down capability
 
-// Lucide-style icons as inline SVGs
-const Icons = {
-  Mic: ({ size = 16, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/>
-    </svg>
-  ),
-  Bot: ({ size = 14, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/>
-      <path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>
-    </svg>
-  ),
-  BarChart: ({ size = 14, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
-    </svg>
-  ),
-  List: ({ size = 14, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
-      <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
-    </svg>
-  ),
-  UtensilsCrossed: ({ size = 16, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/>
-      <path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/>
-      <path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/>
-    </svg>
-  ),
-  Star: ({ size = 16, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-    </svg>
-  ),
-  MessageCircle: ({ size = 16, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>
-    </svg>
-  ),
-  MapPin: ({ size = 12, color = 'currentColor' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-    </svg>
-  ),
-  Circle: ({ size = 8, color = 'currentColor', fill = 'none' }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={color} strokeWidth="2">
-      <circle cx="12" cy="12" r="10"/>
-    </svg>
-  )
-};
-
 const SPProductDeepDive = ({ onBack }) => {
   const [activeTab, setActiveTab] = React.useState('menu');
   const [viewMode, setViewMode] = React.useState('chart');
@@ -186,7 +132,7 @@ const SPProductDeepDive = ({ onBack }) => {
               gap: '8px'
             }}
           >
-            {meetingMode ? <><Icons.Circle size={8} fill="#fff" color="#fff" /> Recording</> : <><Icons.Mic size={14} color="white" /> Start Meeting</>}
+            {meetingMode ? '● Recording' : '🎙️ Start Meeting'}
           </button>
         </div>
 
@@ -197,7 +143,7 @@ const SPProductDeepDive = ({ onBack }) => {
           fontSize: '14px',
           lineHeight: '1.6'
         }}>
-          <span style={{ opacity: 0.7, display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icons.Bot size={14} /> AI Summary:</span> {menuHealth.topMover} is your star this week (+12%). Keep an eye on {menuHealth.concern}.
+          <span style={{ opacity: 0.7 }}>🤖 AI Summary:</span> {menuHealth.topMover} is your star this week (+12%). Keep an eye on {menuHealth.concern}.
         </div>
 
         {meetingMode && (
@@ -251,7 +197,7 @@ const SPProductDeepDive = ({ onBack }) => {
                 boxShadow: viewMode === mode ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
               }}
             >
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>{mode === 'chart' ? <><Icons.BarChart size={14} /> Chart</> : <><Icons.List size={14} /> Table</>}</span>
+              {mode === 'chart' ? '📊 Chart' : '📋 Table'}
             </button>
           ))}
         </div>
@@ -510,7 +456,7 @@ const SPProductDeepDive = ({ onBack }) => {
           fontSize: '14px',
           lineHeight: '1.6'
         }}>
-          <span style={{ opacity: 0.7, display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icons.Bot size={14} /> AI Summary:</span> {qualityScore.topStore} is leading the pack. Heads up: {qualityScore.concern}. Might be worth a check-in.
+          <span style={{ opacity: 0.7 }}>🤖 AI Summary:</span> {qualityScore.topStore} is leading the pack. Heads up: {qualityScore.concern}. Might be worth a check-in.
         </div>
       </div>
 
@@ -660,7 +606,7 @@ const SPProductDeepDive = ({ onBack }) => {
           lineHeight: '1.6',
           marginTop: '20px'
         }}>
-          <span style={{ opacity: 0.7, display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icons.Bot size={14} /> AI Summary:</span> {insightsScore.highlight}. Note: {insightsScore.concern} — worth considering for Q2 menu.
+          <span style={{ opacity: 0.7 }}>🤖 AI Summary:</span> {insightsScore.highlight}. Note: {insightsScore.concern} — worth considering for Q2 menu.
         </div>
       </div>
 
@@ -700,7 +646,7 @@ const SPProductDeepDive = ({ onBack }) => {
               <p style={{ fontSize: '14px', color: '#333', margin: '0 0 8px 0', lineHeight: '1.5' }}>
                 "{feedback.text}"
               </p>
-              <span style={{ fontSize: '12px', color: '#888', display: 'inline-flex', alignItems: 'center', gap: '4px' }}><Icons.MapPin size={12} /> {feedback.store}</span>
+              <span style={{ fontSize: '12px', color: '#888' }}>📍 {feedback.store}</span>
             </div>
           ))}
         </div>
@@ -757,9 +703,9 @@ const SPProductDeepDive = ({ onBack }) => {
         borderBottom: '1px solid #F0F0F0'
       }}>
         {[
-          { id: 'menu', label: 'Menu' },
-          { id: 'quality', label: 'Quality' },
-          { id: 'insights', label: 'Insights' }
+          { id: 'menu', label: 'Menu', icon: '🍽️' },
+          { id: 'quality', label: 'Quality', icon: '⭐' },
+          { id: 'insights', label: 'Insights', icon: '💬' }
         ].map(tab => (
           <button
             key={tab.id}
@@ -780,9 +726,7 @@ const SPProductDeepDive = ({ onBack }) => {
               gap: '6px'
             }}
           >
-            {tab.id === 'menu' && <Icons.UtensilsCrossed size={16} />}
-            {tab.id === 'quality' && <Icons.Star size={16} />}
-            {tab.id === 'insights' && <Icons.MessageCircle size={16} />}
+            <span>{tab.icon}</span>
             {tab.label}
           </button>
         ))}
@@ -835,3 +779,4 @@ const SPProductDeepDive = ({ onBack }) => {
     </div>
   );
 };
+
