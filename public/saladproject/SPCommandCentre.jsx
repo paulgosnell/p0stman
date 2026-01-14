@@ -2,12 +2,12 @@
 // The AI briefs you. You don't interrogate dashboards.
 
 const SPCommandCentre = ({ onInsightClick }) => {
-  const [isListening, setIsListening] = useState(false);
-  const [showDetail, setShowDetail] = useState(null);
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const [aiTyping, setAiTyping] = useState(true);
+  const [isListening, setIsListening] = React.useState(false);
+  const [showDetail, setShowDetail] = React.useState(null);
+  const [currentTime, setCurrentTime] = React.useState(new Date());
+  const [aiTyping, setAiTyping] = React.useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setTimeout(() => setAiTyping(false), 2000);
     return () => clearTimeout(timer);
   }, []);

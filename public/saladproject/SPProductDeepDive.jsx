@@ -3,10 +3,10 @@
 // AI-informed hero sections with drill-down capability
 
 const SPProductDeepDive = ({ onBack }) => {
-  const [activeTab, setActiveTab] = useState('menu');
-  const [viewMode, setViewMode] = useState('chart');
-  const [meetingMode, setMeetingMode] = useState(false);
-  const [selectedStore, setSelectedStore] = useState(null);
+  const [activeTab, setActiveTab] = React.useState('menu');
+  const [viewMode, setViewMode] = React.useState('chart');
+  const [meetingMode, setMeetingMode] = React.useState(false);
+  const [selectedStore, setSelectedStore] = React.useState(null);
 
   // ============ MENU PERFORMANCE DATA ============
   const menuHealth = {
