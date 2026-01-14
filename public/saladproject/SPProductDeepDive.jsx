@@ -757,9 +757,9 @@ const SPProductDeepDive = ({ onBack }) => {
         borderBottom: '1px solid #F0F0F0'
       }}>
         {[
-          { id: 'menu', label: 'Menu', icon: <Icons.UtensilsCrossed size={16} /> },
-          { id: 'quality', label: 'Quality', icon: <Icons.Star size={16} /> },
-          { id: 'insights', label: 'Insights', icon: <Icons.MessageCircle size={16} /> }
+          { id: 'menu', label: 'Menu' },
+          { id: 'quality', label: 'Quality' },
+          { id: 'insights', label: 'Insights' }
         ].map(tab => (
           <button
             key={tab.id}
@@ -780,7 +780,9 @@ const SPProductDeepDive = ({ onBack }) => {
               gap: '6px'
             }}
           >
-            <span>{tab.icon}</span>
+            {tab.id === 'menu' && <Icons.UtensilsCrossed size={16} />}
+            {tab.id === 'quality' && <Icons.Star size={16} />}
+            {tab.id === 'insights' && <Icons.MessageCircle size={16} />}
             {tab.label}
           </button>
         ))}
