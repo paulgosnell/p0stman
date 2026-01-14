@@ -1,6 +1,37 @@
 // SP Command Centre - AI First
 // The AI briefs you. You don't interrogate dashboards.
 
+// Lucide-style icons as inline SVGs
+const Icons = {
+  Leaf: ({ size = 16, color = 'currentColor' }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+    </svg>
+  ),
+  Lightbulb: ({ size = 14, color = 'currentColor' }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+      <path d="M9 18h6"/><path d="M10 22h4"/>
+    </svg>
+  ),
+  TrendingUp: ({ size = 14, color = 'currentColor' }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+    </svg>
+  ),
+  Zap: ({ size = 14, color = 'currentColor' }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </svg>
+  ),
+  AlertCircle: ({ size = 14, color = 'currentColor' }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+  )
+};
+
 const SPCommandCentre = ({ onInsightClick }) => {
   const [isListening, setIsListening] = React.useState(false);
   const [showDetail, setShowDetail] = React.useState(null);
@@ -101,8 +132,9 @@ const SPCommandCentre = ({ onInsightClick }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '16px'
-          }}>🥗</div>
+            fontSize: '16px',
+            color: 'white'
+          }}><Icons.Leaf size={18} color="white" /></div>
           <span style={{ 
             fontSize: '15px', 
             fontWeight: '600', 
@@ -331,7 +363,7 @@ const SPCommandCentre = ({ onInsightClick }) => {
                               fontWeight: '500',
                               lineHeight: '1.5'
                             }}>
-                              💡 {insight.action}
+                              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Icons.Lightbulb size={14} /> {insight.action}</span>
                             </p>
                           </div>
                         )}
