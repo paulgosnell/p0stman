@@ -484,5 +484,3 @@ const SPCommandCentre = ({ onInsightClick }) => {
     </div>
   );
 };
-
-export default SPCommandCentre;

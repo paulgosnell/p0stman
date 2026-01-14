@@ -779,5 +779,3 @@ const SPProductDeepDive = ({ onBack }) => {
     </div>
   );
 };
-
-export default SPProductDeepDive;
