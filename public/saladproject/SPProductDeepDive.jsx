@@ -637,7 +637,7 @@ const SPProductDeepDive = ({ onBack }) => {
                     fontWeight: '600',
                     color: feedback.rating >= 4 ? '#2E7D32' : feedback.rating >= 3 ? '#F57F17' : '#C62828'
                   }}>
-                    {'★'.repeat(feedback.rating)}{'☆'.repeat(5 - feedback.rating)}
+                    {'★'.repeat(Math.min(feedback.rating, 5))}{'☆'.repeat(Math.max(0, 5 - feedback.rating))}
                   </span>
                   <span style={{ fontSize: '12px', color: '#888' }}>{feedback.source}</span>
                 </div>
