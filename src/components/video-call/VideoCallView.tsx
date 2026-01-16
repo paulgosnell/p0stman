@@ -81,13 +81,45 @@ export function VideoCallView({
     }
   }, [isOpen, avatar.isConnected, avatar.isConnecting]);
 
-  // Send Gemini audio to avatar
+  // Send Gemini audio to avatar with resampling
   useEffect(() => {
     if (geminiAudioData && avatar.isConnected) {
-      // Convert ArrayBuffer to Uint8Array for Simli
-      // Note: May need to resample from 24kHz (Gemini) to 16kHz (Simli)
-      const audioData = new Uint8Array(geminiAudioData);
-      avatar.sendAudio(audioData);
+      // Gemini sends PCM16 at 24kHz, Simli expects PCM16 at 16kHz
+      // We need to resample the audio
+      const inputSampleRate = 24000;
+      const outputSampleRate = 16000;
+
+      // Convert ArrayBuffer (PCM16) to Float32 for resampling
+      const int16Array = new Int16Array(geminiAudioData);
+      const float32Array = new Float32Array(int16Array.length);
+      for (let i = 0; i < int16Array.length; i++) {
+        float32Array[i] = int16Array[i] / 32768;
+      }
+
+      // Resample from 24kHz to 16kHz
+      const ratio = inputSampleRate / outputSampleRate;
+      const outputLength = Math.floor(float32Array.length / ratio);
+      const resampledFloat = new Float32Array(outputLength);
+
+      for (let i = 0; i < outputLength; i++) {
+        const srcIndex = i * ratio;
+        const srcIndexFloor = Math.floor(srcIndex);
+        const srcIndexCeil = Math.min(srcIndexFloor + 1, float32Array.length - 1);
+        const t = srcIndex - srcIndexFloor;
+        // Linear interpolation
+        resampledFloat[i] = float32Array[srcIndexFloor] * (1 - t) + float32Array[srcIndexCeil] * t;
+      }
+
+      // Convert back to PCM16 Uint8Array for Simli
+      const outputBuffer = new ArrayBuffer(resampledFloat.length * 2);
+      const outputView = new DataView(outputBuffer);
+      for (let i = 0; i < resampledFloat.length; i++) {
+        const s = Math.max(-1, Math.min(1, resampledFloat[i]));
+        const val = s < 0 ? s * 0x8000 : s * 0x7fff;
+        outputView.setInt16(i * 2, val, true); // little-endian
+      }
+
+      avatar.sendAudio(new Uint8Array(outputBuffer));
     }
   }, [geminiAudioData, avatar.isConnected, avatar.sendAudio]);
 

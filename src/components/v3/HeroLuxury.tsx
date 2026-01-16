@@ -100,11 +100,18 @@ export default function HeroLuxury() {
     }
   }, []);
 
+  // Audio data for avatar lip-sync
+  const [avatarAudioData, setAvatarAudioData] = useState<ArrayBuffer | null>(null);
+
   const voiceAgent = useGeminiVoiceWaveform(undefined, {
     voice: voiceSettings.voice as GeminiLiveVoice,
     threshold: voiceSettings.threshold,
     silenceDuration: voiceSettings.silenceDuration,
     onLeadCollected: handleLeadCollected,
+    onAudioReceived: useCallback((audioData: ArrayBuffer) => {
+      // Pass audio to avatar for lip-sync
+      setAvatarAudioData(audioData);
+    }, []),
   });
 
   // Gesture detection state
@@ -490,6 +497,7 @@ export default function HeroLuxury() {
         isOpen={showVideoCall}
         onClose={handleStopCamera}
         userStream={streamRef.current}
+        geminiAudioData={avatarAudioData}
         isGeminiConnected={voiceAgent.isConnected}
         isGeminiSpeaking={voiceAgent.isSpeaking}
       />

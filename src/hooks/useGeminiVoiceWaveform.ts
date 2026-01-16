@@ -41,6 +41,8 @@ export interface UseGeminiVoiceWaveformOptions {
   silenceDuration?: number;
   /** Callback when lead info is collected */
   onLeadCollected?: (lead: CollectedLead) => void;
+  /** Callback when audio is received from Gemini (for avatar lip-sync) */
+  onAudioReceived?: (audioData: ArrayBuffer) => void;
 }
 
 const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN (pronounced "postman" - the zero is stylistic), an AI-powered product studio based in Dubai that builds intelligent software products.
@@ -89,6 +91,7 @@ export function useGeminiVoiceWaveform(
     firstMessage = DEFAULT_FIRST_MESSAGE,
     voice = DEFAULT_GEMINI_VOICE,
     onLeadCollected,
+    onAudioReceived,
   } = options;
 
   // State
@@ -248,11 +251,13 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
             // Not JSON, treat as binary audio
             const arrayBuffer = await event.data.arrayBuffer();
             audioQueueRef.current.push(arrayBuffer);
+            onAudioReceived?.(arrayBuffer); // Send to avatar for lip-sync
             playAudioQueue();
             return;
           }
         } else if (event.data instanceof ArrayBuffer) {
           audioQueueRef.current.push(event.data);
+          onAudioReceived?.(event.data); // Send to avatar for lip-sync
           playAudioQueue();
           return;
         } else {
@@ -303,6 +308,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
               if (part.inlineData?.data) {
                 const audioBuffer = base64ToArrayBuffer(part.inlineData.data);
                 audioQueueRef.current.push(audioBuffer);
+                onAudioReceived?.(audioBuffer); // Send to avatar for lip-sync
                 playAudioQueue();
               }
             }
@@ -351,7 +357,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         console.error('Error parsing message:', e);
       }
     },
-    [firstMessage, playAudioQueue, onLeadCollected]
+    [firstMessage, playAudioQueue, onLeadCollected, onAudioReceived]
   );
 
   // Start conversation
