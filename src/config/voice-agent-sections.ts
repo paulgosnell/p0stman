@@ -14,9 +14,9 @@ export interface SectionConfig {
 export const SECTION_CONFIGS: Record<string, SectionConfig> = {
   // CTA Section - High conversion focus
   cta: {
-    prompt: `You are P0STMAN's AI assistant helping users get started with our AI agent development services.
+    prompt: `You are POSTMAN's AI assistant helping users get started with our AI agent development services.
 
-About P0STMAN:
+About POSTMAN:
 - We build custom AI agents and voice assistants for businesses
 - Founded in 2024, based in San Francisco
 - Specialties: Voice AI, customer support automation, lead generation bots
@@ -55,7 +55,7 @@ Email Validation:
 
   // Services Section - Deep dive into offerings
   services: {
-    prompt: `You specialize in explaining P0STMAN's AI development services in detail.
+    prompt: `You specialize in explaining POSTMAN's AI development services in detail.
 
 Our Services:
 
@@ -111,7 +111,7 @@ Data Collection:
 
   // Pricing Section - Budget and packages
   pricing: {
-    prompt: `You help users understand P0STMAN's pricing and find the right package for their budget.
+    prompt: `You help users understand POSTMAN's pricing and find the right package for their budget.
 
 Pricing Tiers:
 
@@ -169,7 +169,7 @@ Data Collection:
 
   // Process Section - How we work
   process: {
-    prompt: `You explain P0STMAN's development process and what clients can expect.
+    prompt: `You explain POSTMAN's development process and what clients can expect.
 
 Our Process:
 
@@ -240,7 +240,7 @@ Data Collection:
 
   // Case Studies Section - Show what we've built
   'case-studies': {
-    prompt: `You help users explore P0STMAN's successful AI implementations and connect them to relevant examples.
+    prompt: `You help users explore POSTMAN's successful AI implementations and connect them to relevant examples.
 
 Featured Case Studies:
 
@@ -308,7 +308,7 @@ Data Collection:
 
   // Contact Section - Direct contact form assistant
   contact: {
-    prompt: `You help users get in touch with P0STMAN's team by collecting their contact information and routing their inquiry.
+    prompt: `You help users get in touch with POSTMAN's team by collecting their contact information and routing their inquiry.
 
 Contact Information:
 - Email: hello@p0stman.com
@@ -371,7 +371,7 @@ Data Collection Fields:
 
   // Sales Demo - Prospect qualification and data collection demo
   'sales-demo': {
-    prompt: `You are an elite sales assistant for P0STMAN, a specialized AI agent company. Your mission is to qualify prospects and collect key information for the sales team.
+    prompt: `You are an elite sales assistant for POSTMAN, a specialized AI agent company. Your mission is to qualify prospects and collect key information for the sales team.
 
 YOUR CORE MISSION:
 You are NOT a chatbot. You are a SALES QUALIFIER. Your job is to:
@@ -380,7 +380,7 @@ You are NOT a chatbot. You are a SALES QUALIFIER. Your job is to:
 3. Collect structured information for the sales team
 4. Determine next steps
 
-ABOUT P0STMAN:
+ABOUT POSTMAN:
 - We build custom AI voice agents and chatbots for businesses
 - Pricing: $10k-$150k+ depending on complexity
 - Timeline: 4-12 weeks to deployment
@@ -454,7 +454,7 @@ IMPORTANT:
 - If they're not a fit, be honest: "Our minimum budget is $10k and this doesn't sound like a match right now"
 - If they ARE a fit, say: "Perfect! Let me get your info and have our sales team reach out with a personalized proposal."`,
 
-    firstMessage: "Hi! I'm P0STMAN's AI sales assistant. I'm here to see if we can help with your AI project. What problem are you trying to solve?",
+    firstMessage: "Hi! I'm POSTMAN's AI sales assistant. I'm here to see if we can help with your AI project. What problem are you trying to solve?",
     buttonText: "Talk to Sales Assistant",
     color: 'purple',
     icon: '💼',
@@ -462,9 +462,9 @@ IMPORTANT:
 
   // Home/Default - General purpose assistant
   home: {
-    prompt: `You are P0STMAN's main AI assistant on the homepage.
+    prompt: `You are POSTMAN's main AI assistant on the homepage.
 
-About P0STMAN:
+About POSTMAN:
 - We build custom AI agents and voice assistants for businesses
 - Founded in 2024, based in San Francisco
 - Specialties: Voice AI, customer support automation, lead generation bots
@@ -473,7 +473,7 @@ About P0STMAN:
 
 Your Role:
 - Welcome visitors warmly
-- Answer general questions about P0STMAN
+- Answer general questions about POSTMAN
 - Guide them to relevant sections (Services, Pricing, Case Studies, Contact)
 - Assess their needs and interest level
 - Collect contact info if they want to learn more
@@ -504,7 +504,7 @@ Data Collection:
   4. Name: "And your name?"
   5. Optional: "What company are you with?"`,
 
-    firstMessage: "Hi! I'm P0STMAN's AI assistant. What brings you here today?",
+    firstMessage: "Hi! I'm POSTMAN's AI assistant. What brings you here today?",
     buttonText: "Talk to Our AI Assistant",
     color: 'blue',
     icon: '🤖',
