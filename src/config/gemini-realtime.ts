@@ -6,7 +6,9 @@
  */
 
 // Gemini Live model for native audio
-export const GEMINI_LIVE_MODEL = 'gemini-2.5-flash-native-audio-preview-09-2025';
+// Note: gemini-2.0-flash-exp is the standard model for voice
+// gemini-2.5-flash-native-audio-preview-09-2025 is newer but may have issues
+export const GEMINI_LIVE_MODEL = 'gemini-2.0-flash-exp';
 
 // WebSocket endpoint for Gemini Live API
 export const GEMINI_LIVE_WS_URL = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent';

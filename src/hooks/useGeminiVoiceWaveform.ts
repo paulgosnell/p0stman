@@ -43,6 +43,8 @@ export interface UseGeminiVoiceWaveformOptions {
   onLeadCollected?: (lead: CollectedLead) => void;
   /** Callback when audio is received from Gemini (for avatar lip-sync) */
   onAudioReceived?: (audioData: ArrayBuffer) => void;
+  /** Mute direct audio playback (when using avatar for lip-sync) */
+  muteDirectAudio?: boolean;
 }
 
 const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN (pronounced "postman" - the zero is stylistic), an AI-powered product studio based in Dubai that builds intelligent software products.
@@ -92,7 +94,12 @@ export function useGeminiVoiceWaveform(
     voice = DEFAULT_GEMINI_VOICE,
     onLeadCollected,
     onAudioReceived,
+    muteDirectAudio = false,
   } = options;
+
+  // Use ref to track muteDirectAudio so callback always has current value
+  const muteDirectAudioRef = useRef(muteDirectAudio);
+  muteDirectAudioRef.current = muteDirectAudio;
 
   // State
   const [status, setStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected');
@@ -166,6 +173,28 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
   const playAudioQueue = useCallback(async () => {
     if (audioQueueRef.current.length === 0) return;
 
+    // If muted (avatar mode), just clear the queue and track speaking state
+    if (muteDirectAudioRef.current) {
+      console.log('Audio muted - avatar mode active, skipping direct playback');
+      // Still track speaking state for UI
+      if (!isPlayingRef.current && audioQueueRef.current.length > 0) {
+        isPlayingRef.current = true;
+        if (isMountedRef.current) {
+          setIsSpeaking(true);
+        }
+      }
+      // Clear the queue (audio is sent to avatar via onAudioReceived)
+      audioQueueRef.current = [];
+      // Reset speaking state after a delay
+      setTimeout(() => {
+        isPlayingRef.current = false;
+        if (isMountedRef.current) {
+          setIsSpeaking(false);
+        }
+      }, 500);
+      return;
+    }
+
     // Create playback context if needed (at 24kHz for Gemini output)
     if (!playbackContextRef.current) {
       playbackContextRef.current = new AudioContext({
@@ -234,7 +263,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         console.error('Error playing audio:', e);
       }
     }
-  }, []);
+  }, []); // No deps needed - uses refs for current values
 
   // Handle WebSocket messages
   const handleMessage = useCallback(
@@ -249,6 +278,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
             data = JSON.parse(text);
           } catch {
             // Not JSON, treat as binary audio
+            console.log('[Gemini] Received binary audio blob');
             const arrayBuffer = await event.data.arrayBuffer();
             audioQueueRef.current.push(arrayBuffer);
             onAudioReceived?.(arrayBuffer); // Send to avatar for lip-sync
@@ -256,6 +286,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
             return;
           }
         } else if (event.data instanceof ArrayBuffer) {
+          console.log('[Gemini] Received ArrayBuffer audio');
           audioQueueRef.current.push(event.data);
           onAudioReceived?.(event.data); // Send to avatar for lip-sync
           playAudioQueue();
@@ -264,21 +295,27 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
           data = JSON.parse(event.data);
         }
 
+        // Log all parsed messages for debugging
+        console.log('[Gemini] Message received:', Object.keys(data));
+
         // Handle error from server
         if (data.error) {
-          console.error('Gemini error:', data.error);
+          console.error('[Gemini] Error:', data.error);
           return;
         }
 
         // Handle setup complete
         if (data.setupComplete) {
+          console.log('[Gemini] Setup complete - connection ready');
           if (isMountedRef.current) {
             setStatus('connected');
           }
 
           // Send first message if provided
           if (firstMessage && wsRef.current) {
+            console.log('[Gemini] Sending first message in 500ms...');
             setTimeout(() => {
+              console.log('[Gemini] Sending first message now:', firstMessage.substring(0, 50) + '...');
               wsRef.current?.send(
                 JSON.stringify({
                   clientContent: {
@@ -300,16 +337,27 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         // Handle server content (audio/text responses)
         if (data.serverContent) {
           const content = data.serverContent;
+          console.log('[Gemini] Server content received:', {
+            hasModelTurn: !!content.modelTurn,
+            turnComplete: content.turnComplete,
+            interrupted: content.interrupted,
+          });
 
           // Handle model turn
           if (content.modelTurn?.parts) {
+            console.log('[Gemini] Model turn parts:', content.modelTurn.parts.length);
             for (const part of content.modelTurn.parts) {
               // Handle inline audio data
               if (part.inlineData?.data) {
+                console.log('[Gemini] Audio data received, mime:', part.inlineData.mimeType, 'size:', part.inlineData.data.length);
                 const audioBuffer = base64ToArrayBuffer(part.inlineData.data);
                 audioQueueRef.current.push(audioBuffer);
                 onAudioReceived?.(audioBuffer); // Send to avatar for lip-sync
                 playAudioQueue();
+              }
+              // Log text parts too
+              if (part.text) {
+                console.log('[Gemini] Text response:', part.text.substring(0, 100) + '...');
               }
             }
           }
@@ -412,7 +460,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       wsRef.current = ws;
 
       ws.onopen = () => {
-        console.log('WebSocket connected');
+        console.log('[Gemini] WebSocket connected, sending setup with voice:', voice);
 
         // Send setup message
         const setupMessage = {
@@ -460,14 +508,14 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       ws.onmessage = handleMessage;
 
       ws.onerror = (e) => {
-        console.error('WebSocket error:', e);
+        console.error('[Gemini] WebSocket error:', e);
         if (isMountedRef.current) {
           setStatus('disconnected');
         }
       };
 
       ws.onclose = (e) => {
-        console.log('WebSocket closed:', e.code, e.reason);
+        console.log('[Gemini] WebSocket closed:', e.code, e.reason);
         if (isMountedRef.current) {
           setStatus('disconnected');
         }
@@ -538,7 +586,7 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
           }
           if (data.setupComplete) {
             isConnected = true;
-            console.log('Audio input enabled');
+            console.log('[Gemini] Audio input enabled - now sending microphone data');
           }
         } catch {}
       });

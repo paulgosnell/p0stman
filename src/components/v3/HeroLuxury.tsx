@@ -12,7 +12,7 @@ import type { GeminiLiveVoice } from '../../config/gemini-realtime';
 import { supabase } from '../../lib/supabase';
 
 const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
-  voice: 'Puck',
+  voice: 'Kore', // Female voice to match Kate avatar
   silenceDuration: 500,
   threshold: 0.5,
 };
@@ -100,8 +100,8 @@ export default function HeroLuxury() {
     }
   }, []);
 
-  // Audio data for avatar lip-sync
-  const [avatarAudioData, setAvatarAudioData] = useState<ArrayBuffer | null>(null);
+  // Audio queue ref for avatar lip-sync (bypasses React state batching for correct order)
+  const avatarAudioQueueRef = useRef<ArrayBuffer[]>([]);
 
   const voiceAgent = useGeminiVoiceWaveform(undefined, {
     voice: voiceSettings.voice as GeminiLiveVoice,
@@ -109,9 +109,10 @@ export default function HeroLuxury() {
     silenceDuration: voiceSettings.silenceDuration,
     onLeadCollected: handleLeadCollected,
     onAudioReceived: useCallback((audioData: ArrayBuffer) => {
-      // Pass audio to avatar for lip-sync
-      setAvatarAudioData(audioData);
+      // Push directly to queue ref - bypasses React state batching
+      avatarAudioQueueRef.current.push(audioData);
     }, []),
+    muteDirectAudio: showVideoCall, // Mute Gemini's direct audio when avatar is showing
   });
 
   // Gesture detection state
@@ -180,6 +181,12 @@ export default function HeroLuxury() {
       streamRef.current = stream;
       setIsCameraActive(true);
       setShowVideoCall(true); // Show the full video call view
+
+      // Auto-start voice agent for video call (so avatar can talk)
+      if (!isVoiceActive) {
+        voiceAgent.startConversation();
+        setIsVoiceActive(true);
+      }
     } catch (error) {
       console.error('Failed to start camera:', error);
       alert('Unable to access camera. Please ensure camera permissions are allowed.');
@@ -223,6 +230,12 @@ export default function HeroLuxury() {
     }
     setIsCameraActive(false);
     setShowVideoCall(false);
+
+    // Also stop voice agent when ending video call
+    if (isVoiceActive) {
+      voiceAgent.stopConversation();
+      setIsVoiceActive(false);
+    }
   };
 
   const scrollToContent = () => {
@@ -497,7 +510,7 @@ export default function HeroLuxury() {
         isOpen={showVideoCall}
         onClose={handleStopCamera}
         userStream={streamRef.current}
-        geminiAudioData={avatarAudioData}
+        audioQueueRef={avatarAudioQueueRef}
         isGeminiConnected={voiceAgent.isConnected}
         isGeminiSpeaking={voiceAgent.isSpeaking}
       />

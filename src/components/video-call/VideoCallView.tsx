@@ -25,6 +25,7 @@ interface VideoCallViewProps {
   geminiAudioData?: ArrayBuffer | null; // Audio data from Gemini to send to avatar
   isGeminiConnected?: boolean;
   isGeminiSpeaking?: boolean;
+  audioQueueRef?: React.MutableRefObject<ArrayBuffer[]>; // Direct ref to audio queue (bypasses React state)
 }
 
 export function VideoCallView({
@@ -34,6 +35,7 @@ export function VideoCallView({
   geminiAudioData,
   isGeminiConnected = false,
   isGeminiSpeaking = false,
+  audioQueueRef: externalAudioQueueRef,
 }: VideoCallViewProps) {
   // Refs for media elements
   const userVideoRef = useRef<HTMLVideoElement>(null);
@@ -67,6 +69,12 @@ export function VideoCallView({
     }
   }, [currentGesture]);
 
+  // Single audio queue - use external ref if provided (bypasses React state batching)
+  const internalAudioQueueRef = useRef<ArrayBuffer[]>([]);
+  const audioQueueRef = externalAudioQueueRef || internalAudioQueueRef;
+  const isProcessingRef = useRef(false);
+  const processIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
   // Connect user stream to video element
   useEffect(() => {
     if (userVideoRef.current && userStream) {
@@ -77,51 +85,75 @@ export function VideoCallView({
   // Connect avatar when view opens
   useEffect(() => {
     if (isOpen && !avatar.isConnected && !avatar.isConnecting) {
+      // Clear any stale audio from previous session
+      audioQueueRef.current = [];
       avatar.connect();
     }
   }, [isOpen, avatar.isConnected, avatar.isConnecting]);
 
-  // Send Gemini audio to avatar with resampling
-  useEffect(() => {
-    if (geminiAudioData && avatar.isConnected) {
-      // Gemini sends PCM16 at 24kHz, Simli expects PCM16 at 16kHz
-      // We need to resample the audio
-      const inputSampleRate = 24000;
-      const outputSampleRate = 16000;
+  // Resample 24kHz to 16kHz (Simli's expected format)
+  const resampleTo16k = useCallback((audioData: ArrayBuffer): Uint8Array => {
+    const input = new Int16Array(audioData);
+    const outputLen = Math.floor(input.length / 1.5);
+    const output = new Int16Array(outputLen);
 
-      // Convert ArrayBuffer (PCM16) to Float32 for resampling
-      const int16Array = new Int16Array(geminiAudioData);
-      const float32Array = new Float32Array(int16Array.length);
-      for (let i = 0; i < int16Array.length; i++) {
-        float32Array[i] = int16Array[i] / 32768;
-      }
-
-      // Resample from 24kHz to 16kHz
-      const ratio = inputSampleRate / outputSampleRate;
-      const outputLength = Math.floor(float32Array.length / ratio);
-      const resampledFloat = new Float32Array(outputLength);
-
-      for (let i = 0; i < outputLength; i++) {
-        const srcIndex = i * ratio;
-        const srcIndexFloor = Math.floor(srcIndex);
-        const srcIndexCeil = Math.min(srcIndexFloor + 1, float32Array.length - 1);
-        const t = srcIndex - srcIndexFloor;
-        // Linear interpolation
-        resampledFloat[i] = float32Array[srcIndexFloor] * (1 - t) + float32Array[srcIndexCeil] * t;
-      }
-
-      // Convert back to PCM16 Uint8Array for Simli
-      const outputBuffer = new ArrayBuffer(resampledFloat.length * 2);
-      const outputView = new DataView(outputBuffer);
-      for (let i = 0; i < resampledFloat.length; i++) {
-        const s = Math.max(-1, Math.min(1, resampledFloat[i]));
-        const val = s < 0 ? s * 0x8000 : s * 0x7fff;
-        outputView.setInt16(i * 2, val, true); // little-endian
-      }
-
-      avatar.sendAudio(new Uint8Array(outputBuffer));
+    for (let i = 0; i < outputLen; i++) {
+      const srcIdx = i * 1.5;
+      const floor = Math.floor(srcIdx);
+      const ceil = Math.min(floor + 1, input.length - 1);
+      const t = srcIdx - floor;
+      output[i] = Math.round(input[floor] * (1 - t) + input[ceil] * t);
     }
-  }, [geminiAudioData, avatar.isConnected, avatar.sendAudio]);
+
+    return new Uint8Array(output.buffer);
+  }, []);
+
+  // Process queue: send chunks to Simli at controlled rate
+  const processAudioQueue = useCallback(() => {
+    if (!avatar.isConnected || audioQueueRef.current.length === 0) return;
+
+    // Take first chunk from queue (FIFO order)
+    const chunk = audioQueueRef.current.shift();
+    if (chunk) {
+      avatar.sendAudio(resampleTo16k(chunk));
+    }
+  }, [avatar.isConnected, avatar.sendAudio, resampleTo16k]);
+
+  // Start processing when avatar connects
+  useEffect(() => {
+    if (avatar.isConnected && !isProcessingRef.current) {
+      isProcessingRef.current = true;
+      // Process queue every 30ms (~match Gemini's chunk rate)
+      processIntervalRef.current = setInterval(processAudioQueue, 30);
+    }
+
+    if (!avatar.isConnected) {
+      isProcessingRef.current = false;
+      if (processIntervalRef.current) {
+        clearInterval(processIntervalRef.current);
+        processIntervalRef.current = null;
+      }
+    }
+  }, [avatar.isConnected, processAudioQueue]);
+
+  // Add audio to queue as it arrives (only if using legacy prop, not external ref)
+  // When using external ref, parent pushes directly to skip React state batching
+  useEffect(() => {
+    if (externalAudioQueueRef) return; // Skip if using external ref
+    if (!geminiAudioData) return;
+    audioQueueRef.current.push(geminiAudioData);
+  }, [geminiAudioData, externalAudioQueueRef]);
+
+  // Cleanup
+  useEffect(() => {
+    return () => {
+      if (processIntervalRef.current) {
+        clearInterval(processIntervalRef.current);
+      }
+      audioQueueRef.current = [];
+      isProcessingRef.current = false;
+    };
+  }, []);
 
   // Handle mute toggle
   const toggleMute = useCallback(() => {
