@@ -6,6 +6,7 @@ import AnimatedWaveform from './AnimatedWaveform';
 import { useGeminiVoiceWaveform, CollectedLead } from '../../hooks/useGeminiVoiceWaveform';
 import { useGestureDetection, DetectedGesture } from '../../hooks/useGestureDetection';
 import { GestureEffects, GestureIndicator } from '../effects/GestureEffects';
+import { VideoCallView } from '../video-call/VideoCallView';
 import VoiceAgentSettings, { VoiceSettings } from './VoiceAgentSettings';
 import type { GeminiLiveVoice } from '../../config/gemini-realtime';
 import { supabase } from '../../lib/supabase';
@@ -65,6 +66,7 @@ const VIDEO_ASPECT_RATIO = 4 / 3; // width / height
 export default function HeroLuxury() {
   const [isVoiceActive, setIsVoiceActive] = useState(false);
   const [isCameraActive, setIsCameraActive] = useState(false);
+  const [showVideoCall, setShowVideoCall] = useState(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(() =>
     Math.floor(Math.random() * CASE_STUDY_VIDEOS.length)
   );
@@ -163,12 +165,14 @@ export default function HeroLuxury() {
 
   const handleStartCamera = async () => {
     try {
+      // Request higher quality video for the video call view
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'user', width: 320, height: 240 }
+        video: { facingMode: 'user', width: 1280, height: 720 },
+        audio: true, // Also get audio for the video call
       });
       streamRef.current = stream;
-      // Set camera active first so the video element renders
       setIsCameraActive(true);
+      setShowVideoCall(true); // Show the full video call view
     } catch (error) {
       console.error('Failed to start camera:', error);
       alert('Unable to access camera. Please ensure camera permissions are allowed.');
@@ -211,6 +215,7 @@ export default function HeroLuxury() {
       videoRef.current.srcObject = null;
     }
     setIsCameraActive(false);
+    setShowVideoCall(false);
   };
 
   const scrollToContent = () => {
@@ -479,6 +484,15 @@ export default function HeroLuxury() {
 
       {/* Gesture Effects (emoji rain, confetti, etc.) */}
       <GestureEffects gesture={detectedGesture} containerRef={heroRef} />
+
+      {/* Video Call View (Google Meet style) */}
+      <VideoCallView
+        isOpen={showVideoCall}
+        onClose={handleStopCamera}
+        userStream={streamRef.current}
+        isGeminiConnected={voiceAgent.isConnected}
+        isGeminiSpeaking={voiceAgent.isSpeaking}
+      />
     </section>
   );
 }
