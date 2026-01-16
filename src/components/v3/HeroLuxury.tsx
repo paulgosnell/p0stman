@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowRight, Settings, GripVertical } from 'lucide-react';
+import { ArrowDown, ArrowRight, Settings, GripVertical, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useGeminiVoiceWaveform, CollectedLead } from '../../hooks/useGeminiVoiceWaveform';
@@ -434,7 +434,7 @@ export default function HeroLuxury() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-center items-center mb-16 sm:mb-0"
+            className="flex flex-col justify-center items-center mb-16 sm:mb-0"
           >
             {/* Voice Waveform with Controls */}
             <div className="w-48 sm:w-64 h-12 sm:h-16 flex items-center justify-center">
@@ -454,6 +454,20 @@ export default function HeroLuxury() {
                 showControls={true}
               />
             </div>
+            {/* Subtle hint - only show when not active */}
+            <AnimatePresence>
+              {!isVoiceActive && !isCameraActive && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-6 text-white/40 text-xs tracking-[0.2em] uppercase font-light"
+                >
+                  Click to chat with AI
+                </motion.p>
+              )}
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>
@@ -479,20 +493,37 @@ export default function HeroLuxury() {
         </motion.div>
       </motion.button>
 
-      {/* Voice Settings Button - Bottom Left */}
-      <motion.button
+      {/* Bottom Left Controls */}
+      <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
-        onClick={() => setShowSettings(true)}
-        className="hidden md:flex absolute bottom-8 left-8 z-20 items-center gap-0 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group overflow-hidden"
-        aria-label="Voice agent settings"
+        className="hidden md:flex absolute bottom-8 left-8 z-20 items-center gap-2"
       >
-        <Settings className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-90 transition-all duration-300" strokeWidth={1.5} />
-        <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
-          Voice Settings
-        </span>
-      </motion.button>
+        {/* Video Call Button */}
+        <button
+          onClick={handleStartCamera}
+          className="flex items-center gap-0 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group overflow-hidden"
+          aria-label="Start video call with AI"
+        >
+          <Video className="w-4 h-4 text-white/60 group-hover:text-white transition-all duration-300" strokeWidth={1.5} />
+          <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
+            Video Call
+          </span>
+        </button>
+
+        {/* Voice Settings Button */}
+        <button
+          onClick={() => setShowSettings(true)}
+          className="flex items-center gap-0 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group overflow-hidden"
+          aria-label="Voice agent settings"
+        >
+          <Settings className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-90 transition-all duration-300" strokeWidth={1.5} />
+          <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
+            Settings
+          </span>
+        </button>
+      </motion.div>
 
       {/* Voice Settings Panel */}
       <VoiceAgentSettings
