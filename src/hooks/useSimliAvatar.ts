@@ -70,7 +70,7 @@ export function useSimliAvatar(
   const connect = useCallback(async () => {
     if (clientRef.current || state.isConnecting) return;
 
-    const apiKey = import.meta.env.VITE_SIMLI_API_KEY;
+    const apiKey = import.meta.env.VITE_SIMLI_API_KEY?.trim();
     if (!apiKey) {
       setState(prev => ({ ...prev, error: 'Simli API key not configured' }));
       console.error('VITE_SIMLI_API_KEY not set');
