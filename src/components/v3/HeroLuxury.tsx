@@ -4,6 +4,8 @@ import { ArrowDown, ArrowRight, Settings, GripVertical } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useGeminiVoiceWaveform, CollectedLead } from '../../hooks/useGeminiVoiceWaveform';
+import { useGestureDetection, DetectedGesture } from '../../hooks/useGestureDetection';
+import { GestureEffects, GestureIndicator } from '../effects/GestureEffects';
 import VoiceAgentSettings, { VoiceSettings } from './VoiceAgentSettings';
 import type { GeminiLiveVoice } from '../../config/gemini-realtime';
 import { supabase } from '../../lib/supabase';
@@ -102,6 +104,22 @@ export default function HeroLuxury() {
     silenceDuration: voiceSettings.silenceDuration,
     onLeadCollected: handleLeadCollected,
   });
+
+  // Gesture detection state
+  const [detectedGesture, setDetectedGesture] = useState<DetectedGesture | null>(null);
+
+  // Gesture detection - only active when camera is on
+  const { currentGesture, isReady: gestureReady } = useGestureDetection(
+    isCameraActive ? videoRef.current : null,
+    {
+      onGestureDetected: (gesture) => {
+        setDetectedGesture(gesture);
+        console.log('Gesture detected:', gesture.gesture, gesture.confidence);
+      },
+      minConfidence: 0.75,
+      cooldownMs: 2000, // 2 second cooldown between same gestures
+    }
+  );
 
   // Cycle through videos every 8 seconds
   useEffect(() => {
@@ -291,9 +309,16 @@ export default function HeroLuxury() {
               muted
               className="w-full h-full object-cover transform -scale-x-100"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 flex items-center justify-between">
               <span className="text-xs text-white/80 font-light">You</span>
+              {gestureReady && (
+                <span className="text-xs text-green-400/80 font-light">Gestures On</span>
+              )}
             </div>
+            {/* Gesture Indicator */}
+            <AnimatePresence>
+              {currentGesture && <GestureIndicator gesture={currentGesture} />}
+            </AnimatePresence>
             {/* Resize Handle */}
             <div
               onPointerDown={startResize}
@@ -451,6 +476,9 @@ export default function HeroLuxury() {
         settings={voiceSettings}
         onSettingsChange={setVoiceSettings}
       />
+
+      {/* Gesture Effects (emoji rain, confetti, etc.) */}
+      <GestureEffects gesture={detectedGesture} containerRef={heroRef} />
     </section>
   );
 }
