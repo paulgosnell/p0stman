@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowRight, Settings } from 'lucide-react';
+import { ArrowDown, ArrowRight, Settings, GripVertical } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useGeminiVoiceWaveform, CollectedLead } from '../../hooks/useGeminiVoiceWaveform';
@@ -55,14 +55,24 @@ const CASE_STUDY_VIDEOS = [
   }
 ];
 
+// Video panel size constraints
+const VIDEO_MIN_WIDTH = 120;
+const VIDEO_MAX_WIDTH = 400;
+const VIDEO_ASPECT_RATIO = 4 / 3; // width / height
+
 export default function HeroLuxury() {
   const [isVoiceActive, setIsVoiceActive] = useState(false);
   const [isCameraActive, setIsCameraActive] = useState(false);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(() =>
+    Math.floor(Math.random() * CASE_STUDY_VIDEOS.length)
+  );
   const [showSettings, setShowSettings] = useState(false);
   const [voiceSettings, setVoiceSettings] = useState<VoiceSettings>(DEFAULT_VOICE_SETTINGS);
+  const [videoSize, setVideoSize] = useState({ width: 192, height: 144 }); // w-48 = 192px, h-36 = 144px
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const resizeStartRef = useRef({ width: 192, height: 144, x: 0, y: 0 });
 
   // Handle lead collection from voice agent
   const handleLeadCollected = useCallback(async (lead: CollectedLead) => {
@@ -192,10 +202,44 @@ export default function HeroLuxury() {
     });
   };
 
+  // Handle video panel resize
+  const handleResizeStart = (e: React.PointerEvent) => {
+    e.stopPropagation();
+    resizeStartRef.current = {
+      width: videoSize.width,
+      height: videoSize.height,
+      x: e.clientX,
+      y: e.clientY,
+    };
+  };
+
+  const handleResize = (e: PointerEvent) => {
+    const deltaX = e.clientX - resizeStartRef.current.x;
+    const deltaY = e.clientY - resizeStartRef.current.y;
+    // Use the larger delta to maintain aspect ratio
+    const delta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY * VIDEO_ASPECT_RATIO;
+
+    const newWidth = Math.min(VIDEO_MAX_WIDTH, Math.max(VIDEO_MIN_WIDTH, resizeStartRef.current.width + delta));
+    const newHeight = newWidth / VIDEO_ASPECT_RATIO;
+
+    setVideoSize({ width: newWidth, height: newHeight });
+  };
+
+  const handleResizeEnd = () => {
+    window.removeEventListener('pointermove', handleResize);
+    window.removeEventListener('pointerup', handleResizeEnd);
+  };
+
+  const startResize = (e: React.PointerEvent) => {
+    handleResizeStart(e);
+    window.addEventListener('pointermove', handleResize);
+    window.addEventListener('pointerup', handleResizeEnd);
+  };
+
   const currentCaseStudy = CASE_STUDY_VIDEOS[currentVideoIndex];
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Full-Screen Cycling Video Background */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -220,16 +264,26 @@ export default function HeroLuxury() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>
 
-      {/* User Camera Feed - Picture in Picture style */}
+      {/* User Camera Feed - Picture in Picture style (Draggable & Resizable) */}
       <AnimatePresence>
         {isCameraActive && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.8, x: 50 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1, width: videoSize.width, height: videoSize.height }}
+            exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-24 right-8 z-30 w-48 h-36 rounded-lg overflow-hidden border-2 border-white/30 shadow-2xl"
+            drag
+            dragConstraints={heroRef}
+            dragElastic={0.1}
+            dragMomentum={false}
+            whileDrag={{ scale: 1.02 }}
+            style={{ width: videoSize.width, height: videoSize.height }}
+            className="absolute top-24 right-8 z-30 rounded-lg overflow-hidden border-2 border-white/30 shadow-2xl cursor-grab active:cursor-grabbing"
           >
+            {/* Drag Handle */}
+            <div className="absolute top-0 left-0 right-0 z-10 flex justify-center py-1 bg-gradient-to-b from-black/60 to-transparent">
+              <GripVertical className="w-4 h-4 text-white/60" strokeWidth={1.5} />
+            </div>
             <video
               ref={videoRef}
               autoPlay
@@ -239,6 +293,25 @@ export default function HeroLuxury() {
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
               <span className="text-xs text-white/80 font-light">You</span>
+            </div>
+            {/* Resize Handle */}
+            <div
+              onPointerDown={startResize}
+              className="absolute bottom-0 right-0 w-6 h-6 cursor-se-resize z-20 flex items-center justify-center"
+            >
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                className="text-white/60"
+              >
+                <path
+                  d="M9 1L1 9M9 5L5 9M9 9L9 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
             </div>
           </motion.div>
         )}
