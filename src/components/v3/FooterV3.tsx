@@ -18,7 +18,7 @@ export default function FooterV3() {
       ]
     },
     {
-      title: 'LLM SEO',
+      title: 'LLM SEO Services',
       items: [
         { label: 'LLM Visibility Services', href: '/services/llm-visibility-services' },
         { label: 'ChatGPT Advertising', href: '/services/chatgpt-advertising-services' },
@@ -27,12 +27,21 @@ export default function FooterV3() {
       ]
     },
     {
+      title: 'LLM SEO Guides',
+      items: [
+        { label: 'LLM SEO Complete Guide', href: '/guides/llm-seo-complete-guide-2026' },
+        { label: 'Get Your Brand in ChatGPT', href: '/guides/how-to-get-your-brand-in-chatgpt' },
+        { label: 'How to Advertise on ChatGPT', href: '/guides/how-to-advertise-on-chatgpt' },
+        { label: 'ChatGPT Ads vs Google Ads', href: '/compare/chatgpt-ads-vs-google-ads' },
+        { label: 'LLM SEO vs Traditional SEO', href: '/compare/llm-seo-vs-traditional-seo' }
+      ]
+    },
+    {
       title: 'Company',
       items: [
         { label: 'About', href: '/about' },
         { label: 'Careers', href: '/careers' },
-        { label: 'Contact', href: '/contact' },
-        { label: 'Guides', href: '/guides' }
+        { label: 'Contact', href: '/contact' }
       ]
     },
     {
@@ -54,7 +63,7 @@ export default function FooterV3() {
     <footer className="bg-gray-900 dark:bg-black text-white py-16 md:py-24 px-6 md:px-0 border-t border-gray-800 dark:border-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10 mb-16 md:mb-24">
           {footerColumns.map((column, index) => (
             <div key={index} className="flex flex-col space-y-6">
               {/* Column Title */}
