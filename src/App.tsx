@@ -82,6 +82,15 @@ import BoltToProduction from './pages/seo/BoltToProduction';
 import ReplitToProduction from './pages/seo/ReplitToProduction';
 import VibeCodingExpert from './pages/seo/VibeCodingExpert';
 import HireDeveloperAfterPrototype from './pages/seo/HireDeveloperAfterPrototype';
+import LLMVisibilityServices from './pages/seo/LLMVisibilityServices';
+import GenerativeEngineOptimization from './pages/seo/GenerativeEngineOptimization';
+import LLMSEOCompleteGuide from './pages/seo/LLMSEOCompleteGuide';
+import ChatGPTAdvertisingServices from './pages/seo/ChatGPTAdvertisingServices';
+import LLMSEOvsTraditionalSEO from './pages/seo/LLMSEOvsTraditionalSEO';
+import HowToGetBrandInChatGPT from './pages/seo/HowToGetBrandInChatGPT';
+import LLMSEOPricing from './pages/seo/LLMSEOPricing';
+import ChatGPTAdsVsGoogleAds from './pages/seo/ChatGPTAdsVsGoogleAds';
+import HowToAdvertiseOnChatGPT from './pages/seo/HowToAdvertiseOnChatGPT';
 import Careers from './pages/Careers';
 import SaladProject from './pages/SaladProject';
 
@@ -170,6 +179,15 @@ export default function App() {
           <Route path="/replit-to-production" element={<ReplitToProduction />} />
           <Route path="/vibe-coding-expert" element={<VibeCodingExpert />} />
           <Route path="/hire-developer-after-prototype" element={<HireDeveloperAfterPrototype />} />
+          <Route path="/services/llm-visibility-services" element={<LLMVisibilityServices />} />
+          <Route path="/services/generative-engine-optimization-geo" element={<GenerativeEngineOptimization />} />
+          <Route path="/guides/llm-seo-complete-guide-2026" element={<LLMSEOCompleteGuide />} />
+          <Route path="/services/chatgpt-advertising-services" element={<ChatGPTAdvertisingServices />} />
+          <Route path="/guides/how-to-get-your-brand-in-chatgpt" element={<HowToGetBrandInChatGPT />} />
+          <Route path="/compare/chatgpt-ads-vs-google-ads" element={<ChatGPTAdsVsGoogleAds />} />
+          <Route path="/compare/llm-seo-vs-traditional-seo" element={<LLMSEOvsTraditionalSEO />} />
+          <Route path="/pricing/llm-seo-pricing-guide" element={<LLMSEOPricing />} />
+          <Route path="/guides/how-to-advertise-on-chatgpt" element={<HowToAdvertiseOnChatGPT />} />
           <Route path="/saladproject" element={<SaladProject />} />
           <Route path="*" element={<NotFound />} />
           </Routes>

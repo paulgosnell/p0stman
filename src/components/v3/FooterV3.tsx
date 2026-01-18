@@ -18,6 +18,15 @@ export default function FooterV3() {
       ]
     },
     {
+      title: 'LLM SEO',
+      items: [
+        { label: 'LLM Visibility Services', href: '/services/llm-visibility-services' },
+        { label: 'ChatGPT Advertising', href: '/services/chatgpt-advertising-services' },
+        { label: 'GEO Services', href: '/services/generative-engine-optimization-geo' },
+        { label: 'LLM SEO Pricing', href: '/pricing/llm-seo-pricing-guide' }
+      ]
+    },
+    {
       title: 'Company',
       items: [
         { label: 'About', href: '/about' },
@@ -45,7 +54,7 @@ export default function FooterV3() {
     <footer className="bg-gray-900 dark:bg-black text-white py-16 md:py-24 px-6 md:px-0 border-t border-gray-800 dark:border-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-16 md:mb-24">
           {footerColumns.map((column, index) => (
             <div key={index} className="flex flex-col space-y-6">
               {/* Column Title */}
