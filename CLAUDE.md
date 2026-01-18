@@ -2,23 +2,25 @@
 
 ## Project Overview
 
-AI consulting portfolio site with voice agent capabilities. Built with React/TypeScript, deployed on Vercel with Supabase backend.
+AI-native product studio portfolio with voice agent capabilities, admin dashboard (CRM, invoicing, contracts), and comprehensive analytics. Built with React/TypeScript, deployed on Vercel with Supabase backend.
 
 ## Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, Framer Motion (animations)
-- **Backend**: Supabase, Vercel Serverless Functions
-- **Voice Agent**: Google Gemini Live API (WebSocket streaming)
+- **Styling**: Tailwind CSS 3.4, Framer Motion (animations), GSAP
+- **Backend**: Supabase (PostgreSQL + Auth), Vercel Serverless Functions
+- **Voice Agent**: Google Gemini Live API (WebSocket streaming, 2.5 Flash)
+- **Icons**: Lucide React only (NO emojis)
 - **Testing**: Vitest, Testing Library
 
 ## Commands
 
 ```bash
-npm run dev      # Start dev server
-npm run build    # Production build
-npm run test     # Run tests
-npm run preview  # Preview production build
+npm run dev          # Start dev server (localhost:5174)
+npm run build        # Production build
+npm run test         # Run tests
+npm run test:coverage # Run tests with coverage
+npm run preview      # Preview production build
 ```
 
 ## Project Structure
@@ -61,6 +63,18 @@ The voice agent uses **Gemini Live API** for real-time voice conversation:
 - Components in `src/components/voice-agent/`
 - Available voices: Aoede, Charon, Fenrir, Kore, Puck, Zephyr
 
+## Key Files
+
+Voice Agent:
+- `src/components/voice-agent/GeminiVoiceAgent.tsx` - Main voice agent (28KB)
+- `src/config/gemini-realtime.ts` - Gemini API configuration
+- `src/config/voiceAgentPrompts.ts` - AI system prompts by section
+- `api/gemini-session.ts` - Server endpoint for secure token delivery
+
+Admin:
+- `src/pages/admin/` - Dashboard routes (Reports, CRM, Clients, Invoicing, Contracts)
+- `src/lib/supabase/` - Database service layer (clients.ts, invoicing.ts, contracts.ts)
+
 ## Code Conventions
 
 - Components use PascalCase (`VoiceAgentOverlay.tsx`)
@@ -68,6 +82,9 @@ The voice agent uses **Gemini Live API** for real-time voice conversation:
 - Config files use kebab-case (`gemini-realtime.ts`)
 - Use Framer Motion for animations
 - Prefer Tailwind classes over custom CSS
+- 2-space indentation
+- `async/await` over `.then()` chains
+- Named exports over default exports
 
 ## Deployment
 
