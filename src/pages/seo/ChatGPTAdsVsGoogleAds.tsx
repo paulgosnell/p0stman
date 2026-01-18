@@ -563,22 +563,26 @@ export default function ChatGPTAdsVsGoogleAds() {
           </div>
         </section>
 
-        {/* Related Links */}
+        {/* Related Resources */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Comparisons</h2>
+              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Resources</h2>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="/compare/chatgpt-integration-vs-custom" className="text-orange-500 hover:text-orange-600 underline">
-                  ChatGPT Integration vs Custom AI
-                </a>
+                <Link to="/guides/how-to-advertise-on-chatgpt" className="text-orange-500 hover:text-orange-600 underline">
+                  How to Advertise on ChatGPT
+                </Link>
                 <span className="text-gray-300">|</span>
-                <a href="/compare/ai-agents-vs-chatbots" className="text-orange-500 hover:text-orange-600 underline">
-                  AI Agents vs Chatbots
-                </a>
+                <Link to="/services/chatgpt-advertising-services" className="text-orange-500 hover:text-orange-600 underline">
+                  ChatGPT Advertising Services
+                </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/ai-agents" className="text-orange-500 hover:text-orange-600 underline">
-                  Our AI Agent Services
+                <Link to="/compare/llm-seo-vs-traditional-seo" className="text-orange-500 hover:text-orange-600 underline">
+                  LLM SEO vs Traditional SEO
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/guides/llm-seo-complete-guide-2026" className="text-orange-500 hover:text-orange-600 underline">
+                  LLM SEO Complete Guide
                 </Link>
               </div>
             </div>

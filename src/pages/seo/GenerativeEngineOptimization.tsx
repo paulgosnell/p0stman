@@ -551,22 +551,26 @@ export default function GenerativeEngineOptimization() {
           </div>
         </section>
 
-        {/* Related Links */}
+        {/* Related Resources */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Services</h2>
+              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Resources</h2>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/vibe-coding-expert" className="text-purple-600 hover:text-purple-700 underline">
-                  Vibe Coding Expert
+                <Link to="/guides/llm-seo-complete-guide-2026" className="text-purple-600 hover:text-purple-700 underline">
+                  LLM SEO Complete Guide
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/from-prototype-to-production" className="text-purple-600 hover:text-purple-700 underline">
-                  From Prototype to Production
+                <Link to="/services/llm-visibility-services" className="text-purple-600 hover:text-purple-700 underline">
+                  LLM Visibility Services
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/services" className="text-purple-600 hover:text-purple-700 underline">
-                  All Services
+                <Link to="/compare/llm-seo-vs-traditional-seo" className="text-purple-600 hover:text-purple-700 underline">
+                  LLM SEO vs Traditional SEO
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/pricing/llm-seo-pricing-guide" className="text-purple-600 hover:text-purple-700 underline">
+                  LLM SEO Pricing
                 </Link>
               </div>
             </div>

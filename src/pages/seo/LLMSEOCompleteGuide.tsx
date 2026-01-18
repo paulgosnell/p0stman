@@ -625,11 +625,37 @@ export default function LLMSEOCompleteGuide() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
                 <Link
-                  to="/services"
+                  to="/services/llm-visibility-services"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-gray-600 text-white rounded-lg hover:bg-gray-800 transition-all text-lg font-medium"
                 >
-                  View Our Services
+                  View LLM Services
                   <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Resources */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Resources</h2>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/services/llm-visibility-services" className="text-green-600 hover:text-green-700 underline">
+                  LLM Visibility Services
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/services/generative-engine-optimization-geo" className="text-green-600 hover:text-green-700 underline">
+                  GEO Services
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/compare/llm-seo-vs-traditional-seo" className="text-green-600 hover:text-green-700 underline">
+                  LLM SEO vs Traditional SEO
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/pricing/llm-seo-pricing-guide" className="text-green-600 hover:text-green-700 underline">
+                  LLM SEO Pricing
                 </Link>
               </div>
             </div>

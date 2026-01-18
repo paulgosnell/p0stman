@@ -585,22 +585,26 @@ export default function ChatGPTAdvertisingServices() {
           </div>
         </section>
 
-        {/* Related Links */}
+        {/* Related Resources */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Services</h2>
+              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Resources</h2>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/ai-agents" className="text-orange-500 hover:text-orange-600 underline">
-                  AI Agent Development
+                <Link to="/guides/how-to-advertise-on-chatgpt" className="text-orange-500 hover:text-orange-600 underline">
+                  How to Advertise on ChatGPT
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/ai-platform-development" className="text-orange-500 hover:text-orange-600 underline">
-                  AI Platform Development
+                <Link to="/compare/chatgpt-ads-vs-google-ads" className="text-orange-500 hover:text-orange-600 underline">
+                  ChatGPT Ads vs Google Ads
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/product-strategy" className="text-orange-500 hover:text-orange-600 underline">
-                  Product Strategy
+                <Link to="/services/llm-visibility-services" className="text-orange-500 hover:text-orange-600 underline">
+                  LLM Visibility Services
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/pricing/llm-seo-pricing-guide" className="text-orange-500 hover:text-orange-600 underline">
+                  LLM SEO Pricing
                 </Link>
               </div>
             </div>

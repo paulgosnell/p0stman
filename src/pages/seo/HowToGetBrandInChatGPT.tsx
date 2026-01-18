@@ -539,22 +539,26 @@ export default function HowToGetBrandInChatGPT() {
           </div>
         </section>
 
-        {/* Related Links */}
+        {/* Related Resources */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Guides</h2>
+              <h2 className="text-xl font-thin text-center mb-6 text-gray-500">Related Resources</h2>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/from-prototype-to-production" className="text-teal-500 hover:text-teal-600 underline">
-                  From Prototype to Production
+                <Link to="/services/llm-visibility-services" className="text-teal-500 hover:text-teal-600 underline">
+                  LLM Visibility Services
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/vibe-coding-expert" className="text-teal-500 hover:text-teal-600 underline">
-                  Vibe Coding Expert
+                <Link to="/services/chatgpt-advertising-services" className="text-teal-500 hover:text-teal-600 underline">
+                  ChatGPT Advertising Services
                 </Link>
                 <span className="text-gray-300">|</span>
-                <Link to="/ai-agents" className="text-teal-500 hover:text-teal-600 underline">
-                  AI Agents
+                <Link to="/guides/llm-seo-complete-guide-2026" className="text-teal-500 hover:text-teal-600 underline">
+                  LLM SEO Complete Guide
+                </Link>
+                <span className="text-gray-300">|</span>
+                <Link to="/compare/chatgpt-ads-vs-google-ads" className="text-teal-500 hover:text-teal-600 underline">
+                  ChatGPT Ads vs Google Ads
                 </Link>
               </div>
             </div>
