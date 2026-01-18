@@ -9,37 +9,31 @@ export default function FooterV3() {
 
   const footerColumns = [
     {
-      title: 'Work',
+      title: 'Services',
       items: [
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'AI Agents', href: '/ai-agents' },
-        { label: 'Services', href: '/services' },
-        { label: 'Process', href: '/process' }
+        { label: 'AI Voice Agents', href: '/ai-agents' },
+        { label: 'Websites & SaaS', href: '/services' },
+        { label: 'Mobile Apps', href: '/mobile-app' },
+        { label: 'AI Platforms', href: '/ai-platform-development' },
+        { label: 'LLM Visibility', href: '/services/llm-visibility-services' }
       ]
     },
     {
-      title: 'LLM SEO Services',
+      title: 'LLM SEO',
       items: [
-        { label: 'LLM Visibility Services', href: '/services/llm-visibility-services' },
+        { label: 'LLM SEO Guide', href: '/guides/llm-seo-complete-guide-2026' },
         { label: 'ChatGPT Advertising', href: '/services/chatgpt-advertising-services' },
         { label: 'GEO Services', href: '/services/generative-engine-optimization-geo' },
-        { label: 'LLM SEO Pricing', href: '/pricing/llm-seo-pricing-guide' }
-      ]
-    },
-    {
-      title: 'LLM SEO Guides',
-      items: [
-        { label: 'LLM SEO Complete Guide', href: '/guides/llm-seo-complete-guide-2026' },
         { label: 'Get Your Brand in ChatGPT', href: '/guides/how-to-get-your-brand-in-chatgpt' },
-        { label: 'How to Advertise on ChatGPT', href: '/guides/how-to-advertise-on-chatgpt' },
-        { label: 'ChatGPT Ads vs Google Ads', href: '/compare/chatgpt-ads-vs-google-ads' },
-        { label: 'LLM SEO vs Traditional SEO', href: '/compare/llm-seo-vs-traditional-seo' }
+        { label: 'LLM SEO Pricing', href: '/pricing/llm-seo-pricing-guide' }
       ]
     },
     {
       title: 'Company',
       items: [
         { label: 'About', href: '/about' },
+        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Process', href: '/process' },
         { label: 'Careers', href: '/careers' },
         { label: 'Contact', href: '/contact' }
       ]
@@ -63,7 +57,7 @@ export default function FooterV3() {
     <footer className="bg-gray-900 dark:bg-black text-white py-16 md:py-24 px-6 md:px-0 border-t border-gray-800 dark:border-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 md:mb-24">
           {footerColumns.map((column, index) => (
             <div key={index} className="flex flex-col space-y-6">
               {/* Column Title */}
