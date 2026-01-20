@@ -428,16 +428,10 @@ export function VideoCallView({
 
               {/* Switch agent button */}
               <button
-                onClick={() => {
+                onClick={async () => {
                   isReconnectingRef.current = true;
-                  avatar.disconnect();
-                  setTimeout(() => {
-                    avatar.connect();
-                    // Reset flag after connection attempt starts
-                    setTimeout(() => {
-                      isReconnectingRef.current = false;
-                    }, 100);
-                  }, 500);
+                  await avatar.reconnect();
+                  isReconnectingRef.current = false;
                 }}
                 disabled={avatar.isConnecting}
                 className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 rounded-lg text-white text-sm font-medium transition-colors"

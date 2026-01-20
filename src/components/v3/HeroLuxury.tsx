@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowRight, Settings, GripVertical, Video } from 'lucide-react';
+import { ArrowDown, ArrowRight, Settings, GripVertical, Video, Mic, MicOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedWaveform from './AnimatedWaveform';
 import { useGeminiVoiceWaveform, CollectedLead } from '../../hooks/useGeminiVoiceWaveform';
@@ -436,7 +436,7 @@ export default function HeroLuxury() {
             transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col justify-center items-center mb-16 sm:mb-0"
           >
-            {/* Voice Waveform with Controls */}
+            {/* Voice Waveform - visual only, no hover controls */}
             <div className="w-48 sm:w-64 h-12 sm:h-16 flex items-center justify-center">
               <AnimatedWaveform
                 barCount={40}
@@ -445,13 +445,7 @@ export default function HeroLuxury() {
                 animate={!voiceAgent.isActive}
                 frequencyData={voiceAgent.frequencyData}
                 isLive={voiceAgent.isActive}
-                onVoiceStart={handleStartVoice}
-                onVoiceStop={handleStopVoice}
-                onCameraStart={handleStartCamera}
-                onCameraStop={handleStopCamera}
-                isVoiceActive={isVoiceActive}
-                isCameraActive={isCameraActive}
-                showControls={true}
+                showControls={false}
               />
             </div>
             {/* Subtle hint - only show when not active */}
@@ -500,6 +494,33 @@ export default function HeroLuxury() {
         transition={{ duration: 1, delay: 1.5 }}
         className="hidden md:flex absolute bottom-8 left-8 z-20 items-center gap-2"
       >
+        {/* Voice Button */}
+        <button
+          onClick={isVoiceActive ? handleStopVoice : handleStartVoice}
+          className={`flex items-center gap-0 p-3 backdrop-blur-md border rounded-lg transition-all group overflow-hidden ${
+            isVoiceActive
+              ? 'bg-red-500/20 border-red-500/40 hover:bg-red-500/30'
+              : 'bg-white/10 border-white/20 hover:bg-white/20'
+          }`}
+          aria-label={isVoiceActive ? "End voice chat" : "Start voice chat with AI"}
+        >
+          {isVoiceActive ? (
+            <>
+              <MicOff className="w-4 h-4 text-red-400 transition-all duration-300" strokeWidth={1.5} />
+              <span className="text-xs text-red-400 transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
+                End Voice
+              </span>
+            </>
+          ) : (
+            <>
+              <Mic className="w-4 h-4 text-white/60 group-hover:text-white transition-all duration-300" strokeWidth={1.5} />
+              <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
+                Voice
+              </span>
+            </>
+          )}
+        </button>
+
         {/* Video Call Button */}
         <button
           onClick={handleStartCamera}
@@ -508,20 +529,17 @@ export default function HeroLuxury() {
         >
           <Video className="w-4 h-4 text-white/60 group-hover:text-white transition-all duration-300" strokeWidth={1.5} />
           <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
-            Video Call
+            Video
           </span>
         </button>
 
-        {/* Voice Settings Button */}
+        {/* Settings Button */}
         <button
           onClick={() => setShowSettings(true)}
-          className="flex items-center gap-0 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all group overflow-hidden"
-          aria-label="Voice agent settings"
+          className="flex items-center justify-center p-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg hover:bg-white/10 transition-all"
+          aria-label="Voice and video settings"
         >
-          <Settings className="w-4 h-4 text-white/60 group-hover:text-white group-hover:rotate-90 transition-all duration-300" strokeWidth={1.5} />
-          <span className="text-xs text-white/60 group-hover:text-white transition-all font-light max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap">
-            Settings
-          </span>
+          <Settings className="w-3.5 h-3.5 text-white/40 hover:text-white/60 hover:rotate-90 transition-all duration-300" strokeWidth={1.5} />
         </button>
       </motion.div>
 

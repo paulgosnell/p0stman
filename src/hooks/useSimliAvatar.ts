@@ -65,6 +65,12 @@ export function useSimliAvatar(
 
   const clientRef = useRef<SimliClient | null>(null);
   const isMountedRef = useRef(true);
+  const faceIdRef = useRef(faceId);
+
+  // Keep faceIdRef in sync
+  useEffect(() => {
+    faceIdRef.current = faceId;
+  }, [faceId]);
 
   // Initialize Simli client
   const connect = useCallback(async () => {
@@ -88,10 +94,10 @@ export function useSimliAvatar(
       const client = new SimliClient();
       clientRef.current = client;
 
-      // Configure the client
+      // Configure the client - use ref for faceId to avoid stale closures
       client.Initialize({
         apiKey,
-        faceID: faceId,
+        faceID: faceIdRef.current,
         handleSilence: true,
         maxSessionLength: 3600, // 1 hour max
         maxIdleTime: 300, // 5 min idle timeout
@@ -180,6 +186,99 @@ export function useSimliAvatar(
     }
   }, []);
 
+  // Reconnect with current faceId - handles disconnect/connect cycle properly
+  const reconnect = useCallback(async () => {
+    // First disconnect if connected
+    if (clientRef.current) {
+      clientRef.current.close();
+      clientRef.current = null;
+    }
+
+    // Reset state
+    if (isMountedRef.current) {
+      setState({
+        isConnected: false,
+        isConnecting: false,
+        isSpeaking: false,
+        error: null,
+      });
+    }
+
+    // Wait for cleanup to complete, then connect
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Now connect with the latest faceId (from ref)
+    if (isMountedRef.current) {
+      const apiKey = import.meta.env.VITE_SIMLI_API_KEY?.trim();
+      if (!apiKey) {
+        setState(prev => ({ ...prev, error: 'Simli API key not configured' }));
+        return;
+      }
+
+      if (!videoRef.current || !audioRef.current) {
+        setState(prev => ({ ...prev, error: 'Video/audio elements not ready' }));
+        return;
+      }
+
+      setState(prev => ({ ...prev, isConnecting: true, error: null }));
+
+      try {
+        const client = new SimliClient();
+        clientRef.current = client;
+
+        client.Initialize({
+          apiKey,
+          faceID: faceIdRef.current,
+          handleSilence: true,
+          maxSessionLength: 3600,
+          maxIdleTime: 300,
+          videoRef: videoRef.current,
+          audioRef: audioRef.current,
+          enableConsoleLogs: false,
+        });
+
+        client.on('connected', () => {
+          if (isMountedRef.current) {
+            setState(prev => ({ ...prev, isConnected: true, isConnecting: false }));
+            onConnected?.();
+          }
+        });
+
+        client.on('disconnected', () => {
+          if (isMountedRef.current) {
+            setState(prev => ({ ...prev, isConnected: false, isConnecting: false }));
+            onDisconnected?.();
+          }
+        });
+
+        client.on('speaking', () => {
+          if (isMountedRef.current) {
+            setState(prev => ({ ...prev, isSpeaking: true }));
+            onSpeakingStart?.();
+          }
+        });
+
+        client.on('silent', () => {
+          if (isMountedRef.current) {
+            setState(prev => ({ ...prev, isSpeaking: false }));
+            onSpeakingEnd?.();
+          }
+        });
+
+        await client.start();
+      } catch (err) {
+        console.error('Simli reconnection error:', err);
+        if (isMountedRef.current) {
+          setState(prev => ({
+            ...prev,
+            isConnecting: false,
+            error: err instanceof Error ? err.message : 'Reconnection failed',
+          }));
+        }
+      }
+    }
+  }, [videoRef, audioRef, onConnected, onDisconnected, onSpeakingStart, onSpeakingEnd]);
+
   // Cleanup on unmount
   useEffect(() => {
     isMountedRef.current = true;
@@ -193,6 +292,7 @@ export function useSimliAvatar(
     ...state,
     connect,
     disconnect,
+    reconnect,
     sendAudio,
     listenToAudioTrack,
     clearBuffer,
