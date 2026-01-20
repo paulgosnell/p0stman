@@ -93,6 +93,11 @@ import ChatGPTAdsVsGoogleAds from './pages/seo/ChatGPTAdsVsGoogleAds';
 import HowToAdvertiseOnChatGPT from './pages/seo/HowToAdvertiseOnChatGPT';
 import Careers from './pages/Careers';
 import SaladProject from './pages/SaladProject';
+import AIProductStudio from './pages/AIProductStudio';
+import ContextEngineering from './pages/ContextEngineering';
+import AIAgentsService from './pages/AIAgentsService';
+import PrototypeToProduction from './pages/PrototypeToProduction';
+import FractionalAILeadership from './pages/FractionalAILeadership';
 
 export default function App() {
   return (
@@ -110,6 +115,11 @@ export default function App() {
           <Route path="/ai-platform-development" element={<AIPlatformDev />} />
           <Route path="/product-strategy" element={<ProductStrategy />} />
           <Route path="/digital-transformation" element={<DigitalTransformation />} />
+          <Route path="/ai-product-studio" element={<AIProductStudio />} />
+          <Route path="/context-engineering" element={<ContextEngineering />} />
+          <Route path="/services/ai-agents" element={<AIAgentsService />} />
+          <Route path="/prototype-to-production" element={<PrototypeToProduction />} />
+          <Route path="/fractional-ai-leadership" element={<FractionalAILeadership />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/guide/content" element={<GuideContent />} />
           <Route path="/guide/content/:id" element={<ChapterContent />} />

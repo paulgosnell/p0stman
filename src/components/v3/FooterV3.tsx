@@ -11,11 +11,11 @@ export default function FooterV3() {
     {
       title: 'Services',
       items: [
-        { label: 'AI Voice Agents', href: '/ai-agents' },
-        { label: 'Websites & SaaS', href: '/services' },
-        { label: 'Mobile Apps', href: '/mobile-app' },
-        { label: 'AI Platforms', href: '/ai-platform-development' },
-        { label: 'LLM Visibility', href: '/services/llm-visibility-services' }
+        { label: 'AI Product Studio', href: '/ai-product-studio' },
+        { label: 'AI Agents', href: '/services/ai-agents' },
+        { label: 'Context Engineering', href: '/context-engineering' },
+        { label: 'Prototype to Production', href: '/prototype-to-production' },
+        { label: 'Fractional AI Leadership', href: '/fractional-ai-leadership' }
       ]
     },
     {
