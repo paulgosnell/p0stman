@@ -7,7 +7,7 @@ import {
   Video,
   VideoOff,
   Phone,
-  Settings,
+  Users,
   Volume2,
   VolumeX,
   User,
@@ -48,6 +48,7 @@ export function VideoCallView({
   const [isAvatarMuted, setIsAvatarMuted] = useState(false);
   const [selectedFace, setSelectedFace] = useState<SimliFaceKey>('kate');
   const [showSettings, setShowSettings] = useState(false);
+  const isReconnectingRef = useRef(false); // Prevent auto-connect during manual reconnect
 
   // Simli avatar hook
   const avatar = useSimliAvatar(avatarVideoRef, avatarAudioRef, {
@@ -82,9 +83,9 @@ export function VideoCallView({
     }
   }, [userStream]);
 
-  // Connect avatar when view opens
+  // Connect avatar when view opens (but not during manual reconnection)
   useEffect(() => {
-    if (isOpen && !avatar.isConnected && !avatar.isConnecting) {
+    if (isOpen && !avatar.isConnected && !avatar.isConnecting && !isReconnectingRef.current) {
       // Clear any stale audio from previous session
       audioQueueRef.current = [];
       avatar.connect();
@@ -216,8 +217,9 @@ export function VideoCallView({
             <button
               onClick={() => setShowSettings(!showSettings)}
               className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+              title="Talk to another agent"
             >
-              <Settings className="w-5 h-5 text-white/70" />
+              <Users className="w-5 h-5 text-white/70" />
             </button>
           </div>
 
@@ -392,7 +394,7 @@ export function VideoCallView({
               className="absolute top-0 right-0 h-full w-80 bg-gray-800 border-l border-gray-700 p-6 overflow-y-auto"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-white font-semibold">Settings</h3>
+                <h3 className="text-white font-semibold">Our Team</h3>
                 <button
                   onClick={() => setShowSettings(false)}
                   className="p-1 rounded hover:bg-white/10"
@@ -401,9 +403,9 @@ export function VideoCallView({
                 </button>
               </div>
 
-              {/* Avatar selection */}
+              {/* Agent selection */}
               <div className="mb-6">
-                <label className="text-white/70 text-sm mb-3 block">AI Avatar</label>
+                <label className="text-white/70 text-sm mb-3 block">Talk to another agent</label>
                 <div className="grid grid-cols-3 gap-2">
                   {(Object.keys(SIMLI_FACES) as SimliFaceKey[]).slice(0, 9).map((key) => (
                     <button
@@ -420,20 +422,27 @@ export function VideoCallView({
                   ))}
                 </div>
                 <p className="text-gray-500 text-xs mt-2">
-                  Changing avatar requires reconnecting
+                  Select a teammate to switch the call
                 </p>
               </div>
 
-              {/* Reconnect button */}
+              {/* Switch agent button */}
               <button
                 onClick={() => {
+                  isReconnectingRef.current = true;
                   avatar.disconnect();
-                  setTimeout(() => avatar.connect(), 500);
+                  setTimeout(() => {
+                    avatar.connect();
+                    // Reset flag after connection attempt starts
+                    setTimeout(() => {
+                      isReconnectingRef.current = false;
+                    }, 100);
+                  }, 500);
                 }}
                 disabled={avatar.isConnecting}
                 className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 rounded-lg text-white text-sm font-medium transition-colors"
               >
-                {avatar.isConnecting ? 'Connecting...' : 'Reconnect Avatar'}
+                {avatar.isConnecting ? 'Connecting...' : `Switch to ${SIMLI_FACES[selectedFace].name}`}
               </button>
             </motion.div>
           )}
