@@ -63,12 +63,12 @@ export function PricingTable({
                 viewport={{ once: true }}
                 className={`p-8 border-t transition-all ${
                   tier.popular
-                    ? 'bg-black text-white border-gray-700'
+                    ? 'bg-gray-900 border-gray-700'
                     : 'bg-gray-50 border-gray-200 hover:shadow-xl'
                 }`}
               >
                 {tier.popular && (
-                  <div className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+                  <div className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">
                     Most Popular
                   </div>
                 )}
