@@ -4,7 +4,8 @@ Allow: /
 # AI Playbook - High priority for indexing
 Allow: /ai-playbook
 
-# Sitemap
+# Sitemaps
+Sitemap: https://p0stman.com/sitemap-index.xml
 Sitemap: https://p0stman.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
