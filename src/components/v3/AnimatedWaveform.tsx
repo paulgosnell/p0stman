@@ -6,9 +6,11 @@ interface AnimatedWaveformProps {
   barCount?: number;
   color?: string;
   hoverColor?: string;
+  agentColor?: string; // Color when agent is speaking
   animate?: boolean;
   frequencyData?: number[];
   isLive?: boolean;
+  isAgentSpeaking?: boolean; // When the AI agent is responding
   onBarClick?: (index: number) => void;
   onVoiceStart?: () => void;
   onVoiceStop?: () => void;
@@ -23,9 +25,11 @@ export default function AnimatedWaveform({
   barCount = 60,
   color = '#0066FF',
   hoverColor = '#FF1493',
+  agentColor = '#8B5CF6', // Purple for agent
   animate = true,
   frequencyData,
   isLive = false,
+  isAgentSpeaking = false,
   onBarClick,
   onVoiceStart,
   onVoiceStop,
@@ -36,8 +40,10 @@ export default function AnimatedWaveform({
   showControls = true,
 }: AnimatedWaveformProps) {
   const [heights, setHeights] = useState<number[]>([]);
+  const [agentHeights, setAgentHeights] = useState<number[]>([]);
   const [isHovered, setIsHovered] = useState(false);
 
+  // User audio visualization
   useEffect(() => {
     // If live mode with frequency data, use that directly
     if (isLive && frequencyData && frequencyData.length > 0) {
@@ -71,6 +77,30 @@ export default function AnimatedWaveform({
     return () => clearInterval(interval);
   }, [barCount, animate, isLive, frequencyData]);
 
+  // Agent speaking animation - smoother wave pattern
+  useEffect(() => {
+    if (!isAgentSpeaking) {
+      setAgentHeights([]);
+      return;
+    }
+
+    let frame = 0;
+    const interval = setInterval(() => {
+      frame += 1;
+      const newHeights = Array.from({ length: barCount }, (_, i) => {
+        // Create a flowing wave pattern for agent speech
+        const phase = ((i + frame * 0.8) / barCount) * Math.PI * 3;
+        const baseHeight = 25;
+        const waveHeight = 50 * Math.abs(Math.sin(phase));
+        const secondaryWave = 20 * Math.abs(Math.sin(phase * 2 + frame * 0.2));
+        return baseHeight + waveHeight + secondaryWave;
+      });
+      setAgentHeights(newHeights);
+    }, 50); // Faster update for smoother animation
+
+    return () => clearInterval(interval);
+  }, [barCount, isAgentSpeaking]);
+
   const handleVoiceClick = () => {
     if (isVoiceActive) {
       onVoiceStop?.();
@@ -96,7 +126,13 @@ export default function AnimatedWaveform({
       {/* Waveform */}
       <div className="w-full h-full flex items-center justify-center gap-[3px]">
         {heights.map((height, i) => {
-          const barColor = isHovered ? hoverColor : color;
+          // Use agent heights and color when agent is speaking
+          const displayHeight = isAgentSpeaking && agentHeights[i] ? agentHeights[i] : height;
+          const barColor = isAgentSpeaking
+            ? agentColor
+            : isHovered
+              ? hoverColor
+              : color;
 
           return (
             <motion.div
@@ -104,22 +140,22 @@ export default function AnimatedWaveform({
               className="rounded-full flex-1"
               style={{
                 backgroundColor: barColor,
-                height: `${Math.max(height, 5)}%`,
-                opacity: isHovered ? 1 : 0.85,
+                height: `${Math.max(displayHeight, 5)}%`,
+                opacity: isHovered || isAgentSpeaking ? 1 : 0.85,
                 minWidth: '2px',
                 maxWidth: '6px',
               }}
               animate={{
-                height: `${Math.max(height, 5)}%`,
+                height: `${Math.max(displayHeight, 5)}%`,
                 backgroundColor: barColor,
               }}
               transition={{
                 height: {
-                  duration: isLive ? 0.05 : 0.15,
+                  duration: isAgentSpeaking ? 0.05 : isLive ? 0.05 : 0.15,
                   ease: 'easeOut',
                 },
                 backgroundColor: {
-                  duration: 0.2,
+                  duration: 0.3,
                 },
               }}
             />

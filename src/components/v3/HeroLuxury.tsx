@@ -443,9 +443,11 @@ export default function HeroLuxury() {
                 barCount={40}
                 color="#FFFFFF"
                 hoverColor="#3B82F6"
+                agentColor="#8B5CF6"
                 animate={!voiceAgent.isActive}
                 frequencyData={voiceAgent.frequencyData}
                 isLive={voiceAgent.isActive}
+                isAgentSpeaking={voiceAgent.isSpeaking}
                 showControls={false}
               />
             </div>
