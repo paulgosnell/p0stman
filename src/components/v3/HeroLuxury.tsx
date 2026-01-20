@@ -15,6 +15,7 @@ const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
   voice: 'Kore', // Female voice to match Kate avatar
   silenceDuration: 500,
   threshold: 0.5,
+  avatar: 'kate', // Default avatar
 };
 
 // Removed AGENT_ID - no longer using ElevenLabs
@@ -548,6 +549,7 @@ export default function HeroLuxury() {
         audioQueueRef={avatarAudioQueueRef}
         isGeminiConnected={voiceAgent.isConnected}
         isGeminiSpeaking={voiceAgent.isSpeaking}
+        selectedAvatar={voiceSettings.avatar}
       />
     </section>
   );

@@ -1,13 +1,11 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  X,
   Mic,
   MicOff,
   Video,
   VideoOff,
   Phone,
-  Users,
   Volume2,
   VolumeX,
   User,
@@ -26,6 +24,7 @@ interface VideoCallViewProps {
   isGeminiConnected?: boolean;
   isGeminiSpeaking?: boolean;
   audioQueueRef?: React.MutableRefObject<ArrayBuffer[]>; // Direct ref to audio queue (bypasses React state)
+  selectedAvatar?: SimliFaceKey; // Avatar selected from settings
 }
 
 export function VideoCallView({
@@ -36,6 +35,7 @@ export function VideoCallView({
   isGeminiConnected = false,
   isGeminiSpeaking = false,
   audioQueueRef: externalAudioQueueRef,
+  selectedAvatar = 'kate',
 }: VideoCallViewProps) {
   // Refs for media elements
   const userVideoRef = useRef<HTMLVideoElement>(null);
@@ -46,13 +46,10 @@ export function VideoCallView({
   const [isMuted, setIsMuted] = useState(false);
   const [isVideoOff, setIsVideoOff] = useState(false);
   const [isAvatarMuted, setIsAvatarMuted] = useState(false);
-  const [selectedFace, setSelectedFace] = useState<SimliFaceKey>('kate');
-  const [showSettings, setShowSettings] = useState(false);
-  const isReconnectingRef = useRef(false); // Prevent auto-connect during manual reconnect
 
-  // Simli avatar hook
+  // Simli avatar hook - uses avatar from settings
   const avatar = useSimliAvatar(avatarVideoRef, avatarAudioRef, {
-    faceId: SIMLI_FACES[selectedFace].id,
+    faceId: SIMLI_FACES[selectedAvatar].id,
     onConnected: () => console.log('Avatar connected'),
     onDisconnected: () => console.log('Avatar disconnected'),
   });
@@ -83,9 +80,9 @@ export function VideoCallView({
     }
   }, [userStream]);
 
-  // Connect avatar when view opens (but not during manual reconnection)
+  // Connect avatar when view opens
   useEffect(() => {
-    if (isOpen && !avatar.isConnected && !avatar.isConnecting && !isReconnectingRef.current) {
+    if (isOpen && !avatar.isConnected && !avatar.isConnecting) {
       // Clear any stale audio from previous session
       audioQueueRef.current = [];
       avatar.connect();
@@ -214,13 +211,10 @@ export function VideoCallView({
                 <span className="text-gray-400 text-sm">Connecting avatar...</span>
               )}
             </div>
-            <button
-              onClick={() => setShowSettings(!showSettings)}
-              className="p-2 rounded-lg hover:bg-white/10 transition-colors"
-              title="Talk to another agent"
-            >
-              <Users className="w-5 h-5 text-white/70" />
-            </button>
+            {/* Avatar name indicator */}
+            <div className="text-sm text-white/60">
+              {SIMLI_FACES[selectedAvatar].name}
+            </div>
           </div>
 
           {/* Video panels */}
@@ -383,64 +377,6 @@ export function VideoCallView({
             </button>
           </div>
         </div>
-
-        {/* Settings panel */}
-        <AnimatePresence>
-          {showSettings && (
-            <motion.div
-              initial={{ opacity: 0, x: 300 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 300 }}
-              className="absolute top-0 right-0 h-full w-80 bg-gray-800 border-l border-gray-700 p-6 overflow-y-auto"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-white font-semibold">Our Team</h3>
-                <button
-                  onClick={() => setShowSettings(false)}
-                  className="p-1 rounded hover:bg-white/10"
-                >
-                  <X className="w-5 h-5 text-white/70" />
-                </button>
-              </div>
-
-              {/* Agent selection */}
-              <div className="mb-6">
-                <label className="text-white/70 text-sm mb-3 block">Talk to another agent</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {(Object.keys(SIMLI_FACES) as SimliFaceKey[]).slice(0, 9).map((key) => (
-                    <button
-                      key={key}
-                      onClick={() => setSelectedFace(key)}
-                      className={`p-2 rounded-lg text-center transition-colors ${
-                        selectedFace === key
-                          ? 'bg-blue-500 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                      }`}
-                    >
-                      <span className="text-xs">{SIMLI_FACES[key].name}</span>
-                    </button>
-                  ))}
-                </div>
-                <p className="text-gray-500 text-xs mt-2">
-                  Select a teammate to switch the call
-                </p>
-              </div>
-
-              {/* Switch agent button */}
-              <button
-                onClick={async () => {
-                  isReconnectingRef.current = true;
-                  await avatar.reconnect();
-                  isReconnectingRef.current = false;
-                }}
-                disabled={avatar.isConnecting}
-                className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 rounded-lg text-white text-sm font-medium transition-colors"
-              >
-                {avatar.isConnecting ? 'Connecting...' : `Switch to ${SIMLI_FACES[selectedFace].name}`}
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Gesture effects overlay */}
         <GestureEffects gesture={detectedGesture} />
