@@ -448,20 +448,6 @@ export default function HeroLuxury() {
                 showControls={false}
               />
             </div>
-            {/* Subtle hint - only show when not active */}
-            <AnimatePresence>
-              {!isVoiceActive && !isCameraActive && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-6 text-white/40 text-xs tracking-[0.2em] uppercase font-light"
-                >
-                  Click to chat with AI
-                </motion.p>
-              )}
-            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>
