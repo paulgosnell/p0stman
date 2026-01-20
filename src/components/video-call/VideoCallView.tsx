@@ -274,7 +274,7 @@ export function VideoCallView({
                 {/* Name tag */}
                 <div className="absolute bottom-4 right-4 px-3 py-1.5 bg-black/50 backdrop-blur-sm rounded-lg">
                   <span className="text-white text-sm font-medium">
-                    {SIMLI_FACES[selectedFace].name} (AI)
+                    {SIMLI_FACES[selectedAvatar].name} (AI)
                   </span>
                 </div>
               </div>
