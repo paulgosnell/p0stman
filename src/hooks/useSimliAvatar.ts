@@ -74,19 +74,26 @@ export function useSimliAvatar(
 
   // Initialize Simli client
   const connect = useCallback(async () => {
-    if (clientRef.current || state.isConnecting) return;
+    console.log('[Simli] connect() called, clientRef:', !!clientRef.current, 'isConnecting:', state.isConnecting);
+    if (clientRef.current || state.isConnecting) {
+      console.log('[Simli] Bailing out - already connected or connecting');
+      return;
+    }
 
     const apiKey = import.meta.env.VITE_SIMLI_API_KEY?.trim();
     if (!apiKey) {
       setState(prev => ({ ...prev, error: 'Simli API key not configured' }));
-      console.error('VITE_SIMLI_API_KEY not set');
+      console.error('[Simli] VITE_SIMLI_API_KEY not set');
       return;
     }
 
     if (!videoRef.current || !audioRef.current) {
       setState(prev => ({ ...prev, error: 'Video/audio elements not ready' }));
+      console.error('[Simli] Video/audio refs not ready');
       return;
     }
+
+    console.log('[Simli] Starting connection with faceId:', faceIdRef.current);
 
     setState(prev => ({ ...prev, isConnecting: true, error: null }));
 
@@ -108,6 +115,7 @@ export function useSimliAvatar(
 
       // Set up event listeners
       client.on('connected', () => {
+        console.log('[Simli] Connected event received');
         if (isMountedRef.current) {
           setState(prev => ({ ...prev, isConnected: true, isConnecting: false }));
           onConnected?.();
@@ -136,9 +144,11 @@ export function useSimliAvatar(
       });
 
       // Start the connection
+      console.log('[Simli] Calling client.start()...');
       await client.start();
+      console.log('[Simli] client.start() completed');
     } catch (err) {
-      console.error('Simli connection error:', err);
+      console.error('[Simli] Connection error:', err);
       if (isMountedRef.current) {
         setState(prev => ({
           ...prev,

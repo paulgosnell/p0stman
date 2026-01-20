@@ -85,9 +85,10 @@ export function VideoCallView({
     if (isOpen && !avatar.isConnected && !avatar.isConnecting) {
       // Clear any stale audio from previous session
       audioQueueRef.current = [];
+      console.log('[VideoCall] Connecting avatar:', selectedAvatar, SIMLI_FACES[selectedAvatar].id);
       avatar.connect();
     }
-  }, [isOpen, avatar.isConnected, avatar.isConnecting]);
+  }, [isOpen, avatar.isConnected, avatar.isConnecting, selectedAvatar]);
 
   // Resample 24kHz to 16kHz (Simli's expected format)
   const resampleTo16k = useCallback((audioData: ArrayBuffer): Uint8Array => {
