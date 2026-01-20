@@ -15,7 +15,9 @@ import {
   DollarSign,
   Building2,
   Zap,
-  MessageSquare
+  MessageSquare,
+  HelpCircle,
+  ChevronDown
 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
@@ -124,9 +126,10 @@ export default function FractionalCPO() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Fractional CPO Services | Strategic Product Leadership | P0STMAN</title>
-          <meta name="description" content="Experienced Fractional Chief Product Officer providing strategic product leadership, team building, and growth optimization for startups and scale-ups." />
-          <meta name="keywords" content="fractional CPO, chief product officer, product strategy, product leadership, startup advisor" />
+          <title>Fractional CPO Services | Part-Time Product Leadership | p0stman</title>
+          <meta name="description" content="Hire a fractional CPO for strategic product leadership without full-time cost. Experienced product executives for startups and scale-ups. From $5k/month." />
+          <meta name="keywords" content="fractional CPO, fractional chief product officer, part-time CPO, product leadership, startup CPO, hire fractional CPO" />
+          <link rel="canonical" href="https://p0stman.com/fractional-cpo" />
         </Helmet>
 
         <HeaderV3Global />
@@ -149,12 +152,12 @@ export default function FractionalCPO() {
                   className="space-y-8"
                 >
                   <div className="space-y-6">
-                    <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Fractional CPO Services</p>
+                    <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">Part-Time Product Executive</p>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight text-gray-900">
-                      Strategic Product Leadership
+                      Fractional CPO Services
                       <br />
-                      Without the Full-Time Cost
+                      <span className="text-gray-500">Strategic Leadership, Flexible Cost</span>
                     </h1>
 
                     <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl">
@@ -905,6 +908,123 @@ export default function FractionalCPO() {
                   </p>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-4xl font-light mb-6">Frequently Asked Questions About Fractional CPO Services</h2>
+                <p className="text-xl text-gray-600 font-light">
+                  Common questions about hiring a fractional Chief Product Officer
+                </p>
+              </motion.div>
+
+              <div className="space-y-6">
+                {/* FAQ 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-6 border-t border-gray-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <HelpCircle className="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-light text-gray-900 mb-3">What is a fractional CPO?</h3>
+                      <p className="text-gray-600 font-light leading-relaxed">
+                        A fractional CPO is a part-time Chief Product Officer who provides strategic product leadership on a flexible basis, typically working 1-3 days per week with multiple companies. This model gives startups and scale-ups access to experienced C-level product expertise without the commitment and cost of a full-time executive hire. Fractional CPOs bring the same strategic vision, team leadership, and product management skills as a full-time CPO, but with the flexibility to scale engagement up or down based on your needs.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* FAQ 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-6 border-t border-gray-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <HelpCircle className="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-light text-gray-900 mb-3">How much does a fractional CPO cost?</h3>
+                      <p className="text-gray-600 font-light leading-relaxed">
+                        Fractional CPO services typically range from $5,000-$15,000 per month depending on time commitment and scope. This represents a 50-70% cost savings compared to a full-time CPO salary, which averages $250,000-$400,000 annually plus equity and benefits. The fractional model allows you to access senior product leadership at a fraction of the cost while still getting the strategic guidance and hands-on involvement your product needs to succeed.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* FAQ 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-6 border-t border-gray-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <HelpCircle className="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-light text-gray-900 mb-3">When should I hire a fractional CPO?</h3>
+                      <p className="text-gray-600 font-light leading-relaxed">
+                        Consider hiring a fractional CPO when you need product strategy expertise but aren't ready for a full-time executive, during rapid growth phases when product decisions become more complex, or when pivoting your product direction and need experienced guidance. It's also ideal when your founding team needs to focus on other areas but product leadership is suffering, when you're preparing for fundraising and need a stronger product narrative, or when your product team needs mentorship and structure to scale effectively.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* FAQ 4 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-6 border-t border-gray-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <HelpCircle className="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-light text-gray-900 mb-3">What's the difference between a fractional CPO and a product consultant?</h3>
+                      <p className="text-gray-600 font-light leading-relaxed">
+                        A fractional CPO is an embedded member of your leadership team who takes ownership of product outcomes, not just advice. While consultants typically provide recommendations and leave, a fractional CPO works alongside your team, makes decisions, leads people, and is accountable for results. They attend leadership meetings, participate in hiring, mentor your product managers, and drive execution - just like a full-time CPO would, but on a part-time basis.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* FAQ 5 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-50 p-6 border-t border-gray-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <HelpCircle className="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-light text-gray-900 mb-3">How quickly can a fractional CPO make an impact?</h3>
+                      <p className="text-gray-600 font-light leading-relaxed">
+                        Experienced fractional CPOs can start delivering value from day one. The first 1-2 weeks typically focus on understanding your business, product, and team through a rapid discovery process. By week 3-4, you'll have an initial strategic assessment and prioritized action plan. Meaningful product and team improvements usually become visible within the first 60-90 days, with compounding benefits as strategic initiatives take hold.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
