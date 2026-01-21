@@ -98,6 +98,7 @@ import ContextEngineering from './pages/ContextEngineering';
 import AIAgentsService from './pages/AIAgentsService';
 import PrototypeToProduction from './pages/PrototypeToProduction';
 import FractionalAILeadership from './pages/FractionalAILeadership';
+import UnifyYourSystems from './pages/UnifyYourSystems';
 
 export default function App() {
   return (
@@ -120,6 +121,7 @@ export default function App() {
           <Route path="/services/ai-agents" element={<AIAgentsService />} />
           <Route path="/prototype-to-production" element={<PrototypeToProduction />} />
           <Route path="/fractional-ai-leadership" element={<FractionalAILeadership />} />
+          <Route path="/unify-your-systems" element={<UnifyYourSystems />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/guide/content" element={<GuideContent />} />
           <Route path="/guide/content/:id" element={<ChapterContent />} />

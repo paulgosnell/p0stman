@@ -100,9 +100,9 @@ export default function PrototypeToProduction() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Prototype to Production | Bolt, Lovable, Replit to Live | P0STMAN</title>
-          <meta name="description" content="Take your Bolt, Lovable, or Replit prototype to production. Your prototype isn't a failure - it's the most valuable discovery artifact you could have." />
-          <meta name="keywords" content="prototype to production, bolt to production, lovable production, replit production, MVP development, startup development" />
+          <title>Prototype to Production | Bolt, Lovable, Replit to Live | POSTMAN</title>
+          <meta name="description" content="Take your Bolt, Lovable, or Replit prototype to production. 20 years shipping products, AI-native since day one. Your prototype isn't a failure - it's a detailed spec." />
+          <meta name="keywords" content="prototype to production, bolt to production, lovable production, replit production, MVP development, vibe coding to production, AI prototype help" />
           <link rel="canonical" href="https://p0stman.com/prototype-to-production" />
         </Helmet>
 
@@ -131,8 +131,12 @@ export default function PrototypeToProduction() {
                   Isn't a Failure
                 </h1>
 
-                <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto mb-6">
                   You built something in Bolt, Lovable, or Replit. It works. Now make it real.
+                </p>
+
+                <p className="text-sm md:text-base text-gray-500 font-light max-w-2xl mx-auto mb-12">
+                  20 years shipping products. One of the first production builders on Bolt.
                 </p>
 
                 <Link to="/contact">

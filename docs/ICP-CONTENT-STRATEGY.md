@@ -260,8 +260,8 @@ These aren't "wrong" - they serve the enterprise credibility play. Keep them.
 ### Missing Pages (Gaps)
 
 **For ICP 1 (Ops Transformation SMB):**
-1. **"Unify Your Systems" landing page** - speaks to 7-8 disconnected tools pain
-2. **"AI for Multi-Location Businesses"** - retail chains, service businesses
+1. ~~**"Unify Your Systems" landing page**~~ - ✅ CREATED `/unify-your-systems`
+2. **"AI for Multi-Location Businesses"** - retail chains, service businesses (future)
 3. **Anonymized case study or "typical project" page** - describe the Salad Project pattern without naming them (until delivered)
 4. **Pricing/packaging for ICP 1** - current pricing is enterprise-scale, need SMB tier messaging
 
