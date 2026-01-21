@@ -41,6 +41,7 @@ export default function ConversationalContactForm() {
         name,
         email,
         project_type: fromCareers ? 'Careers' : 'General Inquiry',
+        budget: 'Not specified',
         description: message.trim(),
         session_id: sourceData?.session_id,
         referrer: sourceData?.referrer,
