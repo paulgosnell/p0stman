@@ -77,29 +77,15 @@ export default function AnimatedWaveform({
     return () => clearInterval(interval);
   }, [barCount, animate, isLive, frequencyData]);
 
-  // Agent speaking animation - smoother wave pattern
+  // Agent speaking - use real frequency data from hook (no synthetic animation needed)
+  // The useGeminiVoiceWaveform hook now provides real frequency data for agent audio
   useEffect(() => {
     if (!isAgentSpeaking) {
       setAgentHeights([]);
-      return;
     }
-
-    let frame = 0;
-    const interval = setInterval(() => {
-      frame += 1;
-      const newHeights = Array.from({ length: barCount }, (_, i) => {
-        // Create a flowing wave pattern for agent speech
-        const phase = ((i + frame * 0.8) / barCount) * Math.PI * 3;
-        const baseHeight = 25;
-        const waveHeight = 50 * Math.abs(Math.sin(phase));
-        const secondaryWave = 20 * Math.abs(Math.sin(phase * 2 + frame * 0.2));
-        return baseHeight + waveHeight + secondaryWave;
-      });
-      setAgentHeights(newHeights);
-    }, 50); // Faster update for smoother animation
-
-    return () => clearInterval(interval);
-  }, [barCount, isAgentSpeaking]);
+    // When agent is speaking with real frequency data, use that directly
+    // The frequencyData prop already contains agent audio analysis when agent is speaking
+  }, [isAgentSpeaking]);
 
   const handleVoiceClick = () => {
     if (isVoiceActive) {
@@ -126,8 +112,8 @@ export default function AnimatedWaveform({
       {/* Waveform */}
       <div className="w-full h-full flex items-center justify-center gap-[3px]">
         {heights.map((height, i) => {
-          // Use agent heights and color when agent is speaking
-          const displayHeight = isAgentSpeaking && agentHeights[i] ? agentHeights[i] : height;
+          // Use the real frequency data height (now includes agent audio when agent is speaking)
+          const displayHeight = height;
           const barColor = isAgentSpeaking
             ? agentColor
             : isHovered

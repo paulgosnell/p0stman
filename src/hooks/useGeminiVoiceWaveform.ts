@@ -111,6 +111,8 @@ export function useGeminiVoiceWaveform(
   const playbackContextRef = useRef<AudioContext | null>(null); // Separate context for playback at 24kHz
   const processorRef = useRef<ScriptProcessorNode | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
+  const playbackAnalyserRef = useRef<AnalyserNode | null>(null); // Analyser for agent audio output
+  const playbackGainRef = useRef<GainNode | null>(null); // Gain node to route audio through analyser
   const audioQueueRef = useRef<ArrayBuffer[]>([]);
   const isPlayingRef = useRef(false);
   const animationFrameRef = useRef<number>();
@@ -198,6 +200,13 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       playbackContextRef.current = new AudioContext({
         sampleRate: AUDIO_CONFIG.outputSampleRate,
       });
+
+      // Create analyser and gain node for visualizing agent audio
+      playbackAnalyserRef.current = playbackContextRef.current.createAnalyser();
+      playbackAnalyserRef.current.fftSize = 256;
+      playbackGainRef.current = playbackContextRef.current.createGain();
+      playbackGainRef.current.connect(playbackAnalyserRef.current);
+      playbackAnalyserRef.current.connect(playbackContextRef.current.destination);
     }
 
     // Ensure context is running (required after user gesture)
@@ -227,10 +236,15 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
         );
         audioBuffer.getChannelData(0).set(float32Array);
 
-        // Schedule playback seamlessly
+        // Schedule playback seamlessly through gain node (for analyser)
         const source = ctx.createBufferSource();
         source.buffer = audioBuffer;
-        source.connect(ctx.destination);
+        // Connect through gain node so audio goes through analyser for visualization
+        if (playbackGainRef.current) {
+          source.connect(playbackGainRef.current);
+        } else {
+          source.connect(ctx.destination);
+        }
 
         // Calculate when to start this chunk
         const startTime = Math.max(ctx.currentTime, nextPlayTimeRef.current);
@@ -555,18 +569,25 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
       source.connect(processor);
       processor.connect(audioContextRef.current.destination);
 
-      // Start waveform animation for input
+      // Start waveform animation for input and output
       const updateWaveform = () => {
-        if (analyserRef.current && isMountedRef.current && !isPlayingRef.current) {
-          const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
-          analyserRef.current.getByteFrequencyData(dataArray);
+        if (isMountedRef.current) {
+          // Use playback analyser when agent is speaking, mic analyser otherwise
+          const activeAnalyser = isPlayingRef.current && playbackAnalyserRef.current
+            ? playbackAnalyserRef.current
+            : analyserRef.current;
 
-          const step = Math.floor(dataArray.length / 60);
-          const newHeights = Array.from({ length: 60 }, (_, i) => {
-            const value = dataArray[i * step] || 0;
-            return (value / 255) * 100;
-          });
-          setHeights(newHeights);
+          if (activeAnalyser) {
+            const dataArray = new Uint8Array(activeAnalyser.frequencyBinCount);
+            activeAnalyser.getByteFrequencyData(dataArray);
+
+            const step = Math.floor(dataArray.length / 60);
+            const newHeights = Array.from({ length: 60 }, (_, i) => {
+              const value = dataArray[i * step] || 0;
+              return (value / 255) * 100;
+            });
+            setHeights(newHeights);
+          }
         }
         animationFrameRef.current = requestAnimationFrame(updateWaveform);
       };
@@ -618,6 +639,10 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
     audioContextRef.current = null;
     analyserRef.current = null;
 
+    playbackAnalyserRef.current?.disconnect();
+    playbackAnalyserRef.current = null;
+    playbackGainRef.current?.disconnect();
+    playbackGainRef.current = null;
     playbackContextRef.current?.close();
     playbackContextRef.current = null;
 
