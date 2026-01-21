@@ -261,9 +261,11 @@ These aren't "wrong" - they serve the enterprise credibility play. Keep them.
 
 **For ICP 1 (Ops Transformation SMB):**
 1. ~~**"Unify Your Systems" landing page**~~ - ✅ CREATED `/unify-your-systems`
-2. **"AI for Multi-Location Businesses"** - retail chains, service businesses (future)
-3. **Anonymized case study or "typical project" page** - describe the Salad Project pattern without naming them (until delivered)
-4. **Pricing/packaging for ICP 1** - current pricing is enterprise-scale, need SMB tier messaging
+2. ~~**Homepage section for ICP 1**~~ - ✅ CREATED `OperationsTransformationV3` component
+3. ~~**Services page entry**~~ - ✅ ADDED "Operations Transformation" service
+4. **"AI for Multi-Location Businesses"** - retail chains, service businesses (future)
+5. **Anonymized case study or "typical project" page** - describe the Salad Project pattern without naming them (until delivered)
+6. **Pricing/packaging for ICP 1** - current pricing is enterprise-scale, need SMB tier messaging
 
 **For ICP 2 (Prototype-to-Production):**
 1. **Framework comparison page** - v0 vs Claude Artifacts vs Lovable vs Bolt (what each is good/bad at)
@@ -301,9 +303,20 @@ Currently ChatGPT sends them to Twine. Can we intercept earlier with targeted co
 
 ## Session Log
 
-### 2026-01-21
+### 2026-01-21 (Session 2)
+- Created `OperationsTransformationV3` homepage section for ICP 1
+- Added "Operations Transformation" service to services page
+- Added "Prototype to Production" service to services page
+- Homepage now has dedicated section speaking to SMB ops pain points
+- Services page now leads with ICP 1 and ICP 2 offerings
+
+### 2026-01-21 (Session 1)
 - Documented two distinct ICPs from previous discovery session
 - Identified shared trait: AI-aware non-builders (not beginners)
 - Defined content tone implications
-- Starting page-to-ICP audit
+- Started page-to-ICP audit
+- Updated homepage hero messaging: "Ideas. Shipped."
+- Created `/unify-your-systems` landing page for ICP 1
+- Updated `/prototype-to-production` with credibility line
+- Fixed waveform animation for agent speech
 
