@@ -297,7 +297,40 @@ Currently ChatGPT sends them to Twine. Can we intercept earlier with targeted co
 1. Does `/prototype-to-production` actually speak to ICP 2's pain?
 2. Is Salad Project positioned as the ICP 1 archetype case study?
 3. Which of the 15 SEO pages serve our ICPs vs. a different market (brands wanting ChatGPT presence)?
-4. What's the right homepage positioning when serving two distinct ICPs?
+4. ~~What's the right homepage positioning when serving two distinct ICPs?~~ → RESOLVED: Keep homepage broad, ICP-specific pain on landing pages
+
+---
+
+## Future Considerations (Backlog)
+
+### Content Gaps Still To Address
+
+**ICP 1 (Ops Transformation):**
+- "AI for Multi-Location Businesses" page - retail chains, franchise ops
+- Anonymized case study describing the Salad Project pattern (once delivered)
+- SMB-tier pricing/packaging messaging (current is enterprise-scale)
+
+**ICP 2 (Prototype-to-Production):**
+- Framework comparison: v0 vs Claude Artifacts vs Lovable vs Bolt
+- "What Happens After Launch" - post-MVP scaling stories
+- Cost calculator/estimator tool
+
+**SEO/LLM Intercept (capture ICP 2 before Twine):**
+- "Lovable limitations" / "Bolt limitations" pages
+- "Why my Lovable app won't deploy" - problem-focused
+- "Vibe coding ceiling" - name the problem they're experiencing
+
+### Positioning Work
+
+**Paul as Strategic Partner:** The website currently sells commoditized services with fixed prices. Paul actually delivers trusted advisor + execution. The "get them on a call" strategy works, but the website could better telegraph the strategic partner positioning vs. just "hire a dev."
+
+**Enterprise Case Studies:** FAB Bank, Etihad, Al Arabiya are pre-AI projects serving ICP 3 (enterprise credibility). They don't demonstrate AI coding but do demonstrate 20 years of large-scale delivery. Keep for enterprise conversations, don't expect them to convert ICP 1/2.
+
+### Pages That Could Be Sharpened
+
+- `/ai-agents` - currently broad, could speak more to specific use cases
+- `/ai-product-studio` - broad positioning
+- `/context-engineering` - technical, unclear who it's for
 
 ---
 
