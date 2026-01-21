@@ -36,19 +36,8 @@ export default function ConversationalContactForm() {
     try {
       const sourceData = await getSourceData();
 
-      // Send via EmailJS
-      await sendEmail({
-        name,
-        email,
-        form_type: 'contact_form',
-        project_type: fromCareers ? 'Careers' : 'General Inquiry',
-        message: message.trim(),
-        description: message.trim(),
-        source_page: sourceData?.referrer || document.referrer || ''
-      });
-
-      // Save to Supabase
-      await supabase.from('contacts').insert({
+      // Save to Supabase (primary storage - must succeed)
+      const { error: supabaseError } = await supabase.from('contacts').insert({
         name,
         email,
         project_type: fromCareers ? 'Careers' : 'General Inquiry',
@@ -64,14 +53,29 @@ export default function ConversationalContactForm() {
         page_views_before_contact: sourceData?.page_views_before_contact
       });
 
-      // Send email notification
-      await sendContactEmail({
+      if (supabaseError) {
+        console.error('Supabase error:', supabaseError);
+        throw new Error('Failed to save contact');
+      }
+
+      // Send email notifications (non-blocking - don't fail the form if these error)
+      sendEmail({
+        name,
+        email,
+        form_type: 'contact_form',
+        project_type: fromCareers ? 'Careers' : 'General Inquiry',
+        message: message.trim(),
+        description: message.trim(),
+        source_page: sourceData?.referrer || document.referrer || ''
+      }).catch(err => console.error('EmailJS error (non-blocking):', err));
+
+      sendContactEmail({
         name,
         email,
         projectType: fromCareers ? 'Careers Application' : 'General Inquiry',
         message: message.trim(),
         form_type: 'contact'
-      });
+      }).catch(err => console.error('Contact email error (non-blocking):', err));
 
       markConversion('contact_form');
       trackFormSubmit(true, { type: fromCareers ? 'careers' : 'general' });
