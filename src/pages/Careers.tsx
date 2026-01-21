@@ -109,16 +109,16 @@ export default function Careers() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Careers | P0STMAN - AI-Native Builder Jobs</title>
-          <meta name="description" content="Join P0STMAN's roster of AI-native builders, creative technologists, and growth hackers. We ship products in days, not months. Flexible contract roles available." />
+          <title>Careers | POSTMAN - AI-Native Builder Jobs</title>
+          <meta name="description" content="Join POSTMAN's roster of AI-native builders, creative technologists, and growth hackers. We ship products in days, not months. Flexible contract roles available." />
           <meta name="keywords" content="AI-native jobs, AI builder careers, creative technologist jobs, context engineer role, vibe marketing jobs, AI agency careers, remote AI jobs, freelance AI developer" />
-          <meta property="og:title" content="Careers | P0STMAN - AI-Native Builder Jobs" />
-          <meta property="og:description" content="Join P0STMAN's roster of AI-native builders, creative technologists, and growth hackers. We ship products in days, not months. Flexible contract roles available." />
+          <meta property="og:title" content="Careers | POSTMAN - AI-Native Builder Jobs" />
+          <meta property="og:description" content="Join POSTMAN's roster of AI-native builders, creative technologists, and growth hackers. We ship products in days, not months. Flexible contract roles available." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Careers | P0STMAN - AI-Native Builder Jobs" />
-          <meta name="twitter:description" content="Join P0STMAN's roster of AI-native builders, creative technologists, and growth hackers. We ship products in days, not months." />
+          <meta name="twitter:title" content="Careers | POSTMAN - AI-Native Builder Jobs" />
+          <meta name="twitter:description" content="Join POSTMAN's roster of AI-native builders, creative technologists, and growth hackers. We ship products in days, not months." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/careers" />
         </Helmet>
@@ -136,7 +136,7 @@ export default function Careers() {
               {/* Eyebrow */}
               <div className="mb-8">
                 <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
-                  Join P0STMAN
+                  Join POSTMAN
                 </span>
               </div>
 
@@ -191,7 +191,7 @@ export default function Careers() {
             >
               <div className="mb-8">
                 <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
-                  The P0STMAN Way
+                  The POSTMAN Way
                 </span>
               </div>
 
@@ -407,7 +407,7 @@ export default function Careers() {
                   to="/about"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 border border-gray-200 hover:border-gray-300 transition-colors font-light text-lg"
                 >
-                  About P0STMAN
+                  About POSTMAN
                 </Link>
               </div>
             </motion.div>

@@ -68,7 +68,7 @@ export default function Hero() {
                 {/* Left Column - Ambassador Text */}
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 flex items-center">
                   <p className="text-gray-300 text-lg">
-                    We believe bold ideas deserve to be built. P0STMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
+                    We believe bold ideas deserve to be built. POSTMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
                   </p>
                 </div>
                 

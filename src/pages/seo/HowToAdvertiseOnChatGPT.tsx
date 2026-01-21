@@ -111,12 +111,12 @@ const articleSchema = {
   "description": "Everything you need to know about advertising on ChatGPT. Ad formats, targeting, pricing expectations, and how to prepare your brand for OpenAI's new ad platform.",
   "author": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": "https://p0stman.com"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": "https://p0stman.com",
     "logo": {
       "@type": "ImageObject",
@@ -173,10 +173,10 @@ export default function HowToAdvertiseOnChatGPT() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>How to Advertise on ChatGPT: Complete Guide (2026) | P0STMAN</title>
+          <title>How to Advertise on ChatGPT: Complete Guide (2026) | POSTMAN</title>
           <meta name="description" content="Everything you need to know about advertising on ChatGPT. Ad formats, targeting, pricing expectations, and how to prepare your brand for OpenAI's new ad platform." />
           <meta name="keywords" content="how to advertise on ChatGPT, ChatGPT advertising, OpenAI ads, ChatGPT marketing, AI advertising, ChatGPT ad platform" />
-          <meta property="og:title" content="How to Advertise on ChatGPT: Complete Guide (2026) | P0STMAN" />
+          <meta property="og:title" content="How to Advertise on ChatGPT: Complete Guide (2026) | POSTMAN" />
           <meta property="og:description" content="Everything you need to know about advertising on ChatGPT. Ad formats, targeting, pricing expectations, and how to prepare your brand for OpenAI's new ad platform." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />

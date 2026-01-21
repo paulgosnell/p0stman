@@ -184,7 +184,7 @@ export default function FlyoutNavigation() {
                     </div>
                     <div>
                       <h3 className="text-white font-bold group-hover:text-blue-300 transition-colors">
-                        P0STMAN
+                        POSTMAN
                       </h3>
                       <p className="text-gray-400 text-xs">Product Studio</p>
                     </div>

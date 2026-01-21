@@ -328,7 +328,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
           </div>
         </section>
 
-      {/* About P0STMAN Section */}
+      {/* About POSTMAN Section */}
         <section className="min-h-screen relative overflow-hidden flex items-center">
           <div className="container mx-auto px-6 md:px-8 py-24 md:py-28">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -338,7 +338,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                   <span className="px-3 py-1 text-xs tracking-widest uppercase bg-white/5 border border-gray-200 rounded-full text-gray-300">Built in the Middle East</span>
                   <span className="px-3 py-1 text-xs tracking-widest uppercase bg-white/5 border border-gray-200 rounded-full text-gray-300">Gov • Enterprise • Startup</span>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-thin text-white mb-6 leading-tight">P0STMAN — AI product studio for the bold</h2>
+                <h2 className="text-3xl md:text-5xl font-thin text-white mb-6 leading-tight">POSTMAN — AI product studio for the bold</h2>
                 <p className="text-lg md:text-xl text-gray-300/90 leading-relaxed mb-6">
                   We build AI products that ship. From strategy to working software, we partner with governments, enterprises and startups to turn vision into production in weeks, not quarters.
                 </p>
@@ -362,7 +362,7 @@ const AIPlaybookLandingComplete: React.FC = () => {
                     href="/about"
                     className="inline-flex justify-center items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg px-8 py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 hover:scale-[1.02] text-white"
                   >
-                    Learn more about P0STMAN
+                    Learn more about POSTMAN
                   </a>
                   <button
                     onClick={() => document.getElementById('download-form')?.scrollIntoView({ behavior: 'smooth' })}

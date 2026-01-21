@@ -82,7 +82,7 @@ export default function HeaderV3Global({ darkMode = false }: HeaderV3GlobalProps
           <span
             className={`text-2xl font-light tracking-tight transition-colors duration-300 ${textColorClass}`}
           >
-            P0STMAN
+            POSTMAN
           </span>
         </Link>
 

@@ -35,7 +35,7 @@ export default function NotFound() {
         >
           <h2 className="text-2xl font-light text-gray-900">Houston, we have a problem!</h2>
           <p className="text-gray-600 max-w-md mx-auto font-light">
-            Looks like the P0STMAN got lost in the digital cosmos. Don't worry though, our AI is working on bringing it back!
+            Looks like the POSTMAN got lost in the digital cosmos. Don't worry though, our AI is working on bringing it back!
           </p>
 
           {/* Animated Stars */}

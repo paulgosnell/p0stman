@@ -356,7 +356,7 @@ export default function FounderLaunchPackage() {
                   The Solution
                 </span>
               </div>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight">Traditional Way vs. P0STMAN Way</h2>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight">Traditional Way vs. POSTMAN Way</h2>
             </motion.div>
 
             <motion.div
@@ -371,7 +371,7 @@ export default function FounderLaunchPackage() {
                   <tr className="bg-gray-50">
                     <th className="px-6 py-4 text-left text-gray-900 font-light">Aspect</th>
                     <th className="px-6 py-4 text-left text-gray-900 font-light">Traditional Approach</th>
-                    <th className="px-6 py-4 text-left text-gray-900 font-light">P0STMAN Package</th>
+                    <th className="px-6 py-4 text-left text-gray-900 font-light">POSTMAN Package</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -527,7 +527,7 @@ export default function FounderLaunchPackage() {
                   <div className="text-center">
                     <div className="text-gray-400 line-through text-xl mb-2 font-light">Traditional: $80-150k + 6 months</div>
                     <div className="text-3xl font-light text-gray-900">
-                      P0STMAN Package: $35-50k in 30 days
+                      POSTMAN Package: $35-50k in 30 days
                     </div>
                   </div>
 

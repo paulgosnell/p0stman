@@ -100,10 +100,30 @@ export default function FractionalAILeadership() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Fractional AI Leadership | Chief AI Officer on Demand | P0STMAN</title>
+          <title>Fractional AI Leadership | Chief AI Officer on Demand | POSTMAN</title>
           <meta name="description" content="AI strategy and execution without the $500k salary. Fractional CTO, CAO, CPO for AI transformation. Start next week, not in 6 months." />
           <meta name="keywords" content="fractional CTO, fractional CAO, chief AI officer, AI leadership, AI transformation, AI strategy" />
           <link rel="canonical" href="https://p0stman.com/fractional-ai-leadership" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Fractional AI Leadership",
+              "description": "AI strategy and execution without the $500k salary. Fractional CTO, CAO, CPO for AI transformation. Start next week, not in 6 months.",
+              "provider": {
+                "@type": "Organization",
+                "name": "POSTMAN",
+                "url": "https://p0stman.com"
+              },
+              "serviceType": ["Fractional CTO", "Fractional CAO", "Chief AI Officer", "AI Strategy"],
+              "areaServed": "Worldwide",
+              "offers": {
+                "@type": "Offer",
+                "description": "8 hours/week strategic AI leadership",
+                "priceRange": "$5,000-$15,000/month"
+              }
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

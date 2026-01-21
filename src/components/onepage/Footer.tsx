@@ -11,7 +11,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, className = '' }) => {
   const currentYear = new Date().getFullYear();
 
   const handleEmailClick = () => {
-    const subject = encodeURIComponent('P0STMAN Services Inquiry');
+    const subject = encodeURIComponent('POSTMAN Services Inquiry');
     window.location.href = `mailto:${contactInfo.email}?subject=${subject}`;
   };
 
@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, className = '' }) => {
       }
     }
     
-    const message = encodeURIComponent('Hi Paul, I\'m interested in P0STMAN services.');
+    const message = encodeURIComponent('Hi Paul, I\'m interested in POSTMAN services.');
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, className = '' }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div className="text-center md:text-left">
-            <h3 className="text-premium-2xl text-white mb-4">P0STMAN</h3>
+            <h3 className="text-premium-2xl text-white mb-4">POSTMAN</h3>
             <p className="text-sm text-gray-400 mb-4">
               AI Adoption • Advisory • Delivery
             </p>
@@ -108,7 +108,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, className = '' }) => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-sm text-gray-500">
-              © {currentYear} P0STMAN. All rights reserved.
+              © {currentYear} POSTMAN. All rights reserved.
             </div>
             
             {/* Legal Links */}

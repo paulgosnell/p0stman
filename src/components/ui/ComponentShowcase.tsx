@@ -9,7 +9,7 @@ import Badge from './Badge';
 /**
  * Component Showcase
  *
- * A demo page showing all UI components in the P0STMAN V3 Design System.
+ * A demo page showing all UI components in the POSTMAN V3 Design System.
  * Use this for testing, documentation, and as a reference implementation.
  */
 
@@ -20,7 +20,7 @@ export default function ComponentShowcase() {
       <Section paddingY="xl" bgColor="gradient">
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-thin text-gray-900 mb-6">
-            P0STMAN V3 Design System
+            POSTMAN V3 Design System
           </h1>
           <p className="text-xl font-light text-gray-600 mb-8 max-w-2xl mx-auto">
             A comprehensive UI component library built with React, TypeScript, and Tailwind CSS
@@ -290,7 +290,7 @@ export default function ComponentShowcase() {
             Ready to Build?
           </h2>
           <p className="text-xl font-light text-gray-600 mb-8 max-w-2xl mx-auto">
-            Start using the P0STMAN V3 Design System in your project today.
+            Start using the POSTMAN V3 Design System in your project today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

@@ -273,7 +273,7 @@ const hubSchema = {
   "url": BASE_URL + '/compare/',
   "provider": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": BASE_URL
   }
 };

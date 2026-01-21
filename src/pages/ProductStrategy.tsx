@@ -169,7 +169,7 @@ export default function ProductStrategy() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Product Strategy Consulting | Strategic Product Planning | P0STMAN</title>
+          <title>Product Strategy Consulting | Strategic Product Planning | POSTMAN</title>
           <meta name="description" content="Expert product strategy consulting to define vision, create roadmaps, and drive growth. From startups to enterprise, strategic product planning that delivers results." />
           <meta name="keywords" content="product strategy, product roadmap, product planning, strategic consulting, product vision" />
         </Helmet>

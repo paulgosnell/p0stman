@@ -39,8 +39,8 @@ const languageMapping: Record<string, string> = {
 export default function VoiceAgentOverlay({
   isOpen,
   onClose,
-  prompt = 'You are a helpful AI assistant for P0STMAN, an AI-powered product studio.',
-  firstMessage = "Hey! Welcome to P0STMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?",
+  prompt = 'You are a helpful AI assistant for POSTMAN, an AI-powered product studio.',
+  firstMessage = "Hey! Welcome to POSTMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?",
   voice = 'coral',
 }: VoiceAgentOverlayProps) {
   const [isActive, setIsActive] = useState(false);
@@ -322,11 +322,11 @@ ${DEFAULT_VOICE_STYLE_INSTRUCTIONS}`;
   // Get status text
   const getStatusText = () => {
     if (error) return error;
-    if (connectionStatus === 'connecting') return 'Connecting to P0STMAN...';
-    if (isSpeaking) return 'P0STMAN is speaking...';
-    if (isListening) return 'P0STMAN is listening...';
-    if (isActive) return 'Tap to end conversation with P0STMAN';
-    return 'Tap to talk to P0STMAN';
+    if (connectionStatus === 'connecting') return 'Connecting to POSTMAN...';
+    if (isSpeaking) return 'POSTMAN is speaking...';
+    if (isListening) return 'POSTMAN is listening...';
+    if (isActive) return 'Tap to end conversation with POSTMAN';
+    return 'Tap to talk to POSTMAN';
   };
 
   return (

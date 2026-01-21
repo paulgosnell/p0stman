@@ -28,7 +28,7 @@ export default function WhyWeDoIt() {
             </h2>
             
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              We believe bold ideas deserve to be built. P0STMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
+              We believe bold ideas deserve to be built. POSTMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
             </p>
           </motion.div>
         </div>

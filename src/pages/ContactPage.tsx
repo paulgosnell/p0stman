@@ -32,15 +32,15 @@ export default function ContactPage() {
     <HelmetProvider>
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Helmet>
-          <title>Contact P0STMAN | AI-Powered Product Studio</title>
-          <meta name="description" content="Contact P0STMAN to discuss your project. Based in London, UK, delivering AI-powered development solutions globally. Expert guidance and support available." />
+          <title>Contact POSTMAN | AI-Powered Product Studio</title>
+          <meta name="description" content="Contact POSTMAN to discuss your project. Based in London, UK, delivering AI-powered development solutions globally. Expert guidance and support available." />
           <meta name="keywords" content="contact, AI development, London, UK, product development, tech support" />
-          <meta property="og:title" content="Contact P0STMAN | AI-Powered Product Studio" />
+          <meta property="og:title" content="Contact POSTMAN | AI-Powered Product Studio" />
           <meta property="og:description" content="Get in touch to discuss your project. Based in London, UK, delivering AI-powered solutions globally." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Contact P0STMAN | AI-Powered Product Studio" />
+          <meta name="twitter:title" content="Contact POSTMAN | AI-Powered Product Studio" />
           <meta name="twitter:description" content="Get in touch to discuss your project. Based in London, UK, delivering AI-powered solutions globally." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/contact" />
@@ -216,7 +216,7 @@ export default function ContactPage() {
                         <Building2 className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" strokeWidth={1.5} />
                         <div>
                           <p className="text-gray-900 dark:text-gray-100 font-light">Thrive Venture Labs Ltd</p>
-                          <p className="text-gray-500 dark:text-gray-400 font-light text-sm">trading as P0STMAN</p>
+                          <p className="text-gray-500 dark:text-gray-400 font-light text-sm">trading as POSTMAN</p>
                         </div>
                       </div>
 
@@ -297,7 +297,7 @@ export default function ContactPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <TestimonialCard
-                quote="P0STMAN built our AI website generator in 6 days. We now serve 1000+ active users who have built 2,500+ websites."
+                quote="POSTMAN built our AI website generator in 6 days. We now serve 1000+ active users who have built 2,500+ websites."
                 author="Chilled Sites"
                 role="Founder"
                 result="2,500+ websites built"

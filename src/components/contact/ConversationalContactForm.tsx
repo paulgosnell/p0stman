@@ -249,7 +249,7 @@ export default function ConversationalContactForm() {
 
       // Format conversation for storage
       const conversationText = allMessages
-        .map(m => `${m.role === 'user' ? name : 'P0STMAN AI'}: ${m.content}`)
+        .map(m => `${m.role === 'user' ? name : 'POSTMAN AI'}: ${m.content}`)
         .join('\n\n');
 
       // Send via EmailJS
@@ -422,7 +422,7 @@ export default function ConversationalContactForm() {
                   <Bot className="w-4 h-4 text-white" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">P0STMAN AI</p>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">POSTMAN AI</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
                     {hasSubmitted ? "Conversation saved - Paul will follow up" : "Let's figure out how we can help"}
                   </p>

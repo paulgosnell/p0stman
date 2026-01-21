@@ -11,7 +11,7 @@ export const reportSections: Record<string, ReportSection> = {
     stat: '$320B economic impact by 2030',
     quote: 'The Middle East has a once-in-a-generation chance to lead the AI era',
     author: 'Paul Gosnell',
-    role: 'Founder, P0STMAN.com',
+    role: 'Founder, POSTMAN.com',
     content: {
       title: 'Executive Summary: AI in the Middle East 2025',
       content: `Artificial Intelligence (AI) has moved from vision statements to real-world deployment across the Middle East. Governments, sovereign wealth funds, corporates, and startups are all converging on a shared understanding: AI is not a "future technology" — it is already reshaping economies, cities, and societies today.

@@ -48,7 +48,7 @@ const tldrPoints = [
   "GEO = SEO for AI search engines (ChatGPT, Perplexity, Google AI)",
   "52% of US adults now use AI chatbots for search tasks",
   "Content with FAQ structure gets 40% more AI citations",
-  "P0STMAN GEO services start at $2,500 with 3-5 day delivery"
+  "POSTMAN GEO services start at $2,500 with 3-5 day delivery"
 ];
 
 const seoVsGeoSame = [
@@ -145,12 +145,12 @@ const articleSchema = {
   "description": "GEO (Generative Engine Optimization) helps your brand appear in AI-generated search results. Learn how to get cited by ChatGPT, Perplexity, and Google AI.",
   "author": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": "https://p0stman.com"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": "https://p0stman.com"
   },
   "mainEntityOfPage": {
@@ -188,15 +188,15 @@ export default function GenerativeEngineOptimization() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Generative Engine Optimization (GEO): The New SEO for AI Search | P0STMAN</title>
-          <meta name="description" content="GEO (Generative Engine Optimization) helps your brand appear in AI-generated search results. P0STMAN delivers GEO services that get you cited by ChatGPT, Perplexity, and Google AI." />
+          <title>Generative Engine Optimization (GEO): The New SEO for AI Search | POSTMAN</title>
+          <meta name="description" content="GEO (Generative Engine Optimization) helps your brand appear in AI-generated search results. POSTMAN delivers GEO services that get you cited by ChatGPT, Perplexity, and Google AI." />
           <meta name="keywords" content="generative engine optimization, GEO, AI SEO, ChatGPT optimization, Perplexity optimization, Google AI Overviews, AI search optimization" />
-          <meta property="og:title" content="Generative Engine Optimization (GEO): The New SEO for AI Search | P0STMAN" />
+          <meta property="og:title" content="Generative Engine Optimization (GEO): The New SEO for AI Search | POSTMAN" />
           <meta property="og:description" content="GEO (Generative Engine Optimization) helps your brand appear in AI-generated search results. Get cited by ChatGPT, Perplexity, and Google AI." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Generative Engine Optimization (GEO) | P0STMAN" />
+          <meta name="twitter:title" content="Generative Engine Optimization (GEO) | POSTMAN" />
           <meta name="twitter:description" content="GEO helps your brand appear in AI-generated search results. Get cited by ChatGPT, Perplexity, and Google AI." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/services/generative-engine-optimization-geo" />

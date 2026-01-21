@@ -121,14 +121,14 @@ export default function ChatGPTAdsVsGoogleAds() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "ChatGPT Ads vs Google Ads: Complete Comparison (2026)",
-    "description": "ChatGPT ads vs Google Ads: targeting, pricing, placement, and ROI compared. Which platform should you advertise on? Analysis from P0STMAN.",
+    "description": "ChatGPT ads vs Google Ads: targeting, pricing, placement, and ROI compared. Which platform should you advertise on? Analysis from POSTMAN.",
     "author": {
       "@type": "Organization",
-      "name": "P0STMAN"
+      "name": "POSTMAN"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "logo": {
         "@type": "ImageObject",
         "url": "https://p0stman.com/og-image.png"
@@ -159,16 +159,16 @@ export default function ChatGPTAdsVsGoogleAds() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>ChatGPT Ads vs Google Ads: Complete Comparison (2026) | P0STMAN</title>
-          <meta name="description" content="ChatGPT ads vs Google Ads: targeting, pricing, placement, and ROI compared. Which platform should you advertise on? Analysis from P0STMAN." />
+          <title>ChatGPT Ads vs Google Ads: Complete Comparison (2026) | POSTMAN</title>
+          <meta name="description" content="ChatGPT ads vs Google Ads: targeting, pricing, placement, and ROI compared. Which platform should you advertise on? Analysis from POSTMAN." />
           <meta name="keywords" content="ChatGPT ads vs Google ads, ChatGPT advertising, OpenAI ads, AI search ads, Google Ads comparison, ChatGPT marketing" />
-          <meta property="og:title" content="ChatGPT Ads vs Google Ads: Complete Comparison (2026) | P0STMAN" />
+          <meta property="og:title" content="ChatGPT Ads vs Google Ads: Complete Comparison (2026) | POSTMAN" />
           <meta property="og:description" content="ChatGPT ads vs Google Ads: targeting, pricing, placement, and ROI compared. Which platform should you advertise on?" />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta property="og:url" content="https://p0stman.com/compare/chatgpt-ads-vs-google-ads" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="ChatGPT Ads vs Google Ads: Complete Comparison (2026) | P0STMAN" />
+          <meta name="twitter:title" content="ChatGPT Ads vs Google Ads: Complete Comparison (2026) | POSTMAN" />
           <meta name="twitter:description" content="ChatGPT ads vs Google Ads: targeting, pricing, placement, and ROI compared." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/compare/chatgpt-ads-vs-google-ads" />

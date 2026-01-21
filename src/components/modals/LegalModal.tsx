@@ -15,10 +15,10 @@ const content = {
     content: `Last Updated: March 27, 2024
 
 1. Acceptance of Terms
-By accessing and using P0STMAN's services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+By accessing and using POSTMAN's services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
 
 2. Services Description
-P0STMAN provides AI-powered development services, including but not limited to:
+POSTMAN provides AI-powered development services, including but not limited to:
 - Custom website development
 - Training and educational services
 - Digital product development
@@ -32,9 +32,9 @@ You agree to:
 - Not engage in any activity that interferes with or disrupts the services
 
 4. Intellectual Property Rights
-- All content, features, and functionality are owned by P0STMAN
+- All content, features, and functionality are owned by POSTMAN
 - You retain ownership of your content and data
-- You grant P0STMAN a license to use your content for service provision
+- You grant POSTMAN a license to use your content for service provision
 
 5. Payment Terms
 - Payments are due as specified in service agreements
@@ -42,14 +42,14 @@ You agree to:
 - Prices are subject to change with notice
 
 6. Limitation of Liability
-P0STMAN shall not be liable for:
+POSTMAN shall not be liable for:
 - Indirect, incidental, or consequential damages
 - Loss of profits or data
 - Service interruptions or delays
 
 7. Term and Termination
 - Either party may terminate with written notice
-- P0STMAN may suspend services for violations
+- POSTMAN may suspend services for violations
 - Upon termination, you must cease using all services
 
 8. Changes to Terms

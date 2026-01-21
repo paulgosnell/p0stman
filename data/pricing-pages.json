@@ -2,7 +2,7 @@
   {
     "slug": "ai-voice-agent-pricing-guide-2025",
     "name": "AI Voice Agent Pricing Guide",
-    "metaTitle": "AI Voice Agent Pricing: Complete Cost Breakdown 2025 | P0STMAN",
+    "metaTitle": "AI Voice Agent Pricing: Complete Cost Breakdown 2025 | POSTMAN",
     "metaDescription": "Complete AI voice agent pricing guide. One-time build costs, monthly running costs, hidden fees. Real project examples with line-item budgets from 50+ implementations.",
     "heroH1": "AI Voice Agent Pricing: Complete Cost Breakdown 2025",
     "heroSubtext": "Transparent pricing from 50+ real projects. One-time build costs, monthly running costs, and hidden fees most agencies won't tell you about.",
@@ -225,7 +225,7 @@
   {
     "slug": "ai-automation-cost-calculator",
     "name": "AI Automation Cost Calculator",
-    "metaTitle": "AI Automation Cost Calculator: What Will YOUR Project Cost? | P0STMAN",
+    "metaTitle": "AI Automation Cost Calculator: What Will YOUR Project Cost? | POSTMAN",
     "metaDescription": "Calculate AI automation costs for your specific project. Answer 8 questions, get instant estimate with breakdown. Based on 50+ real implementations.",
     "heroH1": "AI Automation Cost Calculator: What Will YOUR Project Cost?",
     "heroSubtext": "Answer 8 questions about your project. Get instant cost estimate with detailed breakdown. Based on real pricing from 50+ implementations.",
@@ -327,7 +327,7 @@
   {
     "slug": "build-vs-buy-ai-comparison",
     "name": "Build vs Buy: AI Cost Comparison",
-    "metaTitle": "Build vs Buy AI: Complete Cost Comparison 2025 | P0STMAN",
+    "metaTitle": "Build vs Buy AI: Complete Cost Comparison 2025 | POSTMAN",
     "metaDescription": "Should you build AI in-house or hire an agency? Complete cost breakdown: engineer salaries, time to market, opportunity cost. Real numbers from 30+ companies.",
     "heroH1": "Build vs Buy AI: Complete Cost Comparison 2025",
     "heroSubtext": "Should you build in-house or hire an agency? Real cost breakdown including engineer salaries, time to market, and opportunity cost most companies ignore.",
@@ -369,7 +369,7 @@
         "bestFor": "Companies with: (1) Budget for dedicated AI team, (2) Long-term AI strategy needing multiple projects, (3) Strategic AI capabilities (core to business)"
       },
       "hireAgency": {
-        "name": "Hire Agency (P0STMAN)",
+        "name": "Hire Agency (POSTMAN)",
         "setup": {
           "total": "$15K-50K (one-time)",
           "breakdown": [
@@ -470,7 +470,7 @@
         "result": "Worked well but 9 months = missed revenue opportunity. Engineer left after 1 year."
       },
       "option2": {
-        "approach": "Hire P0STMAN",
+        "approach": "Hire POSTMAN",
         "cost": "$32K build + $8K/year maintenance",
         "timeline": "5 weeks to production",
         "result": "Launched faster, saved $180K year 1, proved value before building team."

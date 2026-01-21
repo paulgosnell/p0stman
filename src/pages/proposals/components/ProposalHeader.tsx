@@ -9,10 +9,10 @@ export default function ProposalHeader() {
           <Link to="/" className="flex items-center gap-2">
             <img 
               src="https://p0stman.com/favicon.svg" 
-              alt="P0STMAN" 
+              alt="POSTMAN" 
               className="w-8 h-8"
             />
-            <span className="font-medium text-gray-900">P0STMAN</span>
+            <span className="font-medium text-gray-900">POSTMAN</span>
           </Link>
           <div className="flex items-center gap-6">
             <Link to="/#contact" className="text-sm text-gray-600 hover:text-gray-900">Contact</Link>

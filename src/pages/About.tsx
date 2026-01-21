@@ -95,11 +95,11 @@ export default function About() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>About P0STMAN | AI-Powered Product Studio</title>
-          <meta name="description" content="P0STMAN is an AI-powered product studio delivering innovative digital solutions at unprecedented speed." />
+          <title>About POSTMAN | AI-Powered Product Studio</title>
+          <meta name="description" content="POSTMAN is an AI-powered product studio delivering innovative digital solutions at unprecedented speed." />
           <meta name="keywords" content="AI development studio, product development, innovation, technology partner" />
-          <meta property="og:title" content="About P0STMAN | AI-Powered Product Studio" />
-          <meta property="og:description" content="P0STMAN delivers innovative digital solutions powered by AI at unprecedented speed." />
+          <meta property="og:title" content="About POSTMAN | AI-Powered Product Studio" />
+          <meta property="og:description" content="POSTMAN delivers innovative digital solutions powered by AI at unprecedented speed." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/about" />
@@ -118,7 +118,7 @@ export default function About() {
               {/* Eyebrow */}
               <div className="mb-8">
                 <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
-                  About P0STMAN
+                  About POSTMAN
                 </span>
               </div>
 
@@ -298,11 +298,11 @@ export default function About() {
 
                 <div className="space-y-6 text-gray-600">
                   <p className="text-lg font-light leading-relaxed">
-                    P0STMAN is led by Paul Gosnell—20+ years shipping digital products for startups, enterprises, and agencies. Grew an agency from 1 to 30 contractors, navigated a global pandemic, and emerged with a philosophy: smaller teams, better tools, faster results.
+                    POSTMAN is led by Paul Gosnell—20+ years shipping digital products for startups, enterprises, and agencies. Grew an agency from 1 to 30 contractors, navigated a global pandemic, and emerged with a philosophy: smaller teams, better tools, faster results.
                   </p>
 
                   <p className="text-lg font-light leading-relaxed">
-                    Today, P0STMAN operates as an AI-native studio with a curated network of specialists—designers, engineers, and strategists—who collaborate on projects as needed. No bloat. No bench warmers. Just experienced builders leveraging AI to output like a 30-person agency.
+                    Today, POSTMAN operates as an AI-native studio with a curated network of specialists—designers, engineers, and strategists—who collaborate on projects as needed. No bloat. No bench warmers. Just experienced builders leveraging AI to output like a 30-person agency.
                   </p>
 
                   <div className="mt-12 pt-8 border-t border-gray-200">
@@ -317,7 +317,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* Why Choose P0STMAN */}
+        {/* Why Choose POSTMAN */}
         <section className="py-24 md:py-32 bg-white">
           <div className="container mx-auto px-8 max-w-[90rem]">
             <div className="max-w-4xl">
@@ -334,7 +334,7 @@ export default function About() {
                 </div>
 
                 <h2 className="text-4xl md:text-6xl font-light text-gray-900 mb-16 leading-tight">
-                  Why P0STMAN?
+                  Why POSTMAN?
                 </h2>
 
                 <div className="space-y-12">

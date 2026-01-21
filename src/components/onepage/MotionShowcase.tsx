@@ -177,7 +177,7 @@ const MotionShowcase: React.FC<MotionShowcaseProps> = ({ content }) => {
     }
   }, [isInView, controls]);
 
-  // AI-focused metrics for P0STMAN showcase
+  // AI-focused metrics for POSTMAN showcase
   const metrics = [
     { label: 'AI Projects', value: 50, suffix: '+' },
     { label: 'Years in MEA', value: 20, suffix: '+' },
@@ -213,7 +213,7 @@ const MotionShowcase: React.FC<MotionShowcaseProps> = ({ content }) => {
             Proven <span className="text-gradient">AI Delivery</span>
           </h2>
           <p className="text-premium-2xl text-gray-300 max-w-3xl mx-auto">
-            From strategy to implementation, see how P0STMAN transforms organizations 
+            From strategy to implementation, see how POSTMAN transforms organizations 
             with AI-powered solutions that deliver measurable results.
           </p>
         </motion.div>

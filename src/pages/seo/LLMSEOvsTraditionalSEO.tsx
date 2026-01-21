@@ -96,11 +96,11 @@ export default function LLMSEOvsTraditionalSEO() {
     "description": "LLM SEO vs traditional SEO compared: strategies, tactics, timeline, and when you need each. Understanding AI search optimization vs Google optimization.",
     "author": {
       "@type": "Organization",
-      "name": "P0STMAN"
+      "name": "POSTMAN"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "logo": {
         "@type": "ImageObject",
         "url": "https://p0stman.com/logo.png"
@@ -131,10 +131,10 @@ export default function LLMSEOvsTraditionalSEO() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>LLM SEO vs Traditional SEO: What's Different? (2026) | P0STMAN</title>
+          <title>LLM SEO vs Traditional SEO: What's Different? (2026) | POSTMAN</title>
           <meta name="description" content="LLM SEO vs traditional SEO compared: strategies, tactics, timeline, and when you need each. Understanding AI search optimization vs Google optimization." />
           <meta name="keywords" content="LLM SEO vs traditional SEO, AI SEO comparison, LLM optimization, traditional SEO, AI search optimization, Google SEO" />
-          <meta property="og:title" content="LLM SEO vs Traditional SEO: What's Different? (2026) | P0STMAN" />
+          <meta property="og:title" content="LLM SEO vs Traditional SEO: What's Different? (2026) | POSTMAN" />
           <meta property="og:description" content="LLM SEO vs traditional SEO compared: strategies, tactics, timeline, and when you need each." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />

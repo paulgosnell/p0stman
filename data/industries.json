@@ -2,7 +2,7 @@
   {
     "slug": "healthcare",
     "name": "Healthcare",
-    "metaTitle": "AI Voice Agents for Healthcare | P0STMAN - 6 Day MVP",
+    "metaTitle": "AI Voice Agents for Healthcare | POSTMAN - 6 Day MVP",
     "metaDescription": "Custom AI voice agents for healthcare practices. Automate appointment scheduling, reduce no-shows 35%, handle after-hours calls. From $5K.",
     "heroH1": "AI Voice Agents for Healthcare Practices",
     "heroSubtext": "Automate patient communication, reduce no-shows, and handle after-hours calls with custom AI voice agents. Built in 6 days.",
@@ -45,7 +45,7 @@
   {
     "slug": "dental",
     "name": "Dental",
-    "metaTitle": "AI Voice Agents for Dental Practices | P0STMAN",
+    "metaTitle": "AI Voice Agents for Dental Practices | POSTMAN",
     "metaDescription": "Automated appointment reminders, insurance verification, and patient follow-ups for dental practices. Reduce no-shows 40%. Built in 6 days.",
     "heroH1": "AI Voice Agents for Dental Practices",
     "heroSubtext": "Reduce no-shows, automate insurance verification, and handle patient follow-ups with AI voice agents built specifically for dental practices.",
@@ -88,7 +88,7 @@
   {
     "slug": "legal",
     "name": "Legal",
-    "metaTitle": "AI Voice Agents for Law Firms | P0STMAN",
+    "metaTitle": "AI Voice Agents for Law Firms | POSTMAN",
     "metaDescription": "Automate client intake, appointment scheduling, and case updates for law firms. Qualify leads 24/7, reduce admin costs. From $5K.",
     "heroH1": "AI Voice Agents for Law Firms",
     "heroSubtext": "Qualify leads 24/7, automate client intake, and handle appointment scheduling with AI voice agents built for legal practices.",
@@ -131,7 +131,7 @@
   {
     "slug": "accounting",
     "name": "Accounting",
-    "metaTitle": "AI Voice Agents for Accounting Firms | P0STMAN",
+    "metaTitle": "AI Voice Agents for Accounting Firms | POSTMAN",
     "metaDescription": "Automate client communications, tax deadline reminders, and document collection for accounting firms. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Accounting Firms",
     "heroSubtext": "Automate tax deadline reminders, document collection, and client communications during busy season with AI voice agents.",
@@ -174,7 +174,7 @@
   {
     "slug": "real-estate",
     "name": "Real Estate",
-    "metaTitle": "AI Voice Agents for Real Estate | P0STMAN",
+    "metaTitle": "AI Voice Agents for Real Estate | POSTMAN",
     "metaDescription": "Qualify leads 24/7, schedule property showings, and automate follow-ups for real estate agents. Increase showing conversion 35%. From $5K.",
     "heroH1": "AI Voice Agents for Real Estate Agents",
     "heroSubtext": "Never miss a lead. Qualify prospects 24/7, schedule property showings, and automate follow-ups with AI voice agents.",
@@ -217,7 +217,7 @@
   {
     "slug": "ecommerce",
     "name": "E-commerce",
-    "metaTitle": "AI Voice Agents for E-commerce | P0STMAN",
+    "metaTitle": "AI Voice Agents for E-commerce | POSTMAN",
     "metaDescription": "Handle order status inquiries, returns, and customer support via voice for e-commerce brands. Reduce support costs 50%. From $5K.",
     "heroH1": "AI Voice Agents for E-commerce Brands",
     "heroSubtext": "Automate order tracking, returns processing, and customer support with AI voice agents that handle calls 24/7.",
@@ -260,7 +260,7 @@
   {
     "slug": "saas",
     "name": "SaaS",
-    "metaTitle": "AI Voice Agents for SaaS Companies | P0STMAN",
+    "metaTitle": "AI Voice Agents for SaaS Companies | POSTMAN",
     "metaDescription": "Qualify leads, handle onboarding calls, and provide technical support for SaaS products. Increase trial-to-paid conversion 25%. From $5K.",
     "heroH1": "AI Voice Agents for SaaS Companies",
     "heroSubtext": "Qualify inbound leads, automate onboarding calls, and provide 24/7 technical support with AI voice agents built for SaaS.",
@@ -303,7 +303,7 @@
   {
     "slug": "fintech",
     "name": "Fintech",
-    "metaTitle": "AI Voice Agents for Fintech | P0STMAN",
+    "metaTitle": "AI Voice Agents for Fintech | POSTMAN",
     "metaDescription": "Automate KYC verification, fraud alerts, and customer support for fintech products. Secure, compliant, built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Fintech Companies",
     "heroSubtext": "Automate KYC verification, fraud alerts, and customer support with secure, compliant AI voice agents built for financial services.",
@@ -346,7 +346,7 @@
   {
     "slug": "home-services",
     "name": "Home Services",
-    "metaTitle": "AI Voice Agents for Home Services | P0STMAN",
+    "metaTitle": "AI Voice Agents for Home Services | POSTMAN",
     "metaDescription": "Automate booking for plumbing, HVAC, cleaning, and home repair services. Handle emergency calls 24/7. Increase bookings 40%. From $5K.",
     "heroH1": "AI Voice Agents for Home Service Businesses",
     "heroSubtext": "Never miss an emergency call. Automate booking, dispatch, and customer follow-ups for plumbing, HVAC, and home services.",
@@ -389,7 +389,7 @@
   {
     "slug": "insurance",
     "name": "Insurance",
-    "metaTitle": "AI Voice Agents for Insurance | P0STMAN",
+    "metaTitle": "AI Voice Agents for Insurance | POSTMAN",
     "metaDescription": "Automate claims intake, policy questions, and renewal reminders for insurance agencies. Reduce operational costs 45%. From $5K.",
     "heroH1": "AI Voice Agents for Insurance Agencies",
     "heroSubtext": "Automate claims intake, handle policy questions, and manage renewal reminders with AI voice agents built for insurance.",
@@ -432,7 +432,7 @@
   {
     "slug": "manufacturing",
     "name": "Manufacturing",
-    "metaTitle": "AI Voice Agents for Manufacturing | P0STMAN",
+    "metaTitle": "AI Voice Agents for Manufacturing | POSTMAN",
     "metaDescription": "Automate order status updates, vendor communications, and supply chain coordination for manufacturers. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Manufacturing",
     "heroSubtext": "Streamline order tracking, vendor coordination, and customer communications with AI voice agents built for manufacturers.",
@@ -475,7 +475,7 @@
   {
     "slug": "retail",
     "name": "Retail",
-    "metaTitle": "AI Voice Agents for Retail Stores | P0STMAN",
+    "metaTitle": "AI Voice Agents for Retail Stores | POSTMAN",
     "metaDescription": "Handle product availability inquiries, store hours, and loyalty program questions for retail. Reduce call volume 50%. From $5K.",
     "heroH1": "AI Voice Agents for Retail Stores",
     "heroSubtext": "Answer product questions, check inventory, and handle store inquiries 24/7 with AI voice agents for retail.",
@@ -518,7 +518,7 @@
   {
     "slug": "hospitality",
     "name": "Hospitality",
-    "metaTitle": "AI Voice Agents for Hotels & Hospitality | P0STMAN",
+    "metaTitle": "AI Voice Agents for Hotels & Hospitality | POSTMAN",
     "metaDescription": "Automate reservations, guest services, and concierge requests for hotels. Handle multilingual calls 24/7. From $5K.",
     "heroH1": "AI Voice Agents for Hotels & Hospitality",
     "heroSubtext": "Automate reservations, handle guest requests, and provide 24/7 concierge services with multilingual AI voice agents.",
@@ -561,7 +561,7 @@
   {
     "slug": "education",
     "name": "Education",
-    "metaTitle": "AI Voice Agents for Educational Institutions | P0STMAN",
+    "metaTitle": "AI Voice Agents for Educational Institutions | POSTMAN",
     "metaDescription": "Automate enrollment inquiries, class scheduling, and parent communications for schools. Handle calls 24/7. From $5K.",
     "heroH1": "AI Voice Agents for Educational Institutions",
     "heroSubtext": "Automate enrollment, handle parent inquiries, and manage scheduling with AI voice agents built for schools and universities.",
@@ -604,7 +604,7 @@
   {
     "slug": "consulting",
     "name": "Consulting",
-    "metaTitle": "AI Voice Agents for Consulting Firms | P0STMAN",
+    "metaTitle": "AI Voice Agents for Consulting Firms | POSTMAN",
     "metaDescription": "Qualify leads, schedule discovery calls, and manage client communications for consulting firms. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Consulting Firms",
     "heroSubtext": "Qualify inbound leads, schedule discovery calls, and handle client check-ins with AI voice agents built for consultants.",
@@ -647,7 +647,7 @@
   {
     "slug": "marketing-agencies",
     "name": "Marketing Agencies",
-    "metaTitle": "AI Voice Agents for Marketing Agencies | P0STMAN",
+    "metaTitle": "AI Voice Agents for Marketing Agencies | POSTMAN",
     "metaDescription": "Qualify leads, schedule strategy calls, and manage client reporting for marketing agencies. Increase close rates 30%. From $5K.",
     "heroH1": "AI Voice Agents for Marketing Agencies",
     "heroSubtext": "Qualify inbound leads, schedule strategy sessions, and automate client reporting with AI voice agents for agencies.",
@@ -690,7 +690,7 @@
   {
     "slug": "construction",
     "name": "Construction",
-    "metaTitle": "AI Voice Agents for Construction Companies | P0STMAN",
+    "metaTitle": "AI Voice Agents for Construction Companies | POSTMAN",
     "metaDescription": "Automate project bids, schedule site visits, and handle contractor communications. Never miss an estimate request. From $5K.",
     "heroH1": "AI Voice Agents for Construction Companies",
     "heroSubtext": "Never miss a bid opportunity. Automate estimate requests, schedule site visits, and handle subcontractor coordination with AI.",
@@ -733,7 +733,7 @@
   {
     "slug": "logistics",
     "name": "Logistics",
-    "metaTitle": "AI Voice Agents for Logistics & Shipping | P0STMAN",
+    "metaTitle": "AI Voice Agents for Logistics & Shipping | POSTMAN",
     "metaDescription": "Automate shipment tracking, delivery confirmations, and carrier coordination for logistics companies. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Logistics & Shipping",
     "heroSubtext": "Automate shipment tracking, delivery notifications, and carrier coordination with AI voice agents built for logistics.",
@@ -776,7 +776,7 @@
   {
     "slug": "automotive",
     "name": "Automotive",
-    "metaTitle": "AI Voice Agents for Auto Dealerships | P0STMAN",
+    "metaTitle": "AI Voice Agents for Auto Dealerships | POSTMAN",
     "metaDescription": "Automate service appointments, sales inquiries, and test drive scheduling for car dealerships. Increase service revenue 25%. From $5K.",
     "heroH1": "AI Voice Agents for Auto Dealerships",
     "heroSubtext": "Automate service scheduling, handle sales inquiries, and book test drives 24/7 with AI voice agents for dealerships.",
@@ -819,7 +819,7 @@
   {
     "slug": "fitness",
     "name": "Fitness",
-    "metaTitle": "AI Voice Agents for Gyms & Fitness Studios | P0STMAN",
+    "metaTitle": "AI Voice Agents for Gyms & Fitness Studios | POSTMAN",
     "metaDescription": "Automate membership inquiries, class bookings, and personal training scheduling for gyms. Reduce front desk costs 40%. From $5K.",
     "heroH1": "AI Voice Agents for Gyms & Fitness Studios",
     "heroSubtext": "Automate membership sales, class bookings, and personal training scheduling with AI voice agents built for fitness.",
@@ -862,7 +862,7 @@
   {
     "slug": "beauty",
     "name": "Beauty & Salons",
-    "metaTitle": "AI Voice Agents for Beauty Salons & Spas | P0STMAN",
+    "metaTitle": "AI Voice Agents for Beauty Salons & Spas | POSTMAN",
     "metaDescription": "Automate appointment booking, handle cancellations, and send reminders for salons and spas. Reduce no-shows 45%. From $5K.",
     "heroH1": "AI Voice Agents for Beauty Salons & Spas",
     "heroSubtext": "Automate appointment booking, reduce no-shows, and handle client communications with AI voice agents for beauty businesses.",
@@ -905,7 +905,7 @@
   {
     "slug": "veterinary",
     "name": "Veterinary",
-    "metaTitle": "AI Voice Agents for Veterinary Clinics | P0STMAN",
+    "metaTitle": "AI Voice Agents for Veterinary Clinics | POSTMAN",
     "metaDescription": "Automate appointment scheduling, handle after-hours emergencies, and send vaccination reminders for vet clinics. From $5K.",
     "heroH1": "AI Voice Agents for Veterinary Clinics",
     "heroSubtext": "Handle appointment scheduling, triage after-hours emergencies, and automate vaccination reminders with AI voice agents.",
@@ -948,7 +948,7 @@
   {
     "slug": "recruiting",
     "name": "Recruiting",
-    "metaTitle": "AI Voice Agents for Recruiting Agencies | P0STMAN",
+    "metaTitle": "AI Voice Agents for Recruiting Agencies | POSTMAN",
     "metaDescription": "Automate candidate screening, schedule interviews, and handle client communications for recruiting firms. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Recruiting Agencies",
     "heroSubtext": "Automate candidate screening, schedule interviews, and manage client communications with AI voice agents for recruiters.",
@@ -991,7 +991,7 @@
   {
     "slug": "non-profits",
     "name": "Non-Profits",
-    "metaTitle": "AI Voice Agents for Non-Profit Organizations | P0STMAN",
+    "metaTitle": "AI Voice Agents for Non-Profit Organizations | POSTMAN",
     "metaDescription": "Automate donor communications, volunteer coordination, and event registration for non-profits. Increase donations 30%. From $5K.",
     "heroH1": "AI Voice Agents for Non-Profit Organizations",
     "heroSubtext": "Automate donor outreach, volunteer coordination, and event registration with AI voice agents built for non-profits.",
@@ -1034,7 +1034,7 @@
   {
     "slug": "event-planning",
     "name": "Event Planning",
-    "metaTitle": "AI Voice Agents for Event Planners | P0STMAN",
+    "metaTitle": "AI Voice Agents for Event Planners | POSTMAN",
     "metaDescription": "Automate vendor coordination, guest RSVPs, and event inquiries for event planning businesses. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Event Planning Businesses",
     "heroSubtext": "Automate vendor coordination, handle RSVPs, and manage event inquiries with AI voice agents for event planners.",
@@ -1077,7 +1077,7 @@
   {
     "slug": "property-management",
     "name": "Property Management",
-    "metaTitle": "AI Voice Agents for Property Management | P0STMAN",
+    "metaTitle": "AI Voice Agents for Property Management | POSTMAN",
     "metaDescription": "Automate maintenance requests, tenant inquiries, and lease renewals for property managers. Handle calls 24/7. From $5K.",
     "heroH1": "AI Voice Agents for Property Management",
     "heroSubtext": "Automate maintenance requests, handle tenant inquiries, and manage lease renewals with AI voice agents for property managers.",
@@ -1120,7 +1120,7 @@
   {
     "slug": "travel",
     "name": "Travel Agencies",
-    "metaTitle": "AI Voice Agents for Travel Agencies | P0STMAN",
+    "metaTitle": "AI Voice Agents for Travel Agencies | POSTMAN",
     "metaDescription": "Automate booking inquiries, itinerary changes, and travel support for travel agencies. Handle multilingual calls 24/7. From $5K.",
     "heroH1": "AI Voice Agents for Travel Agencies",
     "heroSubtext": "Automate booking inquiries, handle itinerary changes, and provide 24/7 travel support with multilingual AI voice agents.",
@@ -1163,7 +1163,7 @@
   {
     "slug": "food-delivery",
     "name": "Food Delivery",
-    "metaTitle": "AI Voice Agents for Food Delivery Services | P0STMAN",
+    "metaTitle": "AI Voice Agents for Food Delivery Services | POSTMAN",
     "metaDescription": "Automate order taking, handle delivery issues, and manage driver coordination for food delivery. Built in 6 days. From $5K.",
     "heroH1": "AI Voice Agents for Food Delivery Services",
     "heroSubtext": "Automate phone orders, handle delivery issues, and coordinate drivers with AI voice agents for food delivery.",
@@ -1206,7 +1206,7 @@
   {
     "slug": "cleaning-services",
     "name": "Cleaning Services",
-    "metaTitle": "AI Voice Agents for Cleaning Services | P0STMAN",
+    "metaTitle": "AI Voice Agents for Cleaning Services | POSTMAN",
     "metaDescription": "Automate booking, handle scheduling, and manage customer communications for cleaning businesses. Increase bookings 35%. From $5K.",
     "heroH1": "AI Voice Agents for Cleaning Services",
     "heroSubtext": "Automate booking, reduce scheduling conflicts, and handle customer communications with AI voice agents for cleaning businesses.",
@@ -1249,7 +1249,7 @@
   {
     "slug": "photography",
     "name": "Photography",
-    "metaTitle": "AI Voice Agents for Photography Businesses | P0STMAN",
+    "metaTitle": "AI Voice Agents for Photography Businesses | POSTMAN",
     "metaDescription": "Automate booking inquiries, handle session scheduling, and manage client communications for photographers. From $5K.",
     "heroH1": "AI Voice Agents for Photography Businesses",
     "heroSubtext": "Never miss a booking. Automate inquiries, schedule sessions, and handle client communications with AI voice agents.",

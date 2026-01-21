@@ -89,7 +89,7 @@ function buildFollowUpMessage(data: FollowUpEmailData): string {
       message += `Visit our website: https://p0stman.com`;
   }
 
-  message += `\n\nBest regards,\nThe P0STMAN Team\n\nhello@p0stman.com`;
+  message += `\n\nBest regards,\nThe POSTMAN Team\n\nhello@p0stman.com`;
 
   return message;
 }
@@ -100,7 +100,7 @@ function buildFollowUpMessage(data: FollowUpEmailData): string {
 export async function notifyTeamOfHighInterestLead(data: FollowUpEmailData): Promise<void> {
   // Use a different template for internal team notifications
   await sendEmail({
-    name: 'P0STMAN Team',
+    name: 'POSTMAN Team',
     email: 'hello@p0stman.com', // Team email
     form_type: 'internal_hot_lead_notification',
     message: `New hot lead from voice agent!\n\nName: ${data.name || 'Not provided'}\nEmail: ${data.email}\nCompany: ${data.company || 'Not provided'}\nInterest: ${data.specificInterest || 'Not specified'}\nBudget: ${data.budgetRange || 'Not discussed'}\nTimeline: ${data.timeline || 'Not discussed'}\n\nConversation ID: ${data.conversationId}`,

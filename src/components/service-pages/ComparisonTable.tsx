@@ -20,7 +20,7 @@ export function ComparisonTable({
   title,
   subtitle,
   traditionalLabel = 'Traditional Agency',
-  modernLabel = 'P0STMAN',
+  modernLabel = 'POSTMAN',
   items,
   className = ''
 }: ComparisonTableProps) {

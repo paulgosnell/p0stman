@@ -100,15 +100,15 @@ export default function BoltToProduction() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Bolt to Production | Take Your Bolt.new App Live | P0STMAN</title>
+          <title>Bolt to Production | Take Your Bolt.new App Live | POSTMAN</title>
           <meta name="description" content="Built something in Bolt.new but need it production-ready? I was one of Bolt's first power users — shipped a full CRM before anyone else. Let's get yours live." />
           <meta name="keywords" content="Bolt to production, Bolt.new developer, Bolt.new to production, Hire developer after Bolt, Bolt prototype to MVP, Bolt.new production ready" />
-          <meta property="og:title" content="Bolt to Production | Take Your Bolt.new App Live | P0STMAN" />
+          <meta property="og:title" content="Bolt to Production | Take Your Bolt.new App Live | POSTMAN" />
           <meta property="og:description" content="Built something in Bolt.new but need it production-ready? I was one of Bolt's first power users." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Bolt to Production | P0STMAN" />
+          <meta name="twitter:title" content="Bolt to Production | POSTMAN" />
           <meta name="twitter:description" content="Built something in Bolt.new but need it production-ready? I was one of Bolt's first power users." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/bolt-to-production" />

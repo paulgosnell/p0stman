@@ -11,11 +11,11 @@ export const homeTranslations = {
     'hero.products.marketplace': 'سوق',
     'hero.products.ai agent': 'وكيل ذكاء اصطناعي',
     'hero.products.dashboard': 'لوحة تحكم',
-    'home.hero.subtitle': 'P0STMAN',
+    'home.hero.subtitle': 'POSTMAN',
     'home.hero.description': 'ابني بشكل أسرع وأفضل وبتكلفة أقل مع خبراء مدعومين بالذكاء الاصطناعي يتفوقون على الوكالات التقليدية.',
     'home.hero.cta': 'ابدأ مشروعك',
     'home.hero.watchDemo': 'شاهد العرض التوضيحي',
-    'home.hero.mission': 'P0STMAN هو شريكك المؤسس، وشريك التنفيذ، ومتجر التطوير ومختبر الابتكار - كل ذلك في واحد. سواء كنت تطلق شركة ناشئة، أو توسع عملياتك أو تقود الابتكار داخل شركتك، فإن خبرتنا التي تزيد عن 20 عاماً، معززة بالذكاء الاصطناعي، تجعلنا قوة لا يستهان بها.',
+    'home.hero.mission': 'POSTMAN هو شريكك المؤسس، وشريك التنفيذ، ومتجر التطوير ومختبر الابتكار - كل ذلك في واحد. سواء كنت تطلق شركة ناشئة، أو توسع عملياتك أو تقود الابتكار داخل شركتك، فإن خبرتنا التي تزيد عن 20 عاماً، معززة بالذكاء الاصطناعي، تجعلنا قوة لا يستهان بها.',
 
     // Bolt Promotion
     'home.bolt.title': 'سفير Bolt',
@@ -106,7 +106,7 @@ export const homeTranslations = {
     'home.hero.description': 'We build and deliver websites, apps, and digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count.',
     'home.hero.cta': 'See Our Work',
     'home.hero.watchDemo': 'How We Work',
-    'home.hero.mission': 'P0STMAN is your co-founder, fractional CTO, delivery partner, dev shop and innovation lab all-in-one!',
+    'home.hero.mission': 'POSTMAN is your co-founder, fractional CTO, delivery partner, dev shop and innovation lab all-in-one!',
 
     // Bolt Promotion
     'home.bolt.title': 'Bolt Ambassador',

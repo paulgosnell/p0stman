@@ -24,7 +24,7 @@ export default function HeaderV3() {
         {/* Logo */}
         <div className="flex items-center">
           <a href="/" className="text-2xl font-light tracking-tight text-gray-900">
-            P0STMAN
+            POSTMAN
           </a>
         </div>
 

@@ -13,7 +13,6 @@
 - [ ] Design cost calculator
 - [ ] Refine /ai-agents, /ai-product-studio, and /context-engineering pages to clarify target audience
 - [ ] Create additional comparison pages for AI technologies and services
-- [ ] Verify and update all remaining pages to use 'POSTMAN' instead of 'P0STMAN'
 - [ ] Refine waveform animation transitions
 - [ ] Test waveform color changes across different devices and browsers
 - [ ] Fix Vercel API route TypeScript errors (@vercel/node module)
@@ -40,3 +39,13 @@
   - [x] Verified trailing slash convention is correct (static dirs have slashes, React routes don't)
   - [x] Verified solutions vs use-cases are differentiated content (no canonicalization needed)
   - [x] Confirmed guides and pricing pages already in main sitemap
+- [x] LLM SEO & Discovery Improvements (2026-01-21):
+  - [x] Updated llm.txt with all 40 guides, LLM SEO pages, and prototype-to-production pages
+  - [x] Changed P0STMAN to POSTMAN throughout llm.txt
+  - [x] Updated all 135 static HTML files (1060 occurrences) from P0STMAN to POSTMAN
+  - [x] Updated all generator scripts to use POSTMAN
+  - [x] Updated all data JSON files to use POSTMAN
+  - [x] Updated all src files (meta titles, schema, descriptions) to use POSTMAN
+  - [x] Added LLM SEO pages to llm.txt priority list
+  - [x] Added schema markup to AIAgentsService.tsx
+  - [x] Added schema markup to FractionalAILeadership.tsx

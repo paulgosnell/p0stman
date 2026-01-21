@@ -163,7 +163,7 @@ export default function SignatureSection({ role, name, company, title, date, onS
             />
           ) : (
             <div className="flex items-center gap-2">
-              <span>{editableCompany || (role === 'client' ? '' : 'P0STMAN (AI-Powered Product Studio)')}</span>
+              <span>{editableCompany || (role === 'client' ? '' : 'POSTMAN (AI-Powered Product Studio)')}</span>
               {role === 'client' && (
                 <button
                   onClick={() => setIsEditingCompany(true)}
@@ -188,7 +188,7 @@ export default function SignatureSection({ role, name, company, title, date, onS
             />
           ) : (
             <div className="flex items-center gap-2">
-              <span>{role === 'client' ? editableTitle : 'Founder, P0STMAN'}</span>
+              <span>{role === 'client' ? editableTitle : 'Founder, POSTMAN'}</span>
               {role === 'client' && (
                 <button
                   onClick={() => setIsEditingTitle(true)}

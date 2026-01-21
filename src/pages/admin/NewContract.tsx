@@ -49,8 +49,8 @@ export default function NewContract() {
 
       // Provide defaults for provider info which can be overridden per contract
       Object.assign(template, {
-        provider_name: 'P0STMAN',
-        provider_company: 'P0STMAN (AI-Powered Product Studio)',
+        provider_name: 'POSTMAN',
+        provider_company: 'POSTMAN (AI-Powered Product Studio)',
         provider_legal_entity: 'Chilled Ventures L.L.C',
         provider_address: 'Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates',
         provider_contact: 'Paul Gosnell'

@@ -223,7 +223,7 @@ const DeliveryPage: React.FC = () => {
   return (
     <div>
       <Helmet>
-        <title>Special Delivery for {agencyName} | P0STMAN</title>
+        <title>Special Delivery for {agencyName} | POSTMAN</title>
         <meta name="description" content={`A special delivery from The Postman for ${agencyName}. AI-powered prototypes, product builds, and growth experiments — delivered fast.`} />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
@@ -254,7 +254,7 @@ const DeliveryPage: React.FC = () => {
                     </div>
                     <div>
                       <h1 className="text-4xl font-bold bg-gray-700 ">
-                        P0STMAN
+                        POSTMAN
                       </h1>
                       <p className="text-gray-400 text-sm">AI-Native Product Studio</p>
                     </div>
@@ -278,7 +278,7 @@ const DeliveryPage: React.FC = () => {
                       <div className="absolute bottom-12 left-12 right-12">
                         <div className="text-gray-600 text-lg font-light mb-2">Special Delivery for</div>
                         <div className="text-gray-900 text-4xl font-bold mb-4 tracking-tight">{agencyName}</div>
-                        <div className="text-gray-500 text-base">From: P0STMAN (Paul Gosnell)</div>
+                        <div className="text-gray-500 text-base">From: POSTMAN (Paul Gosnell)</div>
                       </div>
                       <div className="absolute top-8 right-8 w-24 h-32 bg-gray-900 rounded-xl border-4 border-white shadow-xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500">
                         <div className="flex flex-col items-center justify-center h-full text-white text-center">
@@ -322,8 +322,8 @@ const DeliveryPage: React.FC = () => {
                 {/* Combined Opening Introduction */}
                 <ChatSection
                   messages={[
-                    `${greeting}, Paul here from P0STMAN.`,
-                    `I created P0STMAN to support agencies, teams and start ups in product delivery.`,
+                    `${greeting}, Paul here from POSTMAN.`,
+                    `I created POSTMAN to support agencies, teams and start ups in product delivery.`,
                     `Tight deadlines. Limited budgets. Clients and stakeholders who want something real, fast.`,
                     `I can drop in mid-pitch with a live prototype that seals the deal.`,
                     `Also can stay on to lead the full build — from MVP to enterprise rollout.`,
@@ -1639,7 +1639,7 @@ const DeliveryPage: React.FC = () => {
                         </div>
                       </motion.div>
 
-                      {/* P0STMAN & Chilled Sites - AI Products */}
+                      {/* POSTMAN & Chilled Sites - AI Products */}
                       <motion.div
                         initial={{ opacity: 0, y: 30, rotateX: 10 }}
                         animate={{ opacity: revealedSections.has(3) ? 1 : 0, y: revealedSections.has(3) ? 0 : 30, rotateX: revealedSections.has(3) ? 0 : 10 }}
@@ -1667,13 +1667,13 @@ const DeliveryPage: React.FC = () => {
                               <Bot className="w-8 h-8 text-gray-400" strokeWidth={1.5}/>
                             </motion.div>
                             <div className="flex-1">
-                              <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition-colors">P0STMAN & Chilled Sites</h3>
+                              <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition-colors">POSTMAN & Chilled Sites</h3>
                               <p className="text-gray-400 font-light">AI Platform • SaaS Products</p>
                             </div>
                           </div>
 
                           <div className="space-y-4 mb-6">
-                            <p className="text-gray-400 font-bold text-lg">Built P0STMAN & Chilled Sites (AI products)</p>
+                            <p className="text-gray-400 font-bold text-lg">Built POSTMAN & Chilled Sites (AI products)</p>
                             <p className="text-gray-300 font-light leading-relaxed">
                               Created AI-native product studio and website builder platform.
                               Full-stack AI products serving agencies and businesses globally.
@@ -1859,7 +1859,7 @@ const DeliveryPage: React.FC = () => {
                 <ChatSection
                   messages={[
                     `Signed, sealed, delivered… let’s ship something your clients will love.`,
-                    `Paul Gosnell • P0STMAN • hello@p0stman.com`
+                    `Paul Gosnell • POSTMAN • hello@p0stman.com`
                   ]}
                   isVisible={revealedSections.has(6)}
                   delay={0.2}

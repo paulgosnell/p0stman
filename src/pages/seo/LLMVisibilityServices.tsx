@@ -49,7 +49,7 @@ const tldrPoints = [
   "86% of AI citations come from brand-managed content sources",
   "LLM traffic converts at 4.4x the rate of traditional search",
   "Structured content with specific data gets 27% more AI citations",
-  "P0STMAN delivers LLM visibility projects from $5K in 1-2 weeks"
+  "POSTMAN delivers LLM visibility projects from $5K in 1-2 weeks"
 ];
 
 const includedItems = [
@@ -153,14 +153,14 @@ export default function LLMVisibilityServices() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "LLM Visibility Services: Get Your Brand Cited by AI",
-    "description": "Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews. P0STMAN's LLM visibility services help you appear where your customers are searching.",
+    "description": "Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews. POSTMAN's LLM visibility services help you appear where your customers are searching.",
     "author": {
       "@type": "Organization",
-      "name": "P0STMAN"
+      "name": "POSTMAN"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com"
     },
     "mainEntityOfPage": {
@@ -187,15 +187,15 @@ export default function LLMVisibilityServices() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>LLM Visibility Services: Get Your Brand Cited by AI | P0STMAN</title>
-          <meta name="description" content="Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews. P0STMAN's LLM visibility services help you appear where your customers are searching. From $5K." />
+          <title>LLM Visibility Services: Get Your Brand Cited by AI | POSTMAN</title>
+          <meta name="description" content="Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews. POSTMAN's LLM visibility services help you appear where your customers are searching. From $5K." />
           <meta name="keywords" content="LLM visibility services, AI search visibility, get cited by ChatGPT, LLM SEO agency, AI brand visibility" />
-          <meta property="og:title" content="LLM Visibility Services: Get Your Brand Cited by AI | P0STMAN" />
-          <meta property="og:description" content="Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews. P0STMAN's LLM visibility services help you appear where your customers are searching." />
+          <meta property="og:title" content="LLM Visibility Services: Get Your Brand Cited by AI | POSTMAN" />
+          <meta property="og:description" content="Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews. POSTMAN's LLM visibility services help you appear where your customers are searching." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="LLM Visibility Services | P0STMAN" />
+          <meta name="twitter:title" content="LLM Visibility Services | POSTMAN" />
           <meta name="twitter:description" content="Get your brand visible in ChatGPT, Claude, Perplexity and Google AI Overviews." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/services/llm-visibility-services" />

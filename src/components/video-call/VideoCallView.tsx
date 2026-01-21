@@ -207,7 +207,7 @@ export function VideoCallView({
           <div className="flex items-center justify-between px-6 py-4 bg-gray-800/50 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-white font-medium">P0STMAN AI Call</span>
+              <span className="text-white font-medium">POSTMAN AI Call</span>
               {avatar.isConnecting && (
                 <span className="text-gray-400 text-sm">Connecting avatar...</span>
               )}

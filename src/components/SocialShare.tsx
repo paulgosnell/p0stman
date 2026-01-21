@@ -34,8 +34,8 @@ export default function SocialShare() {
 
           {/* Contact */}
           <div className="text-gray-400 text-base space-y-2 text-center">
-            <p>P0STMAN.com</p>
-            <p>hello@P0STMAN.com</p>
+            <p>POSTMAN.com</p>
+            <p>hello@POSTMAN.com</p>
           </div>
         </div>
 

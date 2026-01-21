@@ -37,7 +37,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       <meta name="title" content={currentSEO.title} />
       <meta name="description" content={currentSEO.description} />
       <meta name="keywords" content={currentSEO.keywords} />
-      <meta name="author" content="P0STMAN" />
+      <meta name="author" content="POSTMAN" />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
@@ -51,7 +51,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="AI in the Middle East 2025 - The Playbook for People & Business" />
-      <meta property="og:site_name" content="P0STMAN" />
+      <meta property="og:site_name" content="POSTMAN" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
@@ -65,7 +65,7 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
       <meta name="twitter:site" content="@p0stman" />
 
       {/* LinkedIn */}
-      <meta property="linkedin:owner" content="P0STMAN" />
+      <meta property="linkedin:owner" content="POSTMAN" />
 
       {/* Additional SEO Meta Tags */}
       <meta name="theme-color" content="#1e40af" />
@@ -83,11 +83,11 @@ const AIPlaybookSEO: React.FC<AIPlaybookSEOProps> = ({ page = 'landing' }) => {
           "image": ogImage,
           "author": {
             "@type": "Organization",
-            "name": "P0STMAN"
+            "name": "POSTMAN"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "P0STMAN",
+            "name": "POSTMAN",
             "url": baseUrl
           },
           "datePublished": "2025-01-18",

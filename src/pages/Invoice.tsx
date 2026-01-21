@@ -189,7 +189,7 @@ export default function Invoice() {
             <div>
               <h2 className="text-lg font-semibold mb-4">From:</h2>
               <div className="space-y-2">
-                <p className="font-medium">P0STMAN (AI-Powered Product Studio)</p>
+                <p className="font-medium">POSTMAN (AI-Powered Product Studio)</p>
                 <p>Chilled Ventures L.L.C</p>
                 <p>Meydan Grandstand, 6th floor</p>
                 <p>Meydan Road, Nad Al Sheba</p>

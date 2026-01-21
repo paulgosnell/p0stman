@@ -14,9 +14,9 @@ const ContactCTAs: React.FC<ContactCTAsProps> = ({
   className = '' 
 }) => {
   const handleEmailClick = () => {
-    const subject = encodeURIComponent('P0STMAN AI Adoption Services Inquiry');
+    const subject = encodeURIComponent('POSTMAN AI Adoption Services Inquiry');
     const body = encodeURIComponent(
-      'Hi Paul,\n\nI\'m interested in learning more about P0STMAN\'s AI adoption and advisory services.\n\nBest regards'
+      'Hi Paul,\n\nI\'m interested in learning more about POSTMAN\'s AI adoption and advisory services.\n\nBest regards'
     );
     window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
   };
@@ -38,7 +38,7 @@ const ContactCTAs: React.FC<ContactCTAsProps> = ({
     
     const message = encodeURIComponent(
       contactInfo.whatsapp.message || 
-      'Hi Paul, I\'m interested in P0STMAN AI adoption services. Could we schedule a consultation?'
+      'Hi Paul, I\'m interested in POSTMAN AI adoption services. Could we schedule a consultation?'
     );
     
     // Use WhatsApp Web for better cross-platform compatibility
@@ -87,7 +87,7 @@ const ContactCTAs: React.FC<ContactCTAsProps> = ({
           active:transform active:scale-95
           group
         `}
-        aria-label={`Send email to ${contactInfo.email} for P0STMAN AI adoption services inquiry`}
+        aria-label={`Send email to ${contactInfo.email} for POSTMAN AI adoption services inquiry`}
         type="button"
       >
         <Mail 
@@ -109,7 +109,7 @@ const ContactCTAs: React.FC<ContactCTAsProps> = ({
           active:transform active:scale-95
           group
         `}
-        aria-label={`Contact Paul via WhatsApp at ${contactInfo.whatsapp.displayNumber} for P0STMAN services`}
+        aria-label={`Contact Paul via WhatsApp at ${contactInfo.whatsapp.displayNumber} for POSTMAN services`}
         type="button"
       >
         <MessageCircle 

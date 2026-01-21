@@ -50,11 +50,11 @@ function generateSchemaMarkup(useCase) {
     'description': useCase.metaDescription,
     'author': {
       '@type': 'Organization',
-      'name': 'P0STMAN'
+      'name': 'POSTMAN'
     },
     'publisher': {
       '@type': 'Organization',
-      'name': 'P0STMAN',
+      'name': 'POSTMAN',
       'url': BASE_URL
     }
   };
@@ -387,7 +387,7 @@ const hubSchema = {
   "url": BASE_URL + '/use-cases/',
   "provider": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": BASE_URL
   }
 };

@@ -1,7 +1,7 @@
 export const legalTranslations = {
   ar: {
     // Footer Legal
-    'footer.copyright': '© {year} P0STMAN. جميع الحقوق محفوظة.',
+    'footer.copyright': '© {year} POSTMAN. جميع الحقوق محفوظة.',
     'footer.terms': 'الشروط',
     'footer.privacy': 'الخصوصية',
 
@@ -32,7 +32,7 @@ export const legalTranslations = {
   },
   en: {
     // Footer Legal
-    'footer.copyright': '© {year} P0STMAN. All rights reserved.',
+    'footer.copyright': '© {year} POSTMAN. All rights reserved.',
     'footer.terms': 'Terms',
     'footer.privacy': 'Privacy',
 

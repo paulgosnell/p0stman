@@ -63,7 +63,7 @@ export default function ContextEngineering() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Context Engineering | The Discipline That Makes AI Work | P0STMAN</title>
+          <title>Context Engineering | The Discipline That Makes AI Work | POSTMAN</title>
           <meta name="description" content="Context engineering is what separates AI toys from AI products. Memory, tools, knowledge, state management - architecting information ecosystems for production AI." />
           <meta name="keywords" content="context engineering, AI context management, LLM engineering, prompt engineering, AI architecture, RAG" />
           <link rel="canonical" href="https://p0stman.com/context-engineering" />

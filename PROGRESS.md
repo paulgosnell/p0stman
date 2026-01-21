@@ -2,9 +2,21 @@
 
 ## 2026-01-21
 
-**Focus:** SEO Audit & Fixes
+**Focus:** SEO Audit, LLM Discovery Optimization, Branding Consistency
 
-**Completed:**
+**Session 2 - LLM Discovery & Branding:**
+- Optimized llm.txt for AI discovery - added all 40 guides organized by category
+- Added LLM SEO pages and prototype-to-production pages to llm.txt priority list
+- Massive P0STMAN → POSTMAN update across entire codebase:
+  - 135 static HTML files (1060 occurrences)
+  - All generator scripts in /scripts
+  - All data JSON files in /data
+  - All src files (meta titles, schema markup, descriptions)
+  - Logo.tsx intentionally kept P0STMAN for brand styling
+- Added Service schema markup to AIAgentsService.tsx and FractionalAILeadership.tsx
+- Audited LLM SEO pages - confirmed all 15 pages have proper schema (Article + FAQPage)
+
+**Session 1 - SEO Audit & Fixes:**
 - Ran comprehensive SEO content audit (262+ pages analyzed across 6 sitemaps)
 - Updated /paulgosnell page - removed Dubai references, now permanently Norfolk UK
 - Updated all sitemap lastmod dates to 2026-01-21 (were stale at 2025-11-01)
@@ -22,9 +34,10 @@
 - Case studies lacked schema - added example pattern for future updates
 
 **Notes:**
-- Added remaining case study schema updates to backlog
-- Site SEO health: 7/10 → improved with fixes
-- Previously: Updated documentation with comprehensive backlog of content strategy considerations
+- Brand voice agent and search engines now use POSTMAN (readable/pronounceable)
+- Visual logo/brand styling keeps P0STMAN (intentional stylization)
+- 21 case studies still need schema markup (pattern established in RhythmLuxury.tsx)
+- Site SEO health: 8/10 → improved with LLM optimization
 
 ## 2026-01-20
 Added two comprehensive pillar content guides on AI agents and voice AI implementation to the website. Updated the sitemap to include missing pages and refresh publication dates, enhancing SEO and content discoverability.

@@ -36,8 +36,8 @@ const languageMapping: Record<string, string> = {
 export default function InlineVoiceAgent({
   isActive,
   onClose,
-  prompt = 'You are a helpful AI assistant for P0STMAN, an AI-powered product studio.',
-  firstMessage = "Hey! Welcome to P0STMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?",
+  prompt = 'You are a helpful AI assistant for POSTMAN, an AI-powered product studio.',
+  firstMessage = "Hey! Welcome to POSTMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?",
   voice = 'coral',
 }: InlineVoiceAgentProps) {
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');

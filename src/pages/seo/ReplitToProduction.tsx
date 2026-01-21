@@ -118,15 +118,15 @@ export default function ReplitToProduction() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Replit to Production | Take Your Replit Agent App Live | P0STMAN</title>
+          <title>Replit to Production | Take Your Replit Agent App Live | POSTMAN</title>
           <meta name="description" content="Built something with Replit Agent but need it production-ready? I take Replit prototypes to production — fast. Vibe coding expert since 2024." />
           <meta name="keywords" content="Replit to production, Replit Agent developer, Replit prototype to production, Hire developer after Replit, Replit Agent to MVP, Replit production ready" />
-          <meta property="og:title" content="Replit to Production | Take Your Replit Agent App Live | P0STMAN" />
+          <meta property="og:title" content="Replit to Production | Take Your Replit Agent App Live | POSTMAN" />
           <meta property="og:description" content="Built something with Replit Agent but need it production-ready? I take Replit prototypes to production — fast." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Replit to Production | P0STMAN" />
+          <meta name="twitter:title" content="Replit to Production | POSTMAN" />
           <meta name="twitter:description" content="Built something with Replit Agent but need it production-ready? I take Replit prototypes to production — fast." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/replit-to-production" />

@@ -171,10 +171,42 @@ export default function AIAgentsService() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>AI Agent Development | Voice, Chat, Workflow Agents | P0STMAN</title>
+          <title>AI Agent Development | Voice, Chat, Workflow Agents | POSTMAN</title>
           <meta name="description" content="AI agents that actually ship to production. Voice agents, chat agents, workflow automation, multi-agent systems. Built for scale, not PowerPoints." />
           <meta name="keywords" content="AI agent development, voice agent, chat agent, workflow automation, multi-agent systems, AI automation" />
           <link rel="canonical" href="https://p0stman.com/services/ai-agents" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "AI Agent Development",
+              "description": "AI agents that actually ship to production. Voice agents, chat agents, workflow automation, multi-agent systems. Built for scale, not PowerPoints.",
+              "provider": {
+                "@type": "Organization",
+                "name": "POSTMAN",
+                "url": "https://p0stman.com"
+              },
+              "serviceType": ["Voice Agent Development", "Chat Agent Development", "Workflow Automation", "Multi-Agent Systems"],
+              "areaServed": "Worldwide",
+              "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": "5000",
+                "highPrice": "50000",
+                "priceCurrency": "USD"
+              }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "AI Agents", "item": "https://p0stman.com/services/ai-agents" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

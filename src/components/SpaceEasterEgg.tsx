@@ -234,7 +234,7 @@ export default function SpaceEasterEgg({ isOpen, onClose }) {
   ];
 
   const messages = [
-    "🚀 Welcome to the P0STMAN universe!",
+    "🚀 Welcome to the POSTMAN universe!",
     "✨ Where AI meets infinite possibilities",
     "🌟 Building the future, one line of code at a time",
     "🛸 Thanks for discovering our secret space!",
@@ -445,7 +445,7 @@ export default function SpaceEasterEgg({ isOpen, onClose }) {
                 >
                   <h3 className="text-2xl font-bold mb-2">🌌 You Found It!</h3>
                   <p className="text-sm opacity-80 mb-4">
-                    Welcome to the P0STMAN universe - where AI-powered development 
+                    Welcome to the POSTMAN universe - where AI-powered development 
                     meets infinite creativity. Thanks for exploring!
                   </p>
                   <div className="flex items-center justify-center gap-2 text-xs opacity-60">

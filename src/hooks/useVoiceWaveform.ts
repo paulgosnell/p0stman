@@ -29,17 +29,17 @@ export interface UseVoiceWaveformOptions {
   silenceDuration?: number;
 }
 
-const DEFAULT_PROMPT = `You are a helpful AI assistant for P0STMAN, an AI-powered product studio that builds intelligent software products.
+const DEFAULT_PROMPT = `You are a helpful AI assistant for POSTMAN, an AI-powered product studio that builds intelligent software products.
 
 You help visitors understand:
-- What P0STMAN does (AI-powered product development)
+- What POSTMAN does (AI-powered product development)
 - Our services (voice agents, chat agents, code agents, workflow automation)
 - Our process (rapid prototyping, AI-first development)
 - How to get started (book a call, contact us)
 
 Be friendly, concise, and helpful. Guide visitors to relevant sections of the website when appropriate.`;
 
-const DEFAULT_FIRST_MESSAGE = "Hey! Welcome to P0STMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?";
+const DEFAULT_FIRST_MESSAGE = "Hey! Welcome to POSTMAN. I'm the AI assistant here - kind of meta, right? What brings you by today?";
 
 /**
  * Hook for managing OpenAI Realtime voice agent with waveform visualization

@@ -157,7 +157,7 @@ export default function LLMSEOCompleteGuide() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com"
     },
     "datePublished": "2026-01-18",
@@ -185,7 +185,7 @@ export default function LLMSEOCompleteGuide() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>LLM SEO: The Complete Guide to AI Search Optimization (2026) | P0STMAN</title>
+          <title>LLM SEO: The Complete Guide to AI Search Optimization (2026) | POSTMAN</title>
           <meta name="description" content="Master LLM SEO with this comprehensive guide. Learn how to optimize content for ChatGPT, Claude, Perplexity, and Google AI Overviews. Strategies, tools, and implementation." />
           <meta name="keywords" content="LLM SEO, AI search optimization, ChatGPT SEO, Claude optimization, Perplexity SEO, AI Overviews, generative engine optimization, GEO" />
           <meta property="og:title" content="LLM SEO: The Complete Guide to AI Search Optimization (2026)" />

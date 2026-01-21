@@ -126,7 +126,7 @@ export default function AIPlatformDev() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>AI Platform Development | Custom AI Solutions | P0STMAN</title>
+          <title>AI Platform Development | Custom AI Solutions | POSTMAN</title>
           <meta name="description" content="Build production-ready AI platforms in weeks. Custom AI solutions using GPT-4, Claude, and cutting-edge AI technologies for enterprise and startups." />
           <meta name="keywords" content="AI development, AI platform, GPT-4, Claude, custom AI solutions, AI integration" />
         </Helmet>

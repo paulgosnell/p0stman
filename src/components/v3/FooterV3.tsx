@@ -129,7 +129,7 @@ export default function FooterV3() {
 
             {/* Copyright */}
             <p className="text-sm text-gray-500 font-light">
-              © {currentYear} P0STMAN
+              © {currentYear} POSTMAN
             </p>
           </div>
         </div>

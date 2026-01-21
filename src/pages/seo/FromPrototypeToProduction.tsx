@@ -77,15 +77,15 @@ export default function FromPrototypeToProduction() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>From Prototype to Production | AI-Built Apps to Production | P0STMAN</title>
+          <title>From Prototype to Production | AI-Built Apps to Production | POSTMAN</title>
           <meta name="description" content="Built a prototype in Bolt, Lovable, or Replit? I take AI-built prototypes to production — fast. 20+ years experience, vibe coding expert since day one." />
           <meta name="keywords" content="prototype to production developer, AI prototype to production, vibe coding to production, MVP from prototype, Bolt to production, Lovable to production" />
-          <meta property="og:title" content="From Prototype to Production | AI-Built Apps to Production | P0STMAN" />
+          <meta property="og:title" content="From Prototype to Production | AI-Built Apps to Production | POSTMAN" />
           <meta property="og:description" content="Built a prototype in Bolt, Lovable, or Replit? I take AI-built prototypes to production — fast." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="From Prototype to Production | P0STMAN" />
+          <meta name="twitter:title" content="From Prototype to Production | POSTMAN" />
           <meta name="twitter:description" content="Built a prototype in Bolt, Lovable, or Replit? I take AI-built prototypes to production — fast." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/from-prototype-to-production" />

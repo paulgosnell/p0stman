@@ -95,7 +95,7 @@ const tldrPoints = [
   "ChatGPT ads launching Q1 2026 in US (free and Go tiers only)",
   "Ads appear at bottom of responses based on conversation context",
   "700 million weekly users — massive new advertising channel",
-  "P0STMAN offers ChatGPT ad readiness packages from $3,500"
+  "POSTMAN offers ChatGPT ad readiness packages from $3,500"
 ];
 
 export default function ChatGPTAdvertisingServices() {
@@ -113,14 +113,14 @@ export default function ChatGPTAdvertisingServices() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "ChatGPT Advertising Services: Get Ready for AI Ads",
-    "description": "Prepare your brand for ChatGPT ads launching Q1 2026. P0STMAN helps you develop AI advertising strategy and optimize for the new ChatGPT ad platform.",
+    "description": "Prepare your brand for ChatGPT ads launching Q1 2026. POSTMAN helps you develop AI advertising strategy and optimize for the new ChatGPT ad platform.",
     "author": {
       "@type": "Organization",
-      "name": "P0STMAN"
+      "name": "POSTMAN"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com"
     },
     "datePublished": "2026-01-18",
@@ -149,15 +149,15 @@ export default function ChatGPTAdvertisingServices() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>ChatGPT Advertising Services: Get Ready for AI Ads | P0STMAN</title>
-          <meta name="description" content="Prepare your brand for ChatGPT ads launching Q1 2026. P0STMAN helps you develop AI advertising strategy and optimize for the new ChatGPT ad platform." />
+          <title>ChatGPT Advertising Services: Get Ready for AI Ads | POSTMAN</title>
+          <meta name="description" content="Prepare your brand for ChatGPT ads launching Q1 2026. POSTMAN helps you develop AI advertising strategy and optimize for the new ChatGPT ad platform." />
           <meta name="keywords" content="ChatGPT advertising services, ChatGPT ads, OpenAI advertising, AI advertising strategy, ChatGPT ad platform, AI ads 2026" />
-          <meta property="og:title" content="ChatGPT Advertising Services: Get Ready for AI Ads | P0STMAN" />
-          <meta property="og:description" content="Prepare your brand for ChatGPT ads launching Q1 2026. P0STMAN helps you develop AI advertising strategy and optimize for the new ChatGPT ad platform." />
+          <meta property="og:title" content="ChatGPT Advertising Services: Get Ready for AI Ads | POSTMAN" />
+          <meta property="og:description" content="Prepare your brand for ChatGPT ads launching Q1 2026. POSTMAN helps you develop AI advertising strategy and optimize for the new ChatGPT ad platform." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="ChatGPT Advertising Services | P0STMAN" />
+          <meta name="twitter:title" content="ChatGPT Advertising Services | POSTMAN" />
           <meta name="twitter:description" content="Prepare your brand for ChatGPT ads launching Q1 2026. AI advertising strategy and optimization." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/services/chatgpt-advertising-services" />
@@ -194,7 +194,7 @@ export default function ChatGPTAdvertisingServices() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-                  ChatGPT advertising is launching in Q1 2026 for US free and Go tier users. OpenAI will show sponsored products and services at the bottom of AI responses based on conversation context. P0STMAN helps brands prepare strategy and creative for this new channel.
+                  ChatGPT advertising is launching in Q1 2026 for US free and Go tier users. OpenAI will show sponsored products and services at the bottom of AI responses based on conversation context. POSTMAN helps brands prepare strategy and creative for this new channel.
                 </p>
 
                 {/* TL;DR Box */}

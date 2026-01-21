@@ -327,7 +327,7 @@ const hubSchema = {
   "url": BASE_URL + '/solutions/',
   "provider": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": BASE_URL
   }
 };

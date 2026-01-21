@@ -55,7 +55,7 @@ guideFiles.forEach(file => {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com",
       "logo": {
         "@type": "ImageObject",

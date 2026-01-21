@@ -141,15 +141,15 @@ export default function HireDeveloperAfterPrototype() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Hire a Developer After Prototyping | Lovable, Bolt, Replit | P0STMAN</title>
+          <title>Hire a Developer After Prototyping | Lovable, Bolt, Replit | POSTMAN</title>
           <meta name="description" content="Built a prototype in Lovable, Bolt, or Replit? Here's what to look for when hiring a developer to take it to production." />
           <meta name="keywords" content="Hire developer after Lovable, Hire developer after Bolt, Find developer for prototype, Developer for AI prototype, Hire developer after vibe coding, Take prototype to production developer" />
-          <meta property="og:title" content="Hire a Developer After Prototyping | Lovable, Bolt, Replit | P0STMAN" />
+          <meta property="og:title" content="Hire a Developer After Prototyping | Lovable, Bolt, Replit | POSTMAN" />
           <meta property="og:description" content="Built a prototype in Lovable, Bolt, or Replit? Here's what to look for when hiring a developer." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Hire a Developer After Prototyping | P0STMAN" />
+          <meta name="twitter:title" content="Hire a Developer After Prototyping | POSTMAN" />
           <meta name="twitter:description" content="Built a prototype in Lovable, Bolt, or Replit? Here's what to look for when hiring a developer." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/hire-developer-after-prototype" />

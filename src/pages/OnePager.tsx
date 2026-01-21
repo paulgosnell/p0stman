@@ -11,7 +11,7 @@ export default function OnePager() {
   return (
     <>
       <Helmet>
-        <title>P0STMAN | We Build Fast. You Scale Fast.</title>
+        <title>POSTMAN | We Build Fast. You Scale Fast.</title>
         <meta name="description" content="Built a yacht management platform in 4 weeks. Agency quoted 3 months. 1000+ products shipped over 20 years with AI workflows." />
       </Helmet>
 
@@ -38,7 +38,7 @@ export default function OnePager() {
               className="mb-16 text-center"
             >
               <h1 className="text-3xl font-light tracking-tight text-gray-900 mb-3">
-                P0STMAN
+                POSTMAN
               </h1>
               <p className="text-xs tracking-[0.3em] uppercase text-gray-400 font-light">
                 AI-Powered Product Studio
@@ -414,7 +414,7 @@ export default function OnePager() {
 
               <div className="pt-12 border-t border-gray-800">
                 <p className="text-xs tracking-[0.3em] uppercase text-gray-500 font-light">
-                  P0STMAN — AI-Powered Product Studio
+                  POSTMAN — AI-Powered Product Studio
                 </p>
               </div>
             </motion.div>

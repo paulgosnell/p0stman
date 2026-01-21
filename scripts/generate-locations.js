@@ -73,7 +73,7 @@ function generateSchemaMarkup(location) {
     'description': location.metaDescription,
     'provider': {
       '@type': 'Organization',
-      'name': 'P0STMAN',
+      'name': 'POSTMAN',
       'url': BASE_URL
     },
     'areaServed': location.name,
@@ -267,7 +267,7 @@ const hubSchemaMarkup = `<script type="application/ld+json">
   "url": "${BASE_URL}/locations/",
   "provider": {
     "@type": "Organization",
-    "name": "P0STMAN",
+    "name": "POSTMAN",
     "url": "${BASE_URL}"
   }
 }

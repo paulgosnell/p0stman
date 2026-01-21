@@ -100,15 +100,15 @@ export default function LovableToProduction() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Lovable to Production | Take Your Lovable Prototype Live | P0STMAN</title>
+          <title>Lovable to Production | Take Your Lovable Prototype Live | POSTMAN</title>
           <meta name="description" content="Built something in Lovable.dev but hit a wall? I take Lovable prototypes to production — fast. Vibe coding expert since 2024." />
           <meta name="keywords" content="Lovable to production, Lovable developer, Hire developer after Lovable, Lovable.dev to production, Lovable prototype developer, Take Lovable app live" />
-          <meta property="og:title" content="Lovable to Production | Take Your Lovable Prototype Live | P0STMAN" />
+          <meta property="og:title" content="Lovable to Production | Take Your Lovable Prototype Live | POSTMAN" />
           <meta property="og:description" content="Built something in Lovable.dev but hit a wall? I take Lovable prototypes to production — fast." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Lovable to Production | P0STMAN" />
+          <meta name="twitter:title" content="Lovable to Production | POSTMAN" />
           <meta name="twitter:description" content="Built something in Lovable.dev but hit a wall? I take Lovable prototypes to production — fast." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/lovable-to-production" />

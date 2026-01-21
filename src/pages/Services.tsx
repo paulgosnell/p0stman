@@ -161,7 +161,7 @@ const differentiators = [
     isNegative: true
   },
   {
-    label: 'P0STMAN',
+    label: 'POSTMAN',
     points: [
       '1-2 week discovery (AI-assisted research)',
       'Direct access to decision-makers',
@@ -177,10 +177,10 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Services | P0STMAN | AI-Native Product Studio</title>
+        <title>Services | POSTMAN | AI-Native Product Studio</title>
         <meta name="description" content="AI voice agents, custom web platforms, mobile apps, AI development, digital transformation, and fractional leadership. Agency-quality work at startup speed." />
         <meta name="keywords" content="AI development services, voice AI agents, custom web development, mobile app development, AI platform development, digital transformation, fractional CTO, fractional CPO" />
-        <meta property="og:title" content="Services | P0STMAN | AI-Native Product Studio" />
+        <meta property="og:title" content="Services | POSTMAN | AI-Native Product Studio" />
         <meta property="og:description" content="AI voice agents, custom web platforms, mobile apps, and AI development services at startup speed." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://p0stman.com/services" />
@@ -361,7 +361,7 @@ export default function Services() {
               </h2>
 
               <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
-                Traditional agencies vs. P0STMAN's AI-native approach
+                Traditional agencies vs. POSTMAN's AI-native approach
               </p>
             </motion.div>
 

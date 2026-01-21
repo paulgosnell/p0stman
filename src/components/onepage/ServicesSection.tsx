@@ -17,13 +17,13 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ content }) => {
             AI Advisory & Digital Delivery
           </h2>
           <p className="text-premium-xl text-gray-300 max-w-3xl mx-auto">
-            P0STMAN leads AI adoption strategy while Chilled Sites accelerates your team's digital delivery
+            POSTMAN leads AI adoption strategy while Chilled Sites accelerates your team's digital delivery
           </p>
         </div>
 
         {/* Asymmetric Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* P0STMAN Service Card - 2/3 width */}
+          {/* POSTMAN Service Card - 2/3 width */}
           <div className="lg:col-span-2 card-premium-flat hover-lift-subtle">
             {/* Service Badge */}
             {primaryService.badge && (

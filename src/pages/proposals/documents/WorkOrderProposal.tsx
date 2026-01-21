@@ -184,7 +184,7 @@ export default function WorkOrderProposal() {
 
         {/* Footer */}
         <div className="border-t pt-8 text-center text-gray-500 text-sm">
-          <p>Prepared by P0STMAN (AI-Powered Product Studio)</p>
+          <p>Prepared by POSTMAN (AI-Powered Product Studio)</p>
           <p>Contact: hello@p0stman.com</p>
         </div>
       </div>

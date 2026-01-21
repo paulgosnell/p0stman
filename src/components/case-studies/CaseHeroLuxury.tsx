@@ -87,7 +87,7 @@ export default function CaseHeroLuxury({
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className="text-2xl font-light tracking-tight text-white drop-shadow-lg">
-              P0STMAN
+              POSTMAN
             </span>
           </Link>
 

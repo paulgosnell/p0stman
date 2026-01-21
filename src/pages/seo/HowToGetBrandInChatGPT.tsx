@@ -128,12 +128,12 @@ export default function HowToGetBrandInChatGPT() {
     "description": "Practical guide to getting ChatGPT to cite and recommend your brand. Learn the content structures, schema markup, and optimization techniques that earn AI citations.",
     "author": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com"
     },
     "datePublished": "2026-01-18",
@@ -174,10 +174,10 @@ export default function HowToGetBrandInChatGPT() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>How to Get Your Brand Mentioned in ChatGPT (2026 Guide) | P0STMAN</title>
+          <title>How to Get Your Brand Mentioned in ChatGPT (2026 Guide) | POSTMAN</title>
           <meta name="description" content="Practical guide to getting ChatGPT to cite and recommend your brand. Learn the content structures, schema markup, and optimization techniques that earn AI citations." />
           <meta name="keywords" content="how to get your brand in ChatGPT, ChatGPT brand mentions, AI citations, LLM optimization, ChatGPT SEO, AI visibility" />
-          <meta property="og:title" content="How to Get Your Brand Mentioned in ChatGPT (2026 Guide) | P0STMAN" />
+          <meta property="og:title" content="How to Get Your Brand Mentioned in ChatGPT (2026 Guide) | POSTMAN" />
           <meta property="og:description" content="Practical guide to getting ChatGPT to cite and recommend your brand. Learn the content structures, schema markup, and optimization techniques that earn AI citations." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />

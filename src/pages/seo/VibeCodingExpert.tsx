@@ -114,15 +114,15 @@ export default function VibeCodingExpert() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Vibe Coding Expert | Professional AI-Assisted Development | P0STMAN</title>
+          <title>Vibe Coding Expert | Professional AI-Assisted Development | POSTMAN</title>
           <meta name="description" content="Vibe coding before it had a name. First to ship production on Bolt.new. 20+ years building products, now with AI. I turn prototypes into production." />
           <meta name="keywords" content="Vibe coding expert, Vibe coding developer, Hire vibe coder, Professional vibe coding, Vibe coding consultant, AI coding expert" />
-          <meta property="og:title" content="Vibe Coding Expert | Professional AI-Assisted Development | P0STMAN" />
+          <meta property="og:title" content="Vibe Coding Expert | Professional AI-Assisted Development | POSTMAN" />
           <meta property="og:description" content="Vibe coding before it had a name. First to ship production on Bolt.new. 20+ years building products, now with AI." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Vibe Coding Expert | P0STMAN" />
+          <meta name="twitter:title" content="Vibe Coding Expert | POSTMAN" />
           <meta name="twitter:description" content="Vibe coding before it had a name. First to ship production on Bolt.new." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/vibe-coding-expert" />
@@ -436,7 +436,7 @@ export default function VibeCodingExpert() {
         <section className="py-16 bg-purple-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl font-thin mb-4">The P0STMAN Approach — AI-first, human-validated</h2>
+              <h2 className="text-2xl font-thin mb-4">The POSTMAN Approach — AI-first, human-validated</h2>
               <p className="text-gray-600 mb-6">
                 Everything I build uses AI tools. Research, planning, code, documentation — AI throughout.
               </p>

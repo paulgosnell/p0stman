@@ -1244,7 +1244,7 @@ export default function SaladProject() {
 
         {/* Footer - with padding for bottom toolbar */}
         <div style={{ marginTop: '32px', marginBottom: '80px', fontSize: '12px', color: colors.warmGray, textAlign: 'center' }}>
-          SP Command Centre • Built by P0STMAN
+          SP Command Centre • Built by POSTMAN
         </div>
 
         {/* Bottom Toolbar with Voice Assistant */}

@@ -1,4 +1,4 @@
-// TypeScript interfaces for P0STMAN One-Pager content and contact data
+// TypeScript interfaces for POSTMAN One-Pager content and contact data
 
 export interface ContactCTA {
   label: string;

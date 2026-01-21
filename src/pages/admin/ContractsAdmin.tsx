@@ -351,14 +351,14 @@ export default function ContractsAdmin() {
                     const template = e.target.value as 'UK' | 'UAE';
                     const defaults = template === 'UAE'
                       ? {
-                          provider_company: 'P0STMAN (AI-Powered Product Studio)',
+                          provider_company: 'POSTMAN (AI-Powered Product Studio)',
                           provider_legal_entity: 'Chilled Ventures L.L.C',
                           provider_address: 'Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates',
                           provider_contact: editingContract.provider_contact || 'Paul Gosnell',
                         }
                       : {
-                          provider_company: 'P0STMAN',
-                          provider_legal_entity: 'P0STMAN',
+                          provider_company: 'POSTMAN',
+                          provider_legal_entity: 'POSTMAN',
                           provider_address: 'Tyby Farm, Wood Dalling, Norfolk',
                           provider_contact: editingContract.provider_contact || 'Paul Gosnell',
                         };

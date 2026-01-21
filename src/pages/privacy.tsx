@@ -9,7 +9,7 @@ const PrivacyPage: React.FC = () => (
         <section>
           <h2 className="text-2xl font-light mb-4 text-white">Your Privacy Matters</h2>
           <p>
-            P0STMAN is committed to protecting your privacy. We only collect the minimum personal information required to deliver our services and improve your experience. We do not sell your data, and we never send spam.
+            POSTMAN is committed to protecting your privacy. We only collect the minimum personal information required to deliver our services and improve your experience. We do not sell your data, and we never send spam.
           </p>
         </section>
         <section>

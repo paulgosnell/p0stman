@@ -107,7 +107,7 @@ export default function AIProductStudio() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>AI Product Studio | Ship AI Products in Days | P0STMAN</title>
+          <title>AI Product Studio | Ship AI Products in Days | POSTMAN</title>
           <meta name="description" content="AI-native development studio. Context engineering, multi-model orchestration, production-ready AI products in weeks. Voice agents, chat agents, AI-powered SaaS." />
           <meta name="keywords" content="AI product studio, AI development agency, AI product development, context engineering, AI agents, voice agents" />
           <link rel="canonical" href="https://p0stman.com/ai-product-studio" />
@@ -242,7 +242,7 @@ export default function AIProductStudio() {
           title="How We Work Differently"
           subtitle="The old way vs. the AI-native way"
           traditionalLabel="Traditional Agency"
-          modernLabel="P0STMAN"
+          modernLabel="POSTMAN"
           items={comparisonItems}
         />
 

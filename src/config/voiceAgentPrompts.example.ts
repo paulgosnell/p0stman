@@ -72,7 +72,7 @@ export function SectionVoiceAgent({ sectionId, agentId, apiKey }: SectionVoiceAg
         onClick={() => setIsOpen(true)}
         className="px-6 py-3 bg-blue-600 text-white rounded-full"
       >
-        Talk to P0STMAN about {config.sectionName}
+        Talk to POSTMAN about {config.sectionName}
       </button>
 
       {/* You would need to extend VoiceAgentOverlay to accept section config */}

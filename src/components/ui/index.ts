@@ -1,4 +1,4 @@
-// UI Component Library - P0STMAN V3 Design System
+// UI Component Library - POSTMAN V3 Design System
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Section } from './Section';

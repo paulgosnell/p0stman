@@ -227,15 +227,15 @@ export default function AIAgents() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>AI Agents | Voice, Memory & Frontier Models | P0STMAN</title>
+          <title>AI Agents | Voice, Memory & Frontier Models | POSTMAN</title>
           <meta name="description" content="Production-ready AI agents with voice interfaces, intelligent memory systems, and frontier reasoning models. See real projects: YachtOS, CoachOS, and more." />
           <meta name="keywords" content="AI agents, voice AI, Claude, GPT-4o, memory systems, RAG, executive coaching AI, maritime AI, healthcare AI" />
-          <meta property="og:title" content="AI Agents | Voice, Memory & Frontier Models | P0STMAN" />
+          <meta property="og:title" content="AI Agents | Voice, Memory & Frontier Models | POSTMAN" />
           <meta property="og:description" content="Production-ready AI agents with voice interfaces, intelligent memory systems, and frontier reasoning models." />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="AI Agents | Voice, Memory & Frontier Models | P0STMAN" />
+          <meta name="twitter:title" content="AI Agents | Voice, Memory & Frontier Models | POSTMAN" />
           <meta name="twitter:description" content="Production-ready AI agents with voice interfaces, intelligent memory systems, and frontier reasoning models." />
           <link rel="canonical" href="https://p0stman.com/ai-agents" />
         </Helmet>

@@ -260,7 +260,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      P0STMAN
+                      POSTMAN
                     </h3>
                     <p className="text-gray-400 text-sm">AI-Native Product Studio</p>
                   </div>
@@ -453,7 +453,7 @@ export default function AnimatedFooter({ onOpenProjectConfigurator }: { onOpenPr
                 } : {}}
                 transition={{ duration: 0.3 }}
               >
-                © 2025 P0STMAN. Built with AI, designed for the future.
+                © 2025 POSTMAN. Built with AI, designed for the future.
                 {easterEggClicks > 0 && easterEggClicks < 5 && (
                   <span className="ml-2 text-blue-400">
                     {'✨'.repeat(easterEggClicks)}

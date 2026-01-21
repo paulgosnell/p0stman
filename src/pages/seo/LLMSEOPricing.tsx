@@ -152,14 +152,14 @@ export default function LLMSEOPricing() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "LLM SEO Pricing: What AI Search Optimization Costs (2026)",
-    "description": "Transparent LLM SEO pricing from P0STMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000. Real costs based on 50+ projects.",
+    "description": "Transparent LLM SEO pricing from POSTMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000. Real costs based on 50+ projects.",
     "author": {
       "@type": "Organization",
-      "name": "P0STMAN"
+      "name": "POSTMAN"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "P0STMAN",
+      "name": "POSTMAN",
       "url": "https://p0stman.com"
     },
     "datePublished": "2026-01-01",
@@ -183,16 +183,16 @@ export default function LLMSEOPricing() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>LLM SEO Pricing: What AI Search Optimization Costs (2026) | P0STMAN</title>
-          <meta name="description" content="Transparent LLM SEO pricing from P0STMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000. Real costs based on 50+ projects." />
+          <title>LLM SEO Pricing: What AI Search Optimization Costs (2026) | POSTMAN</title>
+          <meta name="description" content="Transparent LLM SEO pricing from POSTMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000. Real costs based on 50+ projects." />
           <meta name="keywords" content="LLM SEO pricing, AI search optimization cost, LLM optimization pricing, AI SEO services, ChatGPT SEO pricing" />
-          <meta property="og:title" content="LLM SEO Pricing: What AI Search Optimization Costs (2026) | P0STMAN" />
-          <meta property="og:description" content="Transparent LLM SEO pricing from P0STMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000." />
+          <meta property="og:title" content="LLM SEO Pricing: What AI Search Optimization Costs (2026) | POSTMAN" />
+          <meta property="og:description" content="Transparent LLM SEO pricing from POSTMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000." />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="LLM SEO Pricing: What AI Search Optimization Costs (2026)" />
-          <meta name="twitter:description" content="Transparent LLM SEO pricing from P0STMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000." />
+          <meta name="twitter:description" content="Transparent LLM SEO pricing from POSTMAN. Audits from $2,500, implementation from $5,000, ongoing programs from $15,000." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/pricing/llm-seo-pricing-guide" />
           <script type="application/ld+json">{JSON.stringify(schemaData)}</script>

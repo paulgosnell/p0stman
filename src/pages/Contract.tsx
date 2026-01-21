@@ -158,8 +158,8 @@ export default function Contract() {
               <div>
                 <h2 className="text-lg font-semibold mb-4">Service Provider</h2>
                   <div className="space-y-2">
-                    <p><span className="font-medium">Company:</span> {contract.provider_company || (isUK ? 'P0STMAN' : 'P0STMAN (AI-Powered Product Studio)')}</p>
-                    <p><span className="font-medium">Legal Entity:</span> {contract.provider_legal_entity || (isUK ? 'P0STMAN' : 'Chilled Ventures L.L.C')}</p>
+                    <p><span className="font-medium">Company:</span> {contract.provider_company || (isUK ? 'POSTMAN' : 'POSTMAN (AI-Powered Product Studio)')}</p>
+                    <p><span className="font-medium">Legal Entity:</span> {contract.provider_legal_entity || (isUK ? 'POSTMAN' : 'Chilled Ventures L.L.C')}</p>
                     <p><span className="font-medium">Address:</span> {contract.provider_address || (isUK ? 'Tyby Farm, Wood Dalling, Norfolk' : 'Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates')}</p>
                     <p><span className="font-medium">Contact:</span> {contract.provider_contact || 'Paul Gosnell'}</p>
                   </div>
@@ -378,8 +378,8 @@ export default function Contract() {
                 <SignatureSection
                   role="provider"
                   name={contract.provider_contact || 'Paul Gosnell'}
-                  company={contract.provider_company || 'P0STMAN (AI-Powered Product Studio)'}
-                  title="Founder, P0STMAN"
+                  company={contract.provider_company || 'POSTMAN (AI-Powered Product Studio)'}
+                  title="Founder, POSTMAN"
                   date={contract.issue_date || contract.created_at || ''}
                   signature={contract.provider_signature || null}
                   onSign={(sig) => { setProviderSignature(sig); persistSignature('provider', sig); }}
@@ -411,7 +411,7 @@ export default function Contract() {
             <div className="mt-12 pt-12 border-t border-gray-200">
               <p className="text-sm text-gray-500">
                 Notes:<br />
-                This project is a P0STMAN delivery, leveraging AI-powered tools for rapid, high-quality product development.
+                This project is a POSTMAN delivery, leveraging AI-powered tools for rapid, high-quality product development.
               </p>
             </div>
           </div>

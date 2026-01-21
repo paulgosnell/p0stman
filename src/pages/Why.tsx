@@ -53,7 +53,7 @@ export default function Why() {
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
-          <title>Why We Do It | P0STMAN - AI Product Studio</title>
+          <title>Why We Do It | POSTMAN - AI Product Studio</title>
           <meta name="description" content="Learn about our mission to help bold ideas get built faster with AI-native product development and our founder-first approach." />
         </Helmet>
 
@@ -78,7 +78,7 @@ export default function Why() {
                 </h1>
 
                 <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8 font-light">
-                  We believe bold ideas deserve to be built. P0STMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
+                  We believe bold ideas deserve to be built. POSTMAN is our product studio, and Chilled Tools are the AI products we've created to help founders, brands, and agencies go faster.
                 </p>
 
                 <motion.div
