@@ -409,25 +409,35 @@ export default function HeroLuxury() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-              Ambition.
+              Ideas.
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Accelerated.
+              Shipped.
             </motion.div>
           </h1>
 
-          {/* Subheadline */}
+          {/* Secondary Line */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-white/90 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/90 max-w-4xl mx-auto mb-4 sm:mb-6 leading-relaxed px-4"
           >
-            AI-powered product studio building the impossible — fast, brilliant, limitless
+            Vision to product. Weeks, not months.
+          </motion.p>
+
+          {/* Credibility Line */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm sm:text-base md:text-lg font-light text-white/60 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4"
+          >
+            20 years shipping products. AI-native since day one.
           </motion.p>
 
           {/* Voice Waveform CTA */}

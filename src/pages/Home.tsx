@@ -14,18 +14,18 @@ export default function Home() {
     <HelmetProvider>
       <div className="min-h-screen bg-white dark:bg-gray-900 w-full overflow-x-hidden relative">
         <Helmet>
-          <title>P0STMAN | From Vision to Product — Delivered Fast and Brilliantly</title>
-          <meta name="description" content="We build and deliver websites, apps, and digital products that make you look good and move your business forward. AI powers our speed, but outcomes are what count." />
-          <meta name="keywords" content="AI development, product strategy, rapid prototyping, enterprise solutions, Dubai tech, AI-powered development, product studio" />
-          <meta property="og:title" content="P0STMAN | From Vision to Product — Delivered Fast and Brilliantly" />
-          <meta property="og:description" content="We build and deliver websites, apps, and digital products that make you look good and move your business forward." />
+          <title>POSTMAN | Ideas. Shipped. Vision to Product in Weeks.</title>
+          <meta name="description" content="Vision to product. Weeks, not months. 20 years shipping products, AI-native since day one. Strategic partner, builder, trusted advisor." />
+          <meta name="keywords" content="AI development, prototype to production, Lovable to production, Bolt to production, rapid product development, AI-native builder, product studio" />
+          <meta property="og:title" content="POSTMAN | Ideas. Shipped." />
+          <meta property="og:description" content="Vision to product. Weeks, not months. 20 years shipping products, AI-native since day one." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://p0stman.com" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
-          <meta property="og:site_name" content="P0STMAN" />
+          <meta property="og:site_name" content="POSTMAN" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="P0STMAN | From Vision to Product — Delivered Fast and Brilliantly" />
-          <meta name="twitter:description" content="We build and deliver websites, apps, and digital products that make you look good and move your business forward." />
+          <meta name="twitter:title" content="POSTMAN | Ideas. Shipped." />
+          <meta name="twitter:description" content="Vision to product. Weeks, not months. 20 years shipping products, AI-native since day one." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:creator" content="@paulgosnell" />
           <link rel="canonical" href="https://p0stman.com" />
