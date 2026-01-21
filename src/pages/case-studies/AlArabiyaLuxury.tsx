@@ -97,6 +97,30 @@ export default function AlArabiyaLuxury() {
           <meta name="twitter:description" content="Leading international teams during crisis for digital transformation." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/al-arabiya" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Al Arabiya News Platform | International Team Leadership Case Study",
+              "description": "Led international team of 20 to modernize Al Arabiya's news platform during COVID-19, achieving 40% performance improvement.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/arabia1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Al Arabiya", "item": "https://p0stman.com/case-study/al-arabiya" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

@@ -111,6 +111,28 @@ export default function AIProductStudio() {
           <meta name="description" content="AI-native development studio. Context engineering, multi-model orchestration, production-ready AI products in weeks. Voice agents, chat agents, AI-powered SaaS." />
           <meta name="keywords" content="AI product studio, AI development agency, AI product development, context engineering, AI agents, voice agents" />
           <link rel="canonical" href="https://p0stman.com/ai-product-studio" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "AI Product Studio",
+              "description": "AI-native development studio. Context engineering, multi-model orchestration, production-ready AI products in weeks. Voice agents, chat agents, AI-powered SaaS.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["AI Product Development", "Voice Agents", "Chat Agents", "AI SaaS"],
+              "areaServed": "Worldwide"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "AI Product Studio", "item": "https://p0stman.com/ai-product-studio" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

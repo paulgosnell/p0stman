@@ -153,6 +153,30 @@ export default function YachtOS() {
           <meta name="twitter:description" content="Five specialized AI apps for yachting: COMMAND, FLEET, HARBOR, OWNER, GUEST. One unified platform." />
           <meta name="twitter:image" content="https://p0stman.com/agents/yachtos-home.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/yachtos" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "YachtOS Platform | Multi-App Maritime AI Suite Case Study",
+              "description": "Five specialized AI-native apps for yachting in one unified platform. Serving captains, fleet managers, harbor ops, owners, and guests with role-optimized experiences.",
+              "image": "https://p0stman.com/agents/yachtos-home.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "YachtOS", "item": "https://p0stman.com/case-study/yachtos" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

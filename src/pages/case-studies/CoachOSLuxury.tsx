@@ -126,6 +126,30 @@ export default function CoachOSLuxury() {
           <meta name="twitter:description" content="On-demand AI business coaching for executives with voice interface and memory." />
           <meta name="twitter:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/coach-os" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Coach OS Case Study | AI-Powered Executive Coaching Platform",
+              "description": "On-demand AI business coaching for executives and founders. Strategic guidance with voice interface, long-term memory, and professional coaching frameworks.",
+              "image": "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/coachos-home.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Coach OS", "item": "https://p0stman.com/case-study/coach-os" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

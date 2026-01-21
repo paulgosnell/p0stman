@@ -129,6 +129,30 @@ export default function AIPlatformDev() {
           <title>AI Platform Development | Custom AI Solutions | POSTMAN</title>
           <meta name="description" content="Build production-ready AI platforms in weeks. Custom AI solutions using GPT-4, Claude, and cutting-edge AI technologies for enterprise and startups." />
           <meta name="keywords" content="AI development, AI platform, GPT-4, Claude, custom AI solutions, AI integration" />
+          <link rel="canonical" href="https://p0stman.com/ai-platform-development" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "AI Platform Development",
+              "description": "Build production-ready AI platforms in weeks. Custom AI solutions using GPT-4, Claude, and cutting-edge AI technologies for enterprise and startups.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["AI Development", "Custom AI Solutions", "AI Integration", "Enterprise AI"],
+              "areaServed": "Worldwide",
+              "offers": { "@type": "Offer", "price": "15000", "priceCurrency": "USD", "description": "Starting from $15,000" }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "AI Platform Development", "item": "https://p0stman.com/ai-platform-development" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

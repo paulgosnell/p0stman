@@ -103,6 +103,30 @@ export default function ChilledSitesLuxury() {
           <meta name="twitter:description" content="AI-powered website builder that turns prompts into professional websites in minutes." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/chilled-sites" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Chilled Sites Case Study | AI Website Builder Platform",
+              "description": "How we built Chilled Sites - an AI-powered website builder that creates professional websites from prompts, photos, or emails in under 10 minutes.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/chilledsites.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Chilled Sites", "item": "https://p0stman.com/case-study/chilled-sites" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

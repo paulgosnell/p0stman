@@ -238,6 +238,27 @@ export default function AIAgents() {
           <meta name="twitter:title" content="AI Agents | Voice, Memory & Frontier Models | POSTMAN" />
           <meta name="twitter:description" content="Production-ready AI agents with voice interfaces, intelligent memory systems, and frontier reasoning models." />
           <link rel="canonical" href="https://p0stman.com/ai-agents" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "AI Agent Development",
+              "description": "Production-ready AI agents with voice interfaces, intelligent memory systems, and frontier reasoning models. See real projects: YachtOS, CoachOS, and more.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["Voice AI Agents", "Chat AI Agents", "Memory Systems", "Multi-Model Orchestration"],
+              "areaServed": "Worldwide"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "AI Agents", "item": "https://p0stman.com/ai-agents" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global darkMode={false} />

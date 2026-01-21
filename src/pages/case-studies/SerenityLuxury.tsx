@@ -98,6 +98,30 @@ export default function SerenityLuxuryCase() {
           <meta name="twitter:description" content="AI-enhanced mindfulness platform built in 2 weeks using AI-powered development." />
           <meta name="twitter:image" content="https://mediacdn.carrd.co/assets/images/image07.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/serenity" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Serenity Case Study | AI-Enhanced Mindfulness Platform",
+              "description": "Learn how we built Serenity - an AI-enhanced mindfulness platform combining meditation, movement, and mental wellness.",
+              "image": "https://mediacdn.carrd.co/assets/images/image07.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Serenity", "item": "https://p0stman.com/case-study/serenity" }
+              ]
+            })}
+          </script>
         </Helmet>
         <CaseHeroLuxury
           title="Serenity"

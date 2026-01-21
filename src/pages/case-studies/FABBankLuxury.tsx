@@ -110,6 +110,30 @@ export default function FABBankLuxury() {
           <meta name="twitter:description" content="Enterprise transformation success story with First Abu Dhabi Bank." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/fab-bank" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "FAB Bank Case Study | Enterprise Digital Transformation",
+              "description": "From Innovation Lab pilot to 18-month enterprise transformation with 40+ experts. A flagship digital transformation program for the Middle East region's leading bank.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/fab1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "FAB Bank", "item": "https://p0stman.com/case-study/fab-bank" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

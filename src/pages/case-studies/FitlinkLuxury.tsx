@@ -100,6 +100,30 @@ export default function FitlinkLuxuryCase() {
           <meta name="twitter:description" content="Comprehensive health & fitness platform built using AI-powered development." />
           <meta name="twitter:image" content="https://mediacdn.carrd.co/assets/images/image14.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/fitlink" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Fitlink Case Study | Corporate Wellness Platform",
+              "description": "Learn how we built Fitlink - a comprehensive health & fitness platform for individuals, teams, and corporations.",
+              "image": "https://mediacdn.carrd.co/assets/images/image14.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Fitlink", "item": "https://p0stman.com/case-study/fitlink" }
+              ]
+            })}
+          </script>
         </Helmet>
         <CaseHeroLuxury
           title="Fitlink"

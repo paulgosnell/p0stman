@@ -109,6 +109,30 @@ export default function MamoriHealthOSLuxuryCase() {
           <meta name="twitter:description" content="AI-native health operating system built in 2-3 weeks with 95% cost reduction." />
           <meta name="twitter:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/mamori-healthos" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Mamori HealthOS Case Study | AI-Powered Health Operating System",
+              "description": "See how we built an AI-native health operating system in 2-3 weeks. 95% cost reduction and evidence-based health guidance at scale.",
+              "image": "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/mamori-homepage.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Mamori HealthOS", "item": "https://p0stman.com/case-study/mamori-healthos" }
+              ]
+            })}
+          </script>
         </Helmet>
       <CaseHeroLuxury
         title="Mamori HealthOS"

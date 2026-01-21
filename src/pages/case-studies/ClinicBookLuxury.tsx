@@ -120,6 +120,30 @@ export default function ClinicBookLuxuryCase() {
           <meta name="twitter:description" content="Complete clinic management platform built using AI-powered development." />
           <meta name="twitter:image" content={clinicBookDashboard} />
           <link rel="canonical" href="https://p0stman.com/case-study/clinic-book" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Clinic Book Case Study | AI-Powered Appointment Platform",
+              "description": "See how we built a complete clinic appointment platform enabling businesses to streamline operations, enhance customer experience, and gain data-driven insights.",
+              "image": "https://p0stman.com/assets/clinicbook-dashboard.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Clinic Book", "item": "https://p0stman.com/case-study/clinic-book" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

@@ -98,6 +98,30 @@ export default function GenieologyLuxury() {
           <meta name="twitter:description" content="API-powered website redesign achieving instant success and conversion growth." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/genieology" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Genieology Case Study | API-Powered CMS Website Redesign",
+              "description": "Redesigned Genieology's website with API-powered CMS, achieving instant success and increased sales conversions.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/genie1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Genieology", "item": "https://p0stman.com/case-study/genieology" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

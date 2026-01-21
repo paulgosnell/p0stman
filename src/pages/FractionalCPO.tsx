@@ -130,6 +130,29 @@ export default function FractionalCPO() {
           <meta name="description" content="Hire a fractional CPO for strategic product leadership without full-time cost. Experienced product executives for startups and scale-ups. From $5k/month." />
           <meta name="keywords" content="fractional CPO, fractional chief product officer, part-time CPO, product leadership, startup CPO, hire fractional CPO" />
           <link rel="canonical" href="https://p0stman.com/fractional-cpo" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Fractional CPO Services",
+              "description": "Hire a fractional CPO for strategic product leadership without full-time cost. Experienced product executives for startups and scale-ups.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["Fractional Executive", "Product Leadership", "Strategic Advisory", "Team Building"],
+              "areaServed": "Worldwide",
+              "offers": { "@type": "Offer", "price": "5000", "priceCurrency": "USD", "description": "Starting from $5,000/month" }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "Fractional CPO", "item": "https://p0stman.com/fractional-cpo" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

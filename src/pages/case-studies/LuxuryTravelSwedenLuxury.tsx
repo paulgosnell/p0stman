@@ -108,6 +108,30 @@ export default function LuxuryTravelSwedenLuxuryCase() {
           <meta name="twitter:description" content="AI-powered luxury travel platform built in 8 weeks with comprehensive CMS." />
           <meta name="twitter:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/luxury-travel-sweden" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Luxury Travel Sweden Case Study | AI-Powered Travel Platform",
+              "description": "See how we built an AI-powered luxury travel platform with CMS in 8 weeks. 70% faster content updates and 10x richer lead intelligence.",
+              "image": "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Luxury Travel Sweden", "item": "https://p0stman.com/case-study/luxury-travel-sweden" }
+              ]
+            })}
+          </script>
         </Helmet>
       <CaseHeroLuxury
         title="Luxury Travel Sweden"

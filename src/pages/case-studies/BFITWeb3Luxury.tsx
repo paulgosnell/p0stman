@@ -98,6 +98,30 @@ export default function BFITWeb3Luxury() {
           <meta name="twitter:description" content="Blockchain fitness platform with cryptocurrency rewards and native token." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/bfit-web3" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "BFIT Web3 Fitness | Blockchain Cryptocurrency Rewards Case Study",
+              "description": "Transitioned Fitlink to Web 3.0 blockchain platform with native token, cryptocurrency rewards, and live beta testing.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/bfit1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "BFIT Web3", "item": "https://p0stman.com/case-study/bfit-web3" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

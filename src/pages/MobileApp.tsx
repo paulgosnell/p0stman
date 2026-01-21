@@ -61,6 +61,28 @@ export default function MobileApp() {
           <meta name="twitter:description" content="Transform your idea into a native iOS & Android app in just 4 weeks using AI-powered development." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/mobile-app" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Mobile App Development",
+              "description": "Transform your idea into a native iOS & Android app in just 4 weeks using AI-powered development. Professional mobile app development with React Native.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["iOS App Development", "Android App Development", "React Native Development", "Cross-Platform Apps"],
+              "areaServed": "Worldwide",
+              "offers": { "@type": "Offer", "price": "20000", "priceCurrency": "USD" }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Mobile App Development", "item": "https://p0stman.com/mobile-app" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global darkMode={false} />

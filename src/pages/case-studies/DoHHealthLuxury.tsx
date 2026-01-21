@@ -98,6 +98,30 @@ export default function DoHHealthLuxury() {
           <meta name="twitter:description" content="Government health app exceeding market standards with IBM partnership." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/doh-health" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "My Health Coach DoH | Government Health App Case Study",
+              "description": "Partnered with IBM to build standout health app for Abu Dhabi Department of Health, exceeding market standards.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/doh1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "DoH Health", "item": "https://p0stman.com/case-study/doh-health" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

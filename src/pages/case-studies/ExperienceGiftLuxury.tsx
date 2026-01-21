@@ -96,6 +96,30 @@ export default function ExperienceGiftLuxury() {
           <meta name="twitter:description" content="AI-powered gifting platform built in 1 week using AI-powered development." />
           <meta name="twitter:image" content="https://mediacdn.carrd.co/assets/images/image01.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/experience-a-gift" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Experience A Gift Case Study | AI-Powered Gifting Platform",
+              "description": "See how we revolutionized personalized gifting with AI-driven design and seamless booking experiences in just 1 week.",
+              "image": "https://mediacdn.carrd.co/assets/images/image01.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Experience A Gift", "item": "https://p0stman.com/case-study/experience-a-gift" }
+              ]
+            })}
+          </script>
         </Helmet>
         <CaseHeroLuxury
           title="Experience A Gift"

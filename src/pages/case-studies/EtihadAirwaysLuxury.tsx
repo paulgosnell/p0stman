@@ -98,6 +98,30 @@ export default function EtihadAirwaysLuxury() {
           <meta name="twitter:description" content="Custom booking solution delivering immediate 25% booking increase." />
           <meta name="twitter:image" content="https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/etihad-airways" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Etihad Airways Case Study | Custom Booking System",
+              "description": "Custom booking system for Etihad Airways delivered 25% overnight booking increase, replacing failing off-the-shelf solution.",
+              "image": "https://api.chilledsites.com/storage/v1/object/public/p0stman/etihad1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Etihad Airways", "item": "https://p0stman.com/case-study/etihad-airways" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

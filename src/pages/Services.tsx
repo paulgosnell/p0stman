@@ -184,6 +184,27 @@ export default function Services() {
         <meta property="og:description" content="AI voice agents, custom web platforms, mobile apps, and AI development services at startup speed." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://p0stman.com/services" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "AI-Native Product Studio Services",
+            "description": "AI voice agents, custom web platforms, mobile apps, AI development, digital transformation, and fractional leadership. Agency-quality work at startup speed.",
+            "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+            "serviceType": ["AI Voice Agents", "Custom Web Development", "Mobile App Development", "AI Platform Development", "Digital Transformation", "Fractional Leadership"],
+            "areaServed": "Worldwide"
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">

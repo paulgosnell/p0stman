@@ -191,6 +191,28 @@ export default function Website() {
           <meta name="twitter:description" content="Custom website built in 2 weeks using AI-powered development." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/website" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Professional Website Development",
+              "description": "Get a professional website built in 2 weeks using AI-powered development. Custom design, SEO optimized, mobile responsive.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["Custom Website Design", "Web Development", "SEO Optimization", "Mobile Responsive Design"],
+              "areaServed": "Worldwide",
+              "offers": { "@type": "Offer", "price": "10000", "priceCurrency": "USD" }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Website Development", "item": "https://p0stman.com/website" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

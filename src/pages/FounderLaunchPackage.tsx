@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import {
@@ -144,8 +145,38 @@ export default function FounderLaunchPackage() {
   const [showProjectConfigurator, setShowProjectConfigurator] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
-      {/* Hero Section */}
+    <HelmetProvider>
+      <Helmet>
+        <title>Founder Launch Package | MVP + Pitch Deck + Landing Page | POSTMAN</title>
+        <meta name="description" content="Complete startup launch package in 30 days. Live MVP app, investor pitch deck, landing page, and unified branding. From $35-50k instead of $80-150k." />
+        <meta name="keywords" content="startup MVP, founder launch package, pitch deck, landing page, startup development, MVP development" />
+        <link rel="canonical" href="https://p0stman.com/founder-launch-package" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Founder Launch Package",
+            "description": "Complete startup launch package in 30 days. Live MVP app, investor pitch deck, landing page, and unified branding.",
+            "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+            "serviceType": ["MVP Development", "Startup Launch", "Pitch Deck", "Landing Page"],
+            "areaServed": "Worldwide",
+            "offers": { "@type": "Offer", "price": "35000", "priceCurrency": "USD", "description": "Starting from $35,000" }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+              { "@type": "ListItem", "position": 3, "name": "Founder Launch Package", "item": "https://p0stman.com/founder-launch-package" }
+            ]
+          })}
+        </script>
+      </Helmet>
+      <div className="min-h-screen bg-white w-full overflow-x-hidden relative">
+        {/* Hero Section */}
       <section className="min-h-screen relative overflow-hidden bg-black text-white">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/src/assets/images/p0stman-bg.png')] bg-cover bg-center opacity-20" />
@@ -568,6 +599,7 @@ export default function FounderLaunchPackage() {
       {showProjectConfigurator && (
         <ProjectConfigurator onClose={() => setShowProjectConfigurator(false)} />
       )}
-    </div>
+      </div>
+    </HelmetProvider>
   );
 }

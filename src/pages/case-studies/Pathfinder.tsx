@@ -101,6 +101,30 @@ export default function Pathfinder() {
           <meta name="twitter:description" content="Professional ADHD coaching at AI scale with evidence-based therapeutic frameworks." />
           <meta name="twitter:image" content="https://p0stman.com/agents/pathfinder-1.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/pathfinder" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Pathfinder Case Study | AI-Powered ADHD Parent Coaching",
+              "description": "Professional ADHD parent coaching powered by AI. Evidence-based GROW Model framework delivering 50-minute therapeutic sessions for $0.01 with zero critical safety incidents.",
+              "image": "https://p0stman.com/agents/pathfinder-1.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Pathfinder", "item": "https://p0stman.com/case-study/pathfinder" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

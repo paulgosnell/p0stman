@@ -104,6 +104,28 @@ export default function PrototypeToProduction() {
           <meta name="description" content="Take your Bolt, Lovable, or Replit prototype to production. 20 years shipping products, AI-native since day one. Your prototype isn't a failure - it's a detailed spec." />
           <meta name="keywords" content="prototype to production, bolt to production, lovable production, replit production, MVP development, vibe coding to production, AI prototype help" />
           <link rel="canonical" href="https://p0stman.com/prototype-to-production" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Prototype to Production",
+              "description": "Take your Bolt, Lovable, or Replit prototype to production. 20 years shipping products, AI-native since day one. Your prototype isn't a failure - it's a detailed spec.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["MVP Development", "Prototype Refinement", "Production Deployment", "AI Development"],
+              "areaServed": "Worldwide"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "Prototype to Production", "item": "https://p0stman.com/prototype-to-production" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

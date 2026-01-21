@@ -96,6 +96,30 @@ export default function ChilledCRMLuxuryCase() {
           <meta name="twitter:description" content="Complete CRM system built in 6 weeks using AI-powered development." />
           <meta name="twitter:image" content="https://mediacdn.carrd.co/assets/images/image06.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/chilled-crm" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Chilled CRM Case Study | AI-Powered CRM Development",
+              "description": "See how we built a complete CRM system in just 6 weeks using AI-powered development. 70% cost reduction compared to traditional development.",
+              "image": "https://mediacdn.carrd.co/assets/images/image06.png",
+              "author": { "@type": "Person", "name": "Paul Gosnell" },
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Chilled CRM", "item": "https://p0stman.com/case-study/chilled-crm" }
+              ]
+            })}
+          </script>
         </Helmet>
       <CaseHeroLuxury
         title="Chilled CRM"

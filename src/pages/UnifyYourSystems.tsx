@@ -109,6 +109,28 @@ export default function UnifyYourSystems() {
           <meta name="description" content="Stop logging into 10 different platforms. We build AI-powered unified dashboards that connect your systems, automate workflows, and give you a single view of your business." />
           <meta name="keywords" content="unified dashboard, system integration, connect business systems, multi-location business software, legacy system integration, AI operations, business automation" />
           <link rel="canonical" href="https://p0stman.com/unify-your-systems" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Unify Your Systems",
+              "description": "Stop logging into 10 different platforms. We build AI-powered unified dashboards that connect your systems, automate workflows, and give you a single view of your business.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["System Integration", "Unified Dashboard", "Business Automation", "AI Operations"],
+              "areaServed": "Worldwide"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "Unify Your Systems", "item": "https://p0stman.com/unify-your-systems" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

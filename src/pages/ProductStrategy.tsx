@@ -172,6 +172,30 @@ export default function ProductStrategy() {
           <title>Product Strategy Consulting | Strategic Product Planning | POSTMAN</title>
           <meta name="description" content="Expert product strategy consulting to define vision, create roadmaps, and drive growth. From startups to enterprise, strategic product planning that delivers results." />
           <meta name="keywords" content="product strategy, product roadmap, product planning, strategic consulting, product vision" />
+          <link rel="canonical" href="https://p0stman.com/product-strategy" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Product Strategy Consulting",
+              "description": "Expert product strategy consulting to define vision, create roadmaps, and drive growth. From startups to enterprise, strategic product planning that delivers results.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["Product Strategy", "Strategic Consulting", "Product Roadmapping", "Growth Strategy"],
+              "areaServed": "Worldwide",
+              "offers": { "@type": "Offer", "price": "15000", "priceCurrency": "USD", "description": "Starting from $15,000" }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "Product Strategy", "item": "https://p0stman.com/product-strategy" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

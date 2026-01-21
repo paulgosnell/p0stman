@@ -67,6 +67,28 @@ export default function ContextEngineering() {
           <meta name="description" content="Context engineering is what separates AI toys from AI products. Memory, tools, knowledge, state management - architecting information ecosystems for production AI." />
           <meta name="keywords" content="context engineering, AI context management, LLM engineering, prompt engineering, AI architecture, RAG" />
           <link rel="canonical" href="https://p0stman.com/context-engineering" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Context Engineering",
+              "description": "Context engineering is what separates AI toys from AI products. Memory, tools, knowledge, state management - architecting information ecosystems for production AI.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["Context Engineering", "AI Architecture", "LLM Engineering", "RAG Systems"],
+              "areaServed": "Worldwide"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "Context Engineering", "item": "https://p0stman.com/context-engineering" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

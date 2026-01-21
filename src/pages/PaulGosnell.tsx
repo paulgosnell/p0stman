@@ -434,15 +434,15 @@ export default function PaulGosnell() {
                     viewport={{ once: true }}
                   >
                     <div className="flex items-center gap-2 text-white mb-4">
-                      <MapPin className="w-6 h-6 text-white" style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }} strokeWidth={1.5} />
-                      <span className="text-lg font-light text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                      <MapPin className="w-6 h-6 text-white" style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,1))' }} strokeWidth={1.5} />
+                      <span className="text-lg font-light text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,1), 0 4px 16px rgba(0,0,0,0.8)' }}>
                         Based in
                       </span>
                     </div>
-                    <h3 className="text-4xl font-light text-white mb-4" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
+                    <h3 className="text-4xl font-light text-white mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,1), 0 4px 16px rgba(0,0,0,0.8)' }}>
                       {location.title}
                     </h3>
-                    <p className="text-white max-w-2xl font-light leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                    <p className="text-white text-lg max-w-2xl font-light leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0,0,0,1), 0 4px 16px rgba(0,0,0,0.8)' }}>
                       {location.description}
                     </p>
                   </motion.div>

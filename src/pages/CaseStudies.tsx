@@ -660,6 +660,26 @@ export default function CaseStudies() {
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/case-studies" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Case Studies | POSTMAN Portfolio",
+              "description": "Explore our portfolio of AI-powered products, enterprise transformations, and digital solutions delivered for clients worldwide.",
+              "url": "https://p0stman.com/case-studies",
+              "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global darkMode={true} />

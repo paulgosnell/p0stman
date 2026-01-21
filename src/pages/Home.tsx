@@ -29,6 +29,30 @@ export default function Home() {
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <meta name="twitter:creator" content="@paulgosnell" />
           <link rel="canonical" href="https://p0stman.com" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "POSTMAN",
+              "url": "https://p0stman.com",
+              "logo": "https://p0stman.com/logo.png",
+              "description": "AI-powered product studio delivering vision to product in weeks. 20 years shipping products, AI-native since day one.",
+              "founder": { "@type": "Person", "name": "Paul Gosnell" },
+              "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "UK" },
+              "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hello@p0stman.com" },
+              "sameAs": ["https://twitter.com/paulgosnell", "https://linkedin.com/in/paulgosnell"]
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "POSTMAN",
+              "url": "https://p0stman.com",
+              "description": "Vision to product. Weeks, not months. 20 years shipping products, AI-native since day one.",
+              "publisher": { "@type": "Organization", "name": "POSTMAN" }
+            })}
+          </script>
           <meta name="robots" content="index, follow" />
           <meta name="author" content="Paul Gosnell" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />

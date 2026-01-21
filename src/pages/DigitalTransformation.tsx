@@ -211,6 +211,29 @@ export default function DigitalTransformation() {
           <title>Digital Transformation Consulting | Enterprise Modernization | POSTMAN</title>
           <meta name="description" content="Expert digital transformation consulting for enterprises. AI integration, cloud migration, and organizational change management to drive digital success." />
           <meta name="keywords" content="digital transformation, enterprise modernization, AI integration, cloud migration, organizational change" />
+          <link rel="canonical" href="https://p0stman.com/digital-transformation" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Digital Transformation Consulting",
+              "description": "Expert digital transformation consulting for enterprises. AI integration, cloud migration, and organizational change management to drive digital success.",
+              "provider": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
+              "serviceType": ["Digital Transformation", "Enterprise Modernization", "AI Integration", "Cloud Migration"],
+              "areaServed": "Worldwide"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://p0stman.com/services" },
+                { "@type": "ListItem", "position": 3, "name": "Digital Transformation", "item": "https://p0stman.com/digital-transformation" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global />

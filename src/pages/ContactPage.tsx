@@ -44,6 +44,32 @@ export default function ContactPage() {
           <meta name="twitter:description" content="Get in touch to discuss your project. Based in London, UK, delivering AI-powered solutions globally." />
           <meta name="twitter:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/contact" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact POSTMAN",
+              "description": "Contact POSTMAN to discuss your project. Based in London, UK, delivering AI-powered development solutions globally.",
+              "url": "https://p0stman.com/contact",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "POSTMAN",
+                "url": "https://p0stman.com",
+                "email": "hello@p0stman.com",
+                "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "UK" }
+              }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://p0stman.com/contact" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global darkMode={true} />

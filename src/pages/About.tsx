@@ -103,6 +103,34 @@ export default function About() {
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://p0stman.com/og-image.png" />
           <link rel="canonical" href="https://p0stman.com/about" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About POSTMAN",
+              "description": "POSTMAN is an AI-powered product studio delivering innovative digital solutions at unprecedented speed.",
+              "url": "https://p0stman.com/about",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "POSTMAN",
+                "url": "https://p0stman.com",
+                "founder": { "@type": "Person", "name": "Paul Gosnell" },
+                "foundingLocation": { "@type": "Place", "name": "London, UK" },
+                "numberOfEmployees": { "@type": "QuantitativeValue", "value": "1-10" },
+                "knowsAbout": ["AI Development", "Product Strategy", "Digital Transformation", "Voice Agents", "Mobile Apps"]
+              }
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://p0stman.com/about" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <HeaderV3Global darkMode={false} />
