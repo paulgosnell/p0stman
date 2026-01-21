@@ -3,6 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import HeroLuxury from '../components/v3/HeroLuxury';
 import ClientLogosV3 from '../components/v3/ClientLogosV3';
+import OperationsTransformationV3 from '../components/v3/OperationsTransformationV3';
 import AIAgentShowcaseV3 from '../components/v3/AIAgentShowcaseV3';
 import CaseStudiesLuxury from '../components/v3/CaseStudiesLuxury';
 import MetricsV3 from '../components/v3/MetricsV3';
@@ -37,6 +38,7 @@ export default function Home() {
         <HeaderV3Global darkMode={true} />
         <HeroLuxury />
         <ClientLogosV3 />
+        <OperationsTransformationV3 />
         <AIAgentShowcaseV3 />
         <CaseStudiesLuxury />
         <MetricsV3 />

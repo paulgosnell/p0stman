@@ -19,6 +19,38 @@ interface Service {
 
 const services: Service[] = [
   {
+    title: 'Operations Transformation',
+    tagline: 'Unify your systems. Automate the chaos.',
+    description: 'Your business runs on seven disconnected systems. It should run on one. We build unified dashboards that connect POS, inventory, scheduling, finance, and CRM into a single intelligent platform.',
+    whatYouGet: [
+      'System audit and integration roadmap',
+      'Unified dashboard connecting all your tools',
+      'Real-time reporting and analytics',
+      'Automated workflows and data sync',
+      'Voice-enabled queries and commands',
+      '30-day post-launch support'
+    ],
+    timeline: '2-4 weeks',
+    examples: 'Multi-location retail, service businesses, franchise operations, growing SMBs with 10-100 employees',
+    path: '/unify-your-systems'
+  },
+  {
+    title: 'Prototype to Production',
+    tagline: 'Your Lovable/Bolt prototype isn\'t a failure. It\'s a spec.',
+    description: 'You built something in Lovable, Bolt, or Replit. It works, but won\'t scale. We take your prototype and build the production-ready version—with proper auth, database design, and deployment.',
+    whatYouGet: [
+      'Code audit and architecture assessment',
+      'Production-ready rebuild',
+      'Proper auth, database, and API design',
+      'Stripe/payment integration',
+      'Scalable hosting setup',
+      '30-day support window'
+    ],
+    timeline: '1-3 weeks',
+    examples: 'Lovable MVPs, Bolt prototypes, Replit projects, v0-generated apps',
+    path: '/prototype-to-production'
+  },
+  {
     title: 'AI Voice Agents',
     tagline: 'Autonomous phone systems that actually work',
     description: 'Voice AI agents powered by ElevenLabs and LiveKit. Handle calls 24/7, qualify leads, book appointments, answer questions. Production-ready systems, not demos.',
