@@ -97,6 +97,37 @@ export default function RhythmLuxury() {
           <meta name="twitter:description" content="AI-powered running coach app built in 1 week using AI-powered development." />
           <meta name="twitter:image" content="https://mediacdn.carrd.co/assets/images/image13.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/rhythm" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Rhythm Case Study | AI-Powered Running Coach App",
+              "description": "Discover how we built Rhythm - an AI-powered running coach with adaptive music and real-time feedback in just 1 week.",
+              "image": "https://mediacdn.carrd.co/assets/images/image13.png",
+              "author": {
+                "@type": "Person",
+                "name": "Paul Gosnell"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "POSTMAN",
+                "url": "https://p0stman.com"
+              },
+              "datePublished": "2025-01-01",
+              "dateModified": "2026-01-21"
+            })}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://p0stman.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://p0stman.com/case-studies" },
+                { "@type": "ListItem", "position": 3, "name": "Rhythm", "item": "https://p0stman.com/case-study/rhythm" }
+              ]
+            })}
+          </script>
         </Helmet>
 
         <CaseHeroLuxury

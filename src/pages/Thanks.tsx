@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { CheckCircle, Mail, ArrowLeft, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,10 @@ import Logo from '../components/Logo';
 export default function Thanks() {
   return (
     <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center p-4">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Thank You | POSTMAN</title>
+      </Helmet>
       <div className="fixed top-8 left-8 z-50">
         <Link to="/">
           <Logo className="text-xl" useGradient={false} />

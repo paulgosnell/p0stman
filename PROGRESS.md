@@ -1,5 +1,31 @@
 # Progress Log
 
+## 2026-01-21
+
+**Focus:** SEO Audit & Fixes
+
+**Completed:**
+- Ran comprehensive SEO content audit (262+ pages analyzed across 6 sitemaps)
+- Updated /paulgosnell page - removed Dubai references, now permanently Norfolk UK
+- Updated all sitemap lastmod dates to 2026-01-21 (were stale at 2025-11-01)
+- Updated robots.txt to block internal routes (/admin, /proposals, /contracts, /invoice, /thanks)
+- Added noindex meta tag to /thanks conversion page
+- Added Article + BreadcrumbList schema to RhythmLuxury.tsx case study as template
+- Verified trailing slash convention is correct (static directories use slashes, React routes don't)
+- Verified solutions vs use-cases are differentiated content targeting different search intents
+
+**Findings:**
+- Site has 262+ indexed URLs across well-organized silos
+- Guides (40) and pricing (3) pages already in main sitemap (not missing as initially thought)
+- Solutions = business/benefit focused, Use Cases = technical/implementation focused (good SEO)
+- Schema markup present on industries, solutions, use-cases, and guides
+- Case studies lacked schema - added example pattern for future updates
+
+**Notes:**
+- Added remaining case study schema updates to backlog
+- Site SEO health: 7/10 → improved with fixes
+- Previously: Updated documentation with comprehensive backlog of content strategy considerations
+
 ## 2026-01-20
 Added two comprehensive pillar content guides on AI agents and voice AI implementation to the website. Updated the sitemap to include missing pages and refresh publication dates, enhancing SEO and content discoverability.
 

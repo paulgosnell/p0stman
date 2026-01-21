@@ -1,6 +1,14 @@
 User-agent: *
 Allow: /
 
+# Block internal/admin routes
+Disallow: /admin/
+Disallow: /admin
+Disallow: /proposals/
+Disallow: /contracts/
+Disallow: /invoice/
+Disallow: /thanks
+
 # AI Playbook - High priority for indexing
 Allow: /ai-playbook
 
