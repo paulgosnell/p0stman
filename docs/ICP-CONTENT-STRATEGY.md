@@ -303,6 +303,40 @@ Currently ChatGPT sends them to Twine. Can we intercept earlier with targeted co
 
 ## Session Log
 
+### 2026-01-21 (Session 2 - Continued)
+
+**Homepage Refinement:**
+
+Initial approach was to add a dedicated "Operations Transformation" section after the hero for ICP 1. However, this felt too specific for the homepage—diving straight into one ICP's pain points after a generic hero.
+
+**Decision:** Keep the homepage broad and let dedicated landing pages handle specific ICP messaging.
+
+**Final Solution - "What We Build" Section:**
+- Combined the separate Operations and AI Agents sections into one unified "What We Build" section
+- Shows 4 equal capability cards: Unified Systems, AI Agents, Web & Mobile, Prototype to Production
+- Each links to its dedicated landing page where the specific ICP pain points live
+- Dark theme (`bg-gray-950`) with gradient accents to match the luxury aesthetic
+- Creates visual rhythm: dark Hero → light Logos → **dark What We Build** → light Case Studies → dark Metrics
+
+**Rationale:**
+- Homepage should give a broad "here's what we do" overview
+- Specific ICP pain points belong on dedicated landing pages (`/unify-your-systems` for ICP 1, `/prototype-to-production` for ICP 2)
+- The previous AI Agents showcase looked like "we only do mobile apps"
+- Now the section shows the full breadth of capabilities equally
+
+**Services Page Updates:**
+- Added "Operations Transformation" as the first service (ICP 1)
+- Added "Prototype to Production" as the second service (ICP 2)
+- Key ICP offerings now lead the services list
+
+**Files Modified:**
+- `src/components/v3/WhatWeBuildV3.tsx` - new combined section with dark theme
+- `src/components/v3/OperationsTransformationV3.tsx` - created but superseded
+- `src/pages/Home.tsx` - updated to use WhatWeBuildV3
+- `src/pages/Services.tsx` - added ICP 1 and ICP 2 services at top
+
+---
+
 ### 2026-01-21 (Session 2)
 - Created `OperationsTransformationV3` homepage section for ICP 1
 - Added "Operations Transformation" service to services page
