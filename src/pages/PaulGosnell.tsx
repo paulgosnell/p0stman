@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
   Bot,
   MapPin,
-  User,
-  Award,
   Zap,
-  TrendingUp,
-  TrendingDown,
   Building2,
   Rocket,
   Heart,
-  Coffee,
   Lightbulb,
   Target,
   Users,
-  Globe,
-  Calendar,
-  Sparkles,
-  ChevronLeft,
-  ChevronRight
+  Globe
 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
@@ -65,7 +56,7 @@ const journeyMilestones = [
   {
     year: '2024-Present',
     title: 'AI-Native Era',
-    description: 'Founded P0STMAN and Chilled Tools. Community leader at Bolt.new. AI isn\'t just a tool—it\'s a superpower that lets me build at the speed of thought. The future is here.',
+    description: 'Founded POSTMAN and Chilled Tools. Community leader at Bolt.new. AI isn\'t just a tool—it\'s a superpower that lets me build at the speed of thought. The future is here.',
     icon: <Bot className="w-6 h-6" strokeWidth={1.5} />,
     type: 'transformation'
   }
@@ -80,7 +71,7 @@ const personalStats = [
   {
     number: '8+',
     label: 'Companies Founded',
-    description: 'From UK Trackdays to P0STMAN'
+    description: 'From UK Trackdays to POSTMAN'
   },
   {
     number: '1→30',
@@ -117,27 +108,16 @@ const lessonsLearned = [
   }
 ];
 
-const locations = [
-  {
-    title: 'Dubai, UAE',
-    description: 'Living in one of the world\'s most innovative cities, where the future is being built every day. Perfect environment for pushing the boundaries of what\'s possible with AI and technology.',
-    media: {
-      type: 'video',
-      src: 'https://videos.pexels.com/video-files/4410402/4410402-hd_1920_1080_30fps.mp4'
-    }
-  },
-  {
-    title: 'Norwich, UK',
-    description: 'When the desert gets too hot, you\'ll find me chilling in the Norfolk countryside. Where rolling green fields meet ancient market towns, and the pace slows down just enough to think clearly.',
-    media: {
-      type: 'video',
-      src: 'https://videos.pexels.com/video-files/33559166/14268243_1920_1080_30fps.mp4'
-    }
+const location = {
+  title: 'Norfolk, UK',
+  description: 'Based in the Norfolk countryside where rolling green fields meet ancient market towns. The slower pace creates space to think clearly and build thoughtfully—the perfect environment for deep work and creative problem-solving.',
+  media: {
+    type: 'video' as const,
+    src: 'https://videos.pexels.com/video-files/33559166/14268243_1920_1080_30fps.mp4'
   }
-];
+};
 
 export default function PaulGosnell() {
-  const [currentLocation, setCurrentLocation] = useState(0);
   const [journeyRef, journeyInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -148,29 +128,13 @@ export default function PaulGosnell() {
     threshold: 0.1,
   });
 
-  // Auto-rotate carousel every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentLocation((prev) => (prev + 1) % locations.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextLocation = () => {
-    setCurrentLocation((prev) => (prev + 1) % locations.length);
-  };
-
-  const prevLocation = () => {
-    setCurrentLocation((prev) => (prev - 1 + locations.length) % locations.length);
-  };
-
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-white">
         <Helmet>
           <title>About Paul Gosnell | My Journey Through 20 Years of Tech</title>
           <meta name="description" content="The story of Paul Gosnell - 20 years of building startups, failing fast, learning hard, and discovering how AI became my superpower." />
-          <meta name="keywords" content="Paul Gosnell, entrepreneur story, startup journey, AI development, Dubai tech" />
+          <meta name="keywords" content="Paul Gosnell, entrepreneur story, startup journey, AI development, Norfolk UK" />
           <meta property="og:title" content="About Paul Gosnell | My Journey Through 20 Years of Tech" />
           <meta property="og:description" content="The story of 20 years building startups, failing fast, learning hard, and discovering AI as a superpower." />
           <meta property="og:type" content="website" />
@@ -251,11 +215,11 @@ export default function PaulGosnell() {
                     <div className="space-y-4 text-gray-600">
                       <div className="flex items-center gap-3">
                         <MapPin className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
-                        <span className="font-light">Dubai, UAE</span>
+                        <span className="font-light">Norfolk, UK</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Building2 className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
-                        <span className="font-light">P0STMAN & Chilled Tools Founder</span>
+                        <span className="font-light">POSTMAN & Chilled Tools Founder</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Bot className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
@@ -440,85 +404,48 @@ export default function PaulGosnell() {
           </div>
         </section>
 
-        {/* Location Carousel Section */}
+        {/* Location Section */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="relative overflow-hidden rounded-3xl shadow-xl">
                 {/* Media Container */}
                 <div className="relative w-full aspect-video">
-                  {locations[currentLocation].media.type === 'video' ? (
-                    <video
-                      key={currentLocation}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src={locations[currentLocation].media.src} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <img
-                      key={currentLocation}
-                      src={locations[currentLocation].media.src}
-                      alt={locations[currentLocation].title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src={location.media.src} type="video/mp4" />
+                  </video>
                 </div>
 
                 {/* Overlay and Content */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
 
-                {/* Navigation Arrows */}
-                <button
-                  onClick={prevLocation}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white backdrop-blur-sm rounded-full hover:bg-gray-100 transition-all text-gray-900"
-                >
-                  <ChevronLeft className="w-6 h-6" strokeWidth={1.5} />
-                </button>
-                <button
-                  onClick={nextLocation}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white backdrop-blur-sm rounded-full hover:bg-gray-100 transition-all text-gray-900"
-                >
-                  <ChevronRight className="w-6 h-6" strokeWidth={1.5} />
-                </button>
-
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-12">
                   <motion.div
-                    key={currentLocation}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
                   >
                     <div className="flex items-center gap-2 text-white mb-4">
                       <MapPin className="w-6 h-6 text-white" style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }} strokeWidth={1.5} />
-                      <span className="text-lg font-light text-white" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                        {currentLocation === 0 ? 'Based in' : 'Escaping to'}
+                      <span className="text-lg font-light text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                        Based in
                       </span>
                     </div>
-                    <h3 className="text-4xl font-light text-white mb-4" style={{ color: '#ffffff !important', textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
-                      {locations[currentLocation].title}
+                    <h3 className="text-4xl font-light text-white mb-4" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
+                      {location.title}
                     </h3>
-                    <p className="text-white max-w-2xl font-light leading-relaxed" style={{ color: '#ffffff !important', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                      {locations[currentLocation].description}
+                    <p className="text-white max-w-2xl font-light leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                      {location.description}
                     </p>
                   </motion.div>
-                </div>
-
-                {/* Dots Indicator */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-                  {locations.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentLocation(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentLocation ? 'bg-white' : 'bg-white/50'
-                      }`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>
