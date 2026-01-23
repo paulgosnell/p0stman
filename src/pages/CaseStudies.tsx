@@ -25,7 +25,6 @@ import HeaderV3Global from '../components/v3/HeaderV3Global';
 import CaseStudyModal from '../components/modals/CaseStudyModal';
 import FooterV3 from '../components/v3/FooterV3';
 import { allProjects as projectsData, categories } from '../data/portfolioData';
-import PortfolioVideoPlayer from '../components/PortfolioVideoPlayer';
 
 // Map icons to metrics for display (shared data doesn't include JSX icons)
 const iconMap: Record<string, React.ReactNode> = {
@@ -198,8 +197,6 @@ export default function CaseStudies() {
                   </div>
                 </div>
 
-                {/* Portfolio Video Montage */}
-                <PortfolioVideoPlayer />
               </motion.div>
             </div>
           </div>
