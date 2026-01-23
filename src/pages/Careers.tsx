@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
-import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
 const howWeWork = [
   {
@@ -415,7 +414,6 @@ export default function Careers() {
         </section>
 
         <FooterV3 />
-        <FloatingGuideAgent />
       </div>
     </HelmetProvider>
   );

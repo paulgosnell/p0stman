@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import HeaderV3Global from '../components/v3/HeaderV3Global';
 import FooterV3 from '../components/v3/FooterV3';
-import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -480,7 +479,6 @@ export default function Services() {
         </section>
 
         <FooterV3 />
-        <FloatingGuideAgent />
       </div>
     </>
   );

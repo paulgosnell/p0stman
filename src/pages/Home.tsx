@@ -7,7 +7,6 @@ import WhatWeBuildV3 from '../components/v3/WhatWeBuildV3';
 import CaseStudiesLuxury from '../components/v3/CaseStudiesLuxury';
 import MetricsV3 from '../components/v3/MetricsV3';
 import FooterV3 from '../components/v3/FooterV3';
-import FloatingGuideAgent from '../components/FloatingGuideAgent';
 
 export default function Home() {
   return (
@@ -65,7 +64,6 @@ export default function Home() {
         <CaseStudiesLuxury />
         <MetricsV3 />
         <FooterV3 />
-        <FloatingGuideAgent />
       </div>
     </HelmetProvider>
   );

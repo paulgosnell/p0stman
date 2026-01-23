@@ -7,7 +7,6 @@ import HeaderV3Global from '../components/v3/HeaderV3Global';
 import ConversationalContactForm from '../components/contact/ConversationalContactForm';
 import ContactFAQ from '../components/contact/ContactFAQ';
 import FooterV3 from '../components/v3/FooterV3';
-import FloatingGuideAgent from '../components/FloatingGuideAgent';
 import TestimonialCard from '../components/contact/TestimonialCard';
 import ExitIntentPopup from '../components/contact/ExitIntentPopup';
 import { getContactContext } from '../utils/contactContext';
@@ -347,7 +346,6 @@ export default function ContactPage() {
         <ContactFAQ />
 
         <FooterV3 />
-        <FloatingGuideAgent />
 
         {/* Exit Intent Popup */}
         {showExitIntent && (
