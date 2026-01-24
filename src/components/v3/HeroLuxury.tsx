@@ -409,14 +409,14 @@ export default function HeroLuxury() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-              Ideas.
+              Ambition.
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Shipped.
+              Delivered.
             </motion.div>
           </h1>
 
