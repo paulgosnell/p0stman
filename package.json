@@ -8,7 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "remotion:studio": "remotion studio remotion/index.ts",
+    "remotion:render": "remotion render remotion/index.ts PortfolioMontage out/portfolio-montage.mp4",
+    "remotion:render:promo": "remotion render remotion/index.ts PromoVideo out/promo-video.mp4",
+    "remotion:render:promo-square": "remotion render remotion/index.ts PromoVideoSquare out/promo-video-square.mp4",
+    "remotion:render:promo-vertical": "remotion render remotion/index.ts PromoVideoVertical out/promo-video-vertical.mp4",
+    "remotion:still": "remotion still remotion/index.ts PortfolioMontage out/portfolio-thumbnail.png --frame=60",
+    "remotion:still:promo": "remotion still remotion/index.ts PromoVideo out/promo-thumbnail.png --frame=90"
   },
   "dependencies": {
     "@elevenlabs/client": "^0.7.1",
@@ -17,6 +24,10 @@
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.2.0",
     "@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
+    "@remotion/cli": "4.0.409",
+    "@remotion/google-fonts": "4.0.409",
+    "@remotion/player": "4.0.409",
+    "@remotion/transitions": "4.0.409",
     "@supabase/supabase-js": "^2.39.7",
     "@vercel/analytics": "^1.5.0",
     "canvas-confetti": "^1.9.4",
@@ -33,6 +44,7 @@
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.22.3",
     "recharts": "^3.1.2",
+    "remotion": "4.0.409",
     "resend": "^6.4.2",
     "simli-client": "^2.0.0",
     "swiper": "^12.0.3"
@@ -46,6 +58,7 @@
     "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "@vercel/node": "^5.5.27",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.18",
     "eslint": "^9.9.1",
