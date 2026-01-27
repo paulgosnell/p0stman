@@ -64,6 +64,7 @@ import LuxuryTravelSweden from './pages/case-studies/LuxuryTravelSwedenLuxury';
 import CoachOS from './pages/case-studies/CoachOSLuxury';
 import YachtOS from './pages/case-studies/YachtOS';
 import Pathfinder from './pages/case-studies/Pathfinder';
+import AccountsOS from './pages/case-studies/AccountsOSLuxury';
 import Thanks from './pages/Thanks';
 import NotFound from './pages/NotFound';
 import SocialShare from './components/SocialShare';
@@ -157,6 +158,7 @@ export default function App() {
           <Route path="/case-study/chilled-crm" element={<ChilledCRM />} />
           <Route path="/case-study/chilled-sites" element={<ChilledSites />} />
           <Route path="/case-study/harmony" element={<Harmony />} />
+          <Route path="/case-study/accounts-os" element={<AccountsOS />} />
           <Route path="/case-study/serenity" element={<Serenity />} />
           <Route path="/case-study/fitlink" element={<Fitlink />} />
           <Route path="/case-study/clinic-book" element={<ClinicBook />} />

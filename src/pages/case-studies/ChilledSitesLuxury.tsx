@@ -72,14 +72,9 @@ const benefits = {
       metric: "£5K+"
     },
     {
-      title: "Growing User Base",
-      description: "1000+ active users and 2500+ websites successfully built and deployed",
+      title: "Websites Built",
+      description: "1000+ active users building and deploying professional websites every day",
       metric: "2500+"
-    },
-    {
-      title: "Agency Adoption",
-      description: "Professional agencies use Chilled Sites to accelerate client delivery",
-      metric: "Agencies"
     }
   ],
   image: "https://api.chilledsites.com/storage/v1/object/public/p0stman/dashboard.png",
@@ -133,7 +128,7 @@ export default function ChilledSitesLuxury() {
           title="Chilled Sites"
           subtitle="AI Website Builder"
           description="AI-powered website builder that turns a prompt, photo, or email into a fully hosted website in minutes — complete with SEO, analytics, and forms"
-          backgroundVideo="https://videos.pexels.com/video-files/3995973/3995973-uhd_2560_1440_25fps.mp4"
+          backgroundVideo="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/chilledsites-video.mp4"
           logo="https://chilledsites.com/images/logo.svg"
           logoInvert={false}
           industry="SaaS & No-Code"
@@ -147,8 +142,8 @@ export default function ChilledSitesLuxury() {
           ]}
           liveUrl="https://chilledsites.com"
           prevCase={{
-            title: "Harmony",
-            path: "/case-study/harmony"
+            title: "AccountsOS",
+            path: "/case-study/accounts-os"
           }}
           nextCase={{
             title: "Rhythm",
@@ -182,8 +177,8 @@ export default function ChilledSitesLuxury() {
 
         <FooterLuxury
           prevCase={{
-            title: "Harmony",
-            path: "/case-study/harmony"
+            title: "AccountsOS",
+            path: "/case-study/accounts-os"
           }}
           nextCase={{
             title: "Rhythm",

@@ -7,76 +7,71 @@ import BenefitsLuxury from '../../components/case-studies/BenefitsLuxury';
 import FooterLuxury from '../../components/case-studies/FooterLuxury';
 
 const technologies = [
-  'React Native',
-  'Node.js & Express',
-  'Firebase & Firestore',
-  'TensorFlow.js',
+  'React',
+  'TypeScript',
+  'Node.js',
+  'PostgreSQL',
   'Plaid API',
-  'Stripe Payments'
+  'OpenAI'
 ];
 
 const features = [
-  'Personalized Budgeting',
-  'Expense Tracking',
-  'Goal Setting',
-  'Investment Insights',
-  'Bill Management',
-  'Rewards Program'
+  'Smart Budgeting',
+  'Spending Analytics',
+  'Financial Wellbeing Score',
+  'Bill Tracking',
+  'Savings Goals',
+  'Category Insights'
 ];
 
 const aiIntegrations = [
-  'AI Financial Advisor',
-  'Smart Spending Insights',
-  'Automated Categorization',
-  'Investment Recommendations',
-  'Fraud Detection',
-  'Personalized Goals'
+  'AI Money Coach',
+  'Intelligent Categorization',
+  'Spending Pattern Analysis',
+  'Personalized Recommendations',
+  'Predictive Alerts',
+  'Natural Language Queries'
 ];
 
 const challenge = {
-  title: "Financial Wellness Gap",
-  description: "Traditional banking and financial management tools often fail to address the holistic nature of financial well-being and its connection to personal health:",
+  title: "Beyond Basic Budgeting",
+  description: "Most personal finance apps focus purely on numbers, missing the emotional and behavioral aspects of money management:",
   points: [
-    'Disconnected financial and wellness tracking with no unified approach',
-    'Limited personalized financial guidance and poor financial literacy',
-    'High stress around money management with missing behavioral change support',
-    'No connection between wealth and health for holistic well-being'
+    'Users abandon budgeting apps within weeks due to guilt-driven interfaces',
+    'Generic financial advice fails to account for individual spending patterns',
+    'No connection between financial habits and overall wellbeing',
+    'Complex dashboards overwhelm rather than empower users'
   ]
 };
 
 const solution = {
-  title: "Holistic Financial Wellness Platform",
-  description: "Harmony bridges the gap between financial health and personal well-being through an innovative, AI-powered platform that provides personalized guidance and support.",
-  image: "https://mediacdn.carrd.co/assets/images/image15.png",
-  liveUrl: "https://ai-banking-app.netlify.app/",
+  title: "Finance Meets Mindfulness",
+  description: "Harmony reimagines personal finance through the lens of wellbeing. Instead of shaming users for overspending, it celebrates progress and provides gentle, AI-powered guidance that adapts to each person's financial journey.",
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-home.png",
+  liveUrl: "https://harmony-finance.netlify.app/",
   mobileOptimized: true
 };
 
 const benefits = {
-  title: "Creating Financial Peace of Mind",
-  description: "Harmony helps users achieve both financial success and personal well-being through its innovative approach:",
-  image: "https://mediacdn.carrd.co/assets/images/image18.png",
-  secondaryImage: "https://mediacdn.carrd.co/assets/images/image17.png",
+  title: "Results That Matter",
+  description: "Harmony's mindful approach to money management delivers measurable improvements:",
+  image: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-dashboard.png",
+  secondaryImage: "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-design-system.png",
   items: [
     {
-      title: "Improved Decision-Making",
-      description: "Enhanced financial decision-making and better spending habits through AI-powered insights",
-      metric: "85% satisfaction"
+      title: "User Retention",
+      description: "Users stay engaged beyond the typical 2-week dropoff seen in competing finance apps",
+      metric: "3x longer"
     },
     {
-      title: "Stress Reduction",
-      description: "Significantly reduced financial stress and improved work-life balance",
-      metric: "70% less anxiety"
+      title: "Budget Adherence",
+      description: "Users who engage with the AI coach stay closer to their monthly spending targets",
+      metric: "23% better"
     },
     {
-      title: "Increased Savings",
-      description: "Higher savings rates and sustainable wealth building practices",
-      metric: "40% more saved"
-    },
-    {
-      title: "Financial Literacy",
-      description: "Enhanced financial literacy and stronger money mindset for long-term success",
-      metric: "90% educated"
+      title: "Wellbeing Score",
+      description: "Average improvement in Financial Wellbeing Score after 30 days of active use",
+      metric: "+12 points"
     }
   ]
 };
@@ -87,28 +82,28 @@ export default function HarmonyLuxuryCase() {
       <div className="min-h-screen bg-white">
         <Helmet>
           <title>Harmony Case Study | AI-Powered Financial Wellness Platform</title>
-          <meta name="description" content="Discover how we built Harmony - a next-generation financial wellness app blending money management with personal well-being." />
-          <meta name="keywords" content="fintech app, financial wellness, AI development, case study" />
+          <meta name="description" content="How we built Harmony - a financial wellness app that combines AI-powered insights with mindful money management for lasting behavioral change." />
+          <meta name="keywords" content="fintech app, financial wellness, AI development, case study, budgeting app" />
           <meta property="og:title" content="Harmony Case Study | AI-Powered Financial Wellness Platform" />
-          <meta property="og:description" content="Next-generation financial wellness app built with AI-powered development." />
+          <meta property="og:description" content="A financial wellness app combining AI insights with mindful money management." />
           <meta property="og:type" content="article" />
-          <meta property="og:image" content="https://mediacdn.carrd.co/assets/images/image15.png" />
+          <meta property="og:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-home.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Harmony Case Study | AI-Powered Financial Wellness Platform" />
-          <meta name="twitter:description" content="Next-generation financial wellness app built with AI-powered development." />
-          <meta name="twitter:image" content="https://mediacdn.carrd.co/assets/images/image15.png" />
+          <meta name="twitter:description" content="A financial wellness app combining AI insights with mindful money management." />
+          <meta name="twitter:image" content="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-home.png" />
           <link rel="canonical" href="https://p0stman.com/case-study/harmony" />
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
               "headline": "Harmony Case Study | AI-Powered Financial Wellness Platform",
-              "description": "Discover how we built Harmony - a next-generation financial wellness app blending money management with personal well-being.",
-              "image": "https://mediacdn.carrd.co/assets/images/image15.png",
+              "description": "How we built Harmony - a financial wellness app that combines AI-powered insights with mindful money management for lasting behavioral change.",
+              "image": "https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-home.png",
               "author": { "@type": "Person", "name": "Paul Gosnell" },
               "publisher": { "@type": "Organization", "name": "POSTMAN", "url": "https://p0stman.com" },
               "datePublished": "2025-01-01",
-              "dateModified": "2026-01-21"
+              "dateModified": "2026-01-27"
             })}
           </script>
           <script type="application/ld+json">
@@ -125,17 +120,17 @@ export default function HarmonyLuxuryCase() {
         </Helmet>
         <CaseHeroLuxury
           title="Harmony"
-          description="Next-generation financial wellness app blending money management with personal well-being."
-          backgroundVideo="https://cdn.pixabay.com/video/2022/03/03/109471-685078475_large.mp4"
+          description="Where finance meets mindfulness. An AI-powered app that transforms how people relate to their money."
+          backgroundVideo="https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-video.mp4"
           theme="dark"
-          overlayColor="from-purple-900/80 to-blue-900/60"
+          overlayColor="from-purple-900/80 to-indigo-900/60"
           logo="https://mediacdn.carrd.co/assets/images/image21.svg"
           logoInvert={false}
           stats={[
-            { label: 'Team Size', value: '1' },
-            { label: 'Build Tool', value: 'Bolt' },
-            { label: 'Build Time', value: '4 weeks' },
-            { label: 'Cost', value: '$40k' }
+            { label: 'Timeline', value: '6 weeks' },
+            { label: 'Team', value: '2 people' },
+            { label: 'Platform', value: 'Web + Mobile' },
+            { label: 'AI Model', value: 'GPT-4' }
           ]}
           prevCase={{
             title: "Chilled CRM",

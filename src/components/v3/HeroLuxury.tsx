@@ -34,6 +34,24 @@ const CASE_STUDY_VIDEOS = [
     path: '/case-study/yachtos'
   },
   {
+    video: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/accountsos-video.mp4',
+    title: 'AccountsOS',
+    subtitle: 'AI Accountant',
+    path: '/case-study/accounts-os'
+  },
+  {
+    video: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-video.mp4',
+    title: 'Harmony',
+    subtitle: 'Financial Wellness',
+    path: '/case-study/harmony'
+  },
+  {
+    video: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/chilledsites-video.mp4',
+    title: 'Chilled Sites',
+    subtitle: 'AI Website Builder',
+    path: '/case-study/chilled-sites'
+  },
+  {
     video: 'https://videos.pexels.com/video-files/856694/856694-hd_1920_1080_25fps.mp4',
     title: 'Pathfinder',
     subtitle: 'ADHD Coaching',
@@ -50,12 +68,6 @@ const CASE_STUDY_VIDEOS = [
     title: 'Fitlink',
     subtitle: 'Fitness Platform',
     path: '/case-study/fitlink'
-  },
-  {
-    video: 'https://cdn.pixabay.com/video/2022/03/03/109471-685078475_large.mp4',
-    title: 'Harmony',
-    subtitle: 'Fintech Platform',
-    path: '/case-study/harmony'
   }
 ];
 

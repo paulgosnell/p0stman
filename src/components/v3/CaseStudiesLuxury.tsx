@@ -24,13 +24,31 @@ const featuredCaseStudies: CaseStudy[] = [
     description: 'On-demand business coaching with voice interface, long-term memory, and GROW model frameworks.'
   },
   {
-    title: 'Luxury Travel Sweden',
-    company: 'AI-Powered Luxury Travel Platform',
-    category: 'Travel & Hospitality',
-    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/lts-homepage-casestudy.png',
-    path: '/case-study/luxury-travel-sweden',
-    url: 'luxurytravelsweden.com',
-    description: 'Interactive destination mapping, AI concierge (LIV), and comprehensive CMS. Built in 8 weeks.'
+    title: 'AccountsOS',
+    company: 'AI Accountant for UK Founders',
+    category: 'Fintech & AI',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/accountsos-home.png',
+    path: '/case-study/accounts-os',
+    url: 'accounts-os.com',
+    description: 'AI-powered accounting for UK Ltd companies. Chat with your books, snap receipts, file VAT — £9/month.'
+  },
+  {
+    title: 'Chilled Sites',
+    company: 'AI Website Builder',
+    category: 'SaaS & No-Code',
+    image: 'https://api.chilledsites.com/storage/v1/object/public/p0stman/canvas.png',
+    path: '/case-study/chilled-sites',
+    url: 'chilledsites.com',
+    description: 'AI-powered website builder that turns prompts into professional websites in minutes. 2500+ sites built.'
+  },
+  {
+    title: 'Harmony',
+    company: 'AI-Powered Financial Wellness',
+    category: 'Fintech & AI',
+    image: 'https://aupnsxzkwispcjniacqo.supabase.co/storage/v1/object/public/img/harmony-home.png',
+    path: '/case-study/harmony',
+    url: 'harmony-finance.app',
+    description: 'Where finance meets mindfulness. AI coach, spending insights, and Financial Wellbeing Score.'
   },
   {
     title: 'Mamori HealthOS',
