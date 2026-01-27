@@ -4,7 +4,7 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/((?!industries|locations|compare|solutions|guides|public).*)",
+      "source": "/((?!industries|locations|compare|solutions|guides|connect|automate|public|.*\\.xml$).*)",
       "destination": "/index.html"
     }
   ],
