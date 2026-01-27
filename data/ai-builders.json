@@ -1,0 +1,1001 @@
+[
+  {
+    "slug": "lovable",
+    "name": "Lovable",
+    "fullName": "Lovable.dev",
+    "category": "AI App Builder",
+    "description": "AI-powered app builder that generates React applications from natural language prompts",
+    "website": "lovable.dev",
+    "pricing": "Credit-based, starts free",
+    "techStack": ["React", "Supabase", "Tailwind CSS"],
+    "strengths": [
+      "Fast prototyping from prompts",
+      "Good UI generation",
+      "Supabase integration",
+      "GitHub sync"
+    ],
+    "limitations": [
+      {
+        "title": "Credit System Burns Through Budget",
+        "description": "Every prompt, edit, and bug fix consumes credits. Users report spending $500-2,000 on a single project, especially when fixing AI-generated bugs.",
+        "searchTerms": ["lovable credits", "lovable expensive", "lovable cost"]
+      },
+      {
+        "title": "Bug-Fixing Loops",
+        "description": "The AI often introduces new errors while fixing old ones. Users get stuck in endless debugging cycles that consume credits without progress.",
+        "searchTerms": ["lovable bugs", "lovable debugging", "lovable stuck"]
+      },
+      {
+        "title": "Code Not Production-Ready",
+        "description": "Generated code has inflexible data structures and tightly-coupled logic. Simple apps work, but complex business logic breaks easily.",
+        "searchTerms": ["lovable production", "lovable scaling", "lovable code quality"]
+      },
+      {
+        "title": "The 70% Problem",
+        "description": "Lovable gets you 70% of the way to a working app, but the last 30% requires significant manual work or professional development.",
+        "searchTerms": ["lovable limitations", "lovable problems", "lovable won't work"]
+      },
+      {
+        "title": "Authentication Issues",
+        "description": "Complex auth flows, OAuth integration, and session management frequently fail or require extensive manual fixes.",
+        "searchTerms": ["lovable auth", "lovable login", "lovable authentication"]
+      },
+      {
+        "title": "Deployment Failures",
+        "description": "Projects that work in preview often fail in production. Blank screens, missing files, and partial deployments are common.",
+        "searchTerms": ["lovable deploy", "lovable won't deploy", "lovable blank screen"]
+      }
+    ],
+    "bestFor": "Quick prototypes, MVP validation, simple CRUD apps",
+    "notFor": "Complex business logic, production apps, enterprise software",
+    "productionPath": "Export code to GitHub, refactor architecture, add proper error handling, implement security, optimize performance",
+    "commonProblems": [
+      "Won't deploy to production",
+      "Authentication not working",
+      "Database connections failing",
+      "Styling breaks on mobile",
+      "API integrations failing"
+    ],
+    "faqs": [
+      {
+        "question": "Why does Lovable keep making the same mistakes?",
+        "answer": "Lovable's AI doesn't maintain long-term context. Each prompt is processed somewhat independently, so it may 'forget' previous fixes. This is why you can get stuck in loops where the same bug keeps returning."
+      },
+      {
+        "question": "Is Lovable good for production apps?",
+        "answer": "No. Lovable is designed for prototyping and validation, not production. The generated code lacks proper architecture, security hardening, and scalability considerations needed for real-world deployment."
+      },
+      {
+        "question": "How much does Lovable actually cost?",
+        "answer": "While Lovable offers a free tier, most users report spending $200-500 for simple apps and $1,000-3,000+ for more complex projects due to the credit system charging for every interaction including bug fixes."
+      },
+      {
+        "question": "Can I hire someone to fix my Lovable project?",
+        "answer": "Yes. Many developers specialize in taking Lovable prototypes to production. Expect to pay $5,000-15,000 depending on complexity, as significant refactoring is usually required."
+      }
+    ],
+    "relatedTools": ["bolt", "v0", "cursor", "replit"]
+  },
+  {
+    "slug": "bolt",
+    "name": "Bolt",
+    "fullName": "Bolt.new",
+    "category": "AI App Builder",
+    "description": "Full-stack AI app builder that generates frontend, backend, and database from prompts",
+    "website": "bolt.new",
+    "pricing": "Token-based, starts at $20/month",
+    "techStack": ["React", "Node.js", "Various databases"],
+    "strengths": [
+      "Full-stack generation",
+      "Database schema creation",
+      "API endpoint generation",
+      "One-click Netlify deployment"
+    ],
+    "limitations": [
+      {
+        "title": "Token Costs Explode Quickly",
+        "description": "Users report spending $1,000+ on tokens for single projects. Authentication bugs alone can consume 3-8 million tokens as the AI repeatedly fails to fix them.",
+        "searchTerms": ["bolt tokens", "bolt expensive", "bolt cost"]
+      },
+      {
+        "title": "Context Degradation at Scale",
+        "description": "Projects with 15-20+ components experience severe context loss. The AI forgets patterns, creates duplicates, and loses consistency as projects grow.",
+        "searchTerms": ["bolt context", "bolt large project", "bolt scaling"]
+      },
+      {
+        "title": "Deployment Nightmares",
+        "description": "Blank screens, missing files, and partial deployments plague larger projects. One-click deployment works for simple apps but fails for anything complex.",
+        "searchTerms": ["bolt deploy", "bolt blank screen", "bolt not working"]
+      },
+      {
+        "title": "Supabase Auth Disasters",
+        "description": "Authentication with Supabase is notoriously problematic. Users report spending millions of tokens and days trying to get basic auth working.",
+        "searchTerms": ["bolt supabase", "bolt auth", "bolt authentication"]
+      },
+      {
+        "title": "No Local Development",
+        "description": "Bolt is cloud-only with no option to run projects locally. This makes debugging, testing, and professional development workflows impossible.",
+        "searchTerms": ["bolt local", "bolt development", "bolt debugging"]
+      },
+      {
+        "title": "Project Size Limits",
+        "description": "Large projects exceed Bolt's context window, triggering 'Project size exceeded' errors. Paid plans help but don't eliminate the fundamental limitation.",
+        "searchTerms": ["bolt size limit", "bolt context window", "bolt too big"]
+      }
+    ],
+    "bestFor": "Quick full-stack prototypes, simple apps with database needs",
+    "notFor": "Large applications, team projects, production deployments",
+    "productionPath": "Export code, refactor for modularity, implement proper auth, add error handling, set up CI/CD pipeline",
+    "commonProblems": [
+      "Token costs spiraling",
+      "Auth not working with Supabase",
+      "Blank screen after deployment",
+      "Project too large for context",
+      "Losing work after errors"
+    ],
+    "faqs": [
+      {
+        "question": "Why did I spend so many tokens on Bolt?",
+        "answer": "Bolt charges tokens for every interaction, including failed attempts. Error loops multiply costs exponentially—a simple auth bug that takes 3 attempts can consume 3-5 million tokens."
+      },
+      {
+        "question": "Why does my Bolt app show a blank screen?",
+        "answer": "Blank screens typically indicate deployment failures, missing environment variables, or broken API connections. Bolt's deployment works for simple apps but often fails with complex routing or authentication."
+      },
+      {
+        "question": "Is Bolt better than Lovable?",
+        "answer": "They serve different needs. Bolt generates full-stack apps with backends; Lovable focuses on frontend. Both have similar limitations for production use—neither produces truly production-ready code."
+      },
+      {
+        "question": "Can I take my Bolt project to production?",
+        "answer": "Not directly. Bolt projects need significant refactoring for production: proper error handling, security hardening, performance optimization, and architectural improvements. Budget $5,000-20,000 for professional finishing."
+      }
+    ],
+    "relatedTools": ["lovable", "v0", "replit", "cursor"]
+  },
+  {
+    "slug": "v0",
+    "name": "v0",
+    "fullName": "v0 by Vercel",
+    "category": "AI UI Builder",
+    "description": "AI-powered UI component generator that creates React/Next.js components from prompts and images",
+    "website": "v0.dev",
+    "pricing": "Free tier, Pro at $20/month",
+    "techStack": ["React", "Next.js", "Tailwind CSS", "shadcn/ui"],
+    "strengths": [
+      "Excellent UI component generation",
+      "High-quality Tailwind code",
+      "shadcn/ui integration",
+      "Copy-paste ready components"
+    ],
+    "limitations": [
+      {
+        "title": "UI Only - No Backend",
+        "description": "v0 only generates frontend components. There's no database, API, or backend logic. You need to build or integrate everything else yourself.",
+        "searchTerms": ["v0 backend", "v0 database", "v0 api"]
+      },
+      {
+        "title": "Components Need Integration Work",
+        "description": "Generated components are standalone. Connecting them to state management, APIs, and routing requires developer knowledge.",
+        "searchTerms": ["v0 integration", "v0 connect", "v0 state"]
+      },
+      {
+        "title": "Limited Application Architecture",
+        "description": "v0 generates individual components, not complete applications. You still need to architect how everything fits together.",
+        "searchTerms": ["v0 full app", "v0 complete", "v0 architecture"]
+      },
+      {
+        "title": "Iteration Limits on Free Tier",
+        "description": "The free tier has strict generation limits. Complex UIs requiring multiple iterations quickly exhaust free credits.",
+        "searchTerms": ["v0 credits", "v0 limits", "v0 free tier"]
+      }
+    ],
+    "bestFor": "UI component generation, design-to-code, shadcn/ui projects",
+    "notFor": "Full applications, backend logic, database-driven apps",
+    "productionPath": "Copy components into your Next.js project, add state management, connect to backend APIs, implement business logic",
+    "commonProblems": [
+      "Components don't connect to anything",
+      "No way to add backend logic",
+      "Styling conflicts with existing code",
+      "Need developer to integrate"
+    ],
+    "faqs": [
+      {
+        "question": "Can v0 build a complete app?",
+        "answer": "No. v0 only generates UI components. For a complete app, you need to add backend logic, database connections, authentication, and state management separately or use v0 alongside other tools."
+      },
+      {
+        "question": "Is v0 better than Lovable or Bolt?",
+        "answer": "Different tools for different purposes. v0 excels at generating high-quality UI components but has no backend. Lovable and Bolt attempt full applications but with lower UI quality. Many developers use v0 for UI and other tools for logic."
+      },
+      {
+        "question": "How do I use v0 components in my project?",
+        "answer": "v0 generates copy-paste ready code. Copy the component, add it to your project, then connect it to your state management and backend. This requires React development knowledge."
+      }
+    ],
+    "relatedTools": ["lovable", "bolt", "cursor", "claude-artifacts"]
+  },
+  {
+    "slug": "cursor",
+    "name": "Cursor",
+    "fullName": "Cursor IDE",
+    "category": "AI Code Editor",
+    "description": "AI-powered code editor that helps developers write, edit, and understand code faster",
+    "website": "cursor.sh",
+    "pricing": "Free tier, Pro at $20/month",
+    "techStack": ["Any language", "VS Code base"],
+    "strengths": [
+      "Works with any codebase",
+      "Powerful code understanding",
+      "Git integration",
+      "Multi-file editing"
+    ],
+    "limitations": [
+      {
+        "title": "Requires Developer Skills",
+        "description": "Cursor accelerates developers but doesn't replace them. Non-technical users will struggle to direct the AI effectively or evaluate its output.",
+        "searchTerms": ["cursor for non-developers", "cursor beginner", "cursor no coding"]
+      },
+      {
+        "title": "Context Window Limits",
+        "description": "Large codebases exceed Cursor's context window. The AI may miss important dependencies or produce inconsistent code across large projects.",
+        "searchTerms": ["cursor context", "cursor large project", "cursor memory"]
+      },
+      {
+        "title": "Hallucinations and Errors",
+        "description": "Cursor can confidently generate incorrect code, invent APIs that don't exist, or misunderstand requirements. Developer review is essential.",
+        "searchTerms": ["cursor wrong", "cursor errors", "cursor bugs"]
+      },
+      {
+        "title": "Subscription Costs Add Up",
+        "description": "The Pro tier is needed for serious use, and premium models cost extra. Power users can easily spend $50-100/month.",
+        "searchTerms": ["cursor cost", "cursor expensive", "cursor pricing"]
+      }
+    ],
+    "bestFor": "Accelerating experienced developers, code refactoring, understanding unfamiliar codebases",
+    "notFor": "Non-developers trying to build apps, replacing developer judgment",
+    "productionPath": "Use Cursor to accelerate development while maintaining code review, testing, and architectural decisions with human oversight",
+    "commonProblems": [
+      "AI suggestions break existing code",
+      "Context gets confused in large projects",
+      "Generated tests don't cover edge cases",
+      "Still need developer to review everything"
+    ],
+    "faqs": [
+      {
+        "question": "Can I use Cursor without knowing how to code?",
+        "answer": "Not effectively. Cursor is a developer tool that accelerates coding, not a replacement for coding skills. You need to understand code to direct the AI and evaluate its output."
+      },
+      {
+        "question": "Is Cursor better than Lovable for building apps?",
+        "answer": "They're different tools. Lovable generates complete apps from prompts (but not production-ready). Cursor helps developers write code faster. Developers often use Cursor to finish or fix Lovable projects."
+      },
+      {
+        "question": "Why does Cursor keep making mistakes?",
+        "answer": "AI code generation isn't perfect. Cursor can misunderstand context, invent non-existent APIs, or produce subtle bugs. Always review AI-generated code carefully before using it."
+      }
+    ],
+    "relatedTools": ["lovable", "bolt", "v0", "copilot"]
+  },
+  {
+    "slug": "replit",
+    "name": "Replit",
+    "fullName": "Replit Agent",
+    "category": "AI Development Platform",
+    "description": "Cloud development environment with AI agent that can build and deploy applications",
+    "website": "replit.com",
+    "pricing": "Free tier, paid plans from $7/month",
+    "techStack": ["Multiple languages", "Cloud-based"],
+    "strengths": [
+      "Instant cloud environment",
+      "No setup required",
+      "Built-in deployment",
+      "Collaborative features"
+    ],
+    "limitations": [
+      {
+        "title": "Performance Limitations",
+        "description": "Free tier has CPU and memory limits. Production apps can be slow or hit resource caps during traffic spikes.",
+        "searchTerms": ["replit slow", "replit performance", "replit limits"]
+      },
+      {
+        "title": "Vendor Lock-in Concerns",
+        "description": "Projects are deeply integrated with Replit's infrastructure. Migrating to standard hosting requires significant work.",
+        "searchTerms": ["replit export", "replit migrate", "replit lock-in"]
+      },
+      {
+        "title": "Not Enterprise-Ready",
+        "description": "Limited security controls, compliance features, and custom domain options compared to professional hosting solutions.",
+        "searchTerms": ["replit enterprise", "replit security", "replit business"]
+      },
+      {
+        "title": "Agent Inconsistency",
+        "description": "Replit Agent can produce working code or completely miss the mark. Results vary significantly between projects and prompts.",
+        "searchTerms": ["replit agent", "replit ai", "replit not working"]
+      }
+    ],
+    "bestFor": "Learning, prototyping, hackathons, quick demos",
+    "notFor": "Production applications, enterprise software, high-traffic sites",
+    "productionPath": "Export code, migrate to standard hosting (Vercel, AWS, etc.), refactor for performance, implement proper DevOps",
+    "commonProblems": [
+      "App too slow for production",
+      "Resource limits during demo",
+      "Difficulty exporting project",
+      "Agent generates broken code"
+    ],
+    "faqs": [
+      {
+        "question": "Can I run a production business on Replit?",
+        "answer": "Not recommended. Replit is great for prototypes but lacks the performance, security, and reliability needed for production businesses. Plan to migrate to professional hosting."
+      },
+      {
+        "question": "Why is my Replit app so slow?",
+        "answer": "Free tier has limited CPU and memory. Apps 'sleep' after inactivity and take time to 'wake up.' Paid plans help but still have limits compared to dedicated hosting."
+      }
+    ],
+    "relatedTools": ["lovable", "bolt", "cursor", "v0"]
+  },
+  {
+    "slug": "claude-artifacts",
+    "name": "Claude Artifacts",
+    "fullName": "Claude Artifacts",
+    "category": "AI Code Generation",
+    "description": "Claude's built-in feature that generates interactive code artifacts including React components and HTML",
+    "website": "claude.ai",
+    "pricing": "Included with Claude Pro ($20/month)",
+    "techStack": ["React", "HTML", "JavaScript", "SVG"],
+    "strengths": [
+      "Excellent code quality",
+      "Good understanding of requirements",
+      "Iterative refinement",
+      "Quick prototyping"
+    ],
+    "limitations": [
+      {
+        "title": "No Deployment or Hosting",
+        "description": "Artifacts are preview-only. There's no built-in way to deploy, host, or share them as real applications.",
+        "searchTerms": ["claude artifacts deploy", "claude artifacts host", "claude artifacts share"]
+      },
+      {
+        "title": "No Persistence or Backend",
+        "description": "Artifacts can't connect to databases, APIs, or save data. Everything resets when you close the chat.",
+        "searchTerms": ["claude artifacts database", "claude artifacts save", "claude artifacts backend"]
+      },
+      {
+        "title": "Limited to Single Files",
+        "description": "Complex multi-file applications aren't possible. Artifacts work best for single components or simple apps.",
+        "searchTerms": ["claude artifacts multi-file", "claude artifacts complex", "claude artifacts large"]
+      },
+      {
+        "title": "Copy-Paste Workflow",
+        "description": "To use artifacts in a real project, you must manually copy code into your development environment and handle all integration.",
+        "searchTerms": ["claude artifacts export", "claude artifacts use", "claude artifacts code"]
+      }
+    ],
+    "bestFor": "Quick component prototyping, code snippets, visual demonstrations",
+    "notFor": "Full applications, production code, anything requiring persistence",
+    "productionPath": "Copy artifact code into a proper development environment, add backend, database, authentication, and deployment",
+    "commonProblems": [
+      "Can't save or deploy anywhere",
+      "No way to add database",
+      "Resets every session",
+      "Limited file structure"
+    ],
+    "faqs": [
+      {
+        "question": "Can I deploy a Claude Artifact as a real website?",
+        "answer": "Not directly. Artifacts are previews only. You need to copy the code into a development environment, set up hosting, and deploy manually."
+      },
+      {
+        "question": "Is Claude Artifacts better than Lovable?",
+        "answer": "Different tools. Claude Artifacts generates excellent code but has no deployment. Lovable deploys apps but with less sophisticated code. Many users prototype in Claude, then move to other tools."
+      }
+    ],
+    "relatedTools": ["v0", "lovable", "bolt", "cursor"]
+  },
+  {
+    "slug": "windsurf",
+    "name": "Windsurf",
+    "fullName": "Windsurf IDE",
+    "category": "AI Code Editor",
+    "description": "AI-powered IDE from Codeium focused on agentic coding workflows",
+    "website": "codeium.com/windsurf",
+    "pricing": "Free tier, Pro available",
+    "techStack": ["Any language", "VS Code fork"],
+    "strengths": [
+      "Agentic coding capabilities",
+      "Good autocomplete",
+      "Multi-file awareness",
+      "Free tier generous"
+    ],
+    "limitations": [
+      {
+        "title": "Newer Tool, Less Mature",
+        "description": "Windsurf is newer than Cursor with less community support, fewer tutorials, and more rough edges.",
+        "searchTerms": ["windsurf vs cursor", "windsurf problems", "windsurf issues"]
+      },
+      {
+        "title": "Requires Developer Skills",
+        "description": "Like Cursor, Windsurf accelerates developers but can't replace fundamental coding knowledge.",
+        "searchTerms": ["windsurf beginner", "windsurf no coding", "windsurf learn"]
+      },
+      {
+        "title": "Context Limitations",
+        "description": "Large codebases can exceed context windows, leading to inconsistent suggestions.",
+        "searchTerms": ["windsurf context", "windsurf large project", "windsurf memory"]
+      }
+    ],
+    "bestFor": "Developers wanting an alternative to Cursor, teams exploring AI coding tools",
+    "notFor": "Non-developers, production code without review",
+    "productionPath": "Use Windsurf to accelerate development while maintaining human code review and testing",
+    "commonProblems": [
+      "Less documentation than Cursor",
+      "Newer tool with less community support",
+      "Context issues in large projects",
+      "Requires developer skills to use effectively"
+    ],
+    "faqs": [
+      {
+        "question": "Is Windsurf better than Cursor?",
+        "answer": "They're comparable. Windsurf has a more generous free tier and focuses on agentic workflows. Cursor has more polish and community. Try both to see which fits your workflow."
+      }
+    ],
+    "relatedTools": ["cursor", "copilot", "codeium"]
+  },
+  {
+    "slug": "copilot",
+    "name": "GitHub Copilot",
+    "fullName": "GitHub Copilot",
+    "category": "AI Code Assistant",
+    "description": "AI pair programmer from GitHub/Microsoft that suggests code as you type",
+    "website": "github.com/features/copilot",
+    "pricing": "$10/month individual, $19/month business",
+    "techStack": ["Any language", "IDE plugins"],
+    "strengths": [
+      "Deep GitHub integration",
+      "Excellent autocomplete",
+      "Wide language support",
+      "Enterprise security options"
+    ],
+    "limitations": [
+      {
+        "title": "Autocomplete, Not Application Building",
+        "description": "Copilot suggests code line-by-line. It doesn't build applications or understand high-level architecture.",
+        "searchTerms": ["copilot build app", "copilot full application", "copilot project"]
+      },
+      {
+        "title": "Requires Strong Developer Skills",
+        "description": "Copilot accelerates coding but requires you to know what you're building. It can't replace architectural decisions or debugging skills.",
+        "searchTerms": ["copilot beginner", "copilot learn coding", "copilot no experience"]
+      },
+      {
+        "title": "Can Suggest Insecure or Buggy Code",
+        "description": "Copilot's suggestions may contain security vulnerabilities, bugs, or outdated patterns. All suggestions need review.",
+        "searchTerms": ["copilot security", "copilot bugs", "copilot wrong"]
+      },
+      {
+        "title": "License and IP Concerns",
+        "description": "Copilot trained on public code, raising questions about code licensing and intellectual property.",
+        "searchTerms": ["copilot license", "copilot copyright", "copilot legal"]
+      }
+    ],
+    "bestFor": "Professional developers wanting faster coding, boilerplate reduction",
+    "notFor": "Building applications from scratch without coding skills",
+    "productionPath": "Use Copilot as an assistant while maintaining code review, security scanning, and human architectural decisions",
+    "commonProblems": [
+      "Suggests code that doesn't compile",
+      "Security vulnerabilities in suggestions",
+      "Can't understand project architecture",
+      "Needs constant human review"
+    ],
+    "faqs": [
+      {
+        "question": "Can GitHub Copilot build me an app?",
+        "answer": "No. Copilot is an autocomplete tool that suggests code as you type. It doesn't understand what you're building or generate complete applications. You still need to architect and write the application."
+      },
+      {
+        "question": "Is Copilot worth $10/month?",
+        "answer": "For professional developers, usually yes. Studies show 30-50% productivity gains. For beginners or non-developers, the value is much lower since you need coding skills to use it effectively."
+      }
+    ],
+    "relatedTools": ["cursor", "windsurf", "codeium"]
+  },
+  {
+    "slug": "firebase-studio",
+    "name": "Firebase Studio",
+    "fullName": "Firebase Studio (Project IDX)",
+    "category": "AI Development Platform",
+    "description": "Google's AI-powered cloud development environment with Firebase integration",
+    "website": "firebase.studio",
+    "pricing": "Free (Google Cloud pricing for production)",
+    "techStack": ["React", "Angular", "Flutter", "Firebase"],
+    "strengths": [
+      "Deep Firebase integration",
+      "Google Cloud backing",
+      "Multi-platform support",
+      "Gemini AI integration"
+    ],
+    "limitations": [
+      {
+        "title": "Newer Platform, Still Evolving",
+        "description": "Firebase Studio is relatively new with features still being added. Documentation and community support are growing but limited.",
+        "searchTerms": ["firebase studio", "project idx", "firebase studio problems"]
+      },
+      {
+        "title": "Google Ecosystem Lock-in",
+        "description": "Deep Firebase integration is great if you're committed to Google, but makes migrating to other platforms harder.",
+        "searchTerms": ["firebase studio lock-in", "firebase studio migrate", "firebase studio alternatives"]
+      },
+      {
+        "title": "Requires Understanding of Firebase",
+        "description": "The AI helps but you still need to understand Firebase concepts like Firestore, Auth, and Cloud Functions.",
+        "searchTerms": ["firebase studio beginner", "firebase studio learn", "firebase studio tutorial"]
+      }
+    ],
+    "bestFor": "Developers building Firebase-based applications, Google Cloud users",
+    "notFor": "Projects needing platform flexibility, AWS/Azure shops",
+    "productionPath": "Build in Firebase Studio, deploy to Firebase/Google Cloud, understand you're committed to the Google ecosystem",
+    "commonProblems": [
+      "Locked into Google ecosystem",
+      "Learning curve for Firebase concepts",
+      "Documentation still evolving",
+      "Migration to other platforms difficult"
+    ],
+    "faqs": [
+      {
+        "question": "Is Firebase Studio good for beginners?",
+        "answer": "Somewhat. It lowers barriers but you still need to understand Firebase concepts. The AI helps but can't replace learning how Firebase works."
+      }
+    ],
+    "relatedTools": ["replit", "bolt", "lovable"]
+  },
+  {
+    "slug": "create-xyz",
+    "name": "Create.xyz",
+    "fullName": "Create.xyz",
+    "category": "AI App Builder",
+    "description": "AI development platform that generates full-stack applications from prompts",
+    "website": "create.xyz",
+    "pricing": "Subscription-based",
+    "techStack": ["React", "Node.js", "Various"],
+    "strengths": [
+      "Full-stack generation",
+      "Clean code output",
+      "Good iteration speed"
+    ],
+    "limitations": [
+      {
+        "title": "Similar Limitations to Other Builders",
+        "description": "Like Lovable and Bolt, Create.xyz generates prototypes well but struggles with production-ready complex applications.",
+        "searchTerms": ["create xyz limitations", "create xyz problems", "create xyz vs lovable"]
+      },
+      {
+        "title": "Less Community and Documentation",
+        "description": "Smaller user base means fewer tutorials, examples, and community support compared to Lovable or Bolt.",
+        "searchTerms": ["create xyz tutorial", "create xyz help", "create xyz community"]
+      }
+    ],
+    "bestFor": "Quick prototypes, exploring AI app building",
+    "notFor": "Production applications without developer involvement",
+    "productionPath": "Export code, refactor for production, add proper architecture and security",
+    "commonProblems": [
+      "Similar limitations to other AI builders",
+      "Less community support than competitors",
+      "Not production-ready output",
+      "Limited documentation and tutorials"
+    ],
+    "faqs": [
+      {
+        "question": "How does Create.xyz compare to Lovable?",
+        "answer": "Similar capabilities with different interfaces. Both generate React apps from prompts, both have limitations for production use. Try both to see which workflow you prefer."
+      }
+    ],
+    "relatedTools": ["lovable", "bolt", "v0"]
+  },
+  {
+    "slug": "bubble",
+    "name": "Bubble",
+    "fullName": "Bubble.io",
+    "category": "No-Code Platform",
+    "description": "Visual no-code platform for building web applications without writing code",
+    "website": "bubble.io",
+    "pricing": "Free tier, paid from $29/month",
+    "techStack": ["Proprietary", "Visual Builder"],
+    "strengths": [
+      "Visual drag-and-drop builder",
+      "Complex logic without code",
+      "Large plugin ecosystem",
+      "Active community"
+    ],
+    "limitations": [
+      {
+        "title": "Performance Issues at Scale",
+        "description": "Bubble apps often become slow as they grow. Complex apps can have significant loading times and performance issues.",
+        "searchTerms": ["bubble slow", "bubble performance", "bubble speed"]
+      },
+      {
+        "title": "Vendor Lock-in",
+        "description": "Bubble apps can't be exported. You're locked to their platform forever. If Bubble goes down or raises prices, you have no exit strategy.",
+        "searchTerms": ["bubble export", "bubble lock-in", "bubble migration"]
+      },
+      {
+        "title": "Limited Customization",
+        "description": "You can only do what Bubble allows. Custom features often require workarounds or expensive plugins.",
+        "searchTerms": ["bubble limitations", "bubble custom", "bubble features"]
+      },
+      {
+        "title": "Expensive at Scale",
+        "description": "Enterprise pricing gets expensive quickly. High-traffic apps can cost $500-2,000/month or more.",
+        "searchTerms": ["bubble pricing", "bubble cost", "bubble expensive"]
+      }
+    ],
+    "bestFor": "Non-technical founders validating ideas, internal tools, simple web apps",
+    "notFor": "High-performance apps, enterprise software, mobile apps",
+    "productionPath": "Validate with Bubble, then rebuild in code for production if successful",
+    "commonProblems": [
+      "Apps get slow as they grow",
+      "No code export or migration path",
+      "Complex apps hit platform limits",
+      "Expensive at scale"
+    ],
+    "faqs": [
+      {
+        "question": "Can I export my Bubble app?",
+        "answer": "No. Bubble is a proprietary platform with no code export. Your app only runs on Bubble's servers. If you outgrow the platform, you'd need to rebuild from scratch in code."
+      },
+      {
+        "question": "Is Bubble good for startups?",
+        "answer": "For early validation, yes. For scaling a successful product, often no. Many startups use Bubble for MVP then rebuild in code once they have traction and funding."
+      }
+    ],
+    "relatedTools": ["lovable", "bolt", "webflow"]
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "fullName": "Webflow",
+    "category": "Visual Web Builder",
+    "description": "Visual website builder that generates clean code without requiring programming skills",
+    "website": "webflow.com",
+    "pricing": "Free tier, paid from $14/month",
+    "techStack": ["HTML", "CSS", "JavaScript"],
+    "strengths": [
+      "Generates clean, exportable code",
+      "Professional design capabilities",
+      "CMS built-in",
+      "Strong animations"
+    ],
+    "limitations": [
+      {
+        "title": "Websites, Not Web Apps",
+        "description": "Webflow builds websites, not applications. Complex user interactions, dashboards, and dynamic functionality require significant workarounds.",
+        "searchTerms": ["webflow app", "webflow dashboard", "webflow login"]
+      },
+      {
+        "title": "Steep Learning Curve",
+        "description": "Webflow's power comes with complexity. It takes weeks or months to become proficient, and the interface can be overwhelming.",
+        "searchTerms": ["webflow difficult", "webflow learning", "webflow hard"]
+      },
+      {
+        "title": "Limited Backend Capabilities",
+        "description": "Webflow's CMS is basic. Complex data relationships, user authentication, and business logic require external services.",
+        "searchTerms": ["webflow backend", "webflow database", "webflow users"]
+      },
+      {
+        "title": "Expensive for Teams",
+        "description": "Workspace plans for collaboration and client billing get expensive quickly, especially for agencies.",
+        "searchTerms": ["webflow pricing", "webflow team", "webflow agency"]
+      }
+    ],
+    "bestFor": "Marketing sites, portfolios, blogs, landing pages",
+    "notFor": "Web applications, complex user auth, dashboards",
+    "productionPath": "Use Webflow for marketing site, integrate with separate app for functionality",
+    "commonProblems": [
+      "Can't build real applications",
+      "CMS limited for complex data",
+      "Expensive for agencies",
+      "Steep learning curve"
+    ],
+    "faqs": [
+      {
+        "question": "Can I build an app in Webflow?",
+        "answer": "Not really. Webflow is designed for websites, not applications. You can add some interactivity, but user authentication, databases, and complex functionality require external tools like Memberstack or custom code."
+      },
+      {
+        "question": "Is Webflow better than coding?",
+        "answer": "For certain use cases, yes. If you need a marketing site or portfolio and aren't a developer, Webflow can be faster than learning to code. But for web applications, coding gives you more flexibility."
+      }
+    ],
+    "relatedTools": ["framer", "bubble", "lovable"]
+  },
+  {
+    "slug": "framer",
+    "name": "Framer",
+    "fullName": "Framer",
+    "category": "Visual Web Builder",
+    "description": "Design and publish websites with advanced animations and interactions",
+    "website": "framer.com",
+    "pricing": "Free tier, paid from $5/month",
+    "techStack": ["React", "Visual Builder"],
+    "strengths": [
+      "Beautiful animations",
+      "Fast publishing",
+      "Built on React",
+      "Great for designers"
+    ],
+    "limitations": [
+      {
+        "title": "Limited to Static Sites",
+        "description": "Framer excels at marketing sites but can't build web applications with user auth, databases, or complex logic.",
+        "searchTerms": ["framer app", "framer login", "framer database"]
+      },
+      {
+        "title": "CMS Limitations",
+        "description": "Framer's CMS is basic and limited compared to dedicated CMS platforms or Webflow.",
+        "searchTerms": ["framer cms", "framer blog", "framer content"]
+      },
+      {
+        "title": "Can't Export Code Easily",
+        "description": "While Framer uses React, exporting clean, maintainable code isn't straightforward.",
+        "searchTerms": ["framer export", "framer code", "framer react"]
+      },
+      {
+        "title": "Performance with Heavy Animations",
+        "description": "Complex animations can impact page performance and loading times.",
+        "searchTerms": ["framer slow", "framer performance", "framer speed"]
+      }
+    ],
+    "bestFor": "Marketing sites, landing pages, portfolios with rich animations",
+    "notFor": "Web applications, complex backends, e-commerce",
+    "productionPath": "Use Framer for marketing site, separate solution for application functionality",
+    "commonProblems": [
+      "Can't build applications",
+      "Limited CMS capabilities",
+      "Code export not clean",
+      "Performance issues with heavy animations"
+    ],
+    "faqs": [
+      {
+        "question": "Is Framer better than Webflow?",
+        "answer": "For certain use cases. Framer is easier to learn, has better animations, and is cheaper. Webflow has a more powerful CMS and more mature ecosystem. Choose based on your specific needs."
+      },
+      {
+        "question": "Can I use Framer for a web app?",
+        "answer": "No. Framer is for websites, not applications. It doesn't support user authentication, databases, or complex backend logic. Use a dedicated app builder for that."
+      }
+    ],
+    "relatedTools": ["webflow", "lovable", "v0"]
+  },
+  {
+    "slug": "glide",
+    "name": "Glide",
+    "fullName": "Glide Apps",
+    "category": "No-Code App Builder",
+    "description": "Build mobile and web apps from Google Sheets or Airtable without coding",
+    "website": "glideapps.com",
+    "pricing": "Free tier, paid from $25/month",
+    "techStack": ["Google Sheets", "Airtable", "PWA"],
+    "strengths": [
+      "Very fast to get started",
+      "Google Sheets as database",
+      "Good for simple apps",
+      "Mobile-first design"
+    ],
+    "limitations": [
+      {
+        "title": "Limited by Spreadsheet Architecture",
+        "description": "Using Google Sheets as a database works for simple apps but breaks down with complex data relationships or scale.",
+        "searchTerms": ["glide limitations", "glide scale", "glide complex"]
+      },
+      {
+        "title": "Limited Customization",
+        "description": "Glide's templates and components are limiting. Custom designs and features require workarounds.",
+        "searchTerms": ["glide custom", "glide design", "glide features"]
+      },
+      {
+        "title": "Not for Production Apps",
+        "description": "Glide is great for prototypes and internal tools but not robust enough for customer-facing production apps.",
+        "searchTerms": ["glide production", "glide enterprise", "glide reliability"]
+      },
+      {
+        "title": "Performance with Large Datasets",
+        "description": "Apps slow down significantly as Google Sheets grows beyond a few thousand rows.",
+        "searchTerms": ["glide slow", "glide performance", "glide data"]
+      }
+    ],
+    "bestFor": "Internal tools, simple mobile apps, prototypes",
+    "notFor": "Customer-facing apps, complex data, high-scale applications",
+    "productionPath": "Prototype in Glide, rebuild in code or proper no-code platform for production",
+    "commonProblems": [
+      "Spreadsheet database limits",
+      "Slow with large datasets",
+      "Limited design flexibility",
+      "Not production-ready"
+    ],
+    "faqs": [
+      {
+        "question": "Can Glide handle thousands of users?",
+        "answer": "Not well. Glide uses Google Sheets as a database, which isn't designed for concurrent users. Beyond a few hundred users or a few thousand rows, performance degrades significantly."
+      },
+      {
+        "question": "Is Glide good for a startup MVP?",
+        "answer": "For very simple apps, yes. For anything with complex data or expecting real users, you'll quickly hit limits. Consider it for internal tools or very early prototyping only."
+      }
+    ],
+    "relatedTools": ["bubble", "softr", "lovable"]
+  },
+  {
+    "slug": "softr",
+    "name": "Softr",
+    "fullName": "Softr",
+    "category": "No-Code App Builder",
+    "description": "Build web apps and portals from Airtable or Google Sheets with pre-built blocks",
+    "website": "softr.io",
+    "pricing": "Free tier, paid from $49/month",
+    "techStack": ["Airtable", "Google Sheets", "Pre-built blocks"],
+    "strengths": [
+      "Pre-built blocks speed up development",
+      "Airtable integration",
+      "User authentication built-in",
+      "Good for portals and directories"
+    ],
+    "limitations": [
+      {
+        "title": "Limited by Airtable/Sheets Architecture",
+        "description": "Like Glide, using Airtable as a database works for simple apps but limits complex applications.",
+        "searchTerms": ["softr limitations", "softr database", "softr scale"]
+      },
+      {
+        "title": "Design Constraints",
+        "description": "Softr's block-based approach limits design flexibility. Custom layouts are difficult.",
+        "searchTerms": ["softr design", "softr custom", "softr templates"]
+      },
+      {
+        "title": "Expensive for Features",
+        "description": "Essential features like custom domains and user management require higher-tier paid plans.",
+        "searchTerms": ["softr pricing", "softr cost", "softr expensive"]
+      },
+      {
+        "title": "Limited Interactivity",
+        "description": "Complex workflows, multi-step forms, and conditional logic are limited.",
+        "searchTerms": ["softr logic", "softr workflows", "softr forms"]
+      }
+    ],
+    "bestFor": "Client portals, directories, member sites, internal tools",
+    "notFor": "Complex applications, custom designs, high-scale products",
+    "productionPath": "Use Softr for simple portals, move to custom development for complex needs",
+    "commonProblems": [
+      "Airtable database limitations",
+      "Limited design flexibility",
+      "Expensive for full features",
+      "Can't handle complex logic"
+    ],
+    "faqs": [
+      {
+        "question": "Is Softr better than Bubble?",
+        "answer": "Different tools for different needs. Softr is easier and faster for simple portals. Bubble is more powerful but complex. Choose Softr for quick, simple apps; Bubble for more complex logic."
+      },
+      {
+        "question": "Can I build a marketplace with Softr?",
+        "answer": "Simple ones, yes. Complex marketplaces with payments, messaging, and complex matching would be very limited. Consider purpose-built marketplace tools or custom development instead."
+      }
+    ],
+    "relatedTools": ["glide", "bubble", "airtable"]
+  },
+  {
+    "slug": "retool",
+    "name": "Retool",
+    "fullName": "Retool",
+    "category": "Internal Tools Platform",
+    "description": "Build internal tools quickly by connecting to databases and APIs with a visual interface",
+    "website": "retool.com",
+    "pricing": "Free tier, paid from $10/user/month",
+    "techStack": ["SQL", "APIs", "JavaScript"],
+    "strengths": [
+      "Database/API connections built-in",
+      "Good for admin panels",
+      "Rapid internal tool development",
+      "Enterprise security options"
+    ],
+    "limitations": [
+      {
+        "title": "Internal Tools Only",
+        "description": "Retool is designed for internal tools, not customer-facing applications. The UI and performance aren't suited for external users.",
+        "searchTerms": ["retool customer facing", "retool external", "retool public"]
+      },
+      {
+        "title": "Per-User Pricing Gets Expensive",
+        "description": "At $10-50/user/month, costs add up quickly for larger teams. Enterprise pricing is even higher.",
+        "searchTerms": ["retool pricing", "retool expensive", "retool cost"]
+      },
+      {
+        "title": "Requires Technical Knowledge",
+        "description": "While no-code for simple tools, complex integrations require SQL and JavaScript knowledge.",
+        "searchTerms": ["retool coding", "retool sql", "retool developer"]
+      },
+      {
+        "title": "Limited Design Flexibility",
+        "description": "Retool's component library is functional but not beautiful. Custom styling is limited.",
+        "searchTerms": ["retool design", "retool ui", "retool styling"]
+      }
+    ],
+    "bestFor": "Admin panels, internal dashboards, ops tools for technical teams",
+    "notFor": "Customer-facing apps, marketing sites, non-technical users",
+    "productionPath": "Use Retool for internal tools, custom development for customer-facing products",
+    "commonProblems": [
+      "Not for customer-facing apps",
+      "Expensive for large teams",
+      "Requires technical skills",
+      "Limited design options"
+    ],
+    "faqs": [
+      {
+        "question": "Can I use Retool for my SaaS?",
+        "answer": "Only for internal admin tools. Retool isn't designed for customer-facing applications. The performance, design, and pricing model aren't suited for external users."
+      },
+      {
+        "question": "Is Retool worth the cost?",
+        "answer": "For technical teams building internal tools, often yes. A tool that would take weeks to code can be built in hours. For non-technical teams or small internal tools, simpler alternatives may be more cost-effective."
+      }
+    ],
+    "relatedTools": ["appsmith", "tooljet", "bubble"]
+  },
+  {
+    "slug": "gpt-engineer",
+    "name": "GPT Engineer",
+    "fullName": "GPT Engineer",
+    "category": "AI Code Generator",
+    "description": "Open-source AI tool that generates entire codebases from natural language specifications",
+    "website": "gpt-engineer.com",
+    "pricing": "Open source (free), hosted version available",
+    "techStack": ["Any language", "OpenAI API"],
+    "strengths": [
+      "Open source and free",
+      "Full codebase generation",
+      "Iterative development",
+      "Language agnostic"
+    ],
+    "limitations": [
+      {
+        "title": "Inconsistent Output Quality",
+        "description": "Generated code quality varies significantly. Complex projects often have bugs, missing features, or poor architecture.",
+        "searchTerms": ["gpt engineer bugs", "gpt engineer quality", "gpt engineer problems"]
+      },
+      {
+        "title": "Requires Developer to Review and Fix",
+        "description": "The generated code needs significant review and often substantial fixes. It's a starting point, not a finished product.",
+        "searchTerms": ["gpt engineer review", "gpt engineer fix", "gpt engineer debug"]
+      },
+      {
+        "title": "API Costs Add Up",
+        "description": "Using GPT-4 API for code generation is expensive. Complex projects can cost $50-200 in API calls.",
+        "searchTerms": ["gpt engineer cost", "gpt engineer api", "gpt engineer expensive"]
+      },
+      {
+        "title": "Limited Context Understanding",
+        "description": "GPT Engineer struggles with large codebases and complex requirements. Context window limitations affect quality.",
+        "searchTerms": ["gpt engineer context", "gpt engineer large project", "gpt engineer complex"]
+      }
+    ],
+    "bestFor": "Developers wanting a starting point, exploring AI code generation",
+    "notFor": "Non-developers, production code without review, complex applications",
+    "productionPath": "Use as a starting point, then significantly refactor, review, and test before production",
+    "commonProblems": [
+      "Generated code has bugs",
+      "Needs developer to fix and refactor",
+      "API costs for large projects",
+      "Struggles with complexity"
+    ],
+    "faqs": [
+      {
+        "question": "Can GPT Engineer build a complete app?",
+        "answer": "It can generate a starting point, but expect to spend significant time debugging and refactoring. It's not a finished product generator - more like an advanced boilerplate creator."
+      },
+      {
+        "question": "Is GPT Engineer better than Copilot?",
+        "answer": "Different tools. GPT Engineer generates entire codebases from specs. Copilot suggests code as you type. GPT Engineer for project scaffolding, Copilot for ongoing development."
+      }
+    ],
+    "relatedTools": ["cursor", "bolt", "lovable"]
+  }
+]

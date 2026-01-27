@@ -1,0 +1,764 @@
+{
+  "industries": [
+    {
+      "slug": "construction",
+      "name": "Construction",
+      "painPoints": [
+        "Job costing spread across spreadsheets and accounting software",
+        "Project managers juggling 5+ apps for scheduling, comms, and docs",
+        "Subcontractor payments tracked manually in Excel",
+        "Change orders lost in email threads",
+        "Time tracking disconnected from payroll"
+      ],
+      "processes": ["job costing", "project scheduling", "subcontractor management", "change order tracking", "time and attendance"],
+      "tools": ["Procore", "Buildertrend", "CoConstruct", "QuickBooks", "Xero", "Excel"],
+      "metrics": {
+        "avgApps": "12-18",
+        "monthlyWaste": "$3,000-8,000",
+        "hoursLostWeekly": "15-25"
+      },
+      "faqs": [
+        {
+          "question": "How much does construction operations automation cost?",
+          "answer": "A custom construction operations platform typically costs $15,000-50,000 to build, depending on the number of integrations needed. This replaces $2,000-5,000/month in disconnected SaaS tools and saves 20-30 admin hours per week."
+        },
+        {
+          "question": "Can I connect Procore to my accounting software?",
+          "answer": "Yes. Custom integrations can sync Procore with QuickBooks, Xero, or Sage in real-time. This eliminates double-entry, reduces billing errors, and gives you live job costing instead of month-end surprises."
+        },
+        {
+          "question": "How long does it take to automate construction operations?",
+          "answer": "Most construction automation projects take 6-12 weeks from discovery to deployment. The first integrations (like Procore to QuickBooks sync) can be live within 2-3 weeks."
+        }
+      ]
+    },
+    {
+      "slug": "legal",
+      "name": "Legal",
+      "painPoints": [
+        "Matter management spread across Clio, email, and spreadsheets",
+        "Time tracking entered manually at end of day or week",
+        "Client intake forms not connected to billing system",
+        "Document versions lost in shared drives",
+        "Trust accounting reconciliation done manually"
+      ],
+      "processes": ["matter management", "time tracking", "client intake", "document management", "trust accounting"],
+      "tools": ["Clio", "PracticePanther", "MyCase", "NetDocuments", "QuickBooks", "Excel"],
+      "metrics": {
+        "avgApps": "8-12",
+        "monthlyWaste": "$2,000-5,000",
+        "hoursLostWeekly": "10-20"
+      },
+      "faqs": [
+        {
+          "question": "How can AI help law firms with operations?",
+          "answer": "AI can automate client intake, extract key terms from contracts, auto-populate time entries from calendar and emails, and generate first drafts of routine documents. Most firms see 30-50% reduction in admin time."
+        },
+        {
+          "question": "Is legal operations automation secure enough for client data?",
+          "answer": "Yes. Custom legal automation platforms are built with SOC 2 compliance, encryption at rest and in transit, and role-based access controls. They're typically more secure than the patchwork of SaaS tools they replace."
+        },
+        {
+          "question": "Can I connect Clio to my other systems?",
+          "answer": "Absolutely. Custom integrations can connect Clio to your accounting software, document management system, calendar, and email. This creates a single source of truth for matters and eliminates double-entry."
+        }
+      ]
+    },
+    {
+      "slug": "healthcare",
+      "name": "Healthcare",
+      "painPoints": [
+        "Patient scheduling across multiple systems",
+        "Insurance verification done manually before appointments",
+        "Paper intake forms re-keyed into EHR",
+        "Billing delayed by coding errors and missing documentation",
+        "Staff scheduling in spreadsheets separate from payroll"
+      ],
+      "processes": ["patient scheduling", "insurance verification", "patient intake", "medical billing", "staff scheduling"],
+      "tools": ["Epic", "Athenahealth", "DrChrono", "Kareo", "ADP", "Excel"],
+      "metrics": {
+        "avgApps": "10-15",
+        "monthlyWaste": "$5,000-15,000",
+        "hoursLostWeekly": "20-40"
+      },
+      "faqs": [
+        {
+          "question": "Can healthcare operations be automated while staying HIPAA compliant?",
+          "answer": "Yes. Custom healthcare automation platforms are built with HIPAA compliance from the ground up, including BAAs with all vendors, encrypted data handling, and audit trails. They're often more compliant than manual processes."
+        },
+        {
+          "question": "How much can we save by automating patient intake?",
+          "answer": "Automated patient intake typically saves 5-10 minutes per patient and reduces data entry errors by 90%. For a practice seeing 50 patients per day, that's 4-8 hours of staff time saved daily."
+        },
+        {
+          "question": "Can AI help with insurance verification?",
+          "answer": "Yes. AI can verify insurance eligibility in real-time during scheduling, flag coverage gaps before appointments, and even predict prior authorization requirements. This reduces claim denials by 30-50%."
+        }
+      ]
+    },
+    {
+      "slug": "real-estate",
+      "name": "Real Estate",
+      "painPoints": [
+        "Lead tracking spread across Zillow, Realtor.com, and personal CRM",
+        "Transaction coordination managed in spreadsheets",
+        "Commission calculations done manually each closing",
+        "Marketing campaigns disconnected from lead sources",
+        "Showing schedules managed via text and email"
+      ],
+      "processes": ["lead management", "transaction coordination", "commission tracking", "marketing automation", "showing management"],
+      "tools": ["Follow Up Boss", "BoomTown", "kvCORE", "Dotloop", "SkySlope", "Excel"],
+      "metrics": {
+        "avgApps": "8-14",
+        "monthlyWaste": "$1,500-4,000",
+        "hoursLostWeekly": "10-20"
+      },
+      "faqs": [
+        {
+          "question": "How can I consolidate my real estate tech stack?",
+          "answer": "A custom real estate operations platform can unify lead management, transaction coordination, and commission tracking into one system. It integrates with your MLS, accounting software, and marketing tools to eliminate double-entry and missed follow-ups."
+        },
+        {
+          "question": "Can AI help with real estate lead follow-up?",
+          "answer": "Yes. AI can automatically respond to new leads, qualify them based on conversation, schedule showings, and hand off hot leads to agents. Most teams see 2-3x improvement in lead response time and conversion rates."
+        },
+        {
+          "question": "How long does it take to build a custom real estate platform?",
+          "answer": "A basic lead management and transaction coordination system takes 4-8 weeks. Full platforms with MLS integration, commission tracking, and AI lead nurturing take 8-12 weeks."
+        }
+      ]
+    },
+    {
+      "slug": "accounting",
+      "name": "Accounting Firms",
+      "painPoints": [
+        "Client documents collected via email, portal, and Dropbox",
+        "Workpaper review and sign-off tracked in spreadsheets",
+        "Tax return status updates sent manually to clients",
+        "Billing based on estimates rather than actual time",
+        "Staff utilization calculated monthly in Excel"
+      ],
+      "processes": ["document collection", "workpaper management", "client communication", "time and billing", "staff utilization"],
+      "tools": ["CCH Axcess", "Thomson Reuters", "Canopy", "Karbon", "QuickBooks", "Excel"],
+      "metrics": {
+        "avgApps": "10-15",
+        "monthlyWaste": "$2,500-6,000",
+        "hoursLostWeekly": "15-25"
+      },
+      "faqs": [
+        {
+          "question": "How can accounting firms automate client document collection?",
+          "answer": "Custom client portals can request specific documents, send automated reminders, validate uploads against checklists, and route documents to the right workpapers. This eliminates email back-and-forth and missing document delays."
+        },
+        {
+          "question": "Can AI help with tax preparation?",
+          "answer": "AI can extract data from source documents, populate tax forms, flag anomalies for review, and draft client summary letters. It doesn't replace preparers but makes them 2-3x more productive."
+        },
+        {
+          "question": "What does accounting operations automation cost?",
+          "answer": "A custom accounting operations platform typically costs $20,000-60,000 depending on scope. Firms usually see 6-12 month payback through reduced admin time, faster turnaround, and higher staff utilization."
+        }
+      ]
+    },
+    {
+      "slug": "hospitality",
+      "name": "Hospitality",
+      "painPoints": [
+        "Reservations managed across booking.com, OpenTable, and direct calls",
+        "Inventory ordering based on gut feel rather than data",
+        "Staff scheduling disconnected from forecasted demand",
+        "Guest preferences tracked in servers' heads",
+        "Revenue reporting compiled manually from multiple systems"
+      ],
+      "processes": ["reservation management", "inventory ordering", "staff scheduling", "guest experience", "revenue reporting"],
+      "tools": ["Toast", "Square", "Resy", "7shifts", "MarketMan", "Excel"],
+      "metrics": {
+        "avgApps": "8-12",
+        "monthlyWaste": "$2,000-5,000",
+        "hoursLostWeekly": "12-20"
+      },
+      "faqs": [
+        {
+          "question": "How can restaurants automate operations without losing the personal touch?",
+          "answer": "Automation handles the back-office work (inventory, scheduling, reporting) so staff can focus on guests. AI can even surface guest preferences automatically so servers deliver personalized service without memorizing everything."
+        },
+        {
+          "question": "Can AI help with restaurant inventory management?",
+          "answer": "Yes. AI can predict demand based on reservations, weather, and historical data, then auto-generate purchase orders. This reduces food waste by 20-30% and prevents stockouts during busy periods."
+        },
+        {
+          "question": "How long does hospitality operations automation take to implement?",
+          "answer": "Core integrations (POS to accounting, scheduling to payroll) can be live in 2-4 weeks. Full operations platforms with inventory management and guest profiles take 6-10 weeks."
+        }
+      ]
+    },
+    {
+      "slug": "manufacturing",
+      "name": "Manufacturing",
+      "painPoints": [
+        "Production scheduling in Excel disconnected from sales orders",
+        "Inventory counts done manually with clipboard and pen",
+        "Quality control tracked on paper forms",
+        "Machine maintenance based on calendar rather than condition",
+        "Shipping documents created manually for each order"
+      ],
+      "processes": ["production scheduling", "inventory management", "quality control", "maintenance tracking", "shipping and logistics"],
+      "tools": ["SAP", "NetSuite", "Fishbowl", "MaintainX", "ShipStation", "Excel"],
+      "metrics": {
+        "avgApps": "10-18",
+        "monthlyWaste": "$5,000-15,000",
+        "hoursLostWeekly": "20-40"
+      },
+      "faqs": [
+        {
+          "question": "How can small manufacturers compete with enterprise ERP systems?",
+          "answer": "Custom manufacturing platforms give you the integrations and automation of enterprise ERP without the $500K+ price tag and 18-month implementation. Most small manufacturers can achieve 80% of SAP functionality for 10% of the cost."
+        },
+        {
+          "question": "Can AI help with production scheduling?",
+          "answer": "Yes. AI can optimize production schedules based on order priorities, machine availability, staff skills, and material constraints. This increases throughput 15-25% without adding equipment or staff."
+        },
+        {
+          "question": "What does manufacturing operations automation cost?",
+          "answer": "Custom manufacturing platforms typically cost $25,000-75,000 depending on complexity. The ROI usually comes from reduced inventory carrying costs, fewer production delays, and elimination of paper-based processes."
+        }
+      ]
+    },
+    {
+      "slug": "logistics",
+      "name": "Logistics & Freight",
+      "painPoints": [
+        "Load booking done via email and phone calls",
+        "Driver tracking through personal phone calls",
+        "Invoicing delayed waiting for PODs",
+        "Rate management in spreadsheets",
+        "Customer updates provided manually by phone"
+      ],
+      "processes": ["load booking", "fleet tracking", "proof of delivery", "rate management", "customer communication"],
+      "tools": ["TruckMate", "McLeod", "Samsara", "KeepTruckin", "QuickBooks", "Excel"],
+      "metrics": {
+        "avgApps": "8-14",
+        "monthlyWaste": "$3,000-10,000",
+        "hoursLostWeekly": "15-30"
+      },
+      "faqs": [
+        {
+          "question": "How can logistics companies automate without replacing their TMS?",
+          "answer": "Custom integrations can connect your existing TMS to accounting, customer portals, and driver apps. You get automation without the risk and cost of switching core systems."
+        },
+        {
+          "question": "Can AI help with load matching and pricing?",
+          "answer": "Yes. AI can analyze market rates, driver availability, and historical data to suggest optimal pricing. It can also automatically match loads with the right drivers based on location, certifications, and preferences."
+        },
+        {
+          "question": "What does logistics automation typically cost?",
+          "answer": "Basic integrations (TMS to accounting, automated POD capture) cost $10,000-25,000. Full digital transformation with customer portals and AI-powered dispatch costs $30,000-75,000."
+        }
+      ]
+    },
+    {
+      "slug": "professional-services",
+      "name": "Professional Services",
+      "painPoints": [
+        "Project tracking in PM tool disconnected from billing",
+        "Resource allocation done in spreadsheets",
+        "Client communication scattered across email and Slack",
+        "Proposals created from scratch each time",
+        "Utilization reports compiled manually each month"
+      ],
+      "processes": ["project management", "resource allocation", "client communication", "proposal generation", "utilization tracking"],
+      "tools": ["Monday.com", "Asana", "Harvest", "HubSpot", "QuickBooks", "Excel"],
+      "metrics": {
+        "avgApps": "10-16",
+        "monthlyWaste": "$2,000-6,000",
+        "hoursLostWeekly": "12-25"
+      },
+      "faqs": [
+        {
+          "question": "How can professional services firms improve utilization?",
+          "answer": "Automated resource allocation matches staff skills and availability to project needs, while real-time dashboards show utilization gaps. Most firms see 10-20% improvement in billable utilization within 3 months."
+        },
+        {
+          "question": "Can AI help with proposal creation?",
+          "answer": "Yes. AI can generate first drafts of proposals based on project requirements, past proposals, and pricing rules. This cuts proposal creation time from days to hours while improving consistency."
+        },
+        {
+          "question": "What does professional services automation cost?",
+          "answer": "Custom PSA platforms typically cost $15,000-45,000. The ROI comes from improved utilization (worth $50,000-200,000 annually for most firms), faster billing cycles, and reduced admin overhead."
+        }
+      ]
+    },
+    {
+      "slug": "ecommerce",
+      "name": "E-Commerce",
+      "painPoints": [
+        "Orders from Amazon, Shopify, and wholesale managed separately",
+        "Inventory counts differ across channels",
+        "Returns processed manually with spreadsheet tracking",
+        "Shipping rates compared manually for each order",
+        "Customer service lacks order history visibility"
+      ],
+      "processes": ["order management", "inventory sync", "returns processing", "shipping optimization", "customer service"],
+      "tools": ["Shopify", "Amazon Seller Central", "ShipStation", "Returnly", "Gorgias", "Excel"],
+      "metrics": {
+        "avgApps": "12-20",
+        "monthlyWaste": "$2,500-8,000",
+        "hoursLostWeekly": "20-35"
+      },
+      "faqs": [
+        {
+          "question": "How can I unify my e-commerce channels?",
+          "answer": "A custom order management system can pull orders from all channels (Shopify, Amazon, wholesale) into one dashboard, sync inventory in real-time, and route to the optimal fulfillment location. This eliminates overselling and manual reconciliation."
+        },
+        {
+          "question": "Can AI help with e-commerce customer service?",
+          "answer": "Yes. AI can handle 60-80% of common inquiries (order status, returns, product questions) automatically, while flagging complex issues for human agents. Most brands see 40-60% reduction in support tickets."
+        },
+        {
+          "question": "What does e-commerce operations automation cost?",
+          "answer": "Basic channel integration and inventory sync costs $15,000-35,000. Full platforms with AI customer service and automated returns cost $35,000-75,000. ROI typically comes within 6-9 months."
+        }
+      ]
+    }
+  ],
+  "integrations": [
+    {
+      "toolA": { "slug": "xero", "name": "Xero", "category": "Accounting" },
+      "toolB": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "useCase": "Sync invoices and payments with customer records for unified view of client relationships and outstanding balances.",
+      "benefits": ["Real-time AR visibility in CRM", "Automated payment reminders", "Sales sees invoice status", "No double-entry"],
+      "triggers": ["New invoice created", "Payment received", "Invoice overdue"],
+      "actions": ["Update deal stage", "Create payment record", "Trigger follow-up task"]
+    },
+    {
+      "toolA": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "toolB": { "slug": "shopify", "name": "Shopify", "category": "E-Commerce" },
+      "useCase": "Automatically sync orders, customers, and payments to eliminate manual bookkeeping and reconciliation.",
+      "benefits": ["Orders sync in real-time", "Inventory costs tracked", "Tax calculated correctly", "Month-end close faster"],
+      "triggers": ["Order placed", "Refund issued", "Inventory adjusted"],
+      "actions": ["Create invoice", "Record payment", "Update COGS"]
+    },
+    {
+      "toolA": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get real-time deal alerts and enable team collaboration on opportunities without leaving Slack.",
+      "benefits": ["Instant deal notifications", "Approve quotes in Slack", "Team collaboration", "Faster response times"],
+      "triggers": ["Deal stage changed", "Quote needs approval", "Won/lost deal"],
+      "actions": ["Post to channel", "Request approval", "Update deal record"]
+    },
+    {
+      "toolA": { "slug": "stripe", "name": "Stripe", "category": "Payments" },
+      "toolB": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "useCase": "Automatically record Stripe payments, fees, and payouts in QuickBooks for accurate revenue tracking.",
+      "benefits": ["Fees recorded correctly", "Payout reconciliation", "Subscription revenue tracked", "Refunds handled"],
+      "triggers": ["Payment received", "Refund issued", "Payout sent"],
+      "actions": ["Create sales receipt", "Record expense", "Bank deposit entry"]
+    },
+    {
+      "toolA": { "slug": "google-calendar", "name": "Google Calendar", "category": "Scheduling" },
+      "toolB": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "useCase": "Sync meetings with CRM contacts and auto-log activities for complete relationship tracking.",
+      "benefits": ["Meetings auto-logged", "Contact timeline complete", "No manual entry", "Better forecasting"],
+      "triggers": ["Meeting scheduled", "Meeting completed", "Attendee added"],
+      "actions": ["Create meeting activity", "Update last touch", "Set follow-up task"]
+    },
+    {
+      "toolA": { "slug": "jira", "name": "Jira", "category": "Project Management" },
+      "toolB": { "slug": "harvest", "name": "Harvest", "category": "Time Tracking" },
+      "useCase": "Track time against Jira tickets automatically and sync to billing for accurate project costing.",
+      "benefits": ["Time tracked to tickets", "Accurate project costs", "Billing automated", "Resource planning data"],
+      "triggers": ["Ticket started", "Time entry created", "Ticket completed"],
+      "actions": ["Create time entry", "Update project budget", "Alert if over budget"]
+    },
+    {
+      "toolA": { "slug": "mailchimp", "name": "Mailchimp", "category": "Email Marketing" },
+      "toolB": { "slug": "shopify", "name": "Shopify", "category": "E-Commerce" },
+      "useCase": "Sync customer segments and purchase data for targeted email campaigns and automated flows.",
+      "benefits": ["Purchase-based segments", "Abandoned cart emails", "Win-back campaigns", "Revenue attribution"],
+      "triggers": ["Purchase made", "Cart abandoned", "Customer inactive"],
+      "actions": ["Update segment", "Trigger flow", "Sync purchase history"]
+    },
+    {
+      "toolA": { "slug": "notion", "name": "Notion", "category": "Documentation" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Keep teams updated on documentation changes and enable quick access to docs from Slack.",
+      "benefits": ["Doc update notifications", "Search docs from Slack", "Meeting notes shared", "Knowledge accessible"],
+      "triggers": ["Page updated", "Comment added", "Meeting notes created"],
+      "actions": ["Post to channel", "Search results", "Share link"]
+    },
+    {
+      "toolA": { "slug": "pipedrive", "name": "Pipedrive", "category": "CRM" },
+      "toolB": { "slug": "xero", "name": "Xero", "category": "Accounting" },
+      "useCase": "Create invoices from won deals and track payment status in the CRM for complete sales visibility.",
+      "benefits": ["One-click invoicing", "Payment tracking in CRM", "Revenue forecasting", "Commission accuracy"],
+      "triggers": ["Deal won", "Invoice paid", "Payment overdue"],
+      "actions": ["Create invoice", "Update deal", "Trigger collection task"]
+    },
+    {
+      "toolA": { "slug": "calendly", "name": "Calendly", "category": "Scheduling" },
+      "toolB": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "useCase": "Auto-create leads from bookings and log meetings in Salesforce for complete sales tracking.",
+      "benefits": ["Leads auto-created", "Meetings logged", "Round-robin routing", "No-show tracking"],
+      "triggers": ["Meeting booked", "Meeting completed", "Meeting cancelled"],
+      "actions": ["Create/update lead", "Log activity", "Update lead status"]
+    },
+    {
+      "toolA": { "slug": "zendesk", "name": "Zendesk", "category": "Support" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get instant ticket alerts, collaborate on escalations, and close tickets from Slack.",
+      "benefits": ["Instant escalation alerts", "Team collaboration", "Faster resolution", "SLA visibility"],
+      "triggers": ["Ticket created", "Escalation triggered", "CSAT received"],
+      "actions": ["Post to channel", "Create thread", "Update ticket"]
+    },
+    {
+      "toolA": { "slug": "monday", "name": "Monday.com", "category": "Project Management" },
+      "toolB": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "useCase": "Track project costs in real-time and trigger invoicing when milestones are completed.",
+      "benefits": ["Budget tracking live", "Milestone invoicing", "Profitability by project", "Resource cost tracking"],
+      "triggers": ["Milestone complete", "Hours logged", "Budget exceeded"],
+      "actions": ["Create invoice", "Update project cost", "Alert PM"]
+    },
+    {
+      "toolA": { "slug": "airtable", "name": "Airtable", "category": "Database" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get notified when records change and update Airtable from Slack without switching apps.",
+      "benefits": ["Real-time record alerts", "Update records from Slack", "Custom automations", "Team visibility"],
+      "triggers": ["Record created", "Field updated", "View filtered"],
+      "actions": ["Post to channel", "Update record", "Create record"]
+    },
+    {
+      "toolA": { "slug": "asana", "name": "Asana", "category": "Project Management" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Create tasks from Slack messages and get project updates without leaving your chat.",
+      "benefits": ["Tasks from messages", "Due date reminders", "Status updates in Slack", "Reduced context switching"],
+      "triggers": ["Task assigned", "Task completed", "Due date approaching"],
+      "actions": ["Create task", "Update status", "Add comment"]
+    },
+    {
+      "toolA": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "toolB": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "useCase": "Create invoices from deals and sync customer data between sales and accounting.",
+      "benefits": ["Deal to invoice automation", "Customer sync", "Payment visibility in CRM", "Revenue tracking"],
+      "triggers": ["Deal won", "Contact updated", "Invoice paid"],
+      "actions": ["Create invoice", "Sync customer", "Update deal stage"]
+    },
+    {
+      "toolA": { "slug": "intercom", "name": "Intercom", "category": "Support" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Route conversations to the right team and respond to customers from Slack.",
+      "benefits": ["Instant conversation alerts", "Reply from Slack", "Team handoffs", "VIP notifications"],
+      "triggers": ["New conversation", "Conversation tagged", "User action"],
+      "actions": ["Post to channel", "Reply to user", "Assign conversation"]
+    },
+    {
+      "toolA": { "slug": "typeform", "name": "Typeform", "category": "Forms" },
+      "toolB": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "useCase": "Turn form responses into CRM contacts and trigger automated follow-up sequences.",
+      "benefits": ["Leads auto-created", "Custom field mapping", "Instant follow-up", "Form analytics in CRM"],
+      "triggers": ["Form submitted", "Specific answer given", "Quiz completed"],
+      "actions": ["Create contact", "Enroll in sequence", "Add to list"]
+    },
+    {
+      "toolA": { "slug": "google-sheets", "name": "Google Sheets", "category": "Spreadsheets" },
+      "toolB": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "useCase": "Sync spreadsheet data with CRM for bulk imports and live reporting.",
+      "benefits": ["Bulk contact updates", "Live CRM reports", "Two-way sync", "Historical data import"],
+      "triggers": ["Row added", "Cell updated", "Sheet modified"],
+      "actions": ["Create/update contact", "Update deal", "Add to list"]
+    },
+    {
+      "toolA": { "slug": "stripe", "name": "Stripe", "category": "Payments" },
+      "toolB": { "slug": "xero", "name": "Xero", "category": "Accounting" },
+      "useCase": "Automatically record Stripe transactions in Xero with proper categorization.",
+      "benefits": ["Automatic reconciliation", "Fee tracking", "Multi-currency support", "Subscription revenue"],
+      "triggers": ["Payment received", "Refund issued", "Subscription changed"],
+      "actions": ["Create invoice", "Record payment", "Update customer"]
+    },
+    {
+      "toolA": { "slug": "woocommerce", "name": "WooCommerce", "category": "E-Commerce" },
+      "toolB": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "useCase": "Sync orders, products, and payments between your store and accounting.",
+      "benefits": ["Orders auto-recorded", "Inventory sync", "Tax tracking", "Customer data unified"],
+      "triggers": ["Order placed", "Order refunded", "Product updated"],
+      "actions": ["Create sales receipt", "Update inventory", "Sync customer"]
+    },
+    {
+      "toolA": { "slug": "linkedin-sales-navigator", "name": "LinkedIn Sales Navigator", "category": "Sales" },
+      "toolB": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "useCase": "Sync LinkedIn activities and leads with Salesforce for complete sales tracking.",
+      "benefits": ["Lead sync", "Activity logging", "InMail tracking", "Account matching"],
+      "triggers": ["Lead saved", "InMail sent", "Connection made"],
+      "actions": ["Create lead", "Log activity", "Update contact"]
+    },
+    {
+      "toolA": { "slug": "trello", "name": "Trello", "category": "Project Management" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Create cards from Slack and get board updates without leaving chat.",
+      "benefits": ["Cards from messages", "Due date alerts", "Comment sync", "Board updates in Slack"],
+      "triggers": ["Card created", "Card moved", "Due date approaching"],
+      "actions": ["Create card", "Move card", "Add comment"]
+    },
+    {
+      "toolA": { "slug": "freshdesk", "name": "Freshdesk", "category": "Support" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get ticket alerts and collaborate on support issues from Slack.",
+      "benefits": ["Instant ticket alerts", "Reply from Slack", "SLA warnings", "Team collaboration"],
+      "triggers": ["Ticket created", "Priority changed", "SLA approaching"],
+      "actions": ["Post to channel", "Reply to ticket", "Escalate"]
+    },
+    {
+      "toolA": { "slug": "docusign", "name": "DocuSign", "category": "E-Signature" },
+      "toolB": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "useCase": "Send contracts from Salesforce and track signature status in deals.",
+      "benefits": ["One-click send", "Status in Salesforce", "Auto-update deals", "Signed docs attached"],
+      "triggers": ["Contract sent", "Document signed", "Envelope voided"],
+      "actions": ["Update opportunity", "Attach document", "Notify rep"]
+    },
+    {
+      "toolA": { "slug": "square", "name": "Square", "category": "Payments" },
+      "toolB": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "useCase": "Sync Square transactions with QuickBooks for unified financial reporting.",
+      "benefits": ["Sales auto-recorded", "Inventory sync", "Fee tracking", "Customer matching"],
+      "triggers": ["Sale completed", "Refund processed", "Inventory updated"],
+      "actions": ["Create sales receipt", "Update inventory", "Record expense"]
+    },
+    {
+      "toolA": { "slug": "twilio", "name": "Twilio", "category": "Communication" },
+      "toolB": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "useCase": "Log SMS and calls in HubSpot and trigger messages from CRM workflows.",
+      "benefits": ["Call logging", "SMS tracking", "Workflow triggers", "Communication history"],
+      "triggers": ["Call completed", "SMS received", "Workflow triggered"],
+      "actions": ["Log activity", "Send SMS", "Update contact"]
+    },
+    {
+      "toolA": { "slug": "github", "name": "GitHub", "category": "Development" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get PR and issue notifications in Slack and manage reviews without leaving chat.",
+      "benefits": ["PR notifications", "Issue alerts", "Review from Slack", "Deploy notifications"],
+      "triggers": ["PR opened", "Review requested", "Issue created"],
+      "actions": ["Post to channel", "Approve PR", "Comment on issue"]
+    },
+    {
+      "toolA": { "slug": "clickup", "name": "ClickUp", "category": "Project Management" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Create tasks from Slack and get project updates in your channels.",
+      "benefits": ["Tasks from messages", "Status updates", "Due date alerts", "Custom notifications"],
+      "triggers": ["Task created", "Status changed", "Comment added"],
+      "actions": ["Create task", "Update status", "Add comment"]
+    },
+    {
+      "toolA": { "slug": "zapier", "name": "Zapier", "category": "Automation" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Monitor Zap runs and get notified of errors or completions in Slack.",
+      "benefits": ["Error alerts", "Run notifications", "Task management", "Status visibility"],
+      "triggers": ["Zap error", "Task completed", "Quota warning"],
+      "actions": ["Post to channel", "Trigger Zap", "Create thread"]
+    },
+    {
+      "toolA": { "slug": "shopify", "name": "Shopify", "category": "E-Commerce" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get real-time order notifications and inventory alerts in Slack.",
+      "benefits": ["Order alerts", "Inventory warnings", "Customer notifications", "Sales summaries"],
+      "triggers": ["Order placed", "Low inventory", "Customer created"],
+      "actions": ["Post to channel", "Alert team", "Daily summary"]
+    },
+    {
+      "toolA": { "slug": "gusto", "name": "Gusto", "category": "Payroll" },
+      "toolB": { "slug": "quickbooks", "name": "QuickBooks", "category": "Accounting" },
+      "useCase": "Sync payroll data automatically for accurate financial reporting.",
+      "benefits": ["Payroll journal entries", "Tax tracking", "Contractor payments", "GL sync"],
+      "triggers": ["Payroll run", "Contractor paid", "Tax filed"],
+      "actions": ["Create journal entry", "Update GL", "Record expense"]
+    },
+    {
+      "toolA": { "slug": "google-ads", "name": "Google Ads", "category": "Advertising" },
+      "toolB": { "slug": "hubspot", "name": "HubSpot", "category": "CRM" },
+      "useCase": "Track ad performance against CRM outcomes for true ROI measurement.",
+      "benefits": ["Lead source tracking", "Cost per deal", "Campaign attribution", "Audience sync"],
+      "triggers": ["Lead created", "Deal won", "Form submitted"],
+      "actions": ["Track conversion", "Update audience", "Sync offline conversions"]
+    },
+    {
+      "toolA": { "slug": "zoom", "name": "Zoom", "category": "Video" },
+      "toolB": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "useCase": "Log Zoom meetings in Salesforce and sync recordings with contacts.",
+      "benefits": ["Meetings auto-logged", "Recording links", "Transcript summaries", "Attendance tracking"],
+      "triggers": ["Meeting ended", "Recording available", "Attendee joined"],
+      "actions": ["Log activity", "Attach recording", "Update contact"]
+    },
+    {
+      "toolA": { "slug": "ringcentral", "name": "RingCentral", "category": "Phone" },
+      "toolB": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "useCase": "Log all calls automatically and enable click-to-call from Salesforce.",
+      "benefits": ["Auto call logging", "Click-to-call", "Call recordings", "Voicemail transcripts"],
+      "triggers": ["Call completed", "Voicemail received", "SMS sent"],
+      "actions": ["Log activity", "Create task", "Update contact"]
+    },
+    {
+      "toolA": { "slug": "workday", "name": "Workday", "category": "HR" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get HR notifications in Slack and enable employee self-service from chat.",
+      "benefits": ["PTO notifications", "Approval requests", "Onboarding tasks", "HR announcements"],
+      "triggers": ["PTO requested", "Approval needed", "New hire started"],
+      "actions": ["Post to channel", "Request approval", "Assign task"]
+    },
+    {
+      "toolA": { "slug": "bamboohr", "name": "BambooHR", "category": "HR" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Send HR notifications to Slack and enable time-off requests from chat.",
+      "benefits": ["Birthday announcements", "PTO alerts", "New hire notifications", "Time-off from Slack"],
+      "triggers": ["Birthday today", "PTO approved", "New hire added"],
+      "actions": ["Post to channel", "Approve PTO", "Welcome message"]
+    },
+    {
+      "toolA": { "slug": "servicenow", "name": "ServiceNow", "category": "IT Service" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Create and update incidents from Slack for faster IT response.",
+      "benefits": ["Incidents from Slack", "Status updates", "Approval workflows", "SLA visibility"],
+      "triggers": ["Incident created", "Priority changed", "SLA breach"],
+      "actions": ["Create incident", "Update status", "Escalate"]
+    },
+    {
+      "toolA": { "slug": "smartsheet", "name": "Smartsheet", "category": "Project Management" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get sheet updates in Slack and modify rows without leaving chat.",
+      "benefits": ["Row change alerts", "Update from Slack", "Due date reminders", "Request approvals"],
+      "triggers": ["Row added", "Cell changed", "Due date approaching"],
+      "actions": ["Post to channel", "Update row", "Request approval"]
+    },
+    {
+      "toolA": { "slug": "netsuite", "name": "NetSuite", "category": "ERP" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Get real-time alerts for orders, approvals, and exceptions from NetSuite.",
+      "benefits": ["Order notifications", "Approval routing", "Exception alerts", "Dashboard summaries"],
+      "triggers": ["Sales order created", "Approval needed", "Inventory low"],
+      "actions": ["Post to channel", "Request approval", "Alert team"]
+    },
+    {
+      "toolA": { "slug": "microsoft-teams", "name": "Microsoft Teams", "category": "Communication" },
+      "toolB": { "slug": "salesforce", "name": "Salesforce", "category": "CRM" },
+      "useCase": "Access Salesforce records from Teams and get deal updates in channels.",
+      "benefits": ["Record search in Teams", "Deal alerts", "Quick updates", "Meeting context"],
+      "triggers": ["Deal stage changed", "Task assigned", "Meeting scheduled"],
+      "actions": ["Post to channel", "Search records", "Update deal"]
+    },
+    {
+      "toolA": { "slug": "dropbox", "name": "Dropbox", "category": "Storage" },
+      "toolB": { "slug": "slack", "name": "Slack", "category": "Communication" },
+      "useCase": "Share and preview files directly in Slack with full search capability.",
+      "benefits": ["File previews", "Share to Slack", "File search", "Commenting"],
+      "triggers": ["File shared", "File updated", "Comment added"],
+      "actions": ["Post preview", "Share link", "Notify team"]
+    }
+  ],
+  "processes": [
+    {
+      "slug": "invoice-processing",
+      "name": "Invoice Processing",
+      "description": "Automate the capture, approval, and payment of vendor invoices",
+      "painPoints": ["Manual data entry from PDFs", "Approval bottlenecks", "Late payment fees", "Lost invoices"],
+      "solution": "AI extracts invoice data, routes for approval based on rules, and schedules payment automatically",
+      "metrics": { "timeSaved": "80%", "errorReduction": "95%", "costSavings": "$5-15 per invoice" },
+      "faqs": [
+        {
+          "question": "Can AI read invoices from different vendors?",
+          "answer": "Yes. Modern AI can extract data from any invoice format - PDFs, scanned images, even photos. It learns vendor-specific layouts over time and achieves 95%+ accuracy after initial training."
+        },
+        {
+          "question": "How does automated approval routing work?",
+          "answer": "Invoices are automatically routed based on rules you define: amount thresholds, vendor categories, department codes, etc. Approvers get notifications and can approve via email, Slack, or mobile app."
+        }
+      ]
+    },
+    {
+      "slug": "employee-onboarding",
+      "name": "Employee Onboarding",
+      "description": "Automate new hire setup across all systems and track progress",
+      "painPoints": ["Manual account creation in 10+ systems", "Forgotten access requests", "Inconsistent training", "No visibility into status"],
+      "solution": "Single form triggers automated setup across all systems, assigns training, and tracks completion",
+      "metrics": { "timeSaved": "90%", "errorReduction": "99%", "daysSaved": "2-3 per hire" },
+      "faqs": [
+        {
+          "question": "What systems can be automated for onboarding?",
+          "answer": "Nearly all modern SaaS tools can be automated: Google Workspace, Microsoft 365, Slack, HR systems, payroll, project management, CRM, and custom internal tools. Most new hires can be fully provisioned in minutes instead of days."
+        },
+        {
+          "question": "Can we customize onboarding by role or department?",
+          "answer": "Absolutely. Onboarding workflows can branch based on role, department, location, or any other criteria. A sales rep gets CRM access and sales training while an engineer gets GitHub and technical onboarding."
+        }
+      ]
+    },
+    {
+      "slug": "lead-qualification",
+      "name": "Lead Qualification",
+      "description": "Automatically score, enrich, and route leads to the right rep",
+      "painPoints": ["Reps waste time on unqualified leads", "Hot leads go cold waiting for follow-up", "Inconsistent qualification criteria", "No visibility into lead source ROI"],
+      "solution": "AI scores leads based on fit and intent, enriches with firmographic data, and routes to the optimal rep instantly",
+      "metrics": { "timeSaved": "60%", "conversionIncrease": "35%", "responseTime": "Minutes vs hours" },
+      "faqs": [
+        {
+          "question": "How does AI lead scoring work?",
+          "answer": "AI analyzes lead attributes (company size, industry, role) and behavior (pages visited, content downloaded, emails opened) to predict likelihood to buy. Scores update in real-time as leads engage."
+        },
+        {
+          "question": "What data can be enriched automatically?",
+          "answer": "Company size, industry, revenue, technology stack, funding status, LinkedIn profiles, social presence, news mentions, and more. Most leads can be fully enriched within seconds of form submission."
+        }
+      ]
+    },
+    {
+      "slug": "expense-reporting",
+      "name": "Expense Reporting",
+      "description": "Automate expense capture, approval, and reimbursement",
+      "painPoints": ["Lost receipts", "Month-end expense dumps", "Policy violations discovered after payment", "Manual data entry"],
+      "solution": "Mobile receipt capture with AI extraction, real-time policy checks, and automated approval routing",
+      "metrics": { "timeSaved": "75%", "policyCompliance": "98%", "processingDays": "2 vs 14" },
+      "faqs": [
+        {
+          "question": "Can expense automation enforce spending policies?",
+          "answer": "Yes. AI can flag policy violations in real-time: over-limit meals, non-preferred vendors, missing documentation. Managers can approve exceptions or reject before reimbursement."
+        },
+        {
+          "question": "How does receipt capture work?",
+          "answer": "Employees snap a photo of the receipt, AI extracts vendor, amount, date, and category automatically. Credit card transactions can be matched to receipts for seamless reconciliation."
+        }
+      ]
+    },
+    {
+      "slug": "customer-support-triage",
+      "name": "Customer Support Triage",
+      "description": "Automatically categorize, prioritize, and route support tickets",
+      "painPoints": ["Wrong tickets to wrong teams", "VIP customers wait in queue", "Simple questions take agent time", "No visibility into ticket patterns"],
+      "solution": "AI categorizes tickets, identifies sentiment and urgency, routes to optimal agent, and handles routine questions automatically",
+      "metrics": { "timeSaved": "50%", "routingAccuracy": "95%", "autoResolve": "40%" },
+      "faqs": [
+        {
+          "question": "Can AI actually resolve tickets without human help?",
+          "answer": "Yes, for routine questions. AI can answer FAQs, provide order status, process simple requests (password reset, subscription changes), and escalate only when needed. Most companies see 30-50% auto-resolution."
+        },
+        {
+          "question": "How does priority routing work?",
+          "answer": "AI considers customer tier, sentiment, issue type, and business impact to set priority. VIP customers with urgent issues go to senior agents immediately, while simple questions queue normally."
+        }
+      ]
+    },
+    {
+      "slug": "contract-review",
+      "name": "Contract Review",
+      "description": "Automate contract analysis, risk flagging, and approval routing",
+      "painPoints": ["Legal bottleneck on every contract", "Non-standard terms missed", "No visibility into contract status", "Version control chaos"],
+      "solution": "AI extracts key terms, flags deviations from standard, routes for appropriate approval, and tracks all versions",
+      "metrics": { "timeSaved": "70%", "riskReduction": "80%", "turnaroundDays": "3 vs 14" },
+      "faqs": [
+        {
+          "question": "Can AI really understand contract terms?",
+          "answer": "Modern AI can extract and analyze key terms: payment schedules, liability caps, indemnification, termination clauses, and more. It flags deviations from your standards and summarizes risks for human review."
+        },
+        {
+          "question": "Does this replace our legal team?",
+          "answer": "No. AI handles the first pass: extraction, comparison, and flagging. Your legal team reviews AI findings and makes decisions. This lets them focus on judgment calls instead of reading every word."
+        }
+      ]
+    }
+  ]
+}

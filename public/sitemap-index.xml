@@ -24,4 +24,24 @@
     <loc>https://p0stman.com/comparisons-sitemap.xml</loc>
     <lastmod>2026-01-21</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://p0stman.com/ai-builders-sitemap.xml</loc>
+    <lastmod>2026-01-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://p0stman.com/ai-comparisons-sitemap.xml</loc>
+    <lastmod>2026-01-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://p0stman.com/ops-industries-sitemap.xml</loc>
+    <lastmod>2026-01-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://p0stman.com/ops-integrations-sitemap.xml</loc>
+    <lastmod>2026-01-27</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://p0stman.com/ops-processes-sitemap.xml</loc>
+    <lastmod>2026-01-27</lastmod>
+  </sitemap>
 </sitemapindex>
